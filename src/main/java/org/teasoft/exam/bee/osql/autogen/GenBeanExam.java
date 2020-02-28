@@ -4,7 +4,7 @@
  * The license,see the LICENSE file.
  */
 
-package org.teasoft.exam.osql.autogen;
+package org.teasoft.exam.bee.osql.autogen;
 
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.honey.osql.atuogen.GenBean;

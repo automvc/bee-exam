@@ -1,3 +1,3 @@
 Bee-exam
 =========
-**Bee-exam** is the exam of ORM framework Bee.   
+**Bee-exam** is the example of ORM framework Bee.   

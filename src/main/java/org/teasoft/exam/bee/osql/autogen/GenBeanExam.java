@@ -31,7 +31,7 @@ public class GenBeanExam {
 			
 			更改成本地的具体路径
 			config.setBaseDir("D:\\xxx\\yyy\\Bee-exam\\src\\main\\java\\");
-			config.setPackagePath("org.teasoft.exam.osql.entity");
+			config.setPackagePath("org.teasoft.exam.bee.osql.entity");
 
 			GenBean genBean = new GenBean(config);
 

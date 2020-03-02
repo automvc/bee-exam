@@ -1,14 +1,15 @@
 package org.teasoft.exam.bee.osql.entity;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 /**
 *@author Honey
-*Create on 2020-02-28 17:18:48
+*Create on 2020-03-02 16:36:20
 */
 public class User implements Serializable {
 
-	private static final long serialVersionUID = 1597403861373L;
+	private static final long serialVersionUID = 1599517179297L;
 
 	private Integer id;
 	private String email;
@@ -16,6 +17,7 @@ public class User implements Serializable {
 	private String name;
 	private String password;
 	private String username;
+	private Timestamp createtime;
 
 	public Integer getId() {
 		return id;
@@ -65,6 +67,14 @@ public class User implements Serializable {
 		this.username = username;
 	}
 
+	public Timestamp getCreatetime() {
+		return createtime;
+	}
+
+	public void setCreatetime(Timestamp createtime) {
+		this.createtime = createtime;
+	}
+
 	 public String toString(){	
 		 StringBuffer str=new StringBuffer();	
 		 str.append("User[");			
@@ -72,8 +82,9 @@ public class User implements Serializable {
 		 str.append(",email=").append(email);		 
 		 str.append(",lastName=").append(lastName);		 
 		 str.append(",name=").append(name);		 
-		 str.append(",password=").append(password);		 
+//		 str.append(",password=").append(password);		 
 		 str.append(",username=").append(username);		 
+		 str.append(",createtime=").append(createtime);		 
 		 str.append("]");			 
 		 return str.toString();			 
 	 }		 

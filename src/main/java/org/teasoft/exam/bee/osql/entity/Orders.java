@@ -6,11 +6,11 @@ import java.sql.Timestamp;
 
 /**
 *@author Honey
-*Create on 2020-02-28 17:18:48
+*Create on 2020-03-02 16:36:20
 */
 public class Orders implements Serializable {
 
-	private static final long serialVersionUID = 1591834367922L;
+	private static final long serialVersionUID = 1592204269178L;
 
 	private Long id;
 	private String userid;
@@ -20,6 +20,7 @@ public class Orders implements Serializable {
 	private String remark;
 	private String sequence;
 	private String abc;
+	private Timestamp updatetime;
 
 	public Long getId() {
 		return id;
@@ -85,6 +86,14 @@ public class Orders implements Serializable {
 		this.abc = abc;
 	}
 
+	public Timestamp getUpdatetime() {
+		return updatetime;
+	}
+
+	public void setUpdatetime(Timestamp updatetime) {
+		this.updatetime = updatetime;
+	}
+
 	 public String toString(){	
 		 StringBuffer str=new StringBuffer();	
 		 str.append("Orders[");			
@@ -96,6 +105,7 @@ public class Orders implements Serializable {
 		 str.append(",remark=").append(remark);		 
 		 str.append(",sequence=").append(sequence);		 
 		 str.append(",abc=").append(abc);		 
+		 str.append(",updatetime=").append(updatetime);		 
 		 str.append("]");			 
 		 return str.toString();			 
 	 }		 

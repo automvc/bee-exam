@@ -23,12 +23,20 @@ public class TestPrepare {
 	static String version="v1.7.2";
 	
 	public static void init(){
+		init("");
+	}
+	
+	public static void init(String identify){
+		
+		if(identify!=null && !"".equals(identify)){
+			identify="-"+identify+"-";
+		}
 		
 		DateFormat df=new SimpleDateFormat("yyyy-MM-dd HH.mm.ss.SS");
 		String datetime=df.format(System.currentTimeMillis());
 		
 //		D:\{project-home}\src\main\resources\log
-		String path=System.getProperty("user.dir")+"\\src\\main\\resources\\log"+"\\bee-exam("+version+"){datatime}.txt".replace("{datatime}", datetime);
+		String path=System.getProperty("user.dir")+"\\src\\main\\resources\\log"+"\\bee-exam("+version+")"+identify+"{datatime}.txt".replace("{datatime}", datetime);
 		System.out.println(path);
 		//set the path and file name of log file
 		Path.setFullPath(path);

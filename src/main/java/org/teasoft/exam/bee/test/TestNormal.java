@@ -6,11 +6,8 @@
 
 package org.teasoft.exam.bee.test;
 
-import org.teasoft.exam.bee.osql.CacheTest;
-import org.teasoft.exam.bee.osql.CacheTestDel;
-import org.teasoft.exam.bee.osql.CacheTestInsertArray;
-import org.teasoft.exam.bee.osql.CacheTestJson;
 import org.teasoft.exam.bee.osql.ConditionExam;
+import org.teasoft.exam.bee.osql.MoreTableExam;
 import org.teasoft.exam.bee.osql.PreparedSqlExam;
 import org.teasoft.exam.bee.osql.SuidExam;
 import org.teasoft.exam.bee.osql.SuidExamEN;
@@ -25,10 +22,10 @@ import org.teasoft.honey.osql.util.DateUtil;
  * @author Kingstar
  * @since  1.7.2
  */
-public class TestMore {
+public class TestNormal {
 	
 	public static void main(String[] args) {
-		TestPrepare.init();
+		TestPrepare.init("normal");
 		
 		//How to generate the Javabean,please see GenBeanExam.
 		//生成Javabean,请查看GenBeanExam.
@@ -54,14 +51,9 @@ public class TestMore {
 		
 		runTest(ConditionExam.class);
 		
-		runTest(CacheTest.class);
-		runTest(CacheTestDel.class);
-		runTest(CacheTestInsertArray.class);
-		runTest(CacheTestJson.class);
+		runTest(MoreTableExam.class);
 		
-		
-		System.out.println(DateUtil.currentDate()+"  Finished!");
-		
+		System.out.println(DateUtil.currentDate()+"  test normal Finished!");
 		
 	}
 	

@@ -37,7 +37,7 @@ public class TransactionExam {
 
 			Orders orders = new Orders();
 			orders.setUserid("bee");
-			orders.setName("Bee(ORM framework)");
+			orders.setName("Bee(ORM Framework)");
 			orders.setTotal(new BigDecimal("91.99"));
 			orders.setRemark("test transaction"); 
 			orders.setSequence("");//empty String test

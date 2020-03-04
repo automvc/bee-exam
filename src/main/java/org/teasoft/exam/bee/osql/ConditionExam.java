@@ -31,7 +31,7 @@ public class ConditionExam {
 		Suid suid = BeeFactory.getHoneyFactory().getSuid();
 		Orders orders = new Orders();
 		
-		orders.setName("Bee(ORM framework)"); //等于的条件,会默认转换
+		orders.setName("Bee(ORM Framework)"); //等于的条件,会默认转换
 //		orders.setTotal(new BigDecimal("100"));  //不会再处理.因为between已有用
 		
 		 Condition condition=new ConditionImpl();

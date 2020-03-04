@@ -27,12 +27,13 @@ public class UpdateByExam {
 		SuidRich suidRich=BeeFactory.getHoneyFactory().getSuidRich();
 		
 		 Orders orders=new Orders();
-		 orders.setUserid("bee4");
+		 orders.setUserid("bee");
 		 orders.setRemark("new2");
 		 orders.setTotal(new BigDecimal("100"));
 		 orders.setSequence("");
 		 
-//		 int updateNum=suidRich.updateBy(orders, "userid");
+		 int updateNum0=suidRich.updateBy(orders, "userid");
+		 Logger.info("update number:  "+updateNum0);
 		 
 		 Logger.info("IncludeType.INCLUDE_BOTH");
 		 int updateNum=suidRich.updateBy(orders, "userid,name", IncludeType.INCLUDE_BOTH);

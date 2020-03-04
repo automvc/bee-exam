@@ -26,7 +26,7 @@ public class Orders implements Serializable {
 	private Timestamp updatetime;
 	
 //	@JoinTable(mainField="userid", subField="username")
-	@JoinTable(mainField="userid", subField="username", joinType=JoinType.RIGHT_JOIN)
+	@JoinTable(mainField="userid", subField="username", joinType=JoinType.LEFT_JOIN)
 //	@JoinTable(mainField="userid", subField="username",subAlias="myuser" , joinType=JoinType.FULL_JOIN)
 //	@JoinTable()
 	private User user;

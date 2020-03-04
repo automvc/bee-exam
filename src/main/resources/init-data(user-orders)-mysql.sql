@@ -30,13 +30,14 @@ CREATE TABLE `orders` (
   `abc` varchar(20) DEFAULT NULL,
   `updatetime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=100002 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=100004 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
-INSERT INTO `orders` VALUES ('100001', 'bee', 'Bee(ORM Framework)', '95.01', '2020-03-02 11:29:28', 'test', '123456', 'test', '2020-03-02 16:34:19');
-
+INSERT INTO `orders` VALUES ('100001', 'bee', 'Bee(ORM Framework)', '95.01', '2020-03-02 11:29:28', 'test', '12345601', 'test1', '2020-03-02 16:34:19');
+INSERT INTO `orders` VALUES ('100002', 'bee', 'Bee(ORM Framework)', '96.01', '2020-03-02 11:29:28', 'test', '12345602', 'test2', '2020-03-02 16:34:19');
+INSERT INTO `orders` VALUES ('100003', 'bee', 'Bee(ORM Framework)', '97.01', '2020-03-02 11:29:28', 'test', '12345603', 'test3', '2020-03-02 16:34:19');
 -- ----------------------------
 -- Table structure for `user`
 -- ----------------------------

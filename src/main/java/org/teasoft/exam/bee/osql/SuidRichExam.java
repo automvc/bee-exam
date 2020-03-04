@@ -9,6 +9,7 @@ package org.teasoft.exam.bee.osql;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.IncludeType;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
@@ -82,6 +83,8 @@ public class SuidRichExam {
 //		int updateNum8_0=suidRich.update(orders,IncludeType.INCLUDE_EMPTY);
 //		Logger.info("updateNum8_0:  "+updateNum8_0);
 		
+
+		
 		
 		Orders orders00=new Orders();
 		
@@ -91,8 +94,19 @@ public class SuidRichExam {
 		orders00.setRemark("testOneTime");
 		orders00.setTotal(new BigDecimal("93.99"));
 		
-		orders00.setRemark("");  //empty String test
+		orders00.setSequence("");  //empty String test
 		
+		String funCount=suidRich.selectWithFun(orders, FunctionType.COUNT,"total");
+		String funMax=suidRich.selectWithFun(orders, FunctionType.MAX,"total");
+		String funMin=suidRich.selectWithFun(orders, FunctionType.MIN,"total");
+		String funAvg=suidRich.selectWithFun(orders, FunctionType.AVG,"total");
+		String funSum=suidRich.selectWithFun(orders, FunctionType.SUM,"total");
+		
+		Logger.info("funCount:"+funCount);
+		Logger.info("funMax:"+funMax);
+		Logger.info("funMin:"+funMin);
+		Logger.info("funAvg:"+funAvg);
+		Logger.info("funSum:"+funSum);
 		
 		int insertNum00=suidRich.insert(orders00,IncludeType.INCLUDE_NULL);
 		Logger.info("insert record:"+insertNum00);
@@ -106,7 +120,7 @@ public class SuidRichExam {
 		
 		
 		int deleteNum=suidRich.delete(orders00);
-		System.out.println("deleteNum: "+deleteNum);
+		Logger.info("deleteNum: "+deleteNum);
 		
 		//test batch insert
 		Orders orders0=new Orders();
@@ -148,7 +162,7 @@ public class SuidRichExam {
 		
 		Orders exampleField=new Orders();
 		exampleField.setUserid("bee");
-//		
+//        select some fields
 		List<Orders> listSome=suidRich.select(exampleField, "name,total");
 		Logger.info(listSome.size()+"");
 		
@@ -160,20 +174,38 @@ public class SuidRichExam {
 		for (String str[]:listString) {
 //			String str[]=listString.get(i);
 			for (String s:str) {
-				System.out.print(s+"  , ");
+				Logger.info(s+"  , ");
 			}
 			Logger.info("");
 		}
 		
-		Orders order_del=new Orders();
-		order_del.setRemark("testOneTime");
-		int deleteNum2=suidRich.delete(order_del);
-		System.out.println("deleteNum2: "+deleteNum2);
+
+		
+		Orders order_more=new Orders();
+		order_more.setRemark("testOneTime");
+		
+		// test paging
+		Logger.info("test paging");
+		suidRich.select(order_more,3);
+		List<Orders> listMore=suidRich.select(order_more,0,3);
+		for (int i = 0; i < listMore.size(); i++) {
+			Logger.info(listMore.get(i).toString());
+		}
+		
+		
+		int deleteNum2=suidRich.delete(order_more);
+		Logger.info("deleteNum2: "+deleteNum2);
 		
 
 		suidRich.selectById(new User(), "800001,800002");
 		suidRich.selectById(new User(), 800001);
-		suidRich.selectById(new User(), 800001L);
+		User userTest=suidRich.selectById(new User(), 800001L).get(0);
+		
+		int deleteNum3=suidRich.deleteById(User.class, 800001);
+		Logger.info("deleteNum3: "+deleteNum3);
+		
+		suidRich.insert(userTest);
+		
 	}
 
 }

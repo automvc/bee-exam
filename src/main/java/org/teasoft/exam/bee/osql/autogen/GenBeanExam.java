@@ -29,8 +29,8 @@ public class GenBeanExam {
 			config.setGenToString(true);
 			config.setGenSerializable(true);
 			
-			更改成本地的具体路径
-			config.setBaseDir("D:\\xxx\\yyy\\Bee-exam\\src\\main\\java\\");
+			更改成本地的具体路径  change to your real path
+			config.setBaseDir("D:\\xxx\\yyy\\bee-exam\\src\\main\\java\\");
 			config.setPackagePath("org.teasoft.exam.bee.osql.entity");
 
 			GenBean genBean = new GenBean(config);

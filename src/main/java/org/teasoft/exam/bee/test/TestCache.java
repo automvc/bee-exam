@@ -10,13 +10,6 @@ import org.teasoft.exam.bee.osql.CacheTest;
 import org.teasoft.exam.bee.osql.CacheTestDel;
 import org.teasoft.exam.bee.osql.CacheTestInsertArray;
 import org.teasoft.exam.bee.osql.CacheTestJson;
-import org.teasoft.exam.bee.osql.ConditionExam;
-import org.teasoft.exam.bee.osql.PreparedSqlExam;
-import org.teasoft.exam.bee.osql.SuidExam;
-import org.teasoft.exam.bee.osql.SuidExamEN;
-import org.teasoft.exam.bee.osql.SuidRichExam;
-import org.teasoft.exam.bee.osql.TransactionExam;
-import org.teasoft.exam.bee.osql.UpdateByExam;
 import org.teasoft.exam.comm.TestHelper;
 import org.teasoft.exam.comm.TestPrepare;
 import org.teasoft.honey.osql.util.DateUtil;
@@ -30,13 +23,10 @@ public class TestCache {
 	public static void main(String[] args) {
 		TestPrepare.init("cache");
 		
-	
-		
 		runTest(CacheTest.class);
 		runTest(CacheTestDel.class);
 		runTest(CacheTestInsertArray.class);
 		runTest(CacheTestJson.class);
-		
 		
 		System.out.println(DateUtil.currentDate()+"  test cache Finished!");
 		

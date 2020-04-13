@@ -7,8 +7,8 @@
 package org.teasoft.exam.bee.osql.autogen;
 
 import org.teasoft.bee.osql.BeeException;
-import org.teasoft.honey.osql.atuogen.GenBean;
-import org.teasoft.honey.osql.atuogen.GenConfig;
+import org.teasoft.honey.osql.autogen.GenBean;
+import org.teasoft.honey.osql.autogen.GenConfig;
 import org.teasoft.honey.osql.core.HoneyConfig;
 
 /**

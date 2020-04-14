@@ -24,6 +24,7 @@ public class GenFilesExam {
 		map.put("entityName", "orderhistory");
 		map.put("packageName", "com.automvc.enet.order.rest");
 		更改成本地的具体路径  change to your real path
+//		String basePath = "D:\\JavaWeb\\workspaceGit\\bee-exam\\src\\main\\java\\org\\teasoft\\exam\\bee\\osql\\autogen\\";
 		String basePath = "D:\\xxx\\yyy\\bee-exam\\src\\main\\java\\org\\teasoft\\exam\\bee\\osql\\autogen\\";
 		
 		String templatePath = basePath + "OrderhistoryRest.java.template";

@@ -8,6 +8,7 @@ package org.teasoft.exam.bee.osql;
 
 import java.math.BigDecimal;
 
+import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.IncludeType;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
@@ -24,7 +25,9 @@ public class UpdateByExam {
 		test();
 	}
 	public static void test() {
-		SuidRich suidRich=BeeFactory.getHoneyFactory().getSuidRich();
+		try{
+			
+		 SuidRich suidRich=BeeFactory.getHoneyFactory().getSuidRich();
 		
 		 Orders orders=new Orders();
 		 orders.setUserid("bee");
@@ -43,6 +46,11 @@ public class UpdateByExam {
 		 suidRich.updateBy(orders, "userid", IncludeType.INCLUDE_NULL);
 		 Logger.info("IncludeType.INCLUDE_EMPTY");
 		 suidRich.updateBy(orders, "userid", IncludeType.INCLUDE_EMPTY);
+		 
+		} catch (BeeException e) {
+			 e.printStackTrace();
+			 Logger.error(e.getMessage());
+		}
 	}
 
 }

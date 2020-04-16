@@ -53,6 +53,7 @@ public class TransactionExam {
 
 		} catch (BeeException e) {
 			e.printStackTrace();
+			Logger.error(e.getMessage());
 			transaction.rollback();
 		}
 	}

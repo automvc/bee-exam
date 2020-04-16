@@ -85,6 +85,7 @@ public class PreparedSqlExam {
 			
 		} catch (BeeException e) {
 			e.printStackTrace();
+			Logger.error(e.getMessage());
 		}
 	}
 

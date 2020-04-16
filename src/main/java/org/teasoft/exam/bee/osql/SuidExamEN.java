@@ -60,6 +60,7 @@ public class SuidExamEN {
 		
 	} catch (BeeException e) {
 		e.printStackTrace();
+		Logger.error(e.getMessage());
 	}
 	}
 

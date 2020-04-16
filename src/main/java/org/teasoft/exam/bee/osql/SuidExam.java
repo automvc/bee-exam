@@ -80,6 +80,7 @@ public class SuidExam {
 
 		} catch (BeeException e) {
 			e.printStackTrace();
+			Logger.error(e.getMessage());
 		}
 	}
 }

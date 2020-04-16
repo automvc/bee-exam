@@ -9,6 +9,7 @@ package org.teasoft.exam.bee.osql;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.IncludeType;
 import org.teasoft.bee.osql.SuidRich;
@@ -29,7 +30,8 @@ public class SuidRichExam {
 
 	public static void test() {
 
-		
+	  try{
+		  
 		SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
 		
 		Orders orders=new Orders();
@@ -205,6 +207,11 @@ public class SuidRichExam {
 		Logger.info("deleteNum3: "+deleteNum3);
 		
 		suidRich.insert(userTest);
+		
+	  } catch (BeeException e) {
+		 e.printStackTrace();
+		 Logger.error(e.getMessage());
+	  }
 		
 	}
 

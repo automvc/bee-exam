@@ -6,6 +6,9 @@
 
 package org.teasoft.exam.bee.test;
 
+import org.teasoft.honey.osql.core.Logger;
+
+import org.teasoft.bee.osql.BeeException;
 import org.teasoft.exam.bee.osql.ConditionExam;
 import org.teasoft.exam.bee.osql.MoreTableExam;
 import org.teasoft.exam.bee.osql.PreparedSqlExam;
@@ -25,8 +28,10 @@ import org.teasoft.honey.osql.util.DateUtil;
 public class TestNormal {
 	
 	public static void main(String[] args) {
-		TestPrepare.init("normal");
+	   TestPrepare.init("normal");
 		
+	    try {
+			
 		//How to generate the Javabean,please see GenBeanExam.
 		//生成Javabean,请查看GenBeanExam.
 
@@ -53,7 +58,11 @@ public class TestNormal {
 		
 		runTest(MoreTableExam.class);
 		
-		System.out.println(DateUtil.currentDate()+"  test normal Finished!");
+	   } catch (BeeException e) {
+			Logger.error(e.getMessage());
+	   }
+		
+	   System.out.println(DateUtil.currentDate()+"  test normal Finished!");
 		
 	}
 	

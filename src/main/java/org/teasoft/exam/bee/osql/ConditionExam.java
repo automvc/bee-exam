@@ -8,6 +8,7 @@ package org.teasoft.exam.bee.osql;
 
 import java.util.List;
 
+import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.OrderType;
@@ -27,7 +28,7 @@ public class ConditionExam {
 		test();
 	}
 	public static void test() {
-
+       try{
 		Suid suid = BeeFactory.getHoneyFactory().getSuid();
 		Orders orders = new Orders();
 		
@@ -47,5 +48,10 @@ public class ConditionExam {
 		for (int i = 0; i < list2.size(); i++) {
 			Logger.info(list2.get(i).toString());
 		}
+		
+	  } catch (BeeException e) {
+		 e.printStackTrace();
+		 Logger.error(e.getMessage());
+	  }
 	}
 }

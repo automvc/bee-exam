@@ -8,6 +8,7 @@ package org.teasoft.exam.bee.osql;
 
 import java.util.List;
 
+import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.MoreTable;
 import org.teasoft.bee.osql.Op;
@@ -28,8 +29,8 @@ public class MoreTableExam {
 		test();
 	}
 	public static void test() {
+	  try{
 		MoreTable moreTable=BeeFactory.getHoneyFactory().getMoreTable();
-		
 		
 		Orders orders1=new Orders();
 		orders1.setUserid("bee"); 
@@ -65,6 +66,11 @@ public class MoreTableExam {
 		for (int i = 0; i < list2.size(); i++) {
 			Logger.info(list2.get(i).toString());
 		}
+		
+	  } catch (BeeException e) {
+		 e.printStackTrace();
+		 Logger.error(e.getMessage());
+	  }
 		
 	}
 

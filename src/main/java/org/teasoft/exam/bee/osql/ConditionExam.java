@@ -6,6 +6,7 @@
 
 package org.teasoft.exam.bee.osql;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
@@ -33,7 +34,7 @@ public class ConditionExam {
 		Orders orders = new Orders();
 		
 		orders.setName("Bee(ORM Framework)"); //等于的条件,会默认转换
-//		orders.setTotal(new BigDecimal("100"));  //不会再处理.因为between已有用
+		orders.setTotal(new BigDecimal("100"));  //不会再处理.因为between已有用
 		
 		 Condition condition=new ConditionImpl();
 		 condition
@@ -43,11 +44,48 @@ public class ConditionExam {
 		 .orderBy("userid",OrderType.ASC) //排序
 		 .start(0).size(10)              //分页
 		 ;
+		 
+//       测试顺序异常
+//		 condition
+//		 .orderBy("name")
+//		 .groupBy("userid") 
+//		 ;
 
 		List<Orders> list2 = suid.select(orders, condition);
 		for (int i = 0; i < list2.size(); i++) {
 			Logger.info(list2.get(i).toString());
 		}
+		
+		//insert 2 records
+		Orders orders1 = new Orders();
+		orders1.setUserid("test condition");
+		orders1.setRemark("test condition delete");
+		orders1.setTotal(new BigDecimal("0.01"));
+		suid.insert(orders1);
+		Orders orders2 = new Orders();
+		orders2.setUserid("test condition");
+		orders2.setRemark("test condition delete");
+		orders2.setTotal(new BigDecimal("0.01"));
+		suid.insert(orders2);
+		
+		Condition conditionDel=new ConditionImpl();
+		conditionDel
+		.op("remark", Op.like, "test condition %")
+		.op("Total", Op.le, "0.01")
+//		.groupBy("userid")  //DELETE do not support the opType: groupBy!
+//		.orderBy("name")
+		;
+		
+		Orders ordersDel = new Orders();
+		ordersDel.setUserid("test condition");
+		int delNum=suid.delete(ordersDel, conditionDel);
+		
+//		test bee.osql.donot.allowed.deleteWholeRecords=true
+//		Condition emptyCondition=new ConditionImpl();
+////		emptyCondition.size(1);
+//		Orders ordersDel = new Orders();
+//		int delNum=suid.delete(ordersDel, emptyCondition);
+		Logger.info("delete(T entity,Condition condition), delete record num:"+delNum);
 		
 	  } catch (BeeException e) {
 		 e.printStackTrace();

@@ -17,13 +17,13 @@
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-			<version>1.7.2-SNAPSHOT</version>
+			<version>1.7.2</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-			<version>1.7.2-SNAPSHOT</version>
+			<version>1.7.2</version>
 		</dependency>
 
 			<!-- Mysql config just for demo.You need change it to the real database config. -->

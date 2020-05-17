@@ -14,3 +14,6 @@ bee-exam(v1.7.2)-cache-2020-04-22 16.16.31.829.txt
 
 test use nocache:
 bee-exam(v1.7.2)-cache-2020-04-22 16.33.07.919.txt
+
+test use setAdd,setMultiply in Condition:
+bee-exam(v1.7.2)-normal-2020-04-22 22.00.11.844.txt

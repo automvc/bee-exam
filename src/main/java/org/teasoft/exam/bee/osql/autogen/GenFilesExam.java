@@ -10,7 +10,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.teasoft.honey.osql.autogen.GenFiles;
-
 /**
  * @author Kingstar
  * @since  1.7.2
@@ -29,9 +28,9 @@ public class GenFilesExam {
 		
 		String templatePath = basePath + "OrderhistoryRest.java.template";
 		String targetFilePath = basePath + "OrderhistoryRest.java";
-
 		GenFiles.genFile(templatePath, map, targetFilePath);
-
+		
+		System.out.println("finished!");
 	}
 
 }

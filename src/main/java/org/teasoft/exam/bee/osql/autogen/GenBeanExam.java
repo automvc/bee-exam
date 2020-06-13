@@ -23,21 +23,19 @@ public class GenBeanExam {
 //			driverName,url,username,password config in bee.properties.
 
 			GenConfig config = new GenConfig();
-
 			config.setDbName(dbName);
-			
-			config.setGenToString(true);
+			config.setGenToString(true);//生成toString方法
 			config.setGenSerializable(true);
 			
-			更改成本地的具体路径  change to your real path
-//			config.setBaseDir("D:\\xxx\\yyy\\bee-exam\\src\\main\\java\\");
-			config.setBaseDir("D:\\JavaWeb\\workspaceGit\\bee-exam\\src\\main\\java\\");
+//			更改成本地的具体路径  change to your real path
+			config.setBaseDir("D:\\xxx\\yyy\\bee-exam\\src\\main\\java\\");
+//			config.setBaseDir("D:\\JavaWeb\\workspaceGit\\bee-exam\\src\\main\\java\\");
 			config.setPackagePath("org.teasoft.exam.bee.osql.entity");
 
 			GenBean genBean = new GenBean(config);
 
-//			genBean.genSomeBeanFile("Orders");
-			genBean.genSomeBeanFile("Orders,user");
+			genBean.genSomeBeanFile("Orders");
+//			genBean.genSomeBeanFile("Orders,user");
 			
 		  } catch (BeeException e) {
 			 e.printStackTrace();

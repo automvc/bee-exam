@@ -83,9 +83,23 @@ public class PreparedSqlExam {
 			preparedSql.select(sql4, new Orders(), new Object[] {});
 			List<String[]> list7 = preparedSql.select(sql4,new Object[] {},1,3);
 			
+			//自定义sql多表查询
+			String sql8 = CustomSql.getCustomSql("osql.example.userOrders");
+			List<String[]> list8 = preparedSql.select(sql8, new Object[] { "123456" });
+			String str[];
+			for (int i = 0; i < list8.size(); i++) {
+				str = list8.get(i);
+				for (int j = 0; j < str.length; j++) {
+					Logger.info(str[j]);
+				}
+			}
+			
 		} catch (BeeException e) {
+			Logger.error("In PreparedSqlExam (BeeException):"+e.getMessage());
 			e.printStackTrace();
-			Logger.error(e.getMessage());
+		}catch (Exception e) {
+			Logger.error("In PreparedSqlExam (Exception):"+e.getMessage());
+			e.printStackTrace();
 		}
 	}
 

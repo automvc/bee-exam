@@ -2,7 +2,7 @@
  * Copyright 2016-2020 the original author.All rights reserved.
  * Kingstar(honeysoft@126.com)
  * The license,see the LICENSE file.
- */
+*/
 
 package org.teasoft.exam.bee.distribution;
 
@@ -16,11 +16,12 @@ import org.teasoft.honey.distribution.SerialUniqueId;
 public class SerialUniqueIdTest {
 	
 	public static void main(String[] args) {
-		final int SIZE=1000;
+		final int SIZE=100;
 		GenId genId=new SerialUniqueId();
-		GenIdThread thread[]=new GenIdThread[SIZE];
+		
+		GenSerialUniqueIdThread thread[]=new GenSerialUniqueIdThread[SIZE];
 		for (int i = 0; i < SIZE; i++) {
-			thread[i]=new GenIdThread(genId,i+"","one");
+			thread[i]=new GenSerialUniqueIdThread(genId,i+"",null);
 			thread[i].start();
 		}
 		try {
@@ -30,10 +31,10 @@ public class SerialUniqueIdTest {
 			System.out.println(e.getMessage());
 		}
 		System.out.println("-------------------------");
-		System.out.println(GenIdThread.idSet.size());
+		System.out.println(GenSerialUniqueIdThread.idSet.size());
 		
-		System.out.println(GenIdThread.idSetDup.size());
-		System.out.println(GenIdThread.idSetDup);
+		System.out.println(GenSerialUniqueIdThread.idDupList.size());
+		System.out.println(GenSerialUniqueIdThread.idDupList);
 	}
 
 }

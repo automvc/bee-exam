@@ -6,7 +6,6 @@
 
 package org.teasoft.exam.bee.distribution;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -18,17 +17,17 @@ import org.teasoft.bee.distribution.GenId;
  * @author Kingstar
  * @since  1.7.3
  */
-public class GenIdThread extends Thread{
+public class GenSerialUniqueIdThread extends Thread{
 	
 //	static Set<Long> idSet=new HashSet<>();
 	static Set<Long> idSet=new CopyOnWriteArraySet<>();
 	private final static int SIZE=12000;
 //	private final static int SIZE=21000;  //if(i==0){
-	static long num[]=new long[SIZE];
+//	static long num[]=new long[SIZE];
 	static List<Long> idDupList=new CopyOnWriteArrayList<>();
 	
 	private GenId genId;
-	private String type;
+//	private String type;
 	
 	@Override
 	public void run(){
@@ -37,30 +36,28 @@ public class GenIdThread extends Thread{
 			if(i!=0){
 //			if(i==0){
 				long id=genId.get();
-				idSet.add(id);
 				setNum(id);
-				System.out.println(Thread.currentThread().getName()+"  : "+id);
+				System.out.println(Thread.currentThread().getName()+"run:"+i+"  : "+id);
 			}else{
 				long a[]=genId.getRangeId(10);
 				setNum(a);
-				System.out.println(Thread.currentThread().getName()+"  : "+a[0]+" , "+a[1]);
+				System.out.println(Thread.currentThread().getName()+"run:"+i+"  : "+a[0]+" , "+a[1]);
 			}
 		}
 	}
 	
-	public GenIdThread(GenId genId,String threadName,String type){
+	public GenSerialUniqueIdThread(GenId genId,String threadName,String type){
 		this.genId=genId;
 		this.setName(threadName);
-		this.type=type;
+//		this.type=type;
 	}
 	
 	public void setNum(long n){
-		int index=(int)(n-1);
-		if(num[index]==1) {
+		
+		boolean isOk=idSet.add(n);
+		if(!isOk) {
 			System.out.println(n+"  ---------------------------已经存在了.");
 			idDupList.add(n);
-		}else{
-			num[index]=1;
 		}
 	}
 	

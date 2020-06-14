@@ -23,7 +23,7 @@ CREATE TABLE `orders` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `userid` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `total` decimal(5,2) NOT NULL,
+  `total` decimal(10,2) NOT NULL,
   `createtime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `remark` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `sequence` varchar(30) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,

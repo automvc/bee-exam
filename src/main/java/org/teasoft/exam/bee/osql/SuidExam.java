@@ -37,6 +37,7 @@ public class SuidExam {
 
 			//默认不处理null和空字符串.不用再写一堆的判断;其它有值的字段全部自动作为过滤条件
 			List<Orders> list1 = suid.select(orders1); //select
+			 suid.select(orders1); //select   test cache
 			for (int i = 0; i < list1.size(); i++) {
 //				Logger.info(list1.get(i).toString());
 				Logger.info(list1.get(i).toString());
@@ -79,8 +80,11 @@ public class SuidExam {
 			}
 
 		} catch (BeeException e) {
+			Logger.error("In SuidExam (BeeException):"+e.getMessage());
 			e.printStackTrace();
-			Logger.error(e.getMessage());
+		}catch (Exception e) {
+			Logger.error("In SuidExam (Exception):"+e.getMessage());
+			e.printStackTrace();
 		}
 	}
 }

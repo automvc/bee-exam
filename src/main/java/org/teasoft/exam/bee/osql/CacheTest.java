@@ -120,9 +120,12 @@ public class CacheTest {
 			suid.select(orders11);//delte some
 			suid.select(orders8);  
 			
-		  } catch (BeeException e) {
-			 e.printStackTrace();
-			 Logger.error(e.getMessage());
-		  }
+			} catch (BeeException e) {
+				Logger.error("In CacheTest (BeeException):"+e.getMessage());
+				e.printStackTrace();
+			}catch (Exception e) {
+				Logger.error("In CacheTest (Exception):"+e.getMessage());
+				e.printStackTrace();
+			}
 	}
 }

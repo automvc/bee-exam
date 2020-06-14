@@ -201,16 +201,26 @@ public class SuidRichExam {
 
 		suidRich.selectById(new User(), "800001,800002");
 		suidRich.selectById(new User(), 800001);
-		User userTest=suidRich.selectById(new User(), 800001L).get(0);
-		
+//		User userTest=suidRich.selectById(new User(), 800001L).get(0); //bug,if the list is empty
+		List<User> list=suidRich.selectById(new User(), 800001L);
+		User userTest=null;
+		if(list!=null && list.size()>0) userTest=list.get(0);
+//		
 		int deleteNum3=suidRich.deleteById(User.class, 800001);
 		Logger.info("deleteNum3: "+deleteNum3);
 		
 		suidRich.insert(userTest);
 		
+		String json=suidRich.selectJson(new User());
+		Logger.info("selectJson(new User()):");
+		Logger.info(json);
+		
 	  } catch (BeeException e) {
-		 e.printStackTrace();
-		 Logger.error(e.getMessage());
+		  Logger.error("In SuidRichExam (Exception):"+e.getMessage());
+		  e.printStackTrace();
+	  }catch (Exception e) {
+		  Logger.error("In SuidRichExam (Exception):"+e.getMessage());
+		  e.printStackTrace();
 	  }
 		
 	}

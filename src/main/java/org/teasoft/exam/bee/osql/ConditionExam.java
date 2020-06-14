@@ -107,9 +107,13 @@ public class ConditionExam {
 		int updateNumCondition=suidRich.update(Orders_update, "remark", conditionUpdate); //point to set field
 		Logger.info("updateNumCondition: "+updateNumCondition);
 		
-	  } catch (BeeException e) {
-		 e.printStackTrace();
-		 Logger.error(e.getMessage());
-	  }
+		
+		} catch (BeeException e) {
+			Logger.error("In ConditionExam (BeeException):"+e.getMessage());
+			e.printStackTrace();
+		}catch (Exception e) {
+			Logger.error("In ConditionExam (Exception):"+e.getMessage());
+			e.printStackTrace();
+		}
 	}
 }

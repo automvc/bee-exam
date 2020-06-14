@@ -65,8 +65,11 @@ public class MoreTableExam {
 			}
 
 		} catch (BeeException e) {
+			Logger.error("In MoreTableExam (BeeException):"+e.getMessage());
 			e.printStackTrace();
-			Logger.error(e.getMessage());
+		}catch (Exception e) {
+			Logger.error("In MoreTableExam (Exception):"+e.getMessage());
+			e.printStackTrace();
 		}
 	}
 }

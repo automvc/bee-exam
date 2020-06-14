@@ -58,10 +58,13 @@ public class SuidExamEN {
 			Logger.info(list2.get(i).toString());
 		}
 		
-	} catch (BeeException e) {
-		e.printStackTrace();
-		Logger.error(e.getMessage());
-	}
+		} catch (BeeException e) {
+			Logger.error("In SuidExamEN (BeeException):"+e.getMessage());
+			e.printStackTrace();
+		}catch (Exception e) {
+			Logger.error("In SuidExamEN (Exception):"+e.getMessage());
+			e.printStackTrace();
+		}
 	}
 
 }

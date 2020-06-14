@@ -48,8 +48,11 @@ public class UpdateByExam {
 		 suidRich.updateBy(orders, "userid", IncludeType.INCLUDE_EMPTY);
 		 
 		} catch (BeeException e) {
-			 e.printStackTrace();
-			 Logger.error(e.getMessage());
+			Logger.error("In UpdateByExam (BeeException):"+e.getMessage());
+			e.printStackTrace();
+		}catch (Exception e) {
+			Logger.error("In UpdateByExam (Exception):"+e.getMessage());
+			e.printStackTrace();
 		}
 	}
 

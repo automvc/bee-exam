@@ -52,9 +52,11 @@ public class TransactionExam {
 			}
 
 		} catch (BeeException e) {
+			Logger.error("In TransactionExam (BeeException):"+e.getMessage());
 			e.printStackTrace();
-			Logger.error(e.getMessage());
-			transaction.rollback();
+		}catch (Exception e) {
+			Logger.error("In TransactionExam (Exception):"+e.getMessage());
+			e.printStackTrace();
 		}
 	}
 

@@ -100,9 +100,12 @@ public class CacheTestJson {
 			
 			
 			
-		  } catch (BeeException e) {
-			 e.printStackTrace();
-			 Logger.error(e.getMessage());
-		  }
+			} catch (BeeException e) {
+				Logger.error("In CacheTestJson (BeeException):"+e.getMessage());
+				e.printStackTrace();
+			}catch (Exception e) {
+				Logger.error("In CacheTestJson (Exception):"+e.getMessage());
+				e.printStackTrace();
+			}
 	}
 }

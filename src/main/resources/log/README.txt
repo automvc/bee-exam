@@ -20,3 +20,6 @@ bee-exam(v1.7.2)-normal-2020-04-22 22.00.11.844.txt
 
 PearFlowerIdTest,SerialUniqueIdTest
 test for global unique id number in distributed environment.
+
+add test case: UpdateSetExam:setAdd,setMuliple
+bee-exam(v1.7.2)-normal-2020-06-13 13.14.34.106-to-v1.8-bench.txt

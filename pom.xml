@@ -1,12 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.teasoft</groupId>
-  <artifactId>bee-exam</artifactId>
-  <version>1.7.2-SNAPSHOT</version>
-  <packaging>jar</packaging>
-  
-  
-  	<properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.teasoft</groupId>
+	<artifactId>bee-exam</artifactId>
+	<version>1.7.3-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
@@ -17,21 +18,30 @@
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-			<version>1.7.2</version>
+<!-- 			<version>1.7.2</version> -->
+			<version>1.7.3-SNAPSHOT</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-			<version>1.7.2</version>
+<!-- 			<version>1.7.2</version> -->
+            <version>1.7.3-SNAPSHOT</version>
+			
 		</dependency>
 
-			<!-- Mysql config just for demo.You need change it to the real database config. -->
+		<!-- Mysql config just for demo.You need change it to the real database config. -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.25</version>
 			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.5.3</version>
 		</dependency>
 
 	</dependencies>
@@ -52,12 +62,12 @@
 					<include>**/*</include>
 				</includes>
 			</resource>
-			
+
 			<resource>
 				<directory>${project.basedir}</directory>
 				<includes>
 					<include>LICENSE*</include>
-<!-- 					<include>README.md</include> -->
+					<!-- <include>README.md</include> -->
 				</includes>
 			</resource>
 		</resources>
@@ -89,5 +99,5 @@
 
 		</plugins>
 	</build>
-  
+
 </project>

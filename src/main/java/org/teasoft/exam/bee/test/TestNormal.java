@@ -6,9 +6,8 @@
 
 package org.teasoft.exam.bee.test;
 
-import org.teasoft.honey.osql.core.Logger;
-
 import org.teasoft.bee.osql.BeeException;
+import org.teasoft.exam.bee.osql.BugTest;
 import org.teasoft.exam.bee.osql.ConditionExam;
 import org.teasoft.exam.bee.osql.MoreTableExam;
 import org.teasoft.exam.bee.osql.PreparedSqlExam;
@@ -17,8 +16,11 @@ import org.teasoft.exam.bee.osql.SuidExamEN;
 import org.teasoft.exam.bee.osql.SuidRichExam;
 import org.teasoft.exam.bee.osql.TransactionExam;
 import org.teasoft.exam.bee.osql.UpdateByExam;
+import org.teasoft.exam.bee.osql.UpdateSetExam;
+import org.teasoft.exam.bee.osql.UseJson;
 import org.teasoft.exam.comm.TestHelper;
 import org.teasoft.exam.comm.TestPrepare;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.util.DateUtil;
 
 /**
@@ -28,9 +30,13 @@ import org.teasoft.honey.osql.util.DateUtil;
 public class TestNormal {
 	
 	public static void main(String[] args) {
+	  
+		
 	   TestPrepare.init("normal");
 		
 	    try {
+	    	
+	    ClearAndInitTestTable.main(null);
 			
 		//How to generate the Javabean,please see GenBeanExam.
 		//生成Javabean,请查看GenBeanExam.
@@ -58,8 +64,17 @@ public class TestNormal {
 		
 		runTest(MoreTableExam.class);
 		
+		runTest(UseJson.class);
+		runTest(BugTest.class);
+		
+		runTest(UpdateSetExam.class);
+		
 	   } catch (BeeException e) {
-			Logger.error(e.getMessage());
+		   Logger.error(e.getMessage());
+		   e.printStackTrace();
+	   }catch (Exception e) {
+		   Logger.error(e.getMessage());
+		   e.printStackTrace();
 	   }
 		
 	   System.out.println(DateUtil.currentDate()+"  test normal Finished!");

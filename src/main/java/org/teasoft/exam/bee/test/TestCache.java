@@ -23,6 +23,8 @@ public class TestCache {
 	public static void main(String[] args) {
 		TestPrepare.init("cache");
 		
+		ClearAndInitTestTable.main(null);
+		
 		runTest(CacheTest.class);
 		runTest(CacheTestDel.class);
 		runTest(CacheTestInsertArray.class);

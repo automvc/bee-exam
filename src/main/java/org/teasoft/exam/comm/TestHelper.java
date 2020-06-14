@@ -34,6 +34,7 @@ public class TestHelper {
 			markEnd(simpleName+".test");
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
+			 e.printStackTrace();
 		}
 	}
 

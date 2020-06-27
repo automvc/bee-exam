@@ -18,6 +18,7 @@ import org.teasoft.bee.osql.transaction.Transaction;
 import org.teasoft.exam.bee.osql.entity.LeafAlloc;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.core.SessionFactory;
 
 import com.alibaba.druid.pool.DruidDataSource;
@@ -28,7 +29,7 @@ import com.alibaba.druid.pool.DruidDataSource;
  */
 public class RwDsExam {
 	
-	static SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
+	private static SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
 
 	static {
 		initDS();
@@ -77,15 +78,15 @@ public class RwDsExam {
 		Condition condition = new ConditionImpl();
 		condition.setAdd("maxId", 200); //TODO
 		int num=suidRich.update(leafAlloc, "maxId", condition);
-		System.out.println("---------------------------------update num is :"+num);
+		Logger.info("---------------------------------update num is :"+num);
 
 		//	@Select("SELECT biz_tag, max_id, step FROM leaf_alloc WHERE biz_tag = #{tag}")
 		LeafAlloc result = suidRich.selectOne(leafAlloc);
-		System.out.println(result);
+		Logger.info(result.toString());
 		
 		
 		result = suidRich.selectOne(leafAlloc);
-		System.out.println(result);
+		Logger.info(result.toString());
 	}
 	
 	public static void test2(){
@@ -103,7 +104,7 @@ public class RwDsExam {
 		    	
 //		    	@Select("SELECT biz_tag, max_id, step FROM leaf_alloc WHERE biz_tag = #{tag}")
 		    	result = suidRich.selectOne(leafAlloc);
-		    	System.out.println(result);
+		    	Logger.info(result.toString());
 
 				transaction.commit();
 			} catch (Exception e) {

@@ -8,6 +8,7 @@ package org.teasoft.exam.bee.distribution;
 
 import org.teasoft.bee.distribution.GenId;
 import org.teasoft.honey.distribution.SerialUniqueId;
+import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar
@@ -27,14 +28,14 @@ public class SerialUniqueIdTest {
 		try {
 			Thread.sleep(5000);
 		} catch (Exception e) {
-			// TODO: handle exception
-			System.out.println(e.getMessage());
+			e.printStackTrace();
+			Logger.info(e.getMessage());
 		}
-		System.out.println("-------------------------");
-		System.out.println(GenSerialUniqueIdThread.idSet.size());
+		Logger.info("-------------------------");
+		Logger.info(GenSerialUniqueIdThread.idSet.size());
 		
-		System.out.println(GenSerialUniqueIdThread.idDupList.size());
-		System.out.println(GenSerialUniqueIdThread.idDupList);
+		Logger.info(GenSerialUniqueIdThread.idDupList.size());
+		Logger.info(GenSerialUniqueIdThread.idDupList.toString());
 	}
 
 }

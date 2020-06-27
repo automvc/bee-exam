@@ -6,13 +6,13 @@
 
 package org.teasoft.exam.bee.distribution;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 import org.teasoft.bee.distribution.GenId;
+import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar
@@ -39,11 +39,11 @@ public class GenIdThread extends Thread{
 				long id=genId.get();
 				idSet.add(id);
 				setNum(id);
-				System.out.println(Thread.currentThread().getName()+"  : "+id);
+				Logger.info(Thread.currentThread().getName()+"  : "+id);
 			}else{
 				long a[]=genId.getRangeId(10);
 				setNum(a);
-				System.out.println(Thread.currentThread().getName()+"  : "+a[0]+" , "+a[1]);
+				Logger.info(Thread.currentThread().getName()+"  : "+a[0]+" , "+a[1]);
 			}
 		}
 	}
@@ -57,7 +57,7 @@ public class GenIdThread extends Thread{
 	public void setNum(long n){
 		int index=(int)(n-1);
 		if(num[index]==1) {
-			System.out.println(n+"  ---------------------------已经存在了.");
+			Logger.info(n+"  ---------------------------已经存在了.");
 			idDupList.add(n);
 		}else{
 			num[index]=1;

@@ -12,6 +12,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 import org.teasoft.bee.distribution.GenId;
+import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar
@@ -37,11 +38,11 @@ public class GenSerialUniqueIdThread extends Thread{
 //			if(i==0){
 				long id=genId.get();
 				setNum(id);
-				System.out.println(Thread.currentThread().getName()+"run:"+i+"  : "+id);
+				Logger.info(Thread.currentThread().getName()+"run:"+i+"  : "+id);
 			}else{
 				long a[]=genId.getRangeId(10);
 				setNum(a);
-				System.out.println(Thread.currentThread().getName()+"run:"+i+"  : "+a[0]+" , "+a[1]);
+				Logger.info(Thread.currentThread().getName()+"run:"+i+"  : "+a[0]+" , "+a[1]);
 			}
 		}
 	}
@@ -56,7 +57,7 @@ public class GenSerialUniqueIdThread extends Thread{
 		
 		boolean isOk=idSet.add(n);
 		if(!isOk) {
-			System.out.println(n+"  ---------------------------已经存在了.");
+			Logger.info(n+"  ---------------------------已经存在了.");
 			idDupList.add(n);
 		}
 	}

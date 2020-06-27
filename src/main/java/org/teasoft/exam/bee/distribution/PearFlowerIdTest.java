@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.teasoft.honey.distribution.GenIdFactory;
+import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar
@@ -26,22 +27,22 @@ public class PearFlowerIdTest {
 			if(i%10==0){
 				long ids[] =GenIdFactory.getRangeId("userTable",100);
 				for (long j = ids[0]; j <= ids[1]; j++) {
-//					System.out.println(j);
+//					Logger.info(j);
 					if(!set.add(j)) list.add(j);
 				}
 			}else{
 			long id =GenIdFactory.get("userTable");
-			System.out.println(id);
+			Logger.info(id);
 			if(!set.add(id)) list.add(id);
 			}
 		}
-		System.out.println("共生成的ID总数: "+set.size());
-		System.out.println("重复集合: "+list);
+		Logger.info("共生成的ID总数: "+set.size());
+		Logger.info("重复集合: "+list);
 		
 		try {
 			Thread.sleep(5000);
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			Logger.info(e.getMessage());
 		}
 
 	}

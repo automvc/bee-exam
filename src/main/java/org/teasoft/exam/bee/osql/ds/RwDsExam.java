@@ -80,7 +80,7 @@ public class RwDsExam {
 		int num=suidRich.update(leafAlloc, "maxId", condition);
 		Logger.info("---------------------------------update num is :"+num);
 
-		//	@Select("SELECT biz_tag, max_id, step FROM leaf_alloc WHERE biz_tag = #{tag}")
+		//"SELECT biz_tag, max_id, step FROM leaf_alloc WHERE biz_tag = #{tag}"
 		LeafAlloc result = suidRich.selectOne(leafAlloc);
 		Logger.info(result.toString());
 		
@@ -95,14 +95,14 @@ public class RwDsExam {
 			try {
 				transaction.begin();
 				
-//			    @Update("UPDATE leaf_alloc SET max_id = max_id + step WHERE biz_tag = #{tag}")
+//			    "UPDATE leaf_alloc SET max_id = max_id + step WHERE biz_tag = #{tag}"
 				LeafAlloc leafAlloc=new LeafAlloc();
 				leafAlloc.setBizTag("leaf-segment-test");
 		    	Condition condition=new ConditionImpl();
 		    	condition.setAdd("maxId", 200);  //TODO
 		    	suidRich.update(leafAlloc, "maxId", condition);
 		    	
-//		    	@Select("SELECT biz_tag, max_id, step FROM leaf_alloc WHERE biz_tag = #{tag}")
+//		    	"SELECT biz_tag, max_id, step FROM leaf_alloc WHERE biz_tag = #{tag}"
 		    	result = suidRich.selectOne(leafAlloc);
 		    	Logger.info(result.toString());
 

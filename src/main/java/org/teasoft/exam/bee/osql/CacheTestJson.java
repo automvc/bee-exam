@@ -93,7 +93,7 @@ public class CacheTestJson {
 			try {
 				Thread.sleep(12000);
 			} catch (Exception e) {
-				// TODO: handle exception
+				e.printStackTrace();
 			}
 			
 			suid.select(orders3);  //delete 0,3

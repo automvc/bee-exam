@@ -115,9 +115,9 @@ public class SuidRichExam {
 		
 		int updateNum8=suidRich.update(orders00,IncludeType.INCLUDE_EMPTY);
 		Logger.info("updateNum8:  "+updateNum8);
-		int updateNum9=suidRich.update(orders00,IncludeType.INCLUDE_NULL); //TODO
+		int updateNum9=suidRich.update(orders00,IncludeType.INCLUDE_NULL); 
 		Logger.info("updateNum9:  "+updateNum9);
-		int updateNum10=suidRich.update(orders00,IncludeType.INCLUDE_BOTH); //TODO
+		int updateNum10=suidRich.update(orders00,IncludeType.INCLUDE_BOTH); 
 		Logger.info("updateNum10:  "+updateNum10);
 		
 		

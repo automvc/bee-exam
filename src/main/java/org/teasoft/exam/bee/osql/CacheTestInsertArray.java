@@ -102,7 +102,7 @@ public class CacheTestInsertArray {
 			try {
 				Thread.sleep(12000);
 			} catch (Exception e) {
-				// TODO: handle exception
+				e.printStackTrace();
 			}
 			
 			suid.select(orders3);  //delete 0,3
@@ -115,7 +115,7 @@ public class CacheTestInsertArray {
 			try {
 				Thread.sleep(12000);
 			} catch (Exception e) {
-				// TODO: handle exception
+				e.printStackTrace();
 			}
 			
 			suid.select(orders3);
@@ -125,7 +125,7 @@ public class CacheTestInsertArray {
 			try {
 				Thread.sleep(12000);
 			} catch (Exception e) {
-				// TODO: handle exception
+				e.printStackTrace();
 			}
 			
 //			suid.select(orders8);  //delete one

@@ -55,11 +55,11 @@ public class UpdateSetExam {
 		
 		entity.setUpdateTime(null);//设置为null可以不处理
 		entity.setDescription(null);
-//		entity.setStep(null);
+		entity.setStep(null);
 		
 		Condition condition=new ConditionImpl();
 		condition.setAdd("maxId", "step");
-		condition.setAdd("version", 1);
+		condition.setAdd("version", 1);  //当version为null时,不能加1(mysql)
 		
 		int setMultiplyNum=suidRich.update(entity, "version,maxId",condition);  //ok
 //		int setMultiplyNum=suidRich.update(entity, "version,maxId,description",condition);  //test bug.  [values]: 顺序出错

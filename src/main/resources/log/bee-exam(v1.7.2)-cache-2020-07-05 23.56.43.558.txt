@@ -1,0 +1,196 @@
+[INFO] [Bee] PreparedSqlLib modify SQL: 
+TRUNCATE orders
+[INFO] deleteOrdersNum: 0
+[INFO] [Bee] PreparedSqlLib modify SQL: 
+TRUNCATE user
+[INFO] deleteUserNum: 0
+[INFO] [Bee] PreparedSqlLib modify SQL: 
+INSERT INTO `orders` VALUES ('100001', 'bee', 'Bee(ORM Framework)', '95.01', '2020-03-02 11:29:28', 'test', '12345601', 'test1', '2020-03-02 16:34:19');
+[INFO] [Bee] PreparedSqlLib modify SQL: 
+INSERT INTO `orders` VALUES ('100002', 'bee', 'Bee(ORM Framework)', '96.01', '2020-03-02 11:29:28', 'test', '12345602', 'test2', '2020-03-02 16:34:19');
+[INFO] [Bee] PreparedSqlLib modify SQL: 
+INSERT INTO `orders` VALUES ('100003', 'bee', 'Bee(ORM Framework)', '97.01', '2020-03-02 11:29:28', 'test', '12345603', 'test3', '2020-03-02 16:34:19');
+[INFO] [Bee] PreparedSqlLib modify SQL: 
+INSERT INTO `user` VALUES ('800001', 'beeUser@163.com', null, 'Bee', 'bee', 'bee', null);
+[INFO] [Bee] PreparedSqlLib modify SQL: 
+INSERT INTO `user` VALUES ('800002', 'honey@163.com', null, 'Honey', 'honey', 'honey', '2020-03-02 16:41:33');
+[INFO] [bee-exam] ====================CacheTest.test======start:
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee0
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001,Bee--ORM Framework
+[INFO] [Bee] update SQL: 
+update orders set  name=? , remark=? where id=?   [values]: Bee--ORM Framework,other,100001
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and name=? and remark=?   [values]: 100001,Bee--ORM Framework,other
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=?   [values]: bee2,Bee--ORM Framework
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee4
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee5
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee6
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee6
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee7
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee9
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee10
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee11
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee11
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8
+[INFO] [bee-exam] ====================CacheTest.test======end.
+
+[INFO] [bee-exam] ====================CacheTestDel.test======start:
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee0
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001,Bee--ORM Framework
+[INFO] [Bee] delete SQL: 
+delete from orders where id=? and name=?   [values]: 100001,Bee--ORM Framework
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=?   [values]: bee2,Bee--ORM Framework
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee4
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee5
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee6
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee7
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee9
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee10
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee11
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee11
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8
+[INFO] [bee-exam] ====================CacheTestDel.test======end.
+
+[INFO] [bee-exam] ====================CacheTestInsertArray.test======start:
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee0
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001,Bee--ORM Framework
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee0
+[INFO] [Bee] update SQL: 
+update orders set  name=? , remark=? where id=?   [values]: Bee--ORM Framework,other,100001
+[INFO] [Bee] insert[] SQL :
+insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?)[index0]   [values]: null,bee4,null,12.3,null,null,null,null,null
+[INFO] [Bee] insert[] SQL :
+insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?)[index1]   [values]: null,bee5,null,12.3,null,null,null,null,null
+[INFO] [Bee] insert[] SQL :
+insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?)[index2]   [values]: null,bee6,null,12.3,null,null,null,null,null
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and name=? and remark=?   [values]: 100001,Bee--ORM Framework,other
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=?   [values]: bee2,Bee--ORM Framework
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and total=?   [values]: bee4,12.3
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and total=?   [values]: bee5,12.3
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and total=?   [values]: bee6,12.3
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee7
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee9
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee10
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee11
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee11
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8
+[INFO] [bee-exam] ====================CacheTestInsertArray.test======end.
+
+[INFO] [bee-exam] ====================CacheTestJson.test======start:
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee0
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001,Bee--ORM Framework
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=?   [values]: bee2,Bee--ORM Framework
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee4
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee5
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee6
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee] selectJson SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee6
+[INFO] [Bee] select SQL: 
+select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[INFO] [bee-exam] ====================CacheTestJson.test======end.
+

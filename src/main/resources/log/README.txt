@@ -23,3 +23,6 @@ test for global unique id number in distributed environment.
 
 add test case: UpdateSetExam:setAdd,setMuliple
 bee-exam(v1.7.2)-normal-2020-06-13 13.14.34.106-to-v1.8-bench.txt
+
+Support show type of data in sql and show ExecutableSql
+bee-exam(v1.7.2)-normal-2020-07-05 23.56.30.843.txt

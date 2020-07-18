@@ -28,13 +28,13 @@ public class GenBeanExam {
 			config.setGenSerializable(true);
 			
 //			更改成本地的具体路径  change to your real path
-			config.setBaseDir("D:\\xxx\\yyy\\bee-exam\\src\\main\\java\\");
-//			config.setBaseDir("D:\\JavaWeb\\workspaceGit\\bee-exam\\src\\main\\java\\");
+//			config.setBaseDir("D:\\xxx\\yyy\\bee-exam\\src\\main\\java\\");
+			config.setBaseDir("D:\\JavaWeb\\workspaceGit\\bee-exam\\src\\main\\java\\");
 			config.setPackagePath("org.teasoft.exam.bee.osql.entity");
 
 			GenBean genBean = new GenBean(config);
 
-			genBean.genSomeBeanFile("Orders");
+			genBean.genSomeBeanFile("leaf_alloc");
 //			genBean.genSomeBeanFile("Orders,user");
 			
 		  } catch (BeeException e) {

@@ -36,7 +36,7 @@ public class TestNormal {
 		
 	    try {
 	    	
-	    ClearAndInitTestTable.main(null);
+	    ClearAndInitTestTable.main(null);   //TODO Notice! Just For test.
 			
 		//How to generate the Javabean,please see GenBeanExam.
 		//生成Javabean,请查看GenBeanExam.

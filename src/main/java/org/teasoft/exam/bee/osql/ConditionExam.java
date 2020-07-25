@@ -41,7 +41,7 @@ public class ConditionExam {
 		 condition
 		 .op("userid", Op.like, "bee%") //模糊查询
 		 .between("total", 90, 100)     //范围查询
-		 .between("createtime","2020-03-01","2020-03-03")
+//		 .between("createtime","2020-03-01","2020-03-03")
 		 .orderBy("userid",OrderType.ASC) //排序
 		 .start(0).size(10)              //分页
 		 ;
@@ -51,10 +51,23 @@ public class ConditionExam {
 //		 .orderBy("name")
 //		 .groupBy("userid") 
 //		 ;
-
+		 
+//		long start=System.currentTimeMillis();
+//		for (int k = 0; k < 10000; k++) {
 		List<Orders> list2 = suid.select(orders, condition);
 		for (int i = 0; i < list2.size(); i++) {
 			Logger.info(list2.get(i).toString());
+		}
+//		}
+//		long end=System.currentTimeMillis();
+//		System.out.println("--------------------------------");
+//		System.out.println(end-start);
+		
+		condition.selectField("userid,total,createtime");//只查询部分字段
+//		
+		List<Orders> list3 = suid.select(orders, condition);
+		for (int i = 0; i < list3.size(); i++) {
+			Logger.info(list3.get(i).toString());
 		}
 		
 		//insert 2 records

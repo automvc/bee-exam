@@ -8,8 +8,10 @@ package org.teasoft.exam.bee.osql;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 import org.teasoft.bee.osql.BeeException;
+import org.teasoft.bee.osql.PreparedSql;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
@@ -74,6 +76,15 @@ public class BugTest {
 			
 //			suid.insert(orders0);
 			suid.select(orders); //select
+			
+			
+			Object obj[]=null;
+//			Object obj[]=new Object[] {};
+			Map map=null;
+			
+			PreparedSql pre=BeeFactory.getHoneyFactory().getPreparedSql();
+			pre.select("select * from orders", obj);
+			pre.select("select * from orders", map);
 			
 //			-------------------v.1.7.2--------end----------  
 			

@@ -52,8 +52,8 @@ public class MoreTableExam {
 			condition
 			//.op("myuser.id", Op.gt,6)//模糊查询   取别名
 			//.op("user.id", Op.gt,6) //模糊查询  
-			.op("orders.id", Op.ge, 100001) //模糊查询  
-			.start(2).size(5) //分页
+			.op("orders.id", Op.ge, 1001) //模糊查询  
+			.start(0).size(5) //分页
 			;
 
 			//默认不处理null和空字符串.不用再写一堆的判断;其它有值的字段全部自动作为过滤条件
@@ -62,6 +62,13 @@ public class MoreTableExam {
 			Logger.info("size of records:"+list2.size() + "");
 			for (int i = 0; i < list2.size(); i++) {
 				Logger.info(list2.get(i).toString());
+			}
+			
+			condition.selectField("orders.id,user.id,userid,total,orders.createtime");  //只查询部分字段. 没有指定查询的值都为null
+			List<Orders> list3 = moreTable.select(orders1, condition); //select
+			Logger.info("size of records:"+list3.size() + "");
+			for (int i = 0; i < list3.size(); i++) {
+				Logger.info(list3.get(i).toString());
 			}
 
 		} catch (BeeException e) {

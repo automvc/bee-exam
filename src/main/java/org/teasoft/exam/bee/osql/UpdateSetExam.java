@@ -61,10 +61,27 @@ public class UpdateSetExam {
 		condition.setAdd("maxId", "step");
 		condition.setAdd("version", 1);  //当version为null时,不能加1(mysql)
 		
-		int setMultiplyNum=suidRich.update(entity, "version,maxId",condition);  //ok
+//		int setMultiplyNum=suidRich.update(entity, "version,maxId",condition);  //ok
+		int setMultiplyNum=suidRich.update(entity,condition);  //ok
 //		int setMultiplyNum=suidRich.update(entity, "version,maxId,description",condition);  //test bug.  [values]: 顺序出错
 //		int setMultiplyNum=suidRich.updateBy(entity, "id,maxId,version,bizTag",condition);  //没指定到where的条件,又会放到set中,不合要求.  需要注意.
 		Logger.info("test setMultiply , update num: "+setMultiplyNum);
+		
+		
+		entity=new LeafAlloc();
+		entity.setBizTag("test");
+		entity=suidRich.selectOne(entity);
+		
+		entity.setUpdateTime(null);//设置为null可以不处理
+		entity.setDescription(null);
+		entity.setStep(null);
+		Condition condition2=new ConditionImpl();
+//		condition2.setAdd("maxId", "step"); //不能对一个字段同时设两个,后面的不会覆盖前面的.
+		condition2.set("maxId", 10003);
+		condition2.setAdd("version", 1);  //当version为null时,不能加1(mysql)
+		
+		int setMultiplyNum2=suidRich.update(entity,condition2);  //ok
+		Logger.info("test setMultiply , update num: "+setMultiplyNum2);
 		
 
 		

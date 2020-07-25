@@ -26,3 +26,6 @@ bee-exam(v1.7.2)-normal-2020-06-13 13.14.34.106-to-v1.8-bench.txt
 
 Support show type of data in sql and show ExecutableSql
 bee-exam(v1.7.2)-normal-2020-07-05 23.56.30.843.txt
+
+Condition selectField,set method;insert null value process
+bee-exam(v1.7.3)-normal-2020-07-25 23.05.05.465.txt

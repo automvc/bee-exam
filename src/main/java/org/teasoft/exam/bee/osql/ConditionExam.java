@@ -121,6 +121,19 @@ public class ConditionExam {
 		Logger.info("updateNumCondition: "+updateNumCondition);
 		
 		
+			Orders orders11 = new Orders();
+
+			orders11.setUserid("bee");
+
+			Condition condition_add_forUpdate = new ConditionImpl();
+			condition_add_forUpdate
+			.op("id", Op.eq,100003)
+			.forUpdate();     // 用for update锁住某行记录    一般用于事务中
+			List<Orders> list11 = suid.select(orders11, condition_add_forUpdate);
+			for (int i = 0; i < list11.size(); i++) {
+				Logger.info(list11.get(i).toString());
+			}
+		
 		} catch (BeeException e) {
 			Logger.error("In ConditionExam (BeeException):"+e.getMessage());
 			e.printStackTrace();

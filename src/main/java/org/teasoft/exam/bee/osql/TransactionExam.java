@@ -4,11 +4,14 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
+import org.teasoft.bee.osql.Condition;
+import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.transaction.Transaction;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.exam.bee.osql.entity.User;
 import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.core.SessionFactory;
 
@@ -50,6 +53,28 @@ public class TransactionExam {
 			for (int i = 0; i < list.size(); i++) {
 				Logger.info(list.get(i).toString());
 			}
+			
+			
+			
+			transaction.begin();
+			Orders orders11 = new Orders();
+
+			orders11.setUserid("bee");
+
+			Condition condition_add_forUpdate = new ConditionImpl();
+			condition_add_forUpdate
+			.op("id", Op.eq,100003)
+			.forUpdate();     // 用for update锁住某行记录
+			List<Orders> list11 = suid.select(orders11, condition_add_forUpdate);
+			for (int i = 0; i < list11.size(); i++) {
+				Logger.info(list11.get(i).toString());
+			}
+			
+			
+			System.out.println("---------------locking the record!");
+			System.out.println("doing...");  //可添加更改操作等.
+			transaction.commit();
+			System.out.println("---------------release the record!");
 
 		} catch (BeeException e) {
 			Logger.error("In TransactionExam (BeeException):"+e.getMessage());

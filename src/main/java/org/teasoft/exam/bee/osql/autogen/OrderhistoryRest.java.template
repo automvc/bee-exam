@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.automvc.enet.order.entity.#{entityName1};
+import com.automvc.enet.order.entity.#{entityName?up1};
 import com.automvc.common.jquery.Result;
 
 /**
@@ -27,7 +27,7 @@ import com.automvc.common.jquery.Result;
  */
 @RestController
 @RequestMapping("/#{entityName}")
-public class #{entityName1}Rest {
+public class #{entityName?up1}Rest {
 	@Autowired
 	ObjSQLService objSQLService;
 	
@@ -35,13 +35,13 @@ public class #{entityName1}Rest {
 	ObjSQLRichService objSQLRichService;
 	
 	@RequestMapping("/list")
-	public Result list(#{entityName1} #{entityName},
+	public Result list(#{entityName?up1} #{entityName},
 	     @RequestParam(value = "page", defaultValue = "1", required = false) int page, 
 		 @RequestParam(value = "rows", defaultValue = "20", required = false) int rows) {	
 	  Result  result =new Result();
 	  try{
 		  String count=objSQLRichService.selectWithFun(#{entityName},FunctionType.COUNT,"*");
-		  List<#{entityName1}> list=objSQLRichService.select(#{entityName}, (page-1)*rows, rows);
+		  List<#{entityName?up1}> list=objSQLRichService.select(#{entityName}, (page-1)*rows, rows);
 		  result.setRows(list);
 		  int total=count==null?0:Integer.parseInt(count);
 		  result.setTotal(total);
@@ -54,7 +54,7 @@ public class #{entityName1}Rest {
 	}
 	
 	@RequestMapping("/add")
-	public Result insert(#{entityName1} #{entityName}){
+	public Result insert(#{entityName?up1} #{entityName}){
 		
 	  Result  result =new Result();
 	  try{
@@ -68,7 +68,7 @@ public class #{entityName1}Rest {
 	}
 	
 	@RequestMapping("/edit")
-	public Result update(#{entityName1} #{entityName}){
+	public Result update(#{entityName?up1} #{entityName}){
 		Result  result =new Result();
 		try{
 			int num=objSQLService.update(#{entityName});
@@ -84,7 +84,7 @@ public class #{entityName1}Rest {
 	public Result delete(String ids) {
 		Result result = new Result();
 		try {
-			int num=objSQLRichService.deleteById(#{entityName1}.class, ids);
+			int num=objSQLRichService.deleteById(#{entityName?up1}.class, ids);
 			result.setTotal(num);
 			if (num <= 0) result.setErrorMsg("delete failed!");
 		} catch (BeeSQLException e) {

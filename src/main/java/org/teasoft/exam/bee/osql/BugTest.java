@@ -6,16 +6,16 @@
 
 package org.teasoft.exam.bee.osql;
 
-import java.math.BigDecimal;
 import java.util.List;
-import java.util.Map;
 
 import org.teasoft.bee.osql.BeeException;
-import org.teasoft.bee.osql.PreparedSql;
+import org.teasoft.bee.osql.Condition;
+import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.Logger;
 
 /**
@@ -36,7 +36,7 @@ public class BugTest {
 			SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
 
 //			-------------------v.1.7.2--------start----------  
-			Orders orders = new Orders();
+			/*Orders orders = new Orders();
 			List<Orders> list1 = suid.select(orders); //select
 			suid.select(orders); //select
 			
@@ -84,7 +84,23 @@ public class BugTest {
 			
 			PreparedSql pre=BeeFactory.getHoneyFactory().getPreparedSql();
 			pre.select("select * from orders", obj);
-			pre.select("select * from orders", map);
+			pre.select("select * from orders", map);*/
+			
+			
+			//not bug
+			Orders orders_like = new Orders();
+			Condition condition_like=new ConditionImpl();
+//			condition_like.op("remark", Op.like, "test%"); //not bug
+//			condition_like.op("remark", Op.eq, "testx%");
+			condition_like.op("remark", Op.like, "test\\%%");  //%转义    [values]: test\%%
+//			condition_like.op("remark", Op.like, "test%%"); //不能转义
+			
+			condition_like.set("test", "test warn"); //Use set method(s) in SELECT type, but it just effect in UPDATE type! Involved field(s):
+			
+			List<Orders> list_like = suid.select(orders_like,condition_like); //select
+			for (int i = 0; list_like!=null && i < list_like.size(); i++) {
+				System.out.println(list_like.get(i));
+			}
 			
 //			-------------------v.1.7.2--------end----------  
 			

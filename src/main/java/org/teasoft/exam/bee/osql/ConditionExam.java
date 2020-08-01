@@ -41,6 +41,7 @@ public class ConditionExam {
 		 condition
 		 .op("userid", Op.like, "bee%") //模糊查询
 		 .between("total", 90, 100)     //范围查询
+		 .op("name", Op.nq, null)     //is not null
 //		 .between("createtime","2020-03-01","2020-03-03")
 		 .orderBy("userid",OrderType.ASC) //排序
 		 .start(0).size(10)              //分页

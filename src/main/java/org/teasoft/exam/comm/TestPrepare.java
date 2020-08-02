@@ -21,7 +21,8 @@ import org.teasoft.honey.logging.LoggerFactory;
 public class TestPrepare {
 	
 //	static String version="v1.7.2";
-	static String version="v1.7.3";
+//	static String version="v1.7.3";
+	static String version="v1.8";
 	
 	public static void init(){
 		init("");

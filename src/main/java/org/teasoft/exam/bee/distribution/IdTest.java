@@ -12,7 +12,7 @@ import org.teasoft.honey.distribution.SerialUniqueId;
 
 /**
  * @author Kingstar
- * @since  1.7.3
+ * @since  1.8
  */
 public class IdTest {
 	public static void main(String[] args) {

@@ -25,7 +25,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 
 /**
  * @author Kingstar
- * @since  1.7.3
+ * @since  1.8
  */
 public class RwDsExam {
 	
@@ -101,7 +101,7 @@ public class RwDsExam {
 		    	Condition condition=new ConditionImpl();
 		    	condition.setAdd("maxId", "step");
 //		    	suidRich.update(leafAlloc, "maxId", condition);
-		    	suidRich.update(leafAlloc, condition); //v1.7.3
+		    	suidRich.update(leafAlloc, condition); //v1.8
 		    	
 //		    	"SELECT biz_tag, max_id, step FROM leaf_alloc WHERE biz_tag = #{tag}"
 		    	result = suidRich.selectOne(leafAlloc);

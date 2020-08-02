@@ -16,7 +16,7 @@ import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar
- * @since  1.7.3
+ * @since  1.8
  */
 public class GenSerialUniqueIdThread extends Thread{
 	

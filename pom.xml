@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.teasoft</groupId>
 	<artifactId>bee-exam</artifactId>
-	<version>1.7.3-SNAPSHOT</version>
+	<version>1.8-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 
@@ -18,15 +18,15 @@
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-			<!-- <version>1.7.2</version> -->
-			<version>1.7.3-SNAPSHOT</version>
+<!-- 			<version>1.7.2</version> -->
+			<version>1.8-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-			<!-- <version>1.7.2</version> -->
-			<version>1.7.3-SNAPSHOT</version>
+<!-- 			<version>1.7.2</version> -->
+			<version>1.8-SNAPSHOT</version>
 
 		</dependency>
 

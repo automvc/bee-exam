@@ -55,7 +55,6 @@ public class TransactionExam {
 			}
 			
 			
-			
 			transaction.begin();
 			Orders orders11 = new Orders();
 
@@ -71,10 +70,10 @@ public class TransactionExam {
 			}
 			
 			
-			System.out.println("---------------locking the record!");
-			System.out.println("doing...");  //可添加更改操作等.
+			Logger.info("---------------locking the record!");
+			Logger.info("doing...");  //可添加更改操作等.
 			transaction.commit();
-			System.out.println("---------------release the record!");
+			Logger.info("---------------release the record!");
 
 		} catch (BeeException e) {
 			Logger.error("In TransactionExam (BeeException):"+e.getMessage());

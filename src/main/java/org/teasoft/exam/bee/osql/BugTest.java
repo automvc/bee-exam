@@ -6,11 +6,14 @@
 
 package org.teasoft.exam.bee.osql;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
+import org.teasoft.bee.osql.PreparedSql;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
@@ -36,7 +39,7 @@ public class BugTest {
 			SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
 
 //			-------------------v.1.7.2--------start----------  
-			/*Orders orders = new Orders();
+			Orders orders = new Orders();
 			List<Orders> list1 = suid.select(orders); //select
 			suid.select(orders); //select
 			
@@ -84,7 +87,7 @@ public class BugTest {
 			
 			PreparedSql pre=BeeFactory.getHoneyFactory().getPreparedSql();
 			pre.select("select * from orders", obj);
-			pre.select("select * from orders", map);*/
+			pre.select("select * from orders", map);
 			
 			
 			//not bug

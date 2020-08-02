@@ -1,21 +1,19 @@
-package org.teasoft.exam.bee.osql.moretable.entity;
+package org.teasoft.exam.bee.osql.entity.auto;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
-import org.teasoft.bee.osql.annotation.JoinTable;
-import org.teasoft.bee.osql.annotation.JoinType;
 import org.teasoft.bee.osql.annotation.Table;
 
 /**
 *@author Honey
-*Create on 2020-03-03 11:33:21
+*Create on 2020-03-02 16:36:20
 */
-//@Table("orders1")
+@Table("Orders_${month}")
 public class Orders implements Serializable {
 
-	private static final long serialVersionUID = 1592526978329L;
+	private static final long serialVersionUID = 1592204269178L;
 
 	private Long id;
 	private String userid;
@@ -26,20 +24,6 @@ public class Orders implements Serializable {
 	private String sequence;
 	private String abc;
 	private Timestamp updatetime;
-	
-//	@JoinTable(mainField="userid", subField="username")
-	@JoinTable(mainField="userid", subField="username", joinType=JoinType.LEFT_JOIN)
-//	@JoinTable(mainField="userid", subField="username",subAlias="myuser" , joinType=JoinType.FULL_JOIN)
-//	@JoinTable()
-	private User user;
-	
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
 
 	public Long getId() {
 		return id;
@@ -125,12 +109,6 @@ public class Orders implements Serializable {
 		 str.append(",sequence=").append(sequence);		 
 		 str.append(",abc=").append(abc);		 
 		 str.append(",updatetime=").append(updatetime);		 
-		 
-		 if(user==null)
-			 str.append(",user").append("=null");	
-		 else 
-		   str.append(",").append(user.toString());
-		 
 		 str.append("]");			 
 		 return str.toString();			 
 	 }		 

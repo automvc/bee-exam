@@ -9,7 +9,6 @@ package org.teasoft.exam.bee.osql;
 import java.math.BigDecimal;
 
 import org.teasoft.bee.osql.BeeException;
-import org.teasoft.bee.osql.IncludeType;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.honey.osql.core.BeeFactory;

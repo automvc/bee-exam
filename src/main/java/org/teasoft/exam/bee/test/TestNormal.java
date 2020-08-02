@@ -9,6 +9,8 @@ package org.teasoft.exam.bee.test;
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.exam.bee.osql.BugTest;
 import org.teasoft.exam.bee.osql.ConditionExam;
+import org.teasoft.exam.bee.osql.DynamicTableExam;
+import org.teasoft.exam.bee.osql.InsertTest;
 import org.teasoft.exam.bee.osql.MoreTableExam;
 import org.teasoft.exam.bee.osql.PreparedSqlExam;
 import org.teasoft.exam.bee.osql.SuidExam;
@@ -68,6 +70,10 @@ public class TestNormal {
 		runTest(BugTest.class);
 		
 		runTest(UpdateSetExam.class);
+		
+		runTest(InsertTest.class);
+		runTest(DynamicTableExam.class);
+		
 		
 	   } catch (BeeException e) {
 		   Logger.error(e.getMessage());

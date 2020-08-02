@@ -1,4 +1,4 @@
-package org.teasoft.exam.bee.osql.entity.auto;
+package org.teasoft.exam.bee.osql.entity.dynamic;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

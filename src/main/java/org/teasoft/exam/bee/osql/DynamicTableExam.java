@@ -9,8 +9,8 @@ package org.teasoft.exam.bee.osql;
 import java.util.List;
 
 import org.teasoft.bee.osql.Suid;
-import org.teasoft.exam.bee.osql.entity.auto.LeafAlloc;
-import org.teasoft.exam.bee.osql.entity.auto.Orders;
+import org.teasoft.exam.bee.osql.entity.dynamic.LeafAlloc;
+import org.teasoft.exam.bee.osql.entity.dynamic.Orders;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.Logger;
 

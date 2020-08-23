@@ -44,6 +44,7 @@ public class InsertTest {
 		orders1.setRemark("testOneTime");
 		orders1.setTotal(new BigDecimal("93.99"));
 		orders1.setSequence("");  //empty String test
+//		orders1.setId(1008L);  //the id already exist in db. test exception
 		
 		int insertNum1=suidRich.insert(orders);
 //		int insertNum1=suidRich.insert(orders1);

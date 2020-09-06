@@ -22,6 +22,7 @@ import org.teasoft.exam.bee.osql.UpdateSetExam;
 import org.teasoft.exam.bee.osql.UseJson;
 import org.teasoft.exam.comm.TestHelper;
 import org.teasoft.exam.comm.TestPrepare;
+import org.teasoft.honey.logging.LoggerFactory;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.util.DateUtil;
 
@@ -84,7 +85,9 @@ public class TestNormal {
 	   }
 		
 	   System.out.println(DateUtil.currentDate()+"  test normal Finished!");
-		
+	   
+	   //test
+//	   LoggerFactory._checkSize();
 	}
 	
 	public static void runTest(Class c) {

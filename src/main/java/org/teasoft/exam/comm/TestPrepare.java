@@ -11,7 +11,6 @@ import java.text.SimpleDateFormat;
 
 import org.teasoft.bee.logging.Log;
 import org.teasoft.bee.logging.Path;
-import org.teasoft.honey.logging.FileLogger;
 import org.teasoft.honey.logging.LoggerFactory;
 
 /**
@@ -43,8 +42,8 @@ public class TestPrepare {
 		//set the path and file name of log file
 		Path.setFullPath(path);
 	
-		Log log=new FileLogger();
-		LoggerFactory.getLoggerFactory().setLog(log);
+//		Log log=new FileLogger();
+//		LoggerFactory.getLoggerFactory().setLog(log);
 	}
 
 }

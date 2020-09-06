@@ -35,8 +35,8 @@ public class InsertTest {
 		orders.setRemark("testOneTime");
 		orders.setTotal(new BigDecimal("93.99"));
 		
-		int insertNum=suidRich.insert(orders);
-		Logger.info(insertNum);
+//		int insertNum=suidRich.insert(orders);
+//		Logger.info(insertNum);
 		
 		Orders orders1=new Orders();
 		orders1.setName("client");
@@ -64,10 +64,12 @@ public class InsertTest {
 		ordersArray[1]=orders1;
 		ordersArray[2]=orders2;
 		
-		int insertArray[]=suidRich.insert(ordersArray);//batch insert
-		for (int i = 0; i < insertArray.length; i++) {
-			Logger.info(insertArray[i]+" ,");
-		}
+//		int insertArray[]=suidRich.insert(ordersArray);//batch insert
+//		for (int i = 0; i < insertArray.length; i++) {
+//			Logger.info(insertArray[i]+" ,");
+//		}
+		int insertArray=suidRich.insert(ordersArray);//batch insert
+		Logger.info(insertArray);
 		
 	  } catch (BeeException e) {
 		  Logger.error("In SuidRichExam (Exception):"+e.getMessage());

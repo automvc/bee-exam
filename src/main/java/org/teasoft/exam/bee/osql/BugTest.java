@@ -71,11 +71,13 @@ public class BugTest {
 			ordersArray[1]=orders1;
 			ordersArray[2]=orders2;
 			
-			int insertArray[]=suidRich.insert(ordersArray,2);//不会清缓存.应该要清除  
-//			int insertArray[]=suidRich.insert(ordersArray,2,"id,datetime");//batch insert
-			for (int i = 0; i < insertArray.length; i++) {
-				Logger.info(insertArray[i]+" ,");
-			}
+//			int insertArray[]=suidRich.insert(ordersArray,2);//不会清缓存.应该要清除  
+////			int insertArray[]=suidRich.insert(ordersArray,2,"id,datetime");//batch insert
+//			for (int i = 0; i < insertArray.length; i++) {
+//				Logger.info(insertArray[i]+" ,");
+//			}
+			int insertArray=suidRich.insert(ordersArray,2);//不会清缓存.应该要清除  
+			Logger.info(insertArray);
 			
 //			suid.insert(orders0);
 			suid.select(orders); //select

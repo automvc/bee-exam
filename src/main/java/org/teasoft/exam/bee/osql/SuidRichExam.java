@@ -150,18 +150,23 @@ public class SuidRichExam {
 		ordersArray[1]=orders1;
 		ordersArray[2]=orders2;
 		
-//		int insertArray[]=suidRich.insert(ordersArray,2);
-		int insertArray[]=suidRich.insert(ordersArray,2,"id,datetime");//batch insert
-		for (int i = 0; i < insertArray.length; i++) {
-			Logger.info(insertArray[i]+" ,");
-		}
+////		int insertArray[]=suidRich.insert(ordersArray,2);
+//		int insertArray[]=suidRich.insert(ordersArray,2,"id,datetime");//batch insert
+//		for (int i = 0; i < insertArray.length; i++) {
+//			Logger.info(insertArray[i]+" ,");
+//		}
 		
-		int insertArray2[]=suidRich.insert(ordersArray,"id,datetime");//batch insert
-		for (int i = 0; i < insertArray2.length; i++) {
-			Logger.info(insertArray2[i]+" ,");
-		}
+		int insertArray=suidRich.insert(ordersArray,2,"id,datetime");//batch insert
+		Logger.info(insertArray);
 		
 		
+//		int insertArray2[]=suidRich.insert(ordersArray,"id,datetime");//batch insert
+//		for (int i = 0; i < insertArray2.length; i++) {
+//			Logger.info(insertArray2[i]+" ,");
+//		}
+		int insertArray2=suidRich.insert(ordersArray,"id,datetime");//batch insert
+		Logger.info(insertArray2);
+				
 		Orders exampleField=new Orders();
 		exampleField.setUserid("bee");
 //        select some fields

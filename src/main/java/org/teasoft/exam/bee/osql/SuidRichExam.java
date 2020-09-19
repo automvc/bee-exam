@@ -157,6 +157,7 @@ public class SuidRichExam {
 //		}
 		
 		int insertArray=suidRich.insert(ordersArray,2,"id,datetime");//batch insert
+//		int insertArray=suidRich.insert(ordersArray,2,"datetime");//batch insert
 		Logger.info(insertArray);
 		
 		
@@ -165,6 +166,7 @@ public class SuidRichExam {
 //			Logger.info(insertArray2[i]+" ,");
 //		}
 		int insertArray2=suidRich.insert(ordersArray,"id,datetime");//batch insert
+//		int insertArray2=suidRich.insert(ordersArray,"datetime");//batch insert
 		Logger.info(insertArray2);
 				
 		Orders exampleField=new Orders();

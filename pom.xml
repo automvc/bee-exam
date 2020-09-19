@@ -3,14 +3,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.teasoft</groupId>
 	<artifactId>bee-exam</artifactId>
-	<version>1.8-SNAPSHOT</version>
+	<version>1.8.6-SNAPSHOT</version>
 	<packaging>jar</packaging>
-
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
+		<bee.version>1.8.6-SNAPSHOT</bee.version>
 	</properties>
 
 	<dependencies>
@@ -18,16 +18,19 @@
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-<!-- 			<version>1.7.2</version> -->
-			<version>1.8-SNAPSHOT</version>
+			<version>${bee.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-<!-- 			<version>1.7.2</version> -->
-			<version>1.8-SNAPSHOT</version>
-
+			<version>${bee.version}</version>
+		</dependency>
+		<!-- for log framework,web sql -->
+		<dependency>
+			<groupId>org.teasoft</groupId>
+			<artifactId>bee-ext</artifactId>
+			<version>1.8</version>
 		</dependency>
 
 		<!-- Mysql config just for demo.You need change it to the real database 
@@ -35,7 +38,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.25</version>
+			<version>5.1.47</version>
 			<scope>runtime</scope>
 		</dependency>
 
@@ -45,10 +48,45 @@
 			<version>2.5.3</version>
 		</dependency>
 
+		<!-- log4j用这个 -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+			<scope>provided</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
 			<version>1.0.18</version>
+		</dependency>
+
+		<!-- log4j用这个 -->
+		<!-- <dependency> <groupId>log4j</groupId> <artifactId>log4j</artifactId> 
+			<version>1.2.17</version> <scope>provided</scope> </dependency> -->
+
+
+		<!-- <dependency> <groupId>log4j</groupId> <artifactId>log4j</artifactId> 
+			<version>1.2.17</version> <scope>provided</scope> </dependency> <dependency> 
+			<groupId>org.slf4j</groupId> <artifactId>slf4j-api</artifactId> <version>1.7.9</version> 
+			<scope>provided</scope> </dependency> <dependency> <groupId>org.slf4j</groupId> 
+			<artifactId>slf4j-log4j12</artifactId> <version>1.7.9</version> <scope>provided</scope> 
+			</dependency> <dependency> <groupId>org.apache.logging.log4j</groupId> <artifactId>log4j-api</artifactId> 
+			<version>2.5</version> <scope>provided</scope> </dependency> <dependency> 
+			<groupId>org.apache.logging.log4j</groupId> <artifactId>log4j-core</artifactId> 
+			<version>2.5</version> <scope>provided</scope> </dependency> -->
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.197</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.xerial</groupId>
+			<artifactId>sqlite-jdbc</artifactId>
+			<version>3.32.3.2</version>
 		</dependency>
 
 	</dependencies>

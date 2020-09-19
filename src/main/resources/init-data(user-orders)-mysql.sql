@@ -43,7 +43,7 @@ INSERT INTO `orders` VALUES ('100003', 'bee', 'Bee(ORM Framework)', '97.01', '20
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `email` varchar(100) COLLATE utf8_bin DEFAULT NULL,
   `last_name` varchar(60) COLLATE utf8_bin DEFAULT NULL,
   `name` varchar(60) COLLATE utf8_bin DEFAULT NULL,
@@ -64,7 +64,7 @@ INSERT INTO `user` VALUES ('800002', 'honey@163.com', null, 'Honey', 'honey', 'h
 -- ----------------------------
 DROP TABLE IF EXISTS `leaf_alloc`;
 CREATE TABLE `leaf_alloc` (
-  `id` bigint(11) NOT NULL,
+  `id` bigint(20) NOT NULL,
   `biz_tag` varchar(128) COLLATE utf8_bin NOT NULL DEFAULT '',
   `max_id` bigint(20) NOT NULL DEFAULT '1',
   `step` int(11) NOT NULL,

@@ -11,6 +11,7 @@ import java.util.List;
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.exam.bee.osql.entity.Orders;
+import org.teasoft.exam.bee.test.ClearAndInitTestTable;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.Logger;
 
@@ -21,6 +22,7 @@ import org.teasoft.honey.osql.core.Logger;
 public class SuidExamEN {
 	
 	public static void main(String[] args) {
+//		ClearAndInitTestTable.main(null);  //TODO TEST
 		test();
 	}
 	public static void test() {
@@ -30,20 +32,20 @@ public class SuidExamEN {
 		
 		Orders orders1=new Orders();
 		orders1.setId(100001L);
-		orders1.setName("Bee--ORM Framework");
+		orders1.setName("Bee(ORM Framework)");
 		
 		List<Orders> list1 =suid.select(orders1);  //select
 		for (int i = 0; i < list1.size(); i++) {
 			Logger.info(list1.get(i).toString());
 		}
 		
-		orders1.setName("Bee--ORM Framework");
+		orders1.setName("Bee(ORM Framework)");
 		int updateNum=suid.update(orders1);   //update
 		Logger.info("update record:"+updateNum);
 		
 		Orders orders2=new Orders();
 		orders2.setUserid("bee");
-		orders2.setName("Bee-ORM Framework");
+		orders2.setName("Bee(ORM Framework)");
 		orders2.setTotal(new BigDecimal("91.99"));
 		orders2.setRemark("");  //empty String test
 		

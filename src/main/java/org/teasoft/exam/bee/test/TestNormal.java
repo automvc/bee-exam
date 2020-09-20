@@ -35,7 +35,10 @@ public class TestNormal {
 	public static void main(String[] args) {
 	  
 		
-	   TestPrepare.init("normal");
+//	   TestPrepare.init("normal");
+	   TestPrepare.init("normal(mysql)");
+//	   TestPrepare.init("normal(SQLite)");
+//	   TestPrepare.init("normal(H2)");
 		
 	    try {
 	    	

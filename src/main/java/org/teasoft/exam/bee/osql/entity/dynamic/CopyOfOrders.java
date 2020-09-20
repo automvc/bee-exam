@@ -2,27 +2,28 @@ package org.teasoft.exam.bee.osql.entity.dynamic;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 
 import org.teasoft.bee.osql.annotation.Table;
 
 /**
 *@author Honey
-*Create on 2020-09-20 18:56:25
+*Create on 2020-03-02 16:36:20
 */
 @Table("Orders_${month}")
-public class Orders implements Serializable {
+public class CopyOfOrders implements Serializable {
 
-	private static final long serialVersionUID = 1594806914059L;
+	private static final long serialVersionUID = 1592204269178L;
 
 	private Long id;
 	private String userid;
 	private String name;
 	private BigDecimal total;
-	private String createtime;
+	private Timestamp createtime;
 	private String remark;
 	private String sequence;
 	private String abc;
-	private String updatetime;
+	private Timestamp updatetime;
 
 	public Long getId() {
 		return id;
@@ -56,11 +57,11 @@ public class Orders implements Serializable {
 		this.total = total;
 	}
 
-	public String getCreatetime() {
+	public Timestamp getCreatetime() {
 		return createtime;
 	}
 
-	public void setCreatetime(String createtime) {
+	public void setCreatetime(Timestamp createtime) {
 		this.createtime = createtime;
 	}
 
@@ -88,11 +89,11 @@ public class Orders implements Serializable {
 		this.abc = abc;
 	}
 
-	public String getUpdatetime() {
+	public Timestamp getUpdatetime() {
 		return updatetime;
 	}
 
-	public void setUpdatetime(String updatetime) {
+	public void setUpdatetime(Timestamp updatetime) {
 		this.updatetime = updatetime;
 	}
 

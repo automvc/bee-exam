@@ -1,12 +1,10 @@
-package org.teasoft.exam.bee.sqlite;
+package org.teasoft.exam.bee.otherdatabase;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import org.teasoft.honey.osql.core.HoneyConfig;
+import org.teasoft.honey.osql.core.SessionFactory;
 
 public class CreateSQLiteTable
 {
@@ -16,14 +14,15 @@ public class CreateSQLiteTable
     try
     {
       // create a database connection
-      String url=HoneyConfig.getHoneyConfig().getUrl();
-      connection = DriverManager.getConnection(url);
+//      String url=HoneyConfig.getHoneyConfig().getUrl();
+//      connection = DriverManager.getConnection(url);
+    	
+      connection=SessionFactory.getConnection();
       Statement statement = connection.createStatement();
       statement.setQueryTimeout(30);
 
-      statement.executeUpdate("drop table if exists orders");
-      
-      String sql="CREATE TABLE orders ("+
+      String sql="drop table if exists orders; "
+      		+ " CREATE TABLE orders ("+
 //    	      " id bigint(20) PRIMARY KEY NOT NULL,"+
     	      " id INTEGER PRIMARY KEY NOT NULL,"+    //INTEGER  KEY will auto increment
     	      "  userid varchar(20)  NOT NULL,"+
@@ -37,6 +36,8 @@ public class CreateSQLiteTable
     	      ") ";
       
       statement.executeUpdate(sql);
+      
+      statement.executeUpdate(sql.replace(" orders", " orders_202007"));
       
       String sql2=" DROP TABLE IF EXISTS user;"+
       " CREATE TABLE user ("+
@@ -63,24 +64,18 @@ public class CreateSQLiteTable
       
       statement.executeUpdate(sql3);
       
-      System.out.println("SQLite create table finished.");
+      statement.executeUpdate(sql3.replace(" leaf_alloc", " leaf_alloc2"));
       
-    }
-    catch(SQLException e)
-    {
-      System.err.println(e.getMessage());
-    }
-    finally
-    {
-      try
-      {
-        if(connection != null)
-          connection.close();
-      }
-      catch(SQLException e)
-      {
-        System.err.println(e.getMessage());
-      }
-    }
-  }
+      System.out.println("Create SQLite tables finished.");
+      
+    }catch (SQLException e) {
+		System.err.println(e.getMessage());
+		} finally {
+			try {
+				if (connection != null) connection.close();
+			} catch (SQLException e) {
+				System.err.println(e.getMessage());
+			}
+		}
+	}
 }

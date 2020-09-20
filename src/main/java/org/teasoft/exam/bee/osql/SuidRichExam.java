@@ -156,8 +156,8 @@ public class SuidRichExam {
 //			Logger.info(insertArray[i]+" ,");
 //		}
 		
-		int insertArray=suidRich.insert(ordersArray,2,"id,datetime");//batch insert
-//		int insertArray=suidRich.insert(ordersArray,2,"datetime");//batch insert
+//		int insertArray=suidRich.insert(ordersArray,2,"id,datetime");//batch insert
+		int insertArray=suidRich.insert(ordersArray,2,"datetime");//batch insert
 		Logger.info(insertArray);
 		
 		
@@ -165,8 +165,8 @@ public class SuidRichExam {
 //		for (int i = 0; i < insertArray2.length; i++) {
 //			Logger.info(insertArray2[i]+" ,");
 //		}
-		int insertArray2=suidRich.insert(ordersArray,"id,datetime");//batch insert
-//		int insertArray2=suidRich.insert(ordersArray,"datetime");//batch insert
+//		int insertArray2=suidRich.insert(ordersArray,"id,datetime");//batch insert
+		int insertArray2=suidRich.insert(ordersArray,"datetime");//batch insert
 		Logger.info(insertArray2);
 				
 		Orders exampleField=new Orders();
@@ -197,6 +197,7 @@ public class SuidRichExam {
 		Logger.info("test paging");
 		suidRich.select(order_more,3);
 		List<Orders> listMore=suidRich.select(order_more,0,3);
+//		List<Orders> listMore=suidRich.select(order_more,1,5);
 		for (int i = 0; i < listMore.size(); i++) {
 			Logger.info(listMore.get(i).toString());
 		}

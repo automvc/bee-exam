@@ -10,6 +10,7 @@ import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.exam.bee.osql.entity.User;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.Logger;
@@ -27,6 +28,7 @@ public class UseJson {
 	public static void test() {
 		try{
 			SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
+			
 			String json = suidRich.selectJson(new User());
 			Logger.info("selectJson(new User()):");
 			Logger.info(json);
@@ -47,6 +49,24 @@ public class UseJson {
 
 			//User user3=new User();user3.setId(800002);
 			//List<User> list3 = suidRich.select(user3); //select
+			
+			
+			String json2 = suidRich.selectJson(new Orders());
+			Logger.info("selectJson(new Orders()):");
+			Logger.info(json2);
+
+			ObjectMapper mapper2 = new ObjectMapper();
+
+			Orders orders[] = mapper2.readValue(json2, Orders[].class);
+			Logger.info("将直接查询的json转成对象:");
+			for (int i = 0; i < orders.length; i++) {
+				Logger.info(orders[i].toString());
+			}
+			List<Orders> list2 = suidRich.select(new Orders()); //select
+			for (int i = 0; i < list2.size(); i++) {
+				Logger.info(list2.get(i).toString());
+			}
+			
 
 		} catch (BeeException e) {
 			Logger.error("In UseJson (BeeException):" + e.getMessage());

@@ -37,6 +37,9 @@ public class ClearAndInitTestTable {
 			//		int deleteOrdersNum=preparedSql.modify("delete from orders", mapUpdate);
 			int deleteOrdersNum = preparedSql.modify("TRUNCATE orders", nullMap);
 			Logger.info("deleteOrdersNum: " + deleteOrdersNum);
+			
+			int deleteOrdersNum2 = preparedSql.modify("TRUNCATE orders_202007", nullMap);
+			Logger.info("deleteOrdersNum2: " + deleteOrdersNum2);
 
 			//		int deleteUserNum=preparedSql.modify("delete from user", mapUpdate);
 			int deleteUserNum = preparedSql.modify("TRUNCATE user", nullMap);
@@ -44,6 +47,9 @@ public class ClearAndInitTestTable {
 
 			int deleteLeafNum = preparedSql.modify("TRUNCATE leaf_alloc", nullMap);
 			Logger.info("deleteLeafNum: " + deleteLeafNum); //TRUNCATE 没有返回删除的行
+			
+			int deleteLeafNum2 = preparedSql.modify("TRUNCATE leaf_alloc2", nullMap);
+			Logger.info("deleteLeafNum2: " + deleteLeafNum2); //TRUNCATE 没有返回删除的行
 		}
 		
 	//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>insert	

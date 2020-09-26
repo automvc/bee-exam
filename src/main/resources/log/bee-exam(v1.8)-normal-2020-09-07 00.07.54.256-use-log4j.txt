@@ -1,0 +1,315 @@
+[Bee] LoggerFactory Use the Logger is : org.teasoft.beex.logging.Log4jImpl
+2020-09-07 00:07:54 [ main:0 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.modify(PreparedSqlLib.java:182) [Bee] PreparedSqlLib modify SQL: TRUNCATE orders
+2020-09-07 00:07:55 [ main:593 ] - [ INFO ] org.teasoft.exam.bee.test.ClearAndInitTestTable.main(ClearAndInitTestTable.java:27) deleteOrdersNum: 0
+2020-09-07 00:07:55 [ main:593 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.modify(PreparedSqlLib.java:182) [Bee] PreparedSqlLib modify SQL: TRUNCATE user
+2020-09-07 00:07:55 [ main:921 ] - [ INFO ] org.teasoft.exam.bee.test.ClearAndInitTestTable.main(ClearAndInitTestTable.java:31) deleteUserNum: 0
+2020-09-07 00:07:55 [ main:921 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.modify(PreparedSqlLib.java:182) [Bee] PreparedSqlLib modify SQL: TRUNCATE leaf_alloc
+2020-09-07 00:07:55 [ main:1249 ] - [ INFO ] org.teasoft.exam.bee.test.ClearAndInitTestTable.main(ClearAndInitTestTable.java:34) deleteLeafNum: 0
+2020-09-07 00:07:55 [ main:1249 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.modify(PreparedSqlLib.java:182) [Bee] PreparedSqlLib modify SQL: INSERT INTO `orders` VALUES ('100001', 'bee', 'Bee(ORM Framework)', '95.01', '2020-03-02 11:29:28', 'test', '12345601', 'test1', '2020-03-02 16:34:19');
+2020-09-07 00:07:55 [ main:1343 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.modify(PreparedSqlLib.java:182) [Bee] PreparedSqlLib modify SQL: INSERT INTO `orders` VALUES ('100002', 'bee', 'Bee(ORM Framework)', '96.01', '2020-03-02 11:29:28', 'test%a', '12345602', 'test2', '2020-03-02 16:34:19');
+2020-09-07 00:07:55 [ main:1421 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.modify(PreparedSqlLib.java:182) [Bee] PreparedSqlLib modify SQL: INSERT INTO `orders` VALUES ('100003', 'bee', 'Bee(ORM Framework)', '97.01', '2020-03-02 11:29:28', 'testx%', '12345603', 'test3', '2020-03-02 16:34:19');
+2020-09-07 00:07:55 [ main:1515 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.modify(PreparedSqlLib.java:182) [Bee] PreparedSqlLib modify SQL: INSERT INTO `user` VALUES ('800001', 'beeUser@163.com', null, 'Bee', 'bee', 'bee', null);
+2020-09-07 00:07:56 [ main:1593 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.modify(PreparedSqlLib.java:182) [Bee] PreparedSqlLib modify SQL: INSERT INTO `user` VALUES ('800002', 'honey@163.com', null, 'Honey', 'honey', 'honey', '2020-03-02 16:41:33');
+2020-09-07 00:07:56 [ main:1671 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.modify(PreparedSqlLib.java:182) [Bee] PreparedSqlLib modify SQL: INSERT INTO `leaf_alloc` VALUES ('456537470402562', 'test', '100', '100', 'test segment', '2020-07-04 22:42:09', '1');
+2020-09-07 00:07:56 [ main:1764 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.modify(PreparedSqlLib.java:182) [Bee] PreparedSqlLib modify SQL: INSERT INTO `leaf_alloc` VALUES ('456537470402563', 'order', '100', '100', 'order segment', '2020-07-04 22:42:10', '1');
+2020-09-07 00:07:56 [ main:1873 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markStart(TestHelper.java:18) [bee-exam] ====================SuidExam.test======start:
+2020-09-07 00:07:56 [ main:1889 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:55) [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders
+2020-09-07 00:07:56 [ main:1936 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:55) [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders
+2020-09-07 00:07:56 [ main:1936 ] - [ INFO ] org.teasoft.honey.osql.core.CacheUtil.get(CacheUtil.java:96) [Bee] ==========get from cache.
+2020-09-07 00:07:56 [ main:1936 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidExam.test(SuidExam.java:49) Orders[id=100001,userid=bee,name=Bee(ORM Framework),total=95.01,createtime=2020-03-02 11:29:28.0,remark=test,sequence=12345601,abc=test1,updatetime=2020-03-02 16:34:19.0]
+2020-09-07 00:07:56 [ main:1936 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidExam.test(SuidExam.java:49) Orders[id=100002,userid=bee,name=Bee(ORM Framework),total=96.01,createtime=2020-03-02 11:29:28.0,remark=test%a,sequence=12345602,abc=test2,updatetime=2020-03-02 16:34:19.0]
+2020-09-07 00:07:56 [ main:1936 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidExam.test(SuidExam.java:49) Orders[id=100003,userid=bee,name=Bee(ORM Framework),total=97.01,createtime=2020-03-02 11:29:28.0,remark=testx%,sequence=12345603,abc=test3,updatetime=2020-03-02 16:34:19.0]
+2020-09-07 00:07:56 [ main:1936 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.update(ObjSQL.java:69) [Bee] update SQL: update orders set  name=? where id=?   [values]: Bee(ORM Framework),100001
+2020-09-07 00:07:56 [ main:1951 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidExam.test(SuidExam.java:56) update record:1
+2020-09-07 00:07:56 [ main:1951 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.insert(ObjSQL.java:83) [Bee] insert SQL: insert into orders(userid,name,total) values (?,?,?)   [values]: bee,Bee-ORM Framework,91.99
+2020-09-07 00:07:56 [ main:2015 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidExam.test(SuidExam.java:67) insert record:1
+2020-09-07 00:07:56 [ main:2015 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:55) [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=? and total=?   [values]: bee,Bee-ORM Framework,91.99
+2020-09-07 00:07:56 [ main:2030 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:55) [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=? and total=?   [values]: bee,Bee-ORM Framework,91.99
+2020-09-07 00:07:56 [ main:2046 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidExam.test(SuidExam.java:76) Orders[id=100004,userid=bee,name=Bee-ORM Framework,total=91.99,createtime=2020-09-07 00:07:56.0,remark=null,sequence=null,abc=null,updatetime=2020-09-07 00:07:56.0]
+2020-09-07 00:07:56 [ main:2046 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.delete(ObjSQL.java:96) [Bee] delete SQL: delete from orders where userid=? and name=? and total=?   [values]: bee,Bee-ORM Framework,91.99
+2020-09-07 00:07:56 [ main:2124 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidExam.test(SuidExam.java:81) delete record:1
+2020-09-07 00:07:56 [ main:2124 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:55) [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders
+2020-09-07 00:07:56 [ main:2155 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidExam.test(SuidExam.java:85) Orders[id=100001,userid=bee,name=Bee(ORM Framework),total=95.01,createtime=2020-03-02 11:29:28.0,remark=test,sequence=12345601,abc=test1,updatetime=2020-03-02 16:34:19.0]
+2020-09-07 00:07:56 [ main:2155 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidExam.test(SuidExam.java:85) Orders[id=100002,userid=bee,name=Bee(ORM Framework),total=96.01,createtime=2020-03-02 11:29:28.0,remark=test%a,sequence=12345602,abc=test2,updatetime=2020-03-02 16:34:19.0]
+2020-09-07 00:07:56 [ main:2155 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidExam.test(SuidExam.java:85) Orders[id=100003,userid=bee,name=Bee(ORM Framework),total=97.01,createtime=2020-03-02 11:29:28.0,remark=testx%,sequence=12345603,abc=test3,updatetime=2020-03-02 16:34:19.0]
+===============  size is : {NoArg=org.teasoft.beex.logging.Log4jImpl@757869d9}
+2020-09-07 00:07:56 [ main:2155 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markEnd(TestHelper.java:22) [bee-exam] ====================SuidExam.test======end.
+
+2020-09-07 00:07:56 [ main:2155 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markStart(TestHelper.java:18) [bee-exam] ====================SuidExamEN.test======start:
+2020-09-07 00:07:56 [ main:2155 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:55) [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001,Bee--ORM Framework
+2020-09-07 00:07:56 [ main:2171 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.update(ObjSQL.java:69) [Bee] update SQL: update orders set  name=? where id=?   [values]: Bee--ORM Framework,100001
+2020-09-07 00:07:56 [ main:2234 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidExamEN.test(SuidExamEN.java:42) update record:1
+2020-09-07 00:07:56 [ main:2234 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.insert(ObjSQL.java:83) [Bee] insert SQL: insert into orders(userid,name,total) values (?,?,?)   [values]: bee,Bee-ORM Framework,91.99
+2020-09-07 00:07:56 [ main:2281 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidExamEN.test(SuidExamEN.java:51) insert record:1
+2020-09-07 00:07:56 [ main:2281 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.delete(ObjSQL.java:96) [Bee] delete SQL: delete from orders where userid=? and name=? and total=?   [values]: bee,Bee-ORM Framework,91.99
+2020-09-07 00:07:56 [ main:2343 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidExamEN.test(SuidExamEN.java:54) delete record:1
+2020-09-07 00:07:56 [ main:2343 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:55) [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001,Bee--ORM Framework
+2020-09-07 00:07:56 [ main:2375 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidExamEN.test(SuidExamEN.java:58) Orders[id=100001,userid=bee,name=Bee--ORM Framework,total=95.01,createtime=2020-03-02 11:29:28.0,remark=test,sequence=12345601,abc=test1,updatetime=2020-09-07 00:07:56.0]
+2020-09-07 00:07:56 [ main:2375 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markEnd(TestHelper.java:22) [bee-exam] ====================SuidExamEN.test======end.
+
+2020-09-07 00:07:56 [ main:2375 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markStart(TestHelper.java:18) [bee-exam] ====================SuidRichExam.test======start:
+2020-09-07 00:07:56 [ main:2421 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.insert(ObjSQLRich.java:225) [Bee] insert SQL: insert into orders(id,userid,name,total,createtime,remark,abc,updatetime) values (?,?,?,?,?,?,?,?)   [values]: null,client,client,93.99,null,testOneTime,null,null
+2020-09-07 00:07:56 [ main:2499 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:47) insert record:1
+2020-09-07 00:07:56 [ main:2499 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.insert(ObjSQLRich.java:225) [Bee] insert SQL: insert into orders(userid,name,total,remark,sequence) values (?,?,?,?,?)   [values]: client,client,93.99,testOneTime,
+2020-09-07 00:07:57 [ main:2562 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:50) insert record:1
+2020-09-07 00:07:57 [ main:2562 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.insert(ObjSQLRich.java:225) [Bee] insert SQL: insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?)   [values]: null,client,client,93.99,null,testOneTime,,null,null
+2020-09-07 00:07:57 [ main:2640 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:53) insert record:1
+2020-09-07 00:07:57 [ main:2640 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.update(ObjSQLRich.java:161) [Bee] update SQL(updateFields) :update orders set  name=? , remark=? where userid=? and total=?   [values]: client,testOneTime,client,93.99
+2020-09-07 00:07:57 [ main:2655 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:57) updateNum1:  3
+2020-09-07 00:07:57 [ main:2655 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.update(ObjSQLRich.java:161) [Bee] update SQL(updateFields) :update orders set  name=? where userid=? and total=? and remark=?   [values]: client,client,93.99,testOneTime
+2020-09-07 00:07:57 [ main:2671 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:60) updateNum2:  3
+2020-09-07 00:07:57 [ main:2671 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.update(ObjSQLRich.java:197) [Bee] update SQL(updateFields) :update orders set  name=? where userid=? and total=? and remark=? and sequence=?   [values]: client,client,93.99,testOneTime,
+2020-09-07 00:07:57 [ main:2687 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:67) updateNum4:  2
+2020-09-07 00:07:57 [ main:2687 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.update(ObjSQLRich.java:197) [Bee] update SQL(updateFields) :update orders set  name=? where userid=? and total=? and createtime is null and remark=? and abc is null and updatetime is null   [values]: client,client,93.99,testOneTime
+2020-09-07 00:07:57 [ main:2687 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:70) updateNum5:  2
+2020-09-07 00:07:57 [ main:2687 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.update(ObjSQLRich.java:197) [Bee] update SQL(updateFields) :update orders set  name=? where userid=? and total=? and createtime is null and remark=? and sequence=? and abc is null and updatetime is null   [values]: client,client,93.99,testOneTime,
+2020-09-07 00:07:57 [ main:2702 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:73) updateNum6:  1
+2020-09-07 00:07:57 [ main:2702 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.update(ObjSQLRich.java:197) [Bee] update SQL(updateFields) :update orders set  name=? , total=? where userid=? and remark=? and sequence=?   [values]: client,93.99,client,testOneTime,
+2020-09-07 00:07:57 [ main:2718 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:76) updateNum4_2:  2
+2020-09-07 00:07:57 [ main:2718 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.update(ObjSQLRich.java:197) [Bee] update SQL(updateFields) :update orders set  name=? , total=? where userid=? and createtime is null and remark=? and abc is null and updatetime is null   [values]: client,93.99,client,testOneTime
+2020-09-07 00:07:57 [ main:2733 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:79) updateNum5_2:  2
+2020-09-07 00:07:57 [ main:2733 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.update(ObjSQLRich.java:197) [Bee] update SQL(updateFields) :update orders set  name=? , total=? where userid=? and createtime is null and remark=? and sequence=? and abc is null and updatetime is null   [values]: client,93.99,client,testOneTime,
+2020-09-07 00:07:57 [ main:2749 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:82) updateNum6_2:  1
+2020-09-07 00:07:57 [ main:2749 ] - [ INFO ] org.teasoft.honey.osql.core.ObjectToSQLRich._toSelectFunSQL(ObjectToSQLRich.java:244) [Bee] select fun SQL :select count(total) from orders where userid=? and name=? and total=? and remark=? and sequence=?   [values]: client,client,93.99,testOneTime,
+2020-09-07 00:07:57 [ main:2765 ] - [ INFO ] org.teasoft.honey.osql.core.ObjectToSQLRich._toSelectFunSQL(ObjectToSQLRich.java:244) [Bee] select fun SQL :select max(total) from orders where userid=? and name=? and total=? and remark=? and sequence=?   [values]: client,client,93.99,testOneTime,
+2020-09-07 00:07:57 [ main:2780 ] - [ INFO ] org.teasoft.honey.osql.core.ObjectToSQLRich._toSelectFunSQL(ObjectToSQLRich.java:244) [Bee] select fun SQL :select min(total) from orders where userid=? and name=? and total=? and remark=? and sequence=?   [values]: client,client,93.99,testOneTime,
+2020-09-07 00:07:57 [ main:2796 ] - [ INFO ] org.teasoft.honey.osql.core.ObjectToSQLRich._toSelectFunSQL(ObjectToSQLRich.java:244) [Bee] select fun SQL :select avg(total) from orders where userid=? and name=? and total=? and remark=? and sequence=?   [values]: client,client,93.99,testOneTime,
+2020-09-07 00:07:57 [ main:2811 ] - [ WARN ] org.teasoft.honey.osql.core.CacheUtil.addInCache(CacheUtil.java:270) [Bee] ==========Cache would be full!
+2020-09-07 00:07:57 [ main:2827 ] - [ WARN ] org.teasoft.honey.osql.core.CacheUtil.addInCache(CacheUtil.java:278) [Bee] ==========Cache already used more than 90% !
+2020-09-07 00:07:57 [ main:2827 ] - [ INFO ] org.teasoft.honey.osql.core.ObjectToSQLRich._toSelectFunSQL(ObjectToSQLRich.java:244) [Bee] select fun SQL :select sum(total) from orders where userid=? and name=? and total=? and remark=? and sequence=?   [values]: client,client,93.99,testOneTime,
+2020-09-07 00:07:57 [ main:2843 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:107) funCount:2
+2020-09-07 00:07:57 [ main:2843 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:108) funMax:93.99
+2020-09-07 00:07:57 [ main:2843 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:109) funMin:93.99
+2020-09-07 00:07:57 [ main:2843 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:110) funAvg:93.990000
+2020-09-07 00:07:57 [ main:2843 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:111) funSum:187.98
+2020-09-07 00:07:57 [ main:2843 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.insert(ObjSQLRich.java:225) [Bee] insert SQL: insert into orders(id,userid,name,total,createtime,remark,abc,updatetime) values (?,?,?,?,?,?,?,?)   [values]: 100,client00,client01,93.99,null,testOneTime,null,null
+2020-09-07 00:07:57 [ main:2905 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:114) insert record:1
+2020-09-07 00:07:57 [ main:2905 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.update(ObjSQLRich.java:216) [Bee] update SQL: update orders set  userid=? , name=? , total=? , remark=? , sequence=? where id=?   [values]: client00,client01,93.99,testOneTime,,100
+2020-09-07 00:07:57 [ main:2967 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:117) updateNum8:  1
+2020-09-07 00:07:57 [ main:2967 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.update(ObjSQLRich.java:216) [Bee] update SQL: update orders set  userid=? , name=? , total=? , createtime =null , remark=? , abc =null , updatetime =null where id=?   [values]: client00,client01,93.99,testOneTime,100
+2020-09-07 00:07:57 [ main:3015 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:119) updateNum9:  1
+2020-09-07 00:07:57 [ main:3015 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.update(ObjSQLRich.java:216) [Bee] update SQL: update orders set  userid=? , name=? , total=? , createtime =null , remark=? , sequence=? , abc =null , updatetime =null where id=?   [values]: client00,client01,93.99,testOneTime,,100
+2020-09-07 00:07:57 [ main:3078 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:121) updateNum10:  1
+2020-09-07 00:07:57 [ main:3078 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.delete(ObjSQL.java:96) [Bee] delete SQL: delete from orders where id=? and userid=? and name=? and total=? and remark=?   [values]: 100,client00,client01,93.99,testOneTime
+2020-09-07 00:07:57 [ main:3124 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:125) deleteNum: 1
+2020-09-07 00:07:57 [ main:3202 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:482) [Bee] insert[] SQL :insert into orders(userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?)
+2020-09-07 00:07:57 [ main:3202 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:492) --> index:0 ,  [values]: client01,null,91,null,testOneTime,null,null,null
+2020-09-07 00:07:57 [ main:3202 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:492) --> index:1 ,  [values]: client02,null,20,null,testOneTime,null,null,null
+2020-09-07 00:07:57 [ main:3202 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:496) [Bee]  [Batch:0] Affected rows: 2
+2020-09-07 00:07:57 [ main:3249 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:482) [Bee] insert[] SQL :insert into orders(userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?)
+2020-09-07 00:07:57 [ main:3249 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:492) --> index:2 ,  [values]: client03,null,23,null,testOneTime,null,null,null
+2020-09-07 00:07:57 [ main:3249 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:496) [Bee]  [Batch:1] Affected rows: 1
+2020-09-07 00:07:57 [ main:3249 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:160) 3
+2020-09-07 00:07:57 [ main:3327 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:482) [Bee] insert[] SQL :insert into orders(userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?)
+2020-09-07 00:07:57 [ main:3327 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:492) --> index:0 ,  [values]: client01,null,91,null,testOneTime,null,null,null
+2020-09-07 00:07:57 [ main:3327 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:492) --> index:1 ,  [values]: client02,null,20,null,testOneTime,null,null,null
+2020-09-07 00:07:57 [ main:3327 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:492) --> index:2 ,  [values]: client03,null,23,null,testOneTime,null,null,null
+2020-09-07 00:07:57 [ main:3327 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:496) [Bee]  [Batch:0] Affected rows: 3
+2020-09-07 00:07:57 [ main:3327 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:168) 3
+2020-09-07 00:07:57 [ main:3327 ] - [ INFO ] org.teasoft.honey.osql.core.ObjectToSQLRich.toSelectSQL(ObjectToSQLRich.java:88) [Bee] select SQL(selectFields) :select name, total from orders where userid=?   [values]: bee
+2020-09-07 00:07:57 [ main:3343 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:174) 3
+2020-09-07 00:07:57 [ main:3343 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.selectString(ObjSQLRich.java:246) [Bee] List<String[]> select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: client01
+2020-09-07 00:07:57 [ main:3374 ] - [ INFO ] org.teasoft.honey.osql.core.ObjectToSQLRich.toSelectSQL(ObjectToSQLRich.java:88) [Bee] select SQL(selectFields) :select id, userid, total, createtime from orders where userid=?   [values]: client01
+2020-09-07 00:07:57 [ main:3374 ] - [ WARN ] org.teasoft.honey.osql.core.CacheUtil.addInCache(CacheUtil.java:270) [Bee] ==========Cache would be full!
+2020-09-07 00:07:57 [ main:3374 ] - [ WARN ] org.teasoft.honey.osql.core.CacheUtil.addInCache(CacheUtil.java:278) [Bee] ==========Cache already used more than 90% !
+2020-09-07 00:07:57 [ main:3390 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:184) 100009  , 
+2020-09-07 00:07:57 [ main:3390 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:184) client01  , 
+2020-09-07 00:07:57 [ main:3390 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:184) 91.00  , 
+2020-09-07 00:07:57 [ main:3390 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:184) null  , 
+2020-09-07 00:07:57 [ main:3390 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:186) 
+2020-09-07 00:07:57 [ main:3390 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:184) 100012  , 
+2020-09-07 00:07:57 [ main:3390 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:184) client01  , 
+2020-09-07 00:07:57 [ main:3390 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:184) 91.00  , 
+2020-09-07 00:07:57 [ main:3390 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:184) null  , 
+2020-09-07 00:07:57 [ main:3390 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:186) 
+2020-09-07 00:07:57 [ main:3390 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:195) test paging
+2020-09-07 00:07:57 [ main:3390 ] - [ INFO ] org.teasoft.honey.osql.core.ObjectToSQLRich.toSelectSQL(ObjectToSQLRich.java:46) [Bee] select SQL(entity,size): select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where remark=? limit 0,3   [values]: testOneTime
+2020-09-07 00:07:57 [ main:3390 ] - [ INFO ] org.teasoft.honey.osql.core.ObjectToSQLRich.toSelectSQL(ObjectToSQLRich.java:59) [Bee] select(entity,start,size) SQL:select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where remark=? limit 0,3   [values]: testOneTime
+2020-09-07 00:07:57 [ main:3405 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:199) Orders[id=100006,userid=client,name=client,total=93.99,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+2020-09-07 00:07:57 [ main:3405 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:199) Orders[id=100007,userid=client,name=client,total=93.99,createtime=2020-09-07 00:07:56.0,remark=testOneTime,sequence=,abc=null,updatetime=2020-09-07 00:07:56.0]
+2020-09-07 00:07:57 [ main:3405 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:199) Orders[id=100008,userid=client,name=client,total=93.99,createtime=null,remark=testOneTime,sequence=,abc=null,updatetime=null]
+2020-09-07 00:07:57 [ main:3405 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.delete(ObjSQL.java:96) [Bee] delete SQL: delete from orders where remark=?   [values]: testOneTime
+2020-09-07 00:07:57 [ main:3468 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:204) deleteNum2: 9
+2020-09-07 00:07:57 [ main:3468 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.selectById(ObjSQLRich.java:311) [Bee] selectById SQL: select id,email,last_name,name,password,username,createtime from user where id=? or id=?   [values]: 800001,800002
+2020-09-07 00:07:57 [ main:3483 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.selectById(ObjSQLRich.java:295) [Bee] selectById SQL: select id,email,last_name,name,password,username,createtime from user where id=?   [values]: 800001
+2020-09-07 00:07:57 [ main:3499 ] - [ WARN ] org.teasoft.honey.osql.core.CacheUtil.addInCache(CacheUtil.java:270) [Bee] ==========Cache would be full!
+2020-09-07 00:07:57 [ main:3499 ] - [ WARN ] org.teasoft.honey.osql.core.CacheUtil.addInCache(CacheUtil.java:278) [Bee] ==========Cache already used more than 90% !
+2020-09-07 00:07:57 [ main:3499 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.selectById(ObjSQLRich.java:303) [Bee] selectById SQL: select id,email,last_name,name,password,username,createtime from user where id=?   [values]: 800001
+2020-09-07 00:07:57 [ main:3514 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.deleteById(ObjSQLRich.java:320) [Bee] deleteById SQL: delete from user where id=?   [values]: 800001
+2020-09-07 00:07:58 [ main:3561 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:215) deleteNum3: 1
+java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.Long
+2020-09-07 00:07:58 [ main:3561 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.insert(ObjSQL.java:83) [Bee] insert SQL: insert into user(id,email,name,password,username) values (?,?,?,?,?)   [values]: 800001,beeUser@163.com,Bee,bee,bee
+2020-09-07 00:07:58 [ main:3624 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.selectJson(ObjSQLRich.java:276) [Bee] selectJson SQL: select id,email,last_name,name,password,username,createtime from user
+2020-09-07 00:07:58 [ main:3624 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:220) selectJson(new User()):
+2020-09-07 00:07:58 [ main:3624 ] - [ INFO ] org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:221) [{"id":800001,"email":"beeUser@163.com","name":"Bee","password":"bee","username":"bee","createtime":1599408478000},{"id":800002,"email":"honey@163.com","name":"Honey","password":"honey","username":"honey","createtime":1583138493000}]
+2020-09-07 00:07:58 [ main:3624 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markEnd(TestHelper.java:22) [bee-exam] ====================SuidRichExam.test======end.
+
+2020-09-07 00:07:58 [ main:3624 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markStart(TestHelper.java:18) [bee-exam] ====================UpdateByExam.test======start:
+2020-09-07 00:07:58 [ main:3624 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.updateBy(ObjSQLRich.java:370) [Bee] update SQL(whereFields) :update orders set  total=? , remark=? where userid=?   [values]: 100,new2,bee
+	at org.teasoft.honey.osql.core._ObjectToSQLHelper.setInitIdByAuto(_ObjectToSQLHelper.java:886)
+	at org.teasoft.honey.osql.core.ObjectToSQL.toInsertSQL(ObjectToSQL.java:24)
+	at org.teasoft.honey.osql.core.ObjSQL.insert(ObjSQL.java:81)
+	at org.teasoft.exam.bee.osql.SuidRichExam.test(SuidRichExam.java:217)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.teasoft.exam.comm.TestHelper.runTest(TestHelper.java:32)
+	at org.teasoft.exam.bee.test.TestNormal.runTest(TestNormal.java:91)
+	at org.teasoft.exam.bee.test.TestNormal.main(TestNormal.java:57)
+2020-09-07 00:07:58 [ main:3671 ] - [ INFO ] org.teasoft.exam.bee.osql.UpdateByExam.test(UpdateByExam.java:39) update number:  3
+2020-09-07 00:07:58 [ main:3671 ] - [ INFO ] org.teasoft.exam.bee.osql.UpdateByExam.test(UpdateByExam.java:41) IncludeType.INCLUDE_BOTH
+2020-09-07 00:07:58 [ main:3671 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.updateBy(ObjSQLRich.java:382) [Bee] update SQL(whereFields) :update orders set  total=? , createtime =null , remark=? , sequence=? , abc =null , updatetime =null where userid=? and name is null   [values]: 100,new2,,bee
+2020-09-07 00:07:58 [ main:3687 ] - [ INFO ] org.teasoft.exam.bee.osql.UpdateByExam.test(UpdateByExam.java:43) update number:  0
+2020-09-07 00:07:58 [ main:3687 ] - [ INFO ] org.teasoft.exam.bee.osql.UpdateByExam.test(UpdateByExam.java:45) IncludeType.INCLUDE_NULL
+2020-09-07 00:07:58 [ main:3687 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.updateBy(ObjSQLRich.java:382) [Bee] update SQL(whereFields) :update orders set  name =null , total=? , createtime =null , remark=? , abc =null , updatetime =null where userid=?   [values]: 100,new2,bee
+2020-09-07 00:07:58 [ main:3749 ] - [ INFO ] org.teasoft.exam.bee.osql.UpdateByExam.test(UpdateByExam.java:47) IncludeType.INCLUDE_EMPTY
+2020-09-07 00:07:58 [ main:3749 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.updateBy(ObjSQLRich.java:382) [Bee] update SQL(whereFields) :update orders set  total=? , remark=? , sequence=? where userid=?   [values]: 100,new2,,bee
+2020-09-07 00:07:58 [ main:3796 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markEnd(TestHelper.java:22) [bee-exam] ====================UpdateByExam.test======end.
+
+2020-09-07 00:07:58 [ main:3796 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markStart(TestHelper.java:18) [bee-exam] ====================PreparedSqlExam.test======start:
+2020-09-07 00:07:58 [ main:3796 ] - [ INFO ] org.teasoft.exam.bee.osql.PreparedSqlExam.test(PreparedSqlExam.java:25) getCustomSql:  select * from orders where userid=?
+2020-09-07 00:07:58 [ main:3796 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.select(PreparedSqlLib.java:146) [Bee] PreparedSqlLib select SQL: select * from orders where userid=? limit 1,3   [values]: bee
+2020-09-07 00:07:58 [ main:3812 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.select(PreparedSqlLib.java:146) [Bee] PreparedSqlLib select SQL: select * from orders where userid=? limit 1,3   [values]: bee
+2020-09-07 00:07:58 [ main:3812 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.select(PreparedSqlLib.java:146) [Bee] PreparedSqlLib select SQL: select * from orders where userid=? limit 1,3   [values]: bee
+2020-09-07 00:07:58 [ main:3827 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.selectSomeField(PreparedSqlLib.java:93) [Bee] PreparedSqlLib selectSomeField SQL: select * from orders where userid=? limit 2,3   [values]: bee
+2020-09-07 00:07:58 [ main:3843 ] - [ INFO ] org.teasoft.exam.bee.osql.PreparedSqlExam.test(PreparedSqlExam.java:38) Orders[id=100003,userid=bee,name=null,total=100.00,createtime=null,remark=new2,sequence=,abc=null,updatetime=2020-09-07 00:07:58.0]
+2020-09-07 00:07:58 [ main:3843 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.selectJson(PreparedSqlLib.java:201) [Bee] PreparedSqlLib selectJson SQL: select * from orders where userid=? limit 1,3   [values]: bee
+2020-09-07 00:07:58 [ main:3843 ] - [ INFO ] org.teasoft.exam.bee.osql.PreparedSqlExam.test(PreparedSqlExam.java:42) [{"id":100002,"userid":"bee","total":100.00,"remark":"new2","sequence":"","updatetime":1599408478000},{"id":100003,"userid":"bee","total":100.00,"remark":"new2","sequence":"","updatetime":1599408478000}]
+2020-09-07 00:07:58 [ main:3843 ] - [ INFO ] org.teasoft.exam.bee.osql.PreparedSqlExam.test(PreparedSqlExam.java:45) getCustomSql:  select * from orders where userid=#{userid}
+2020-09-07 00:07:58 [ main:3843 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.selectSomeField(PreparedSqlLib.java:112) [Bee] PreparedSqlLib selectSomeField SQL: select * from orders where userid=? limit 1,3   [values]: bee
+2020-09-07 00:07:58 [ main:3859 ] - [ WARN ] org.teasoft.honey.osql.core.CacheUtil.addInCache(CacheUtil.java:270) [Bee] ==========Cache would be full!
+2020-09-07 00:07:58 [ main:3859 ] - [ WARN ] org.teasoft.honey.osql.core.CacheUtil.addInCache(CacheUtil.java:278) [Bee] ==========Cache already used more than 90% !
+2020-09-07 00:07:58 [ main:3859 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.selectSomeField(PreparedSqlLib.java:112) [Bee] PreparedSqlLib selectSomeField SQL: select * from orders where userid=? limit 1,3   [values]: bee
+2020-09-07 00:07:58 [ main:3859 ] - [ INFO ] org.teasoft.exam.bee.osql.PreparedSqlExam.test(PreparedSqlExam.java:54) Orders[id=100002,userid=bee,name=null,total=100.00,createtime=null,remark=new2,sequence=,abc=null,updatetime=2020-09-07 00:07:58.0]
+2020-09-07 00:07:58 [ main:3859 ] - [ INFO ] org.teasoft.exam.bee.osql.PreparedSqlExam.test(PreparedSqlExam.java:54) Orders[id=100003,userid=bee,name=null,total=100.00,createtime=null,remark=new2,sequence=,abc=null,updatetime=2020-09-07 00:07:58.0]
+2020-09-07 00:07:58 [ main:3874 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.selectJson(PreparedSqlLib.java:220) [Bee] PreparedSqlLib selectJson SQL: select * from orders where userid=? limit 1,3   [values]: bee
+2020-09-07 00:07:58 [ main:3874 ] - [ INFO ] org.teasoft.exam.bee.osql.PreparedSqlExam.test(PreparedSqlExam.java:58) [{"id":100002,"userid":"bee","total":100.00,"remark":"new2","sequence":"","updatetime":1599408478000},{"id":100003,"userid":"bee","total":100.00,"remark":"new2","sequence":"","updatetime":1599408478000}]
+2020-09-07 00:07:58 [ main:3874 ] - [ INFO ] org.teasoft.exam.bee.osql.PreparedSqlExam.test(PreparedSqlExam.java:61) getCustomSql:  select * from orders where name like #{name%}
+2020-09-07 00:07:58 [ main:3874 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.select(PreparedSqlLib.java:73) [Bee] PreparedSqlLib select SQL: select * from orders where name like ? limit 1,3   [values]: Bee%
+2020-09-07 00:07:58 [ main:3890 ] - [ INFO ] org.teasoft.exam.bee.osql.PreparedSqlExam.test(PreparedSqlExam.java:73) getCustomSql:  select * from orders
+2020-09-07 00:07:58 [ main:3890 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.select(PreparedSqlLib.java:54) [Bee] PreparedSqlLib select SQL: select * from orders limit 1,3
+2020-09-07 00:07:58 [ main:3890 ] - [ INFO ] org.teasoft.exam.bee.osql.PreparedSqlExam.test(PreparedSqlExam.java:79) Orders[id=100002,userid=bee,name=null,total=100.00,createtime=null,remark=new2,sequence=,abc=null,updatetime=2020-09-07 00:07:58.0]
+2020-09-07 00:07:58 [ main:3890 ] - [ INFO ] org.teasoft.exam.bee.osql.PreparedSqlExam.test(PreparedSqlExam.java:79) Orders[id=100003,userid=bee,name=null,total=100.00,createtime=null,remark=new2,sequence=,abc=null,updatetime=2020-09-07 00:07:58.0]
+2020-09-07 00:07:58 [ main:3890 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.select(PreparedSqlLib.java:42) [Bee] PreparedSqlLib select SQL: select * from orders
+2020-09-07 00:07:58 [ main:3905 ] - [ WARN ] org.teasoft.honey.osql.core.CacheUtil.addInCache(CacheUtil.java:270) [Bee] ==========Cache would be full!
+2020-09-07 00:07:58 [ main:3905 ] - [ WARN ] org.teasoft.honey.osql.core.CacheUtil.addInCache(CacheUtil.java:278) [Bee] ==========Cache already used more than 90% !
+2020-09-07 00:07:58 [ main:3905 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.select(PreparedSqlLib.java:146) [Bee] PreparedSqlLib select SQL: select * from orders limit 1,3
+2020-09-07 00:07:58 [ main:3905 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.select(PreparedSqlLib.java:134) [Bee] PreparedSqlLib select SQL: select orders.userid,user.name,orders.total,orders.createtime from orders,user where orders.userid=user.username and orders.sequence=?   [values]: 123456
+2020-09-07 00:07:58 [ main:3937 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markEnd(TestHelper.java:22) [bee-exam] ====================PreparedSqlExam.test======end.
+
+2020-09-07 00:07:58 [ main:3937 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markStart(TestHelper.java:18) [bee-exam] ====================TransactionExam.test======start:
+2020-09-07 00:07:58 [ main:3952 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.insert(ObjSQL.java:83) [Bee] insert SQL: insert into user(password,username) values (?,?)   [values]: bee-user,testuser
+2020-09-07 00:07:58 [ main:3952 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.insert(ObjSQL.java:83) [Bee] insert SQL: insert into orders(userid,name,total,remark) values (?,?,?,?)   [values]: bee,Bee(ORM Framework),91.99,test transaction
+2020-09-07 00:07:58 [ main:4015 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:55) [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=? and total=? and remark=?   [values]: bee,Bee(ORM Framework),91.99,test transaction
+2020-09-07 00:07:58 [ main:4030 ] - [ INFO ] org.teasoft.exam.bee.osql.TransactionExam.test(TransactionExam.java:54) Orders[id=100015,userid=bee,name=Bee(ORM Framework),total=91.99,createtime=2020-09-07 00:07:58.0,remark=test transaction,sequence=null,abc=null,updatetime=2020-09-07 00:07:58.0]
+2020-09-07 00:07:58 [ main:4047 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:108) [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and id=? for update    [values]: bee,100003
+2020-09-07 00:07:58 [ main:4062 ] - [ INFO ] org.teasoft.exam.bee.osql.TransactionExam.test(TransactionExam.java:69) Orders[id=100003,userid=bee,name=null,total=100.00,createtime=null,remark=new2,sequence=,abc=null,updatetime=2020-09-07 00:07:58.0]
+2020-09-07 00:07:58 [ main:4062 ] - [ INFO ] org.teasoft.exam.bee.osql.TransactionExam.test(TransactionExam.java:73) ---------------locking the record!
+2020-09-07 00:07:58 [ main:4062 ] - [ INFO ] org.teasoft.exam.bee.osql.TransactionExam.test(TransactionExam.java:74) doing...
+2020-09-07 00:07:58 [ main:4062 ] - [ INFO ] org.teasoft.exam.bee.osql.TransactionExam.test(TransactionExam.java:76) ---------------release the record!
+2020-09-07 00:07:58 [ main:4062 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markEnd(TestHelper.java:22) [bee-exam] ====================TransactionExam.test======end.
+
+2020-09-07 00:07:58 [ main:4062 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markStart(TestHelper.java:18) [bee-exam] ====================ConditionExam.test======start:
+2020-09-07 00:07:58 [ main:4062 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:108) [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid like ? and total between ? and ? and name is not null order by userid asc limit 0,10   [values]: bee%,90,100
+2020-09-07 00:07:58 [ main:4062 ] - [ INFO ] org.teasoft.exam.bee.osql.ConditionExam.test(ConditionExam.java:60) Orders[id=100015,userid=bee,name=Bee(ORM Framework),total=91.99,createtime=2020-09-07 00:07:58.0,remark=test transaction,sequence=null,abc=null,updatetime=2020-09-07 00:07:58.0]
+2020-09-07 00:07:58 [ main:4062 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:108) [Bee] select SQL: select userid, total, createtime from orders where userid like ? and total between ? and ? and name is not null order by userid asc limit 0,10   [values]: bee%,90,100
+2020-09-07 00:07:58 [ main:4078 ] - [ WARN ] org.teasoft.honey.osql.core.CacheUtil.addInCache(CacheUtil.java:270) [Bee] ==========Cache would be full!
+2020-09-07 00:07:58 [ main:4078 ] - [ WARN ] org.teasoft.honey.osql.core.CacheUtil.addInCache(CacheUtil.java:278) [Bee] ==========Cache already used more than 90% !
+2020-09-07 00:07:58 [ main:4078 ] - [ INFO ] org.teasoft.exam.bee.osql.ConditionExam.test(ConditionExam.java:71) Orders[id=null,userid=bee,name=null,total=91.99,createtime=2020-09-07 00:07:58.0,remark=null,sequence=null,abc=null,updatetime=null]
+2020-09-07 00:07:58 [ main:4078 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.insert(ObjSQL.java:83) [Bee] insert SQL: insert into orders(userid,total,remark) values (?,?,?)   [values]: test condition,0.01,test condition delete
+2020-09-07 00:07:58 [ main:4125 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.insert(ObjSQL.java:83) [Bee] insert SQL: insert into orders(userid,total,remark) values (?,?,?)   [values]: test condition,0.01,test condition delete
+2020-09-07 00:07:58 [ main:4187 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.delete(ObjSQL.java:120) [Bee] delete SQL: delete from orders where userid=? and remark like ? and total<=?   [values]: test condition,test condition %,0.01
+2020-09-07 00:07:58 [ main:4234 ] - [ INFO ] org.teasoft.exam.bee.osql.ConditionExam.test(ConditionExam.java:103) delete(T entity,Condition condition), delete record num:2
+2020-09-07 00:07:58 [ main:4234 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.updateBy(ObjSQLRich.java:395) [Bee] update SQL(whereFields) :update orders set  abc=? where total>=? and remark like ?   [values]: test for update,97,test%
+2020-09-07 00:07:58 [ main:4250 ] - [ INFO ] org.teasoft.exam.bee.osql.ConditionExam.test(ConditionExam.java:117) updateBy_NumByCondition: 0
+2020-09-07 00:07:58 [ main:4250 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.update(ObjSQLRich.java:408) [Bee] update SQL(updateFields) :update orders set  remark=? where abc=? and total>=? and remark like ?   [values]: test for set,test for update,97,test%
+2020-09-07 00:07:58 [ main:4265 ] - [ INFO ] org.teasoft.exam.bee.osql.ConditionExam.test(ConditionExam.java:122) updateNumCondition: 0
+2020-09-07 00:07:58 [ main:4265 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:108) [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and id=? for update    [values]: bee,100003
+2020-09-07 00:07:58 [ main:4281 ] - [ INFO ] org.teasoft.exam.bee.osql.ConditionExam.test(ConditionExam.java:135) Orders[id=100003,userid=bee,name=null,total=100.00,createtime=null,remark=new2,sequence=,abc=null,updatetime=2020-09-07 00:07:58.0]
+2020-09-07 00:07:58 [ main:4281 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markEnd(TestHelper.java:22) [bee-exam] ====================ConditionExam.test======end.
+
+2020-09-07 00:07:58 [ main:4281 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markStart(TestHelper.java:18) [bee-exam] ====================MoreTableExam.test======start:
+2020-09-07 00:07:58 [ main:4328 ] - [ INFO ] org.teasoft.honey.osql.core.MoreObjSQL.select(MoreObjSQL.java:53) [Bee] select SQL: select orders.id,orders.userid,orders.name,orders.total,orders.createtime,orders.remark,orders.sequence,orders.abc,orders.updatetime,user.id,user.email,user.last_name,user.name,user.password,user.username,user.createtime from orders left join user on orders.userid=user.username where orders.userid=? and orders.name=? and user.email=? limit 0,10   [values]: bee,Bee(ORM Framework),beeUser@163.com
+2020-09-07 00:07:58 [ main:4343 ] - [ INFO ] org.teasoft.exam.bee.osql.MoreTableExam.test(MoreTableExam.java:46) size of records:1
+2020-09-07 00:07:58 [ main:4343 ] - [ INFO ] org.teasoft.exam.bee.osql.MoreTableExam.test(MoreTableExam.java:48) Orders[id=100015,userid=bee,name=Bee(ORM Framework),total=91.99,createtime=2020-09-07 00:07:58.0,remark=test transaction,sequence=null,abc=null,updatetime=2020-09-07 00:07:58.0,User[id=800001,email=beeUser@163.com,lastName=null,name=Bee,password=bee,username=bee,createtime=2020-09-07 00:07:58.0]]
+2020-09-07 00:07:58 [ main:4343 ] - [ INFO ] org.teasoft.honey.osql.core.MoreObjSQL.select(MoreObjSQL.java:62) [Bee] select SQL: select * from orders left join user on orders.userid=user.username where orders.userid=? and orders.name=? and user.email=? and orders.id>=? limit 0,5   [values]: bee,Bee(ORM Framework),beeUser@163.com,1001
+2020-09-07 00:07:58 [ main:4359 ] - [ INFO ] org.teasoft.exam.bee.osql.MoreTableExam.test(MoreTableExam.java:62) size of records:1
+2020-09-07 00:07:58 [ main:4359 ] - [ INFO ] org.teasoft.exam.bee.osql.MoreTableExam.test(MoreTableExam.java:64) Orders[id=100015,userid=bee,name=Bee(ORM Framework),total=91.99,createtime=2020-09-07 00:07:58.0,remark=test transaction,sequence=null,abc=null,updatetime=2020-09-07 00:07:58.0,User[id=800001,email=beeUser@163.com,lastName=null,name=Bee,password=bee,username=bee,createtime=2020-09-07 00:07:58.0]]
+2020-09-07 00:07:58 [ main:4359 ] - [ INFO ] org.teasoft.honey.osql.core.MoreObjSQL.select(MoreObjSQL.java:62) [Bee] select SQL: select orders.id, user.id, userid, total, orders.createtime from orders left join user on orders.userid=user.username where orders.userid=? and orders.name=? and user.email=? and orders.id>=? limit 0,5   [values]: bee,Bee(ORM Framework),beeUser@163.com,1001
+2020-09-07 00:07:58 [ main:4374 ] - [ WARN ] org.teasoft.honey.osql.core.CacheUtil.addInCache(CacheUtil.java:270) [Bee] ==========Cache would be full!
+2020-09-07 00:07:58 [ main:4374 ] - [ WARN ] org.teasoft.honey.osql.core.CacheUtil.addInCache(CacheUtil.java:278) [Bee] ==========Cache already used more than 90% !
+2020-09-07 00:07:58 [ main:4374 ] - [ INFO ] org.teasoft.exam.bee.osql.MoreTableExam.test(MoreTableExam.java:69) size of records:1
+2020-09-07 00:07:58 [ main:4374 ] - [ INFO ] org.teasoft.exam.bee.osql.MoreTableExam.test(MoreTableExam.java:71) Orders[id=100015,userid=bee,name=null,total=91.99,createtime=2020-09-07 00:07:58.0,remark=null,sequence=null,abc=null,updatetime=null,User[id=800001,email=null,lastName=null,name=null,password=null,username=null,createtime=null]]
+2020-09-07 00:07:58 [ main:4374 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markEnd(TestHelper.java:22) [bee-exam] ====================MoreTableExam.test======end.
+
+2020-09-07 00:07:58 [ main:4390 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markStart(TestHelper.java:18) [bee-exam] ====================UseJson.test======start:
+2020-09-07 00:07:58 [ main:4390 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.selectJson(ObjSQLRich.java:276) [Bee] selectJson SQL: select id,email,last_name,name,password,username,createtime from user
+2020-09-07 00:07:58 [ main:4406 ] - [ INFO ] org.teasoft.exam.bee.osql.UseJson.test(UseJson.java:31) selectJson(new User()):
+2020-09-07 00:07:58 [ main:4406 ] - [ INFO ] org.teasoft.exam.bee.osql.UseJson.test(UseJson.java:32) [{"id":800001,"email":"beeUser@163.com","name":"Bee","password":"bee","username":"bee","createtime":1599408478000},{"id":800002,"email":"honey@163.com","name":"Honey","password":"honey","username":"honey","createtime":1583138493000},{"id":800003,"password":"bee-user","username":"testuser","createtime":1599408478000}]
+2020-09-07 00:07:59 [ main:5045 ] - [ INFO ] org.teasoft.exam.bee.osql.UseJson.test(UseJson.java:37) 将直接查询的json转成对象:
+2020-09-07 00:07:59 [ main:5045 ] - [ INFO ] org.teasoft.exam.bee.osql.UseJson.test(UseJson.java:39) User[id=800001,email=beeUser@163.com,lastName=null,name=Bee,username=bee,createtime=2020-09-07 00:07:58.0]
+2020-09-07 00:07:59 [ main:5045 ] - [ INFO ] org.teasoft.exam.bee.osql.UseJson.test(UseJson.java:39) User[id=800002,email=honey@163.com,lastName=null,name=Honey,username=honey,createtime=2020-03-02 16:41:33.0]
+2020-09-07 00:07:59 [ main:5045 ] - [ INFO ] org.teasoft.exam.bee.osql.UseJson.test(UseJson.java:39) User[id=800003,email=null,lastName=null,name=null,username=testuser,createtime=2020-09-07 00:07:58.0]
+2020-09-07 00:07:59 [ main:5045 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:55) [Bee] select SQL: select id,email,last_name,name,password,username,createtime from user
+2020-09-07 00:07:59 [ main:5045 ] - [ INFO ] org.teasoft.exam.bee.osql.UseJson.test(UseJson.java:45) User[id=800001,email=beeUser@163.com,lastName=null,name=Bee,username=bee,createtime=2020-09-07 00:07:58.0]
+2020-09-07 00:07:59 [ main:5045 ] - [ INFO ] org.teasoft.exam.bee.osql.UseJson.test(UseJson.java:45) User[id=800002,email=honey@163.com,lastName=null,name=Honey,username=honey,createtime=2020-03-02 16:41:33.0]
+2020-09-07 00:07:59 [ main:5061 ] - [ INFO ] org.teasoft.exam.bee.osql.UseJson.test(UseJson.java:45) User[id=800003,email=null,lastName=null,name=null,username=testuser,createtime=2020-09-07 00:07:58.0]
+2020-09-07 00:07:59 [ main:5061 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markEnd(TestHelper.java:22) [bee-exam] ====================UseJson.test======end.
+
+2020-09-07 00:07:59 [ main:5061 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markStart(TestHelper.java:18) [bee-exam] ====================BugTest.test======start:
+2020-09-07 00:07:59 [ main:5061 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:55) [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders
+2020-09-07 00:07:59 [ main:5061 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:55) [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders
+2020-09-07 00:07:59 [ main:5061 ] - [ INFO ] org.teasoft.honey.osql.core.CacheUtil.get(CacheUtil.java:96) [Bee] ==========get from cache.
+2020-09-07 00:07:59 [ main:5061 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.selectJson(ObjSQLRich.java:276) [Bee] selectJson SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders
+2020-09-07 00:07:59 [ main:5077 ] - [ WARN ] org.teasoft.honey.osql.core.CacheUtil.addInCache(CacheUtil.java:270) [Bee] ==========Cache would be full!
+2020-09-07 00:07:59 [ main:5077 ] - [ WARN ] org.teasoft.honey.osql.core.CacheUtil.addInCache(CacheUtil.java:278) [Bee] ==========Cache already used more than 90% !
+2020-09-07 00:07:59 [ main:5155 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:482) [Bee] insert[] SQL :insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?)
+2020-09-07 00:07:59 [ main:5155 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:492) --> index:0 ,  [values]: 1007,client01,null,91,null,testOneTime,null,null,null
+2020-09-07 00:07:59 [ main:5155 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:492) --> index:1 ,  [values]: 1008,client02,null,20,null,testOneTime,null,null,null
+2020-09-07 00:07:59 [ main:5155 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:496) [Bee]  [Batch:0] Affected rows: 2
+2020-09-07 00:07:59 [ main:5218 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:482) [Bee] insert[] SQL :insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?)
+2020-09-07 00:07:59 [ main:5218 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:492) --> index:2 ,  [values]: 1009,client03,null,23,null,testOneTime,null,null,null
+2020-09-07 00:07:59 [ main:5218 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:496) [Bee]  [Batch:1] Affected rows: 1
+2020-09-07 00:07:59 [ main:5218 ] - [ INFO ] org.teasoft.exam.bee.osql.BugTest.test(BugTest.java:80) 3
+2020-09-07 00:07:59 [ main:5218 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:55) [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders
+2020-09-07 00:07:59 [ main:5233 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.select(PreparedSqlLib.java:134) [Bee] PreparedSqlLib select SQL: select * from orders
+2020-09-07 00:07:59 [ main:5233 ] - [ INFO ] org.teasoft.honey.osql.core.PreparedSqlLib.select(PreparedSqlLib.java:154) [Bee] PreparedSqlLib select SQL: select * from orders
+2020-09-07 00:07:59 [ main:5249 ] - [ WARN ] org.teasoft.honey.osql.core.ConditionHelper.processCondition(ConditionHelper.java:389) Use set method(s) in SELECT type, but it just effect in UPDATE type! Involved field(s): [test]
+2020-09-07 00:07:59 [ main:5249 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:108) [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where remark like ?   [values]: test\%%
+2020-09-07 00:07:59 [ main:5265 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markEnd(TestHelper.java:22) [bee-exam] ====================BugTest.test======end.
+
+2020-09-07 00:07:59 [ main:5265 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markStart(TestHelper.java:18) [bee-exam] ====================UpdateSetExam.test======start:
+2020-09-07 00:07:59 [ main:5265 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.updateBy(ObjSQLRich.java:395) [Bee] update SQL(whereFields) :update leaf_alloc set max_id=max_id+step where biz_tag=?   [values]: bee
+2020-09-07 00:07:59 [ main:5280 ] - [ INFO ] org.teasoft.exam.bee.osql.UpdateSetExam.test(UpdateSetExam.java:41) test setAdd , update num: 0
+2020-09-07 00:07:59 [ main:5280 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:55) [Bee] select SQL: select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc where biz_tag=?   [values]: test
+2020-09-07 00:07:59 [ main:5296 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.update(ObjSQLRich.java:421) [Bee] update SQL(condition) :update leaf_alloc set max_id=max_id+step,version=version+? where id=? and biz_tag=? and max_id=? and version=?   [values]: 1,456537470402562,test,100,1
+2020-09-07 00:07:59 [ main:5358 ] - [ INFO ] org.teasoft.exam.bee.osql.UpdateSetExam.test(UpdateSetExam.java:68) test setMultiply , update num: 1
+2020-09-07 00:07:59 [ main:5358 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:55) [Bee] select SQL: select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc where biz_tag=?   [values]: test
+2020-09-07 00:07:59 [ main:5374 ] - [ WARN ] org.teasoft.honey.osql.core.CacheUtil.addInCache(CacheUtil.java:270) [Bee] ==========Cache would be full!
+2020-09-07 00:07:59 [ main:5374 ] - [ WARN ] org.teasoft.honey.osql.core.CacheUtil.addInCache(CacheUtil.java:278) [Bee] ==========Cache already used more than 90% !
+2020-09-07 00:07:59 [ main:5374 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQLRich.update(ObjSQLRich.java:421) [Bee] update SQL(condition) :update leaf_alloc set max_id=?,version=version+? where id=? and biz_tag=? and max_id=? and version=?   [values]: 10003,1,456537470402562,test,200,2
+2020-09-07 00:07:59 [ main:5452 ] - [ INFO ] org.teasoft.exam.bee.osql.UpdateSetExam.test(UpdateSetExam.java:84) test setMultiply , update num: 1
+2020-09-07 00:07:59 [ main:5452 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markEnd(TestHelper.java:22) [bee-exam] ====================UpdateSetExam.test======end.
+
+2020-09-07 00:07:59 [ main:5452 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markStart(TestHelper.java:18) [bee-exam] ====================InsertTest.test======start:
+2020-09-07 00:07:59 [ main:5452 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.insert(ObjSQL.java:83) [Bee] insert SQL: insert into orders(userid,name,total,remark) values (?,?,?,?)   [values]: client,client,93.99,testOneTime
+2020-09-07 00:07:59 [ main:5499 ] - [ INFO ] org.teasoft.exam.bee.osql.InsertTest.test(InsertTest.java:51) 1
+2020-09-07 00:08:02 [ main:7667 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:482) [Bee] insert[] SQL :insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?)
+2020-09-07 00:08:02 [ main:7667 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:492) --> index:0 ,  [values]: null,client,client,93.99,null,testOneTime,null,null,null
+2020-09-07 00:08:02 [ main:7667 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:492) --> index:1 ,  [values]: null,client,client,93.99,null,testOneTime,,null,null
+2020-09-07 00:08:02 [ main:7667 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:492) --> index:2 ,  [values]: null,client,null,93.99,null,testOneTime,null,null,null
+2020-09-07 00:08:02 [ main:7667 ] - [ INFO ] org.teasoft.honey.osql.core.SqlLib.batch(SqlLib.java:496) [Bee]  [Batch:0] Affected rows: 3
+2020-09-07 00:08:02 [ main:7667 ] - [ INFO ] org.teasoft.exam.bee.osql.InsertTest.test(InsertTest.java:72) 3
+2020-09-07 00:08:02 [ main:7667 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markEnd(TestHelper.java:22) [bee-exam] ====================InsertTest.test======end.
+
+2020-09-07 00:08:02 [ main:7667 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markStart(TestHelper.java:18) [bee-exam] ====================DynamicTableExam.test======start:
+2020-09-07 00:08:02 [ main:7683 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:55) [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from Orders_202007
+2020-09-07 00:08:02 [ main:7777 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:55) [Bee] select SQL: select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc2
+2020-09-07 00:08:02 [ main:7793 ] - [ INFO ] org.teasoft.honey.osql.core.ObjSQL.select(ObjSQL.java:55) [Bee] select SQL: select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc2
+2020-09-07 00:08:02 [ main:7793 ] - [ INFO ] org.teasoft.honey.osql.core.CacheUtil.get(CacheUtil.java:96) [Bee] ==========get from cache.
+2020-09-07 00:08:02 [ main:7793 ] - [ INFO ] org.teasoft.exam.bee.osql.DynamicTableExam.test(DynamicTableExam.java:48) 2
+2020-09-07 00:08:02 [ main:7808 ] - [ INFO ] org.teasoft.exam.bee.osql.DynamicTableExam.test(DynamicTableExam.java:49) 2
+2020-09-07 00:08:02 [ main:7808 ] - [ INFO ] org.teasoft.exam.comm.TestHelper.markEnd(TestHelper.java:22) [bee-exam] ====================DynamicTableExam.test======end.
+
+2020-09-07 00:08:02  test normal Finished!

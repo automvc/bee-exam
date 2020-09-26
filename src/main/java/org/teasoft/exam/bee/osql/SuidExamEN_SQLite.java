@@ -26,10 +26,6 @@ public class SuidExamEN_SQLite {
 	
 	public static void main(String[] args) {
 		ClearAndInitTestTable.main(null);  //TODO TEST
-		
-		System.out.println("===========================================");
-		
-		SelectTable.main(null);
 		test();
 	}
 	public static void test() {

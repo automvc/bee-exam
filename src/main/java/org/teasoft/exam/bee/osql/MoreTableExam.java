@@ -54,6 +54,7 @@ public class MoreTableExam {
 			//.op("user.id", Op.gt,6) //模糊查询  
 			.op("orders.id", Op.ge, 1001) //模糊查询  
 			.start(0).size(5) //分页
+//			.start(2).size(6) //分页
 			;
 
 			//默认不处理null和空字符串.不用再写一堆的判断;其它有值的字段全部自动作为过滤条件

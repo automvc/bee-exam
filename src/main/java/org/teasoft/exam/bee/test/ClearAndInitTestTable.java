@@ -72,7 +72,7 @@ public class ClearAndInitTestTable {
 		
 		
 		String insertUser1="INSERT INTO `user` VALUES ('800001', 'beeUser@163.com', null, 'Bee', 'bee', 'bee', null);";
-		String insertUser2="INSERT INTO `user` VALUES ('800002', 'honey@163.com', null, 'Honey', 'honey', 'honey', '2020-03-02 16:41:33');";
+		String insertUser2="INSERT INTO `user` VALUES ('800002', 'honey@163.com', 'cn', 'Honey', 'honey', 'honey', '2020-03-02 16:41:33');";
 		preparedSql.modify(insertUser1, nullMap);
 		preparedSql.modify(insertUser2, nullMap);
 		

@@ -13,9 +13,9 @@ CREATE TABLE orders (
   updatetime timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ;
 
--- user
-DROP TABLE IF EXISTS user;
-CREATE TABLE user (
+-- test_user
+DROP TABLE IF EXISTS test_user;
+CREATE TABLE test_user (
   id bigint(20) PRIMARY KEY NOT NULL,
   email varchar(100)  DEFAULT NULL,
   last_name varchar(60)  DEFAULT NULL,

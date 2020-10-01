@@ -39,10 +39,10 @@ INSERT INTO `orders` VALUES ('100001', 'bee', 'Bee(ORM Framework)', '95.01', '20
 INSERT INTO `orders` VALUES ('100002', 'bee', 'Bee(ORM Framework)', '96.01', '2020-03-02 11:29:28', 'test', '12345602', 'test2', '2020-03-02 16:34:19');
 INSERT INTO `orders` VALUES ('100003', 'bee', 'Bee(ORM Framework)', '97.01', '2020-03-02 11:29:28', 'test', '12345603', 'test3', '2020-03-02 16:34:19');
 -- ----------------------------
--- Table structure for `user`
+-- Table structure for `test_user`
 -- ----------------------------
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user` (
+DROP TABLE IF EXISTS `test_user`;
+CREATE TABLE `test_user` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `email` varchar(100) COLLATE utf8_bin DEFAULT NULL,
   `last_name` varchar(60) COLLATE utf8_bin DEFAULT NULL,
@@ -54,10 +54,10 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB AUTO_INCREMENT=800003 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ----------------------------
--- Records of user
+-- Records of test_user
 -- ----------------------------
-INSERT INTO `user` VALUES ('800001', 'beeUser@163.com', null, 'Bee', 'bee', 'bee', null);
-INSERT INTO `user` VALUES ('800002', 'honey@163.com', null, 'Honey', 'honey', 'honey', '2020-03-02 16:41:33');
+INSERT INTO `test_user` VALUES ('800001', 'beeUser@163.com', null, 'Bee', 'bee', 'bee', null);
+INSERT INTO `test_user` VALUES ('800002', 'honey@163.com', null, 'Honey', 'honey', 'honey', '2020-03-02 16:41:33');
 
 -- ----------------------------
 -- Table structure for `leaf_alloc`

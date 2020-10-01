@@ -7,6 +7,7 @@
 package org.teasoft.exam.bee.test;
 
 import org.teasoft.bee.osql.BeeException;
+import org.teasoft.bee.osql.DatabaseConst;
 import org.teasoft.exam.bee.osql.BugTest;
 import org.teasoft.exam.bee.osql.ConditionExam;
 import org.teasoft.exam.bee.osql.DynamicTableExam;
@@ -19,10 +20,11 @@ import org.teasoft.exam.bee.osql.SuidRichExam;
 import org.teasoft.exam.bee.osql.TransactionExam;
 import org.teasoft.exam.bee.osql.UpdateByExam;
 import org.teasoft.exam.bee.osql.UpdateSetExam;
+import org.teasoft.exam.bee.osql.UpdateSetExam_SQLite;
 import org.teasoft.exam.bee.osql.UseJson;
 import org.teasoft.exam.comm.TestHelper;
 import org.teasoft.exam.comm.TestPrepare;
-import org.teasoft.honey.logging.LoggerFactory;
+import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.util.DateUtil;
 
@@ -36,13 +38,18 @@ public class TestNormal {
 	  
 		
 //	   TestPrepare.init("normal");
-	   TestPrepare.init("normal(mysql)");
+	   TestPrepare.init("normal(MySQL)");
 //	   TestPrepare.init("normal(SQLite)");
 //	   TestPrepare.init("normal(H2)");
+//	   TestPrepare.init("normal(PostgreSQL)");
 		
 	    try {
 	    	
-//	    ClearAndInitTestTable.main(null);   //TODO Notice! Just For test.
+	    ClearAndInitTestTable.main(null);   //TODO Notice! Just For test.
+	    
+		String DbName=HoneyConfig.getHoneyConfig().getDbName();
+		
+		
 			
 		//How to generate the Javabean,please see GenBeanExam.
 		//生成Javabean,请查看GenBeanExam.
@@ -73,7 +80,12 @@ public class TestNormal {
 		runTest(UseJson.class);
 		runTest(BugTest.class);
 		
-		runTest(UpdateSetExam.class);
+		if (DatabaseConst.SQLite.equalsIgnoreCase(DbName)) {
+		   runTest(UpdateSetExam_SQLite.class);
+		}else{
+		   runTest(UpdateSetExam.class);
+		}
+		
 		
 		runTest(InsertTest.class);
 		runTest(DynamicTableExam.class);

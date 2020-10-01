@@ -46,6 +46,6 @@ bee-exam(v1.8)-cache-2020-08-22 22.14.10.158.txt
 bee-exam(v1.8)-normal-2020-08-22 22.14.00.204.txt
 
 add H2,SQLite Support:
-bee-exam(v1.8.6)-normal(H2)-2020-09-20 21.37.23.126.txt
-bee-exam(v1.8.6)-normal(MySQL)-2020-09-20 18.28.31.764.txt
-bee-exam(v1.8.6)-normal(SQLite)-2020-09-20 19.43.53.751.txt
+bee-exam(v1.8.15)-normal(H2)-2020-09-20 21.37.23.126.txt
+bee-exam(v1.8.15)-normal(MySQL)-2020-09-20 18.28.31.764.txt
+bee-exam(v1.8.15)-normal(SQLite)-2020-09-20 19.43.53.751.txt

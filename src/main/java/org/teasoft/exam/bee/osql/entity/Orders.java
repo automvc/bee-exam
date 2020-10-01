@@ -6,11 +6,11 @@ import java.sql.Timestamp;
 
 /**
 *@author Honey
-*Create on 2020-03-02 16:36:20
+*Create on 2020-10-01 12:41:06
 */
 public class Orders implements Serializable {
 
-/*	private static final long serialVersionUID = 1592204269178L;
+/*	private static final long serialVersionUID = 1598614651697L;
 
 	private Long id;
 	private String userid;
@@ -108,8 +108,7 @@ public class Orders implements Serializable {
 		 str.append(",updatetime=").append(updatetime);		 
 		 str.append("]");			 
 		 return str.toString();			 
-	 }		 */
-	
+	 }	*/	
 	
 	//SQLite
 	private static final long serialVersionUID = 1593472489996L;

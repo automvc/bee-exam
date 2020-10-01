@@ -1,22 +1,24 @@
 package org.teasoft.exam.bee.osql.entity;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+
+import org.teasoft.bee.osql.annotation.Entity;
 
 /**
 *@author Honey
-*Create on 2020-10-01 12:41:06
+*Create on 2020-09-19 19:02:36
 */
-public class LeafAlloc implements Serializable {
+@Entity("LeafAlloc")
+public class LeafAlloc_SQLite implements Serializable {
 
-	private static final long serialVersionUID = 1597359777172L;
+	private static final long serialVersionUID = 1593861377170L;
 
 	private Long id;
 	private String bizTag;
 	private Long maxId;
 	private Integer step;
 	private String description;
-	private Timestamp updateTime;
+	private String updateTime;
 	private Integer version;
 
 	public Long getId() {
@@ -59,11 +61,11 @@ public class LeafAlloc implements Serializable {
 		this.description = description;
 	}
 
-	public Timestamp getUpdateTime() {
+	public String getUpdateTime() {
 		return updateTime;
 	}
 
-	public void setUpdateTime(Timestamp updateTime) {
+	public void setUpdateTime(String updateTime) {
 		this.updateTime = updateTime;
 	}
 

@@ -14,7 +14,8 @@ import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.IncludeType;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
-import org.teasoft.exam.bee.osql.entity.User;
+import org.teasoft.exam.bee.osql.entity.TestUser;
+//import org.teasoft.exam.bee.osql.entity.User;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.Logger;
 
@@ -43,14 +44,14 @@ public class SuidRichExam {
 		orders.setSequence("");  //empty String test
 		
 		
-		int insertNum1=suidRich.insert(orders,IncludeType.INCLUDE_NULL);
-		Logger.info("insert record:"+insertNum1);
+//		int insertNum1=suidRich.insert(orders,IncludeType.INCLUDE_NULL);
+//		Logger.info("insert record:"+insertNum1);
 		
 		int insertNum2=suidRich.insert(orders,IncludeType.INCLUDE_EMPTY);
 		Logger.info("insert record:"+insertNum2);
 		
-		int insertNum3=suidRich.insert(orders,IncludeType.INCLUDE_BOTH);
-		Logger.info("insert record:"+insertNum3);
+//		int insertNum3=suidRich.insert(orders,IncludeType.INCLUDE_BOTH);
+//		Logger.info("insert record:"+insertNum3);
 		
 		
 		int updateNum1=suidRich.update(orders, "name,remark");
@@ -126,20 +127,20 @@ public class SuidRichExam {
 		
 		//test batch insert
 		Orders orders0=new Orders();
-		orders0.setId(1007L);
+		orders0.setId(1004L);
 		orders0.setUserid("client01");
 //		orders0.setName("MVC book");
 		orders0.setTotal(new BigDecimal(91));
 		orders0.setRemark("testOneTime");
 		
 		Orders orders1=new Orders();
-		orders1.setId(1008L);
+		orders1.setId(1005L);
 		orders1.setUserid("client02");
 		orders1.setRemark("testOneTime");
 		orders1.setTotal(new BigDecimal(20));
 		
 		Orders orders2=new Orders();
-		orders2.setId(1009L);
+		orders2.setId(1006L);
 		orders2.setUserid("client03");
 		orders2.setRemark("testOneTime");
 		orders2.setTotal(new BigDecimal(23));
@@ -165,6 +166,11 @@ public class SuidRichExam {
 //		for (int i = 0; i < insertArray2.length; i++) {
 //			Logger.info(insertArray2[i]+" ,");
 //		}
+		
+		
+		orders0.setId(1007L);
+		orders1.setId(1008L);
+		orders2.setId(1009L);
 //		int insertArray2=suidRich.insert(ordersArray,"id,datetime");//batch insert
 		int insertArray2=suidRich.insert(ordersArray,"datetime");//batch insert
 		Logger.info(insertArray2);
@@ -207,19 +213,22 @@ public class SuidRichExam {
 		Logger.info("deleteNum2: "+deleteNum2);
 		
 
-		suidRich.selectById(new User(), "800001,800002");
-		suidRich.selectById(new User(), 800001);
+//		suidRich.selectById(new TestUser(), "800001,800002");  //PostgreSQL 是强类型,不能这种用
+		List list_aa=suidRich.selectById(new TestUser(), 800001);
+		System.out.println(list_aa.size());
+		
+		
 //		User userTest=suidRich.selectById(new User(), 800001L).get(0); //bug,if the list is empty
-		List<User> list=suidRich.selectById(new User(), 800001L);
-		User userTest=null;
+		List<TestUser> list=suidRich.selectById(new TestUser(), 800001L);
+		TestUser userTest=null;
 		if(list!=null && list.size()>0) userTest=list.get(0);
 //		
-		int deleteNum3=suidRich.deleteById(User.class, 800001);
+		int deleteNum3=suidRich.deleteById(TestUser.class, 800001);
 		Logger.info("deleteNum3: "+deleteNum3);
 		
 		suidRich.insert(userTest);
 		
-		String json=suidRich.selectJson(new User());
+		String json=suidRich.selectJson(new TestUser());
 		Logger.info("selectJson(new User()):");
 		Logger.info(json);
 		

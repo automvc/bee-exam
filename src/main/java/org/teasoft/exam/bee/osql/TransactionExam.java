@@ -9,7 +9,8 @@ import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.transaction.Transaction;
 import org.teasoft.exam.bee.osql.entity.Orders;
-import org.teasoft.exam.bee.osql.entity.User;
+//import org.teasoft.exam.bee.osql.entity.User;
+import org.teasoft.exam.bee.osql.entity.TestUser;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.Logger;
@@ -32,7 +33,7 @@ public class TransactionExam {
 			
 			Suid suid = BeeFactory.getHoneyFactory().getSuid();
 			
-			User user=new User();
+			TestUser user=new TestUser();
 			user.setUsername("testuser");
 			user.setPassword("bee-user");
 			

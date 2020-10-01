@@ -7,6 +7,7 @@
 package org.teasoft.exam.bee.osql;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.SuidRich;
@@ -69,7 +70,14 @@ public class InsertTest {
 //			Logger.info(insertArray[i]+" ,");
 //		}
 		int insertArray=suidRich.insert(ordersArray);//batch insert
+//		int insertArray=suidRich.insert(ordersArray,"id");//batch insert    PostgreSQL
 		Logger.info(insertArray);
+		
+		
+		List<Orders> list1 = suidRich.select(orders1); //select
+		for (int i = 0; i < list1.size(); i++) {
+			Logger.info(list1.get(i).toString());
+		}
 		
 	  } catch (BeeException e) {
 		  Logger.error("In SuidRichExam (Exception):"+e.getMessage());

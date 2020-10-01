@@ -13,7 +13,8 @@ import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.MoreTable;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.exam.bee.osql.moretable.entity.Orders;
-import org.teasoft.exam.bee.osql.moretable.entity.User;
+//import org.teasoft.exam.bee.osql.moretable.entity.User;
+import org.teasoft.exam.bee.osql.moretable.entity.TestUser;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.Logger;
@@ -36,9 +37,9 @@ public class MoreTableExam {
 			orders1.setUserid("bee");
 			orders1.setName("Bee(ORM Framework)");
 
-			User user = new User();
+			TestUser user = new TestUser();
 			user.setEmail("beeUser@163.com");
-			orders1.setUser(user);
+			orders1.setTestUser(user);
 
 			//默认不处理null和空字符串.不用再写一堆的判断;其它有值的字段全部自动作为过滤条件
 			//List<Orders> list1 =moreTable.select(orders1);  //select
@@ -65,7 +66,7 @@ public class MoreTableExam {
 				Logger.info(list2.get(i).toString());
 			}
 			
-			condition.selectField("orders.id,user.id,userid,total,orders.createtime");  //只查询部分字段. 没有指定查询的值都为null
+			condition.selectField("orders.id,test_user.id,userid,total,orders.createtime");  //只查询部分字段. 没有指定查询的值都为null
 			List<Orders> list3 = moreTable.select(orders1, condition); //select
 			Logger.info("size of records:"+list3.size() + "");
 			for (int i = 0; i < list3.size(); i++) {
@@ -73,8 +74,8 @@ public class MoreTableExam {
 			}
 
 		} catch (BeeException e) {
-			Logger.error("In MoreTableExam (BeeException):"+e.getMessage());
 			e.printStackTrace();
+			Logger.error("In MoreTableExam (BeeException):"+e.getMessage());
 		}catch (Exception e) {
 			Logger.error("In MoreTableExam (Exception):"+e.getMessage());
 			e.printStackTrace();

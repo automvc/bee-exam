@@ -86,7 +86,7 @@ public class ConditionExam {
 		Condition conditionDel=new ConditionImpl();
 		conditionDel
 		.op("remark", Op.like, "test condition %")
-		.op("Total", Op.le, "0.01")
+		.op("Total", Op.le, 0.01)
 //		.groupBy("userid")  //DELETE do not support the opType: groupBy!
 //		.orderBy("name")
 		;
@@ -109,7 +109,7 @@ public class ConditionExam {
 		Orders_update.setAbc("test for update");
 		Condition conditionUpdate=new ConditionImpl();
 		conditionUpdate
-		.op("Total", Op.ge, "97")
+		.op("Total", Op.ge, 97)
 		.op("remark", Op.like, "test%") //当condition设置有remark:1)updateBy指定remark为where条件时,实体的remark设置会无效;
 		;                                //2)当update指定remark为需要更新的字段时,实体的remark设置的值为需要更新的值,而condition中设置remark的值会转化为SQL中where的条件
 		

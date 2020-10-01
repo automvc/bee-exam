@@ -47,20 +47,20 @@ public class BugTest {
 			
 			//test batch insert
 			Orders orders0=new Orders();
-			orders0.setId(1007L);
+			orders0.setId(10010L);
 			orders0.setUserid("client01");
 //			orders0.setName("MVC book");
 			orders0.setTotal(new BigDecimal(91));
 			orders0.setRemark("testOneTime");
 			
 			Orders orders1=new Orders();
-			orders1.setId(1008L);
+			orders1.setId(1011L);
 			orders1.setUserid("client02");
 			orders1.setRemark("testOneTime");
 			orders1.setTotal(new BigDecimal(20));
 			
 			Orders orders2=new Orders();
-			orders2.setId(1009L);
+			orders2.setId(1012L);
 			orders2.setUserid("client03");
 			orders2.setRemark("testOneTime");
 			orders2.setTotal(new BigDecimal(23));

@@ -11,7 +11,8 @@ import java.util.List;
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
-import org.teasoft.exam.bee.osql.entity.User;
+//import org.teasoft.exam.bee.osql.entity.User;
+import org.teasoft.exam.bee.osql.entity.TestUser;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.Logger;
 
@@ -29,18 +30,18 @@ public class UseJson {
 		try{
 			SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
 			
-			String json = suidRich.selectJson(new User());
-			Logger.info("selectJson(new User()):");
+			String json = suidRich.selectJson(new TestUser());
+			Logger.info("selectJson(new TestUser()):");
 			Logger.info(json);
 
 			ObjectMapper mapper = new ObjectMapper();
 
-			User user[] = mapper.readValue(json, User[].class);
+			TestUser user[] = mapper.readValue(json, TestUser[].class);
 			Logger.info("将直接查询的json转成对象:");
 			for (int i = 0; i < user.length; i++) {
 				Logger.info(user[i].toString());
 			}
-			List<User> list1 = suidRich.select(new User()); //select
+			List<TestUser> list1 = suidRich.select(new TestUser()); //select
 			//User user2=new User();user2.setId(800001);
 			//List<User> list1 = suidRich.select(user2); //select
 			for (int i = 0; i < list1.size(); i++) {

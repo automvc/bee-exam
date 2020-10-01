@@ -21,14 +21,14 @@ public class Orders implements Serializable {
 	@JoinTable(mainField="userid", subField="username", joinType=JoinType.LEFT_JOIN)
 //	@JoinTable(mainField="userid", subField="username",subAlias="myuser" , joinType=JoinType.FULL_JOIN)
 //	@JoinTable()
-	private User user;
+    private TestUser testUser;
 	
-	public User getUser() {
-		return user;
+	public TestUser getTestUser() {
+		return testUser;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setTestUser(TestUser testUser) {
+		this.testUser=testUser;
 	}
 	
 
@@ -235,10 +235,10 @@ public class Orders implements Serializable {
 		 str.append(",abc=").append(abc);		 
 		 str.append(",updatetime=").append(updatetime);		 
 		 
-		 if(user==null)
+		 if(testUser==null)
 			 str.append(",user").append("=null");	
 		 else 
-		   str.append(",").append(user.toString());
+		   str.append(",").append(testUser.toString());
 		 
 		 str.append("]");			 
 		 return str.toString();			 

@@ -9,9 +9,7 @@ package org.teasoft.exam.comm;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-import org.teasoft.bee.logging.Log;
 import org.teasoft.bee.logging.Path;
-import org.teasoft.honey.logging.LoggerFactory;
 
 /**
  * @author Kingstar
@@ -34,17 +32,21 @@ public class TestPrepare {
 			identify="-"+identify+"-";
 		}
 		
-		DateFormat df=new SimpleDateFormat("yyyy-MM-dd HH.mm.ss.SS");
-		String datetime=df.format(System.currentTimeMillis());
-		
-//		D:\{project-home}\src\main\resources\log
-		String path=System.getProperty("user.dir")+"\\src\\main\\resources\\log"+"\\bee-exam("+version+")"+identify+"{datatime}.txt".replace("{datatime}", datetime);
-		System.out.println(path);
-		//set the path and file name of log file
-		Path.setFullPath(path);
-	
-//		Log log=new FileLogger();
-//		LoggerFactory.getLoggerFactory().setLog(log);
-	}
+//		if ("fileLogger".equalsIgnoreCase(HoneyConfig.getHoneyConfig().loggerType)) {
+
+			DateFormat df=new SimpleDateFormat("yyyy-MM-dd HH.mm.ss.SS");
+			String datetime=df.format(System.currentTimeMillis());
+
+			//		D:\{project-home}\src\main\resources\log
+			String path=System.getProperty("user.dir") + "\\src\\main\\resources\\log" + "\\bee-exam(" + version + ")" + identify
+					+ "{datatime}.txt".replace("{datatime}", datetime);
+			System.out.println("the fileLogger path: "+path);
+			//set the path and file name of log file
+			Path.setFullPath(path);
+
+			//		Log log=new FileLogger();
+			//		LoggerFactory.getLoggerFactory().setLog(log);
+		}
+//	}
 
 }

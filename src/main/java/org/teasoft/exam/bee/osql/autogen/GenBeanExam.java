@@ -31,12 +31,19 @@ public class GenBeanExam {
 //			config.setBaseDir("D:\\xxx\\yyy\\bee-exam\\src\\main\\java\\");
 			config.setBaseDir("D:\\JavaWeb\\workspaceGit\\bee-exam\\src\\main\\java\\");
 			config.setPackagePath("org.teasoft.exam.bee.osql.entity");
+//			config.setPackagePath("org.teasoft.exam.bee.osql.entity.dynamic");
+//			config.setPackagePath("org.teasoft.exam.bee.osql.entity.sqlite");
+//			config.setPackagePath("org.teasoft.exam.bee.osql.entity.postgreSQL");
+//			config.setPackagePath("org.teasoft.exam.bee.osql.entity.h2");
 
 			GenBean genBean = new GenBean(config);
-
-			genBean.genSomeBeanFile("leaf_alloc");
+//			genBean.genSomeBeanFile("leaf_alloc,Orders");
 //			genBean.genSomeBeanFile("Orders,user");
+//			genBean.genSomeBeanFile("POSTGRESQL_TYPE");
+//			genBean.genSomeBeanFile("H2_TYPE");
 			
+			genBean.genSomeBeanFile("leaf_alloc,Orders,test_user");
+//			
 		  } catch (BeeException e) {
 			 e.printStackTrace();
 		  }

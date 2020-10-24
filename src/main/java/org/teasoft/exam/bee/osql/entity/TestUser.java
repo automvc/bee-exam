@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 */
 public class TestUser implements Serializable {
 
-/*	private static final long serialVersionUID = 1592134386464L;
+	private static final long serialVersionUID = 1592134386464L;
 
 	private Long id;
 	private String email;
@@ -87,10 +87,10 @@ public class TestUser implements Serializable {
 		 str.append(",createtime=").append(createtime);		 
 		 str.append("]");			 
 		 return str.toString();			 
-	 }	*/	 
+	 }		 
+}
 	
-	
-	
+/*	
 	//SQLite
 	private static final long serialVersionUID = 1597026185125L;
 
@@ -171,4 +171,4 @@ public class TestUser implements Serializable {
 		 str.append("]");			 
 		 return str.toString();			 
 	 }	
-}
+}*/

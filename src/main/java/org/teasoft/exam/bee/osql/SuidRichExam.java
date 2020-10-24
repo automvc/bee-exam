@@ -13,9 +13,9 @@ import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.IncludeType;
 import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.exam.bee.osql.entity.LeafAlloc;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.exam.bee.osql.entity.TestUser;
-//import org.teasoft.exam.bee.osql.entity.User;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.Logger;
 
@@ -180,6 +180,9 @@ public class SuidRichExam {
 //        select some fields
 		List<Orders> listSome=suidRich.select(exampleField, "name,total");
 		Logger.info(listSome.size()+"");
+		
+		LeafAlloc leafAlloc=new LeafAlloc();
+		suidRich.select(leafAlloc, "maxId");  //check the selectFields
 		
 		Orders ordersForString=new Orders();
 		ordersForString.setUserid("client01");

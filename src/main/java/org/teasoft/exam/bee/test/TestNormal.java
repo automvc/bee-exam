@@ -35,6 +35,20 @@ import org.teasoft.honey.osql.util.DateUtil;
 public class TestNormal {
 	
 	public static void main(String[] args) {
+		
+		//set DB info in JavaCode
+//		HoneyConfig.getHoneyConfig().setDriverName(driverName);
+		String url="jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8";
+		String username="root";
+		String password="";
+		HoneyConfig.getHoneyConfig().setUrl(url);
+		HoneyConfig.getHoneyConfig().setUsername(username);
+		HoneyConfig.getHoneyConfig().setPassword(password);
+		
+//		HoneyConfig.getHoneyConfig().loggerType="systemLogger";
+		HoneyConfig.getHoneyConfig().loggerType="fileLogger";
+		
+//		HoneyConfig.getHoneyConfig().dbName="mysql";
 	  
 		
 //	   TestPrepare.init("normal");

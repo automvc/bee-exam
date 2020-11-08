@@ -49,3 +49,9 @@ add H2,SQLite Support:
 bee-exam(v1.8.15)-normal(H2)-2020-09-20 21.37.23.126.txt
 bee-exam(v1.8.15)-normal(MySQL)-2020-09-20 18.28.31.764.txt
 bee-exam(v1.8.15)-normal(SQLite)-2020-09-20 19.43.53.751.txt
+
+Support lower and upper case option for SQL KeyWord:
+bee-exam(v1.8.99)-normal(MySQL)-2020-10-17 21.41.40.37.txt
+bee-exam(v1.8.99)-normal(MySQL)-2020-10-17 21.42.02.730-UPPER.txt
+
+bee-exam(v1.8.99)-normal(MySQL)-2020-10-24 21.40.20.605.txt

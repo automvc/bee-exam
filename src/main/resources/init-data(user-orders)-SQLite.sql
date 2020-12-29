@@ -36,3 +36,6 @@ CREATE TABLE leaf_alloc (
   update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   version int(11) DEFAULT NULL
 ) ;
+
+create table orders_202007 like orders;
+create table leaf_alloc like leaf_alloc2;

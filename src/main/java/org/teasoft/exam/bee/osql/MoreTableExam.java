@@ -66,7 +66,8 @@ public class MoreTableExam {
 				Logger.info(list2.get(i).toString());
 			}
 			
-			condition.selectField("orders.id,test_user.id,userid,total,orders.createtime");  //只查询部分字段. 没有指定查询的值都为null
+//			condition.selectField("orders.id,test_user.id,userid,total,orders.createtime");  
+			condition.selectField("orders.id,testUser.id,userid,total,orders.createtime");//只查询部分字段. 没有指定查询的值都为null
 			List<Orders> list3 = moreTable.select(orders1, condition); //select
 			Logger.info("size of records:"+list3.size() + "");
 			for (int i = 0; i < list3.size(); i++) {

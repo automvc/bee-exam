@@ -7,6 +7,7 @@
 package org.teasoft.exam.bee.osql;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
@@ -174,6 +175,16 @@ public class SuidRichExam {
 //		int insertArray2=suidRich.insert(ordersArray,"id,datetime");//batch insert
 		int insertArray2=suidRich.insert(ordersArray,"datetime");//batch insert
 		Logger.info(insertArray2);
+		
+		orders0.setId(10010L);
+		orders1.setId(10011L);
+		orders2.setId(10012L);
+		List<Orders> list=new ArrayList<>();
+		list.add(orders0);
+		list.add(orders1);
+		list.add(orders2);
+		int insertList=suidRich.insert(list,"datetime");//batch insert List
+		Logger.info(insertList);
 				
 		Orders exampleField=new Orders();
 		exampleField.setUserid("bee");
@@ -212,24 +223,24 @@ public class SuidRichExam {
 		}
 		
 		
-		int deleteNum2=suidRich.delete(order_more);
-		Logger.info("deleteNum2: "+deleteNum2);
+//		int deleteNum2=suidRich.delete(order_more);   // bug : Lock wait timeout exceeded;
+//		Logger.info("deleteNum2: "+deleteNum2);
 		
 
 //		suidRich.selectById(new TestUser(), "800001,800002");  //PostgreSQL 是强类型,不能这种用
-		List list_aa=suidRich.selectById(new TestUser(), 800001);
-		System.out.println(list_aa.size());
+		TestUser testUser1=suidRich.selectById(new TestUser(), 800001);
+		System.out.println(testUser1);
 		
 		
 //		User userTest=suidRich.selectById(new User(), 800001L).get(0); //bug,if the list is empty
-		List<TestUser> list=suidRich.selectById(new TestUser(), 800001L);
-		TestUser userTest=null;
-		if(list!=null && list.size()>0) userTest=list.get(0);
+		TestUser testUser2=suidRich.selectById(new TestUser(), 800001L);
+//		TestUser userTest=null;
+//		if(list!=null && list.size()>0) userTest=list.get(0);
 //		
 		int deleteNum3=suidRich.deleteById(TestUser.class, 800001);
 		Logger.info("deleteNum3: "+deleteNum3);
 		
-		suidRich.insert(userTest);
+		suidRich.insert(testUser2);
 		
 		String json=suidRich.selectJson(new TestUser());
 		Logger.info("selectJson(new User()):");

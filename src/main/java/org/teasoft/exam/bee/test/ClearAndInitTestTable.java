@@ -37,6 +37,7 @@ public class ClearAndInitTestTable {
 		}else if (DatabaseConst.PostgreSQL.equalsIgnoreCase(DbName)) { //PostgreSQL
 			CreatePostgreSQLTable.main(null);
 		}else {
+			//mysql need run the sql( init-data(user-orders)-mysql.sql ) first.
 			//		int deleteOrdersNum=preparedSql.modify("delete from orders", mapUpdate);
 			int deleteOrdersNum = preparedSql.modify("TRUNCATE orders", nullMap);
 			Logger.info("deleteOrdersNum: " + deleteOrdersNum);

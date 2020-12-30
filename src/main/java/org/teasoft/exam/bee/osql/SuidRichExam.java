@@ -87,9 +87,6 @@ public class SuidRichExam {
 //		int updateNum8_0=suidRich.update(orders,IncludeType.INCLUDE_EMPTY);
 //		Logger.info("updateNum8_0:  "+updateNum8_0);
 		
-
-		
-		
 		Orders orders00=new Orders();
 		
 		orders00.setId(100L);
@@ -168,7 +165,6 @@ public class SuidRichExam {
 //			Logger.info(insertArray2[i]+" ,");
 //		}
 		
-		
 		orders0.setId(1007L);
 		orders1.setId(1008L);
 		orders2.setId(1009L);
@@ -208,8 +204,6 @@ public class SuidRichExam {
 			Logger.info("");
 		}
 		
-
-		
 		Orders order_more=new Orders();
 		order_more.setRemark("testOneTime");
 		
@@ -227,16 +221,23 @@ public class SuidRichExam {
 //		Logger.info("deleteNum2: "+deleteNum2);
 		
 
-//		suidRich.selectById(new TestUser(), "800001,800002");  //PostgreSQL 是强类型,不能这种用
+		List<TestUser> listSelectByIds=suidRich.selectByIds(new TestUser(), "800001,800002");  //PostgreSQL 是强类型,不能这种用
+		for (int i = 0; i < listSelectByIds.size(); i++) {
+			Logger.info(listSelectByIds.get(i).toString());
+			System.out.println("=============================================");
+		}
+		
 		TestUser testUser1=suidRich.selectById(new TestUser(), 800001);
-		System.out.println(testUser1);
+		Logger.info(testUser1.toString());
 		
-		
-//		User userTest=suidRich.selectById(new User(), 800001L).get(0); //bug,if the list is empty
 		TestUser testUser2=suidRich.selectById(new TestUser(), 800001L);
-//		TestUser userTest=null;
-//		if(list!=null && list.size()>0) userTest=list.get(0);
-//		
+		
+		TestUser testUser3=suidRich.selectById(new TestUser(), "800001");
+		Logger.info(testUser3.toString());
+//		test Exception
+//		TestUser testUser3=suidRich.selectById(new TestUser(), "800001,800001");
+//		Logger.info(testUser3.toString());
+
 		int deleteNum3=suidRich.deleteById(TestUser.class, 800001);
 		Logger.info("deleteNum3: "+deleteNum3);
 		

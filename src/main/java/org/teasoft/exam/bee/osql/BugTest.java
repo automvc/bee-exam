@@ -104,7 +104,7 @@ public class BugTest {
 			
 			List<Orders> list_like = suid.select(orders_like,condition_like); //select
 			for (int i = 0; list_like!=null && i < list_like.size(); i++) {
-				System.out.println(list_like.get(i));
+				Logger.info(list_like.get(i).toString());
 			}
 			
 //			-------------------v.1.7.2--------end----------  

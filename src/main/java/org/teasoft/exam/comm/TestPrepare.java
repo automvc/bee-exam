@@ -17,11 +17,13 @@ import org.teasoft.bee.logging.Path;
  */
 public class TestPrepare {
 	
-//	static String version="v1.7.2";
-//	static String version="v1.7.3";
-//	static String version="v1.8";
-//	static String version="v1.8.15";
-	static String version="v1.8.99";
+//	private static String version="v1.7";
+//	private static String version="v1.7.2";
+//	private static String version="v1.7.3";
+//	private static String version="v1.8";
+//	private static String version="v1.8.15";
+//	private static String version="v1.8.99";
+	private static String version="v1.9";
 	
 	public static void init(){
 		init("");

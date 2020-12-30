@@ -20,7 +20,11 @@ import org.teasoft.honey.osql.util.DateUtil;
  */
 public class TestCache {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
+		test();
+	}
+	
+	public static void test() throws Exception{
 		TestPrepare.init("cache");
 		
 		ClearAndInitTestTable.main(null);  //TODO Notice! Just For test.

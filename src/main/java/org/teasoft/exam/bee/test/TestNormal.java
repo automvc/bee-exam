@@ -34,7 +34,11 @@ import org.teasoft.honey.osql.util.DateUtil;
  */
 public class TestNormal {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
+		test();
+	}
+	
+	public static void test() throws Exception{
 		
 		//set DB info in JavaCode
 //		HoneyConfig.getHoneyConfig().setDriverName(driverName);
@@ -108,9 +112,11 @@ public class TestNormal {
 	   } catch (BeeException e) {
 		   Logger.error(e.getMessage());
 		   e.printStackTrace();
+		   throw new BeeException();
 	   }catch (Exception e) {
 		   Logger.error(e.getMessage());
 		   e.printStackTrace();
+		   throw new Exception();
 	   }
 		
 	   System.out.println(DateUtil.currentDate()+"  test normal Finished!");

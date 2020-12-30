@@ -12,6 +12,8 @@ public class TestUser implements Serializable {
 	private static final long serialVersionUID = 1592134386464L;
 
 	private Long id;
+//	private long id;
+//	private int id;
 	private String email;
 	private String lastName;
 	private String name;
@@ -27,6 +29,22 @@ public class TestUser implements Serializable {
 		this.id = id;
 	}
 
+//	public long getId() {
+//		return id;
+//	}
+//
+//	public void setId(long id) {
+//		this.id=id;
+//	}
+
+//	public int getId() {
+//		return id;
+//	}
+//
+//	public void setId(int id) {
+//		this.id=id;
+//	}
+	
 	public String getEmail() {
 		return email;
 	}

@@ -61,7 +61,7 @@ public class ClearAndInitTestTable {
 //		String insertOrders1="INSERT INTO orders VALUES ('100001', 'bee', 'Bee(ORM Framework)', '95.01', '2020-03-02 11:29:28', 'test', '12345601', 'test1', '2020-03-02 16:34:19');";
 		String insertOrders1="INSERT INTO orders VALUES ('100001', 'bee', 'Bee(ORM Framework)', '95.01', '2020-03-02 11:29:28', 'test', '12345601', 'test1', null);";
 		String insertOrders2="INSERT INTO orders VALUES ('100002', 'bee', 'Bee(ORM Framework)', '96.01', '2020-03-02 11:29:28', 'test%a', '12345602', 'test2', '2020-03-02 16:34:19');";
-		String insertOrders3="INSERT INTO orders VALUES ('100003', 'bee', 'Bee(ORM Framework)', '97.01', '2020-03-02 11:29:28', 'testx%', '12345603', 'test3', '2020-03-02 16:34:19');";
+		String insertOrders3="INSERT INTO orders VALUES ('100003', 'bee', 'Bee', '97.01', '2020-03-02 11:29:28', 'testx%', '12345603', 'test3', '2020-03-02 16:34:19');";
 		
 //		String sqls[]=new String[3];
 //		sqls[0]=insertOrders1;

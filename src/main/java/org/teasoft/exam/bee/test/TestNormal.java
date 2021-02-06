@@ -12,8 +12,11 @@ import org.teasoft.exam.bee.osql.BugTest;
 import org.teasoft.exam.bee.osql.ConditionExam;
 import org.teasoft.exam.bee.osql.DynamicTableExam;
 import org.teasoft.exam.bee.osql.InsertTest;
+import org.teasoft.exam.bee.osql.MapSuidExam;
+import org.teasoft.exam.bee.osql.MoreSQLFunction;
 import org.teasoft.exam.bee.osql.MoreTableExam;
 import org.teasoft.exam.bee.osql.PreparedSqlExam;
+import org.teasoft.exam.bee.osql.SelectFun;
 import org.teasoft.exam.bee.osql.SuidExam;
 import org.teasoft.exam.bee.osql.SuidExamEN;
 import org.teasoft.exam.bee.osql.SuidRichExam;
@@ -108,6 +111,10 @@ public class TestNormal {
 		runTest(InsertTest.class);
 		runTest(DynamicTableExam.class);
 		
+		//v1.9
+//		runTest(MoreSQLFunction.class);
+//		runTest(SelectFun.class);
+		runTest(MapSuidExam.class);
 		
 	   } catch (BeeException e) {
 		   Logger.error(e.getMessage());

@@ -83,6 +83,15 @@ public class UpdateSetExam {
 		int setMultiplyNum2=suidRich.update(entity,condition2);  //ok
 		Logger.info("test setMultiply , update num: "+setMultiplyNum2);
 		
+		 Orders orders3=new Orders();
+		 orders3.setId(1004L);
+		 orders3.setRemark("updateById");
+		 Condition condition3=new ConditionImpl();
+		 condition3.setAdd("total", 1);
+		 condition3.op("Total", Op.ge, 90);
+		 suidRich.updateById(orders3,condition3);
+//		 suidRich.updateBy(orders3,"id",condition3);  //指明了where的字段,但condition里的op还是会转成where的条件.
+		
 
 		
 /*		Orders orders=null;

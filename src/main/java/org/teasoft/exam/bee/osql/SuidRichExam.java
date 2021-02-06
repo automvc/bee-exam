@@ -112,6 +112,7 @@ public class SuidRichExam {
 		int insertNum00=suidRich.insert(orders00,IncludeType.INCLUDE_NULL);
 		Logger.info("insert record:"+insertNum00);
 		
+		
 		int updateNum8=suidRich.update(orders00,IncludeType.INCLUDE_EMPTY);
 		Logger.info("updateNum8:  "+updateNum8);
 		int updateNum9=suidRich.update(orders00,IncludeType.INCLUDE_NULL); 
@@ -119,6 +120,12 @@ public class SuidRichExam {
 		int updateNum10=suidRich.update(orders00,IncludeType.INCLUDE_BOTH); 
 		Logger.info("updateNum10:  "+updateNum10);
 		
+//		//update默认主键为id时,无id字段或id为null异常处理. 
+//		orders00.setId(null); 
+//		int updateNum11=suidRich.update(orders00,IncludeType.INCLUDE_NULL);
+//		Logger.info("updateNum11:  "+updateNum11);
+//		int updateNum12=suidRich.update(orders00,IncludeType.INCLUDE_EMPTY);
+//		Logger.info("updateNum12:  "+updateNum12);
 		
 		int deleteNum=suidRich.delete(orders00);
 		Logger.info("deleteNum: "+deleteNum);

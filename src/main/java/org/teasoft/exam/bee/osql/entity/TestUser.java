@@ -3,6 +3,8 @@ package org.teasoft.exam.bee.osql.entity;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
+import org.teasoft.bee.osql.annotation.Ignore;
+
 /**
 *@author Honey
 *Create on 2020-10-01 12:41:06
@@ -17,6 +19,7 @@ public class TestUser implements Serializable {
 	private String email;
 	private String lastName;
 	private String name;
+//	@Ignore
 	private String password;
 	private String username;
 	private Timestamp createtime;

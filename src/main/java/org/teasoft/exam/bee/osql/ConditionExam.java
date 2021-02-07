@@ -118,6 +118,7 @@ public class ConditionExam {
 		
 		
 		Orders_update.setRemark("test for set");
+		conditionUpdate.setAdd("total", 1);  //不受updateFields声明的set字段限制
 		int updateNumCondition=suidRich.update(Orders_update, "remark", conditionUpdate); //point to set field
 		Logger.info("updateNumCondition: "+updateNumCondition);
 		

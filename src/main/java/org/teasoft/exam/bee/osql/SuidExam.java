@@ -34,6 +34,11 @@ public class SuidExam {
 			Suid suid = BeeFactory.getHoneyFactory().getSuid();
 
 			Orders orders1 = new Orders();
+			
+			suid.select(orders1); //select all
+			
+			orders1.setId(100001L);
+			orders1.setName("Bee(ORM Framework)");
 
 			//默认不处理null和空字符串.不用再写一堆的判断;其它有值的字段全部自动作为过滤条件
 			List<Orders> list1 = suid.select(orders1); //select

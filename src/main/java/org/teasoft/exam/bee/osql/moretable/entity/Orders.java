@@ -18,7 +18,8 @@ public class Orders implements Serializable {
 	private static final long serialVersionUID = 1592526978329L;
 	
 //	@JoinTable(mainField="userid", subField="username")
-	@JoinTable(mainField="userid", subField="username", joinType=JoinType.LEFT_JOIN)
+//	@JoinTable(mainField="userid", subField="username", joinType=JoinType.LEFT_JOIN)  //ok //... from orders left join test_user on orders.userid=test_user.username where ...
+	@JoinTable(mainField="userid,name", subField="username,name", joinType=JoinType.JOIN)
 //	@JoinTable(mainField="userid", subField="username",subAlias="myuser" , joinType=JoinType.FULL_JOIN)
 //	@JoinTable()
     private TestUser testUser;

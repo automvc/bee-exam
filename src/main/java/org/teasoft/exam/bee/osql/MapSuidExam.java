@@ -36,8 +36,14 @@ public class MapSuidExam {
 			mapSql.put(MapSqlKey.SelectColumns, "name,password");
 			mapSql.put(MapSqlKey.OrderBy, "name");
 			mapSql.put(MapSqlKey.IsNamingTransfer, Boolean.TRUE + "");
+			
+			mapSql.put(MapSqlKey.IsIncludeEmptyString, Boolean.TRUE + "");
+			mapSql.put(MapSqlKey.IsIncludeNull, Boolean.TRUE + "");
+			
 
 			mapSql.put("name", "Bee");
+			mapSql.put("email", ""); //emptyString
+			mapSql.put("lastName", null);
 
 			String json = mapSuid.selectJson(mapSql);
 			Logger.info(json);

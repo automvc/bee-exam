@@ -32,6 +32,8 @@ public class SuidExam {
 		try {
 			
 			Suid suid = BeeFactory.getHoneyFactory().getSuid();
+			
+			suid.beginSameConnection();
 
 			Orders orders1 = new Orders();
 			
@@ -83,6 +85,7 @@ public class SuidExam {
 			for (int i = 0; i < listAll.size(); i++) {
 				Logger.info(listAll.get(i).toString());
 			}
+			suid.endSameConnection();
 
 		} catch (BeeException e) {
 			Logger.error("In SuidExam (BeeException):"+e.getMessage());

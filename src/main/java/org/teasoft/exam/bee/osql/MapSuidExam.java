@@ -11,6 +11,7 @@ import java.util.Map;
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.MapSql;
 import org.teasoft.bee.osql.MapSqlKey;
+import org.teasoft.bee.osql.MapSqlSetting;
 import org.teasoft.bee.osql.MapSuid;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.Logger;
@@ -31,19 +32,19 @@ public class MapSuidExam {
 			MapSuid mapSuid = BeeFactory.getHoneyFactory().getMapSuid();
 			MapSql mapSql = BeeFactory.getHoneyFactory().getMapSql();
 
-//		    mapSql.put(MapSqlKey.Table, "test_user");
-			mapSql.put(MapSqlKey.Table, "testUser");
+		    mapSql.put(MapSqlKey.Table, "test_user");
+//			mapSql.put(MapSqlKey.Table, "testUser");
 			mapSql.put(MapSqlKey.SelectColumns, "name,password");
 			mapSql.put(MapSqlKey.OrderBy, "name");
-			mapSql.put(MapSqlKey.IsNamingTransfer, Boolean.TRUE + "");
 			
-			mapSql.put(MapSqlKey.IsIncludeEmptyString, Boolean.TRUE + "");
-			mapSql.put(MapSqlKey.IsIncludeNull, Boolean.TRUE + "");
-			
+			mapSql.put(MapSqlSetting.IsNamingTransfer, true);
+//			mapSql.put(MapSqlSetting.IsIncludeEmptyString, true);
+			mapSql.put(MapSqlSetting.IsIncludeNull, true);
 
 			mapSql.put("name", "Bee");
 			mapSql.put("email", ""); //emptyString
 			mapSql.put("lastName", null);
+//			mapSql.put("last_name", null);
 
 			String json = mapSuid.selectJson(mapSql);
 			Logger.info(json);

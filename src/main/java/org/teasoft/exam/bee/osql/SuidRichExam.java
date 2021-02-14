@@ -44,15 +44,17 @@ public class SuidRichExam {
 		
 		orders.setSequence("");  //empty String test
 		
+		int insertNum0=suidRich.insert(orders);
+		Logger.info("insert record:"+insertNum0);
 		
-//		int insertNum1=suidRich.insert(orders,IncludeType.INCLUDE_NULL);
-//		Logger.info("insert record:"+insertNum1);
+		int insertNum1=suidRich.insert(orders,IncludeType.INCLUDE_NULL);
+		Logger.info("insert record:"+insertNum1);
 		
 		int insertNum2=suidRich.insert(orders,IncludeType.INCLUDE_EMPTY);
 		Logger.info("insert record:"+insertNum2);
 		
-//		int insertNum3=suidRich.insert(orders,IncludeType.INCLUDE_BOTH);
-//		Logger.info("insert record:"+insertNum3);
+		int insertNum3=suidRich.insert(orders,IncludeType.INCLUDE_BOTH);
+		Logger.info("insert record:"+insertNum3);
 		
 		
 		int updateNum1=suidRich.update(orders, "name,remark");

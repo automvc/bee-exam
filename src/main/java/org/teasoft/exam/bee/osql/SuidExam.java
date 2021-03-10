@@ -85,6 +85,8 @@ public class SuidExam {
 			for (int i = 0; i < listAll.size(); i++) {
 				Logger.info(listAll.get(i).toString());
 			}
+			suid.select(orders2);
+			suid.select(orders2);
 			suid.endSameConnection();
 
 		} catch (BeeException e) {

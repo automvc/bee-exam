@@ -68,6 +68,11 @@ public class PreparedSqlExam {
 				Logger.info(list3.get(i).toString());
 			}
 			
+			String sql3_2 = CustomSql.getCustomSql("osql.example.entity.selectOrdersLikeNameViaMap2"); //%name
+			preparedSql.select(sql3_2, new Orders(), map2,1,3);//map
+			
+			String sql3_3 = CustomSql.getCustomSql("osql.example.entity.selectOrdersLikeNameViaMap3");//%name%
+			preparedSql.select(sql3_3, new Orders(), map2,1,3);//map
 			
 			String sql4 = CustomSql.getCustomSql("osql.example.entity.selectAllOrders");
 			Logger.info("getCustomSql:  " + sql4); //只能在一行的.

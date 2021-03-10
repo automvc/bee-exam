@@ -8,6 +8,7 @@ import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.transaction.Transaction;
+import org.teasoft.bee.osql.transaction.TransactionIsolationLevel;
 import org.teasoft.exam.bee.osql.entity.Orders;
 //import org.teasoft.exam.bee.osql.entity.User;
 import org.teasoft.exam.bee.osql.entity.TestUser;
@@ -73,6 +74,8 @@ public class TransactionExam {
 			
 			Logger.info("---------------locking the record!");
 			Logger.info("doing...");  //可添加更改操作等.
+			
+			transaction.setTransactionIsolation(TransactionIsolationLevel.TRANSACTION_REPEATABLE_READ);
 			transaction.commit();
 			Logger.info("---------------release the record!");
 

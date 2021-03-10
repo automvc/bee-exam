@@ -7,10 +7,12 @@
 package org.teasoft.exam.bee.osql;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.Condition;
+import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.Suid;
@@ -19,6 +21,7 @@ import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.osql.util.DateUtil;
 
 /**
  * @author Kingstar
@@ -34,15 +37,21 @@ public class ConditionExam {
 		Suid suid = BeeFactory.getHoneyFactory().getSuid();
 		Orders orders = new Orders();
 		
+		SimpleDateFormat defaultFormat= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
 		orders.setName("Bee(ORM Framework)"); //等于的条件,会默认转换
 		orders.setTotal(new BigDecimal("100"));  //不会再处理.因为between已有用
 		
 		 Condition condition=new ConditionImpl();
 		 condition
+//		 .op("1=1 -- userid", Op.like, "bee%") // test invalid field
 		 .op("userid", Op.like, "bee%") //模糊查询
+//		 .set("userid", 2)
 		 .between("total", 90, 100)     //范围查询
 		 .op("name", Op.nq, null)     //is not null
 //		 .between("createtime","2020-03-01","2020-03-03")
+//		 .between("createtime",DateUtil.currentDate(),DateUtil.currentDate())
+//		 .between("createtime",new Date(),new Date())
 		 .orderBy("userid",OrderType.ASC) //排序
 		 .start(0).size(10)              //分页
 		 ;
@@ -128,13 +137,36 @@ public class ConditionExam {
 			orders11.setUserid("bee");
 
 			Condition condition_add_forUpdate = new ConditionImpl();
-			condition_add_forUpdate
-			.op("id", Op.eq,100003)
-			.forUpdate();     // 用for update锁住某行记录    一般用于事务中
+			condition_add_forUpdate.op("id", Op.eq, 100003).forUpdate(); // 用for update锁住某行记录    一般用于事务中
 			List<Orders> list11 = suid.select(orders11, condition_add_forUpdate);
 			for (int i = 0; i < list11.size(); i++) {
 				Logger.info(list11.get(i).toString());
 			}
+			
+			
+			 //V1.9
+			 //group by userid having count(userid)>=?
+			 Condition conditionHaving=new ConditionImpl();
+			 conditionHaving.groupBy("userid")
+			 .having(FunctionType.COUNT, "userid", Op.ge, 1)
+			 ;
+			 List<Orders> list12 = suid.select(new Orders(), conditionHaving);
+			 
+			 //set with field
+			 Condition conditionSetWithField=new ConditionImpl();
+			 conditionSetWithField.setWithField("name","userid");
+			 int updateNum= suidRich.update(new Orders(), conditionSetWithField);
+			 Logger.info("updateNum use SetWithField: "+updateNum);
+			 
+			 //OpWithField
+			 Condition conditionOpWithField=new ConditionImpl();
+			 conditionOpWithField.opWithField("name",Op.eq,"userid");
+//			 conditionOpWithField.op("userid", Op.eq, "Bee")
+			 ;
+			 Orders orders14= new Orders();
+//			 orders14.setUserid("Bee2"); //will be ignored
+			 List<Orders> list14 = suid.select(orders14, conditionOpWithField);
+			 Logger.info("record num by select use opWithField: "+list14.size());
 		
 		} catch (BeeException e) {
 			Logger.error("In ConditionExam (BeeException):"+e.getMessage());

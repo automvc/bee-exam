@@ -233,7 +233,7 @@ public class SuidRichExam {
 		List<TestUser> listSelectByIds=suidRich.selectByIds(new TestUser(), "800001,800002");  //PostgreSQL 是强类型,不能这种用
 		for (int i = 0; i < listSelectByIds.size(); i++) {
 			Logger.info(listSelectByIds.get(i).toString());
-			System.out.println("=============================================");
+			Logger.info("=============================================");
 		}
 		
 		TestUser testUser1=suidRich.selectById(new TestUser(), 800001);

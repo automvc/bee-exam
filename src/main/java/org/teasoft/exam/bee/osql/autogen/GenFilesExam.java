@@ -17,6 +17,10 @@ import org.teasoft.honey.osql.autogen.GenFiles;
 public class GenFilesExam {
 
 	public static void main(String[] args) {
+		test();
+	}
+	
+	public static void test() {
 		
 		Map<String, String> map = new HashMap<>();
 //		map.put("entityName1", "Orderhistory");  //使用#{entityName?up1}可以首字母大写

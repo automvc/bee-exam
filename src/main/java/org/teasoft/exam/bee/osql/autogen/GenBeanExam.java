@@ -17,7 +17,10 @@ import org.teasoft.honey.osql.core.HoneyConfig;
  */
 public class GenBeanExam {
 	public static void main(String[] args) {
-
+		test();
+	}
+	
+	public static void test() {
 		 try{
 			String dbName=HoneyConfig.getHoneyConfig().getDbName();
 //			driverName,url,username,password config in bee.properties.
@@ -43,6 +46,9 @@ public class GenBeanExam {
 //			genBean.genSomeBeanFile("H2_TYPE");
 			
 			genBean.genSomeBeanFile("leaf_alloc,Orders,test_user");
+//			genBean.genSomeBeanFile("tableinfo");
+//			genBean.genSomeBeanFile("leftsz_info");
+//			genBean.genSomeBeanFile("t_test");
 //			
 		  } catch (BeeException e) {
 			 e.printStackTrace();

@@ -34,6 +34,15 @@ public class RwDsExam {
 	static {
 		initDS();
 	}
+	
+	public static void test() {
+		test1();
+		test2();
+	}
+
+	public static void main(String[] args) {
+		test();
+	}
 
 	public static void initDS() {
 		try {
@@ -111,15 +120,6 @@ public class RwDsExam {
 			} catch (Exception e) {
 				transaction.rollback();
 			}
-	}
-	
-	public static void test() {
-		test1();
-		test2();
-	}
-
-	public static void main(String[] args) {
-		test();
 	}
 
 }

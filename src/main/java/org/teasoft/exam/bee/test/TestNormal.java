@@ -11,20 +11,28 @@ import org.teasoft.bee.osql.DatabaseConst;
 import org.teasoft.exam.bee.osql.BugTest;
 import org.teasoft.exam.bee.osql.ConditionExam;
 import org.teasoft.exam.bee.osql.DynamicTableExam;
+import org.teasoft.exam.bee.osql.ExceptionTest;
 import org.teasoft.exam.bee.osql.InsertTest;
+import org.teasoft.exam.bee.osql.LockWaitTimeout;
 import org.teasoft.exam.bee.osql.MapSuidExam;
 import org.teasoft.exam.bee.osql.MoreSQLFunction;
 import org.teasoft.exam.bee.osql.MoreTableExam;
+import org.teasoft.exam.bee.osql.NamingTest;
+import org.teasoft.exam.bee.osql.ObjSQLServiceExam;
 import org.teasoft.exam.bee.osql.PreparedSqlExam;
+import org.teasoft.exam.bee.osql.SelectById;
 import org.teasoft.exam.bee.osql.SelectFun;
 import org.teasoft.exam.bee.osql.SuidExam;
 import org.teasoft.exam.bee.osql.SuidExamEN;
+import org.teasoft.exam.bee.osql.SuidExamEN_SQLite;
 import org.teasoft.exam.bee.osql.SuidRichExam;
 import org.teasoft.exam.bee.osql.TransactionExam;
 import org.teasoft.exam.bee.osql.UpdateByExam;
 import org.teasoft.exam.bee.osql.UpdateSetExam;
 import org.teasoft.exam.bee.osql.UpdateSetExam_SQLite;
 import org.teasoft.exam.bee.osql.UseJson;
+import org.teasoft.exam.bee.osql.ds.RwDsExam;
+import org.teasoft.exam.comm.OrdinaryTest;
 import org.teasoft.exam.comm.TestHelper;
 import org.teasoft.exam.comm.TestPrepare;
 import org.teasoft.honey.osql.core.HoneyConfig;
@@ -112,9 +120,28 @@ public class TestNormal {
 		runTest(DynamicTableExam.class);
 		
 		//v1.9
-//		runTest(MoreSQLFunction.class);
-//		runTest(SelectFun.class);
+		runTest(MoreSQLFunction.class);
+		runTest(SelectFun.class);
+//		runTest(More.class);
 		runTest(MapSuidExam.class);
+		
+		
+		runTest(LockWaitTimeout.class);
+		runTest(SuidExamEN_SQLite.class);
+		runTest(UpdateSetExam_SQLite.class);
+		runTest(SelectById.class);
+		
+		runTest(RwDsExam.class);
+		
+		runTest(ObjSQLServiceExam.class);
+		runTest(NamingTest.class);
+		
+//		HoneyConfig.getHoneyConfig().sqlKeyWordCase="upper"; //can not change after running.
+//		runTest(SuidExam.class);
+		
+		runTest(OrdinaryTest.class);
+		
+		runTest(ExceptionTest.class);
 		
 	   } catch (BeeException e) {
 		   Logger.error(e.getMessage());

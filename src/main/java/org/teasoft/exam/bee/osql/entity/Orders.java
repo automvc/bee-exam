@@ -31,7 +31,7 @@ public class Orders implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
+	
 	public String getUserid() {
 		return userid;
 	}

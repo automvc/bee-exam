@@ -54,7 +54,7 @@ public class BugTest {
 			orders0.setRemark("testOneTime");
 			
 			Orders orders1=new Orders();
-			orders1.setId(1011L);
+			orders1.setId(10011L);
 			orders1.setUserid("client02");
 			orders1.setRemark("testOneTime");
 			orders1.setTotal(new BigDecimal(20));

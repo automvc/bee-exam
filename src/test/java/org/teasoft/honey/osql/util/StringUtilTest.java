@@ -6,11 +6,13 @@
 
 package org.teasoft.honey.osql.util;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar
@@ -41,11 +43,11 @@ public class StringUtilTest {
 		
 		String text4="<bee.version>${{BeeVersion}}</bee.version><beeaa.sversion>${{projectName?up1}}</bee.version>";
 		text4=StringUtil.replaceWithMap(text4, map, "${{","}}");
-		System.out.println(text4);
+		Logger.info(text4);
 		
 		String text5="<bee.version>${{BeeVersion}}</bee.version><beeaa.sversion>\\${{projectName}}</bee.version>";
 		text5=StringUtil.replaceWithMap(text5, map, "${{","}}");
-		System.out.println(text5);
+		Logger.info(text5);
 		
 		String text6="<bee.version>${{BeeVersion}}</bee.version><beeaa.sversion>${{projectName}}</bee.version>";
 		String text6_1=StringUtil.replaceWithMap(text6, null, "${{","}}");

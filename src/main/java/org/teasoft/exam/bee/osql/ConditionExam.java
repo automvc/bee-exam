@@ -167,6 +167,16 @@ public class ConditionExam {
 //			 orders14.setUserid("Bee2"); //will be ignored
 			 List<Orders> list14 = suid.select(orders14, conditionOpWithField);
 			 Logger.info("record num by select use opWithField: "+list14.size());
+			 
+			 Condition conditionHaving2=new ConditionImpl();
+			 conditionHaving2
+			 .groupBy("userid")
+			 .having(FunctionType.COUNT, "*", Op.ge, 2)
+			 .having(FunctionType.COUNT, "distinct(userid)", Op.ge, 1)
+			 ;
+			 List<Orders> list15 = suid.select(new Orders(), conditionHaving2);
+			 System.out.println(list15.size());
+			 
 		
 		} catch (BeeException e) {
 			Logger.error("In ConditionExam (BeeException):"+e.getMessage());

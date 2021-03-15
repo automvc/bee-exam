@@ -10,6 +10,9 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
+import org.teasoft.bee.osql.Condition;
+import org.teasoft.bee.osql.FunctionType;
+import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.PreparedSql;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
@@ -17,6 +20,7 @@ import org.teasoft.bee.osql.transaction.Transaction;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.exam.bee.osql.entity.TestUser;
 import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.CustomSql;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.core.SessionFactory;
@@ -41,6 +45,8 @@ public class ExceptionTest {
 		test4(); //BeeErrorFieldException
 		test5(); //BeeIllegalEntityException
 		test6();//BeeIllegalParameterException
+		test7();//BeeErrorGrammarException
+//		test8(); //BeeSQLException
 	}
 
 	public static void test1() {
@@ -145,5 +151,50 @@ public class ExceptionTest {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void test7() {
 
+		try {
+			 Condition conditionHaving2=new ConditionImpl();
+			 conditionHaving2
+//			 .groupBy("userid")
+//			 .having(FunctionType.COUNT, "distinct(userid)", Op.ge, 1)
+			 .having(FunctionType.COUNT, "userid", Op.ge, 1)
+			 ;
+			 List<Orders> list15 = suid.select(new Orders(), conditionHaving2);
+			 System.out.println(list15.size());
+
+		} catch (BeeException e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		} catch (Exception e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+//	public static void test8() {
+//
+//		try {
+//			 Condition conditionHaving2=new ConditionImpl();
+//			 conditionHaving2
+//			 .groupBy("userid")
+////			 .having(FunctionType.COUNT, "*", Op.ge, 2)
+//			 .having(FunctionType.COUNT, "distinct(userid)", Op.ge, 1)
+////			 .having("-- counta(*)>5")
+////			 .having("counta(*)>5")
+////			 .having("count(distinct(userid))>5")
+//			 ;
+//			 List<Orders> list15 = suid.select(new Orders(), conditionHaving2);
+//			 System.out.println(list15.size());
+//
+//		} catch (BeeException e) {
+//			Logger.error(e.getMessage());
+//			e.printStackTrace();
+//		} catch (Exception e) {
+//			Logger.error(e.getMessage());
+//			e.printStackTrace();
+//		}
+//	}
+	
 }

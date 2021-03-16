@@ -24,7 +24,12 @@ import org.teasoft.honey.osql.core.Logger;
  */
 public class ChainSelectExam {
 	private static PreparedSql preparedSql = BeeFactory.getHoneyFactory().getPreparedSql();
+	
 	public static void main(String[] args) {
+		test();
+	}
+	
+	public static void test() {
 		Select t = new SelectImpl();
 		String sql = "";
 //      t.select("*")

@@ -83,7 +83,7 @@ public class RwDsExam {
 		
 
 		LeafAlloc leafAlloc = new LeafAlloc();
-		leafAlloc.setBizTag("leaf-segment-test");
+		leafAlloc.setBizTag("bee");
 		Condition condition = new ConditionImpl();
 		condition.setAdd("maxId", "step"); 
 		int num=suidRich.update(leafAlloc, "maxId", condition);
@@ -91,11 +91,11 @@ public class RwDsExam {
 
 		//"SELECT biz_tag, max_id, step FROM leaf_alloc WHERE biz_tag = #{tag}"
 		LeafAlloc result = suidRich.selectOne(leafAlloc);
-		Logger.info(result.toString());
+		if(result!=null)Logger.info(result.toString());
 		
 		
 		result = suidRich.selectOne(leafAlloc);
-		Logger.info(result.toString());
+		if(result!=null)Logger.info(result.toString());
 	}
 	
 	public static void test2(){
@@ -106,7 +106,7 @@ public class RwDsExam {
 				
 //			    "UPDATE leaf_alloc SET max_id = max_id + step WHERE biz_tag = #{tag}"
 				LeafAlloc leafAlloc=new LeafAlloc();
-				leafAlloc.setBizTag("leaf-segment-test");
+				leafAlloc.setBizTag("bee");
 		    	Condition condition=new ConditionImpl();
 		    	condition.setAdd("maxId", "step");
 //		    	suidRich.update(leafAlloc, "maxId", condition);

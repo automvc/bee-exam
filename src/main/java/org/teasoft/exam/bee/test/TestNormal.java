@@ -31,6 +31,7 @@ import org.teasoft.exam.bee.osql.UpdateByExam;
 import org.teasoft.exam.bee.osql.UpdateSetExam;
 import org.teasoft.exam.bee.osql.UpdateSetExam_SQLite;
 import org.teasoft.exam.bee.osql.UseJson;
+import org.teasoft.exam.bee.osql.chain.ChainSelectExam;
 import org.teasoft.exam.bee.osql.ds.RwDsExam;
 import org.teasoft.exam.comm.OrdinaryTest;
 import org.teasoft.exam.comm.TestHelper;
@@ -60,8 +61,8 @@ public class TestNormal {
 		HoneyConfig.getHoneyConfig().setUsername(username);
 		HoneyConfig.getHoneyConfig().setPassword(password);
 		
-//		HoneyConfig.getHoneyConfig().loggerType="systemLogger";
-		HoneyConfig.getHoneyConfig().loggerType="fileLogger";
+		HoneyConfig.getHoneyConfig().loggerType="systemLogger";
+//		HoneyConfig.getHoneyConfig().loggerType="fileLogger";
 		
 //		HoneyConfig.getHoneyConfig().dbName="mysql";
 	  
@@ -135,6 +136,8 @@ public class TestNormal {
 		
 		runTest(ObjSQLServiceExam.class);
 		runTest(NamingTest.class);
+		
+		runTest(ChainSelectExam.class); //chain coding
 		
 //		HoneyConfig.getHoneyConfig().sqlKeyWordCase="upper"; //can not change after running.
 //		runTest(SuidExam.class);

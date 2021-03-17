@@ -45,7 +45,7 @@ public class SuidExamEN {
 		
 		Orders orders2=new Orders();
 		orders2.setUserid("bee");
-		orders2.setName("Bee(ORM Framework)");
+		orders2.setName("Bee");
 		orders2.setTotal(new BigDecimal("91.99"));
 		orders2.setRemark("");  //empty String test
 		

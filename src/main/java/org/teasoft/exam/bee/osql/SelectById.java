@@ -38,12 +38,12 @@ public class SelectById {
 		}
 		
 		TestUser testUser1=suidRich.selectById(new TestUser(), 1004);
-		Logger.info(testUser1.toString());
+		if(testUser1!=null)Logger.info(testUser1.toString());
 		
 		TestUser testUser2=suidRich.selectById(new TestUser(), 800001L);
 		
 		TestUser testUser3=suidRich.selectById(new TestUser(), "1004");
-		Logger.info(testUser3.toString());
+		if(testUser3!=null)Logger.info(testUser3.toString());
 //		test Exception
 //		TestUser testUser3=suidRich.selectById(new TestUser(), "800001,800001");
 //		Logger.info(testUser3.toString());

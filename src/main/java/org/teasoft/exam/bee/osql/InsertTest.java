@@ -52,7 +52,7 @@ public class InsertTest {
 		Logger.info(insertNum1);
 		
 		Orders orders2=new Orders();
-//		orders2.setName("client");
+		orders2.setName("Bee");
 		orders2.setUserid("client");
 		orders2.setRemark("testOneTime");
 		orders2.setTotal(new BigDecimal("93.99"));

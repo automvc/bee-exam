@@ -60,7 +60,7 @@ public class ClearAndInitTestTable {
 		
 //		String insertOrders1="INSERT INTO orders VALUES ('100001', 'bee', 'Bee(ORM Framework)', '95.01', '2020-03-02 11:29:28', 'test', '12345601', 'test1', '2020-03-02 16:34:19');";
 		String insertOrders1="INSERT INTO orders VALUES ('100001', 'Bee', 'Bee(ORM Framework)', '95.01', '2020-03-02 11:29:28', 'test', '12345601', 'test1', null);";
-		String insertOrders2="INSERT INTO orders VALUES ('100002', 'bee', 'Bee(ORM Framework)', '96.01', '2020-03-02 11:29:28', 'test%a', '12345602', 'test2', '2020-03-02 16:34:19');";
+		String insertOrders2="INSERT INTO orders VALUES ('100002', 'Bee', 'Bee(ORM Framework)', '96.01', '2020-03-02 11:29:28', 'test%a', '12345602', 'test2', '2020-03-02 16:34:19');";
 		String insertOrders3="INSERT INTO orders VALUES ('100003', 'bee', 'Bee', '97.01', '2020-03-02 11:29:28', 'testx%', '12345603', 'test3', '2020-03-02 16:34:19');";
 		
 //		String sqls[]=new String[3];
@@ -84,7 +84,8 @@ public class ClearAndInitTestTable {
 		String insertUser1="INSERT INTO test_user VALUES ('800001', 'beeUser@163.com', null, 'Bee', 'bee', 'bee', null);";
 		String insertUser2="INSERT INTO test_user VALUES ('800002', 'honey@163.com', 'cn', 'Honey', 'honey', 'honey', '2020-03-02 16:41:33');";
 		preparedSql.modify(insertUser1, nullMap);
-		preparedSql.modify(insertUser2, nullMap);
+//		preparedSql.modify(insertUser2, nullMap);
+		preparedSql.modify(insertUser2); //v1.9
 		
 		
 		String insertLeaf1="INSERT INTO leaf_alloc VALUES ('456537470402562', 'test', '100', '100', 'test segment', '2020-07-04 22:42:09', '1');";

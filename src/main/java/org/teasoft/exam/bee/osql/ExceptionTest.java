@@ -10,20 +10,29 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
+import org.teasoft.bee.osql.BeeSQLException;
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.FunctionType;
+import org.teasoft.bee.osql.ObjSQLException;
+import org.teasoft.bee.osql.ObjSQLIllegalSQLStringException;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.PreparedSql;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.exception.JoinTableException;
+import org.teasoft.bee.osql.exception.JoinTableParameterException;
+import org.teasoft.bee.osql.exception.NoConfigException;
 import org.teasoft.bee.osql.transaction.Transaction;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.exam.bee.osql.entity.TestUser;
+import org.teasoft.honey.distribution.GenIdFactory;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.CustomSql;
+import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.core.SessionFactory;
+import org.teasoft.honey.osql.dialect.NoPagingSupported;
 
 /**
  * @author Kingstar
@@ -47,6 +56,16 @@ public class ExceptionTest {
 		test6();//BeeIllegalParameterException
 		test7();//BeeErrorGrammarException
 //		test8(); //BeeSQLException
+		test9(); //BeeIllegalBusinessException
+		test10(); //ConfigWrongException
+		test11(); //NotSupportedException
+		
+		test12();
+		test13();
+		test14();
+		test15();
+		test16();
+		test17();
 	}
 
 	public static void test1() {
@@ -196,5 +215,130 @@ public class ExceptionTest {
 //			e.printStackTrace();
 //		}
 //	}
+	
+	public static void test9() {
+		try {
+			suidRich.delete(new Orders());  //delete all records
+		} catch (BeeException e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		} catch (Exception e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public static void test10() {
+		try {
+//			Logger.info("distribute id is: "+GenIdFactory.get());
+			HoneyConfig.getHoneyConfig().workerid=1024;
+			Logger.info("distribute id is: "+GenIdFactory.get());
+		} catch (BeeException e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		} catch (Exception e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	public static void test11() {
+		try {
+			BeeFactory.getHoneyFactory().setDbFeature(new NoPagingSupported());
+			suidRich.select(new Orders(),1,10);
+		} catch (BeeException e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		} catch (Exception e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public static void test12() {
+		try {
+			throw new NoConfigException(" test NoConfigException!");
+		} catch (BeeException e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		} catch (Exception e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	public static void test13() {
+		try {
+			throw new JoinTableException(" test JoinTableException!");
+		} catch (BeeException e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		} catch (Exception e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	public static void test14() {
+		try {
+			throw new JoinTableParameterException(" test JoinTableParameterException!");
+		} catch (BeeException e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		} catch (Exception e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	public static void test15() {
+		try {
+			throw new ObjSQLIllegalSQLStringException(" test ObjSQLIllegalSQLStringException!");
+		} catch (BeeException e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		} catch (Exception e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	public static void test16() {
+		try {
+			throw new BeeException();
+		} catch (BeeException e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		} catch (Exception e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	public static void test17() {
+		try {
+			throw new BeeSQLException();
+		} catch (BeeException e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		} catch (Exception e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	public static void test18() {
+		try {
+			throw new ObjSQLException();
+		} catch (BeeException e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		} catch (Exception e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		}
+	}
 	
 }

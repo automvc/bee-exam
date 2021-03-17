@@ -29,6 +29,16 @@ import org.teasoft.honey.osql.util.DateUtil;
  */
 public class ConditionExam {
 	
+	private static SuidRich suidRich=BeeFactory.getHoneyFactory().getSuidRich();
+	
+	public static SuidRich getSuidRich() {
+		return suidRich;
+	}
+	
+	public static void setSuidRich(SuidRich suidRich) {
+		ConditionExam.suidRich=suidRich;
+	}
+	
 	public static void main(String[] args) {
 		test();
 	}
@@ -112,7 +122,7 @@ public class ConditionExam {
 		Logger.info("delete(T entity,Condition condition), delete record num:"+delNum);
 		
 		
-		SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
+//		SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
 		Orders Orders_update=new Orders();
 		Orders_update.setRemark("test");
 		Orders_update.setAbc("test for update");

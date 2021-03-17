@@ -20,6 +20,17 @@ import org.teasoft.honey.osql.core.Logger;
  * @since  1.8
  */
 public class InsertTest {
+	
+	private static SuidRich suidRich=BeeFactory.getHoneyFactory().getSuidRich();
+	
+	public static SuidRich getSuidRich() {
+		return suidRich;
+	}
+	
+	public static void setSuidRich(SuidRich suidRich) {
+		InsertTest.suidRich=suidRich;
+	}
+	
 	public static void main(String[] args) {
 		test();
 	}
@@ -28,7 +39,7 @@ public class InsertTest {
 
 	  try{
 		  
-		SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
+//		SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
 		
 		Orders orders=new Orders();
 		orders.setName("client");

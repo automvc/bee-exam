@@ -21,6 +21,15 @@ import org.teasoft.honey.osql.core.Logger;
  */
 public class SuidExam {
 	
+	private static Suid suid = BeeFactory.getHoneyFactory().getSuid();
+	
+	public static Suid getSuid() {
+		return suid;
+	}
+	
+	public static void setSuidRich(Suid suid) {
+		SuidExam.suid=suid;
+	}
 	
 	public static void main(String[] args) {
 //		TestPrepare.init();
@@ -31,7 +40,7 @@ public class SuidExam {
 
 		try {
 			
-			Suid suid = BeeFactory.getHoneyFactory().getSuid();
+//			Suid suid = BeeFactory.getHoneyFactory().getSuid();
 			
 			suid.beginSameConnection();
 

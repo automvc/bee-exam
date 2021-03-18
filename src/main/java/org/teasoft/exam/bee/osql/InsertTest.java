@@ -84,6 +84,8 @@ public class InsertTest {
 //		int insertArray=suidRich.insert(ordersArray,"id");//batch insert    PostgreSQL
 		Logger.info(insertArray);
 		
+		int insertArray2=suidRich.insert(ordersArray,2);//batch insert
+		Logger.info(insertArray2);
 		
 		List<Orders> list1 = suidRich.select(orders1); //select
 		for (int i = 0; i < list1.size(); i++) {

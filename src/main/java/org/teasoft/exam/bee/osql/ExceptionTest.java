@@ -19,6 +19,7 @@ import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.PreparedSql;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.dialect.DbFeature;
 import org.teasoft.bee.osql.exception.BeeErrorFieldException;
 import org.teasoft.bee.osql.exception.BeeErrorGrammarException;
 import org.teasoft.bee.osql.exception.BeeIllegalAccessException;
@@ -256,6 +257,7 @@ public class ExceptionTest {
 	}
 	
 	public static void test11() {
+		DbFeature  oldDbFeature=BeeFactory.getHoneyFactory().getDbFeature();
 		try {
 			BeeFactory.getHoneyFactory().setDbFeature(new NoPagingSupported());
 			suidRich.select(new Orders(),1,10);
@@ -265,6 +267,8 @@ public class ExceptionTest {
 		} catch (Exception e) {
 			Logger.error(e.getMessage());
 			e.printStackTrace();
+		}finally {
+			BeeFactory.getHoneyFactory().setDbFeature(oldDbFeature);
 		}
 	}
 	
@@ -395,6 +399,13 @@ public class ExceptionTest {
 			new ObjSQLIllegalSQLStringException(new Throwable(" test "));
 			new ObjSQLIllegalSQLStringException("test ObjSQLIllegalSQLStringException",new Throwable(" test "));
 			new BeeSQLException("test BeeSQLException","had exception",1001,new Throwable(" test "));
+		
+			new SqlNullException(new Throwable(" test "));
+			new NoConfigException(new Throwable(" test "));
+			new JoinTableException(new Throwable(" test "));
+			new ConfigWrongException(new Throwable(" test "));
+			new BeeErrorFieldException(new Throwable(" test "));
+			new BeeErrorGrammarException(new Throwable(" test "));
 		} catch (BeeException e) {
 			Logger.error(e.getMessage());
 			e.printStackTrace();

@@ -292,23 +292,39 @@ public class SuidRichExam {
 		list1820.add(orders20);
 		suidRich.insert(list1820, 2);
 		
+		Orders testInsertAndDeleteOrders=new Orders();
+		testInsertAndDeleteOrders.setRemark("test insert and delete");
+		suidRich.delete(testInsertAndDeleteOrders, IncludeType.EXCLUDE_BOTH);
+		suidRich.insert(list1820);
+		
 		orders18.setId(100018+3L);
 		orders19.setId(100019+3L);
 		orders20.setId(100020+3L);
 		suidRich.insert(list1820, 3,"remark"); // donot insert remark field.
 		
-		Orders testInsertAndDeleteOrders=new Orders();
-		testInsertAndDeleteOrders.setRemark("test insert and delete");
+
+		suidRich.count(testInsertAndDeleteOrders);
 		suidRich.select(testInsertAndDeleteOrders, IncludeType.EXCLUDE_BOTH);
 		suidRich.selectJson(testInsertAndDeleteOrders, IncludeType.EXCLUDE_BOTH);
 		Condition testInsertAndDeleteConditon=new ConditionImpl();
 		testInsertAndDeleteConditon.op("id", Op.ge, 100018);
 		suidRich.select(testInsertAndDeleteOrders, IncludeType.EXCLUDE_BOTH,testInsertAndDeleteConditon);
 		suidRich.selectJson(testInsertAndDeleteOrders, IncludeType.EXCLUDE_BOTH,testInsertAndDeleteConditon);
+		suidRich.select(testInsertAndDeleteOrders,testInsertAndDeleteConditon);
+		suidRich.selectJson(testInsertAndDeleteOrders,testInsertAndDeleteConditon);
+		suidRich.count(testInsertAndDeleteOrders,testInsertAndDeleteConditon);
 		suidRich.selectOrderBy(testInsertAndDeleteOrders, "id");
 		suidRich.selectOrderBy(testInsertAndDeleteOrders, "id,name", new OrderType[] {OrderType.ASC,OrderType.DESC});
 		
+		testInsertAndDeleteOrders.setId(100021L);
+		suidRich.selectOne(testInsertAndDeleteOrders);
+		suidRich.selectString(testInsertAndDeleteOrders,testInsertAndDeleteConditon);
+		suidRich.select(testInsertAndDeleteOrders, "id,Remark,userid", 0, 10);
+		suidRich.selectWithFun(testInsertAndDeleteOrders, FunctionType.MAX, "total", testInsertAndDeleteConditon);
+		suidRich.updateById(testInsertAndDeleteOrders,testInsertAndDeleteConditon);
+		
 		suidRich.delete(testInsertAndDeleteOrders, IncludeType.EXCLUDE_BOTH);
+		suidRich.delete(testInsertAndDeleteOrders,testInsertAndDeleteConditon);
 		suidRich.deleteById(Orders.class, 100021);
 		suidRich.deleteById(Orders.class, 100022L);
 		suidRich.deleteById(Orders.class, "100023");

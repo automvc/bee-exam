@@ -15,7 +15,13 @@ import org.teasoft.honey.distribution.SerialUniqueId;
  * @since  1.8
  */
 public class IdTest {
+	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
+		
 		GenId genId=new SerialUniqueId();
 		long start=System.currentTimeMillis();
 		//直接获取

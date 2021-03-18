@@ -21,13 +21,24 @@ import org.teasoft.honey.osql.core.Logger;
  */
 public class UpdateByExam {
 	
+	private static SuidRich suidRich=BeeFactory.getHoneyFactory().getSuidRich();
+	
+	public static SuidRich getSuidRich() {
+		return suidRich;
+	}
+	
+	public static void setSuidRich(SuidRich suidRich) {
+		UpdateByExam.suidRich=suidRich;
+	}
+	
+		
 	public static void main(String[] args) {
 		test();
 	}
 	public static void test() {
 		try{
 			
-		 SuidRich suidRich=BeeFactory.getHoneyFactory().getSuidRich();
+//		 SuidRich suidRich=BeeFactory.getHoneyFactory().getSuidRich();
 		
 		 Orders orders=new Orders();
 		 orders.setUserid("bee");

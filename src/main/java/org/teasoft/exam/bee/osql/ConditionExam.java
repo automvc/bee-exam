@@ -80,8 +80,8 @@ public class ConditionExam {
 		}
 //		}
 //		long end=System.currentTimeMillis();
-//		System.out.println("--------------------------------");
-//		System.out.println(end-start);
+//		Logger.info("--------------------------------");
+//		Logger.info(end-start);
 		
 		condition.selectField("userid,total,createtime");//只查询部分字段
 //		
@@ -185,7 +185,7 @@ public class ConditionExam {
 			 .having(FunctionType.COUNT, "distinct(userid)", Op.ge, 1)
 			 ;
 			 List<Orders> list15 = suid.select(new Orders(), conditionHaving2);
-			 System.out.println(list15.size());
+			 Logger.info(list15.size());
 			 
 		
 		} catch (BeeException e) {

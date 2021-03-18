@@ -31,6 +31,8 @@ public class NamingTest {
 		Orders orders1 = new Orders();
 		
 		suid.select(orders1); //select all
+		
+		NameTranslate oldNameTranslate=NameTranslateHandle.getNameTranslate();
 
 		NameTranslate originalName = new OriginalName();
 //		BeeFactory.getHoneyFactory().setNameTranslate(originalName);
@@ -41,6 +43,8 @@ public class NamingTest {
 //		BeeFactory.getHoneyFactory().setNameTranslate(upperCaseUnderScoreAndCamelName);
 		NameTranslateHandle.setNameTranslat(upperCaseUnderScoreAndCamelName);
 		suid.select(orders1); //select all
+		
+		NameTranslateHandle.setNameTranslat(oldNameTranslate); 
 	}
 
 }

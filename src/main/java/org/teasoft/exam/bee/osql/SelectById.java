@@ -19,6 +19,17 @@ import org.teasoft.honey.osql.core.Logger;
  * @since  1.9
  */
 public class SelectById {
+	
+	private static SuidRich suidRich=BeeFactory.getHoneyFactory().getSuidRich();
+	
+	public static SuidRich getSuidRich() {
+		return suidRich;
+	}
+	
+	public static void setSuidRich(SuidRich suidRich) {
+		SelectById.suidRich=suidRich;
+	}
+
 
 	public static void main(String[] args) {
 		test();

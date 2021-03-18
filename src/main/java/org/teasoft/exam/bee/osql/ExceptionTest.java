@@ -19,9 +19,19 @@ import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.PreparedSql;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.exception.BeeErrorFieldException;
+import org.teasoft.bee.osql.exception.BeeErrorGrammarException;
+import org.teasoft.bee.osql.exception.BeeIllegalAccessException;
+import org.teasoft.bee.osql.exception.BeeIllegalBusinessException;
+import org.teasoft.bee.osql.exception.BeeIllegalEntityException;
+import org.teasoft.bee.osql.exception.BeeIllegalParameterException;
+import org.teasoft.bee.osql.exception.BeeInstantiationException;
+import org.teasoft.bee.osql.exception.ConfigWrongException;
 import org.teasoft.bee.osql.exception.JoinTableException;
 import org.teasoft.bee.osql.exception.JoinTableParameterException;
 import org.teasoft.bee.osql.exception.NoConfigException;
+import org.teasoft.bee.osql.exception.NotSupportedException;
+import org.teasoft.bee.osql.exception.SqlNullException;
 import org.teasoft.bee.osql.transaction.Transaction;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.exam.bee.osql.entity.TestUser;
@@ -66,6 +76,8 @@ public class ExceptionTest {
 		test15();
 		test16();
 		test17();
+		test18();
+		test19();
 	}
 
 	public static void test1() {
@@ -181,7 +193,7 @@ public class ExceptionTest {
 			 .having(FunctionType.COUNT, "userid", Op.ge, 1)
 			 ;
 			 List<Orders> list15 = suid.select(new Orders(), conditionHaving2);
-			 System.out.println(list15.size());
+			 Logger.info(list15.size());
 
 		} catch (BeeException e) {
 			Logger.error(e.getMessage());
@@ -205,7 +217,7 @@ public class ExceptionTest {
 ////			 .having("count(distinct(userid))>5")
 //			 ;
 //			 List<Orders> list15 = suid.select(new Orders(), conditionHaving2);
-//			 System.out.println(list15.size());
+//			 Logger.info(list15.size());
 //
 //		} catch (BeeException e) {
 //			Logger.error(e.getMessage());
@@ -332,6 +344,57 @@ public class ExceptionTest {
 	public static void test18() {
 		try {
 			throw new ObjSQLException();
+		} catch (BeeException e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		} catch (Exception e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	public static void test19() {
+		try {
+			new NotSupportedException();
+			new NotSupportedException("test NotSupportedException!");
+			new SqlNullException();
+			new NoConfigException();
+			new JoinTableParameterException();
+			new BeeErrorFieldException();
+			new BeeErrorGrammarException();
+			new BeeIllegalBusinessException();
+			new BeeIllegalEntityException();
+			new BeeIllegalParameterException();
+			
+			new ConfigWrongException();
+			new JoinTableException();
+			new ObjSQLIllegalSQLStringException();
+			
+			new BeeIllegalAccessException();
+			new BeeInstantiationException();
+			new JoinTableException("test JoinTableException",new Throwable(" test "));
+			new BeeSQLException("test BeeSQLException",new Throwable(" test "));
+			new ObjSQLException("test ObjSQLException",new Throwable(" test "));
+			new SqlNullException("test SqlNullException",new Throwable(" test "));
+			new NoConfigException("test NoConfigException",new Throwable(" test "));
+			new JoinTableParameterException("test JoinTableParameterException",new Throwable(" test "));
+			new BeeErrorFieldException("test BeeErrorFieldException",new Throwable(" test "));
+			new BeeErrorGrammarException("test BeeErrorGrammarException",new Throwable(" test "));
+			new BeeIllegalBusinessException("test BeeIllegalBusinessException",new Throwable(" test "));
+			new BeeIllegalEntityException("test BeeIllegalEntityException",new Throwable(" test "));
+			new BeeIllegalParameterException("test BeeIllegalParameterException",new Throwable(" test "));
+			new BeeIllegalAccessException("test BeeIllegalParameterException",new Throwable(" test "));
+			new BeeInstantiationException("test BeeIllegalParameterException",new Throwable(" test "));
+			new ConfigWrongException("test BeeIllegalParameterException",new Throwable(" test "));
+			new NotSupportedException("test BeeIllegalParameterException",new Throwable(" test "));
+			
+			new BeeSQLException(new Throwable(" test "));
+			new ObjSQLException(new Throwable(" test "));
+			new BeeIllegalAccessException(new Throwable(" test "));
+			new BeeInstantiationException(new Throwable(" test "));
+			new ObjSQLIllegalSQLStringException(new Throwable(" test "));
+			new ObjSQLIllegalSQLStringException("test ObjSQLIllegalSQLStringException",new Throwable(" test "));
+			new BeeSQLException("test BeeSQLException","had exception",1001,new Throwable(" test "));
 		} catch (BeeException e) {
 			Logger.error(e.getMessage());
 			e.printStackTrace();

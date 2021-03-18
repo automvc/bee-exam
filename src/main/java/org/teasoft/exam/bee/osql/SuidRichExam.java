@@ -11,13 +11,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
+import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.IncludeType;
+import org.teasoft.bee.osql.Op;
+import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.LeafAlloc;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.exam.bee.osql.entity.TestUser;
 import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.Logger;
 
 /**
@@ -263,6 +267,51 @@ public class SuidRichExam {
 		String json=suidRich.selectJson(new TestUser());
 		Logger.info("selectJson(new User()):");
 		Logger.info(json);
+		
+		
+		Orders orders18=new Orders();
+		orders18.setId(100018L);
+		orders18.setUserid("client18");
+		orders18.setRemark("test insert and delete");
+		orders18.setTotal(new BigDecimal("18.18"));
+		
+		Orders orders19=new Orders();
+		orders19.setId(100019L);
+		orders19.setUserid("client19");
+		orders19.setRemark("test insert and delete");
+		orders19.setTotal(new BigDecimal("19.19"));
+		
+		Orders orders20=new Orders();
+		orders20.setId(100020L);
+		orders20.setUserid("client20");
+		orders20.setRemark("test insert and delete");
+		orders20.setTotal(new BigDecimal("20.20"));
+		List<Orders> list1820=new ArrayList<>();
+		list1820.add(orders18);
+		list1820.add(orders19);
+		list1820.add(orders20);
+		suidRich.insert(list1820, 2);
+		
+		orders18.setId(100018+3L);
+		orders19.setId(100019+3L);
+		orders20.setId(100020+3L);
+		suidRich.insert(list1820, 3,"remark"); // donot insert remark field.
+		
+		Orders testInsertAndDeleteOrders=new Orders();
+		testInsertAndDeleteOrders.setRemark("test insert and delete");
+		suidRich.select(testInsertAndDeleteOrders, IncludeType.EXCLUDE_BOTH);
+		suidRich.selectJson(testInsertAndDeleteOrders, IncludeType.EXCLUDE_BOTH);
+		Condition testInsertAndDeleteConditon=new ConditionImpl();
+		testInsertAndDeleteConditon.op("id", Op.ge, 100018);
+		suidRich.select(testInsertAndDeleteOrders, IncludeType.EXCLUDE_BOTH,testInsertAndDeleteConditon);
+		suidRich.selectJson(testInsertAndDeleteOrders, IncludeType.EXCLUDE_BOTH,testInsertAndDeleteConditon);
+		suidRich.selectOrderBy(testInsertAndDeleteOrders, "id");
+		suidRich.selectOrderBy(testInsertAndDeleteOrders, "id,name", new OrderType[] {OrderType.ASC,OrderType.DESC});
+		
+		suidRich.delete(testInsertAndDeleteOrders, IncludeType.EXCLUDE_BOTH);
+		suidRich.deleteById(Orders.class, 100021);
+		suidRich.deleteById(Orders.class, 100022L);
+		suidRich.deleteById(Orders.class, "100023");
 		
 	  } catch (BeeException e) {
 		  Logger.error("In SuidRichExam (Exception):"+e.getMessage());

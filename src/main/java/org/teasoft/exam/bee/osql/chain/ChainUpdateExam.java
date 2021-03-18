@@ -70,11 +70,11 @@ public class ChainUpdateExam {
     		.op("remark", "test2")
     		.in("orderid", "111,112")
     		;
-    		System.out.println(updateSql2.toSQL());
+    		Logger.info(updateSql2.toSQL());
     		
     		updateSql2.op("-- total", 99) // --
     		;
-    		System.out.println(updateSql2.toSQL());
+    		Logger.info(updateSql2.toSQL());
     		
 		} catch (BeeErrorFieldException e) {
 			Logger.info(e.getMessage());

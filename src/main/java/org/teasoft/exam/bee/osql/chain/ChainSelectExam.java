@@ -103,7 +103,7 @@ public class ChainSelectExam {
         Printer.print(list3);
 		
 //		Op opType=Op.notIn;
-//		if (opType == Op.notIn) System.out.println("===== true");
+//		if (opType == Op.notIn) Logger.info("===== true");
 		
 		Select c=new SelectImpl();
 		c.select("team_id")
@@ -113,7 +113,7 @@ public class ChainSelectExam {
 		.groupBy("team_id")
 		.groupBy("name")
 		.having("count(*)=sum(case when status='aaa' then 1 else 0 end)");
-		System.out.println(c.toSQL());
+		Logger.info(c.toSQL());
 		
 		Select join =new SelectImpl();
 		join.select("*")
@@ -265,6 +265,19 @@ public class ChainSelectExam {
         List<String[]> list15= preparedSql.select(select4.toSQL());
         Printer.print(list15);
         
+		Select aggregate = new SelectImpl();
+		aggregate
+		.select(Aggregate.count("total"))
+        .select(Aggregate.max("total"))
+        .select(Aggregate.min("total"))
+        .select(Aggregate.avg("total"))
+        .select(Aggregate.sum("total"))
+		.from("orders")
+		;
+        List<String[]> list16= preparedSql.select(aggregate.toSQL());
+        Printer.print(list16);
+        
+        //test exception
         try {
     		Select c2=new SelectImpl();
     		c2.select("team_id")
@@ -275,7 +288,7 @@ public class ChainSelectExam {
     		.groupBy("name")
     		.having("count(*)=sum(case when status='aaa' then 1 else 0 end)");
     		
-    		System.out.println(c2.toSQL());
+    		Logger.info(c2.toSQL());
 		} catch (BeeErrorFieldException e) {
 			Logger.info(e.getMessage());
 			e.printStackTrace();
@@ -291,13 +304,13 @@ public class ChainSelectExam {
     		.groupBy("name")
     		.having(" --count(*)=sum(case when status='aaa' then 1 else 0 end)");  // --
     		
-    		System.out.println(c3.toSQL());
+    		Logger.info(c3.toSQL());
 		} catch (Exception e) {
 			Logger.info(e.getMessage());
 			e.printStackTrace();
 		}
         
-        System.out.println("finished....");
+        Logger.info("ChainSelectExam finished....");
         
 	}
 

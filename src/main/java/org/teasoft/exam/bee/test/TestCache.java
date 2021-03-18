@@ -12,6 +12,7 @@ import org.teasoft.exam.bee.osql.CacheTestInsertArray;
 import org.teasoft.exam.bee.osql.CacheTestJson;
 import org.teasoft.exam.comm.TestHelper;
 import org.teasoft.exam.comm.TestPrepare;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.util.DateUtil;
 
 /**
@@ -34,7 +35,7 @@ public class TestCache {
 		runTest(CacheTestInsertArray.class);
 		runTest(CacheTestJson.class);
 		
-		System.out.println(DateUtil.currentDate()+"  test cache Finished!");
+		Logger.info(DateUtil.currentDate()+"  test cache Finished!");
 		
 		
 	}

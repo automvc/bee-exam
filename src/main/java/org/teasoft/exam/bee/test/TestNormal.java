@@ -8,6 +8,7 @@ package org.teasoft.exam.bee.test;
 
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.DatabaseConst;
+import org.teasoft.exam.bee.distribution.IdTest;
 import org.teasoft.exam.bee.osql.BugTest;
 import org.teasoft.exam.bee.osql.ConditionExam;
 import org.teasoft.exam.bee.osql.DynamicTableExam;
@@ -138,6 +139,8 @@ public class TestNormal {
 		
 		runTest(ObjSQLServiceExam.class);
 		runTest(NamingTest.class);
+		
+		runTest(IdTest.class);
 		
 		//chain coding
 		runTest(ChainUpdateExam.class); 

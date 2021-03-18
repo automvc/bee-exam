@@ -20,11 +20,11 @@ public class UpperKeyTest {
 	@Test
 	public void test() {
 		SqlKeyWord k = new UpperKey();
-		Logger.info(k.select()+k.distinct()+k.from());
-		Logger.info(k.where()+k.and()+k.between()+k.groupBy()+k.orderBy()+k.forUpdate());
+		Logger.info(k.select()+k.count()+k.distinct()+k.from());
+		Logger.info(k.where()+k.and()+k.between()+k.groupBy()+k.orderBy()+k.asc()+k.forUpdate());
 		Logger.info(k.isNotNull()+k.isNull()+k.in()+k.exists()+k.notExists());
 		Logger.info(k.innerJoin()+k.join()+k.leftJoin()+k.rightJoin());
-		Logger.info(k.limit()+k.top());
+		Logger.info(k.limit()+k.top()+k.space());
 		Logger.info(k.insert()+k.into()+k.values());
 		Logger.info(k.delete()+k.from());
 		Logger.info(k.update()+k.set());

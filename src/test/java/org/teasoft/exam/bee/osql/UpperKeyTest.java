@@ -19,9 +19,15 @@ public class UpperKeyTest {
 
 	@Test
 	public void test() {
-		SqlKeyWord key = new UpperKey();
-		Logger.info(key.select());
-		Logger.info(key.where());
+		SqlKeyWord k = new UpperKey();
+		Logger.info(k.select()+k.distinct()+k.from());
+		Logger.info(k.where()+k.and()+k.between()+k.groupBy()+k.orderBy()+k.forUpdate());
+		Logger.info(k.isNotNull()+k.isNull()+k.in()+k.exists()+k.notExists());
+		Logger.info(k.innerJoin()+k.join()+k.leftJoin()+k.rightJoin());
+		Logger.info(k.limit()+k.top());
+		Logger.info(k.insert()+k.into()+k.values());
+		Logger.info(k.delete()+k.from());
+		Logger.info(k.update()+k.set());
 	}
 
 }

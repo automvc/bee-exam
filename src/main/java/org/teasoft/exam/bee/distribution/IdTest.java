@@ -41,7 +41,7 @@ public class IdTest {
 		 genId=new PearFlowerId();
 		 start=System.currentTimeMillis();
 		//直接获取
-		for (int i = 0; i < 520; i++) {
+		for (int i = 0; i < 20; i++) {
 //			genId.get();
 //			genId.getRangeId(1000);
 //			System.out.println(i+": "+genId.get());

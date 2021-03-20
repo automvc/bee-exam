@@ -20,6 +20,16 @@ import org.teasoft.honey.osql.core.Logger;
  */
 public class DynamicTableExam {
 	
+	private static Suid suid = BeeFactory.getHoneyFactory().getSuid();
+	
+	public static Suid getSuid() {
+		return suid;
+	}
+	
+	public static void setSuidRich(Suid suid) {
+		DynamicTableExam.suid=suid;
+	}
+	
 	public static void main(String[] args) {
 		test();
 	}
@@ -28,7 +38,7 @@ public class DynamicTableExam {
 		try {
 			
 
-		Suid suid=BeeFactory.getHoneyFactory().getSuid();
+//		Suid suid=BeeFactory.getHoneyFactory().getSuid();
 		
 //		@Table("Orders_${month}")
 //		public class Orders

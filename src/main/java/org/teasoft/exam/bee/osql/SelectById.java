@@ -39,30 +39,29 @@ public class SelectById {
 
 	  try{
 		  
-		SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
+//		SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
 		
-
 		List<TestUser> listSelectByIds=suidRich.selectByIds(new TestUser(), "800001,800002");  //PostgreSQL 是强类型,不能这种用
 		for (int i = 0; i < listSelectByIds.size(); i++) {
 			Logger.info(listSelectByIds.get(i).toString());
 			Logger.info("=============================================");
 		}
 		
-		TestUser testUser1=suidRich.selectById(new TestUser(), 1004);
-		if(testUser1!=null)Logger.info(testUser1.toString());
+		TestUser testUser1=suidRich.selectById(new TestUser(), 800001);
+		if(testUser1!=null) Logger.info(testUser1.toString());
 		
 		TestUser testUser2=suidRich.selectById(new TestUser(), 800001L);
 		
-		TestUser testUser3=suidRich.selectById(new TestUser(), "1004");
-		if(testUser3!=null)Logger.info(testUser3.toString());
+		TestUser testUser3=suidRich.selectById(new TestUser(), "800001");
+		if(testUser3!=null) Logger.info(testUser3.toString());
 //		test Exception
 //		TestUser testUser3=suidRich.selectById(new TestUser(), "800001,800001");
 //		Logger.info(testUser3.toString());
 
-//		int deleteNum3=suidRich.deleteById(TestUser.class, 1004);
-//		Logger.info("deleteNum3: "+deleteNum3);
+		int deleteNum3=suidRich.deleteById(TestUser.class, 800001);
+		Logger.info("deleteNum3: "+deleteNum3);
 		
-//		suidRich.insert(testUser2);
+		suidRich.insert(testUser2);
 		
 		String json=suidRich.selectJson(new TestUser());
 		Logger.info("selectJson(new User()):");

@@ -19,9 +19,9 @@ import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.LeafAlloc;
 import org.teasoft.exam.bee.osql.entity.Orders;
-import org.teasoft.exam.bee.osql.entity.TestUser;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
+import org.teasoft.honey.osql.core.HoneyContext;
 import org.teasoft.honey.osql.core.Logger;
 
 /**
@@ -241,34 +241,6 @@ public class SuidRichExam {
 //		int deleteNum2=suidRich.delete(order_more);   // bug : Lock wait timeout exceeded;
 //		Logger.info("deleteNum2: "+deleteNum2);
 		
-
-		List<TestUser> listSelectByIds=suidRich.selectByIds(new TestUser(), "800001,800002");  //PostgreSQL 是强类型,不能这种用
-		for (int i = 0; i < listSelectByIds.size(); i++) {
-			Logger.info(listSelectByIds.get(i).toString());
-			Logger.info("=============================================");
-		}
-		
-		TestUser testUser1=suidRich.selectById(new TestUser(), 800001);
-		Logger.info(testUser1.toString());
-		
-		TestUser testUser2=suidRich.selectById(new TestUser(), 800001L);
-		
-		TestUser testUser3=suidRich.selectById(new TestUser(), "800001");
-		Logger.info(testUser3.toString());
-//		test Exception
-//		TestUser testUser3=suidRich.selectById(new TestUser(), "800001,800001");
-//		Logger.info(testUser3.toString());
-
-		int deleteNum3=suidRich.deleteById(TestUser.class, 800001);
-		Logger.info("deleteNum3: "+deleteNum3);
-		
-		suidRich.insert(testUser2);
-		
-		String json=suidRich.selectJson(new TestUser());
-		Logger.info("selectJson(new User()):");
-		Logger.info(json);
-		
-		
 		Orders orders18=new Orders();
 		orders18.setId(100018L);
 		orders18.setUserid("client18");
@@ -336,7 +308,7 @@ public class SuidRichExam {
 		  Logger.error("In SuidRichExam (Exception):"+e.getMessage());
 		  e.printStackTrace();
 	  }
-		
+	  HoneyContext.justGetPreparedValue("abc");
 	}
 
 }

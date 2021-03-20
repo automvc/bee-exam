@@ -406,6 +406,12 @@ public class ExceptionTest {
 			new ConfigWrongException(new Throwable(" test "));
 			new BeeErrorFieldException(new Throwable(" test "));
 			new BeeErrorGrammarException(new Throwable(" test "));
+			
+			new BeeIllegalParameterException(new Throwable(" test "));
+			new BeeIllegalBusinessException(new Throwable(" test "));
+			new BeeIllegalEntityException(new Throwable(" test "));
+			new JoinTableParameterException(new Throwable(" test "));
+			new NotSupportedException(new Throwable(" test "));
 		} catch (BeeException e) {
 			Logger.error(e.getMessage());
 			e.printStackTrace();

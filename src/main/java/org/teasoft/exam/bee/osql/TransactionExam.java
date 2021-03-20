@@ -75,7 +75,7 @@ public class TransactionExam {
 			Logger.info("---------------locking the record!");
 			Logger.info("doing...");  //可添加更改操作等.
 			
-			transaction.setTransactionIsolation(TransactionIsolationLevel.TRANSACTION_REPEATABLE_READ);
+			transaction.setTransactionIsolation(TransactionIsolationLevel.TRANSACTION_READ_COMMITTED);
 			transaction.commit();
 			Logger.info("---------------release the record!");
 

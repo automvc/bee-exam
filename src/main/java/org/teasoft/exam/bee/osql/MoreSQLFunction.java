@@ -38,7 +38,8 @@ public class MoreSQLFunction {
 		Condition condition=new ConditionImpl();
 		
 		condition
-		.selectField("classno,term,examno,subject")
+//		.selectField("classno,term,examno,subject")
+		.selectField("term,examno,subject")
 		.selectFun(FunctionType.MAX, "score","maxScore")
 		.selectFun(FunctionType.AVG, "score","avgScore")
 		.selectFun(FunctionType.MIN, "score","minScore");
@@ -47,7 +48,8 @@ public class MoreSQLFunction {
 		
 		condition
 		.groupBy("term,examno,subjectno,subject")
-		.orderBy("classno,term,examno,subjectno")
+//		.orderBy("classno,term,examno,subjectno")
+		.orderBy("term,examno,subjectno")
 		;
 		
 		Scores scores=new Scores();

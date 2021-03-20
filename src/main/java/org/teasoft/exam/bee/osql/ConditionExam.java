@@ -157,6 +157,7 @@ public class ConditionExam {
 			 //V1.9
 			 //group by userid having count(userid)>=?
 			 Condition conditionHaving=new ConditionImpl();
+			 conditionHaving.selectField("userid");
 			 conditionHaving.groupBy("userid")
 			 .having(FunctionType.COUNT, "userid", Op.ge, 1)
 			 ;
@@ -180,6 +181,7 @@ public class ConditionExam {
 			 
 			 Condition conditionHaving2=new ConditionImpl();
 			 conditionHaving2
+			 .selectField("userid")
 			 .groupBy("userid")
 			 .having(FunctionType.COUNT, "*", Op.ge, 2)
 			 .having(FunctionType.COUNT, "distinct(userid)", Op.ge, 1)

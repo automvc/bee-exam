@@ -2,8 +2,7 @@ package org.teasoft.exam.bee.osql.entity;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
-
-import org.teasoft.bee.osql.annotation.Ignore;
+import java.util.Date;
 
 /**
 *@author Honey
@@ -22,7 +21,8 @@ public class TestUser implements Serializable {
 //	@Ignore
 	private String password;
 	private String username;
-	private Timestamp createtime;
+//	private Date createtime;
+	private String createtime;
 
 	public Long getId() {
 		return id;
@@ -88,15 +88,23 @@ public class TestUser implements Serializable {
 		this.username = username;
 	}
 
-	public Timestamp getCreatetime() {
+//	 public Date getCreatetime() {
+//		return createtime;
+//	}
+//
+//	public void setCreatetime(Date createtime) {
+//		this.createtime = createtime;
+//	}
+	
+	public String getCreatetime() {
 		return createtime;
 	}
 
-	public void setCreatetime(Timestamp createtime) {
+	public void setCreatetime(String createtime) {
 		this.createtime = createtime;
-	}
+	}	
 
-	 public String toString(){	
+	public String toString(){	
 		 StringBuffer str=new StringBuffer();	
 		 str.append("TestUser[");			
 		 str.append("id=").append(id);		 
@@ -108,7 +116,8 @@ public class TestUser implements Serializable {
 		 str.append(",createtime=").append(createtime);		 
 		 str.append("]");			 
 		 return str.toString();			 
-	 }		 
+	 }
+
 }
 	
 /*	

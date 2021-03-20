@@ -47,8 +47,12 @@ public class UnionSelectExam {
 			Logger.info("Getting this sql twice is same!");
 		}
 		
-        List<String[]> list1= preparedSql.select(joinSelect.toSQL());
-        Printer.print(list1);
+		try {
+          List<String[]> list1= preparedSql.select(joinSelect.toSQL()); //oracle   ORA-00918: 未明确定义列
+          Printer.print(list1);
+		} catch (Exception e) {
+			Logger.error(e.getMessage());
+		}
 		
 		UnionSelect unionSelect =new UnionSelectImpl();
 		Select select1 =new SelectImpl();

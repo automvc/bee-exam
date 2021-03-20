@@ -35,8 +35,8 @@ public class ChainSelectExam {
 		String sql = "";
 //      t.select("*")
         t
-//        .select("id")
-        .distinct("id")
+        .select("name")
+//        .distinct("id")
         .select(Aggregate.max("total"))
 //        .select("max(price)")
 //        .distinct("name")
@@ -54,8 +54,8 @@ public class ChainSelectExam {
 		.isNotNull("createtime")
         
         .groupBy("name")
-        .orderBy("id", OrderType.ASC)
-        .orderBy("name")
+//        .orderBy("id", OrderType.ASC)
+        .orderBy("name", OrderType.ASC)
         ;
         
         
@@ -67,8 +67,8 @@ public class ChainSelectExam {
 		Select goodOrders = new SelectImpl();
 //		goodOrders.distinct("id")
 		goodOrders
-		.select("id,name,total")
-//		.max("total")
+		.select("name")
+		.select(Aggregate.max("total"))
 		.from("orders")
 		.where()
 		.op("name", Op.eq, "client")
@@ -77,7 +77,8 @@ public class ChainSelectExam {
 		;
 		
 		goodOrders.groupBy("name")
-		.having("total>avg(total)")
+//		.having("total>avg(total)") // wrong
+		.having("avg(total)>80")
 //		.count("testtest")   顺序没能控制好
 		;
         List<String[]> list2= preparedSql.select(goodOrders.toSQL());
@@ -106,7 +107,7 @@ public class ChainSelectExam {
 //		if (opType == Op.notIn) Logger.info("===== true");
 		
 		Select c=new SelectImpl();
-		c.select("team_id")
+		c.distinct("team_id")
 		.from("teams")
 		.where()
 		.op("price", 99)
@@ -288,7 +289,7 @@ public class ChainSelectExam {
     		.groupBy("name")
     		.having("count(*)=sum(case when status='aaa' then 1 else 0 end)");
     		
-    		Logger.info(c2.toSQL());
+    		Logger.info(c2.toSQL(false));
 		} catch (BeeErrorFieldException e) {
 			Logger.info(e.getMessage());
 			e.printStackTrace();

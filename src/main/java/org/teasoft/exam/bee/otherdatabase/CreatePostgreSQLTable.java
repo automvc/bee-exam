@@ -30,7 +30,7 @@ public class CreatePostgreSQLTable
     	      "  abc varchar(20) DEFAULT NULL,"+
     	      "  updatetime timestamp NULL DEFAULT CURRENT_TIMESTAMP"+
     	      
-//              ",    primary key(id) "+
+              ",    primary key(id) "+   //不能少,否则不会声明为主键
     	      ") ;";
       
       statement.executeUpdate(sql);
@@ -47,7 +47,7 @@ public class CreatePostgreSQLTable
       "   username varchar(60)  NOT NULL,"+
       "   createtime timestamp NULL DEFAULT CURRENT_TIMESTAMP"+
       
-// ",    primary key(id) "+
+ ",    primary key(id) "+
       " );";
       
       statement.executeUpdate(sql2);
@@ -65,14 +65,14 @@ public class CreatePostgreSQLTable
 //      "   version int(11) DEFAULT NULL"+
       "   version int DEFAULT NULL"+
 
-// ",    primary key(id) "+ 
+ ",    primary key(id) "+ 
       " ) ;";
       
       statement.executeUpdate(sql3);
       
       statement.executeUpdate(sql3.replace(" leaf_alloc", " leaf_alloc2"));
       
-      System.out.println("Create SQLite tables finished.");
+      System.out.println("Create PostgreSQL tables finished.");
       
     }catch (SQLException e) {
 		System.err.println(e.getMessage());

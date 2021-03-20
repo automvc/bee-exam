@@ -9,6 +9,7 @@ package org.teasoft.exam;
 import org.junit.Assert;
 import org.junit.Test;
 import org.teasoft.exam.bee.osql.ConditionExam;
+import org.teasoft.exam.bee.osql.DynamicTableExam;
 import org.teasoft.exam.bee.osql.InsertTest;
 import org.teasoft.exam.bee.osql.SelectById;
 import org.teasoft.exam.bee.osql.SuidExam;
@@ -48,6 +49,9 @@ public class ServiceTest {
 			
 			UpdateSetExam.setSuidRich(new ObjSQLRichServiceImpl());
 			UpdateSetExam.test();
+			
+			DynamicTableExam.setSuidRich(new ObjSQLServiceImpl());
+			DynamicTableExam.test();
 
 			result = true;
 		} catch (Exception e) {

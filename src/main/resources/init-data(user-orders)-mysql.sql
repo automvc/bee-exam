@@ -83,5 +83,7 @@ CREATE TABLE `leaf_alloc` (
 INSERT INTO `leaf_alloc` VALUES ('456537470402562', 'test', '100', '100', 'test segment', '2020-07-04 22:42:09', '1');
 INSERT INTO `leaf_alloc` VALUES ('456537470402563', 'order', '100', '100', 'order segment', '2020-07-04 22:42:10', '1');
 
+DROP TABLE IF EXISTS `orders_202007`;
+DROP TABLE IF EXISTS `leaf_alloc2`;
 create table orders_202007 like orders;
-create table leaf_alloc like leaf_alloc2;
+create table leaf_alloc2 like leaf_alloc;

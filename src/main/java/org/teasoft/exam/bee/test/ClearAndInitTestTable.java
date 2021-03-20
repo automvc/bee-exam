@@ -11,6 +11,7 @@ import java.util.Map;
 import org.teasoft.bee.osql.DatabaseConst;
 import org.teasoft.bee.osql.PreparedSql;
 import org.teasoft.exam.bee.otherdatabase.CreateH2Table;
+import org.teasoft.exam.bee.otherdatabase.CreateOracleTable;
 import org.teasoft.exam.bee.otherdatabase.CreatePostgreSQLTable;
 import org.teasoft.exam.bee.otherdatabase.CreateSQLiteTable;
 import org.teasoft.honey.osql.core.BeeFactory;
@@ -30,12 +31,16 @@ public class ClearAndInitTestTable {
 		
 		String DbName=HoneyConfig.getHoneyConfig().getDbName();
 		
+		System.out.println("------------DbName:      "+DbName);
+		
 		if (DatabaseConst.SQLite.equalsIgnoreCase(DbName)) { //SQLite
 			CreateSQLiteTable.main(null);
 		}else if (DatabaseConst.H2.equalsIgnoreCase(DbName)) { //H2
 			CreateH2Table.main(null);
 		}else if (DatabaseConst.PostgreSQL.equalsIgnoreCase(DbName)) { //PostgreSQL
 			CreatePostgreSQLTable.main(null);
+		}else if (DatabaseConst.ORACLE.equalsIgnoreCase(DbName)) { //ORACLE
+			CreateOracleTable.main(null);
 		}else {
 			//mysql need run the sql( init-data(user-orders)-mysql.sql ) first.
 			//		int deleteOrdersNum=preparedSql.modify("delete from orders", mapUpdate);
@@ -54,13 +59,13 @@ public class ClearAndInitTestTable {
 			
 			int deleteLeafNum2 = preparedSql.modify("TRUNCATE leaf_alloc2", nullMap);
 			Logger.info("deleteLeafNum2: " + deleteLeafNum2); //TRUNCATE 没有返回删除的行
-		}
+		}  //else
 		
 	//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>insert	
 		
 //		String insertOrders1="INSERT INTO orders VALUES ('100001', 'bee', 'Bee(ORM Framework)', '95.01', '2020-03-02 11:29:28', 'test', '12345601', 'test1', '2020-03-02 16:34:19');";
 		String insertOrders1="INSERT INTO orders VALUES ('100001', 'Bee', 'Bee(ORM Framework)', '95.01', '2020-03-02 11:29:28', 'test', '12345601', 'test1', null);";
-		String insertOrders2="INSERT INTO orders VALUES ('100002', 'Bee', 'Bee(ORM Framework)', '96.01', '2020-03-02 11:29:28', 'test%a', '12345602', 'test2', '2020-03-02 16:34:19');";
+		String insertOrders2="INSERT INTO orders VALUES ('100002', 'bee', 'Bee', '96.01', '2020-03-02 11:29:28', 'test%a', '12345602', 'test2', '2020-03-02 16:34:19');";
 		String insertOrders3="INSERT INTO orders VALUES ('100003', 'bee', 'Bee', '97.01', '2020-03-02 11:29:28', 'testx%', '12345603', 'test3', '2020-03-02 16:34:19');";
 		
 //		String sqls[]=new String[3];
@@ -70,7 +75,9 @@ public class ClearAndInitTestTable {
 //		BeeSql beeSql=BeeFactory.getHoneyFactory().getBeeSql();
 ////		beeSql.batch(sqls);//不能这样用.因为该方法是用prepare的,是占位符的,会用sqls数组的第一个作为所有语句的模板.若第一个语句是静态的,则会有主键冲突.
 //		System.out.println(beeSql.batch(sqls));
-		
+		try {
+			
+
 		preparedSql.modify(insertOrders1, nullMap);
 		preparedSql.modify(insertOrders2, nullMap);
 		preparedSql.modify(insertOrders3, nullMap);
@@ -82,7 +89,7 @@ public class ClearAndInitTestTable {
 		
 		
 		String insertUser1="INSERT INTO test_user VALUES ('800001', 'beeUser@163.com', null, 'Bee', 'bee', 'bee', null);";
-		String insertUser2="INSERT INTO test_user VALUES ('800002', 'honey@163.com', 'cn', 'Honey', 'honey', 'honey', '2020-03-02 16:41:33');";
+		String insertUser2="INSERT INTO test_user VALUES ('800002', 'honey@163.com', 'cn', 'Honey', 'honey', 'honey', null);";
 		preparedSql.modify(insertUser1, nullMap);
 //		preparedSql.modify(insertUser2, nullMap);
 		preparedSql.modify(insertUser2); //v1.9
@@ -99,6 +106,11 @@ public class ClearAndInitTestTable {
 		preparedSql.modify(insertLeaf2.replace(" leaf_alloc", " leaf_alloc2"), nullMap);
 		preparedSql.modify(insertLeaf3.replace(" leaf_alloc", " leaf_alloc2"), nullMap);
 		
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.err.println(e.getMessage());
+			e.printStackTrace();
+		}
 	}
 
 }

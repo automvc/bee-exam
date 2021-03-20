@@ -40,6 +40,7 @@ import org.teasoft.exam.comm.OrdinaryTest;
 import org.teasoft.exam.comm.TestHelper;
 import org.teasoft.exam.comm.TestPrepare;
 import org.teasoft.honey.osql.core.HoneyConfig;
+import org.teasoft.honey.osql.core.HoneyContext;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.util.DateUtil;
 
@@ -57,21 +58,22 @@ public class TestNormal {
 		
 		//set DB info in JavaCode
 //		HoneyConfig.getHoneyConfig().setDriverName(driverName);
-		String url="jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8";
-		String username="root";
-		String password="";
-		HoneyConfig.getHoneyConfig().setUrl(url);
-		HoneyConfig.getHoneyConfig().setUsername(username);
-		HoneyConfig.getHoneyConfig().setPassword(password);
-		
-		HoneyConfig.getHoneyConfig().loggerType="systemLogger";
+//		String url="jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8";
+//		String username="root";
+//		String password="";
+//		HoneyConfig.getHoneyConfig().setUrl(url);
+//		HoneyConfig.getHoneyConfig().setUsername(username);
+//		HoneyConfig.getHoneyConfig().setPassword(password);
+//		
+//		HoneyConfig.getHoneyConfig().loggerType="systemLogger";
 //		HoneyConfig.getHoneyConfig().loggerType="fileLogger";
 		
 //		HoneyConfig.getHoneyConfig().dbName="mysql";
 	  
 		
 //	   TestPrepare.init("normal");
-	   TestPrepare.init("normal(MySQL)");
+//	   TestPrepare.init("normal(MySQL)");
+	   TestPrepare.init("normal(Oracle)");
 //	   TestPrepare.init("normal(SQLite)");
 //	   TestPrepare.init("normal(H2)");
 //	   TestPrepare.init("normal(PostgreSQL)");
@@ -135,8 +137,6 @@ public class TestNormal {
 		runTest(UpdateSetExam_SQLite.class);
 		runTest(SelectById.class);
 		
-		runTest(RwDsExam.class);
-		
 		runTest(ObjSQLServiceExam.class);
 		runTest(NamingTest.class);
 		
@@ -154,6 +154,8 @@ public class TestNormal {
 		
 		runTest(ExceptionTest.class);
 		
+		runTest(RwDsExam.class);
+		
 	   } catch (BeeException e) {
 		   Logger.error(e.getMessage());
 		   e.printStackTrace();
@@ -165,6 +167,8 @@ public class TestNormal {
 	   }
 		
 	   System.out.println(DateUtil.currentDate()+"  test normal Finished!");
+	   
+//	   HoneyContext.justGetPreparedValue("abc");
 	   
 	   //test
 //	   LoggerFactory._checkSize();

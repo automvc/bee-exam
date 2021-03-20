@@ -26,7 +26,8 @@ public class TestCache {
 	}
 	
 	public static void test() throws Exception{
-		TestPrepare.init("cache");
+//		TestPrepare.init("cache");
+		TestPrepare.init("cache(Oracle)");
 		
 		ClearAndInitTestTable.main(null);  //TODO Notice! Just For test.
 		

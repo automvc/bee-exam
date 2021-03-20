@@ -32,8 +32,8 @@ public class GenBeanExam {
 			
 //			更改成本地的具体路径  change to your real path
 //			config.setBaseDir("D:\\xxx\\yyy\\bee-exam\\src\\main\\java\\");
-			config.setBaseDir("D:\\JavaWeb\\workspaceGit\\bee-exam\\src\\main\\java\\");
-			config.setPackagePath("org.teasoft.exam.bee.osql.entity");
+			config.setBaseDir("D:\\JavaWeb\\workspaceGit19\\bee-exam\\src\\main\\java\\");
+			config.setPackagePath("org.teasoft.exam.bee.osql.entity2");
 //			config.setPackagePath("org.teasoft.exam.bee.osql.entity.dynamic");
 //			config.setPackagePath("org.teasoft.exam.bee.osql.entity.sqlite");
 //			config.setPackagePath("org.teasoft.exam.bee.osql.entity.postgreSQL");
@@ -45,7 +45,7 @@ public class GenBeanExam {
 //			genBean.genSomeBeanFile("POSTGRESQL_TYPE");
 //			genBean.genSomeBeanFile("H2_TYPE");
 			
-			genBean.genSomeBeanFile("leaf_alloc,Orders,test_user");
+			genBean.genSomeBeanFile("test_user");
 //			genBean.genSomeBeanFile("tableinfo");
 //			genBean.genSomeBeanFile("leftsz_info");
 //			genBean.genSomeBeanFile("t_test");

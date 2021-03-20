@@ -308,7 +308,7 @@ public class SuidRichExam {
 		  Logger.error("In SuidRichExam (Exception):"+e.getMessage());
 		  e.printStackTrace();
 	  }
-	  HoneyContext.justGetPreparedValue("abc");
+//	  HoneyContext.justGetPreparedValue("abc");
 	}
 
 }

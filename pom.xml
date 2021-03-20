@@ -40,7 +40,18 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.47</version>
+<!-- 			<version>8.0.16</version> -->
+<!-- 			<version>8.0.22</version> -->
+<!--             <version>8.0.23</version> -->
 			<scope>runtime</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>6</version>
+			<scope>system</scope>
+			<systemPath>D:/JavaWeb/jar/ojdbc6.jar</systemPath>
 		</dependency>
 
 		<dependency>
@@ -98,7 +109,8 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>9.4.1209</version>
+<!-- 			<version>9.4.1209</version> -->
+            <version>9.3-1102-jdbc41</version>
 		</dependency>
 
 	</dependencies>

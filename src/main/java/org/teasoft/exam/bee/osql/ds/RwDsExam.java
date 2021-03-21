@@ -142,7 +142,7 @@ public class RwDsExam {
 
 //		    "SELECT biz_tag, max_id, step FROM leaf_alloc WHERE biz_tag = #{tag}"
 			result = suidRich.selectOne(leafAlloc);
-			Logger.info(result.toString());
+			if(result!=null) Logger.info(result.toString());
 			
 			suidRich.select(leafAlloc,0,10);
 

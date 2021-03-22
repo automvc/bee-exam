@@ -72,8 +72,8 @@ public class TestNormal {
 	  
 		
 //	   TestPrepare.init("normal");
-//	   TestPrepare.init("normal(MySQL)");
-	   TestPrepare.init("normal(Oracle)");
+	   TestPrepare.init("normal(MySQL)");
+//	   TestPrepare.init("normal(Oracle)");
 //	   TestPrepare.init("normal(SQLite)");
 //	   TestPrepare.init("normal(H2)");
 //	   TestPrepare.init("normal(PostgreSQL)");

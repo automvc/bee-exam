@@ -27,7 +27,8 @@ public class TestCache {
 	
 	public static void test() throws Exception{
 //		TestPrepare.init("cache");
-		TestPrepare.init("cache(Oracle)");
+//		TestPrepare.init("cache(Oracle)");
+		TestPrepare.init("cache(MySQL)");
 		
 		ClearAndInitTestTable.main(null);  //TODO Notice! Just For test.
 		

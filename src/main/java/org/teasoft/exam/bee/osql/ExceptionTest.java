@@ -245,7 +245,7 @@ public class ExceptionTest {
 	public static void test10() {
 		try {
 //			Logger.info("distribute id is: "+GenIdFactory.get());
-			HoneyConfig.getHoneyConfig().workerid=1024;
+			HoneyConfig.getHoneyConfig().genid_workerid=1024;
 			Logger.info("distribute id is: "+GenIdFactory.get());
 		} catch (BeeException e) {
 			Logger.error(e.getMessage());

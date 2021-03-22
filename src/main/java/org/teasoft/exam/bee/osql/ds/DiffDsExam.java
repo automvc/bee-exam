@@ -48,8 +48,9 @@ public class DiffDsExam {
 			HoneyConfig.getHoneyConfig().multiDsType = 2;
 			HoneyConfig.getHoneyConfig().multiDsDefalutDS = "ds1";
 			
-			HoneyConfig.getHoneyConfig().matchEntityClassPath = "ds2:org.teasoft.exam.bee.osql.entity.dynamic.Orders,com.xxx.cc.**;ds3:com.xxx.dd.User";
-			HoneyConfig.getHoneyConfig().matchTable = "ds2:user";
+			HoneyConfig.getHoneyConfig().multiDs_differentDbType=true;
+			HoneyConfig.getHoneyConfig().multiDs_matchEntityClassPath = "ds2:org.teasoft.exam.bee.osql.entity.dynamic.Orders,com.xxx.cc.**;ds3:com.xxx.dd.User";
+			HoneyConfig.getHoneyConfig().multiDs_matchTable = "ds2:user";
 			
 //			#bee.dosql.multi-DS.different.dbType=true
 			

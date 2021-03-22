@@ -14,6 +14,7 @@ import java.util.Map;
 import javax.sql.DataSource;
 
 import org.teasoft.bee.osql.Condition;
+import org.teasoft.bee.osql.PreparedSql;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.bee.osql.transaction.Transaction;
 import org.teasoft.exam.bee.osql.entity.LeafAlloc;
@@ -34,6 +35,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 public class DiffDsExam {
 	
 	private static SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
+	private static PreparedSql preparedSql = BeeFactory.getHoneyFactory().getPreparedSql();
 	static {
        initDS();
 	}
@@ -51,8 +53,6 @@ public class DiffDsExam {
 			HoneyConfig.getHoneyConfig().multiDs_differentDbType=true;
 			HoneyConfig.getHoneyConfig().multiDs_matchEntityClassPath = "ds2:org.teasoft.exam.bee.osql.entity.dynamic.Orders,com.xxx.cc.**;ds3:com.xxx.dd.User";
 			HoneyConfig.getHoneyConfig().multiDs_matchTable = "ds2:user";
-			
-//			#bee.dosql.multi-DS.different.dbType=true
 			
             System.out.println(">>>>>>>>>>>>>>>>>>>test1");
 			test1();
@@ -135,6 +135,23 @@ public class DiffDsExam {
 		List<Orders> list=suidRich.select(orders);
 		Printer.printList(list);
 		suidRich.select(orders,0,10);
+		
+//		String sql = CustomSql.getCustomSql(Key);
+		String sql = "select * from orders where userid=?";
+		Logger.info("getCustomSql:  " + sql); 
+
+		preparedSql.select(sql, new Object[] { "bee" }, 1, 3);
+//		preparedSql.select(sql, new Object[] { "bee" }, 1, 3);//test: don't use cache
+//		preparedSql.select(sql, new Object[] { "bee" }, 1, 3);//test: don't use cache
+
+		List<String[]> lststr=preparedSql.select(sql,new Object[] { "bee" });
+		Printer.print(lststr);
+		
+		List<String[]> lststr2=preparedSql.select("select * from orders");
+		Printer.print(lststr2);
+		
+		List<Orders> list1 = preparedSql.selectSomeField(sql, new Orders(), new Object[] { "bee" }, 2, 3);
+		Printer.printList(list1);
 	}
 
 	public static void test3() {

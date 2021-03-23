@@ -29,10 +29,12 @@ import org.teasoft.honey.osql.core.SessionFactory;
 import com.alibaba.druid.pool.DruidDataSource;
 
 /**
+ * 支持同时使用多种类型数据库的数据源.
+ * <br>support different type database muli-Ds at same time.
  * @author Kingstar
  * @since  1.9
  */
-public class DiffDsExam {
+public class DiffDdExam {
 	
 	private static SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
 	private static PreparedSql preparedSql = BeeFactory.getHoneyFactory().getPreparedSql();

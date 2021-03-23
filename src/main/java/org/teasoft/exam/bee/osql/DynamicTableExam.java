@@ -46,7 +46,7 @@ public class DynamicTableExam {
 //		public class Orders
 		
 		Orders orders=new Orders();
-		suid.setDynamicParameter("month", "202007").select(orders);
+		suid.setDynamicParameter("month", "_202007").select(orders);
 		
 		
 //		@Entity("LeafAlloc${version}")
@@ -58,11 +58,13 @@ public class DynamicTableExam {
 //		suid.setDynamicParameter("version", "2");
 //		List<LeafAlloc> list2=suid.select(leafAlloc);
 		
-		
-//		suidRich.setDynamicParameter("version", "2");  //设置在前面就不行了.
+		System.out.println("----------------");
 		suidRich.setDynamicParameter("version", "2");
 		suidRich.select(leafAlloc,5);
 		
+		suidRich.setDynamicParameter("version", "2").select(leafAlloc,5);
+		suidRich.select(leafAlloc,5);
+		suidRich.setDynamicParameter("version", "2").select(leafAlloc);
 		suidRich.select(leafAlloc,5);
 		
 		Logger.info(list1.size());

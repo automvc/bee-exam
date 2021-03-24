@@ -12,7 +12,7 @@ import org.teasoft.bee.osql.annotation.Table;
 *@author Honey
 *Create on 2020-03-03 11:33:21
 */
-//@Table("orders1")
+@Table("orders${month}")
 public class Orders implements Serializable {
 
 	private static final long serialVersionUID = 1592526978329L;

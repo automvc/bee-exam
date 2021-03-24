@@ -14,15 +14,18 @@ import java.util.Map;
 import javax.sql.DataSource;
 
 import org.teasoft.bee.osql.Condition;
+import org.teasoft.bee.osql.MoreTable;
 import org.teasoft.bee.osql.PreparedSql;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.bee.osql.transaction.Transaction;
 import org.teasoft.exam.bee.osql.entity.LeafAlloc;
 import org.teasoft.exam.bee.osql.entity.dynamic.Orders;
+import org.teasoft.exam.bee.osql.moretable.entity.TestUser;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.HoneyConfig;
+import org.teasoft.honey.osql.core.HoneyContext;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.core.SessionFactory;
 
@@ -50,18 +53,24 @@ public class DiffDdExam {
 		
 			HoneyConfig.getHoneyConfig().enableMultiDs = true;
 			HoneyConfig.getHoneyConfig().multiDsType = 2;
+			HoneyConfig.getHoneyConfig().multiDs_differentDbType=true;
 			HoneyConfig.getHoneyConfig().multiDsDefalutDS = "ds1";
 			
-			HoneyConfig.getHoneyConfig().multiDs_differentDbType=true;
-			HoneyConfig.getHoneyConfig().multiDs_matchEntityClassPath = "ds2:org.teasoft.exam.bee.osql.entity.dynamic.Orders,com.xxx.cc.**;ds3:com.xxx.dd.User";
+			
+//			HoneyConfig.getHoneyConfig().multiDs_matchEntityClassPath = "ds2:org.teasoft.exam.bee.osql.entity.dynamic.Orders,com.xxx.cc.**;ds3:com.xxx.dd.User";
+//			HoneyConfig.getHoneyConfig().multiDs_matchEntityClassPath = "ds2:org.teasoft.exam.bee.osql.entity.dynamic.Orders,org.teasoft.exam.bee.osql.moretable.entity.**;ds3:com.xxx.dd.User";
+			HoneyConfig.getHoneyConfig().multiDs_matchEntityClassPath = "ds2:org.teasoft.exam.bee.osql.entity.dynamic.Orders,org.teasoft.exam.bee.osql.moretable.entity.TestUser,org.teasoft.exam.bee.osql.moretable.entity.Orders;ds3:com.xxx.dd.User";
 			HoneyConfig.getHoneyConfig().multiDs_matchTable = "ds2:user";
+//			HoneyContext.setConfigRefresh(true);  //在所有操作前已配置,就不用显示刷新.
 			
             System.out.println(">>>>>>>>>>>>>>>>>>>test1");
 			test1();
             System.out.println(">>>>>>>>>>>>>>>>>>>test2");
 			test2(); //oracle
             System.out.println(">>>>>>>>>>>>>>>>>>>test3");
-			test3();
+            HoneyConfig.getHoneyConfig().multiDsDefalutDS = "ds2";  // reset  如何控制一个类的属性有变化???
+//            HoneyContext.setConfigRefresh(true);  //要显示刷新才会更改配置.
+            test3();
 		}
 
 	public static void initDS() {
@@ -154,6 +163,26 @@ public class DiffDdExam {
 		
 		List<Orders> list1 = preparedSql.selectSomeField(sql, new Orders(), new Object[] { "bee" }, 2, 3);
 		Printer.printList(list1);
+		
+		System.out.println("========================================MoreTable:   ");
+		MoreTable moreTable = BeeFactory.getHoneyFactory().getMoreTable();
+
+		org.teasoft.exam.bee.osql.moretable.entity.Orders orders1 = new org.teasoft.exam.bee.osql.moretable.entity.Orders();
+		orders1.setUserid("bee");
+		orders1.setName("Bee");
+		
+		TestUser user = new TestUser();
+		user.setName("Bee");
+		orders1.setTestUser(user);
+		
+		//默认不处理null和空字符串.不用再写一堆的判断;其它有值的字段全部自动作为过滤条件
+		//List<Orders> list3 =moreTable.select(orders1);  //select
+		List<org.teasoft.exam.bee.osql.moretable.entity.Orders> list3 = moreTable.select(orders1, 0, 10); //select 查询前10条记录
+		Logger.info("size of records:"+list3.size() + "");
+		Printer.printList(list3);
+		
+		List<org.teasoft.exam.bee.osql.moretable.entity.Orders> list4 =moreTable.setDynamicParameter("month", "_202007").select(orders1, 0, 10);
+		Printer.printList(list4);
 	}
 
 	public static void test3() {

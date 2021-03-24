@@ -18,6 +18,7 @@ import org.teasoft.exam.bee.osql.moretable.entity.Assignexam;
 import org.teasoft.exam.bee.osql.moretable.entity.Orders;
 //import org.teasoft.exam.bee.osql.moretable.entity.User;
 import org.teasoft.exam.bee.osql.moretable.entity.TestUser;
+import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.Logger;
@@ -97,6 +98,9 @@ public class MoreTableExam {
 			suid.delete(assigncourse2);
 			
 			moreTable.select(assignexam);//test cache
+			
+			List<org.teasoft.exam.bee.osql.moretable.entity.Orders> list4 =moreTable.setDynamicParameter("month", "_202007").select(orders1, 0, 10);
+			Printer.printList(list4);
 
 		} catch (BeeException e) {
 			e.printStackTrace();

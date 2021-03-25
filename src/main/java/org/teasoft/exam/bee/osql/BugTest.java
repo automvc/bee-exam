@@ -13,10 +13,12 @@ import java.util.Map;
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
+import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.PreparedSql;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
+import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.Logger;
@@ -111,7 +113,13 @@ public class BugTest {
 			
 			suidRich.deleteById(Orders.class, 100021);
 			suidRich.deleteById(Orders.class, 100022L);
-			suidRich.deleteById(Orders.class, "100023"); //bug in 
+			suidRich.deleteById(Orders.class, "100023"); //bug in V1.9.0.3-20-SNAPSHOT. some database don't support set the string to number field.
+			
+			//在order by前忘记空格,SQL SERVER 2008报错,但mysql可以 (?占位符的形式).
+			Orders testInsertAndDeleteOrders=new Orders();
+			testInsertAndDeleteOrders.setRemark("testOneTime");
+			List<Orders> list=suidRich.selectOrderBy(testInsertAndDeleteOrders, "id,name", new OrderType[] {OrderType.ASC,OrderType.DESC});
+		    Printer.printList(list);
 			
 			
 		} catch (BeeException e) {

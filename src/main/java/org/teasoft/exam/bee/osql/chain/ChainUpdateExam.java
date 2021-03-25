@@ -72,7 +72,7 @@ public class ChainUpdateExam {
     		;
     		Logger.info(updateSql2.toSQL());
     		
-    		updateSql2.op("-- total", 99) // --
+//    		updateSql2.op("-- total", 99) // --
     		;
     		Logger.info(updateSql2.toSQL());
     		

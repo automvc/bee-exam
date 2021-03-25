@@ -31,6 +31,8 @@ public class ChainSelectExam {
 	}
 	
 	public static void test() {
+		
+	 try {
 		Select t = new SelectImpl();
 		String sql = "";
 //      t.select("*")
@@ -278,38 +280,10 @@ public class ChainSelectExam {
         List<String[]> list16= preparedSql.select(aggregate.toSQL());
         Printer.print(list16);
         
-        //test exception
-        try {
-    		Select c2=new SelectImpl();
-    		c2.select("team_id")
-    		.from("teams")
-    		.where()
-    		.op("-- price", 99) // --
-    		.groupBy("team_id")
-    		.groupBy("name")
-    		.having("count(*)=sum(case when status='aaa' then 1 else 0 end)");
-    		
-    		Logger.info(c2.toSQL(false));
-		} catch (BeeErrorFieldException e) {
-			Logger.info(e.getMessage());
+	   } catch (Exception e) {
+			Logger.error(e.getMessage());
 			e.printStackTrace();
-		}
-        
-        try {
-    		Select c3=new SelectImpl();
-    		c3.select("team_id")
-    		.from("teams")
-    		.where()
-    		.op("price", 99)
-    		.groupBy("team_id")
-    		.groupBy("name")
-    		.having(" --count(*)=sum(case when status='aaa' then 1 else 0 end)");  // --
-    		
-    		Logger.info(c3.toSQL());
-		} catch (Exception e) {
-			Logger.info(e.getMessage());
-			e.printStackTrace();
-		}
+	   }
         
         Logger.info("ChainSelectExam finished....");
         

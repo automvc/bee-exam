@@ -75,6 +75,7 @@ public class UnionSelectExam {
         List<String[]> list3= preparedSql.select(unionSelect.toSQL());
         Printer.print(list3);
 	  } catch (BeeException e) {
+		Logger.error(e.getMessage());
 		e.printStackTrace();
 	  }
 	}

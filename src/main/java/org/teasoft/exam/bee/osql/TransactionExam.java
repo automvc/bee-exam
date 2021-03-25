@@ -28,9 +28,13 @@ public class TransactionExam {
 	}
 	public static void test() {
 		Transaction transaction=SessionFactory.getTransaction();
+		
 		try {
 			
 			transaction.begin();
+//			transaction.setTransactionIsolation(TransactionIsolationLevel.TRANSACTION_READ_UNCOMMITTED); //oracle donot support
+//			transaction.setTransactionIsolation(TransactionIsolationLevel.TRANSACTION_READ_COMMITTED); //SQLite donot support
+			transaction.setTransactionIsolation(TransactionIsolationLevel.TRANSACTION_SERIALIZABLE);
 			
 			Suid suid = BeeFactory.getHoneyFactory().getSuid();
 			
@@ -75,7 +79,8 @@ public class TransactionExam {
 			Logger.info("---------------locking the record!");
 			Logger.info("doing...");  //可添加更改操作等.
 			
-			transaction.setTransactionIsolation(TransactionIsolationLevel.TRANSACTION_READ_COMMITTED);
+//			Caused by: org.postgresql.util.PSQLException: 不能在事务交易过程中改变事物交易隔绝等级。
+//			transaction.setTransactionIsolation(TransactionIsolationLevel.TRANSACTION_READ_COMMITTED);
 			transaction.commit();
 			Logger.info("---------------release the record!");
 

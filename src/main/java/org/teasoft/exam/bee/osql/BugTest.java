@@ -109,6 +109,11 @@ public class BugTest {
 			
 //			-------------------v.1.7.2--------end----------  
 			
+			suidRich.deleteById(Orders.class, 100021);
+			suidRich.deleteById(Orders.class, 100022L);
+			suidRich.deleteById(Orders.class, "100023"); //bug in 
+			
+			
 		} catch (BeeException e) {
 			e.printStackTrace();
 			Logger.error("In BugTest (BeeException):"+e.getMessage());

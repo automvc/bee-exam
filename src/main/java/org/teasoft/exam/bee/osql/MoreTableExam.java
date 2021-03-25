@@ -101,6 +101,8 @@ public class MoreTableExam {
 			
 			List<org.teasoft.exam.bee.osql.moretable.entity.Orders> list4 =moreTable.setDynamicParameter("month", "_202007").select(orders1, 0, 10);
 			Printer.printList(list4);
+			List<org.teasoft.exam.bee.osql.moretable.entity.Orders> list5 =moreTable.select(orders1, 0, 10);
+			Printer.printList(list5);
 
 		} catch (BeeException e) {
 			e.printStackTrace();

@@ -17,7 +17,7 @@ import org.teasoft.bee.osql.IncludeType;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.SuidRich;
-import org.teasoft.exam.bee.osql.entity.LeafAlloc;
+//import org.teasoft.exam.bee.osql.entity.LeafAlloc;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
@@ -208,8 +208,8 @@ public class SuidRichExam {
 		List<Orders> listSome=suidRich.select(exampleField, "name,total");
 		Logger.info(listSome.size()+"");
 		
-		LeafAlloc leafAlloc=new LeafAlloc();
-		suidRich.select(leafAlloc, "maxId");  //check the selectFields
+//		LeafAlloc leafAlloc=new LeafAlloc();
+//		suidRich.select(leafAlloc, "maxId");  //check the selectFields
 		
 		Orders ordersForString=new Orders();
 		ordersForString.setUserid("client01");
@@ -229,6 +229,7 @@ public class SuidRichExam {
 		
 		// test paging
 		Logger.info("test paging");
+		suidRich.select(order_more);
 		suidRich.select(order_more,3);
 		List<Orders> listMore=suidRich.select(order_more,0,3);
 //		List<Orders> listMore=suidRich.select(order_more,1,5);
@@ -299,6 +300,8 @@ public class SuidRichExam {
 		suidRich.deleteById(Orders.class, 100021);
 		suidRich.deleteById(Orders.class, 100022L);
 		suidRich.deleteById(Orders.class, "100023");
+		
+		suidRich.select(testInsertAndDeleteOrders, "id,Remark,userid", 5, 10);
 		
 	  } catch (BeeException e) {
 		  Logger.error("In SuidRichExam (Exception):"+e.getMessage());

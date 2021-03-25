@@ -19,6 +19,8 @@ import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.PreparedSql;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.chain.Select;
+import org.teasoft.bee.osql.chain.Update;
 import org.teasoft.bee.osql.dialect.DbFeature;
 import org.teasoft.bee.osql.exception.BeeErrorFieldException;
 import org.teasoft.bee.osql.exception.BeeErrorGrammarException;
@@ -37,6 +39,8 @@ import org.teasoft.bee.osql.transaction.Transaction;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.exam.bee.osql.entity.TestUser;
 import org.teasoft.honey.distribution.GenIdFactory;
+import org.teasoft.honey.osql.chain.SelectImpl;
+import org.teasoft.honey.osql.chain.UpdateImpl;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.CustomSql;
@@ -67,6 +71,7 @@ public class ExceptionTest {
 		test6();//BeeIllegalParameterException
 		test7();//BeeErrorGrammarException
 //		test8(); //BeeSQLException
+		test8();
 		test9(); //BeeIllegalBusinessException
 		test10(); //ConfigWrongException
 		test11(); //NotSupportedException
@@ -228,6 +233,69 @@ public class ExceptionTest {
 //			e.printStackTrace();
 //		}
 //	}
+	
+	public static void test8() {
+	//just test sql
+    try {
+    	Update updateSql2=new UpdateImpl();
+    	updateSql2.update("team_id")
+		.set("total", 11)
+		.set("remark", "test")
+//		.where()
+		.where("1=1")
+		.op("price", 99)
+		.op("price", Op.ge,99)
+		.and()
+		.op("name", Op.like,"Bee%")
+		.op("remark", "test2")
+		.in("orderid", "111,112")
+		;
+		Logger.info(updateSql2.toSQL());
+		
+		updateSql2.op("-- total", 99) // --
+		;
+		Logger.info(updateSql2.toSQL());
+	} catch (Exception e) {
+		Logger.error(e.getMessage());
+		e.printStackTrace();
+	}
+    
+    
+    //test exception
+    try {
+		Select c2=new SelectImpl();
+		c2.select("team_id")
+		.from("teams")
+		.where()
+		.op("-- price", 99) // --
+		.groupBy("team_id")
+		.groupBy("name")
+		.having("count(*)=sum(case when status='aaa' then 1 else 0 end)");
+		
+		Logger.info(c2.toSQL(false));
+	} catch (BeeErrorFieldException e) {
+		Logger.error(e.getMessage());
+		e.printStackTrace();
+	}
+    
+    try {
+		Select c3=new SelectImpl();
+		c3.select("team_id")
+		.from("teams")
+		.where()
+		.op("price", 99)
+		.groupBy("team_id")
+		.groupBy("name")
+		.having(" --count(*)=sum(case when status='aaa' then 1 else 0 end)");  // --
+		
+		Logger.info(c3.toSQL());
+	} catch (Exception e) {
+		Logger.error(e.getMessage());
+		e.printStackTrace();
+	}
+    
+    
+	}
 	
 	public static void test9() {
 		try {

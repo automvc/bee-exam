@@ -32,7 +32,7 @@ public class TestPrepare {
 	public static void init(String identify){
 		
 		if(identify!=null && !"".equals(identify)){
-			identify="-"+identify+"-";
+//			identify="-"+identify+"-";
 		}
 		
 //		if ("fileLogger".equalsIgnoreCase(HoneyConfig.getHoneyConfig().loggerType)) {
@@ -41,8 +41,11 @@ public class TestPrepare {
 			String datetime=df.format(System.currentTimeMillis());
 
 			//		D:\{project-home}\src\main\resources\log
-			String path=System.getProperty("user.dir") + "\\src\\main\\resources\\log" + "\\bee-exam(" + version + ")" + identify
-					+ "{datatime}.txt".replace("{datatime}", datetime);
+//			String path=System.getProperty("user.dir") + "\\src\\main\\resources\\log" + "\\bee-exam(" + version + ")" + identify
+//					+ "{datatime}.txt".replace("{datatime}", datetime);
+			
+			String path=System.getProperty("user.dir") + ("\\src\\main\\resources\\log" + "\\bee-exam(" + version + ")" 
+					+ "{datatime}-"+ identify+".txt").replace("{datatime}", datetime);
 			System.out.println("the fileLogger path: "+path);
 			//set the path and file name of log file
 			Path.setFullPath(path);

@@ -6,6 +6,7 @@
 
 package org.teasoft.exam.comm;
 
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.util.StringUtils;
 
 /**
@@ -21,7 +22,7 @@ public class OrdinaryTest {
 	
 	public static void test() {
 		Object object=null;
-		System.out.println(StringUtils.isBlank((String)object));
+		Logger.info("null is blank? "+StringUtils.isBlank((String)object)+"");
 	}
 
 }

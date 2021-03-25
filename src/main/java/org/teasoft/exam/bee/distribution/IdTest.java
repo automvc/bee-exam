@@ -9,6 +9,7 @@ package org.teasoft.exam.bee.distribution;
 import org.teasoft.bee.distribution.GenId;
 import org.teasoft.honey.distribution.PearFlowerId;
 import org.teasoft.honey.distribution.SerialUniqueId;
+import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar
@@ -29,11 +30,11 @@ public class IdTest {
 //			genId.get();
 //			genId.getRangeId(1000);
 //			System.out.println(i+": "+genId.get());
-			System.out.println(i+": "+Long.toBinaryString(genId.get()));
+			Logger.info(i+": "+Long.toBinaryString(genId.get()));
 		}
 		
 		long end=System.currentTimeMillis();
-		System.out.println("使用时间: "+(end-start));
+		Logger.info("使用时间: "+(end-start));
 		
 		
 		
@@ -41,15 +42,15 @@ public class IdTest {
 		 genId=new PearFlowerId();
 		 start=System.currentTimeMillis();
 		//直接获取
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 5; i++) {
 //			genId.get();
 //			genId.getRangeId(1000);
 //			System.out.println(i+": "+genId.get());
-			System.out.println(i+": "+Long.toBinaryString(genId.get()));
+			Logger.info(i+": "+Long.toBinaryString(genId.get()));
 		}
 		
 		 end=System.currentTimeMillis();
-		System.out.println("使用时间: "+(end-start));
+		 Logger.info("使用时间: "+(end-start));
 	}
 
 }

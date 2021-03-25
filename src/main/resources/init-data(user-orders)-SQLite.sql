@@ -2,7 +2,7 @@
 -- orders
 drop table if exists orders;
 CREATE TABLE orders (
-  id bigint(20) PRIMARY KEY NOT NULL,
+  id INTEGER PRIMARY KEY NOT NULL,
   userid varchar(20)  NOT NULL,
   name varchar(100)  DEFAULT NULL,
   total decimal(10,2) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE orders (
 -- test_user
 DROP TABLE IF EXISTS test_user;
 CREATE TABLE test_user (
-  id bigint(20) PRIMARY KEY NOT NULL,
+  id INTEGER PRIMARY KEY NOT NULL,
   email varchar(100)  DEFAULT NULL,
   last_name varchar(60)  DEFAULT NULL,
   name varchar(60)  DEFAULT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE test_user (
 -- leaf_alloc
 DROP TABLE IF EXISTS leaf_alloc;
 CREATE TABLE leaf_alloc (
-  id PRIMARY KEY bigint(20) NOT NULL,
+  id INTEGER PRIMARY KEY NOT NULL,
   biz_tag varchar(128)  NOT NULL DEFAULT '' UNIQUE,
   max_id bigint(20) NOT NULL DEFAULT '1',
   step int(11) NOT NULL,
@@ -37,5 +37,7 @@ CREATE TABLE leaf_alloc (
   version int(11) DEFAULT NULL
 ) ;
 
+DROP TABLE IF EXISTS `orders_202007`;
+DROP TABLE IF EXISTS `leaf_alloc2`;
 create table orders_202007 like orders;
-create table leaf_alloc like leaf_alloc2;
+create table leaf_alloc2 like leaf_alloc;

@@ -1,9 +1,14 @@
-package org.teasoft.exam.bee.otherdatabase;
+/*package org.teasoft.exam.bee.otherdatabase;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.teasoft.exam.bee.osql.entity.Scores;
+import org.teasoft.exam.bee.osql.entity.dynamic.LeafAlloc;
+import org.teasoft.exam.bee.osql.moretable.entity.Assigncourse;
+import org.teasoft.exam.bee.osql.moretable.entity.Assignexam;
+import org.teasoft.honey.osql.autogen.Ddl;
 import org.teasoft.honey.osql.core.SessionFactory;
 
 public class CreateSQLiteTable
@@ -66,6 +71,18 @@ public class CreateSQLiteTable
       
       statement.executeUpdate(sql3.replace(" leaf_alloc", " leaf_alloc2"));
       
+		boolean f=Ddl.createTable(new Scores(),true);
+		
+//		Ddl.setDynamicParameter("version", ""); //default
+		boolean f2=Ddl.createTable(new LeafAlloc(),true);
+		
+		Ddl.setDynamicParameter("version", "2");
+		boolean f3=Ddl.createTable(new LeafAlloc(),true);
+		
+		Ddl.createTable(new Assignexam(),true);
+		Ddl.createTable(new Assigncourse(),true);
+		
+      
       System.out.println("Create SQLite tables finished.");
       
     }catch (SQLException e) {
@@ -78,4 +95,4 @@ public class CreateSQLiteTable
 			}
 		}
 	}
-}
+}*/

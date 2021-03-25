@@ -72,11 +72,13 @@ public class TestNormal {
 	  
 		
 //	   TestPrepare.init("normal");
-	   TestPrepare.init("normal(MySQL)");
+//	   TestPrepare.init("normal(MySQL)");
 //	   TestPrepare.init("normal(Oracle)");
 //	   TestPrepare.init("normal(SQLite)");
 //	   TestPrepare.init("normal(H2)");
 //	   TestPrepare.init("normal(PostgreSQL)");
+		
+		TestPrepare.init("normal("+HoneyContext.getDbDialect()+")");
 		
 	    try {
 	    	
@@ -152,9 +154,9 @@ public class TestNormal {
 		
 		runTest(OrdinaryTest.class);
 		
-		runTest(ExceptionTest.class);
+//		runTest(ExceptionTest.class);
 		
-		runTest(RwDsExam.class);
+//		runTest(RwDsExam.class);
 		
 	   } catch (BeeException e) {
 		   Logger.error(e.getMessage());

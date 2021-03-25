@@ -10,13 +10,8 @@ import java.util.Map;
 
 import org.teasoft.bee.osql.DatabaseConst;
 import org.teasoft.bee.osql.PreparedSql;
-import org.teasoft.exam.bee.otherdatabase.CreateH2Table;
-import org.teasoft.exam.bee.otherdatabase.CreateOracleTable;
-import org.teasoft.exam.bee.otherdatabase.CreatePostgreSQLTable;
-import org.teasoft.exam.bee.otherdatabase.CreateSQLiteTable;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.HoneyConfig;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar
@@ -32,7 +27,8 @@ public class ClearAndInitTestTable {
 		String DbName=HoneyConfig.getHoneyConfig().getDbName();
 		
 		System.out.println("------------DbName:      "+DbName);
-		
+
+/*		
 		if (DatabaseConst.SQLite.equalsIgnoreCase(DbName)) { //SQLite
 			CreateSQLiteTable.main(null);
 		}else if (DatabaseConst.H2.equalsIgnoreCase(DbName)) { //H2
@@ -44,22 +40,33 @@ public class ClearAndInitTestTable {
 		}else {
 			//mysql need run the sql( init-data(user-orders)-mysql.sql ) first.
 			//		int deleteOrdersNum=preparedSql.modify("delete from orders", mapUpdate);
-			int deleteOrdersNum = preparedSql.modify("TRUNCATE orders", nullMap);
-			Logger.info("deleteOrdersNum: " + deleteOrdersNum);
-			
-			int deleteOrdersNum2 = preparedSql.modify("TRUNCATE orders_202007", nullMap);
-			Logger.info("deleteOrdersNum2: " + deleteOrdersNum2);
-
-			//		int deleteUserNum=preparedSql.modify("delete from user", mapUpdate);
-			int deleteUserNum = preparedSql.modify("TRUNCATE test_user", nullMap);
-			Logger.info("deleteUserNum: " + deleteUserNum);
-
-			int deleteLeafNum = preparedSql.modify("TRUNCATE leaf_alloc", nullMap);
-			Logger.info("deleteLeafNum: " + deleteLeafNum); //TRUNCATE 没有返回删除的行
-			
-			int deleteLeafNum2 = preparedSql.modify("TRUNCATE leaf_alloc2", nullMap);
-			Logger.info("deleteLeafNum2: " + deleteLeafNum2); //TRUNCATE 没有返回删除的行
+//			int deleteOrdersNum = preparedSql.modify("TRUNCATE orders", nullMap);
+//			Logger.info("deleteOrdersNum: " + deleteOrdersNum);
+//			
+//			int deleteOrdersNum2 = preparedSql.modify("TRUNCATE orders_202007", nullMap);
+//			Logger.info("deleteOrdersNum2: " + deleteOrdersNum2);
+//
+//			//		int deleteUserNum=preparedSql.modify("delete from user", mapUpdate);
+//			int deleteUserNum = preparedSql.modify("TRUNCATE test_user", nullMap);
+//			Logger.info("deleteUserNum: " + deleteUserNum);
+//
+//			int deleteLeafNum = preparedSql.modify("TRUNCATE leaf_alloc", nullMap);
+//			Logger.info("deleteLeafNum: " + deleteLeafNum); //TRUNCATE 没有返回删除的行
+//			
+//			int deleteLeafNum2 = preparedSql.modify("TRUNCATE leaf_alloc2", nullMap);
+//			Logger.info("deleteLeafNum2: " + deleteLeafNum2); //TRUNCATE 没有返回删除的行
 		}  //else
+*/		
+		
+		//通过Javabean创建表
+		CreateTableWithJavabean.test();
+		
+		if (DatabaseConst.ORACLE.equalsIgnoreCase(DbName)
+		  ||DatabaseConst.H2.equalsIgnoreCase(DbName)
+		  ||DatabaseConst.PostgreSQL.equalsIgnoreCase(DbName)
+		) { //ORACLE
+			HoneyConfig.getHoneyConfig().genid_forAllTableLongId=true;
+		}
 		
 	//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>insert	
 		
@@ -75,6 +82,8 @@ public class ClearAndInitTestTable {
 //		BeeSql beeSql=BeeFactory.getHoneyFactory().getBeeSql();
 ////		beeSql.batch(sqls);//不能这样用.因为该方法是用prepare的,是占位符的,会用sqls数组的第一个作为所有语句的模板.若第一个语句是静态的,则会有主键冲突.
 //		System.out.println(beeSql.batch(sqls));
+		
+		
 		try {
 			
 
@@ -90,7 +99,7 @@ public class ClearAndInitTestTable {
 		
 		String insertUser1="INSERT INTO test_user VALUES ('800001', 'beeUser@163.com', null, 'Bee', 'bee', 'bee', null);";
 		String insertUser2="INSERT INTO test_user VALUES ('800002', 'honey@163.com', 'cn', 'Honey', 'honey', 'honey', null);";
-		preparedSql.modify(insertUser1, nullMap);
+		preparedSql.modify(insertUser1);
 //		preparedSql.modify(insertUser2, nullMap);
 		preparedSql.modify(insertUser2); //v1.9
 		
@@ -98,16 +107,15 @@ public class ClearAndInitTestTable {
 		String insertLeaf1="INSERT INTO leaf_alloc VALUES ('456537470402562', 'test', '100', '100', 'test segment', '2020-07-04 22:42:09', '1');";
 		String insertLeaf2="INSERT INTO leaf_alloc VALUES ('456537470402563', 'order', '100', '100', 'order segment', '2020-07-04 22:42:10', '1');";
 		String insertLeaf3="INSERT INTO leaf_alloc VALUES ('456537470402564', 'bee', '100', '100', 'order segment', '2020-09-19 19:05:10', '1');";
-		preparedSql.modify(insertLeaf1, nullMap);
-		preparedSql.modify(insertLeaf2, nullMap);
-		preparedSql.modify(insertLeaf3, nullMap);
+		preparedSql.modify(insertLeaf1);
+		preparedSql.modify(insertLeaf2);
+		preparedSql.modify(insertLeaf3);
 		
-		preparedSql.modify(insertLeaf1.replace(" leaf_alloc", " leaf_alloc2"), nullMap);
-		preparedSql.modify(insertLeaf2.replace(" leaf_alloc", " leaf_alloc2"), nullMap);
-		preparedSql.modify(insertLeaf3.replace(" leaf_alloc", " leaf_alloc2"), nullMap);
+		preparedSql.modify(insertLeaf1.replace(" leaf_alloc", " leaf_alloc2"));
+		preparedSql.modify(insertLeaf2.replace(" leaf_alloc", " leaf_alloc2"));
+		preparedSql.modify(insertLeaf3.replace(" leaf_alloc", " leaf_alloc2"));
 		
 		} catch (Exception e) {
-			// TODO: handle exception
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}

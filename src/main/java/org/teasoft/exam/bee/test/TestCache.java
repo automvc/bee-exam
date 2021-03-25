@@ -12,6 +12,7 @@ import org.teasoft.exam.bee.osql.CacheTestInsertArray;
 import org.teasoft.exam.bee.osql.CacheTestJson;
 import org.teasoft.exam.comm.TestHelper;
 import org.teasoft.exam.comm.TestPrepare;
+import org.teasoft.honey.osql.core.HoneyContext;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.util.DateUtil;
 
@@ -28,7 +29,8 @@ public class TestCache {
 	public static void test() throws Exception{
 //		TestPrepare.init("cache");
 //		TestPrepare.init("cache(Oracle)");
-		TestPrepare.init("cache(MySQL)");
+//		TestPrepare.init("cache(MySQL)");
+		TestPrepare.init("cache("+HoneyContext.getDbDialect()+")");
 		
 		ClearAndInitTestTable.main(null);  //TODO Notice! Just For test.
 		

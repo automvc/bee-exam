@@ -51,26 +51,33 @@ public class DiffDdExam {
 	
 	public static void test() {
 		
-			HoneyConfig.getHoneyConfig().enableMultiDs = true;
-			HoneyConfig.getHoneyConfig().multiDsType = 2;
-			HoneyConfig.getHoneyConfig().multiDs_differentDbType=true;
-			HoneyConfig.getHoneyConfig().multiDsDefalutDS = "ds1";
+			HoneyConfig.getHoneyConfig().multiDS_enable = true;
+			HoneyConfig.getHoneyConfig().multiDS_type = 2;
+			HoneyConfig.getHoneyConfig().multiDS_differentDbType=true;
+			HoneyConfig.getHoneyConfig().multiDS_defalutDS = "ds1";
 			
 			
 //			HoneyConfig.getHoneyConfig().multiDs_matchEntityClassPath = "ds2:org.teasoft.exam.bee.osql.entity.dynamic.Orders,com.xxx.cc.**;ds3:com.xxx.dd.User";
 //			HoneyConfig.getHoneyConfig().multiDs_matchEntityClassPath = "ds2:org.teasoft.exam.bee.osql.entity.dynamic.Orders,org.teasoft.exam.bee.osql.moretable.entity.**;ds3:com.xxx.dd.User";
-			HoneyConfig.getHoneyConfig().multiDs_matchEntityClassPath = "ds2:org.teasoft.exam.bee.osql.entity.dynamic.Orders,org.teasoft.exam.bee.osql.moretable.entity.TestUser,org.teasoft.exam.bee.osql.moretable.entity.Orders;ds3:com.xxx.dd.User";
-			HoneyConfig.getHoneyConfig().multiDs_matchTable = "ds2:user";
-//			HoneyContext.setConfigRefresh(true);  //在所有操作前已配置,就不用显示刷新.
+			HoneyConfig.getHoneyConfig().multiDS_matchEntityClassPath = "ds2:org.teasoft.exam.bee.osql.entity.dynamic.Orders,org.teasoft.exam.bee.osql.moretable.entity.TestUser,org.teasoft.exam.bee.osql.moretable.entity.Orders;ds3:com.xxx.dd.User";
+			HoneyConfig.getHoneyConfig().multiDS_matchTable = "ds2:test_user";
+			HoneyContext.setConfigRefresh(true); 
 			
             System.out.println(">>>>>>>>>>>>>>>>>>>test1");
 			test1();
             System.out.println(">>>>>>>>>>>>>>>>>>>test2");
 			test2(); //oracle
             System.out.println(">>>>>>>>>>>>>>>>>>>test3");
-            HoneyConfig.getHoneyConfig().multiDsDefalutDS = "ds2";  // reset  如何控制一个类的属性有变化???
+//            HoneyConfig.getHoneyConfig().multiDS_defalutDS = "ds2";  // reset  
 //            HoneyContext.setConfigRefresh(true);  //要显示刷新才会更改配置.
             test3();
+            
+            //clear
+			HoneyConfig.getHoneyConfig().multiDS_enable = false;
+			HoneyConfig.getHoneyConfig().multiDS_type = 0;
+			HoneyConfig.getHoneyConfig().multiDS_differentDbType = false;
+            BeeFactory.getInstance().setDataSourceMap(null);
+            HoneyContext.setConfigRefresh(true);
 		}
 
 	public static void initDS() {
@@ -130,10 +137,13 @@ public class DiffDdExam {
 
 		result = suidRich.selectOne(leafAlloc);
 		if (result != null) Logger.info(result.toString());
-		
+		Logger.info("-------------1--dbName: "+HoneyConfig.getHoneyConfig().getDbName());
 		suidRich.select(leafAlloc,0,10);
+		Logger.info("-------------2--dbName: "+HoneyConfig.getHoneyConfig().getDbName());
 		suidRich.select(leafAlloc,10);
+		Logger.info("-------------3--dbName: "+HoneyConfig.getHoneyConfig().getDbName());
 		suidRich.select(leafAlloc,10);
+		Logger.info("-------------4--dbName: "+HoneyConfig.getHoneyConfig().getDbName());
 		
 //		suidRich.selectOne(leafAlloc);
 //		suidRich.selectOne(leafAlloc);

@@ -35,6 +35,7 @@ import org.teasoft.exam.bee.osql.UseJson;
 import org.teasoft.exam.bee.osql.chain.ChainSelectExam;
 import org.teasoft.exam.bee.osql.chain.ChainUpdateExam;
 import org.teasoft.exam.bee.osql.chain.UnionSelectExam;
+import org.teasoft.exam.bee.osql.ds.DiffDdExam;
 import org.teasoft.exam.bee.osql.ds.RwDsExam;
 import org.teasoft.exam.comm.OrdinaryTest;
 import org.teasoft.exam.comm.TestHelper;
@@ -155,8 +156,11 @@ public class TestNormal {
 		runTest(OrdinaryTest.class);
 		
 //		runTest(ExceptionTest.class);
-		
+//		
 //		runTest(RwDsExam.class);
+//		runTest(DiffDdExam.class);
+		
+		
 		
 	   } catch (BeeException e) {
 		   Logger.error(e.getMessage());

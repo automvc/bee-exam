@@ -19,6 +19,7 @@ public class UpperKeyTest {
 
 	@Test
 	public void test() {
+		System.out.println("================UpperKeyTest==============");
 		SqlKeyWord k = new UpperKey();
 		Logger.info(k.select()+k.count()+k.distinct()+k.from());
 		Logger.info(k.where()+k.and()+k.between()+k.groupBy()+k.orderBy()+k.asc()+k.forUpdate());
@@ -28,6 +29,7 @@ public class UpperKeyTest {
 		Logger.info(k.insert()+k.into()+k.values());
 		Logger.info(k.delete()+k.from());
 		Logger.info(k.update()+k.set());
+		Logger.info(k.Null()+k.or()+k.offset()+k.on()+k.notBetween()+k.notIn()+k.having()+k.as());
 	}
 
 }

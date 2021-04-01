@@ -33,39 +33,42 @@ import com.alibaba.druid.pool.DruidDataSource;
 public class RwDsExam {
 
 	private static SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
-	private static String oldDbName="";
-	static {
-		oldDbName=HoneyConfig.getHoneyConfig().getDbName();
-		HoneyConfig.getHoneyConfig().setDbName(DatabaseConst.MYSQL);
-		if (isMysql()) initDS();
-	}
+//	private static String oldDbName="";
+//	static {
+//
+//	}
 
 	private static boolean isMysql() {
 		return DatabaseConst.MYSQL.equalsIgnoreCase(HoneyContext.getDbDialect());
 	}
 
 	public static void test() {
+	    String  oldDbName=HoneyConfig.getHoneyConfig().getDbName();
+		HoneyConfig.getHoneyConfig().setDbName(DatabaseConst.MYSQL);
+		if (isMysql()) initDS();
 		
 		if (isMysql()) {
-			HoneyConfig.getHoneyConfig().enableMultiDs = true;
-			HoneyConfig.getHoneyConfig().multiDsType = 1;
-			HoneyConfig.getHoneyConfig().multiDsDefalutDS = "ds1";
-			HoneyConfig.getHoneyConfig().multiDs_writeDB = "ds1";
-			HoneyConfig.getHoneyConfig().multiDs_readDB = "ds2,ds3";
+			HoneyConfig.getHoneyConfig().multiDS_enable = true;
+			HoneyConfig.getHoneyConfig().multiDS_type = 1;
+			HoneyConfig.getHoneyConfig().multiDS_defalutDS = "ds1";
+			HoneyConfig.getHoneyConfig().multiDS_writeDB = "ds1";
+			HoneyConfig.getHoneyConfig().multiDS_readDB = "ds2,ds3";
+			HoneyContext.setConfigRefresh(true);
 
 			test1();
 			test2();
 			
-			HoneyConfig.getHoneyConfig().enableMultiDs = false;
-			HoneyConfig.getHoneyConfig().multiDsType = 0;
-			HoneyConfig.getHoneyConfig().multiDsDefalutDS = null;
-			HoneyConfig.getHoneyConfig().multiDs_writeDB = null;
-			HoneyConfig.getHoneyConfig().multiDs_readDB = null;
-			
+			HoneyConfig.getHoneyConfig().multiDS_enable = false;
+			HoneyConfig.getHoneyConfig().multiDS_type = 0;
+			HoneyConfig.getHoneyConfig().multiDS_defalutDS = null;
+			HoneyConfig.getHoneyConfig().multiDS_writeDB = null;
+			HoneyConfig.getHoneyConfig().multiDS_readDB = null;
 			BeeFactory.getInstance().setDataSourceMap(null);
+			HoneyContext.setConfigRefresh(true);
 		}
 		
 		HoneyConfig.getHoneyConfig().setDbName(oldDbName);
+		
 	}
 
 	public static void main(String[] args) {
@@ -101,6 +104,7 @@ public class RwDsExam {
 			dataSourceMap.put("ds2", dataSource2); //ds2
 			dataSourceMap.put("ds3", dataSource3); //ds3
 			BeeFactory.getInstance().setDataSourceMap(dataSourceMap);
+			HoneyContext.setConfigRefresh(true);
 
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -7,10 +7,11 @@ import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.bee.osql.transaction.Transaction;
 import org.teasoft.bee.osql.transaction.TransactionIsolationLevel;
+import org.teasoft.exam.bee.osql.entity.LeafAlloc;
 import org.teasoft.exam.bee.osql.entity.Orders;
-//import org.teasoft.exam.bee.osql.entity.User;
 import org.teasoft.exam.bee.osql.entity.TestUser;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
@@ -23,6 +24,8 @@ import org.teasoft.honey.osql.core.SessionFactory;
  */
 public class TransactionExam {
 
+	private static SuidRich suidRich=BeeFactory.getHoneyFactory().getSuidRich();
+	
 	public static void main(String[] args) {
 		test();
 	}
@@ -90,6 +93,44 @@ public class TransactionExam {
 		}catch (Exception e) {
 			Logger.error("In TransactionExam (Exception):"+e.getMessage());
 			e.printStackTrace();
+		}
+		
+		Orders exampleField=new Orders();
+		exampleField.setUserid("bee");
+//      select some fields
+		List<Orders> selectSomeField=suidRich.select(exampleField, "name,total");
+		
+		
+		testRollback();
+	}
+	
+	
+	private static void testRollback() {
+		LeafAlloc result = null;
+		Transaction transaction = SessionFactory.getTransaction();
+		try {
+			transaction.begin();
+
+//			"UPDATE leaf_alloc SET max_id = max_id + step WHERE biz_tag = #{tag}"
+			LeafAlloc leafAlloc = new LeafAlloc();
+			leafAlloc.setBizTag("bee");
+			Condition condition = new ConditionImpl();
+			condition.setAdd("maxId", "step");
+//		    suidRich.update(leafAlloc, "maxId", condition);
+			suidRich.update(leafAlloc, condition); //v1.8
+
+//		    "SELECT biz_tag, max_id, step FROM leaf_alloc WHERE biz_tag = #{tag}"
+			result = suidRich.selectOne(leafAlloc);
+			if(result!=null) Logger.info(result.toString());
+			
+			suidRich.select(leafAlloc,1,10);
+
+			transaction.commit();
+		} catch (Exception e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+			Logger.error(" Transaction rollback !");
+			transaction.rollback();
 		}
 	}
 

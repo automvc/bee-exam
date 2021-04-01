@@ -22,6 +22,9 @@ public class StringUtilTest {
 	
 	@Test
 	public void test() {
+		
+		System.out.println("================StringUtilTest==========start====");
+		
 		Map<String, String> map = new HashMap<>();
 		String newProjectName = "kvienglish";
 		String beeVersion = "1.9-SNAPSHOT";
@@ -76,5 +79,7 @@ public class StringUtilTest {
 		assertEquals(text8,text8_1);
 		
 		assertEquals("${\\}", StringUtil.replaceWithMap("${\\}",map,"${","}") );
+		
+		System.out.println("================StringUtilTest==========end====");
 	}
 }

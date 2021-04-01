@@ -97,7 +97,16 @@ public class SuidExam {
 			suid.select(orders2);
 			suid.select(orders2);
 			suid.endSameConnection();
-
+			
+			suid.select(orders2);
+			
+			suid.beginSameConnection();  //test miss
+			Orders orders11 = new Orders();
+			orders1.setId(100001L);
+			suid.select(orders11); 
+			suid.select(orders11); 
+			suid.endSameConnection();
+			
 		} catch (BeeException e) {
 			Logger.error("In SuidExam (BeeException):"+e.getMessage());
 			e.printStackTrace();

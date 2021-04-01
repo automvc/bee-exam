@@ -480,6 +480,10 @@ public class ExceptionTest {
 			new BeeIllegalEntityException(new Throwable(" test "));
 			new JoinTableParameterException(new Throwable(" test "));
 			new NotSupportedException(new Throwable(" test "));
+			
+			new BeeIllegalAccessException("test");
+			new BeeInstantiationException("test");
+			
 		} catch (BeeException e) {
 			Logger.error(e.getMessage());
 			e.printStackTrace();

@@ -29,9 +29,10 @@ public class ServiceTest {
 
 		boolean result = false;
 		try {
+			System.out.println("================ServiceTest==========start====");
 			SuidExam.setSuidRich(new ObjSQLServiceImpl());
 			SuidExam.test();
-			
+			System.out.println("================ServiceTest============SuidExam finished==");
 			SuidRichExam.setSuidRich(new ObjSQLRichServiceImpl());
 			SuidRichExam.test();
 			
@@ -52,6 +53,11 @@ public class ServiceTest {
 			
 			DynamicTableExam.setSuidRich(new ObjSQLServiceImpl());
 			DynamicTableExam.test();
+			
+			DynamicTableExam.setSuidRich(new ObjSQLRichServiceImpl());
+			DynamicTableExam.test();
+			
+			System.out.println("================ServiceTest==========end====");
 
 			result = true;
 		} catch (Exception e) {

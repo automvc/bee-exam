@@ -166,6 +166,7 @@ public class ConditionExam {
 			 //set with field
 			 Condition conditionSetWithField=new ConditionImpl();
 			 conditionSetWithField.setWithField("name","userid");
+			 conditionSetWithField.op("name", Op.eq, null);
 			 int updateNum= suidRich.update(new Orders(), conditionSetWithField);
 			 Logger.info("updateNum use SetWithField: "+updateNum);
 			 

@@ -7,7 +7,7 @@
 package org.teasoft.exam;
 
 import org.junit.Test;
-import org.teasoft.exam.bee.osql.SuidRichExam;
+import org.teasoft.exam.bee.osql.ds.DiffDdExam;
 import org.teasoft.exam.bee.osql.ds.RwDsExam;
 
 /**
@@ -18,21 +18,27 @@ public class MoreDsTest {
 	@Test
 	public void test(){
 		System.out.println("---Bee MoreDsTest with junit start:------");
-		SuidRichExam.test();
 		
 		System.out.println("---Bee RwDsExam with junit start:------");
 		RwDsExam.test();
 		System.out.println("---Bee RwDsExam with junit end.------");
 		
-//		RwDsExam set the ds , will affect after.
+//		RwDsExam set the ds , will affect after. need clear
 		
-		try {
-			Thread.sleep(12000);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(12000);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		
+//		SuidRichExam.test();
 		
-		SuidRichExam.test();
+		
+		System.out.println("---Bee DiffDdExam with junit start:------");
+		DiffDdExam.test();
+		System.out.println("---Bee DiffDdExam with junit end.------");
+		
+		
 		System.out.println("---Bee MoreDsTest with junit end.------");
 	}
 

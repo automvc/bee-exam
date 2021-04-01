@@ -19,7 +19,7 @@ public class LeftszInfo implements Serializable {
 	private String comedate;
 	private String vehicle2;
 	private Long mobileno;
-
+/*
 	public Integer getId() {
 		return id;
 	}
@@ -106,5 +106,6 @@ public class LeftszInfo implements Serializable {
 		 str.append(",mobileno=").append(mobileno);		 
 		 str.append("]");			 
 		 return str.toString();			 
-	 }		 
+	 }		
+	 */ 
 }

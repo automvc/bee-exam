@@ -53,6 +53,14 @@
 			<scope>system</scope>
 			<systemPath>D:/JavaWeb/jar/ojdbc6.jar</systemPath>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.microsoft</groupId>
+			<artifactId>sqljdbc4</artifactId>
+			<version>4</version>
+			<scope>system</scope>
+			<systemPath>D:/JavaWeb/jar/sqljdbc4.jar</systemPath>
+		</dependency>
 
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>

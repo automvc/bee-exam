@@ -30,7 +30,7 @@ public class ImportExcelTest {
 		try {
 			
 
-		String fullPath = "D:\\test.xlsx";
+		String fullPath = "D:\\test2.xlsx";
 		String[] checkTitles = { "序号", "班级", "姓名", "离深时间	", "目的地", "离深交通工具", "返深时间", "返深交通工具", "家长联系电话" };
 		List<String[]> list = ExcelReader.checkAndReadExcel(fullPath, checkTitles, 1); //标题在第1行.(从0开始的.)
 		String fieldNames = "orderno,,name,leftdate,target,vehicle1,comedate,vehicle2,mobileno"; //每列对应的字段名

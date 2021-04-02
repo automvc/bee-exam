@@ -13,12 +13,8 @@ import org.teasoft.bee.osql.MapSqlKey;
 import org.teasoft.bee.osql.MapSqlSetting;
 import org.teasoft.bee.osql.annotation.JoinType;
 import org.teasoft.exam.bee.osql.SameConnTest;
-import org.teasoft.exam.bee.osql.SuidExamEN;
 import org.teasoft.exam.bee.osql.autogen.GenBeanExam;
 import org.teasoft.exam.bee.osql.autogen.GenFilesExam;
-import org.teasoft.exam.bee.test.TestCache;
-import org.teasoft.exam.bee.test.TestNormal;
-import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.Logger;
 
 /**

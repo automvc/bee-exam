@@ -24,9 +24,9 @@ public class ClearAndInitTestTable {
 		PreparedSql preparedSql = BeeFactory.getHoneyFactory().getPreparedSql();
 		Map nullMap=null;
 		
-		String DbName=HoneyConfig.getHoneyConfig().getDbName();
+		String dbName=HoneyConfig.getHoneyConfig().getDbName();
 		
-		System.out.println("------------DbName:      "+DbName);
+		System.out.println("------------DbName:      "+dbName);
 
 /*		
 		if (DatabaseConst.SQLite.equalsIgnoreCase(DbName)) { //SQLite
@@ -61,10 +61,10 @@ public class ClearAndInitTestTable {
 		//通过Javabean创建表
 		CreateTableWithJavabean.test();
 		
-		if (DatabaseConst.ORACLE.equalsIgnoreCase(DbName)
-		  ||DatabaseConst.H2.equalsIgnoreCase(DbName)
-		  ||DatabaseConst.PostgreSQL.equalsIgnoreCase(DbName)
-		) { //ORACLE
+		if (DatabaseConst.ORACLE.equalsIgnoreCase(dbName)
+		  ||DatabaseConst.H2.equalsIgnoreCase(dbName)
+		  ||DatabaseConst.PostgreSQL.equalsIgnoreCase(dbName)
+		) { 
 			HoneyConfig.getHoneyConfig().genid_forAllTableLongId=true;
 		}
 		

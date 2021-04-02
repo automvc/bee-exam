@@ -8,6 +8,7 @@ package org.teasoft.exam;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.teasoft.bee.osql.DatabaseConst;
 import org.teasoft.exam.bee.test.TestNormal;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyContext;
@@ -26,6 +27,13 @@ public class MainDbTest {
 		try {
 			
 			HoneyConfig honeyConfig=HoneyConfig.getHoneyConfig();
+			
+			String dbName=HoneyConfig.getHoneyConfig().getDbName();
+			if (DatabaseConst.ORACLE.equalsIgnoreCase(dbName) 
+					|| DatabaseConst.H2.equalsIgnoreCase(dbName)
+					|| DatabaseConst.PostgreSQL.equalsIgnoreCase(dbName)) { 
+				honeyConfig.genid_forAllTableLongId = true;
+			}
 			
 			String oldUrl=honeyConfig.getUrl();
 			String oldUsername=honeyConfig.getUsername();

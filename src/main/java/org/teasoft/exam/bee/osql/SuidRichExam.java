@@ -55,15 +55,18 @@ public class SuidRichExam {
 			orders.setTotal(new BigDecimal("93.99"));
 
 			orders.setSequence(""); //empty String test
+			Logger.info("==============orders.getId(): "+orders.getId());
 
 			int insertNum0 = suidRich.insert(orders);
 			Logger.info("insert record:" + insertNum0);
 
 			int insertNum1 = suidRich.insert(orders, IncludeType.INCLUDE_NULL);
 			Logger.info("insert record:" + insertNum1);
+			Logger.info("==============orders.getId(): "+orders.getId());
 
 			int insertNum2 = suidRich.insert(orders, IncludeType.INCLUDE_EMPTY);
 			Logger.info("insert record:" + insertNum2);
+			Logger.info("==============orders.getId(): "+orders.getId());
 
 			int insertNum3 = suidRich.insert(orders, IncludeType.INCLUDE_BOTH);
 			Logger.info("insert record:" + insertNum3);
@@ -319,7 +322,7 @@ public class SuidRichExam {
 
 			orders11.setUserid("bee");
 
-			System.out.println("=====================================");
+			Logger.info("=====================================");
 			Condition condition_add_forUpdate = new ConditionImpl();
 			condition_add_forUpdate.op("id", Op.eq, 100003)
  //		    .start(1).size(300)    //oracle have exception, when use "for update"

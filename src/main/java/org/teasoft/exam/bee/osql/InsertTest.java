@@ -54,7 +54,7 @@ public class InsertTest {
 		orders1.setName("client");
 		orders1.setUserid("client");
 		orders1.setRemark("testOneTime");
-		orders1.setTotal(new BigDecimal("93.99"));
+		orders1.setTotal(new BigDecimal("94.99"));
 		orders1.setSequence("");  //empty String test
 //		orders1.setId(1008L);  //the id already exist in db. test exception
 		
@@ -66,13 +66,14 @@ public class InsertTest {
 		orders2.setName("Bee");
 		orders2.setUserid("client");
 		orders2.setRemark("testOneTime");
-		orders2.setTotal(new BigDecimal("93.99"));
+		orders2.setTotal(new BigDecimal("95.99"));
 		
 		Thread.sleep(2000);
 		
 
 		Orders[] ordersArray=new Orders[3];
-		ordersArray[0]=orders;
+		ordersArray[0]=orders; 
+//		orders.setId(102L);
 		ordersArray[1]=orders1;
 		ordersArray[2]=orders2;
 		
@@ -91,6 +92,10 @@ public class InsertTest {
 		for (int i = 0; i < list1.size(); i++) {
 			Logger.info(list1.get(i).toString());
 		}
+		
+		Orders[] ordersArray2=new Orders[1];
+		ordersArray2[0]=orders;
+		suidRich.insert(ordersArray2);
 		
 	  } catch (BeeException e) {
 		  Logger.error("In SuidRichExam (Exception):"+e.getMessage());

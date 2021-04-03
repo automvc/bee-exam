@@ -12,9 +12,11 @@ import org.teasoft.bee.logging.Path;
 import org.teasoft.bee.osql.MapSqlKey;
 import org.teasoft.bee.osql.MapSqlSetting;
 import org.teasoft.bee.osql.annotation.JoinType;
+import org.teasoft.exam.bee.osql.InsertAndReturnIdTest;
 import org.teasoft.exam.bee.osql.SameConnTest;
 import org.teasoft.exam.bee.osql.autogen.GenBeanExam;
 import org.teasoft.exam.bee.osql.autogen.GenFilesExam;
+import org.teasoft.exam.bee.test.TestCache;
 import org.teasoft.honey.osql.core.Logger;
 
 /**
@@ -31,12 +33,13 @@ public class BeeTest {
 		boolean result=false;
 		try {
 //			TestNormal.test();
-//			TestCache.test();
+			TestCache.test();
 			
 			GenBeanExam.test();
 			GenFilesExam.test();
 			
 			SameConnTest.test();
+			InsertAndReturnIdTest.test();
 			
 			Logger.info(Path.getFullPath());
 			

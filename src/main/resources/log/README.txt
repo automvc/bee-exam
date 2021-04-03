@@ -63,3 +63,34 @@ bee-exam(v1.9)-normal(MySQL)-2021-02-07 11.56.33.739.txt
 bee-exam(v1.9)-normal(MySQL)-2021-02-14 10.11.34.561.txt
 bee-exam(v1.9)-normal(MySQL)-2021-03-11 08.47.40.114.txt
 bee-exam(v1.9)-cache-2021-03-11 08.52.07.423.txt
+
+add coverage info.2021-03-18 (yyyy-MM-dd)
+
+bee-exam(v1.9)-normal(Oracle)-2021-03-20 20.01.44.213.txt
+bee-exam(v1.9)-cache(Oracle)-2021-03-20 20.02.02.758.txt
+bee-exam(v1.9)-normal(MySQL)-2021-03-20 23.10.06.324.txt
+bee-exam(v1.9)-cache(MySQL)-2021-03-20 23.10.16.346.txt
+bee-exam(v1.9)-normal(SQLite)-2021-03-24 22.10.08.975.txt
+
+test V1.9 with well-known and major database 
+bee-exam(v1.9)2021-03-25 13.10.37.514-normal(Microsoft SQL Server).txt
+bee-exam(v1.9)2021-03-25 13.14.57.616-normal(SQLite).txt
+bee-exam(v1.9)2021-03-25 13.17.51.312-normal(MySQL).txt
+bee-exam(v1.9)2021-03-25 13.20.15.761-normal(Oracle).txt
+bee-exam(v1.9)2021-03-25 13.23.08.180-normal(H2).txt
+bee-exam(v1.9)2021-03-25 13.25.51.23-normal(PostgreSQL).txt
+
+bee-exam(v1.9)2021-04-01 21.32.08.537-normal(MySQL).txt
+bee-exam(v1.9)2021-04-01 21.32.24.79-normal(Oracle).txt
+bee-exam(v1.9)2021-04-01 21.32.47.917-normal(SQLite).txt
+bee-exam(v1.9)2021-04-01 21.33.04.663-normal(H2).txt
+bee-exam(v1.9)2021-04-01 21.33.08.408-normal(PostgreSQL).txt
+bee-exam(v1.9)2021-04-01 21.33.20.953-normal(Microsoft SQL Server).txt
+
+bee-exam(v1.9)2021-04-03 21.55.13.02-normal(MySQL).txt
+bee-exam(v1.9)2021-04-03 21.55.27.357-normal(Oracle).txt
+bee-exam(v1.9)2021-04-03 21.55.51.369-normal(SQLite).txt
+bee-exam(v1.9)2021-04-03 21.56.05.780-normal(H2).txt
+bee-exam(v1.9)2021-04-03 21.56.10.191-normal(PostgreSQL).txt
+bee-exam(v1.9)2021-04-03 21.56.22.701-normal(Microsoft SQL Server).txt
+bee-exam(v1.9)2021-04-03 21.56.30.119-cache(MySQL).txt

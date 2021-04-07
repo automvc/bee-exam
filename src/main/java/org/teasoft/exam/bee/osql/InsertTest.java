@@ -46,9 +46,10 @@ public class InsertTest {
 		orders.setUserid("client");
 		orders.setRemark("testOneTime");
 		orders.setTotal(new BigDecimal("93.99"));
+//		orders.setId(1L);
 		
-//		int insertNum=suidRich.insert(orders);
-//		Logger.info(insertNum);
+		int insertNum=suidRich.insert(orders);
+		Logger.info(insertNum);
 		
 		Orders orders1=new Orders();
 		orders1.setName("client");

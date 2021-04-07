@@ -10,6 +10,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.teasoft.exam.bee.osql.ConditionExam;
 import org.teasoft.exam.bee.osql.DynamicTableExam;
+import org.teasoft.exam.bee.osql.InsertAndReturnIdTest;
 import org.teasoft.exam.bee.osql.InsertTest;
 import org.teasoft.exam.bee.osql.SelectById;
 import org.teasoft.exam.bee.osql.SuidExam;
@@ -56,6 +57,9 @@ public class ServiceTest {
 			
 			DynamicTableExam.setSuidRich(new ObjSQLRichServiceImpl());
 			DynamicTableExam.test();
+			
+			InsertAndReturnIdTest.setSuidRich(new ObjSQLServiceImpl());
+			InsertAndReturnIdTest.test();
 			
 			System.out.println("================ServiceTest==========end====");
 

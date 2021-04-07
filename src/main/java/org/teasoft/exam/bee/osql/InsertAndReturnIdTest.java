@@ -34,20 +34,23 @@ public class InsertAndReturnIdTest {
 	}
 
 	public static void main(String[] args) {
-		
+		test();
+	}
+	
+	public static void test() {
 		boolean oldFlag=HoneyConfig.getHoneyConfig().genid_forAllTableLongId;
 		HoneyConfig.getHoneyConfig().genid_forAllTableLongId=false;
-		test();
-		test();
+		test0();
+		test0();
 		HoneyConfig.getHoneyConfig().genid_forAllTableLongId=true;
-		test();
+//		test0();
 		HoneyConfig.getHoneyConfig().genid_forAllTableLongId=oldFlag;
 		
 		if(HoneyUtil.isOracle()) testOracle();
 		if(HoneyUtil.isMysql() || HoneyUtil.isSQLite()) testMySQL();
 	}
 
-	public static void test() {
+	public static void test0() {
 		try {
 			Orders orders1 = new Orders();
 			orders1.setName("Bee(ORM Framework)");
@@ -67,10 +70,10 @@ public class InsertAndReturnIdTest {
 			Logger.info("------------------------getId : " + orders1.getId());
 
 		} catch (BeeException e) {
-			Logger.error("In SuidExam (BeeException):" + e.getMessage());
+			Logger.error("In InsertAndReturnIdTest (BeeException):" + e.getMessage());
 			e.printStackTrace();
 		} catch (Exception e) {
-			Logger.error("In SuidExam (Exception):" + e.getMessage());
+			Logger.error("In InsertAndReturnIdTest (Exception):" + e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -101,10 +104,10 @@ public class InsertAndReturnIdTest {
 			Logger.info("auto increment id,with Oracle Sequence and Trigger, end....");
 			
 		} catch (BeeException e) {
-			Logger.error("In SuidExam (BeeException):" + e.getMessage());
+			Logger.error("In InsertAndReturnIdTest (BeeException):" + e.getMessage());
 			e.printStackTrace();
 		} catch (Exception e) {
-			Logger.error("In SuidExam (Exception):" + e.getMessage());
+			Logger.error("In InsertAndReturnIdTest (Exception):" + e.getMessage());
 			e.printStackTrace();
 		}finally {
 			HoneyConfig.getHoneyConfig().genid_forAllTableLongId=oldFlag;
@@ -138,10 +141,10 @@ public class InsertAndReturnIdTest {
 			Logger.info("auto increment id in MySQL, end....");
 
 		} catch (BeeException e) {
-			Logger.error("In SuidExam (BeeException):" + e.getMessage());
+			Logger.error("In InsertAndReturnIdTest (BeeException):" + e.getMessage());
 			e.printStackTrace();
 		} catch (Exception e) {
-			Logger.error("In SuidExam (Exception):" + e.getMessage());
+			Logger.error("In InsertAndReturnIdTest (Exception):" + e.getMessage());
 			e.printStackTrace();
 		}finally {
 			HoneyConfig.getHoneyConfig().genid_forAllTableLongId=oldFlag;

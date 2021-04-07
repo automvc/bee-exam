@@ -76,6 +76,9 @@ public class SuidExam {
 			int insertNum = suid.insert(orders2); //insert
 			Logger.info("insert record:" + insertNum);
 			
+			 suid.insert(orders2); //insert
+			 suid.insert(orders2); //insert
+			
 			//演示了插入的数据后,查出,然后再将其删除. 这样可以重复利用测试用例
 
 			suid.select(orders2);  //下次再查,可测试缓存

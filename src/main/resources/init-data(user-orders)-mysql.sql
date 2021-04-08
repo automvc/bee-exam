@@ -87,3 +87,32 @@ DROP TABLE IF EXISTS `orders_202007`;
 DROP TABLE IF EXISTS `leaf_alloc2`;
 create table orders_202007 like orders;
 create table leaf_alloc2 like leaf_alloc;
+
+
+-- ----------------------------
+-- Procedure structure for `selectOrders`
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `selectOrders`;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `selectOrders`(in in_remark varchar(50))
+BEGIN 
+   
+select * from orders where remark=in_remark  ;
+
+END
+;;
+DELIMITER ;
+
+-- ----------------------------
+-- Procedure structure for `updateOrders`
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `updateOrders`;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `updateOrders`(in in_Id bigint(20))
+BEGIN 
+   
+UPDATE  orders  SET  updatetime=now(),remark='change via CallableSql'  where id=in_Id ;
+
+END
+;;
+DELIMITER ;

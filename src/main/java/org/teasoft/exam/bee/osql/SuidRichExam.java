@@ -19,7 +19,9 @@ import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.SuidRich;
 //import org.teasoft.exam.bee.osql.entity.LeafAlloc;
 import org.teasoft.exam.bee.osql.entity.Orders;
+import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.BeeFactoryHelper;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.Logger;
@@ -339,6 +341,17 @@ public class SuidRichExam {
 			suidRich.update(orders12);
 
 			suidRich.endSameConnection();
+			
+			Condition distinctCondition0=BeeFactoryHelper.getCondition();
+			distinctCondition0.selectDistinctField("userid");
+			suidRich.selectString(new Orders(), distinctCondition0);
+			
+			Condition distinctCondition=BeeFactoryHelper.getCondition();
+			distinctCondition.selectDistinctField("userid","uniqueUserid");
+//			distinctCondition.selectFun(FunctionType.COUNT, "id");
+			distinctCondition.op("name", Op.nq, null);
+			List<String[]> userid=suidRich.selectString(new Orders(), distinctCondition);
+			Printer.print(userid);
 
 		} catch (BeeException e) {
 			Logger.error("In SuidRichExam (Exception):" + e.getMessage());

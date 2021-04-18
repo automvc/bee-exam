@@ -10,9 +10,11 @@ import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.Condition;
+import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.MoreTable;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.moretable.entity.Assigncourse;
 import org.teasoft.exam.bee.osql.moretable.entity.Assignexam;
 import org.teasoft.exam.bee.osql.moretable.entity.Orders;
@@ -20,6 +22,7 @@ import org.teasoft.exam.bee.osql.moretable.entity.Orders;
 import org.teasoft.exam.bee.osql.moretable.entity.TestUser;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.BeeFactoryHelper;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.Logger;
 
@@ -71,6 +74,14 @@ public class MoreTableExam {
 				Logger.info(list2.get(i).toString());
 			}
 			
+			Orders ordersUpdate=new Orders();
+			ordersUpdate.setUserid("bee");
+			ordersUpdate.setName("Bee");
+			Condition conditionUpdate=BeeFactoryHelper.getCondition();
+			conditionUpdate.op("name", Op.eq, null);
+			SuidRich suidRich=BeeFactoryHelper.getSuidRich();
+			suidRich.update(ordersUpdate, "name", conditionUpdate);
+			
 			//			condition.selectField("orders.id,test_user.id,userid,total,orders.createtime");  
 			condition.selectField("orders.id,testUser.id,userid,total,orders.createtime");//只查询部分字段. 没有指定查询的值都为null
 			List<Orders> list3 = moreTable.select(orders1, condition); //select
@@ -103,6 +114,20 @@ public class MoreTableExam {
 			Printer.printList(list4);
 			List<org.teasoft.exam.bee.osql.moretable.entity.Orders> list5 =moreTable.select(orders1, 0, 10);
 			Printer.printList(list5);
+			
+			Condition distinctCondition0=BeeFactoryHelper.getCondition();
+			distinctCondition0
+			.selectDistinctField("assignexam.id")
+//			.selectFun(FunctionType.MAX, "assignexam.id")
+//			.selectField("assignexam.id")
+			;
+			moreTable.select(new Assignexam(), distinctCondition0);
+			
+			Condition distinctCondition1=BeeFactoryHelper.getCondition();
+			distinctCondition1
+			.selectFun(FunctionType.MAX, "assignexam.id")
+			;
+			moreTable.select(new Assignexam(), distinctCondition1);
 
 		} catch (BeeException e) {
 			e.printStackTrace();

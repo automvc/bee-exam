@@ -45,7 +45,7 @@ public class CreateTableWithJavabean {
 			Ddl.createTable(new Assignexam(), true);
 			Ddl.createTable(new Assigncourse(), true);
 		} catch (Exception e) {
-			Logger.error("In CacheTestInsertArray (Exception):" + e.getMessage());
+			Logger.error("In CreateTableWithJavabean (Exception):" + e.getMessage());
 			e.printStackTrace();
 		}
 	}

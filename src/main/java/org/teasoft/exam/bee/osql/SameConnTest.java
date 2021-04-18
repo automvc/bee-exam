@@ -140,10 +140,10 @@ public class SameConnTest {
 			suid.select(orders11);
 
 		} catch (BeeException e) {
-			Logger.error("In SuidExam (BeeException):" + e.getMessage());
+			Logger.error("In SameConnTest (BeeException):" + e.getMessage());
 			e.printStackTrace();
 		} catch (Exception e) {
-			Logger.error("In SuidExam (Exception):" + e.getMessage());
+			Logger.error("In SameConnTest (Exception):" + e.getMessage());
 			e.printStackTrace();
 		}
 	}

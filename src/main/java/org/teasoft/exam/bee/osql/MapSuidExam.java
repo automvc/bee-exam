@@ -62,9 +62,9 @@ public class MapSuidExam {
 
 		} catch (BeeException e) {
 			e.printStackTrace();
-			Logger.error("In MapSuid (BeeException):" + e.getMessage());
+			Logger.error("In MapSuidExam (BeeException):" + e.getMessage());
 		} catch (Exception e) {
-			Logger.error("In MapSuid (Exception):" + e.getMessage());
+			Logger.error("In MapSuidExam (Exception):" + e.getMessage());
 			e.printStackTrace();
 		}
 	}

@@ -68,10 +68,10 @@ public class SelectById {
 		Logger.info(json);
 		
 	  } catch (BeeException e) {
-		  Logger.error("In SuidRichExam (Exception):"+e.getMessage());
+		  Logger.error("In SelectById (Exception):"+e.getMessage());
 		  e.printStackTrace();
 	  }catch (Exception e) {
-		  Logger.error("In SuidRichExam (Exception):"+e.getMessage());
+		  Logger.error("In SelectById (Exception):"+e.getMessage());
 		  e.printStackTrace();
 	  }
 		

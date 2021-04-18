@@ -123,10 +123,10 @@ public class UpdateSetExam {
 		
 		
 		} catch (BeeException e) {
-			Logger.error("In ConditionExam (BeeException):"+e.getMessage());
+			Logger.error("In UpdateSetExam (BeeException):"+e.getMessage());
 			e.printStackTrace();
 		}catch (Exception e) {
-			Logger.error("In ConditionExam (Exception):"+e.getMessage());
+			Logger.error("In UpdateSetExam (Exception):"+e.getMessage());
 			e.printStackTrace();
 		}
 	}

@@ -105,10 +105,10 @@ public class UpdateSetExam_SQLite {
 		
 		
 		} catch (BeeException e) {
-			Logger.error("In ConditionExam (BeeException):"+e.getMessage());
+			Logger.error("In UpdateSetExam_SQLite (BeeException):"+e.getMessage());
 			e.printStackTrace();
 		}catch (Exception e) {
-			Logger.error("In ConditionExam (Exception):"+e.getMessage());
+			Logger.error("In UpdateSetExam_SQLite (Exception):"+e.getMessage());
 			e.printStackTrace();
 		}
 	}

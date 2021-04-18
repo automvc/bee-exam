@@ -67,10 +67,10 @@ public class SuidExamEN_SQLite {
 		}
 		
 		} catch (BeeException e) {
-			Logger.error("In SuidExamEN (BeeException):"+e.getMessage());
+			Logger.error("In SuidExamEN_SQLite (BeeException):"+e.getMessage());
 			e.printStackTrace();
 		}catch (Exception e) {
-			Logger.error("In SuidExamEN (Exception):"+e.getMessage());
+			Logger.error("In SuidExamEN_SQLite (Exception):"+e.getMessage());
 			e.printStackTrace();
 		}
 	}

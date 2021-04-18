@@ -99,10 +99,10 @@ public class InsertTest {
 		suidRich.insert(ordersArray2);
 		
 	  } catch (BeeException e) {
-		  Logger.error("In SuidRichExam (Exception):"+e.getMessage());
+		  Logger.error("In InsertTest (Exception):"+e.getMessage());
 		  e.printStackTrace();
 	  }catch (Exception e) {
-		  Logger.error("In SuidRichExam (Exception):"+e.getMessage());
+		  Logger.error("In InsertTest (Exception):"+e.getMessage());
 		  e.printStackTrace();
 	  }
 		

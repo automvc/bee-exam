@@ -188,6 +188,12 @@ public class ConditionExam {
 			 ;
 			 List<Orders> list15 = suid.select(new Orders(), conditionHaving2);
 			 Logger.info(list15.size());
+
+			 Orders orders16= new Orders();
+			 Condition conditionTestNull=new ConditionImpl();
+			 conditionTestNull.op("name", Op.eq, null); //name is null
+			 conditionTestNull.op("userid", Op.nq, null); //name is not null
+			 suid.select(orders16, conditionTestNull);
 			 
 		} catch (BeeException e) {
 			Logger.error("In ConditionExam (BeeException):"+e.getMessage());

@@ -21,7 +21,6 @@ import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.Logger;
-import org.teasoft.honey.osql.util.DateUtil;
 
 /**
  * @author Kingstar
@@ -176,7 +175,7 @@ public class ConditionExam {
 //			 conditionOpWithField.op("userid", Op.eq, "Bee")
 			 ;
 			 Orders orders14= new Orders();
-//			 orders14.setUserid("Bee2"); //will be ignored
+//			 orders14.setUserid("Bee2"); //will be parsed
 			 List<Orders> list14 = suid.select(orders14, conditionOpWithField);
 			 Logger.info("record num by select use opWithField: "+list14.size());
 			 
@@ -190,7 +189,6 @@ public class ConditionExam {
 			 List<Orders> list15 = suid.select(new Orders(), conditionHaving2);
 			 Logger.info(list15.size());
 			 
-		
 		} catch (BeeException e) {
 			Logger.error("In ConditionExam (BeeException):"+e.getMessage());
 			e.printStackTrace();

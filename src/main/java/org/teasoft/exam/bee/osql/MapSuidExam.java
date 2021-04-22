@@ -13,7 +13,7 @@ import org.teasoft.bee.osql.MapSql;
 import org.teasoft.bee.osql.MapSqlKey;
 import org.teasoft.bee.osql.MapSqlSetting;
 import org.teasoft.bee.osql.MapSuid;
-import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.BeeFactoryHelper;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.util.ObjectUtils;
 
@@ -29,8 +29,8 @@ public class MapSuidExam {
 	public static void test() {
 
 		try {
-			MapSuid mapSuid = BeeFactory.getHoneyFactory().getMapSuid();
-			MapSql mapSql = BeeFactory.getHoneyFactory().getMapSql();
+			MapSuid mapSuid = BeeFactoryHelper.getMapSuid();
+			MapSql mapSql = BeeFactoryHelper.getMapSql();
 
 		    mapSql.put(MapSqlKey.Table, "test_user");
 //			mapSql.put(MapSqlKey.Table, "testUser");

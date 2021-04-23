@@ -12,7 +12,7 @@ import java.util.List;
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.exam.bee.osql.entity.Orders;
-import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.BeeFactoryHelper;
 import org.teasoft.honey.osql.core.Logger;
 
 /**
@@ -21,7 +21,7 @@ import org.teasoft.honey.osql.core.Logger;
  */
 public class SuidExam {
 	
-	private static Suid suid = BeeFactory.getHoneyFactory().getSuid();
+	private static Suid suid = BeeFactoryHelper.getSuid();
 	
 	public static Suid getSuid() {
 		return suid;

@@ -30,6 +30,7 @@ public class MapSuidExam {
 
 		try {
 			MapSuid mapSuid = BeeFactoryHelper.getMapSuid();
+			
 			MapSql mapSql = BeeFactoryHelper.getMapSql();
 
 		    mapSql.put(MapSqlKey.Table, "test_user");
@@ -59,6 +60,34 @@ public class MapSuidExam {
 				Logger.info(map.get("password").toString());
 			}
 			mapSuid.selectOne(mapSql);
+			
+			
+			MapSql inserMapSql = BeeFactoryHelper.getMapSql();
+//			inserMapSql.put(MapSqlKey.Table, "test_user");
+			inserMapSql.put(MapSqlKey.Table, "testUser");
+			inserMapSql.put(MapSqlSetting.IsNamingTransfer, true);
+			
+			inserMapSql.put("email", "test@gmail.com");
+			inserMapSql.put("password", "password@gmail.com");
+			inserMapSql.put("lastName", "MapSuid");
+			inserMapSql.put("name", "");
+			inserMapSql.put("username", null);
+//			inserMapSql.put("id",1);
+			
+			
+			long id1=mapSuid.insert(inserMapSql);
+			Logger.info(id1);
+			
+			inserMapSql.put(MapSqlSetting.IsIncludeEmptyString, true);
+			long id2=mapSuid.insert(inserMapSql);
+			Logger.info(id2);
+			
+			inserMapSql.put(MapSqlSetting.IsIncludeNull, true);
+			long id3=mapSuid.insert(inserMapSql);
+			Logger.info(id3);
+			
+			mapSuid.selectOne(mapSql);
+			
 
 		} catch (BeeException e) {
 			e.printStackTrace();

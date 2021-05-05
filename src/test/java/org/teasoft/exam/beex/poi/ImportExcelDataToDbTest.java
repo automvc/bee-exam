@@ -20,7 +20,7 @@ import org.teasoft.honey.util.SuidHelper;
  * @author Kingstar
  * @since  1.9
  */
-public class ImportExcelTest {
+public class ImportExcelDataToDbTest {
 	
 	@Test	
 	public void test() throws Exception{
@@ -35,9 +35,10 @@ public class ImportExcelTest {
 		List<String[]> list = ExcelReader.checkAndReadExcel(fullPath, checkTitles, 1); //标题在第1行.(从0开始的.)
 		String fieldNames = "orderno,,name,leftdate,target,vehicle1,comedate,vehicle2,mobileno"; //每列对应的字段名
 		if (list != null) {
-			List<LeftszInfo> listLeftszInfo = SuidHelper.parseToEntity(list, 2, list.size() - 2, fieldNames, new LeftszInfo());
+			List<LeftszInfo> listLeftszInfo = SuidHelper.parseToEntity(list, 2, list.size() - 2 +1, fieldNames, new LeftszInfo());
 		
 			suidRich.insert(listLeftszInfo);
+//			suidRich.insert(listLeftszInfo,1);
 		}
 		
 		} catch (Exception e) {

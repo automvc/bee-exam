@@ -19,12 +19,14 @@ public class ExcelReaderTest {
 	
 	@Test
 	public void test() throws Exception{
-		
+		try {
+			
+
 		System.out.println("================ExcelReaderTest==========start====");
 		
 //		String fullPath = "D:\\test2.xlsx";
 		String fullPath = "D:\\test-dataType.xlsx";
-		String[] checkTitles= {"序号","班级","姓名","离深时间	","目的地","离深交通工具","返深时间","返深交通工具","家长联系电话"};
+//		String[] checkTitles= {"序号","班级","姓名","离深时间	","目的地","离深交通工具","返深时间","返深交通工具","家长联系电话"};
 //		String[] checkTitles= {"序号1","班级","姓名2","离深时间	","目的地","离深交通工具","返深时间","返深交通工具","家长联系电话"};
 //		String[] checkTitles= {"序号","班级","姓名","离深时间	","目的地","离深交通工具","返深时间","返深交通工具"};
 //		List<String[]> list = ExcelReader.checkAndReadExcel(fullPath,checkTitles,1);
@@ -39,6 +41,11 @@ public class ExcelReaderTest {
 			}
 //			Logger.info(col.length);
 //			Logger.info("");
+			System.out.println();
+		}
+		
+		} catch (Exception e) {
+            e.printStackTrace();
 		}
 		
 		System.out.println("================ExcelReaderTest==========end====");

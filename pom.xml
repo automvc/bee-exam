@@ -4,15 +4,15 @@
 	<groupId>org.teasoft</groupId>
 	<artifactId>bee-exam</artifactId>
 <!-- 	<version>1.8.99</version> -->
-	<version>1.9-SNAPSHOT</version>
+	<version>1.9.5</version>
 	<packaging>jar</packaging>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
-		<bee.version>1.9-SNAPSHOT</bee.version>
 <!-- 		<bee.version>1.8.99</bee.version> -->
+		<bee.version>1.9.5</bee.version>
 	</properties>
 
 	<dependencies>
@@ -145,6 +145,18 @@
 			<artifactId>postgresql</artifactId>
 <!-- 			<version>9.4.1209</version> -->
             <version>9.3-1102-jdbc41</version>
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.17</version>
 		</dependency>
 
 	</dependencies>

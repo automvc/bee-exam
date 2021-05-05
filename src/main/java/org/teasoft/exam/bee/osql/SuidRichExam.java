@@ -352,6 +352,11 @@ public class SuidRichExam {
 			distinctCondition.op("name", Op.nq, null);
 			List<String[]> userid=suidRich.selectString(new Orders(), distinctCondition);
 			Printer.print(userid);
+			
+			Orders orders15 = new Orders();
+			orders15.setId(1005L);
+			boolean f=suidRich.exist(orders15);
+			System.out.println("Orders id=100001L is exist?  "+f);
 
 		} catch (BeeException e) {
 			Logger.error("In SuidRichExam (Exception):" + e.getMessage());
@@ -366,7 +371,27 @@ public class SuidRichExam {
 		exampleField.setUserid("bee");
 		//      select some fields
 		List<Orders> selectSomeField = suidRich.select(exampleField, "name,total");
+		
+		Orders one=suidRich.selectById(exampleField,exampleField.getId());
+		if(one!=null) suidRich.update(exampleField);
+		else suidRich.insert(exampleField);
 
 	}
+	
+	public int save(Orders orders) {
+		Orders one = suidRich.selectById(orders, orders.getId());
+		if (one != null)
+			return suidRich.update(orders);
+		else
+			return suidRich.insert(orders);
+	}
+	
+//	public <T> int save2(T entity) {
+//		Orders one=suidRich.selectById(entity,entity.getId());
+//		if(one!=null) suidRich.update(entity);
+//		else suidRich.insert(entity);
+//		
+//		return 0;
+//	}
 
 }

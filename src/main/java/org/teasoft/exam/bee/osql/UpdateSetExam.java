@@ -43,14 +43,15 @@ public class UpdateSetExam {
 //		UPDATE leaf_alloc SET max_id = max_id + step WHERE biz_tag = #{tag} 
 		
 		entity=new LeafAlloc();
-		entity.setBizTag("bee");
+//		entity.setBizTag("bee");
 		
 		Condition conditionSetAdd=new ConditionImpl();
 		conditionSetAdd.setAdd("maxId", "step");
+		conditionSetAdd.op("bizTag", Op.in,"1,2");
 		int setAddNum=suidRich.updateBy(entity, "bizTag",conditionSetAdd);
 		Logger.info("test setAdd , update num: "+setAddNum);
 		
-		
+		System.err.println("------------------------------------------");
 		
 //		"update leaf_alloc set max_id= ?," +
 //      " update_time=now(), version=version+1" +
@@ -99,7 +100,7 @@ public class UpdateSetExam {
 		 Condition condition3=new ConditionImpl();
 		 condition3.setAdd("total", 1);
 		 condition3.op("Total", Op.ge, 90);
-		 suidRich.updateById(orders3,condition3);
+//		 suidRich.updateById(orders3,condition3);
 //		 suidRich.updateBy(orders3,"id",condition3);  //指明了where的字段,但condition里的op还是会转成where的条件.
 		
 

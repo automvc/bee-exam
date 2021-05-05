@@ -123,23 +123,28 @@ public class ConditionExam {
 		
 //		SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
 		Orders Orders_update=new Orders();
-		Orders_update.setRemark("test");
+		Orders_update.setId(1L);
+//		Orders_update.setRemark("test");
+		Orders_update.setRemark("");
 		Orders_update.setAbc("test for update");
 		Condition conditionUpdate=new ConditionImpl();
 		conditionUpdate
 		.op("Total", Op.ge, 97)
-		.op("remark", Op.like, "test%") //当condition设置有remark:1)updateBy指定remark为where条件时,实体的remark设置会无效;
-		;                                //2)当update指定remark为需要更新的字段时,实体的remark设置的值为需要更新的值,而condition中设置remark的值会转化为SQL中where的条件
+		.op("remark", Op.like, "test%") //当condition设置有remark:1)updateBy( )指定remark为where条件时,实体的remark也有效(也遵循默认过虑规则);
+		;                                //2)当update( )指定remark为需要更新的字段时,condition设置remark要更新的新值时,实体的remark将被忽略,而condition中用op(  )设置remark的值会转化为SQL中where的条件
 		
 		int updateBy_NumByCondition=suidRich.updateBy(Orders_update, "remark", conditionUpdate);//point to where field
 		Logger.info("updateBy_NumByCondition: "+updateBy_NumByCondition);
 		
 		
-		Orders_update.setRemark("test for set");
-		conditionUpdate.setAdd("total", 1);  //不受updateFields声明的set字段限制
-		int updateNumCondition=suidRich.update(Orders_update, "remark", conditionUpdate); //point to set field
+		conditionUpdate.setAdd("total", 1);
+		conditionUpdate.set("remark", "remark set in condition");
+		Orders_update.setRemark("will be ignored!");//remark 指定为要更新的字段, 当condition设置有时,会忽略此字段
+//		Orders_update.setTotal(new BigDecimal("100"));//Total没有声明为更新字段,不受updateFields声明的set字段限制
+		Orders_update.setTotal(null);//Total没有声明为更新字段,不受updateFields声明的set字段限制, 但会过虑默认的值
+		int updateNumCondition=suidRich.update(Orders_update, "remark", conditionUpdate); //声明需要更新的字段为:remark
 		Logger.info("updateNumCondition: "+updateNumCondition);
-		
+		System.err.println("----------------------------------");
 		
 			Orders orders11 = new Orders();
 

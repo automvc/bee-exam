@@ -188,11 +188,13 @@ public class DiffDdExam {
 		//默认不处理null和空字符串.不用再写一堆的判断;其它有值的字段全部自动作为过滤条件
 		//List<Orders> list3 =moreTable.select(orders1);  //select
 		List<org.teasoft.exam.bee.osql.moretable.entity.Orders> list3 = moreTable.select(orders1, 0, 10); //select 查询前10条记录
+		if(list3!=null) {
 		Logger.info("size of records:"+list3.size() + "");
 		Printer.printList(list3);
+		}
 		
 		List<org.teasoft.exam.bee.osql.moretable.entity.Orders> list4 =moreTable.setDynamicParameter("month", "_202007").select(orders1, 0, 10);
-		Printer.printList(list4);
+		if(list4!=null) Printer.printList(list4);
 	}
 
 	public static void test3() {

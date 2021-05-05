@@ -10,7 +10,7 @@ public class LeftszInfo implements Serializable {
 
 	private static final long serialVersionUID = 1597704154138L;
 
-	private Integer id;
+	private Long id;
 	private Integer orderno;
 	private String name;
 	private String leftdate;

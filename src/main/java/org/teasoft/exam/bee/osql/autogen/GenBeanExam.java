@@ -45,10 +45,14 @@ public class GenBeanExam {
 //			genBean.genSomeBeanFile("POSTGRESQL_TYPE");
 //			genBean.genSomeBeanFile("H2_TYPE");
 			
-			genBean.genSomeBeanFile("test_user");
+			genBean.genSomeBeanFile("resource,permit,users,role_assign");
 //			genBean.genSomeBeanFile("tableinfo");
 //			genBean.genSomeBeanFile("leftsz_info");
 //			genBean.genSomeBeanFile("t_test");
+			
+//			genBean.genSomeBeanFile("sqlserver_type");
+//			genBean.genSomeBeanFile("H2_type");
+//			genBean.genSomeBeanFile("POSTGRESQL_TYPE");
 //			
 		  } catch (BeeException e) {
 			 e.printStackTrace();

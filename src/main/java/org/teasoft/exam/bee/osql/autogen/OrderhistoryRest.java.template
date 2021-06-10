@@ -40,13 +40,11 @@ public class #{entityName?up1}Rest {
 		 @RequestParam(value = "rows", defaultValue = "20", required = false) int rows) {	
 	  Result  result =new Result();
 	  try{
-		  String count=objSQLRichService.selectWithFun(#{entityName},FunctionType.COUNT,"*");
+		  int total = objSQLRichService.count(#{entityName});
 		  List<#{entityName?up1}> list=objSQLRichService.select(#{entityName}, (page-1)*rows, rows);
 		  result.setRows(list);
-		  int total=count==null?0:Integer.parseInt(count);
 		  result.setTotal(total);
 	  } catch (BeeSQLException e) {
-	      System.err.println(e.getMessage());
 		  result.setErrorMsg(e.getMessage());
 	  }
 		

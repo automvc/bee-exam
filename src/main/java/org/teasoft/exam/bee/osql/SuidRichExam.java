@@ -19,6 +19,7 @@ import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.SuidRich;
 //import org.teasoft.exam.bee.osql.entity.LeafAlloc;
 import org.teasoft.exam.bee.osql.entity.Orders;
+import org.teasoft.exam.bee.osql.entity.TestUser;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
@@ -357,6 +358,37 @@ public class SuidRichExam {
 			orders15.setId(1005L);
 			boolean f=suidRich.exist(orders15);
 			System.out.println("Orders id=100001L is exist?  "+f);
+			
+//			test update(T oldEntity,T newEntity)
+			Orders orders16 = new Orders(); 
+			orders16.setRemark("update(T oldEntity,T newEntity)");
+			orders16.setName("update(T oldEntity,T newEntity)");
+			Long id16=suidRich.insertAndReturnId(orders16);
+//			orders16.setId(id16);
+//			System.out.println(suidRich.selectById(new Orders(), id16).toString());
+			
+			Orders orders16_new = new Orders(); 
+			orders16_new.setRemark("by update with : update(T oldEntity,T newEntity)");
+			suidRich.update(orders16, orders16_new);
+//			System.out.println(suidRich.selectById(new Orders(), id16).toString());
+			
+			suidRich.delete(orders16_new);
+			
+			try {
+				suidRich.update(new TestUser(), orders16);
+			} catch (Exception e) {
+				Logger.error(e.getMessage(), e);
+			}
+			try {
+				suidRich.update(new Orders(), orders16);
+			} catch (Exception e) {
+				Logger.error(e.getMessage(), e);
+			}
+			try {
+				suidRich.update(orders16, new Orders());
+			} catch (Exception e) {
+				Logger.error(e.getMessage(), e);
+			}
 
 		} catch (BeeException e) {
 			Logger.error("In SuidRichExam (Exception):" + e.getMessage());

@@ -24,10 +24,11 @@ import org.teasoft.honey.util.ObjectUtils;
 public class MapSuidExam {
 	public static void main(String[] args) {
 		test();
+		test2();
 	}
 
 	public static void test() {
-
+	
 		try {
 			MapSuid mapSuid = BeeFactoryHelper.getMapSuid();
 			
@@ -88,6 +89,16 @@ public class MapSuidExam {
 			
 			mapSuid.selectOne(mapSql);
 			
+			MapSql mapSql2 = BeeFactoryHelper.getMapSql();
+			//模拟修改密码
+		    mapSql2.put(MapSqlKey.Table, "test_user");
+			mapSql2.put(MapSqlSetting.IsNamingTransfer, false);
+			mapSql2.put(MapSqlSetting.IsIncludeEmptyString, false);
+			mapSql2.put("id", 800001L);
+			mapSql2.put("password", "bee");
+			mapSql2.putNew("password", "bee-new");		
+			mapSuid.update(mapSql2);
+			
 
 		} catch (BeeException e) {
 			e.printStackTrace();
@@ -96,6 +107,18 @@ public class MapSuidExam {
 			Logger.error("In MapSuidExam (Exception):" + e.getMessage());
 			e.printStackTrace();
 		}
+	}
+	
+	private static void test2() {
+		
+		MapSuid mapSuid = BeeFactoryHelper.getMapSuid();
+		MapSql mapSql = BeeFactoryHelper.getMapSql();
+	    mapSql.put(MapSqlKey.Table, "orders--"); //TODO 过滤
+		mapSql.put(MapSqlKey.SelectColumns, "*");
+		mapSql.put(MapSqlSetting.IsNamingTransfer, true);
+		String json = mapSuid.selectJson(mapSql);
+		
+		System.err.println(json);
 	}
 
 }

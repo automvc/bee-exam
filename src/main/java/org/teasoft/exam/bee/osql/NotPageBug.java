@@ -26,7 +26,7 @@ public class NotPageBug {
 			int page=i;
 			//mysql 第一页从0开始, 虽然还是返回5条,但会跳过第0条记录.  oracle正确
 //			List<Orders> list = suidRich.select(new Orders(), (page - 1) * rows+1, rows); 
-			//oracle 第1页会少一个记录(一页5和,但首页却只有4条). 因oracle是从1开始算开始记录的.  mysql正常
+			//oracle 第1页会少一个记录(一页5条,但首页却只有4条). 因oracle是从1开始算开始记录的.  mysql正常
 			List<Orders> list = suidRich.select(new Orders(), (page - 1) * rows, rows); 
 			Printer.printList(list);
 //			for (int j = 0; j < list.size(); j++) {

@@ -68,6 +68,9 @@ public class UseJson {
 				Logger.info(list2.get(i).toString());
 			}
 			
+//			ObjectMapper mapper = new ObjectMapper(); 
+//			String json =  mapper.writeValueAsString(list); 
+			
 
 		} catch (BeeException e) {
 			Logger.error("In UseJson (BeeException):" + e.getMessage());

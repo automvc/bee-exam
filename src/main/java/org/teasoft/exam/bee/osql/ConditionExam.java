@@ -19,6 +19,7 @@ import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.BeeFactoryHelper;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.Logger;
 
@@ -28,7 +29,7 @@ import org.teasoft.honey.osql.core.Logger;
  */
 public class ConditionExam {
 	
-	private static SuidRich suidRich=BeeFactory.getHoneyFactory().getSuidRich();
+	private static SuidRich suidRich=BeeFactoryHelper.getSuidRich();
 	
 	public static SuidRich getSuidRich() {
 		return suidRich;
@@ -199,6 +200,17 @@ public class ConditionExam {
 			 conditionTestNull.op("name", Op.eq, null); //name is null
 			 conditionTestNull.op("userid", Op.nq, null); //name is not null
 			 suid.select(orders16, conditionTestNull);
+			 
+			 
+			 
+			 Condition condition17=BeeFactoryHelper.getCondition();
+			 condition17.op("name", Op.like, "Bee%");
+//			 condition17.op("name", Op.like, "Bee");
+			 
+			List<Orders> list17 = suid.select(new Orders(), condition17);
+			for (int i = 0; i < list17.size(); i++) {
+				Logger.info(list17.get(i).toString());
+			}
 			 
 		} catch (BeeException e) {
 			Logger.error("In ConditionExam (BeeException):"+e.getMessage());

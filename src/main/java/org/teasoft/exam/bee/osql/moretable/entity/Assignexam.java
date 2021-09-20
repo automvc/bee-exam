@@ -19,8 +19,14 @@ import org.teasoft.bee.osql.annotation.JoinType;
  */
 public class Assignexam implements Serializable {
 
-	private static final long serialVersionUID = 1593279039448L;
 	
+	
+    @JoinTable(mainField="classno,term,subjectno", subField="classno,term,subjectno", joinType=JoinType.JOIN)
+//    @JoinTable(mainField="classno,term,subjectno", subField="classno,term,subjectno", joinType=JoinType.LEFT_JOIN)
+    private Assigncourse assigncourse;
+    
+    private static final long serialVersionUID = 1593279039448L;
+    
     private Long id;
     private String classno;
     private String term;
@@ -36,9 +42,6 @@ public class Assignexam implements Serializable {
     private String status;
     private String schoolno;
     
-    @JoinTable(mainField="classno,term,subjectno", subField="classno,term,subjectno", joinType=JoinType.JOIN)
-    private Assigncourse assigncourse;
-
     public Long getId() {
 	    return id;
     }

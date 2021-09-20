@@ -12,7 +12,7 @@ import org.teasoft.honey.osql.autogen.Ddl;
  * @author Kingstar
  * @since  1.9
  */
-public class CreateTableWithJavabean {
+public class CreateTableWithJavabean2 {
 	public static void main(String[] args) {
 		Ddl.createTable(new LeftszInfo(), true);
 	}

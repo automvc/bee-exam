@@ -6,7 +6,10 @@
 
 package org.teasoft.exam.bee.test;
 
+import org.teasoft.exam.bee.osql.entity.Clazz;
 import org.teasoft.exam.bee.osql.entity.Scores;
+import org.teasoft.exam.bee.osql.entity.Student;
+import org.teasoft.exam.bee.osql.entity.StudentHobby;
 import org.teasoft.exam.bee.osql.entity.dynamic.LeafAlloc;
 import org.teasoft.exam.bee.osql.entity.dynamic.Orders;
 import org.teasoft.exam.bee.osql.moretable.entity.Assigncourse;
@@ -44,8 +47,13 @@ public class CreateTableWithJavabean {
 			Ddl.createTable(new Scores(), true);
 			Ddl.createTable(new Assignexam(), true);
 			Ddl.createTable(new Assigncourse(), true);
+			
+			Ddl.createTable(new Clazz(), true);
+			Ddl.createTable(new Student(), true);
+			Ddl.createTable(new StudentHobby(), true);
+			
 		} catch (Exception e) {
-			Logger.error("In CreateTableWithJavabean (Exception):" + e.getMessage());
+			Logger.error("In CreateTableWithJavabean2 (Exception):" + e.getMessage());
 			e.printStackTrace();
 		}
 	}

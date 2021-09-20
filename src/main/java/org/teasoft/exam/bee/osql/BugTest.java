@@ -121,6 +121,10 @@ public class BugTest {
 			List<Orders> list=suidRich.selectOrderBy(testInsertAndDeleteOrders, "id,name", new OrderType[] {OrderType.ASC,OrderType.DESC});
 		    Printer.printList(list);
 			
+		    //V1.9.5
+		    suidRich.selectById(new Orders(), 1012);
+		    Long id=null;
+		    suidRich.selectById(new Orders(), id);
 			
 		} catch (BeeException e) {
 			e.printStackTrace();

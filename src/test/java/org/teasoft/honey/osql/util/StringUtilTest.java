@@ -25,7 +25,7 @@ public class StringUtilTest {
 		
 		System.out.println("================StringUtilTest==========start====");
 		
-		Map<String, String> map = new HashMap<>();
+		Map<String, String> map = new HashMap<>(); 
 		String newProjectName = "kvienglish";
 		String beeVersion = "1.9-SNAPSHOT";
 		map.put("projectName", newProjectName);

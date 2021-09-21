@@ -18,7 +18,7 @@ public class ObjectUtilsTest {
 	@Test
 	public void test() {
 		boolean f0=false;
-		System.err.println(ObjectUtils.isTrue(f0));
+		System.err.println(ObjectUtils.isTrue(f0)); 
 		boolean f=true;
 		System.err.println(ObjectUtils.isTrue(f));
 		Boolean f2=null;

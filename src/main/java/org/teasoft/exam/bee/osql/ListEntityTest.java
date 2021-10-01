@@ -24,7 +24,7 @@ import org.teasoft.exam.bee.osql.entity.Student011;
 import org.teasoft.exam.bee.osql.entity.Student1;
 import org.teasoft.exam.bee.osql.entity.StudentHobby;
 import org.teasoft.exam.comm.Printer;
-import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.BeeFactoryHelper;
 import org.teasoft.honey.osql.core.ConditionImpl;
 
 /**
@@ -35,7 +35,7 @@ public class ListEntityTest {
 	
 	public static void main(String[] args) {
 		
-		MoreTable moreTable = BeeFactory.getHoneyFactory().getMoreTable();
+		MoreTable moreTable = BeeFactoryHelper.getMoreTable();
 		
 		
 //		case 1    Clazz has: List<Student>,     Student里是非List子表

@@ -125,6 +125,59 @@ public class BugTest {
 		    suidRich.selectById(new Orders(), 1012);
 		    Long id=null;
 		    suidRich.selectById(new Orders(), id);
+		    
+		    //V1.9.8之前  不支持   condition.set("fieldName", null);
+			 Orders orders3=new Orders();
+			 orders3.setId(1004L);
+			 Condition condition3=new ConditionImpl();
+			 condition3.op("Total", Op.ge, 90);
+			 String new_remark=null;
+//			 String new_remark="aaa";
+			 condition3.set("remark", new_remark);
+//			 case 1 : set("remark",null)   , entity field remark is null
+			 suidRich.update(orders3,condition3);  //bug1
+			 
+			 orders3.setRemark("change Remark");
+//			 case 2 : set("remark",null)   , entity field remark has value 
+//			 作为更新字段，实体的非空字段默认会解析到where
+			 suidRich.update(orders3,condition3);  //bug1
+			 
+//			 case 3 : set("remark",null)   , entity field remark has value ,也声明了updateFields
+			 suidRich.update(orders3,"remark",condition3);  //bug1
+			 
+			 Condition condition4 =BeeFactory.getHoneyFactory().getCondition();
+			 condition4.op("Total", Op.ge, 90);
+			 orders3.setRemark(null);
+			 new_remark=null;
+			 condition4.set("remark", new_remark);
+//			 case 4 : set("remark",null)   , entity field remark is null,也声明了updateFields
+			 suidRich.update(orders3,"remark",condition4);  //bug1
+			 
+//			 case 5 :一个字段即在指定的updateFields,但也用了Condition.set(arg1,arg2)等方法设置,entity里相应的字段会按规则转化到where部分.(V1.9.8)
+//			 [WARN] The field [remark] which value is 'change Remark', already set in condition! It will be ignored!
+			 orders3.setRemark("new2 remark");
+			 suidRich.update(orders3,"remark,Total",condition3); //bug2
+			 
+			 Orders orders5=new Orders();
+			 orders5.setId(1004L);
+			 suidRich.update(orders5,"remark");
+			 
+			 Orders orders6=new Orders();
+			 orders6.setId(1004L);
+			 orders6.setRemark("change Remark");
+			 suidRich.updateBy(orders6,"id");
+			 
+			 
+			 Condition condition7 =BeeFactory.getHoneyFactory().getCondition();
+			 condition7.op("Total", Op.ge, 90);
+			 new_remark=null;
+			 condition7.set("remark", new_remark);
+			 condition7.op("remark", Op.ge,"old remark");
+			 Orders orders7=new Orders();
+//			 orders7.setId(1004L);
+			 
+//			 orders7.setRemark("change Remark");
+			 suidRich.updateBy(orders7,"remark",condition7);
 			
 		} catch (BeeException e) {
 			e.printStackTrace();

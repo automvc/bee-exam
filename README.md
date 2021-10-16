@@ -13,7 +13,7 @@ https://github.com/automvc/honey
 2.Gen the Javabean for your Database, use:  
 org.teasoft.exam.bee.osql.autogen.GenBeanExam.  
 3.run the test/example in TestNormal(org.teasoft.exam.bee.test).  
-if need reset the tables , use statement:  ClearAndInitTestTable.main(null);  
+if need reset the tables ,use statement:  ClearAndInitTestTable.main(null);  
 other:  
 TestCache test Bee Cache function.  
 Test Coverage: select src/test/java-->(right click)Coverage As-->JUnit Test  

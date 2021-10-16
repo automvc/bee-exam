@@ -12,6 +12,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
+<!-- 		<bee.version>1.8</bee.version> -->
+<!-- 		<bee.version>1.8.15</bee.version> -->
 <!-- 		<bee.version>1.8.99</bee.version> -->
 <!-- 		<bee.version>1.9.5</bee.version> -->
 		<bee.version>1.9.8-SNAPSHOT</bee.version>

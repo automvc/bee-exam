@@ -29,6 +29,14 @@ public class ObjSQLServiceExam {
 		ObjSQLRichService objSQLRichService=new ObjSQLRichServiceImpl();
 		objSQLRichService.select(orders1,0,10);
 		
+		objSQLRichService.selectJson(orders1,"id,name");
+		objSQLRichService.selectJson(orders1,"id,name",0,10);
+		
+		Orders orders2 = new Orders();
+		orders2.setId(1001L);
+		orders2.setRemark("test for save");
+		objSQLRichService.save(orders2);
+		
 	}
 
 }

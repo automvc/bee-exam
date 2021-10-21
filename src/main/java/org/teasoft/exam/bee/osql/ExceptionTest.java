@@ -24,10 +24,12 @@ import org.teasoft.bee.osql.chain.Update;
 import org.teasoft.bee.osql.dialect.DbFeature;
 import org.teasoft.bee.osql.exception.BeeErrorFieldException;
 import org.teasoft.bee.osql.exception.BeeErrorGrammarException;
+import org.teasoft.bee.osql.exception.BeeErrorNameException;
 import org.teasoft.bee.osql.exception.BeeIllegalAccessException;
 import org.teasoft.bee.osql.exception.BeeIllegalBusinessException;
 import org.teasoft.bee.osql.exception.BeeIllegalEntityException;
 import org.teasoft.bee.osql.exception.BeeIllegalParameterException;
+import org.teasoft.bee.osql.exception.BeeIllegalSQLException;
 import org.teasoft.bee.osql.exception.BeeInstantiationException;
 import org.teasoft.bee.osql.exception.ConfigWrongException;
 import org.teasoft.bee.osql.exception.JoinTableException;
@@ -70,8 +72,10 @@ public class ExceptionTest {
 		test5(); //BeeIllegalEntityException
 		test6();//BeeIllegalParameterException
 		test7();//BeeErrorGrammarException
+		
 //		test8(); //BeeSQLException
 		test8();
+
 		test9(); //BeeIllegalBusinessException
 		test10(); //ConfigWrongException
 		test11(); //NotSupportedException
@@ -84,6 +88,8 @@ public class ExceptionTest {
 		test17();
 		test18();
 		test19();
+		
+		test20();
 	}
 
 	public static void test1() {
@@ -273,7 +279,10 @@ public class ExceptionTest {
 		.having("count(*)=sum(case when status='aaa' then 1 else 0 end)");
 		
 		Logger.info(c2.toSQL(false));
-	} catch (BeeErrorFieldException e) {
+	} catch (BeeErrorNameException e) {
+		Logger.error(e.getMessage());
+		e.printStackTrace();
+	} catch (Exception e) {
 		Logger.error(e.getMessage());
 		e.printStackTrace();
 	}
@@ -433,6 +442,7 @@ public class ExceptionTest {
 			new NoConfigException();
 			new JoinTableParameterException();
 			new BeeErrorFieldException();
+			new BeeErrorNameException();
 			new BeeErrorGrammarException();
 			new BeeIllegalBusinessException();
 			new BeeIllegalEntityException();
@@ -441,6 +451,7 @@ public class ExceptionTest {
 			new ConfigWrongException();
 			new JoinTableException();
 			new ObjSQLIllegalSQLStringException();
+			new BeeIllegalSQLException();
 			
 			new BeeIllegalAccessException();
 			new BeeInstantiationException();
@@ -451,6 +462,7 @@ public class ExceptionTest {
 			new NoConfigException("test NoConfigException",new Throwable(" test "));
 			new JoinTableParameterException("test JoinTableParameterException",new Throwable(" test "));
 			new BeeErrorFieldException("test BeeErrorFieldException",new Throwable(" test "));
+			new BeeErrorNameException("test BeeErrorNameException",new Throwable(" test "));
 			new BeeErrorGrammarException("test BeeErrorGrammarException",new Throwable(" test "));
 			new BeeIllegalBusinessException("test BeeIllegalBusinessException",new Throwable(" test "));
 			new BeeIllegalEntityException("test BeeIllegalEntityException",new Throwable(" test "));
@@ -459,9 +471,12 @@ public class ExceptionTest {
 			new BeeInstantiationException("test BeeIllegalParameterException",new Throwable(" test "));
 			new ConfigWrongException("test BeeIllegalParameterException",new Throwable(" test "));
 			new NotSupportedException("test BeeIllegalParameterException",new Throwable(" test "));
+			new BeeIllegalSQLException("test BeeIllegalSQLException",new Throwable(" test "));
 			
 			new BeeSQLException(new Throwable(" test "));
 			new ObjSQLException(new Throwable(" test "));
+			new BeeErrorNameException(new Throwable(" test "));
+			new BeeIllegalSQLException(new Throwable(" test "));
 			new BeeIllegalAccessException(new Throwable(" test "));
 			new BeeInstantiationException(new Throwable(" test "));
 			new ObjSQLIllegalSQLStringException(new Throwable(" test "));
@@ -483,6 +498,7 @@ public class ExceptionTest {
 			
 			new BeeIllegalAccessException("test");
 			new BeeInstantiationException("test");
+			new BeeIllegalSQLException("test");
 			
 		} catch (BeeException e) {
 			Logger.error(e.getMessage());
@@ -492,5 +508,35 @@ public class ExceptionTest {
 			e.printStackTrace();
 		}
 	}
+	
+//	setAdd   第二个参数不允许是null
+	public static void test20() {
+		try {
+			
+			Orders Orders_update=new Orders();
+			Orders_update.setId(1L);
+//			Orders_update.setRemark("test");
+			Orders_update.setRemark("");
+			Orders_update.setAbc("test for update");
+			
+			Condition conditionUpdate=new ConditionImpl();
+			
+//			conditionUpdate.setAdd("total", 1);
+			Number num=null;
+			conditionUpdate.setAdd("total", num);  //第二个参数不允许是null
+			conditionUpdate.set("remark", "remark set in condition");
+			Orders_update.setRemark("will be ignored!");//remark 指定为要更新的字段, 当condition设置有时,会忽略此字段
+			Orders_update.setTotal(null);//Total没有声明为更新字段,不受updateFields声明的set字段限制, 但会过虑默认的值
+			int updateNumCondition=suidRich.update(Orders_update, "remark", conditionUpdate); //声明需要更新的字段为:remark
+			Logger.info("updateNumCondition: "+updateNumCondition);
+		} catch (BeeException e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		} catch (Exception e) {
+			Logger.error(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+
 	
 }

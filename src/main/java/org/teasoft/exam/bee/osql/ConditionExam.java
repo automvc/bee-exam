@@ -47,7 +47,7 @@ public class ConditionExam {
 		Suid suid = BeeFactory.getHoneyFactory().getSuid();
 		Orders orders = new Orders();
 		
-		SimpleDateFormat defaultFormat= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//		SimpleDateFormat defaultFormat= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		
 		orders.setName("Bee(ORM Framework)"); //等于的条件,会默认转换
 		orders.setTotal(new BigDecimal("100"));  //不会再处理.因为between已有用
@@ -139,6 +139,8 @@ public class ConditionExam {
 		
 		
 		conditionUpdate.setAdd("total", 1);
+//		Number num=null;
+//		conditionUpdate.setAdd("total", num);
 		conditionUpdate.set("remark", "remark set in condition");
 		Orders_update.setRemark("will be ignored!");//remark 指定为要更新的字段, 当condition设置有时,会忽略此字段
 //		Orders_update.setTotal(new BigDecimal("100"));//Total没有声明为更新字段,不受updateFields声明的set字段限制

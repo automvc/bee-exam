@@ -27,7 +27,7 @@ public class SuidExam {
 		return suid;
 	}
 	
-	public static void setSuidRich(Suid suid) {
+	public static void setSuid(Suid suid) {
 		SuidExam.suid=suid;
 	}
 	

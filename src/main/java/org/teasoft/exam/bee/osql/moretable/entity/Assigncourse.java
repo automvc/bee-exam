@@ -9,6 +9,8 @@ package org.teasoft.exam.bee.osql.moretable.entity;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
+import org.teasoft.bee.osql.annotation.JoinTable;
+
 /**
  * @author AiTeaSoft.com
  * @since  1.1
@@ -32,6 +34,9 @@ public class Assigncourse implements Serializable {
     private String remark;
     private String status;
     private String schoolno;
+    
+//    @JoinTable()
+//    Orders orders;
 
     public Long getId() {
 	    return id;

@@ -5,7 +5,7 @@
 	<artifactId>bee-exam</artifactId>
 <!-- 	<version>1.8.99</version> -->
 <!-- 	<version>1.9.5</version> -->
-	<version>1.9.8-SNAPSHOT</version>
+	<version>1.9.8</version>
 	<packaging>jar</packaging>
 
 	<properties>
@@ -16,7 +16,7 @@
 <!-- 		<bee.version>1.8.15</bee.version> -->
 <!-- 		<bee.version>1.8.99</bee.version> -->
 <!-- 		<bee.version>1.9.5</bee.version> -->
-		<bee.version>1.9.8-SNAPSHOT</bee.version>
+		<bee.version>1.9.8</bee.version>
 	</properties>
 
 	<dependencies>

@@ -33,7 +33,7 @@ public class Printer {
 	
 	public static void printList(List list) {
 		if (list == null) Logger.info("null");
-		for (int i = 0; i < list.size(); i++) {
+		for (int i = 0; list!=null && i < list.size(); i++) {
 			Logger.info(list.get(i).toString());
 		}
 	}

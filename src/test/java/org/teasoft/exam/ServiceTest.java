@@ -31,7 +31,7 @@ public class ServiceTest {
 		boolean result = false;
 		try {
 			System.out.println("================ServiceTest==========start====");
-			SuidExam.setSuidRich(new ObjSQLServiceImpl());
+			SuidExam.setSuid(new ObjSQLServiceImpl());
 			SuidExam.test();
 			System.out.println("================ServiceTest============SuidExam finished==");
 			SuidRichExam.setSuidRich(new ObjSQLRichServiceImpl());

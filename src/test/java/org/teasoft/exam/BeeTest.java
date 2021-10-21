@@ -9,15 +9,19 @@ package org.teasoft.exam;
 import org.junit.Assert;
 import org.junit.Test;
 import org.teasoft.bee.logging.Path;
+import org.teasoft.bee.osql.DatabaseConst;
 import org.teasoft.bee.osql.MapSqlKey;
 import org.teasoft.bee.osql.MapSqlSetting;
 import org.teasoft.bee.osql.annotation.JoinType;
 import org.teasoft.exam.bee.osql.CallExam;
 import org.teasoft.exam.bee.osql.InsertAndReturnIdTest;
+import org.teasoft.exam.bee.osql.KotlinTest;
 import org.teasoft.exam.bee.osql.SameConnTest;
+import org.teasoft.exam.bee.osql.SearchExam;
 import org.teasoft.exam.bee.osql.autogen.GenBeanExam;
 import org.teasoft.exam.bee.osql.autogen.GenFilesExam;
 import org.teasoft.exam.bee.test.TestCache;
+import org.teasoft.exam.bee.test.TestNormal;
 import org.teasoft.honey.osql.core.HoneyUtil;
 import org.teasoft.honey.osql.core.Logger;
 
@@ -34,7 +38,7 @@ public class BeeTest {
 		
 		boolean result=false;
 		try {
-//			TestNormal.test();
+			TestNormal.test();
 			TestCache.test();
 			
 			GenBeanExam.test();
@@ -42,6 +46,9 @@ public class BeeTest {
 			
 			SameConnTest.test();
 			InsertAndReturnIdTest.test();
+			
+			SearchExam.test();
+			KotlinTest.test();
 			
 			if(HoneyUtil.isMysql()) {
 				CallExam.test();
@@ -55,6 +62,8 @@ public class BeeTest {
 			Logger.info(JoinType.JOIN.getType());
 			Logger.info(MapSqlKey.Table.getName());
 			Logger.info(MapSqlSetting.IsNamingTransfer.getName());
+			
+			Logger.info(DatabaseConst.MYSQL);
 			
 			result=true;
 		} catch (Exception e) {

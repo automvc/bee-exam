@@ -41,7 +41,7 @@ public class MainDbTest {
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test MySQL start.");
 			honeyConfig.setUrl("jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8");
 			honeyConfig.setUsername("root");
-			honeyConfig.setPassword("");
+			honeyConfig.setPassword("123456");
 			TestNormal.test();
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test MySQL end.");
 

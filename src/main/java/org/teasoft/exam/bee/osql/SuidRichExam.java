@@ -410,13 +410,13 @@ public class SuidRichExam {
 
 	}
 	
-	public int save(Orders orders) {
-		Orders one = suidRich.selectById(orders, orders.getId());
-		if (one != null)
-			return suidRich.update(orders);
-		else
-			return suidRich.insert(orders);
-	}
+//	public int save(Orders orders) {
+//		Orders one = suidRich.selectById(orders, orders.getId());
+//		if (one != null)
+//			return suidRich.update(orders);
+//		else
+//			return suidRich.insert(orders);
+//	}
 	
 //	public <T> int save2(T entity) {
 //		Orders one=suidRich.selectById(entity,entity.getId());

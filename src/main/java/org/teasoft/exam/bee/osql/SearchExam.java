@@ -40,13 +40,27 @@ public class SearchExam {
 
 	public static void test() {
 		
-		Search search[]=new Search[3];
+		Search search[]=new Search[6];
 		search[0]=new Search("id",Operator.between,"100023","100025");
 		search[1]=new Search("id",Operator.between,"100030","100035","or");
 		search[2]=new Search();
 		search[2].setField("name");
 		search[2].setOp(Operator.eq);
 		search[2].setValue1("Bee");
+		search[2].setOp2("or");
+		
+		search[3]=new Search();
+		search[3].setOp2("(");
+		
+		search[4]=new Search();
+		search[4].setField("id");
+		search[4].setOp(Operator.between);
+		search[4].setValue1("100040");
+		search[4].setValue2("100049");
+		
+		search[5]=new Search();
+		search[5].setOp2(")");
+		
 		try {
 			
 			Condition condition=SearchProcessor.parseSearch(search);

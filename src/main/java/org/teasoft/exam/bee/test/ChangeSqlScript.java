@@ -26,14 +26,19 @@ import com.fasterxml.jackson.core.JsonProcessingException;
  * @author Kingstar
  * @since  1.9.8
  */
+
+//不知如何,自动测试时,会导致测试率降低.
 public class ChangeSqlScript {
 	
+	public static void main(String[] args) throws JsonProcessingException,IOException{
+		test();
+	}
 
 	//更改mysql脚本中的字段命名,如:
 	//`projectName` varchar(60) COLLATE utf8_bin DEFAULT NULL,
 	//-->
 	//`project_name` varchar(60) COLLATE utf8_bin DEFAULT NULL,
-	public static void main(String[] args) throws JsonProcessingException,IOException{
+	public static void test()  throws JsonProcessingException,IOException{
 		
 		HoneyConfig honeyConfig=HoneyConfig.getHoneyConfig();
 		honeyConfig.setUrl("jdbc:mysql://localhost:3306/teasoft0?characterEncoding=UTF-8");
@@ -48,6 +53,7 @@ public class ChangeSqlScript {
 			map.put("  `" +b.getName()+ "` ", "  `" +NameTranslateHandle.toColumnName(b.getName())+ "` ");
 		}
 		
+//		Logger.info(map.toString());//导致测试率降低
 		System.err.println(map);
 		InputStream in=new FileInputStream("D:\\temp\\tableinfo.sql");
 //		InputStream in=new FileInputStream("D:\\temp\\columninfo.sql");

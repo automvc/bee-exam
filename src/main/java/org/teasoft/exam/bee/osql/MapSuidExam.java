@@ -118,7 +118,8 @@ public class MapSuidExam {
 		mapSql.put(MapSqlSetting.IsNamingTransfer, true);
 		String json = mapSuid.selectJson(mapSql);
 		
-		System.err.println(json);
+		Logger.info(json);
+//		System.err.println(json);
 	}
 
 }

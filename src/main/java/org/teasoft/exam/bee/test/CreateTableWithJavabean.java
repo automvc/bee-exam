@@ -32,7 +32,7 @@ public class CreateTableWithJavabean {
 
 		try {
 			
-//			Ddl.setDynamicParameter("version", ""); //default
+			Ddl.setDynamicParameter("version", ""); //default
 			Ddl.createTable(new Orders(), true);
 			Ddl.setDynamicParameter("month", "_202007");
 			Ddl.createTable(new Orders(), true);
@@ -51,6 +51,8 @@ public class CreateTableWithJavabean {
 			Ddl.createTable(new Clazz(), true);
 			Ddl.createTable(new Student(), true);
 			Ddl.createTable(new StudentHobby(), true);
+			
+//			Ddl.createTable(new TransferRecord(), true);
 			
 		} catch (Exception e) {
 			Logger.error("In CreateTableWithJavabean2 (Exception):" + e.getMessage());

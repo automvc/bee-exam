@@ -500,6 +500,10 @@ public class ExceptionTest {
 			new BeeInstantiationException("test");
 			new BeeIllegalSQLException("test");
 			
+			BeeSQLException beeSQLException=new BeeSQLException();
+			beeSQLException.getErrorCode();
+			beeSQLException.getSQLState();
+			
 		} catch (BeeException e) {
 			Logger.error(e.getMessage());
 			e.printStackTrace();

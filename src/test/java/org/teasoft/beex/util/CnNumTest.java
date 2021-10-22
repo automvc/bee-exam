@@ -6,9 +6,11 @@
 
 package org.teasoft.beex.util;
 
-import static org.teasoft.beex.util.CnNum.*;
+import static org.teasoft.beex.util.CnNum.tran;
+import static org.teasoft.beex.util.CnNum.tranToUpper;
 
 import org.junit.Test;
+import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar
@@ -18,41 +20,41 @@ public class CnNumTest {
 	
 	@Test
 	public void test() {
-		System.out.println(tran(1100));
-		System.out.println(tran(1001));
-		System.out.println(tran(20030));
-		System.out.println(tran(500005));
-		System.out.println(tran(500305));
+		Logger.info(tran(1100));
+		Logger.info(tran(1001));
+		Logger.info(tran(20030));
+		Logger.info(tran(500005));
+		Logger.info(tran(500305));
 		
 		
-		System.out.println(tranToUpper(1100));
-		System.out.println(tranToUpper(1001));
-		System.out.println(tranToUpper(20030));
-		System.out.println(tranToUpper(500005));
-		System.out.println(tranToUpper(500305));
+		Logger.info(tranToUpper(1100));
+		Logger.info(tranToUpper(1001));
+		Logger.info(tranToUpper(20030));
+		Logger.info(tranToUpper(500005));
+		Logger.info(tranToUpper(500305));
 		
-		System.out.println("======================");
+		Logger.info("======================");
 		
-		System.out.println(tranToUpper(500305D));
-		System.out.println(tranToUpper(500305.23D));
-		System.out.println(tranToUpper(500305.123D));
+		Logger.info(tranToUpper(500305D));
+		Logger.info(tranToUpper(500305.23D));
+		Logger.info(tranToUpper(500305.123D));
 		
-		System.out.println(tran(500305.23D));
-		System.out.println(tran(5003050.234D));
+		Logger.info(tran(500305.23D));
+		Logger.info(tran(5003050.234D));
 		
-		System.out.println("======================");
-		System.out.println(tran(1004));
-		System.out.println(tran(2046));
-		System.out.println(tran(2932));
-		System.out.println(tran(9040));
-		System.out.println(tran(1001));
-		System.out.println(tran(327));
-		System.out.println(tran(8052));
-		System.out.println(tran(1503));
-		System.out.println(tran(1100));
-		System.out.println(tran(2500));
-		System.out.println(tran(970));
-		System.out.println(tran(1900));
+		Logger.info("======================");
+		Logger.info(tran(1004));
+		Logger.info(tran(2046));
+		Logger.info(tran(2932));
+		Logger.info(tran(9040));
+		Logger.info(tran(1001));
+		Logger.info(tran(327));
+		Logger.info(tran(8052));
+		Logger.info(tran(1503));
+		Logger.info(tran(1100));
+		Logger.info(tran(2500));
+		Logger.info(tran(970));
+		Logger.info(tran(1900));
 	}
 
 }

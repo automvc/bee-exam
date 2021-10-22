@@ -17,6 +17,7 @@ import org.teasoft.exam.bee.osql.SuidExam;
 import org.teasoft.exam.bee.osql.SuidRichExam;
 import org.teasoft.exam.bee.osql.UpdateByExam;
 import org.teasoft.exam.bee.osql.UpdateSetExam;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.serviceimpl.ObjSQLRichServiceImpl;
 import org.teasoft.honey.osql.serviceimpl.ObjSQLServiceImpl;
 
@@ -34,8 +35,14 @@ public class ServiceTest {
 			SuidExam.setSuid(new ObjSQLServiceImpl());
 			SuidExam.test();
 			System.out.println("================ServiceTest============SuidExam finished==");
-			SuidRichExam.setSuidRich(new ObjSQLRichServiceImpl());
-			SuidRichExam.test();
+			
+			try {
+				SuidRichExam.setSuidRich(new ObjSQLRichServiceImpl());
+				SuidRichExam.test();
+			} catch (Exception e) {
+				e.printStackTrace();
+				Logger.error(e.getMessage(), e);
+			}
 			
 			ConditionExam.setSuidRich(new ObjSQLRichServiceImpl());
 			ConditionExam.test();

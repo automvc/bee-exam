@@ -20,8 +20,13 @@ import org.teasoft.exam.bee.osql.SameConnTest;
 import org.teasoft.exam.bee.osql.SearchExam;
 import org.teasoft.exam.bee.osql.autogen.GenBeanExam;
 import org.teasoft.exam.bee.osql.autogen.GenFilesExam;
+import org.teasoft.exam.bee.osql.thread.Test4;
+import org.teasoft.exam.bee.test.ChangeSqlScript;
 import org.teasoft.exam.bee.test.TestCache;
 import org.teasoft.exam.bee.test.TestNormal;
+import org.teasoft.honey.logging.Jdk14LoggingImpl;
+import org.teasoft.honey.logging.NoLogging;
+import org.teasoft.honey.logging.SystemLogger;
 import org.teasoft.honey.osql.core.HoneyUtil;
 import org.teasoft.honey.osql.core.Logger;
 
@@ -64,6 +69,19 @@ public class BeeTest {
 			Logger.info(MapSqlSetting.IsNamingTransfer.getName());
 			
 			Logger.info(DatabaseConst.MYSQL);
+			
+//			ChangeSqlScript.test();
+			
+			//multi-thread test
+//			Test4.test();
+			
+			
+			NoLogging noLogging=new NoLogging();
+			noLogging.info("test NoLogging");
+			SystemLogger systemLogger=new SystemLogger();
+			systemLogger.info("test SystemLogger");
+			Jdk14LoggingImpl jdk14LoggingImpl=new Jdk14LoggingImpl("test");
+			jdk14LoggingImpl.info("test Jdk14LoggingImpl");
 			
 			result=true;
 		} catch (Exception e) {

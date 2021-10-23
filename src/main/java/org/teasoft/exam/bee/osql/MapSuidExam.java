@@ -13,6 +13,7 @@ import org.teasoft.bee.osql.MapSql;
 import org.teasoft.bee.osql.MapSqlKey;
 import org.teasoft.bee.osql.MapSqlSetting;
 import org.teasoft.bee.osql.MapSuid;
+import org.teasoft.honey.distribution.GenIdFactory;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.util.ObjectUtils;
@@ -74,15 +75,18 @@ public class MapSuidExam {
 			inserMapSql.put("name", "");
 			inserMapSql.put("username", null);
 //			inserMapSql.put("id",1);
+			inserMapSql.put("id",GenIdFactory.get("testUser")); //分布式ID
 			
 			
 			long id1=mapSuid.insert(inserMapSql);
 			Logger.info(id1);
 			
+			inserMapSql.put("id",GenIdFactory.get("testUser")); //分布式ID
 			inserMapSql.put(MapSqlSetting.IsIncludeEmptyString, true);
 			long id2=mapSuid.insert(inserMapSql);
 			Logger.info(id2);
 			
+			inserMapSql.put("id",GenIdFactory.get("testUser")); //分布式ID
 			inserMapSql.put(MapSqlSetting.IsIncludeNull, true);
 			long id3=mapSuid.insert(inserMapSql);
 			Logger.info(id3);

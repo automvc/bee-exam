@@ -1,0 +1,1029 @@
+[WARN] Auto table: parameter  ${month} in Orders${month} still has not value, will be ignore it!
+[INFO] [Bee] PreparedSql modify SQL:  DROP TABLE IF EXISTS Orders
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL: CREATE TABLE Orders (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+userid  varchar(255) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+total  DECIMAL(19,6) DEFAULT NULL,  
+createtime  varchar(255) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL,  
+sequence  varchar(255) DEFAULT NULL,  
+abc  varchar(255) DEFAULT NULL,  
+updatetime  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL:  DROP TABLE IF EXISTS Orders_202007
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL: CREATE TABLE Orders_202007 (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+userid  varchar(255) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+total  DECIMAL(19,6) DEFAULT NULL,  
+createtime  varchar(255) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL,  
+sequence  varchar(255) DEFAULT NULL,  
+abc  varchar(255) DEFAULT NULL,  
+updatetime  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL:  DROP TABLE IF EXISTS test_user
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL: CREATE TABLE test_user (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+email  varchar(255) DEFAULT NULL,  
+last_name  varchar(255) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+password  varchar(255) DEFAULT NULL,  
+username  varchar(255) DEFAULT NULL,  
+createtime  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL:  DROP TABLE IF EXISTS leaf_alloc
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL: CREATE TABLE leaf_alloc (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+biz_tag  varchar(255) DEFAULT NULL,  
+max_id  bigint(20) DEFAULT NULL,  
+step  int(11) DEFAULT NULL,  
+description  varchar(255) DEFAULT NULL,  
+update_time  varchar(255) DEFAULT NULL,  
+version  int(11) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL:  DROP TABLE IF EXISTS leaf_alloc2
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL: CREATE TABLE leaf_alloc2 (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+biz_tag  varchar(255) DEFAULT NULL,  
+max_id  bigint(20) DEFAULT NULL,  
+step  int(11) DEFAULT NULL,  
+description  varchar(255) DEFAULT NULL,  
+update_time  varchar(255) DEFAULT NULL,  
+version  int(11) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL:  DROP TABLE IF EXISTS scores
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL: CREATE TABLE scores (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+classno  varchar(255) DEFAULT NULL,  
+term  varchar(255) DEFAULT NULL,  
+examno  varchar(255) DEFAULT NULL,  
+subjectno  varchar(255) DEFAULT NULL,  
+subject  varchar(255) DEFAULT NULL,  
+stuno  varchar(255) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+teacherno  varchar(255) DEFAULT NULL,  
+teachername  varchar(255) DEFAULT NULL,  
+score  Double DEFAULT NULL,  
+creater  varchar(255) DEFAULT NULL,  
+createtime  timestamp DEFAULT CURRENT_TIMESTAMP,  
+updater  varchar(255) DEFAULT NULL,  
+updatetime  timestamp DEFAULT CURRENT_TIMESTAMP,  
+remark  varchar(255) DEFAULT NULL,  
+ext1  varchar(255) DEFAULT NULL,  
+status  varchar(255) DEFAULT NULL,  
+schoolno  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL:  DROP TABLE IF EXISTS assignexam
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL: CREATE TABLE assignexam (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+classno  varchar(255) DEFAULT NULL,  
+term  varchar(255) DEFAULT NULL,  
+examno  varchar(255) DEFAULT NULL,  
+subjectno  varchar(255) DEFAULT NULL,  
+subject  varchar(255) DEFAULT NULL,  
+creater  varchar(255) DEFAULT NULL,  
+createtime  timestamp DEFAULT CURRENT_TIMESTAMP,  
+updater  varchar(255) DEFAULT NULL,  
+updatetime  timestamp DEFAULT CURRENT_TIMESTAMP,  
+remark  varchar(255) DEFAULT NULL,  
+ext1  varchar(255) DEFAULT NULL,  
+status  varchar(255) DEFAULT NULL,  
+schoolno  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL:  DROP TABLE IF EXISTS assigncourse
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL: CREATE TABLE assigncourse (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+classno  varchar(255) DEFAULT NULL,  
+term  varchar(255) DEFAULT NULL,  
+teacherno  varchar(255) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+subjectno  varchar(255) DEFAULT NULL,  
+subject  varchar(255) DEFAULT NULL,  
+creater  varchar(255) DEFAULT NULL,  
+createtime  timestamp DEFAULT CURRENT_TIMESTAMP,  
+updater  varchar(255) DEFAULT NULL,  
+updatetime  timestamp DEFAULT CURRENT_TIMESTAMP,  
+remark  varchar(255) DEFAULT NULL,  
+status  varchar(255) DEFAULT NULL,  
+schoolno  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL:  DROP TABLE IF EXISTS clazz
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL: CREATE TABLE clazz (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+classname  varchar(255) DEFAULT NULL,  
+place  varchar(255) DEFAULT NULL,  
+teachername  varchar(255) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL:  DROP TABLE IF EXISTS student
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL: CREATE TABLE student (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+sid  int(11) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+age  int(11) DEFAULT NULL,  
+sex  BIT DEFAULT NULL,  
+majorid  varchar(255) DEFAULT NULL,  
+flag  BIT DEFAULT NULL,  
+classno  int(11) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL:  DROP TABLE IF EXISTS student_hobby
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL: CREATE TABLE student_hobby (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+stu_id  varchar(255) DEFAULT NULL,  
+hobby  varchar(255) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO orders VALUES ('100001', 'Bee', 'Bee(ORM Framework)', '95.01', '2020-03-02 11:29:28', 'test', '12345601', 'test1', null);
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO orders VALUES ('100002', 'bee', 'Bee', '96.01', '2020-03-02 11:29:28', 'test%a', '12345602', 'test2', '2020-03-02 16:34:19');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO orders VALUES ('100003', 'bee', 'Bee', '97.01', '2020-03-02 11:29:28', 'testx%', '12345603', 'test3', '2020-03-02 16:34:19');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO orders_202007 VALUES ('100001', 'Bee', 'Bee(ORM Framework)', '95.01', '2020-03-02 11:29:28', 'test', '12345601', 'test1', null);
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO orders_202007 VALUES ('100002', 'bee', 'Bee', '96.01', '2020-03-02 11:29:28', 'test%a', '12345602', 'test2', '2020-03-02 16:34:19');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO orders_202007 VALUES ('100003', 'bee', 'Bee', '97.01', '2020-03-02 11:29:28', 'testx%', '12345603', 'test3', '2020-03-02 16:34:19');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO test_user VALUES ('800001', 'beeUser@163.com', null, 'Bee', 'bee', 'bee', null);
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO test_user VALUES ('800002', 'honey@163.com', 'cn', 'Honey', 'honey', 'honey', null);
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc VALUES ('456537470402562', 'test', '100', '100', 'test segment', '2020-07-04 22:42:09', '1');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc VALUES ('456537470402563', 'order', '100', '100', 'order segment', '2020-07-04 22:42:10', '1');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc VALUES ('456537470402564', 'bee', '100', '100', 'order segment', '2020-09-19 19:05:10', '1');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc2 VALUES ('456537470402562', 'test', '100', '100', 'test segment', '2020-07-04 22:42:09', '1');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc2 VALUES ('456537470402563', 'order', '100', '100', 'order segment', '2020-07-04 22:42:10', '1');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc2 VALUES ('456537470402564', 'bee', '100', '100', 'order segment', '2020-09-19 19:05:10', '1');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [bee-exam] ====================CacheTest.test======start:
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee0
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001,Bee--ORM Framework
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] update SQL: update orders set name=? , remark=? where id=?   [values]: Bee--ORM Framework,other,100001
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and name=? and remark=?   [values]: 100001,Bee--ORM Framework,other
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=?   [values]: bee2,Bee--ORM Framework
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee4
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee5
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee6
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee6
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee7
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee9
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee10
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee11
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee11
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [bee-exam] ====================CacheTest.test======end.
+
+[INFO] [bee-exam] ====================CacheTestDel.test======start:
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee0
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001,Bee--ORM Framework
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] delete SQL: delete from orders where id=? and name=?   [values]: 100001,Bee--ORM Framework
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=?   [values]: bee2,Bee--ORM Framework
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee4
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee5
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee6
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee7
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee9
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee10
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee11
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee11
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [bee-exam] ====================CacheTestDel.test======end.
+
+[INFO] [bee-exam] ====================CacheTestInsertArray.test======start:
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee0
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001,Bee--ORM Framework
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee0
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] update SQL: update orders set name=? , remark=? where id=?   [values]: Bee--ORM Framework,other,100001
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 636194316616065,bee4,null,12.3,null,null,null,null,null
+[INFO] [Bee] --> index:1 ,  [values]: 636194316616066,bee5,null,12.3,null,null,null,null,null
+[INFO] [Bee] --> index:2 ,  [values]: 636194316616067,bee6,null,12.3,null,null,null,null,null
+[INFO] [Bee]  | <-- [Batch:0] Affected rows: 3
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and name=? and remark=?   [values]: 100001,Bee--ORM Framework,other
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=?   [values]: bee2,Bee--ORM Framework
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and total=?   [values]: bee4,12.3
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and total=?   [values]: bee5,12.3
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and total=?   [values]: bee6,12.3
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee7
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee9
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee10
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee11
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee11
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [bee-exam] ====================CacheTestInsertArray.test======end.
+
+[INFO] [bee-exam] ====================CacheTestJson.test======start:
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee0
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001,Bee--ORM Framework
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=?   [values]: bee2,Bee--ORM Framework
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee4
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee5
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee6
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] selectJson SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee6
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [bee-exam] ====================CacheTestJson.test======end.
+
+[INFO] 2021-10-22 13:33:07  test cache Finished!
+[INFO] The Honey gen the JavaBean: org.teasoft.exam.bee.osql.entity2.Orders
+[INFO] Generate Success!
+[INFO] Please check folder: D:\JavaWeb\workspaceGit19\bee-exam\src\main\java\org\teasoft\exam\bee\osql\entity2
+[INFO] Create file: D:\JavaWeb\workspaceGit19\bee-exam\src\main\java\org\teasoft\exam\bee\osql\autogen\OrderhistoryRest.java
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100001
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100001
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100001
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[WARN] Do not get the new Connection in the SameConnection.Maybe all the results get from cache! 
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100002
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100002
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 1
+[WARN] Calling the endSameConnection(), but miss the beginSameConnection()
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100003
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100003
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100003
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and id=? limit ?,? for update    [values]: 100003,100003,0,300
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] Orders[id=100003,userid=bee,name=Bee,total=97.010000,createtime=2020-03-02 11:29:28,remark=testx%,sequence=12345603,abc=test3,updatetime=2020-03-02 16:34:19]
+[INFO] [Bee] update SQL: update orders set userid=? , name=? , total=? , createtime=? , remark=? , sequence=? , abc=? , updatetime=? where id=?   [values]: bee,Bee,97.010000,2020-03-02 11:29:28,testx%,12345603,test3,2020-03-02 16:34:19,100003
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100008
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100004
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100004
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100004
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and id=? limit ?,? for update    [values]: 100004,100003,0,300
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100004
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100004
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100002
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] update SQL: update orders set name=? where id=?   [values]: Bee(ORM Framework),100002
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100002,Bee(ORM Framework)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] ------------------------getId : null
+[INFO] [Bee] insert SQL: insert into orders(userid,name,total,remark) values (?,?,?,?)   [values]: Bee,Bee(ORM Framework),80.80,InsertAndReturnId
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] InsertAndReturnId  : 636194316616068
+[INFO] ------------------------getId : null
+[INFO] [Bee] selectById SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 636194316616068
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] Orders[id=636194316616068,userid=Bee,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] insert SQL: insert into orders(userid,name,total,remark) values (?,?,?,?)   [values]: Bee,Bee(ORM Framework),80.80,InsertAndReturnId
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] InsertAndReturnId  : 636194316616069
+[INFO] ------------------------getId : null
+[INFO] ------------------------getId : null
+[INFO] [Bee] insert SQL: insert into orders(userid,name,total,remark) values (?,?,?,?)   [values]: Bee,Bee(ORM Framework),80.80,InsertAndReturnId
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] InsertAndReturnId  : 636194316616070
+[INFO] ------------------------getId : null
+[INFO] [Bee] selectById SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 636194316616070
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] Orders[id=636194316616070,userid=Bee,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] insert SQL: insert into orders(userid,name,total,remark) values (?,?,?,?)   [values]: Bee,Bee(ORM Framework),80.80,InsertAndReturnId
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] InsertAndReturnId  : 636194316616071
+[INFO] ------------------------getId : null
+[INFO] -----------------------------
+[INFO] auto increment id in MySQL, start....
+[INFO] [Bee] insert SQL: insert into orders(userid,name,total,remark) values (?,?,?,?)   [values]: Bee,Bee(ORM Framework),80.80,InsertAndReturnId
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] InsertAndReturnId  : 636194316616072
+[INFO] [Bee] selectById SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 636194316616072
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] Orders[id=636194316616072,userid=Bee,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] insert SQL: insert into orders(userid,name,total,remark) values (?,?,?,?)   [values]: Bee,Bee(ORM Framework),80.80,InsertAndReturnId
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] InsertAndReturnId  : 636194316616073
+[INFO] auto increment id in MySQL, end....
+[INFO] [Bee] select SQL: select id,email,last_name,name,password,username,createtime from test_user where id between ? and ? or id between ? and ? or name=? and (id between ? and ?)   [values]: 100023,100025,100030,100035,Bee,100040,100049
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select table_id,table_name from tables where table_id=?   [values]: 1
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select table_id,column_id,column_name from columns where table_id=?   [values]: 1
+[INFO] [Bee]  | <--  select rows: 2
+[INFO] [Bee] select SQL: select tables.table_id,tables.table_name,columns.table_id,columns.column_id,columns.column_name from tables,columns where tables.table_id=columns.table_id and tables.table_id=?   [values]: 1
+[INFO] [Bee]  | <--  ( select raw record rows: 2 )
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] Callable SQL,getCallableStatement: {call updateOrders(?)}
+[INFO] 1
+[INFO] [Bee] Callable SQL: {call updateOrders(?)}  values: 100004
+[INFO] 0
+[INFO] [Bee] Callable SQL: {call updateOrders(?)}  values: 10000588888
+[INFO] 0
+[INFO] [Bee] Callable SQL: {call selectOrders(?)}  values: change via CallableSql
+[INFO] Orders[id=100003,userid=bee,name=Bee,total=97.010000,createtime=2020-03-02 11:29:28,remark=change via CallableSql,sequence=12345603,abc=test3,updatetime=2021-10-22 13:33:08]
+[INFO] [Bee] Callable SQL: {call selectOrders(?)}  values: change via CallableSql
+[INFO] 100003   bee   Bee   97.010000   2020-03-02 11:29:28   change via CallableSql   12345603   test3   2021-10-22 13:33:08   
+[INFO] [Bee] Callable SQL: {call selectOrders(?)}  values: change via CallableSql
+[INFO] [{"id":"100003","userid":"bee","name":"Bee","total":97.010000,"createtime":"2020-03-02 11:29:28","remark":"change via CallableSql","sequence":"12345603","abc":"test3","updatetime":"2021-10-22 13:33:08"}]
+[INFO] [Bee] Callable SQL: {call selectOrders(?)}  values: change via CallableSql--no
+[INFO] []
+[INFO] D:\JavaWeb\workspaceGit19\bee-exam\src\main\resources\log\bee-exam(v1.9.8)2021-10-22 13.30.58.799-cache(MySQL).txt
+[INFO]  join 
+[INFO] Table
+[INFO] IsNamingTransfer
+[INFO] MySQL
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 11
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001,Bee(ORM Framework)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001,Bee(ORM Framework)
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] update SQL: update orders set name=? where id=?   [values]: Bee(ORM Framework),100001
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] update record:0
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total) values (?,?,?,?)   [values]: 636194316616068,bee,Bee-ORM Framework,91.99
+[WARN] Duplicate entry '636194316616068' for key 'PRIMARY'
+[INFO] insert record:0
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total) values (?,?,?,?)   [values]: 636194316616069,bee,Bee-ORM Framework,91.99
+[WARN] Duplicate entry '636194316616069' for key 'PRIMARY'
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total) values (?,?,?,?)   [values]: 636194316616070,bee,Bee-ORM Framework,91.99
+[WARN] Duplicate entry '636194316616070' for key 'PRIMARY'
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=? and total=?   [values]: bee,Bee-ORM Framework,91.99
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=? and total=?   [values]: bee,Bee-ORM Framework,91.99
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] delete SQL: delete from orders where userid=? and name=? and total=?   [values]: bee,Bee-ORM Framework,91.99
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] delete record:0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders
+[INFO] [Bee]  | <--  select rows: 11
+[INFO] Orders[id=100002,userid=bee,name=Bee(ORM Framework),total=96.010000,createtime=2020-03-02 11:29:28,remark=test%a,sequence=12345602,abc=test2,updatetime=2020-03-02 16:34:19]
+[INFO] Orders[id=100003,userid=bee,name=Bee,total=97.010000,createtime=2020-03-02 11:29:28,remark=change via CallableSql,sequence=12345603,abc=test3,updatetime=2021-10-22 13:33:08]
+[INFO] Orders[id=636194316616065,userid=bee4,name=null,total=12.300000,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=636194316616066,userid=bee5,name=null,total=12.300000,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=636194316616067,userid=bee6,name=null,total=12.300000,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=636194316616068,userid=Bee,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=636194316616069,userid=Bee,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=636194316616070,userid=Bee,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=636194316616071,userid=Bee,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=636194316616072,userid=Bee,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=636194316616073,userid=Bee,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=? and total=?   [values]: bee,Bee-ORM Framework,91.99
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=? and total=?   [values]: bee,Bee-ORM Framework,91.99
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=? and total=?   [values]: bee,Bee-ORM Framework,91.99
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 11
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 11
+[WARN] Do not get the new Connection in the SameConnection.Maybe all the results get from cache! 
+[INFO] ==============orders.getId(): null
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total,remark) values (?,?,?,?,?)   [values]: 636194316616071,client,client,93.99,testOneTime
+[WARN] Duplicate entry '636194316616071' for key 'PRIMARY'
+[INFO] insert record:0
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total,createtime,remark,abc,updatetime) values (?,?,?,?,?,?,?,?)   [values]: 636194316616072,client,client,93.99,null,testOneTime,null,null
+[WARN] Duplicate entry '636194316616072' for key 'PRIMARY'
+[INFO] insert record:0
+[INFO] ==============orders.getId(): null
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total,remark,sequence) values (?,?,?,?,?,?)   [values]: 636194316616073,client,client,93.99,testOneTime,
+[WARN] Duplicate entry '636194316616073' for key 'PRIMARY'
+[INFO] insert record:0
+[INFO] ==============orders.getId(): null
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?)   [values]: 636194316616074,client,client,93.99,null,testOneTime,,null,null
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] insert record:1
+[INFO] [Bee] update SQL(updateFields) :update orders set name=?, remark=? where userid=? and total=?   [values]: client,testOneTime,client,93.99
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] updateNum1:  1
+[INFO] [Bee] update SQL(updateFields) :update orders set name=? where userid=? and total=? and remark=?   [values]: client,client,93.99,testOneTime
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] updateNum2:  1
+[INFO] [Bee] update SQL(updateFields) :update orders set name=? where userid=? and total=? and remark=? and sequence=?   [values]: client,client,93.99,testOneTime,
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] updateNum4:  1
+[INFO] [Bee] update SQL(updateFields) :update orders set name=? where userid=? and total=? and createtime is null and remark=? and abc is null and updatetime is null   [values]: client,client,93.99,testOneTime
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] updateNum5:  1
+[INFO] [Bee] update SQL(updateFields) :update orders set name=? where userid=? and total=? and createtime is null and remark=? and sequence=? and abc is null and updatetime is null   [values]: client,client,93.99,testOneTime,
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] updateNum6:  1
+[INFO] [Bee] update SQL(updateFields) :update orders set name=?, total=? where userid=? and remark=? and sequence=?   [values]: client,93.99,client,testOneTime,
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] updateNum4_2:  1
+[INFO] [Bee] update SQL(updateFields) :update orders set name=?, total=? where userid=? and createtime is null and remark=? and abc is null and updatetime is null   [values]: client,93.99,client,testOneTime
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] updateNum5_2:  1
+[INFO] [Bee] update SQL(updateFields) :update orders set name=?, total=? where userid=? and createtime is null and remark=? and sequence=? and abc is null and updatetime is null   [values]: client,93.99,client,testOneTime,
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] updateNum6_2:  1
+[INFO] [Bee] select fun SQL : select count(total) from orders where userid=? and name=? and total=? and remark=?   [values]: client,client,93.99,testOneTime
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee] select fun SQL : select max(total) from orders where userid=? and name=? and total=? and remark=?   [values]: client,client,93.99,testOneTime
+[INFO] [Bee] select fun SQL : select min(total) from orders where userid=? and name=? and total=? and remark=?   [values]: client,client,93.99,testOneTime
+[INFO] [Bee] select fun SQL : select avg(total) from orders where userid=? and name=? and total=? and remark=?   [values]: client,client,93.99,testOneTime
+[INFO] [Bee] select fun SQL : select sum(total) from orders where userid=? and name=? and total=? and remark=?   [values]: client,client,93.99,testOneTime
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] funCount:1
+[INFO] funMax:93.990000
+[INFO] funMin:93.990000
+[INFO] funAvg:93.9900000000
+[INFO] funSum:93.990000
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total,createtime,remark,abc,updatetime) values (?,?,?,?,?,?,?,?)   [values]: 100,client00,client01,93.99,null,testOneTime,null,null
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] insert record:1
+[INFO] [Bee] update SQL: update orders set userid=? , name=? , total=? , remark=? , sequence=? where id=?   [values]: client00,client01,93.99,testOneTime,,100
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] updateNum8:  1
+[INFO] [Bee] update SQL: update orders set userid=? , name=? , total=? , createtime =null , remark=? , abc =null , updatetime =null where id=?   [values]: client00,client01,93.99,testOneTime,100
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] updateNum9:  1
+[INFO] [Bee] update SQL: update orders set userid=? , name=? , total=? , createtime =null , remark=? , sequence=? , abc =null , updatetime =null where id=?   [values]: client00,client01,93.99,testOneTime,,100
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] updateNum10:  1
+[INFO] [Bee] delete SQL: delete from orders where id=? and userid=? and name=? and total=? and remark=?   [values]: 100,client00,client01,93.99,testOneTime
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] deleteNum: 1
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 1004,client01,null,91,null,testOneTime,null,null,null
+[INFO] [Bee] --> index:1 ,  [values]: 1005,client02,null,20,null,testOneTime,null,null,null
+[INFO] [Bee]  | <-- [Batch:0] Affected rows: 2
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:2 ,  [values]: 1006,client03,null,23,null,testOneTime,null,null,null
+[INFO] [Bee]  | <-- [Batch:1] Affected rows: 1
+[INFO] 3
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 1007,client01,null,91,null,testOneTime,null,null,null
+[INFO] [Bee] --> index:1 ,  [values]: 1008,client02,null,20,null,testOneTime,null,null,null
+[INFO] [Bee] --> index:2 ,  [values]: 1009,client03,null,23,null,testOneTime,null,null,null
+[INFO] [Bee]  | <-- [Batch:0] Affected rows: 3
+[INFO] 3
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 10010,client01,null,91,null,testOneTime,null,null,null
+[INFO] [Bee] --> index:1 ,  [values]: 10011,client02,null,20,null,testOneTime,null,null,null
+[INFO] [Bee] --> index:2 ,  [values]: 10012,client03,null,23,null,testOneTime,null,null,null
+[INFO] [Bee]  | <-- [Batch:0] Affected rows: 3
+[INFO] 3
+[INFO] [Bee] select SQL(selectFields) : select name, total from orders where userid=?   [values]: bee
+[INFO] [Bee]  | <--  select rows: 2
+[INFO] 2
+[INFO] [Bee] List<String[]> select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: client01
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] [Bee] select SQL(selectFields) : select id, userid, total, createtime from orders where userid=?   [values]: client01
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] 1004  , 
+[INFO] client01  , 
+[INFO] 91.000000  , 
+[INFO] null  , 
+[INFO] 
+[INFO] 1007  , 
+[INFO] client01  , 
+[INFO] 91.000000  , 
+[INFO] null  , 
+[INFO] 
+[INFO] 10010  , 
+[INFO] client01  , 
+[INFO] 91.000000  , 
+[INFO] null  , 
+[INFO] 
+[INFO] test paging
+[INFO] MySQL
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where remark=?   [values]: testOneTime
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 10
+[INFO] [Bee] select SQL(entity,size): select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where remark=? limit ?,?   [values]: testOneTime,0,3
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] [Bee] select(entity,start,size) SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where remark=? limit ?,?   [values]: testOneTime,0,3
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] Orders[id=1004,userid=client01,name=null,total=91.000000,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1005,userid=client02,name=null,total=20.000000,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1006,userid=client03,name=null,total=23.000000,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 100018,client18,null,18.18,null,test insert and delete,null,null,null
+[INFO] [Bee] --> index:1 ,  [values]: 100019,client19,null,19.19,null,test insert and delete,null,null,null
+[INFO] [Bee]  | <-- [Batch:0] Affected rows: 2
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:2 ,  [values]: 100020,client20,null,20.20,null,test insert and delete,null,null,null
+[INFO] [Bee]  | <-- [Batch:1] Affected rows: 1
+[INFO] [Bee] delete SQL: delete from orders where remark=?   [values]: test insert and delete
+[INFO] [Bee]  | <--  Affected rows: 3
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 100018,client18,null,18.18,null,test insert and delete,null,null,null
+[INFO] [Bee] --> index:1 ,  [values]: 100019,client19,null,19.19,null,test insert and delete,null,null,null
+[INFO] [Bee] --> index:2 ,  [values]: 100020,client20,null,20.20,null,test insert and delete,null,null,null
+[INFO] [Bee]  | <-- [Batch:0] Affected rows: 3
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,createtime,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 100021,client18,null,18.18,null,null,null,null
+[INFO] [Bee] --> index:1 ,  [values]: 100022,client19,null,19.19,null,null,null,null
+[INFO] [Bee] --> index:2 ,  [values]: 100023,client20,null,20.20,null,null,null,null
+[INFO] [Bee]  | <-- [Batch:0] Affected rows: 3
+[INFO] [Bee] select fun SQL : select count(*) from orders where remark=?   [values]: test insert and delete
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where remark=?   [values]: test insert and delete
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] [Bee] selectJson SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where remark=?   [values]: test insert and delete
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where remark=? and id>=?   [values]: test insert and delete,100018
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] [Bee] selectJson SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where remark=? and id>=?   [values]: test insert and delete,100018
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where remark=? and id>=?   [values]: test insert and delete,100018
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] [Bee] selectJson SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where remark=? and id>=?   [values]: test insert and delete,100018
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee] select fun SQL : select count(*) from orders where remark=? and id>=?   [values]: test insert and delete,100018
+[INFO] [Bee] selectOrderBy SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where remark=? order by id asc   [values]: test insert and delete
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] [Bee] selectOrderBy SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where remark=? order by id asc,name desc   [values]: test insert and delete
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and remark=?   [values]: 100021,test insert and delete
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and remark=? and id>=?   [values]: 100021,test insert and delete,100018
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select(entity,selectFields,start,size) SQL: select id, remark, userid from orders where id=? and remark=? limit ?,?   [values]: 100021,test insert and delete,0,10
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select fun SQL : select max(total) from orders where id=? and remark=? and id>=?   [values]: 100021,test insert and delete,100018
+[INFO] [Bee] update SQL(whereFields) :update orders set remark=? where id=? and id>=?   [values]: test insert and delete,100021,100018
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] update SQL(condition) :update orders set remark=? where id=? and remark=? and id=?   [values]: test update,100021,test insert and delete,100023
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] delete SQL: delete from orders where id=? and remark=?   [values]: 100021,test insert and delete
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] delete SQL: delete from orders where id=? and remark=? and id>=?   [values]: 100021,test insert and delete,100018
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] deleteById SQL: delete from orders where id=?   [values]: 100021
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] deleteById SQL: delete from orders where id=?   [values]: 100022
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] deleteById SQL: delete from orders where id=?   [values]: 100023
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] select(entity,selectFields,start,size) SQL: select id, remark, userid from orders where id=? and remark=? limit ?,?   [values]: 100021,test insert and delete,5,10
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] =====================================
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and id=? limit ?,? for update    [values]: bee,100003,0,300
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] Orders[id=100003,userid=bee,name=Bee,total=97.010000,createtime=2020-03-02 11:29:28,remark=change via CallableSql,sequence=12345603,abc=test3,updatetime=2021-10-22 13:33:08]
+[INFO] [Bee] update SQL: update orders set remark=? where id=?   [values]: test,100003
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL: select distinct(userid) from orders
+[INFO] [Bee]  | <--  select rows: 12
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee] select SQL: select distinct(userid) as uniqueUserid from orders where name is not null
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] bee   
+[INFO] Bee   
+[INFO] client   
+[INFO] [Bee] select fun SQL : select count(*) from orders where id=?   [values]: 1005
+[INFO] [Bee] insert SQL: insert into orders(id,name,remark) values (?,?,?)   [values]: 636194316616093,update(T oldEntity,T newEntity),update(T oldEntity,T newEntity)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] update(T oldEntity, T newEntity) with MapSuid, 
+[INFO] [Bee] In MapSuid, update SQL: update orders set remark=? where name=? and remark=?   [values]: by update with : update(T oldEntity,T newEntity),update(T oldEntity,T newEntity),update(T oldEntity,T newEntity)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] delete SQL: delete from orders where remark=?   [values]: by update with : update(T oldEntity,T newEntity)
+[INFO] [Bee]  | <--  Affected rows: 1
+[ERROR] BeeErrorGrammarException: the oldEntity and newEntity must be same type!
+BeeErrorGrammarException: the oldEntity and newEntity must be same type!
+[INFO] [Bee] update(T oldEntity, T newEntity) with MapSuid, 
+[INFO] [Bee] In MapSuid, update SQL: update orders set name=? , remark=?
+[ERROR] BeeIllegalBusinessException: It is not allowed update whole records in one table.
+BeeIllegalBusinessException: It is not allowed update whole records in one table.
+[INFO] [Bee] update(T oldEntity, T newEntity) with MapSuid, 
+[INFO] [Bee] In MapSuid, update SQL: update orders where name=? and remark=?
+[ERROR] BeeErrorGrammarException: the SQL update set part is empty!
+BeeErrorGrammarException: the SQL update set part is empty!
+[INFO] [Bee] select SQL(selectFields) : select name, total from orders where userid=?   [values]: bee
+[INFO] [Bee]  | <--  select rows: 2
+[WARN] in method selectById,id is null! 
+[INFO] [Bee] insert SQL: insert into orders(id,userid) values (?,?)   [values]: 636194316616094,bee
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where name=? and total=? and userid like ? and total between ? and ? and name is not null order by userid asc limit ?,?   [values]: Bee(ORM Framework),100,bee%,90,100,0,10
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select userid, total, createtime from orders where name=? and total=? and userid like ? and total between ? and ? and name is not null order by userid asc limit ?,?   [values]: Bee(ORM Framework),100,bee%,90,100,0,10
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] insert SQL: insert into orders(id,userid,total,remark) values (?,?,?,?)   [values]: 636194316616095,test condition,0.01,test condition delete
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] insert SQL: insert into orders(id,userid,total,remark) values (?,?,?,?)   [values]: 636194316616096,test condition,0.01,test condition delete
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] delete SQL: delete from orders where userid=? and remark like ? and total<=?   [values]: test condition,test condition %,0.01
+[INFO] [Bee]  | <--  Affected rows: 2
+[INFO] delete(T entity,Condition condition), delete record num:2
+[INFO] [Bee] update SQL(whereFields) :update orders set id=? , abc=? where total>=? and remark like ?   [values]: 1,test for update,97,test%
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] updateBy_NumByCondition: 1
+[INFO] [Bee] update SQL(updateFields) :update orders set total=total+?,remark=? where id=? and remark=? and abc=? and total>=? and remark like ?   [values]: 1,remark set in condition,1,will be ignored!,test for update,97,test%
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] updateNumCondition: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and id=? for update    [values]: bee,100003
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select userid from orders group by userid having count(userid)>=?   [values]: 1
+[INFO] [Bee]  | <--  select rows: 12
+[INFO] [Bee] update SQL(condition) :update orders set name=userid where name is null
+[INFO] [Bee]  | <--  Affected rows: 16
+[INFO] updateNum use SetWithField: 16
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where name=userid
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 17
+[INFO] record num by select use opWithField: 17
+[WARN] The name is '*' , does not conform to naming conventions!
+[WARN] The name is 'distinct(userid)' , does not conform to naming conventions!
+[INFO] [Bee] select SQL: select userid from orders group by userid having count(*)>=? and count(distinct(userid))>=?   [values]: 2,1
+[INFO] [Bee]  | <--  select rows: 5
+[INFO] 5
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where name is null and userid is not null
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where name like ?   [values]: Bee%
+[INFO] [Bee]  | <--  select rows: 8
+[INFO] Orders[id=1,userid=bee,name=Bee,total=97.010000,createtime=2020-03-02 11:29:28,remark=test,sequence=12345603,abc=test for update,updatetime=2021-10-22 13:33:08]
+[INFO] Orders[id=100002,userid=bee,name=Bee(ORM Framework),total=96.010000,createtime=2020-03-02 11:29:28,remark=test%a,sequence=12345602,abc=test2,updatetime=2020-03-02 16:34:19]
+[INFO] Orders[id=636194316616068,userid=Bee,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=636194316616069,userid=Bee,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=636194316616070,userid=Bee,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=636194316616071,userid=Bee,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=636194316616072,userid=Bee,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=636194316616073,userid=Bee,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total,remark) values (?,?,?,?,?)   [values]: 636194316616097,client,client,93.99,testOneTime
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] 1
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total,remark) values (?,?,?,?,?)   [values]: 636194316616098,client,client,93.99,testOneTime
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] 1
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 636194316616099,client,client,93.99,null,testOneTime,null,null,null
+[INFO] [Bee] --> index:1 ,  [values]: 636194316616100,client,client,94.99,null,testOneTime,,null,null
+[INFO] [Bee] --> index:2 ,  [values]: 636194316616101,client,Bee,95.99,null,testOneTime,null,null,null
+[INFO] [Bee]  | <-- [Batch:0] Affected rows: 3
+[INFO] 3
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 636194316616102,client,client,93.99,null,testOneTime,null,null,null
+[INFO] [Bee] --> index:1 ,  [values]: 636194316616103,client,client,94.99,null,testOneTime,,null,null
+[INFO] [Bee]  | <-- [Batch:0] Affected rows: 2
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:2 ,  [values]: 636194316616104,client,Bee,95.99,null,testOneTime,null,null,null
+[INFO] [Bee]  | <-- [Batch:1] Affected rows: 1
+[INFO] 3
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=? and total=? and remark=?   [values]: client,client,94.99,testOneTime
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 2
+[INFO] Orders[id=636194316616100,userid=client,name=client,total=94.990000,createtime=null,remark=testOneTime,sequence=,abc=null,updatetime=null]
+[INFO] Orders[id=636194316616103,userid=client,name=client,total=94.990000,createtime=null,remark=testOneTime,sequence=,abc=null,updatetime=null]
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 636194316616105,client,client,93.99,null,testOneTime,null,null,null
+[INFO] [Bee]  | <-- [Batch:0] Affected rows: 1
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 636194316616106,client,client,93.99,null,testOneTime,null,null,null
+[INFO] [Bee]  | <-- [Batch:0] Affected rows: 1
+[INFO] [Bee] --> index:1 ,  [values]: 636194316616107,client,client,94.99,null,testOneTime,,null,null
+[INFO] [Bee]  | <-- [Batch:1] Affected rows: 1
+[INFO] [Bee] --> index:2 ,  [values]: 636194316616108,client,Bee,95.99,null,testOneTime,null,null,null
+[INFO] [Bee]  | <-- [Batch:2] Affected rows: 1
+[INFO] insertArray3's size : 3
+[INFO] -------------------------------
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 636194316616109,client,client,93.99,null,testOneTime,null,null,null
+[INFO] [Bee] --> index:1 ,  [values]: 636194316616110,client,client,94.99,null,testOneTime,,null,null
+[INFO] [Bee]  | <-- [Batch:0] Affected rows: 2
+[INFO] [Bee] --> index:2 ,  [values]: 636194316616111,client,Bee,95.99,null,testOneTime,null,null,null
+[INFO] [Bee] --> index:3 ,  [values]: 636194316616112,orders3,null,null,null,null,null,null,null
+[INFO] [Bee]  | <-- [Batch:1] Affected rows: 2
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:4 ,  [values]: 636194316616113,orders4,null,null,null,null,null,null,null
+[INFO] [Bee]  | <-- [Batch:2] Affected rows: 1
+[INFO] insertArray5's size : 5
+[INFO] [Bee] selectByIds SQL: select id,email,last_name,name,password,username,createtime from test_user where id=? or id=?   [values]: 800001,800002
+[INFO] [Bee]  | <--  select rows: 2
+[INFO] TestUser[id=800001,email=beeUser@163.com,lastName=null,name=Bee,password=bee,username=bee,createtime=null]
+[INFO] =============================================
+[INFO] TestUser[id=800002,email=honey@163.com,lastName=cn,name=Honey,password=honey,username=honey,createtime=null]
+[INFO] =============================================
+[INFO] [Bee] selectById SQL: select id,email,last_name,name,password,username,createtime from test_user where id=?   [values]: 800001
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] TestUser[id=800001,email=beeUser@163.com,lastName=null,name=Bee,password=bee,username=bee,createtime=null]
+[INFO] [Bee] selectById SQL: select id,email,last_name,name,password,username,createtime from test_user where id=?   [values]: 800001
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] selectById SQL: select id,email,last_name,name,password,username,createtime from test_user where id=?   [values]: 800001
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] TestUser[id=800001,email=beeUser@163.com,lastName=null,name=Bee,password=bee,username=bee,createtime=null]
+[INFO] [Bee] deleteById SQL: delete from test_user where id=?   [values]: 800001
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] deleteNum3: 1
+[INFO] [Bee] insert SQL: insert into test_user(id,email,name,password,username) values (?,?,?,?,?)   [values]: 800001,beeUser@163.com,Bee,bee,bee
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] selectJson SQL: select id,email,last_name,name,password,username,createtime from test_user
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] selectJson(new User()):
+[INFO] [{"id":"800001","email":"beeUser@163.com","name":"Bee","password":"bee","username":"bee"},{"id":"800002","email":"honey@163.com","lastName":"cn","name":"Honey","password":"honey","username":"honey"}]
+[INFO] [Bee] update SQL(whereFields) :update orders set total=? , remark=? where userid=?   [values]: 100,new2,bee
+[INFO] [Bee]  | <--  Affected rows: 3
+[INFO] update number:  3
+[INFO] IncludeType.INCLUDE_BOTH
+[INFO] [Bee] update SQL(whereFields) :update orders set total=? , createtime =null , remark=? , sequence=? , abc =null , updatetime =null where userid=? and name is null   [values]: 100,new2,,bee
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] update number:  0
+[INFO] IncludeType.INCLUDE_NULL
+[INFO] [Bee] update SQL(whereFields) :update orders set name =null , total=? , createtime =null , remark=? , abc =null , updatetime =null where userid=?   [values]: 100,new2,bee
+[INFO] [Bee]  | <--  Affected rows: 3
+[INFO] IncludeType.INCLUDE_EMPTY
+[INFO] [Bee] update SQL(whereFields) :update orders set total=? , remark=? , sequence=? where userid=?   [values]: 100,new2,,bee
+[INFO] [Bee]  | <--  Affected rows: 3
+[INFO] [Bee] update SQL(whereFields) :update leaf_alloc set max_id=max_id+step where biz_tag in (?,?)   [values]: 1,2
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] test setAdd , update num: 0
+[INFO] [Bee] select SQL: select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc where biz_tag=?   [values]: test
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] update SQL(condition) :update leaf_alloc set max_id=max_id+step,version=version+? where id=? and biz_tag=? and max_id=? and version=?   [values]: 1,456537470402562,test,100,1
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] test setMultiply , update num: 1
+[INFO] [Bee] select SQL: select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc where biz_tag=?   [values]: test
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] update SQL(condition) :update leaf_alloc set max_id=?,version=version+? where id=? and biz_tag=? and max_id=? and version=?   [values]: 10003,1,456537470402562,test,200,2
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] test setMultiply , update num: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from Orders_202007
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] [Bee] select SQL: select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc2
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] [Bee] select SQL(entity,size): select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc2 limit ?,?   [values]: 0,5
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] [Bee] select SQL(entity,size): select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc2 limit ?,?   [values]: 0,5
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 3
+[WARN] Auto table: parameter  ${version} in LeafAlloc${version} still has not value, will be ignore it!
+[INFO] [Bee] select SQL(entity,size): select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc limit ?,?   [values]: 0,5
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] [Bee] select SQL: select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc2
+[INFO] [Bee]  | <--  select rows: 3
+[WARN] Auto table: parameter  ${version} in LeafAlloc${version} still has not value, will be ignore it!
+[INFO] [Bee] select SQL(entity,size): select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc limit ?,?   [values]: 0,5
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] 3
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from Orders_202007
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] [Bee] select SQL: select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc2
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] [Bee] select SQL(entity,size): select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc2 limit ?,?   [values]: 0,5
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] [Bee] select SQL(entity,size): select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc2 limit ?,?   [values]: 0,5
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 3
+[WARN] Auto table: parameter  ${version} in LeafAlloc${version} still has not value, will be ignore it!
+[INFO] [Bee] select SQL(entity,size): select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc limit ?,?   [values]: 0,5
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] [Bee] select SQL: select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc2
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 3
+[WARN] Auto table: parameter  ${version} in LeafAlloc${version} still has not value, will be ignore it!
+[INFO] [Bee] select SQL(entity,size): select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc limit ?,?   [values]: 0,5
+[INFO] [Bee] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] 3
+[INFO] ------------------------getId : null
+[INFO] [Bee] insert SQL: insert into orders(userid,name,total,remark) values (?,?,?,?)   [values]: Bee,Bee(ORM Framework),80.80,InsertAndReturnId
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] InsertAndReturnId  : 636194316616114
+[INFO] ------------------------getId : null
+[INFO] [Bee] selectById SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 636194316616114
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] Orders[id=636194316616114,userid=Bee,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] insert SQL: insert into orders(userid,name,total,remark) values (?,?,?,?)   [values]: Bee,Bee(ORM Framework),80.80,InsertAndReturnId
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] InsertAndReturnId  : 636194316616115
+[INFO] ------------------------getId : null
+[INFO] ------------------------getId : null
+[INFO] [Bee] insert SQL: insert into orders(userid,name,total,remark) values (?,?,?,?)   [values]: Bee,Bee(ORM Framework),80.80,InsertAndReturnId
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] InsertAndReturnId  : 636194316616116
+[INFO] ------------------------getId : null
+[INFO] [Bee] selectById SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 636194316616116
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] Orders[id=636194316616116,userid=Bee,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] insert SQL: insert into orders(userid,name,total,remark) values (?,?,?,?)   [values]: Bee,Bee(ORM Framework),80.80,InsertAndReturnId
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] InsertAndReturnId  : 636194316616117
+[INFO] ------------------------getId : null
+[INFO] -----------------------------
+[INFO] auto increment id in MySQL, start....
+[INFO] [Bee] insert SQL: insert into orders(userid,name,total,remark) values (?,?,?,?)   [values]: Bee,Bee(ORM Framework),80.80,InsertAndReturnId
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] InsertAndReturnId  : 636194316616118
+[INFO] [Bee] selectById SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 636194316616118
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] Orders[id=636194316616118,userid=Bee,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] insert SQL: insert into orders(userid,name,total,remark) values (?,?,?,?)   [values]: Bee,Bee(ORM Framework),80.80,InsertAndReturnId
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] InsertAndReturnId  : 636194316616119
+[INFO] auto increment id in MySQL, end....
+[INFO] <bee.version>1.9-SNAPSHOT</bee.version><beeaa.sversion>Kvienglish</bee.version>
+[INFO] <bee.version>1.9-SNAPSHOT</bee.version><beeaa.sversion>${{projectName}}</bee.version>
+[INFO] SELECTCOUNTDISTINCTFROM
+[INFO] WHEREANDBETWEENGROUP BYORDER BYASCFOR UPDATE
+[INFO] IS NOT NULLIS NULLINEXISTSNOT EXISTS
+[INFO] INNER JOINJOINLEFT JOINRIGHT JOIN
+[INFO] LIMITTOP 
+[INFO] INSERTINTOVALUES
+[INFO] DELETEFROM
+[INFO] UPDATESET
+[INFO] NULLOROFFSETONNOT BETWEENNOT INHAVINGAS
+[INFO] 一千一百
+[INFO] 一千零一
+[INFO] 二万零三十
+[INFO] 五十万零五
+[INFO] 五十万零三百零五
+[INFO] 壹仟壹佰
+[INFO] 壹仟零壹
+[INFO] 贰万零叁拾
+[INFO] 伍拾万零伍
+[INFO] 伍拾万零叁佰零伍
+[INFO] ======================
+[INFO] 伍拾万零叁佰零伍圆零角
+[INFO] 伍拾万零叁佰零伍圆贰角叁分
+[INFO] 伍拾万零叁佰零伍圆壹角贰分叁厘
+[INFO] 五十万零三百零五点二三
+[INFO] 五百万零三千零五十点二三四
+[INFO] ======================
+[INFO] 一千零四
+[INFO] 二千零四十六
+[INFO] 二千九百三十二
+[INFO] 九千零四十
+[INFO] 一千零一
+[INFO] 三百二十七
+[INFO] 八千零五十二
+[INFO] 一千五百零三
+[INFO] 一千一百
+[INFO] 二千五百
+[INFO] 九百七十
+[INFO] 一千九百

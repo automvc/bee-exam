@@ -43,7 +43,7 @@ public class InsertAndReturnIdTest {
 		test0();
 		test0();
 		HoneyConfig.getHoneyConfig().genid_forAllTableLongId=true;
-//		test0();
+		test0();
 		HoneyConfig.getHoneyConfig().genid_forAllTableLongId=oldFlag;
 		
 		if(HoneyUtil.isOracle()) testOracle();

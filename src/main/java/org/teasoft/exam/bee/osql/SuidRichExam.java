@@ -373,22 +373,6 @@ public class SuidRichExam {
 //			System.out.println(suidRich.selectById(new Orders(), id16).toString());
 			
 			suidRich.delete(orders16_new);
-			
-			try {
-				suidRich.update(new TestUser(), orders16);
-			} catch (Exception e) {
-				Logger.error(e.getMessage(), e);
-			}
-			try {
-				suidRich.update(new Orders(), orders16);
-			} catch (Exception e) {
-				Logger.error(e.getMessage(), e);
-			}
-			try {
-				suidRich.update(orders16, new Orders());
-			} catch (Exception e) {
-				Logger.error(e.getMessage(), e);
-			}
 
 		} catch (BeeException e) {
 			Logger.error("In SuidRichExam (Exception):" + e.getMessage());

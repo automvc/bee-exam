@@ -13,7 +13,9 @@ import org.teasoft.exam.bee.osql.BugTest;
 import org.teasoft.exam.bee.osql.ConditionExam;
 import org.teasoft.exam.bee.osql.DynamicTableExam;
 import org.teasoft.exam.bee.osql.ExceptionTest;
+import org.teasoft.exam.bee.osql.HoneyConfigReset;
 import org.teasoft.exam.bee.osql.InsertTest;
+import org.teasoft.exam.bee.osql.KotlinTest;
 import org.teasoft.exam.bee.osql.LockWaitTimeout;
 import org.teasoft.exam.bee.osql.MapSuidExam;
 import org.teasoft.exam.bee.osql.MoreSQLFunction;
@@ -21,6 +23,7 @@ import org.teasoft.exam.bee.osql.MoreTableExam;
 import org.teasoft.exam.bee.osql.NamingTest;
 import org.teasoft.exam.bee.osql.ObjSQLServiceExam;
 import org.teasoft.exam.bee.osql.PreparedSqlExam;
+import org.teasoft.exam.bee.osql.SearchExam;
 import org.teasoft.exam.bee.osql.SelectById;
 import org.teasoft.exam.bee.osql.SelectFun;
 import org.teasoft.exam.bee.osql.SuidExam;
@@ -160,7 +163,9 @@ public class TestNormal {
 //		runTest(RwDsExam.class);
 //		runTest(DiffDdExam.class);
 		
-		
+		runTest(SearchExam.class);
+		runTest(KotlinTest.class);
+		runTest(HoneyConfigReset.class);
 		
 	   } catch (BeeException e) {
 		   Logger.error(e.getMessage());

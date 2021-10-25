@@ -7,7 +7,6 @@
 package org.teasoft.exam.bee.osql;
 
 import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
@@ -18,6 +17,8 @@ import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
+import org.teasoft.exam.bee.osql.entity.TestUser;
+import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
 import org.teasoft.honey.osql.core.ConditionImpl;
@@ -213,6 +214,13 @@ public class ConditionExam {
 			for (int i = 0; i < list17.size(); i++) {
 				Logger.info(list17.get(i).toString());
 			}
+			
+			
+			 Condition condition10=BeeFactoryHelper.getCondition();
+			 condition10.op("email", Op.eq, null);
+			 List<TestUser> list10 = suid.select(new TestUser(), condition10);
+			 Printer.printList(list10);
+			
 			 
 		} catch (BeeException e) {
 			Logger.error("In ConditionExam (BeeException):"+e.getMessage());

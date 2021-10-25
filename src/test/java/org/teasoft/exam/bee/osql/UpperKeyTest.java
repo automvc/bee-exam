@@ -19,7 +19,7 @@ public class UpperKeyTest {
 
 	@Test
 	public void test() {
-		System.out.println("================UpperKeyTest==============");
+		Logger.info("================UpperKeyTest==============");
 		SqlKeyWord k = new UpperKey();
 		Logger.info(k.select()+k.count()+k.distinct()+k.from());
 		Logger.info(k.where()+k.and()+k.between()+k.groupBy()+k.orderBy()+k.asc()+k.forUpdate());

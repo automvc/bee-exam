@@ -7,6 +7,7 @@
 package org.teasoft.exam;
 
 import org.junit.Test;
+import org.teasoft.exam.bee.osql.BuzExceptionTest;
 import org.teasoft.exam.bee.osql.ExceptionTest;
 
 /**
@@ -19,6 +20,8 @@ public class ExceptionTest2 {
 
 		System.out.println("---Bee ExceptionTest2 with junit start:------");
 		ExceptionTest.test();
+		System.out.println("---------------------");
+		BuzExceptionTest.test();
 		System.out.println("---Bee ExceptionTest2 with junit end.------");
 	}
 

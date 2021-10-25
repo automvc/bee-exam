@@ -15,13 +15,9 @@ import org.teasoft.bee.osql.MapSqlSetting;
 import org.teasoft.bee.osql.annotation.JoinType;
 import org.teasoft.exam.bee.osql.CallExam;
 import org.teasoft.exam.bee.osql.InsertAndReturnIdTest;
-import org.teasoft.exam.bee.osql.KotlinTest;
 import org.teasoft.exam.bee.osql.SameConnTest;
-import org.teasoft.exam.bee.osql.SearchExam;
 import org.teasoft.exam.bee.osql.autogen.GenBeanExam;
 import org.teasoft.exam.bee.osql.autogen.GenFilesExam;
-import org.teasoft.exam.bee.osql.thread.Test4;
-import org.teasoft.exam.bee.test.ChangeSqlScript;
 import org.teasoft.exam.bee.test.TestCache;
 import org.teasoft.exam.bee.test.TestNormal;
 import org.teasoft.honey.logging.Jdk14LoggingImpl;
@@ -51,9 +47,6 @@ public class BeeTest {
 			
 			SameConnTest.test();
 			InsertAndReturnIdTest.test();
-			
-			SearchExam.test();
-			KotlinTest.test();
 			
 			if(HoneyUtil.isMysql()) {
 				CallExam.test();

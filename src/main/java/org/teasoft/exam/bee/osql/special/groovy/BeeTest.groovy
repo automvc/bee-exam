@@ -13,7 +13,7 @@ import org.teasoft.exam.bee.osql.entity.Orders
 
 /**
  * @author Kingstar
- * @since  1.9
+ * @since  1.9.8
  */
 class BeeTest {
 

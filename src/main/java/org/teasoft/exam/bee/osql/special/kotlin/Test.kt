@@ -1,3 +1,5 @@
+/*
+
 package org.teasoft.exam.bee.osql.special.kotlin
 
 import org.teasoft.exam.bee.osql.special.kotlin.Columns
@@ -16,6 +18,7 @@ println(moreTable.select(Tables(tableId = 1)))
 }
 
 
+*/
 
 // log:
 //------ query tables-------

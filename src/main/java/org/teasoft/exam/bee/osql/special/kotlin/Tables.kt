@@ -1,3 +1,4 @@
+/*
 package org.teasoft.exam.bee.osql.special.kotlin
 
 import org.teasoft.bee.osql.annotation.JoinTable;
@@ -16,3 +17,4 @@ joinType = JoinType.JOIN
 var columns:Columns ?= null,
 ): Serializable
 
+*/

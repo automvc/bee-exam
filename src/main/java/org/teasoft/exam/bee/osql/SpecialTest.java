@@ -16,6 +16,9 @@ import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
 
 /**
+ * 测试javabean没有id字段的用法
+ * 另外Bee有提供分布式id的方法，即使主键名不是id也可以使用分布式id。
+ * 但强烈建议新项目,设置一个名为id的字段
  * @author Kingstar
  * @since  1.9.8
  */

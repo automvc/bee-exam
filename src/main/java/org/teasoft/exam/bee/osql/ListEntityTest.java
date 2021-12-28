@@ -137,7 +137,7 @@ public class ListEntityTest {
 		List<Clazz0> list001=moreTable.select(c0,condition);
 		Printer.printList(list001);
 		
-//		1 to 1(List)  subClass="Student"    subClass 配置 不带包含  
+//		1 to 1(List)  subClass="Student"    subClass 配置 不带包名  
 		Clazz00 c00=new Clazz00();
 //		c00.setId(1);
 		condition = new ConditionImpl();
@@ -186,7 +186,7 @@ public class ListEntityTest {
 		Printer.printList(list00);
 		
 		
-//		1 to 1(List)  subClass="Student"    subClass 配置 不带包含  
+//		1 to 1(List)  subClass="Student"    subClass 配置 不带包名  
 		//带分页,   数据不准确.
 		condition = new ConditionImpl();
 		condition

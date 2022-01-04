@@ -117,7 +117,7 @@ public class MapSuidExam {
 		
 		MapSuid mapSuid = BeeFactoryHelper.getMapSuid();
 		MapSql mapSql = BeeFactoryHelper.getMapSql();
-	    mapSql.put(MapSqlKey.Table, "orders--"); //TODO 过滤
+	    mapSql.put(MapSqlKey.Table, "orders--"); // 过滤
 		mapSql.put(MapSqlKey.SelectColumns, "*");
 		mapSql.put(MapSqlSetting.IsNamingTransfer, true);
 		String json = mapSuid.selectJson(mapSql);

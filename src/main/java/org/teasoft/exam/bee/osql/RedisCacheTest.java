@@ -11,7 +11,6 @@ import java.util.List;
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.exam.bee.osql.entity.Orders;
-import org.teasoft.exam.bee.test.ClearAndInitTestTable;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.Logger;
 
@@ -19,7 +18,7 @@ import org.teasoft.honey.osql.core.Logger;
  * @author Kingstar
  * @since  1.0
  */
-public class SuidExamEN {
+public class RedisCacheTest {
 	
 	public static void main(String[] args) {
 //		ClearAndInitTestTable.main(null);  //TODO TEST
@@ -38,7 +37,12 @@ public class SuidExamEN {
 		for (int i = 0; i < list1.size(); i++) {
 			Logger.info(list1.get(i).toString());
 		}
-		
+		try {
+//			Thread.sleep(2000); //小于一级缓存的过期时间,则会用一级缓存的
+			Thread.sleep(3000);//>=一级缓存的过期时间,则会查二级的
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		suid.select(orders1);
 		
 		orders1.setName("Bee(ORM Framework)");
@@ -53,7 +57,6 @@ public class SuidExamEN {
 		
 		int insertNum=suid.insert(orders2); //insert
 		Logger.info("insert record:"+insertNum);
-		
 		int deleteNum=suid.delete(orders2);   //delete
 		Logger.info("delete record:"+deleteNum);
 		
@@ -69,6 +72,8 @@ public class SuidExamEN {
 			Logger.error("In SuidExamEN (Exception):"+e.getMessage());
 			e.printStackTrace();
 		}
+	  
+	  System.err.println("finished!");
 	}
 
 }

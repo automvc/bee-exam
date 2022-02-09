@@ -5,7 +5,8 @@
 	<artifactId>bee-exam</artifactId>
 <!-- 	<version>1.8.99</version> -->
 <!-- 	<version>1.9.5</version> -->
-	<version>1.9.8</version>
+<!-- 	<version>1.9.8</version> -->
+	<version>1.11.0.2.4.SNAPSHOP</version>
 	<packaging>jar</packaging>
 
 	<properties>
@@ -16,7 +17,8 @@
 <!-- 		<bee.version>1.8.15</bee.version> -->
 <!-- 		<bee.version>1.8.99</bee.version> -->
 <!-- 		<bee.version>1.9.5</bee.version> -->
-		<bee.version>1.9.8</bee.version>
+<!-- 		<bee.version>1.9.8</bee.version> -->
+		<bee.version>1.11.0.2.4.SNAPSHOP</bee.version>
 	</properties>
 
 	<dependencies>
@@ -80,12 +82,12 @@
 		</dependency>
 
 		<!-- log4j用这个 -->
-		<dependency>
+		 <dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 			<scope>provided</scope>
-		</dependency>
+		</dependency> 
 		
 
 		<!-- <dependency>
@@ -96,22 +98,22 @@
 		</dependency>  -->
 		
 <!-- 		log4j2 -->
-	<!-- 	<dependency>
+		<!-- <dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
-			<version>2.12.1</version>
+			<version>2.15.0</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
-			<version>2.11.1</version>
+			<version>2.15.0</version>
 			<scope>provided</scope>
 		</dependency> -->
 		
 		
 <!-- 		slf4j -->
-		<!-- <dependency>
+<!-- 		 <dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.9</version>
@@ -130,7 +132,7 @@
 			<artifactId>logback-classic</artifactId>
 			<version>1.1.7</version>
 			<scope>provided</scope>
-		</dependency> -->
+		</dependency>  -->
 
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -138,6 +140,8 @@
 			<version>1.4.197</version>
 		</dependency>
 
+
+<!--           6.87M  太大了.-->
 		<dependency>
 			<groupId>org.xerial</groupId>
 			<artifactId>sqlite-jdbc</artifactId>
@@ -162,6 +166,27 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.17</version>
 		</dependency>
+
+	   <dependency>
+		  <groupId>redis.clients</groupId>
+		  <artifactId>jedis</artifactId>
+<!-- 		  <version>3.6.0</version>   jdk8 -->
+<!--           <version>3.5.2</version>  jdk7 -->
+          <version>3.5.2</version>
+	   </dependency>
+
+	<dependency>
+		<groupId>net.minidev</groupId>
+		<artifactId>json-smart</artifactId>
+		<version>2.3</version>
+	</dependency>
+
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>4.12</version>
+		<scope>tet</scope>
+	</dependency>
 
 	</dependencies>
 

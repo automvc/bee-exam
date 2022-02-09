@@ -20,7 +20,7 @@ public class ExtInterceptor implements Interceptor{
 
 	@Override
 	public Object beforePasreEntity(Object entity) {
-		System.out.println("beforePasreEntity------Ext---------------------");
+		System.out.println("---(1)--beforePasreEntity------Ext---------------------");
 		setDataSourceOneTime(null); //内容触发
 		return entity;
 	}
@@ -38,19 +38,19 @@ public class ExtInterceptor implements Interceptor{
 
 	@Override
 	public String afterCompleteSql(String sql) {
-		System.out.println("afterCompleteSql--------Ext-------------------");
+		System.out.println("---(2)--afterCompleteSql--------Ext-------------------");
 		return sql;
 	}
 
 	@Override
-	public void afterAccessDB(List list) {
-		System.out.println("afterQueryResult(List list)---------Ext------------------");
+	public void beforeReturn(List list) {
+		System.out.println("---(3)--beforeReturn(List list)---------Ext------------------");
 		
 	}
 	
 	@Override
-	public void afterAccessDB() {
-		System.out.println("afterAccessDB()-------Ext--------------------");
+	public void beforeReturn() {
+		System.out.println("---(3)--beforeReturn()-------Ext--------------------");
 	}
 
 }

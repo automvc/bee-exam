@@ -20,7 +20,7 @@ import redis.clients.jedis.Jedis;
  * @author Kingstar
  * @since  1.0
  */
-public class RedisCacheTest {
+public class RedisCacheExpireTest {
 	
 	public static void main(String[] args) {
 //		ClearAndInitTestTable.main(null);  //TODO TEST
@@ -41,7 +41,7 @@ public class RedisCacheTest {
 		}
 		try {
 //			Thread.sleep(2000); //小于一级缓存的过期时间,则会用一级缓存的
-			Thread.sleep(3000);//>=一级缓存的过期时间,则会查二级的
+			Thread.sleep(6000);//>=一级缓存的过期时间,则会查二级的
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

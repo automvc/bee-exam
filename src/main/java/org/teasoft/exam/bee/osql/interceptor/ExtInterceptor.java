@@ -8,6 +8,7 @@ package org.teasoft.exam.bee.osql.interceptor;
 
 import java.util.List;
 
+import org.teasoft.bee.osql.SuidType;
 import org.teasoft.bee.osql.interccept.Interceptor;
 
 /**
@@ -19,7 +20,7 @@ public class ExtInterceptor implements Interceptor{
 	private String ds;
 
 	@Override
-	public Object beforePasreEntity(Object entity) {
+	public Object beforePasreEntity(Object entity,SuidType suidType) {
 		System.out.println("---(1)--beforePasreEntity------Ext---------------------");
 		setDataSourceOneTime(null); //内容触发
 		return entity;

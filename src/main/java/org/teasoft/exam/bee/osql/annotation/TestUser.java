@@ -17,17 +17,20 @@ public class TestUser implements Serializable {
 	private String email;
 	private String lastName;
 	
-	@JustFetch("name")
+	@JustFetch("name")  //表列名,仅用于查询名称转换,在where条件不能使用
 	private String name2;
 //	@Ignore
 	private String password;
+	
 	private String username;
 	
 //	@Datetime
 	private String createtime;
 	
 //	@JustFetch("CONCAT(last_name,name)")
-	@JustFetch("last_name || name")
+//	@JustFetch("last_name-- || name") //非法字符
+	@JustFetch("last_name; || name") //非法字符
+//	@JustFetch("last_name || name")
 	private String fullName;
 
 	public Long getId() {

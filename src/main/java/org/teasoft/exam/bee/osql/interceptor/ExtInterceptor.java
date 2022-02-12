@@ -27,6 +27,13 @@ public class ExtInterceptor implements Interceptor{
 	}
 	
 	@Override
+	public Object beforePasreEntity(Object entityArray[],SuidType suidType) {
+		System.out.println("---(1)--beforePasreEntity------Ext---------------------");
+		setDataSourceOneTime(null); //内容触发
+		return entityArray;
+	}
+	
+	@Override
 	public void setDataSourceOneTime(String ds) {
 		ds="ds2";  //根据规则设置数据源
 		this.ds=ds;
@@ -40,6 +47,7 @@ public class ExtInterceptor implements Interceptor{
 	@Override
 	public String afterCompleteSql(String sql) {
 		System.out.println("---(2)--afterCompleteSql--------Ext-------------------");
+		//NOTICE:if change the sql,need update the context.
 		return sql;
 	}
 

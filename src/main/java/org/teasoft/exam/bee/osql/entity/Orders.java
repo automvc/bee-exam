@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
+import org.teasoft.bee.osql.annotation.Createtime;
+
 /**
 *@author Honey
 *Create on 2020-10-01 12:41:06
@@ -18,6 +20,7 @@ public class Orders implements Serializable {
 	private String userid;
 	private String name;
 	private BigDecimal total;
+	@Createtime
 	private String createtime;
 	private String remark;
 	private String sequence;

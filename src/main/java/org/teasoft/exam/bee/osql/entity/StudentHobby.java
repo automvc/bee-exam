@@ -14,6 +14,8 @@ public class StudentHobby implements Serializable {
 	private String stuId;
 	private String hobby;
 	private String remark;
+//	private String comment;
+//	private String into;
 
 	public Integer getId() {
 		return id;

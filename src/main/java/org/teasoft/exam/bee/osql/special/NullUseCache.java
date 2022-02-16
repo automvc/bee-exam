@@ -9,6 +9,8 @@ package org.teasoft.exam.bee.osql.special;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.TestUser;
+import org.teasoft.honey.osql.core.HoneyConfig;
+import org.teasoft.honey.osql.core.HoneyContext;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
@@ -24,6 +26,10 @@ public class NullUseCache {
 	public static void test() {
 		try {
 			
+			HoneyConfig.getHoneyConfig().cache_timeout=10;  //20毫秒
+			HoneyConfig.getHoneyConfig().cache_levelTwoTimeout=6; //6秒
+//			HoneyContext.setConfigRefresh(true); //没有触发机会
+			
 //			Cache cache=new BeeExtRedisCache();
 //			BeeFactory.getHoneyFactory().setCache(cache);
 			
@@ -38,6 +44,21 @@ public class NullUseCache {
 			SuidRich suidRich = BF.getSuidRich();
 			suidRich.selectById(new TestUser(), -1L);
 			suidRich.selectById(new TestUser(), -1L);
+			
+			//放在这没用.要放到第一个查询前.
+//			HoneyConfig.getHoneyConfig().cache_timeout=20;  //20毫秒
+//			HoneyConfig.getHoneyConfig().cache_levelTwoTimeout=6; //6秒
+////			HoneyContext.setConfigRefresh(true); //没有触发机会
+			
+			//测试二级缓存的抵御缓存穿透能力
+			suidRich.selectById(new TestUser(), -1L);
+			try {
+				Thread.sleep(2000);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			suidRich.selectById(new TestUser(), -1L);
+			
 		
 		} catch (Exception e) {
 			e.printStackTrace();

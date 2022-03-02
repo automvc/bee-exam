@@ -3,6 +3,7 @@ package org.teasoft.exam.bee.osql.annotation.moretableeasy;
 import java.io.Serializable;
 
 import org.teasoft.bee.osql.SuidType;
+import org.teasoft.bee.osql.annotation.Datetime;
 //import org.teasoft.bee.osql.annotation.Datetime;
 import org.teasoft.bee.osql.annotation.Entity;
 import org.teasoft.bee.osql.annotation.JoinTable;
@@ -21,7 +22,7 @@ public class Clazz1 implements Serializable {
 	private String classname;
 	private String place;
 	private String teachername;
-//	@Datetime(suidType=SuidType.SELECT)
+	@Datetime(suidType=SuidType.SELECT)
 	private String remark;
 	
 	@JoinTable(mainField="id", subField="classno", joinType=JoinType.JOIN,subClass="Student1")

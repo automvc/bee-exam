@@ -16,8 +16,15 @@ import org.teasoft.honey.osql.shortcut.BF;
  * @since  1.11
  */
 public class SelectByIdWithPK {
+	
 	private static SuidRich suidRich = BF.getSuidRich();
+	
+	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 //		String key="aaaadd-no-id";
 		String key="aaaacc-no-id";

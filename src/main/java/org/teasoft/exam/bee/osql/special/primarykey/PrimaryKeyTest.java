@@ -36,11 +36,10 @@ public class PrimaryKeyTest {
 	}
 	
 	public static void main(String[] args) {
-		testNoId();
+		test();
 	}
-	
-	
-	public static void testNoId() {
+
+	public static void test() {
 		CustomId noid=new CustomId();
 		String key="aaaadd-no-id";
 		noid.setUuid(key);

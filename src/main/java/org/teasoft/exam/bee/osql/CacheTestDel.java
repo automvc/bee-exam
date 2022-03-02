@@ -6,7 +6,11 @@
 
 package org.teasoft.exam.bee.osql;
 
+import java.util.Iterator;
+import java.util.ServiceLoader;
+
 import org.teasoft.bee.osql.BeeException;
+import org.teasoft.bee.osql.Cache;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
@@ -24,6 +28,38 @@ public class CacheTestDel {
 	}
 	
 	public static void test() {
+//		Cache cache=new BeeExtRedisCache();
+//		BeeFactory.getHoneyFactory().setCache(cache);
+		
+//		ServiceLoader.load(Cache.class);
+		
+//		BeeFactory.getHoneyFactory().setCache(ServiceLoader.load(Cache.class));
+		
+		
+		ServiceLoader<Cache> caches = ServiceLoader.load(Cache.class);
+        Iterator<Cache> cacheIterator = caches.iterator();
+        System.err.println();
+        
+//        try{
+            while(cacheIterator.hasNext()) {
+            	Cache cache = cacheIterator.next();
+            	BeeFactory.getHoneyFactory().setCache(cache);
+            }
+//        } catch(Throwable t) {
+//            t.printStackTrace();
+//        }
+            
+            
+//		ServiceLoader<Cache> caches = ServiceLoader.load(Cache.class);
+//		Cache oneCache=null;
+//		for (Cache cache :caches) {
+//			oneCache=cache;
+//		}
+//		if(oneCache!=null) {
+//			BeeFactory.getHoneyFactory().setCache(oneCache);
+//		}
+            
+		
 		
 		 try {
 				
@@ -35,7 +71,7 @@ public class CacheTestDel {
 			
 			Orders orders1=new Orders();
 			orders1.setId(100001L);
-			orders1.setName("Bee--ORM Framework");
+			orders1.setName("Bee(ORM Framework)");
 			
 			Orders orders2=new Orders();
 			orders2.setUserid("bee2");
@@ -77,17 +113,20 @@ public class CacheTestDel {
 			suid.select(orders0);
 			suid.select(orders1);
 			
-//			orders1.setRemark("other");
-//			suid.update(orders1);
-//			suid.select(orders1);
+			orders1.setRemark("other");
+			suid.update(orders1);
+			suid.select(orders1);
 			
-			suid.delete(orders1);
+//			suid.delete(orders1);
 			
 			suid.select(orders2);
 			suid.select(orders3);
 			suid.select(orders4);
 			suid.select(orders5);
 			suid.select(orders6);
+			
+			suid.select(orders7);
+			suid.select(orders8);
 			
 			try {
 				Thread.sleep(12000);
@@ -102,8 +141,10 @@ public class CacheTestDel {
 			suid.select(orders9);
 			suid.select(orders10);
 			
+			System.err.println("==================================");
+			
 			try {
-				Thread.sleep(12000);
+				Thread.sleep(5000);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -112,8 +153,10 @@ public class CacheTestDel {
 			suid.select(orders8);
 			suid.select(orders11);
 			
+			System.err.println("==================================");
+			
 			try {
-				Thread.sleep(12000);
+				Thread.sleep(5000);
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
@@ -121,6 +164,15 @@ public class CacheTestDel {
 //			suid.select(orders8);  //delete one
 			suid.select(orders11);//delte some
 			suid.select(orders8);  
+			
+			
+			try {
+				Thread.sleep(5000);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			
+			System.err.println("======================finish============");
 			
 			} catch (BeeException e) {
 				Logger.error("In CacheTestDel (BeeException):"+e.getMessage());

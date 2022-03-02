@@ -28,6 +28,7 @@ public class RedisCacheTest {
 	}
 	public static void test() {
 	  Jedis jedis = new Jedis("localhost");
+	  jedis.auth("123456");
 	  try{
 		Suid suid=BeeFactory.getHoneyFactory().getSuid();
 		
@@ -70,10 +71,10 @@ public class RedisCacheTest {
 		}
 		
 		} catch (BeeException e) {
-			Logger.error("In SuidExamEN (BeeException):"+e.getMessage());
+			Logger.error("In RedisCacheTest (BeeException):"+e.getMessage());
 			e.printStackTrace();
 		}catch (Exception e) {
-			Logger.error("In SuidExamEN (Exception):"+e.getMessage());
+			Logger.error("In RedisCacheTest (Exception):"+e.getMessage());
 			e.printStackTrace();
 		}
 	  System.err.println("-----------------------------");

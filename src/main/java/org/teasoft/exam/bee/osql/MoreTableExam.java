@@ -101,11 +101,14 @@ public class MoreTableExam {
 			moreTable.select(assignexam);
 			
 			assignexam.setClassno("aaa");
-			moreTable.select(assignexam);
+//			System.out.println("---------------select before----------------------");
+//			moreTable.select(assignexam);
+//			System.out.println("---------------select after----------------------");
 			
 			Assigncourse assigncourse2=new Assigncourse();
 			assigncourse2.setId(344343344343L);
 			Suid suid = BeeFactory.getHoneyFactory().getSuid();
+//			System.out.println("---------------delete before----------------------");
 			suid.delete(assigncourse2);
 			
 			moreTable.select(assignexam);//test cache

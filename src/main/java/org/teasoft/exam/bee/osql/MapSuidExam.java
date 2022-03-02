@@ -25,7 +25,7 @@ import org.teasoft.honey.util.ObjectUtils;
 public class MapSuidExam {
 	public static void main(String[] args) {
 		test();
-		test2();
+//		test2();
 	}
 
 	public static void test() {
@@ -103,6 +103,21 @@ public class MapSuidExam {
 			mapSql2.putNew("password", "bee-new");		
 			mapSuid.update(mapSql2);
 			
+			
+			
+			MapSql mapSql3 = BeeFactoryHelper.getMapSql();
+
+		    mapSql3.put(MapSqlKey.Table, "test_user");
+			mapSql3.put(MapSqlKey.SelectColumns, "name,password");
+			mapSql3.put(MapSqlKey.OrderBy, "name,password desc"); //多字段排序
+//			mapSql3.put(MapSqlKey.OrderBy, "-- name,password desc"); //多字段排序
+			
+			mapSql3.put(MapSqlSetting.IsNamingTransfer, true);
+
+
+			String json3 = mapSuid.selectJson(mapSql3);
+			Logger.info(json3);
+			
 
 		} catch (BeeException e) {
 			e.printStackTrace();
@@ -117,7 +132,8 @@ public class MapSuidExam {
 		
 		MapSuid mapSuid = BeeFactoryHelper.getMapSuid();
 		MapSql mapSql = BeeFactoryHelper.getMapSql();
-	    mapSql.put(MapSqlKey.Table, "orders--"); // 过滤
+//	    mapSql.put(MapSqlKey.Table, "orders--"); // 过滤
+	    mapSql.put(MapSqlKey.Table, "orders"); 
 		mapSql.put(MapSqlKey.SelectColumns, "*");
 		mapSql.put(MapSqlSetting.IsNamingTransfer, true);
 		String json = mapSuid.selectJson(mapSql);

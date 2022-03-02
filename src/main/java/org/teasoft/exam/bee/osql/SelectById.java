@@ -67,6 +67,26 @@ public class SelectById {
 		Logger.info("selectJson(new User()):");
 		Logger.info(json);
 		
+		
+		TestUser testUser5=suidRich.selectById(new TestUser(), "800001");
+		
+		TestUser accout=new TestUser();
+		accout.setUsername("bee"); //username字段设唯一约束
+		List<String[]> list=suidRich.selectString(accout,"password,name");
+		if(list!=null && list.size()==1) { //只查到一行
+			String[] oneUser=list.get(0);
+			String password=oneUser[0];
+			String name=oneUser[1]; //替换成sugar即可
+			System.out.println(password +"  :  "+ name);
+		}
+		
+		TestUser oneUser=suidRich.selectOne(accout);
+		if(oneUser!=null) {
+			String password=oneUser.getPassword();
+			String name=oneUser.getUsername(); //替换成sugar即可
+			System.out.println(password +"  :  "+ name);
+		}
+		
 	  } catch (BeeException e) {
 		  Logger.error("In SelectById (Exception):"+e.getMessage());
 		  e.printStackTrace();

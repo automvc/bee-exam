@@ -33,7 +33,7 @@ public class CacheTest {
 			
 			Orders orders1=new Orders();
 			orders1.setId(100001L);
-			orders1.setName("Bee--ORM Framework");
+			orders1.setName("Bee(ORM Framework)");
 			
 			Orders orders2=new Orders();
 			orders2.setUserid("bee2");

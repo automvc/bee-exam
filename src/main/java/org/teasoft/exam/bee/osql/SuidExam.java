@@ -55,7 +55,6 @@ public class SuidExam {
 			List<Orders> list1 = suid.select(orders1); //select
 			 suid.select(orders1); //select   test cache
 			for (int i = 0; i < list1.size(); i++) {
-//				Logger.info(list1.get(i).toString());
 				Logger.info(list1.get(i).toString());
 			}
 

@@ -98,6 +98,9 @@ public class ExceptionTest {
 			String nosql = CustomSql.getCustomSql("osql.donot.exist");
 			List<String[]> list9 = preparedSql.select(nosql);
 			Logger.info(list9.size());
+			
+			CustomSql.getCustomSql("osql.example.testEmptyException");
+			
 		} catch (BeeException e) {
 			Logger.error(e.getMessage());
 			e.printStackTrace();

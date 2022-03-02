@@ -28,6 +28,7 @@ public class RedisCacheExpireTest {
 	}
 	public static void test() {
 	  Jedis jedis = new Jedis("localhost");
+	  jedis.auth("123456");
 	  try{
 		Suid suid=BeeFactory.getHoneyFactory().getSuid();
 		
@@ -41,7 +42,7 @@ public class RedisCacheExpireTest {
 		}
 		try {
 //			Thread.sleep(2000); //小于一级缓存的过期时间,则会用一级缓存的
-			Thread.sleep(6000);//>=一级缓存的过期时间,则会查二级的
+			Thread.sleep(6500);//>=一级缓存的过期时间,则会查二级的
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -70,10 +71,10 @@ public class RedisCacheExpireTest {
 		}
 		
 		} catch (BeeException e) {
-			Logger.error("In SuidExamEN (BeeException):"+e.getMessage());
+			Logger.error("In RedisCacheExpireTest (BeeException):"+e.getMessage());
 			e.printStackTrace();
 		}catch (Exception e) {
-			Logger.error("In SuidExamEN (Exception):"+e.getMessage());
+			Logger.error("In RedisCacheExpireTest (Exception):"+e.getMessage());
 			e.printStackTrace();
 		}
 	  System.err.println("-----------------------------");

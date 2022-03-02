@@ -28,7 +28,7 @@ public class DynamicTableExam {
 		return suid;
 	}
 	
-	public static void setSuidRich(Suid suid) {
+	public static void setSuid(Suid suid) {
 		DynamicTableExam.suid=suid;
 	}
 	

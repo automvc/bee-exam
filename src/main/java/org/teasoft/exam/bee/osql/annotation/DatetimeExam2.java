@@ -17,7 +17,7 @@ import org.teasoft.honey.osql.core.Logger;
  * @author Kingstar
  * @since  1.11
  */
-public class DatetimeExam {
+public class DatetimeExam2 {
 	
 	public static void main(String[] args) {
 		test();
@@ -27,11 +27,13 @@ public class DatetimeExam {
 	  try{
 		Suid suid=BeeFactory.getHoneyFactory().getSuid();
 		
-		Orders orders1=new Orders();
-		orders1.setId(100001L);
+		Orders2 orders1=new Orders2();
+		orders1.setId(100002L);
 		orders1.setName("Bee(ORM Framework)");
 		
-		List<Orders> list1 =suid.select(orders1);  //select
+		suid.insert(orders1);
+		
+		List<Orders2> list1 =suid.select(orders1);  //select
 		for (int i = 0; i < list1.size(); i++) {
 			Logger.info(list1.get(i).toString());
 		}
@@ -41,9 +43,9 @@ public class DatetimeExam {
 //		
 //		suid.select(orders1);
 //		
-//		orders1.setName("Bee(ORM Framework)");
-//		int updateNum=suid.update(orders1);   //update
-//		Logger.info("update record:"+updateNum);
+		orders1.setName("Bee(ORM Framework)");
+		int updateNum=suid.update(orders1);   //update
+		Logger.info("update record:"+updateNum);
 //		
 //		Orders orders2=new Orders();
 //		orders2.setUserid("bee");
@@ -63,10 +65,10 @@ public class DatetimeExam {
 //		}
 		
 		} catch (BeeException e) {
-			Logger.error("In DatetimeExam (BeeException):"+e.getMessage());
+			Logger.error("In DatetimeExam2 (BeeException):"+e.getMessage());
 			e.printStackTrace();
 		}catch (Exception e) {
-			Logger.error("In DatetimeExam (Exception):"+e.getMessage());
+			Logger.error("In DatetimeExam2 (Exception):"+e.getMessage());
 			e.printStackTrace();
 		}
 	}

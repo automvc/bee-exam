@@ -40,10 +40,10 @@ public class JustFetchExam {
 		
 		
 		} catch (BeeException e) {
-			Logger.error("In SuidExamEN (BeeException):"+e.getMessage());
+			Logger.error("In JustFetchExam (BeeException):"+e.getMessage());
 			e.printStackTrace();
 		}catch (Exception e) {
-			Logger.error("In SuidExamEN (Exception):"+e.getMessage());
+			Logger.error("In JustFetchExam (Exception):"+e.getMessage());
 			e.printStackTrace();
 		}
 	}

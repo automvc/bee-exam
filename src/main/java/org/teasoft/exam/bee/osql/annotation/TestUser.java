@@ -29,8 +29,8 @@ public class TestUser implements Serializable {
 	
 //	@JustFetch("CONCAT(last_name,name)")
 //	@JustFetch("last_name-- || name") //非法字符
-	@JustFetch("last_name; || name") //非法字符
-//	@JustFetch("last_name || name")
+//	@JustFetch("last_name; || name") //非法字符
+	@JustFetch("last_name || name")
 	private String fullName;
 
 	public Long getId() {

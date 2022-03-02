@@ -24,12 +24,13 @@ public class ExcelReaderTest {
 
 		System.out.println("================ExcelReaderTest==========start====");
 		
-//		String fullPath = "D:\\test2.xlsx";
-		String fullPath = "D:\\test-dataType.xlsx";
-//		String[] checkTitles= {"序号","班级","姓名","离深时间	","目的地","离深交通工具","返深时间","返深交通工具","家长联系电话"};
+		String fullPath = "D:\\test2.xlsx";
+//		String fullPath = "D:\\test-dataType.xlsx";
+		String[] checkTitles= {"序号","班级","姓名","离深时间	","目的地","离深交通工具","返深时间","返深交通工具","家长联系电话"};
 //		String[] checkTitles= {"序号1","班级","姓名2","离深时间	","目的地","离深交通工具","返深时间","返深交通工具","家长联系电话"};
 //		String[] checkTitles= {"序号","班级","姓名","离深时间	","目的地","离深交通工具","返深时间","返深交通工具"};
-//		List<String[]> list = ExcelReader.checkAndReadExcel(fullPath,checkTitles,1);
+		List<String[]> list0 = ExcelReader.checkAndReadExcel(fullPath,checkTitles,1);
+		
 		List<String[]> list = ExcelReader.readExcel(fullPath);
 		String col[] = null;
 		for (int i = 0; list!=null && i < list.size(); i++) {
@@ -43,6 +44,8 @@ public class ExcelReaderTest {
 //			Logger.info("");
 			System.out.println();
 		}
+		
+		list = ExcelReader.readExcel(fullPath,"Sheet1");
 		
 		} catch (Exception e) {
             e.printStackTrace();

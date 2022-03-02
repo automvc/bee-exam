@@ -43,14 +43,19 @@ public class MainDbTest {
 			honeyConfig.setUsername("root");
 			honeyConfig.setPassword("123456");
 			TestNormal.test();
-			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test MySQL end.");
+            System.err.println("===================honeyConfig.getUrl():==="+honeyConfig.getUrl());
+			System.err.println("honeyConfig: "+honeyConfig.toString());
+            System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test MySQL end.");
 
 			System.err.println();
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Oracle start");
 			honeyConfig.setUrl("jdbc:oracle:thin:@localhost:1521:orcl");
 			honeyConfig.setUsername("scott");
 			honeyConfig.setPassword("aaa");
+			System.err.println("(oracle) honeyConfig: "+honeyConfig.toString());
 			TestNormal.test();
+			System.err.println("===================honeyConfig.getUrl():==="+honeyConfig.getUrl());
+			System.err.println("honeyConfig: "+honeyConfig.toString());
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Oracle end");
 
 			System.err.println();

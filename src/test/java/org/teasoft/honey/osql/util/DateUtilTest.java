@@ -8,6 +8,9 @@ package org.teasoft.honey.osql.util;
 
 import java.sql.Timestamp;
 
+import org.junit.Test;
+import org.teasoft.honey.osql.core.Logger;
+
 /**
  * @author Kingstar
  * @since  1.11
@@ -24,7 +27,10 @@ public class DateUtilTest {
 //    Date d = new Date(t.getTime());
 	
 	
-	public static void main(String[] args) {
+//	public static void main(String[] args) {
+	@Test
+	public void test() {
+		System.out.println(DateUtil.currentDate());
 		System.out.println(DateUtil.jumpDays(1));
 		System.out.println(DateUtil.jumpDaysExact(1));
 		System.out.println(DateUtil.isNowEffect(DateUtil.jumpDays(-1)));

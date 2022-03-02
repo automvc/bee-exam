@@ -44,6 +44,11 @@ public class NameUtilTest {
 		
 		Logger.info(nameTranslate.toColumnName("beeX"));
 		
+		Logger.info(nameTranslate.toFieldName("_bee_x"));//首字母不支持下横线
+		Logger.info(nameTranslate.toFieldName("Bee_x"));//先转成小写,再转换无问题,首字母不推荐用大写
+		Logger.info(nameTranslate.toColumnName("BeeX"));//首字母作为转换,首字母不推荐用大写
+		
+		
 		long t1=System.currentTimeMillis();
 		for (int i = 0; i < 100000; i++) {
 			nameTranslate.toColumnName("beeX");

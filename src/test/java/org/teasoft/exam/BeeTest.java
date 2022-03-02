@@ -13,16 +13,30 @@ import org.teasoft.bee.osql.DatabaseConst;
 import org.teasoft.bee.osql.MapSqlKey;
 import org.teasoft.bee.osql.MapSqlSetting;
 import org.teasoft.bee.osql.annotation.JoinType;
+import org.teasoft.bee.osql.search.Operator;
 import org.teasoft.exam.bee.osql.CallExam;
+import org.teasoft.exam.bee.osql.HoneyConfigReset;
 import org.teasoft.exam.bee.osql.InsertAndReturnIdTest;
+import org.teasoft.exam.bee.osql.KotlinTest;
+import org.teasoft.exam.bee.osql.RedisCacheExpireTest;
+import org.teasoft.exam.bee.osql.RedisCacheTest;
 import org.teasoft.exam.bee.osql.SameConnTest;
+import org.teasoft.exam.bee.osql.annotation.JustFetchExam;
 import org.teasoft.exam.bee.osql.autogen.GenBeanExam;
 import org.teasoft.exam.bee.osql.autogen.GenFilesExam;
+import org.teasoft.exam.bee.osql.special.primarykey.InsertAndReturnIdWithPK;
+import org.teasoft.exam.bee.osql.special.primarykey.PrimaryKeyTest;
+import org.teasoft.exam.bee.osql.special.primarykey.SelectByIdWithPK;
+import org.teasoft.exam.bee.test.AnnoTest;
+import org.teasoft.exam.bee.test.CharTest;
 import org.teasoft.exam.bee.test.TestCache;
+import org.teasoft.exam.bee.test.TestMoreDs;
 import org.teasoft.exam.bee.test.TestNormal;
 import org.teasoft.honey.logging.Jdk14LoggingImpl;
 import org.teasoft.honey.logging.NoLogging;
 import org.teasoft.honey.logging.SystemLogger;
+import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyUtil;
 import org.teasoft.honey.osql.core.Logger;
 
@@ -42,11 +56,20 @@ public class BeeTest {
 			TestNormal.test();
 			TestCache.test();
 			
+			TestMoreDs.test();
+			
 			GenBeanExam.test();
 			GenFilesExam.test();
 			
 			SameConnTest.test();
 			InsertAndReturnIdTest.test();
+			
+			//二级缓存
+			boolean oldFlag=HoneyConfig.getHoneyConfig().cache_useLevelTwo;
+			HoneyConfig.getHoneyConfig().cache_useLevelTwo=true;
+			RedisCacheTest.test();
+			RedisCacheExpireTest.test();
+			HoneyConfig.getHoneyConfig().cache_useLevelTwo=oldFlag;
 			
 			if(HoneyUtil.isMysql()) {
 				CallExam.test();
@@ -75,6 +98,24 @@ public class BeeTest {
 			systemLogger.info("test SystemLogger");
 			Jdk14LoggingImpl jdk14LoggingImpl=new Jdk14LoggingImpl("test");
 			jdk14LoggingImpl.info("test Jdk14LoggingImpl");
+			
+			Operator operator=Operator.like;
+			jdk14LoggingImpl.info(operator.getOperator());
+			BeeFactory beeFactory=BeeFactory.getInstance();
+			beeFactory.setDataSource(null);
+			beeFactory.setTransaction(null);
+			
+			KotlinTest.test();
+			HoneyConfigReset.test(); //just run one time
+			
+			//V1.11
+			InsertAndReturnIdWithPK.test();
+			PrimaryKeyTest.test();
+			SelectByIdWithPK.test();
+			
+			JustFetchExam.test();
+			CharTest.test();
+			AnnoTest.test();
 			
 			result=true;
 		} catch (Exception e) {

@@ -27,6 +27,7 @@ public class UpperKeyTest {
 		Logger.info(k.innerJoin()+k.join()+k.leftJoin()+k.rightJoin());
 		Logger.info(k.limit()+k.top()+k.space());
 		Logger.info(k.insert()+k.into()+k.values());
+		Logger.info(k.replace());
 		Logger.info(k.delete()+k.from());
 		Logger.info(k.update()+k.set());
 		Logger.info(k.Null()+k.or()+k.offset()+k.on()+k.notBetween()+k.notIn()+k.having()+k.as());

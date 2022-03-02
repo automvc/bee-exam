@@ -8,15 +8,21 @@ package org.teasoft.exam;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.teasoft.bee.osql.Suid;
 import org.teasoft.exam.bee.osql.ConditionExam;
 import org.teasoft.exam.bee.osql.DynamicTableExam;
 import org.teasoft.exam.bee.osql.InsertAndReturnIdTest;
 import org.teasoft.exam.bee.osql.InsertTest;
+import org.teasoft.exam.bee.osql.ObjSQLServiceExam;
 import org.teasoft.exam.bee.osql.SelectById;
 import org.teasoft.exam.bee.osql.SuidExam;
 import org.teasoft.exam.bee.osql.SuidRichExam;
 import org.teasoft.exam.bee.osql.UpdateByExam;
 import org.teasoft.exam.bee.osql.UpdateSetExam;
+import org.teasoft.exam.bee.osql.annotation.DatetimeExam;
+import org.teasoft.exam.bee.osql.annotation.DatetimeExam2;
+import org.teasoft.exam.bee.osql.ds.DiffDdExamCustomerSql;
+import org.teasoft.exam.bee.osql.ds.SuidWhichOne;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.serviceimpl.ObjSQLRichServiceImpl;
 import org.teasoft.honey.osql.serviceimpl.ObjSQLServiceImpl;
@@ -59,14 +65,30 @@ public class ServiceTest {
 			UpdateSetExam.setSuidRich(new ObjSQLRichServiceImpl());
 			UpdateSetExam.test();
 			
-			DynamicTableExam.setSuidRich(new ObjSQLServiceImpl());
+			DynamicTableExam.setSuid(new ObjSQLServiceImpl());
 			DynamicTableExam.test();
 			
-			DynamicTableExam.setSuidRich(new ObjSQLRichServiceImpl());
+			DynamicTableExam.setSuid(new ObjSQLServiceImpl());
 			DynamicTableExam.test();
 			
 			InsertAndReturnIdTest.setSuidRich(new ObjSQLServiceImpl());
 			InsertAndReturnIdTest.test();
+			InsertAndReturnIdTest.setSuidRich(new ObjSQLRichServiceImpl());
+			InsertAndReturnIdTest.test();
+			
+			ObjSQLServiceExam.test();
+			
+			DiffDdExamCustomerSql.setSuidRich(new ObjSQLRichServiceImpl());
+			DiffDdExamCustomerSql.test();
+			
+			Suid suidService=new ObjSQLServiceImpl();
+			suidService.setDataSourceName("ds3-test");
+//			SuidWhichOne.setSuid(new ObjSQLServiceImpl());
+			SuidWhichOne.setSuid(suidService);
+			SuidWhichOne.test();
+			
+			DatetimeExam.test();
+			DatetimeExam2.test();
 			
 			System.out.println("================ServiceTest==========end====");
 

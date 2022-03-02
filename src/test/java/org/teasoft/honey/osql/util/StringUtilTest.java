@@ -61,6 +61,10 @@ public class StringUtilTest {
 		String text8="no token";
 		String text8_1=StringUtil.replaceWithMap(text8, map, "${{","}}");
 		
+		String text9="#{BeeVersion}";
+		String text9_1=StringUtil.replaceWithMap(text9, map); //#{BeeVersion}
+		
+		
 		String result="<bee.version>1.9-SNAPSHOT</bee.version><beeaa.sversion>kvienglish</bee.version>";
 		String result1="<bee.version>${{BeeVersion}}</bee.version><beeaa.sversion>${{projectName}}</bee.version>";
 		String result2="<bee.version>1.9-SNAPSHOT</bee.version><beeaa.sversion>${{projectName}}</bee.version>";
@@ -77,6 +81,8 @@ public class StringUtilTest {
 		assertEquals(text6,text6_1);
 		assertEquals(text7,text7_1);
 		assertEquals(text8,text8_1);
+		
+		assertEquals(beeVersion,text9_1);
 		
 		assertEquals("${\\}", StringUtil.replaceWithMap("${\\}",map,"${","}") );
 		

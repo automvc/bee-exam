@@ -20,12 +20,12 @@ public class SqlJsonScriptTest2 extends BeeAbstractTest{
 
 	@Override
 	public void test() {
-//		try {
-			int a=1/0;
-//			Logger.info(SqlJsonScript.tableJsonScript("orders"));
-//		} catch (Exception e) {
-//			Logger.error(e.getMessage(),e);
-//		}
+		try {
+//			int a=1/0;
+			Logger.info(SqlJsonScript.tableJsonScript("orders"));
+		} catch (Exception e) {
+			Logger.error(e.getMessage(),e);
+		}
 	}
 
 }

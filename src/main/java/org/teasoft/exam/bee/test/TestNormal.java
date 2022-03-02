@@ -12,16 +12,12 @@ import org.teasoft.exam.bee.distribution.IdTest;
 import org.teasoft.exam.bee.osql.BugTest;
 import org.teasoft.exam.bee.osql.ConditionExam;
 import org.teasoft.exam.bee.osql.DynamicTableExam;
-import org.teasoft.exam.bee.osql.ExceptionTest;
-import org.teasoft.exam.bee.osql.HoneyConfigReset;
 import org.teasoft.exam.bee.osql.InsertTest;
-import org.teasoft.exam.bee.osql.KotlinTest;
 import org.teasoft.exam.bee.osql.LockWaitTimeout;
 import org.teasoft.exam.bee.osql.MapSuidExam;
 import org.teasoft.exam.bee.osql.MoreSQLFunction;
 import org.teasoft.exam.bee.osql.MoreTableExam;
 import org.teasoft.exam.bee.osql.NamingTest;
-import org.teasoft.exam.bee.osql.ObjSQLServiceExam;
 import org.teasoft.exam.bee.osql.PreparedSqlExam;
 import org.teasoft.exam.bee.osql.SearchExam;
 import org.teasoft.exam.bee.osql.SelectById;
@@ -38,8 +34,6 @@ import org.teasoft.exam.bee.osql.UseJson;
 import org.teasoft.exam.bee.osql.chain.ChainSelectExam;
 import org.teasoft.exam.bee.osql.chain.ChainUpdateExam;
 import org.teasoft.exam.bee.osql.chain.UnionSelectExam;
-import org.teasoft.exam.bee.osql.ds.DiffDdExam;
-import org.teasoft.exam.bee.osql.ds.RwDsExam;
 import org.teasoft.exam.comm.OrdinaryTest;
 import org.teasoft.exam.comm.TestHelper;
 import org.teasoft.exam.comm.TestPrepare;
@@ -137,13 +131,12 @@ public class TestNormal {
 //		runTest(More.class);
 		runTest(MapSuidExam.class);
 		
-		
 		runTest(LockWaitTimeout.class);
 		runTest(SuidExamEN_SQLite.class);
 		runTest(UpdateSetExam_SQLite.class);
 		runTest(SelectById.class);
 		
-		runTest(ObjSQLServiceExam.class);
+//		runTest(ObjSQLServiceExam.class);
 		runTest(NamingTest.class);
 		
 		runTest(IdTest.class);
@@ -163,9 +156,10 @@ public class TestNormal {
 //		runTest(RwDsExam.class);
 //		runTest(DiffDdExam.class);
 		
+		
 		runTest(SearchExam.class);
-		runTest(KotlinTest.class);
-		runTest(HoneyConfigReset.class);
+//		runTest(KotlinTest.class);
+//		runTest(HoneyConfigReset.class);
 		
 	   } catch (BeeException e) {
 		   Logger.error(e.getMessage());

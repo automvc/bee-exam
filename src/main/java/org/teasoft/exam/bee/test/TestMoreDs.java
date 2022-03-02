@@ -8,7 +8,13 @@ package org.teasoft.exam.bee.test;
 
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.exam.bee.osql.ds.DiffDdExam;
+import org.teasoft.exam.bee.osql.ds.DiffDdExam0;
+import org.teasoft.exam.bee.osql.ds.DiffDdExam00;
+import org.teasoft.exam.bee.osql.ds.DiffDdExam000;
+import org.teasoft.exam.bee.osql.ds.DiffDdExam00bug;
+import org.teasoft.exam.bee.osql.ds.DiffDdExamCustomerSql;
 import org.teasoft.exam.bee.osql.ds.RwDsExam;
+import org.teasoft.exam.bee.osql.ds.SuidWhichOne;
 import org.teasoft.exam.comm.TestHelper;
 import org.teasoft.honey.osql.core.Logger;
 
@@ -28,6 +34,13 @@ public class TestMoreDs {
 		runTest(RwDsExam.class);
 //		runTest(SuidExam.class);
 		runTest(DiffDdExam.class);
+		
+		runTest(DiffDdExam0.class);
+		runTest(DiffDdExam00.class);
+		runTest(DiffDdExam000.class);
+		runTest(DiffDdExam00bug.class);
+		runTest(DiffDdExamCustomerSql.class);
+		runTest(SuidWhichOne.class);
 		
 	   } catch (BeeException e) {
 		   Logger.error(e.getMessage());

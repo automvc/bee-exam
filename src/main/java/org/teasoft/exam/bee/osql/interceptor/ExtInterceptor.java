@@ -62,4 +62,28 @@ public class ExtInterceptor implements Interceptor{
 		System.out.println("---(3)--beforeReturn()-------Ext--------------------");
 	}
 
+	@Override
+	public void setTabNameOneTime(String tabName) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setTabSuffixOneTime(String tabSuffix) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getOneTimeTabName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getOneTimeTabSuffix() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

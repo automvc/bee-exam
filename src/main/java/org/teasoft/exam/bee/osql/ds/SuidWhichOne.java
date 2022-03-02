@@ -7,7 +7,10 @@
 package org.teasoft.exam.bee.osql.ds;
 
 import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.exam.bee.osql.DynamicTableExam;
 import org.teasoft.exam.bee.osql.entity.Orders;
+import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.HoneyContext;
 import org.teasoft.honey.osql.shortcut.BF;
 
@@ -17,7 +20,21 @@ import org.teasoft.honey.osql.shortcut.BF;
  */
 public class SuidWhichOne {
 	
+	private static Suid suid = BeeFactory.getHoneyFactory().getSuid();
+	
+	public static Suid getSuid() {
+		return suid;
+	}
+	
+	public static void setSuid(Suid suid) {
+		SuidWhichOne.suid=suid;
+	}
+	
 	public static void main(String[] args) {
+		test();
+	}
+	
+	public static void test() {
 		
 		Suid suid1=BF.getSuid();
 		suid1.setDataSourceName("Ds1");
@@ -38,7 +55,9 @@ public class SuidWhichOne {
 		suid1.select(new Orders());//suid1在suid2后又执行,若直接使用线程设置,suid2定义时,却把定义的DS冲了.
 		System.err.println(suid1.getDataSourceName());
 		
-		
+		suid.setDataSourceName("ds3-test");
+		System.err.println(suid.getDataSourceName());
+		System.err.println(suid.getInterceptorChain());
 		
 	}
 

@@ -54,7 +54,7 @@ public class DiffDdExam00bug {
 		
 		suidRich.setDataSourceName("ds2");
 //		test1();
-		suidRich.select(leafAlloc,10);
+		suidRich.select(leafAlloc,2,10);
 			
 		}
 

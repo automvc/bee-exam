@@ -30,6 +30,16 @@ public class DiffDdExamCustomerSql {
 		InitDsUtil.initDS();
 	}
 	
+//	private static Suid suid = BeeFactory.getHoneyFactory().getSuid();
+	
+	public static SuidRich getSuidRich() {
+		return suidRich;
+	}
+	
+	public static void setSuidRich(SuidRich suidRich) {
+		DiffDdExamCustomerSql.suidRich=suidRich;
+	}
+	
 	public static void main(String[] args) {
 		test();
 	}

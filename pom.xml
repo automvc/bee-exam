@@ -6,7 +6,7 @@
 <!-- 	<version>1.8.99</version> -->
 <!-- 	<version>1.9.5</version> -->
 <!-- 	<version>1.9.8</version> -->
-	<version>1.11.0.2.15.SNAPSHOP</version>
+	<version>1.11.0.2.28.SNAPSHOP</version>
 	<packaging>jar</packaging>
 
 	<properties>
@@ -18,7 +18,7 @@
 <!-- 		<bee.version>1.8.99</bee.version> -->
 <!-- 		<bee.version>1.9.5</bee.version> -->
 <!-- 		<bee.version>1.9.8</bee.version> -->
-		<bee.version>1.11.0.2.15.SNAPSHOP</bee.version>
+		<bee.version>1.11.0.2.28.SNAPSHOP</bee.version>
 	</properties>
 
 	<dependencies>
@@ -34,6 +34,14 @@
 			<artifactId>honey</artifactId>
 			<version>${bee.version}</version>
 		</dependency>
+		
+<!-- 		<dependency>
+			<groupId>org.teasoft</groupId>
+			<artifactId>honey-prod</artifactId>
+			<version>${bee.version}</version>
+			<scope>provided</scope>
+		</dependency> -->
+		
 		<!-- for log framework,web sql -->
 		<dependency>
 			<groupId>org.teasoft</groupId>
@@ -187,6 +195,21 @@
 		<version>4.12</version>
 		<scope>tet</scope>
 	</dependency>
+	
+	
+			<!-- https://mvnrepository.com/artifact/com.aliyun/dysmsapi20180501 -->
+<!-- <dependency>
+    <groupId>com.aliyun</groupId>
+    <artifactId>dysmsapi20180501</artifactId>
+    <version>1.0.3</version>
+</dependency> -->
+
+
+<dependency>
+  <groupId>com.aliyun</groupId>
+  <artifactId>aliyun-java-sdk-core</artifactId>
+  <version>4.5.20</version>
+</dependency>
 
 	</dependencies>
 

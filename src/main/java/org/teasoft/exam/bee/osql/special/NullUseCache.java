@@ -10,7 +10,6 @@ import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.TestUser;
 import org.teasoft.honey.osql.core.HoneyConfig;
-import org.teasoft.honey.osql.core.HoneyContext;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
@@ -58,7 +57,6 @@ public class NullUseCache {
 				e.printStackTrace();
 			}
 			suidRich.selectById(new TestUser(), -1L);
-			
 		
 		} catch (Exception e) {
 			e.printStackTrace();

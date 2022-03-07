@@ -240,6 +240,8 @@ public class SuidRichExam {
 			for (int i = 0; i < listMore.size(); i++) {
 				Logger.info(listMore.get(i).toString());
 			}
+			
+			listMore = suidRich.select(order_more, 2, 6);
 
 			//		int deleteNum2=suidRich.delete(order_more);   // bug : Lock wait timeout exceeded;
 			//		Logger.info("deleteNum2: "+deleteNum2);

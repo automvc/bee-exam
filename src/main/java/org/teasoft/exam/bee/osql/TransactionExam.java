@@ -1,6 +1,7 @@
 package org.teasoft.exam.bee.osql;
 
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
@@ -13,10 +14,14 @@ import org.teasoft.bee.osql.transaction.TransactionIsolationLevel;
 import org.teasoft.exam.bee.osql.entity.LeafAlloc;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.exam.bee.osql.entity.TestUser;
+import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.core.SessionFactory;
+import org.teasoft.honey.osql.type.TimestampTypeHandler;
+import org.teasoft.honey.osql.type.TypeHandlerRegistry;
+import org.teasoft.honey.osql.util.DateUtil;
 
 /**
  * @author Kingstar
@@ -109,6 +114,9 @@ public class TransactionExam {
 		LeafAlloc result = null;
 		Transaction transaction = SessionFactory.getTransaction();
 		try {
+			
+//			TypeHandlerRegistry.register(Timestamp.class, new TimestampTypeHandler<Timestamp>());
+			
 			transaction.begin();
 
 //			"UPDATE leaf_alloc SET max_id = max_id + step WHERE biz_tag = #{tag}"
@@ -116,14 +124,30 @@ public class TransactionExam {
 			leafAlloc.setBizTag("bee");
 			Condition condition = new ConditionImpl();
 			condition.setAdd("maxId", "step");
+			String d=null;
+			condition.set("updateTime", d);
 //		    suidRich.update(leafAlloc, "maxId", condition);
 			suidRich.update(leafAlloc, condition); //v1.8
+			
+			condition.set("updateTime", DateUtil.currentDate()); //直接设置字符串可以.
+			suidRich.update(leafAlloc, condition); 
+			
+			System.out.println("+++++++++++++++++++++++++++++++++++++++++++");
 
 //		    "SELECT biz_tag, max_id, step FROM leaf_alloc WHERE biz_tag = #{tag}"
 			result = suidRich.selectOne(leafAlloc);
 			if(result!=null) Logger.info(result.toString());
 			
-			suidRich.select(leafAlloc,1,10);
+			List list=suidRich.select(leafAlloc,0,10); //从0开始算. offset是偏移量
+			Printer.printList(list);
+			
+			LeafAlloc leafAlloc2 = new LeafAlloc();
+			leafAlloc2.setBizTag("bee");
+			leafAlloc2.setUpdateTime(DateUtil.currentTimestamp());
+			int a=suidRich.updateBy(leafAlloc2,"BizTag");
+			System.err.println(a);
+			List list2=suidRich.select(new LeafAlloc(),0,10); //从0开始算. offset是偏移量
+			Printer.printList(list2);
 
 			transaction.commit();
 		} catch (Exception e) {

@@ -45,7 +45,13 @@ public class ExcelReaderTest {
 			System.out.println();
 		}
 		
+		ExcelReader.checkAndReadExcel(fullPath,checkTitles);
+		ExcelReader.checkAndReadExcel(fullPath,"序号,班级",1);
+		
 		list = ExcelReader.readExcel(fullPath,"Sheet1");
+		list = ExcelReader.readExcel(fullPath,"Sheet1",0,2);
+		
+		ExcelReader.readExcel(fullPath,0,2);
 		
 		} catch (Exception e) {
             e.printStackTrace();

@@ -94,10 +94,30 @@ public class BeeTest {
 			
 			NoLogging noLogging=new NoLogging();
 			noLogging.info("test NoLogging");
+			noLogging.debug("test NoLogging");
+			noLogging.trace("test NoLogging");
+			noLogging.warn("test NoLogging");
+			noLogging.error("test NoLogging");
+			noLogging.warn("test NoLogging",new Throwable("test NoLogging"));
+			noLogging.error("test NoLogging",new Throwable("test NoLogging"));
+			
 			SystemLogger systemLogger=new SystemLogger();
 			systemLogger.info("test SystemLogger");
+			systemLogger.debug("test SystemLogger");
+			systemLogger.trace("test SystemLogger");
+			systemLogger.warn("test SystemLogger");
+			systemLogger.error("test SystemLogger");
+			systemLogger.warn("test SystemLogger",new Throwable("test SystemLogger"));
+			systemLogger.error("test SystemLogger",new Throwable("test SystemLogger"));
+			
 			Jdk14LoggingImpl jdk14LoggingImpl=new Jdk14LoggingImpl("test");
 			jdk14LoggingImpl.info("test Jdk14LoggingImpl");
+			jdk14LoggingImpl.debug("test Jdk14LoggingImpl");
+			jdk14LoggingImpl.trace("test Jdk14LoggingImpl");
+			jdk14LoggingImpl.warn("test Jdk14LoggingImpl");
+			jdk14LoggingImpl.error("test Jdk14LoggingImpl");
+			jdk14LoggingImpl.warn("test Jdk14LoggingImpl",new Throwable("test Jdk14LoggingImpl"));
+			jdk14LoggingImpl.error("test Jdk14LoggingImpl",new Throwable("test Jdk14LoggingImpl"));
 			
 			Operator operator=Operator.like;
 			jdk14LoggingImpl.info(operator.getOperator());

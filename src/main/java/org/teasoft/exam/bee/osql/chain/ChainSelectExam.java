@@ -16,6 +16,7 @@ import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.chain.Aggregate;
 import org.teasoft.honey.osql.chain.SelectImpl;
 import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.HoneyUtil;
 import org.teasoft.honey.osql.core.Logger;
 
 /**
@@ -196,8 +197,10 @@ public class ChainSelectExam {
 		.rightJoin("test_user t")
 		.on("o.name=t.name");
 		
-        List<String[]> list10= preparedSql.select(rightJoin.toSQL());
-        Printer.print(list10);
+		if(!HoneyUtil.isSQLite()) {
+	        List<String[]> list10= preparedSql.select(rightJoin.toSQL());
+	        Printer.print(list10);
+		}
         
 		Select innerJoin =new SelectImpl();
 		innerJoin.select("*")

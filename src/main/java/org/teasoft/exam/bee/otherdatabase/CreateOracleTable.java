@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import org.teasoft.exam.bee.osql.entity.Scores;
-import org.teasoft.exam.bee.osql.entity.dynamic.LeafAlloc;
+import org.teasoft.exam.bee.osql.entity.dynamic.LeafAlloc3;
 import org.teasoft.exam.bee.osql.moretable.entity.Assigncourse;
 import org.teasoft.exam.bee.osql.moretable.entity.Assignexam;
 import org.teasoft.honey.osql.autogen.Ddl;
@@ -101,10 +101,10 @@ public class CreateOracleTable {
 			boolean f=Ddl.createTable(new Scores(),true);
 			
 //			Ddl.setDynamicParameter("version", ""); //default
-			boolean f2=Ddl.createTable(new LeafAlloc(),true);
+			boolean f2=Ddl.createTable(new LeafAlloc3(),true);
 			
 			Ddl.setDynamicParameter("version", "2");
-			boolean f3=Ddl.createTable(new LeafAlloc(),true);
+			boolean f3=Ddl.createTable(new LeafAlloc3(),true);
 			
 			Ddl.createTable(new Assignexam(),true);
 			Ddl.createTable(new Assigncourse(),true);

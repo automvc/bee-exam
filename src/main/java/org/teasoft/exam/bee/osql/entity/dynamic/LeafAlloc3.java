@@ -9,7 +9,7 @@ import org.teasoft.bee.osql.annotation.Entity;
 *Create on 2020-09-20 18:56:25
 */
 @Entity("LeafAlloc${version}")
-public class LeafAlloc implements Serializable {
+public class LeafAlloc3 implements Serializable {
 
 	private static final long serialVersionUID = 1592395981169L;
 

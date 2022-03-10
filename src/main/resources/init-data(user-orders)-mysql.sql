@@ -88,6 +88,14 @@ DROP TABLE IF EXISTS `leaf_alloc2`;
 create table orders_202007 like orders;
 create table leaf_alloc2 like leaf_alloc;
 
+DROP TABLE IF EXISTS `test_primary_key`;
+CREATE TABLE `test_primary_key` (
+  `myid` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `remark` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `remark2` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`myid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ----------------------------
 -- Procedure structure for `selectOrders`

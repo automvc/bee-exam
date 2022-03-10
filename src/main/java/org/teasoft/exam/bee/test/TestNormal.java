@@ -11,6 +11,7 @@ import org.teasoft.bee.osql.DatabaseConst;
 import org.teasoft.exam.bee.distribution.IdTest;
 import org.teasoft.exam.bee.osql.BugTest;
 import org.teasoft.exam.bee.osql.ConditionExam;
+import org.teasoft.exam.bee.osql.DeleteBy;
 import org.teasoft.exam.bee.osql.DynamicTableExam;
 import org.teasoft.exam.bee.osql.InsertTest;
 import org.teasoft.exam.bee.osql.LockWaitTimeout;
@@ -157,7 +158,7 @@ public class TestNormal {
 //		runTest(RwDsExam.class);
 //		runTest(DiffDdExam.class);
 		
-		
+		runTest(DeleteBy.class);
 		runTest(SearchExam.class);
 		
 		runTest(DdlTest.class);

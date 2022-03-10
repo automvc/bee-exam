@@ -77,7 +77,7 @@ public class LeafAlloc implements Serializable {
 
 	 public String toString(){	
 		 StringBuffer str=new StringBuffer();	
-		 str.append("LeafAlloc[");			
+		 str.append("LeafAlloc3[");			
 		 str.append("id=").append(id);		 
 		 str.append(",bizTag=").append(bizTag);		 
 		 str.append(",maxId=").append(maxId);		 

@@ -8,7 +8,7 @@ import org.teasoft.bee.osql.annotation.Entity;
 *@author Honey
 *Create on 2020-09-19 19:02:36
 */
-@Entity("LeafAlloc")
+@Entity("LeafAlloc3")
 public class LeafAlloc_SQLite implements Serializable {
 
 	private static final long serialVersionUID = 1593861377170L;
@@ -79,7 +79,7 @@ public class LeafAlloc_SQLite implements Serializable {
 
 	 public String toString(){	
 		 StringBuffer str=new StringBuffer();	
-		 str.append("LeafAlloc[");			
+		 str.append("LeafAlloc3[");			
 		 str.append("id=").append(id);		 
 		 str.append(",bizTag=").append(bizTag);		 
 		 str.append(",maxId=").append(maxId);		 

@@ -25,7 +25,8 @@ public class InsertAndReturnIdWithPK {
 	}
 
 	public static void test() {
-		
+		try {
+			
 		MapSuid mapSuid = BeeFactoryHelper.getMapSuid();
 		
 		MapSql inserMapSql = BeeFactoryHelper.getMapSql();
@@ -42,7 +43,7 @@ public class InsertAndReturnIdWithPK {
 		Logger.info(id0);
 		
 		long aaa=GenIdFactory.get(tableName);
-		System.err.println("第二次拿的id: "+aaa);
+//		System.err.println("第二次拿的id: "+aaa);
 		inserMapSql.put("myid",aaa); //分布式ID
 		long id1=mapSuid.insertAndReturnId(inserMapSql);
 		Logger.info(id1);
@@ -56,6 +57,9 @@ public class InsertAndReturnIdWithPK {
 		inserMapSql.put(MapSqlSetting.IsIncludeNull, true);
 		long id3=mapSuid.insertAndReturnId(inserMapSql);
 		Logger.info(id3);
+		} catch (Exception e) {
+			Logger.error(e.getMessage(),e);
+		}
 	}
 
 }

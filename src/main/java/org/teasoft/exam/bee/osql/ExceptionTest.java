@@ -41,11 +41,13 @@ import org.teasoft.bee.osql.transaction.Transaction;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.exam.bee.osql.entity.TestUser;
 import org.teasoft.honey.distribution.GenIdFactory;
+import org.teasoft.honey.logging.Jdk14LoggingImpl;
 import org.teasoft.honey.osql.chain.SelectImpl;
 import org.teasoft.honey.osql.chain.UpdateImpl;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.CustomSql;
+import org.teasoft.honey.osql.core.ExceptionHelper;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.core.SessionFactory;
@@ -90,6 +92,14 @@ public class ExceptionTest {
 		test19();
 		
 		test20();
+		
+		Jdk14LoggingImpl jdk14LoggingImpl=new Jdk14LoggingImpl("test");
+		jdk14LoggingImpl.warn("test Jdk14LoggingImpl",new Throwable("test Jdk14LoggingImpl"));
+		jdk14LoggingImpl.error("test Jdk14LoggingImpl",new Throwable("test Jdk14LoggingImpl"));
+		
+		ExceptionHelper.convert(new IllegalAccessException());
+		ExceptionHelper.convert(new InstantiationException());
+		ExceptionHelper.convert(new Exception());
 	}
 
 	public static void test1() {

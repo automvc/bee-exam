@@ -19,12 +19,12 @@ import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.SuidRich;
 //import org.teasoft.exam.bee.osql.entity.LeafAlloc;
 import org.teasoft.exam.bee.osql.entity.Orders;
-import org.teasoft.exam.bee.osql.entity.TestUser;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.HoneyConfig;
+import org.teasoft.honey.osql.core.HoneyUtil;
 import org.teasoft.honey.osql.core.Logger;
 
 /**
@@ -211,7 +211,7 @@ public class SuidRichExam {
 			List<Orders> selectSomeField = suidRich.select(exampleField, "name,total"); //select Some Field
 			Logger.info(selectSomeField.size() + "");
 
-			//		LeafAlloc leafAlloc=new LeafAlloc();
+			//		LeafAlloc3 leafAlloc=new LeafAlloc3();
 			//		suidRich.select(leafAlloc, "maxId");  //check the selectFields
 
 			Orders ordersForString = new Orders();
@@ -323,19 +323,20 @@ public class SuidRichExam {
 			}
 
 			suidRich.beginSameConnection();
-			Orders orders11 = new Orders();
-
-			orders11.setUserid("bee");
-
-			Logger.info("=====================================");
-			Condition condition_add_forUpdate = new ConditionImpl();
-			condition_add_forUpdate.op("id", Op.eq, 100003)
- //		    .start(1).size(300)    //oracle have exception, when use "for update"
-			.size(300).forUpdate(); // 用for update锁住某行记录
-			List<Orders> list11 = suidRich.select(orders11, condition_add_forUpdate); //SQL SERVER :  只有 DECLARE CURSOR 才允许使用 FOR UPDATE 子句。
-			for (int i = 0; i < list11.size(); i++) {
-				Logger.info(list11.get(i).toString());
- //			    suidRich.update(list11.get(i));  //test 
+			
+			if( !(HoneyUtil.isSQLite() || HoneyUtil.isSqlServer()) ) {
+				Orders orders11 = new Orders();
+				orders11.setUserid("bee");
+				Logger.info("=====================================");
+				Condition condition_add_forUpdate = new ConditionImpl();
+				condition_add_forUpdate.op("id", Op.eq, 100003)
+	 //		    .start(1).size(300)    //oracle have exception, when use "for update"
+				.size(300).forUpdate(); // 用for update锁住某行记录
+				List<Orders> list11 = suidRich.select(orders11, condition_add_forUpdate); //SQL SERVER :  只有 DECLARE CURSOR 才允许使用 FOR UPDATE 子句。
+				for (int i = 0; i < list11.size(); i++) {
+					Logger.info(list11.get(i).toString());
+	 //			    suidRich.update(list11.get(i));  //test 
+				}
 			}
 
 			Orders orders12 = new Orders();

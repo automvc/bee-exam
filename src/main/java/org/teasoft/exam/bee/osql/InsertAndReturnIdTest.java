@@ -9,6 +9,7 @@ package org.teasoft.exam.bee.osql;
 import java.math.BigDecimal;
 
 import org.teasoft.bee.osql.BeeException;
+import org.teasoft.bee.osql.IncludeType;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
@@ -29,8 +30,12 @@ public class InsertAndReturnIdTest {
 		return suid;
 	}
 
-	public static void setSuidRich(Suid suid) {
+	public static void setSuid(Suid suid) {
 		InsertAndReturnIdTest.suid = suid;
+	}
+	
+	public static void setSuidRich(SuidRich suidRich) {
+		InsertAndReturnIdTest.suidRich = suidRich;
 	}
 
 	public static void main(String[] args) {
@@ -68,6 +73,9 @@ public class InsertAndReturnIdTest {
 			long id2 = suid.insertAndReturnId(orders1);
 			Logger.info("InsertAndReturnId  : " + id2);
 			Logger.info("------------------------getId : " + orders1.getId());
+			
+//			suidRich.setDynamicParameter("test", "11");
+			suidRich.insertAndReturnId(orders1,IncludeType.INCLUDE_EMPTY);
 
 		} catch (BeeException e) {
 			Logger.error("In InsertAndReturnIdTest (BeeException):" + e.getMessage());

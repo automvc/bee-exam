@@ -45,11 +45,11 @@ public class UpdateSetExam {
 		entity=new LeafAlloc();
 //		entity.setBizTag("bee");
 		
-		Condition conditionSetAdd=new ConditionImpl();
-		conditionSetAdd.setAdd("maxId", "step");
-		conditionSetAdd.op("bizTag", Op.in,"1,2");
-		int setAddNum=suidRich.updateBy(entity, "bizTag",conditionSetAdd);
-		Logger.info("test setAdd , update num: "+setAddNum);
+//		Condition conditionSetAdd=new ConditionImpl();
+//		conditionSetAdd.setAdd("maxId", "step");
+//		conditionSetAdd.op("bizTag", Op.in,"1,2");
+//		int setAddNum=suidRich.updateBy(entity, "bizTag",conditionSetAdd);
+//		Logger.info("test setAdd , update num: "+setAddNum);
 		
 		System.err.println("------------------------------------------");
 		
@@ -62,7 +62,7 @@ public class UpdateSetExam {
 		
 		entity=new LeafAlloc();
 		entity.setBizTag("test");
-		entity=suidRich.selectOne(entity);
+		entity=suidRich.selectOne(entity); //fixed Sql Server :不支持从 timestamp 到 TIMESTAMP 的转换。
 		
 		entity.setUpdateTime(null);//设置为null可以不处理
 		entity.setDescription(null);
@@ -124,10 +124,10 @@ public class UpdateSetExam {
 		
 		
 		} catch (BeeException e) {
-			Logger.error("In UpdateSetExam (BeeException):"+e.getMessage());
+			Logger.error("In UpdateSetExam (BeeException):"+e.getMessage(),e);
 			e.printStackTrace();
 		}catch (Exception e) {
-			Logger.error("In UpdateSetExam (Exception):"+e.getMessage());
+			Logger.error("In UpdateSetExam (Exception):"+e.getMessage(),e);
 			e.printStackTrace();
 		}
 	}

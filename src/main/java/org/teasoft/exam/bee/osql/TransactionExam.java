@@ -1,7 +1,6 @@
 package org.teasoft.exam.bee.osql;
 
 import java.math.BigDecimal;
-import java.sql.Timestamp;
 import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
@@ -17,10 +16,9 @@ import org.teasoft.exam.bee.osql.entity.TestUser;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
+import org.teasoft.honey.osql.core.HoneyUtil;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.core.SessionFactory;
-import org.teasoft.honey.osql.type.TimestampTypeHandler;
-import org.teasoft.honey.osql.type.TypeHandlerRegistry;
 import org.teasoft.honey.osql.util.DateUtil;
 
 /**
@@ -33,6 +31,7 @@ public class TransactionExam {
 	
 	public static void main(String[] args) {
 		test();
+		testRollback(false);
 	}
 	public static void test() {
 		Transaction transaction=SessionFactory.getTransaction();
@@ -70,19 +69,19 @@ public class TransactionExam {
 			
 			
 			transaction.begin();
-			Orders orders11 = new Orders();
-
-			orders11.setUserid("bee");
-
-			Condition condition_add_forUpdate = new ConditionImpl();
-			condition_add_forUpdate
-			.op("id", Op.eq,100003)
-			.forUpdate();     // 用for update锁住某行记录
-			List<Orders> list11 = suid.select(orders11, condition_add_forUpdate);
-			for (int i = 0; i < list11.size(); i++) {
-				Logger.info(list11.get(i).toString());
-			}
 			
+			if( !(HoneyUtil.isSQLite() || HoneyUtil.isSqlServer()) ) {
+				Orders orders11 = new Orders();
+				orders11.setUserid("bee");
+				Condition condition_add_forUpdate = new ConditionImpl();
+				condition_add_forUpdate
+				.op("id", Op.eq,100003)
+				.forUpdate();     // 用for update锁住某行记录
+				List<Orders> list11 = suid.select(orders11, condition_add_forUpdate);
+				for (int i = 0; i < list11.size(); i++) {
+					Logger.info(list11.get(i).toString());
+				}
+			}
 			
 			Logger.info("---------------locking the record!");
 			Logger.info("doing...");  //可添加更改操作等.
@@ -104,13 +103,10 @@ public class TransactionExam {
 		exampleField.setUserid("bee");
 //      select some fields
 		List<Orders> selectSomeField=suidRich.select(exampleField, "name,total");
-		
-		
-		testRollback();
 	}
 	
 	
-	private static void testRollback() {
+	public static void testRollback(boolean isThrowException) {
 		LeafAlloc result = null;
 		Transaction transaction = SessionFactory.getTransaction();
 		try {
@@ -124,13 +120,20 @@ public class TransactionExam {
 			leafAlloc.setBizTag("bee");
 			Condition condition = new ConditionImpl();
 			condition.setAdd("maxId", "step");
-			String d=null;
-			condition.set("updateTime", d);
-//		    suidRich.update(leafAlloc, "maxId", condition);
-			suidRich.update(leafAlloc, condition); //v1.8
-			
-			condition.set("updateTime", DateUtil.currentDate()); //直接设置字符串可以.
-			suidRich.update(leafAlloc, condition); 
+			if(!HoneyUtil.isSqlServer()) {
+				String d=null;
+				condition.set("updateTime", d);  //updateTime是Timestamp类型,即使设置为null,Sql Server也不允许
+	//		    suidRich.update(leafAlloc, "maxId", condition);
+				suidRich.update(leafAlloc, condition); //v1.8
+			}
+//			if (!HoneyUtil.isOracle()) {
+			if (HoneyUtil.isMysql()) {
+				condition.set("updateTime", DateUtil.currentDate()); //直接设置字符串可以.
+				suidRich.update(leafAlloc, condition);
+//				update leaf_alloc set max_id=max_id+step,update_time=null,update_time='2022-03-09 11:54:51' where biz_tag='bee'
+//				Caused by: java.sql.SQLSyntaxErrorException: ORA-00957: 重复的列名
+//				at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:439)
+			}
 			
 			System.out.println("+++++++++++++++++++++++++++++++++++++++++++");
 
@@ -145,9 +148,14 @@ public class TransactionExam {
 			leafAlloc2.setBizTag("bee");
 			leafAlloc2.setUpdateTime(DateUtil.currentTimestamp());
 			int a=suidRich.updateBy(leafAlloc2,"BizTag");
-			System.err.println(a);
+//			System.err.println(a);
+			Logger.info(a);
 			List list2=suidRich.select(new LeafAlloc(),0,10); //从0开始算. offset是偏移量
 			Printer.printList(list2);
+			
+			if(isThrowException) {
+				int error=1/0;
+			}
 
 			transaction.commit();
 		} catch (Exception e) {

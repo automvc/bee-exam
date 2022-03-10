@@ -49,14 +49,14 @@ public class DynamicTableExam {
 		suid.setDynamicParameter("month", "_202007").select(orders);
 		
 		
-//		@Entity("LeafAlloc${version}")
+//		@Entity("LeafAlloc3${version}")
 		
 		LeafAlloc leafAlloc=new LeafAlloc();
 		List<LeafAlloc> list1=suid.setDynamicParameter("version", "2").select(leafAlloc);
 		
 //		
 //		suid.setDynamicParameter("version", "2");
-//		List<LeafAlloc> list2=suid.select(leafAlloc);
+//		List<LeafAlloc3> list2=suid.select(leafAlloc);
 		
 		System.out.println("----------------");
 		suidRich.setDynamicParameter("version", "2");

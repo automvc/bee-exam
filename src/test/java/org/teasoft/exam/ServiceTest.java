@@ -9,6 +9,7 @@ package org.teasoft.exam;
 import org.junit.Assert;
 import org.junit.Test;
 import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.ConditionExam;
 import org.teasoft.exam.bee.osql.DynamicTableExam;
 import org.teasoft.exam.bee.osql.InsertAndReturnIdTest;
@@ -68,10 +69,13 @@ public class ServiceTest {
 			DynamicTableExam.setSuid(new ObjSQLServiceImpl());
 			DynamicTableExam.test();
 			
-			DynamicTableExam.setSuid(new ObjSQLServiceImpl());
+			SuidRich suidRichService=new ObjSQLRichServiceImpl();
+			suidRichService.setDynamicParameter("month", "_202007");
+//			DynamicTableExam.setSuid(new ObjSQLServiceImpl());
+			DynamicTableExam.setSuid(suidRichService);
 			DynamicTableExam.test();
 			
-			InsertAndReturnIdTest.setSuidRich(new ObjSQLServiceImpl());
+			InsertAndReturnIdTest.setSuid(new ObjSQLServiceImpl());
 			InsertAndReturnIdTest.test();
 			InsertAndReturnIdTest.setSuidRich(new ObjSQLRichServiceImpl());
 			InsertAndReturnIdTest.test();

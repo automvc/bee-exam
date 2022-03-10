@@ -13,7 +13,6 @@ import org.teasoft.bee.osql.DatabaseConst;
 import org.teasoft.bee.osql.MapSqlKey;
 import org.teasoft.bee.osql.MapSqlSetting;
 import org.teasoft.bee.osql.annotation.JoinType;
-import org.teasoft.bee.osql.search.Operator;
 import org.teasoft.exam.bee.osql.CallExam;
 import org.teasoft.exam.bee.osql.HoneyConfigReset;
 import org.teasoft.exam.bee.osql.InsertAndReturnIdTest;
@@ -21,6 +20,7 @@ import org.teasoft.exam.bee.osql.KotlinTest;
 import org.teasoft.exam.bee.osql.RedisCacheExpireTest;
 import org.teasoft.exam.bee.osql.RedisCacheTest;
 import org.teasoft.exam.bee.osql.SameConnTest;
+import org.teasoft.exam.bee.osql.TransactionExam;
 import org.teasoft.exam.bee.osql.annotation.JustFetchExam;
 import org.teasoft.exam.bee.osql.autogen.GenBeanExam;
 import org.teasoft.exam.bee.osql.autogen.GenFilesExam;
@@ -32,9 +32,6 @@ import org.teasoft.exam.bee.test.CharTest;
 import org.teasoft.exam.bee.test.TestCache;
 import org.teasoft.exam.bee.test.TestMoreDs;
 import org.teasoft.exam.bee.test.TestNormal;
-import org.teasoft.honey.logging.Jdk14LoggingImpl;
-import org.teasoft.honey.logging.NoLogging;
-import org.teasoft.honey.logging.SystemLogger;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyUtil;
@@ -91,42 +88,9 @@ public class BeeTest {
 			//multi-thread test
 //			Test4.test();
 			
-			
-			NoLogging noLogging=new NoLogging();
-			noLogging.info("test NoLogging");
-			noLogging.debug("test NoLogging");
-			noLogging.trace("test NoLogging");
-			noLogging.warn("test NoLogging");
-			noLogging.error("test NoLogging");
-			noLogging.warn("test NoLogging",new Throwable("test NoLogging"));
-			noLogging.error("test NoLogging",new Throwable("test NoLogging"));
-			
-			SystemLogger systemLogger=new SystemLogger();
-			systemLogger.info("test SystemLogger");
-			systemLogger.debug("test SystemLogger");
-			systemLogger.trace("test SystemLogger");
-			systemLogger.warn("test SystemLogger");
-			systemLogger.error("test SystemLogger");
-			systemLogger.warn("test SystemLogger",new Throwable("test SystemLogger"));
-			systemLogger.error("test SystemLogger",new Throwable("test SystemLogger"));
-			
-			Jdk14LoggingImpl jdk14LoggingImpl=new Jdk14LoggingImpl("test");
-			jdk14LoggingImpl.info("test Jdk14LoggingImpl");
-			jdk14LoggingImpl.debug("test Jdk14LoggingImpl");
-			jdk14LoggingImpl.trace("test Jdk14LoggingImpl");
-			jdk14LoggingImpl.warn("test Jdk14LoggingImpl");
-			jdk14LoggingImpl.error("test Jdk14LoggingImpl");
-			jdk14LoggingImpl.warn("test Jdk14LoggingImpl",new Throwable("test Jdk14LoggingImpl"));
-			jdk14LoggingImpl.error("test Jdk14LoggingImpl",new Throwable("test Jdk14LoggingImpl"));
-			
-			Operator operator=Operator.like;
-			jdk14LoggingImpl.info(operator.getOperator());
 			BeeFactory beeFactory=BeeFactory.getInstance();
 			beeFactory.setDataSource(null);
 			beeFactory.setTransaction(null);
-			
-			KotlinTest.test();
-			HoneyConfigReset.test(); //just run one time
 			
 			//V1.11
 			InsertAndReturnIdWithPK.test();
@@ -137,8 +101,15 @@ public class BeeTest {
 			CharTest.test();
 			AnnoTest.test();
 			
+			KotlinTest.test();
+			
+			TransactionExam.testRollback(true); //ThrowException and rollback
+			
+			HoneyConfigReset.test(); //just run one time, put in last.
 			result=true;
 		} catch (Exception e) {
+			e.printStackTrace();
+			Logger.error(e.getMessage(), e);
 			result=false;
 		}finally {
 			Assert.assertEquals(result,true);

@@ -7,6 +7,7 @@
 package org.teasoft.honey.osql.util;
 
 import org.junit.Test;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.util.ObjectUtils;
 
 /**
@@ -18,15 +19,15 @@ public class ObjectUtilsTest {
 	@Test
 	public void test() {
 		boolean f0=false;
-		System.err.println(ObjectUtils.isTrue(f0)); 
+		Logger.info(ObjectUtils.isTrue(f0)+""); 
 		boolean f=true;
-		System.err.println(ObjectUtils.isTrue(f));
+		Logger.info(ObjectUtils.isTrue(f)+"");
 		Boolean f2=null;
-		System.err.println(ObjectUtils.isTrue(f2));
+		Logger.info(ObjectUtils.isTrue(f2)+"");
 		Boolean f3=false;
-		System.err.println(ObjectUtils.isTrue(f3));
+		Logger.info(ObjectUtils.isTrue(f3)+"");
 		Boolean f4=true;
-		System.err.println(ObjectUtils.isTrue(f4));
+		Logger.info(ObjectUtils.isTrue(f4)+"");
 	}
 
 }

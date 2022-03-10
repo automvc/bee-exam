@@ -34,6 +34,7 @@ import org.teasoft.exam.bee.osql.UseJson;
 import org.teasoft.exam.bee.osql.chain.ChainSelectExam;
 import org.teasoft.exam.bee.osql.chain.ChainUpdateExam;
 import org.teasoft.exam.bee.osql.chain.UnionSelectExam;
+import org.teasoft.exam.bee.osql.special.ddl.DdlTest;
 import org.teasoft.exam.comm.OrdinaryTest;
 import org.teasoft.exam.comm.TestHelper;
 import org.teasoft.exam.comm.TestPrepare;
@@ -158,11 +159,14 @@ public class TestNormal {
 		
 		
 		runTest(SearchExam.class);
+		
+		runTest(DdlTest.class);
+		
 //		runTest(KotlinTest.class);
 //		runTest(HoneyConfigReset.class);
 		
 	   } catch (BeeException e) {
-		   Logger.error(e.getMessage());
+//		   Logger.error(e.getMessage(),e);
 		   e.printStackTrace();
 		   throw new BeeException();
 	   }catch (Exception e) {

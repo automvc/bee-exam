@@ -12,6 +12,8 @@ import org.teasoft.bee.osql.DatabaseConst;
 import org.teasoft.bee.osql.PreparedSql;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.HoneyConfig;
+import org.teasoft.honey.osql.core.HoneyUtil;
+import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar
@@ -57,6 +59,22 @@ public class ClearAndInitTestTable {
 //			Logger.info("deleteLeafNum2: " + deleteLeafNum2); //TRUNCATE 没有返回删除的行
 		}  //else
 */		
+		
+		if(HoneyUtil.isMysql()) {
+			String sql1=""
+			+"DROP TABLE IF EXISTS `test_primary_key`; ";
+			preparedSql.modify(sql1);
+			String sql2=""
+			+" CREATE TABLE `test_primary_key` ("
+			+"  `myid` bigint(20) NOT NULL AUTO_INCREMENT,"
+			+" `name` varchar(100) COLLATE utf8_bin DEFAULT NULL,"
+			+"  `remark` varchar(100) COLLATE utf8_bin DEFAULT NULL,"
+			+"  `remark2` varchar(100) COLLATE utf8_bin DEFAULT NULL,"
+			+"  PRIMARY KEY (`myid`)"
+			+" ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;";
+			
+			preparedSql.modify(sql2);
+		}
 		
 		//通过Javabean创建表
 		CreateTableWithJavabean.test();
@@ -104,19 +122,26 @@ public class ClearAndInitTestTable {
 		preparedSql.modify(insertUser2); //v1.9
 		
 		
-		String insertLeaf1="INSERT INTO leaf_alloc VALUES ('456537470402562', 'test', '100', '100', 'test segment', '2020-07-04 22:42:09', '1');";
-		String insertLeaf2="INSERT INTO leaf_alloc VALUES ('456537470402563', 'order', '100', '100', 'order segment', '2020-07-04 22:42:10', '1');";
-		String insertLeaf3="INSERT INTO leaf_alloc VALUES ('456537470402564', 'bee', '100', '100', 'order segment', '2020-09-19 19:05:10', '1');";
+		String insertLeaf1="INSERT INTO leaf_alloc3 VALUES ('456537470402562', 'test', '100', '100', 'test segment', '2020-07-04 22:42:09', '1');";
+		String insertLeaf2="INSERT INTO leaf_alloc3 VALUES ('456537470402563', 'order', '100', '100', 'order segment', '2020-07-04 22:42:10', '1');";
+		String insertLeaf3="INSERT INTO leaf_alloc3 VALUES ('456537470402564', 'bee', '100', '100', 'order segment', '2020-09-19 19:05:10', '1');";
 		preparedSql.modify(insertLeaf1);
 		preparedSql.modify(insertLeaf2);
 		preparedSql.modify(insertLeaf3);
 		
-		preparedSql.modify(insertLeaf1.replace(" leaf_alloc", " leaf_alloc2"));
-		preparedSql.modify(insertLeaf2.replace(" leaf_alloc", " leaf_alloc2"));
-		preparedSql.modify(insertLeaf3.replace(" leaf_alloc", " leaf_alloc2"));
+		preparedSql.modify(insertLeaf1.replace(" leaf_alloc3", " leaf_alloc2"));
+		preparedSql.modify(insertLeaf2.replace(" leaf_alloc3", " leaf_alloc2"));
+		preparedSql.modify(insertLeaf3.replace(" leaf_alloc3", " leaf_alloc2"));
+		
+		String insertLeaf11="INSERT INTO leaf_alloc(id,biz_tag,max_id,step,description,version) VALUES ('456537470402562', 'test', '100', '100', 'test segment', '1');";
+		String insertLeaf12="INSERT INTO leaf_alloc(id,biz_tag,max_id,step,description,version) VALUES ('456537470402563', 'order', '100', '100', 'test segment', '1');";
+		String insertLeaf13="INSERT INTO leaf_alloc(id,biz_tag,max_id,step,description,version) VALUES ('456537470402564', 'bee', '100', '100', 'test segment', '1');";
+		preparedSql.modify(insertLeaf11);
+		preparedSql.modify(insertLeaf12);
+		preparedSql.modify(insertLeaf13);
 		
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			Logger.error(e.getMessage(),e);
 			e.printStackTrace();
 		}
 	}

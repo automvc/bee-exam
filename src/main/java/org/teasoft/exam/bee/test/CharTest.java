@@ -12,10 +12,11 @@ import org.teasoft.bee.osql.MoreTable;
 import org.teasoft.bee.osql.PreparedSql;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
-import org.teasoft.bee.osql.type.TypeHandlerRegistry;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.type.CharTypeHandler;
+import org.teasoft.honey.osql.type.TypeHandlerRegistry;
 
 /**
  * @author Kingstar
@@ -57,11 +58,11 @@ public class CharTest {
 		Printer.printList(list);
 		
 		String json=p.selectJson(sql);
-		System.err.println(json);
+		Logger.info(json);
 		
 		SuidRich suidRich=BeeFactoryHelper.getSuidRich();
 		String json2=suidRich.selectJson(new Noid());//会将原生类型的默认值转到where条件.
-		System.err.println(json2);
+		Logger.info(json2);
 		
 		String sql2="select uuid,name,num,remark,ch from noid";
 //		SqlLib SqlLib=new SqlLib();

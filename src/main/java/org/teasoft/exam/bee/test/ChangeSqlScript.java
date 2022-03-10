@@ -41,7 +41,7 @@ public class ChangeSqlScript {
 	public static void test()  throws JsonProcessingException,IOException{
 		
 		HoneyConfig honeyConfig=HoneyConfig.getHoneyConfig();
-		honeyConfig.setUrl("jdbc:mysql://localhost:3306/teasoft0?characterEncoding=UTF-8");
+		honeyConfig.setUrl("jdbc:mysql://localhost:3306/teasoft0?characterEncoding=UTF-8&useSSL=false");
 		honeyConfig.setUsername("root");
 		honeyConfig.setPassword("123456");
 //		List<ColumnBean> list=ColumnUtil.getColumnList("tableinfo");

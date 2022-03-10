@@ -27,7 +27,7 @@ public class InitDsUtil {
 
 			DruidDataSource dataSource1;
 			dataSource1 = new DruidDataSource();
-			dataSource1.setUrl("jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8");
+			dataSource1.setUrl("jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8&useSSL=false");
 			dataSource1.setUsername("root");
 			dataSource1.setPassword("123456");
 			dataSource1.init();
@@ -41,7 +41,7 @@ public class InitDsUtil {
 
 			DruidDataSource dataSource3;
 			dataSource3 = new DruidDataSource();
-			dataSource3.setUrl("jdbc:mysql://localhost:3306/pro?characterEncoding=UTF-8");
+			dataSource3.setUrl("jdbc:mysql://localhost:3306/pro?characterEncoding=UTF-8&useSSL=false");
 			dataSource3.setUsername("root");
 			dataSource3.setPassword("123456");
 			dataSource3.init();

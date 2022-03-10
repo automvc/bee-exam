@@ -17,6 +17,7 @@ import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.chain.SelectImpl;
 import org.teasoft.honey.osql.chain.UnionSelectImpl;
 import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.HoneyUtil;
 import org.teasoft.honey.osql.core.Logger;
 
 /**
@@ -68,12 +69,14 @@ public class UnionSelectExam {
 		.op("userid", Op.eq, "bee")
 		;
 		unionSelect.union(select1, select2);
-        List<String[]> list2= preparedSql.select(unionSelect.toSQL());
-        Printer.print(list2);
-        
-		unionSelect.unionAll(select1, select2);
-        List<String[]> list3= preparedSql.select(unionSelect.toSQL());
-        Printer.print(list3);
+		if(!HoneyUtil.isSQLite()) {
+	        List<String[]> list2= preparedSql.select(unionSelect.toSQL());
+	        Printer.print(list2);
+			unionSelect.unionAll(select1, select2);
+	        List<String[]> list3= preparedSql.select(unionSelect.toSQL());
+	        Printer.print(list3);
+		}
+
 	  } catch (BeeException e) {
 		Logger.error(e.getMessage());
 		e.printStackTrace();

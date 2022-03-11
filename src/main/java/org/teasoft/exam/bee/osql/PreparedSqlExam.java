@@ -1,5 +1,6 @@
 package org.teasoft.exam.bee.osql;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,6 +10,7 @@ import org.teasoft.bee.osql.PreparedSql;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.CustomSql;
+import org.teasoft.honey.osql.core.HoneyContext;
 import org.teasoft.honey.osql.core.Logger;
 
 public class PreparedSqlExam {
@@ -98,6 +100,39 @@ public class PreparedSqlExam {
 					Logger.info(str[j]);
 				}
 			}
+			
+			String sql9="INSERT INTO orders(id,name,userid) VALUES (#{id},#{name},#{userid});";
+			final String USERID="userid";
+			final String NAME="name";
+			final String ID="id";
+			Map<String,Object> insertMap1=new HashMap<>();
+			insertMap1.put(USERID, "1001");
+			insertMap1.put(NAME, "bee");
+			insertMap1.put(ID, 121L);
+			
+			Map<String,Object> insertMap2=new HashMap<>();
+			insertMap2.put(USERID, "1001");
+			insertMap2.put(NAME, "bee");
+			insertMap2.put(ID, 122L);
+			
+			Map<String,Object> insertMap3=new HashMap<>();
+			insertMap3.put(USERID, "1001");
+			insertMap3.put(NAME, "bee");
+			insertMap3.put(ID, 123L);
+			
+			List<Map<String, Object>> parameterMapList=new ArrayList<>();
+			parameterMapList.add(insertMap1);
+			parameterMapList.add(insertMap2);
+			parameterMapList.add(insertMap3);
+			
+//			preparedSql.modify("delete from orders where id=123 or id=122 or 123");
+			preparedSql.modify("delete from orders where id=121 or id=122 or id=123");
+			preparedSql.insert(sql9, parameterMapList,2);
+			preparedSql.modify("delete from orders where id=121 or id=122 or id=123");
+			preparedSql.insert(sql9, parameterMapList);
+			
+//			HoneyContext.test();
+			
 			
 		} catch (BeeException e) {
 			Logger.error("In PreparedSqlExam (BeeException):"+e.getMessage());

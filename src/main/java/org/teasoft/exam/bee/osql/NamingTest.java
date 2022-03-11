@@ -36,15 +36,15 @@ public class NamingTest {
 
 		NameTranslate originalName = new OriginalName();
 //		BeeFactory.getHoneyFactory().setNameTranslate(originalName);
-		NameTranslateHandle.setNameTranslat(originalName);
+		NameTranslateHandle.setNameTranslate(originalName);
 		suid.select(orders1); //select all
 
 		NameTranslate upperCaseUnderScoreAndCamelName = new UpperCaseUnderScoreAndCamelName();
 //		BeeFactory.getHoneyFactory().setNameTranslate(upperCaseUnderScoreAndCamelName);
-		NameTranslateHandle.setNameTranslat(upperCaseUnderScoreAndCamelName);
+		NameTranslateHandle.setNameTranslate(upperCaseUnderScoreAndCamelName);
 		suid.select(orders1); //select all
 		
-		NameTranslateHandle.setNameTranslat(oldNameTranslate); 
+		NameTranslateHandle.setNameTranslate(oldNameTranslate); 
 	}
 
 }

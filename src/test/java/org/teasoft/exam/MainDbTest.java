@@ -89,10 +89,23 @@ public class MainDbTest {
 			honeyConfig.setPassword("123456");
 			TestNormal.test();
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Microsoft SQL Server end");
+			
+//			System.err.println();
+//			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Cassandra start");
+//			honeyConfig.setUrl("jdbc:cassandra://127.0.0.1:9042");
+//			honeyConfig.setUsername("");
+//			honeyConfig.setPassword("");
+//			
+//			honeyConfig.setSchemaName("store");
+//			
+//			TestNormal.test();
+//			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Cassandra end");
+			
 
 			honeyConfig.setUrl(oldUrl);
 			honeyConfig.setUsername(oldUsername);
 			honeyConfig.setPassword(oldPw);
+			honeyConfig.setSchemaName("");
 
 			HoneyContext.setConfigRefresh(true);
 

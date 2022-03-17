@@ -12,7 +12,9 @@ import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.HoneyUtil;
 import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.osql.core.NameTranslateHandle;
 
 /**
  * @author Kingstar
@@ -35,9 +37,13 @@ public class DeleteBy {
 	}
 
 	public static void test() {
+		
+		if(HoneyUtil.isCassandra()) {
+			NameTranslateHandle.setSchemaName("store");
+		}	
 
 		try {
-			suidRich.deleteById(Orders.class, 100021);
+//			suidRich.deleteById(Orders.class, 100021);
 			suidRich.deleteById(Orders.class, 100022L);
 			suidRich.deleteById(Orders.class, "100023");
 			

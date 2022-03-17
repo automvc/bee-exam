@@ -6,7 +6,7 @@
 <!-- 	<version>1.8.99</version> -->
 <!-- 	<version>1.9.5</version> -->
 <!-- 	<version>1.9.8</version> -->
-	<version>1.11.0.3.8.SNAPSHOT</version>
+	<version>1.11.0.3.12.SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<properties>
@@ -204,6 +204,26 @@
   <artifactId>aliyun-java-sdk-core</artifactId>
   <version>4.5.20</version>
 </dependency>
+
+
+      <!--  <dependency>
+            <groupId>org.apache-extras.cassandra-jdbc</groupId>
+            <artifactId>cassandra-jdbc</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cassandra</groupId>
+            <artifactId>cassandra-clientutil</artifactId>
+            <version>1.2.5</version>
+        </dependency> -->
+
+		<dependency>
+			<groupId>com.micromux</groupId>
+			<artifactId>cassandra-jdbc</artifactId>
+			<version>6</version>
+			<scope>system</scope>
+			<systemPath>G:/download/cassandra-twig-jdbc-3.0.1.jar</systemPath>
+		</dependency>
 
 	</dependencies>
 

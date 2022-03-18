@@ -127,9 +127,9 @@ public class PreparedSqlExam {
 			
 //			preparedSql.modify("delete from orders where id=123 or id=122 or 123");
 			preparedSql.modify("delete from orders where id=121 or id=122 or id=123");
-			preparedSql.insert(sql9, parameterMapList,2);
+			preparedSql.insertBatch(sql9, parameterMapList,2);
 			preparedSql.modify("delete from orders where id=121 or id=122 or id=123");
-			preparedSql.insert(sql9, parameterMapList);
+			preparedSql.insertBatch(sql9, parameterMapList);
 			
 //			HoneyContext.test();
 			

@@ -40,7 +40,7 @@ public class ConditionThreadTest extends Thread {
 
 			Condition condition = new ConditionImpl();
 			condition
-			.op("userid", Op.in, "Bee")
+			.op("userid", Op.in, "Bee,Bee2")
 			.op("createtime", Op.ge, "2020-03-01")
             .op("createtime", Op.le, "2020-03-03");
 

@@ -6,7 +6,7 @@
 <!-- 	<version>1.8.99</version> -->
 <!-- 	<version>1.9.5</version> -->
 <!-- 	<version>1.9.8</version> -->
-	<version>1.11.0.3.12.SNAPSHOT</version>
+	<version>1.11.0.3.20-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<properties>
@@ -18,7 +18,7 @@
 <!-- 		<bee.version>1.8.99</bee.version> -->
 <!-- 		<bee.version>1.9.5</bee.version> -->
 <!-- 		<bee.version>1.9.8</bee.version> -->
-		<bee.version>1.11.0.3.12.SNAPSHOT</bee.version>
+		<bee.version>1.11.0.3.20-SNAPSHOT</bee.version>
 	</properties>
 
 	<dependencies>
@@ -41,6 +41,22 @@
 			<artifactId>bee-ext</artifactId>
 			<version>${bee.version}</version>
 		</dependency>
+		
+		
+		
+<!-- 		<dependency>
+			<groupId>org.teasoft</groupId>
+			<artifactId>honey-enterprise</artifactId>
+			<version>${bee.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.teasoft</groupId>
+			<artifactId>bee-ext-enterprise</artifactId>
+			<version>${bee.version}</version>
+			<scope>provided</scope>
+		</dependency> -->
 		
 
 		<!-- Mysql config just for demo.You need change it to the real database 

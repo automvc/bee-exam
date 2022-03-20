@@ -3,8 +3,6 @@ package org.teasoft.exam.bee.osql.entity;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-import org.teasoft.bee.osql.annotation.Createtime;
-
 //import org.teasoft.bee.osql.annotation.Createtime;
 
 /**
@@ -21,7 +19,7 @@ public class Orders implements Serializable {
 	private String userid;
 	private String name;
 	private BigDecimal total;
-	@Createtime
+//	@Createtime
 	private String createtime;
 	private String remark;
 	private String sequence;

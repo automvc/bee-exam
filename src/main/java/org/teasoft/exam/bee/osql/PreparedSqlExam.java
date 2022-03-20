@@ -101,7 +101,7 @@ public class PreparedSqlExam {
 				}
 			}
 			
-			String sql9="INSERT INTO orders(id,name,userid) VALUES (#{id},#{name},#{userid});";
+			String sql9="INSERT INTO orders(id,name,userid) VALUES (#{id},#{name},#{userid})";
 			final String USERID="userid";
 			final String NAME="name";
 			final String ID="id";

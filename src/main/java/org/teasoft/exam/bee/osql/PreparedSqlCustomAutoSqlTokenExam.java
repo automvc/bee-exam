@@ -48,6 +48,7 @@ public class PreparedSqlCustomAutoSqlTokenExam {
 //			list.add(3);
 //			map.put("userid", list);
 			
+			selectNoPage(sqlIn, map);
 			select(sqlIn, map);
 			select(CustomSql.getCustomSql("example.autosql.inAndIsNotNull.one"), map); //the only if is notNull
 			select(CustomSql.getCustomSql("example.autosql.inAndIsNotNull.two"), map);//the first if is notNull,the second is null

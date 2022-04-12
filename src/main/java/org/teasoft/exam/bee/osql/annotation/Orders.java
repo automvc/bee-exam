@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 import org.teasoft.bee.osql.SuidType;
+import org.teasoft.bee.osql.annotation.Createtime;
 import org.teasoft.bee.osql.annotation.Datetime;
 
 /**
@@ -29,6 +30,7 @@ public class Orders implements Serializable {
 //	private String createtime="2021-02-10 14:30:02";
 //	@Datetime(override=true,suidType=SuidType.SELECT)
 	
+	@Createtime
 	private String createtime;
 	private String remark;
 	private String sequence;

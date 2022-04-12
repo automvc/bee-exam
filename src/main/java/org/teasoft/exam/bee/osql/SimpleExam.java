@@ -9,7 +9,7 @@ public class SimpleExam {
 	
 	public static void main(String[] args) {
 		Suid suid=BeeFactoryHelper.getSuid(); //1
-		
+//		Suid suid=new ObjSQL();
 		Orders orders1=new Orders();
 		orders1.setId(100001L);
 		orders1.setName("Bee(ORM Framework)");

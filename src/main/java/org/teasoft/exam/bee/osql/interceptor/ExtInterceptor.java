@@ -27,7 +27,7 @@ public class ExtInterceptor implements Interceptor{
 	}
 	
 	@Override
-	public Object beforePasreEntity(Object entityArray[],SuidType suidType) {
+	public Object[] beforePasreEntity(Object entityArray[],SuidType suidType) {
 		System.out.println("---(1)--beforePasreEntity------Ext---------------------");
 		setDataSourceOneTime(null); //内容触发
 		return entityArray;

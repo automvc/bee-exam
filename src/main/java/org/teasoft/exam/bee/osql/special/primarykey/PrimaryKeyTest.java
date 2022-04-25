@@ -58,6 +58,23 @@ public class PrimaryKeyTest {
 		
 		List<CustomId> list2=suid.select(noid);
 		Printer.printList(list2);
+		
+//		联合主键
+		Assignexam assignexam=new Assignexam();
+		
+		assignexam.setClassno("2001");
+		assignexam.setTerm("200101");
+		assignexam.setRemark("联合主键更新");
+		
+		suidRich.select(assignexam);
+		
+		suidRich.update(assignexam); //默认情况,主键用于where条件
+//		update assignexam set remark='联合主键更新' where classno='2001' and term='200101'
+		
+		suidRich.updateBy(assignexam,"classno,term");
+		
+//		suidRich.updateById(assignexam, null);
+		
 	}
 
 }

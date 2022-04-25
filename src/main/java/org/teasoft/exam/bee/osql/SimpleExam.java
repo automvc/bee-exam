@@ -14,6 +14,7 @@ public class SimpleExam {
 		orders1.setId(100001L);
 		orders1.setName("Bee(ORM Framework)");
 		
-		 suid.insert(orders1); //2
+//		 suid.insert(orders1); //2
+		suid.select(orders1);
 	}
 }

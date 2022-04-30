@@ -24,7 +24,7 @@ public class DdlTest {
 	}
 
 	public static void test() {
-		Ddl.createTable(new NoTypeHowDdl());
+		Ddl.createTable(new NoTypeHowDdl(),true);
 	}
 
 }

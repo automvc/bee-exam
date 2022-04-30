@@ -35,6 +35,7 @@ import org.teasoft.exam.bee.osql.UseJson;
 import org.teasoft.exam.bee.osql.chain.ChainSelectExam;
 import org.teasoft.exam.bee.osql.chain.ChainUpdateExam;
 import org.teasoft.exam.bee.osql.chain.UnionSelectExam;
+import org.teasoft.exam.bee.osql.dialect.MyFeatureTest;
 import org.teasoft.exam.bee.osql.special.ddl.DdlTest;
 import org.teasoft.exam.comm.OrdinaryTest;
 import org.teasoft.exam.comm.TestHelper;
@@ -152,6 +153,10 @@ public class TestNormal {
 //		runTest(SuidExam.class);
 		
 		runTest(OrdinaryTest.class);
+		
+		if (DatabaseConst.SQLSERVER.equalsIgnoreCase(DbName)) {
+		    runTest(MyFeatureTest.class);
+		}
 		
 //		runTest(ExceptionTest.class);
 //		

@@ -68,7 +68,7 @@ public class CreateTableWithJavabean {
 			
 			
 		} catch (Exception e) {
-			Logger.error("In CreateTableWithJavabean2 (Exception):" + e.getMessage());
+			Logger.error("In CreateTableWithJavabean3 (Exception):" + e.getMessage());
 			e.printStackTrace();
 		}
 	}

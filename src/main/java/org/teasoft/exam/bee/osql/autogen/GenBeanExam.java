@@ -47,7 +47,7 @@ public class GenBeanExam {
 			
 			config.setOverride(true); //是否覆盖原来的文件
 			
-			genBean.genSomeBeanFile("download");
+			genBean.genSomeBeanFile("orders");
 			
 			
 //			

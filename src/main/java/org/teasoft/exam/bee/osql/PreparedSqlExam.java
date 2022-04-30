@@ -10,7 +10,6 @@ import org.teasoft.bee.osql.PreparedSql;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.CustomSql;
-import org.teasoft.honey.osql.core.HoneyContext;
 import org.teasoft.honey.osql.core.Logger;
 
 public class PreparedSqlExam {

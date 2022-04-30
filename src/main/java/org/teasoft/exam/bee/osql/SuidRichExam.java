@@ -293,15 +293,16 @@ public class SuidRichExam {
 			suidRich.selectOrderBy(testInsertAndDeleteOrders, "id");
 			suidRich.selectOrderBy(testInsertAndDeleteOrders, "id,name", new OrderType[] { OrderType.ASC, OrderType.DESC });
 
-			
-			Logger.info("=====随机取一条数据==========================");
-			suidRich.selectOrderBy(testInsertAndDeleteOrders, "rand()");
-			
-			
-			Condition randCondition=BF.getCondition();
-			randCondition.orderBy("rand()");
-			randCondition.size(1);
-			suidRich.select(new Orders(), randCondition);
+			if (HoneyUtil.isMysql()) {
+				Logger.info("=====随机取一条数据==========================");
+				suidRich.selectOrderBy(testInsertAndDeleteOrders, "rand()");
+
+				Condition randCondition = BF.getCondition();
+				randCondition.orderBy("rand()");
+				randCondition.size(1);
+				suidRich.select(new Orders(), randCondition);
+
+			}
 			
 			testInsertAndDeleteOrders.setId(100021L);
 			suidRich.selectOne(testInsertAndDeleteOrders);

@@ -76,6 +76,7 @@ public class MainDbTest {
 
 			System.err.println();
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test PostgreSQL start");
+			honeyConfig.setDriverName("org.postgresql.Driver");
 			honeyConfig.setUrl("jdbc:postgresql://127.0.0.1:5432/bee");
 			honeyConfig.setUsername("Administrator");
 			honeyConfig.setPassword("");

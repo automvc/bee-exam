@@ -23,7 +23,7 @@ public class GenFilesExam {
 	
 	public static void test() {
 		
-		BeeInitPreLoadService.init();
+		BeeInitPreLoadService.init(); //V1.11 要使用,低于1.11可注释掉
 		
 		Map<String, String> map = new HashMap<>();
 //		map.put("entityName1", "Orderhistory");  //使用#{entityName?up1}可以首字母大写

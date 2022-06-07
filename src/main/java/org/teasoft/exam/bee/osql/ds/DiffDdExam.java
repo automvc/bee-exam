@@ -51,6 +51,10 @@ public class DiffDdExam {
 	
 	public static void test() {
 		
+//		      数据源,也可以通过XML方式配置
+//		   (二十二)ORM框架Bee,Spring配置多数据源实例
+//		   https://blog.csdn.net/abckingaa/article/details/120956130
+		
 			HoneyConfig.getHoneyConfig().multiDS_enable = true;
 			HoneyConfig.getHoneyConfig().multiDS_type = 2;
 			HoneyConfig.getHoneyConfig().multiDS_differentDbType=true;

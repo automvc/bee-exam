@@ -55,6 +55,7 @@ public class DiffDdExam {
 //		   (二十二)ORM框架Bee,Spring配置多数据源实例
 //		   https://blog.csdn.net/abckingaa/article/details/120956130
 		
+		    //这里这样赋值,是为了同时测试多种方式.  一般这种信息可直接配置在bee.properties
 			HoneyConfig.getHoneyConfig().multiDS_enable = true;
 			HoneyConfig.getHoneyConfig().multiDS_type = 2;
 			HoneyConfig.getHoneyConfig().multiDS_differentDbType=true;

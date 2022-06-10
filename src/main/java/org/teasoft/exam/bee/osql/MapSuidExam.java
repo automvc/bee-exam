@@ -9,12 +9,15 @@ package org.teasoft.exam.bee.osql;
 import java.util.Map;
 
 import org.teasoft.bee.osql.BeeException;
+import org.teasoft.bee.osql.DatabaseConst;
 import org.teasoft.bee.osql.MapSql;
 import org.teasoft.bee.osql.MapSqlKey;
 import org.teasoft.bee.osql.MapSqlSetting;
 import org.teasoft.bee.osql.MapSuid;
+import org.teasoft.bee.osql.dialect.DbFeatureRegistry;
 import org.teasoft.honey.distribution.GenIdFactory;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
+import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.util.ObjectUtils;
 
@@ -31,6 +34,12 @@ public class MapSuidExam {
 	public static void test() {
 	
 		try {
+			
+			//sql server>=2012 ,use old type,用回旧语法
+//			HoneyConfig.getHoneyConfig().getDbName();
+//			DbFeatureRegistry.register(DatabaseConst.SQLSERVER, null); 
+//			HoneyConfig.getHoneyConfig().setDatabaseMajorVersion(0); 
+			
 			MapSuid mapSuid = BeeFactoryHelper.getMapSuid();
 			
 			MapSql mapSql = BeeFactoryHelper.getMapSql();
@@ -54,6 +63,13 @@ public class MapSuidExam {
 //		    mapSuid.selectJson(mapSql); //test cache
 
 			mapSuid.select(mapSql);
+			mapSuid.select(mapSql);
+			
+			mapSql.size(5);
+			mapSuid.select(mapSql);
+			
+			mapSql.start(2);
+			mapSql.size(5);
 			mapSuid.select(mapSql);
 
 			Map map = mapSuid.selectOne(mapSql);
@@ -113,11 +129,15 @@ public class MapSuidExam {
 //			mapSql3.put(MapSqlKey.OrderBy, "-- name,password desc"); //多字段排序
 			
 			mapSql3.put(MapSqlSetting.IsNamingTransfer, true);
-
+			
 
 			String json3 = mapSuid.selectJson(mapSql3);
 			Logger.info(json3);
 			
+			
+			mapSql3.start(2);
+			mapSql3.size(5);
+			mapSuid.selectJson(mapSql3);
 
 		} catch (BeeException e) {
 			e.printStackTrace();

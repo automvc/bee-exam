@@ -13,6 +13,7 @@ import org.teasoft.honey.osql.core.HoneyContext;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
+ * 同时使用不同数据源实例
  * @author Kingstar
  * @since  1.11
  */

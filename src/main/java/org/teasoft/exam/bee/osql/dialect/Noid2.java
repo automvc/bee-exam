@@ -9,7 +9,7 @@ import org.teasoft.bee.osql.annotation.PrimaryKey;
 *@author Honey
 *Create on 2021-07-08 22:25:17
 */
-@Entity("Noid")
+//@Entity("Noid")
 public class Noid2 implements Serializable {
 
 	private static final long serialVersionUID = 1590272445571L;

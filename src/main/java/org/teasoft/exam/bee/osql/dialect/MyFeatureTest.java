@@ -24,7 +24,7 @@ public class MyFeatureTest {
 	}
 	
 	public static void test() {
-		DbFeatureRegistry.register(DatabaseConst.SQLSERVER, new CustomerSqlServerFeature());
+		DbFeatureRegistry.register(DatabaseConst.SQLSERVER, new CustomerDbFeature());
 		SuidRich suidRich=BF.getSuidRich();
 		try {
 			suidRich.select(new Orders(), 10, 10);

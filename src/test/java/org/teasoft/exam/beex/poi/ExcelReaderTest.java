@@ -24,8 +24,9 @@ public class ExcelReaderTest {
 
 		System.out.println("================ExcelReaderTest==========start====");
 		
-		String fullPath = "D:\\test2.xlsx";
-//		String fullPath = "D:\\test-dataType.xlsx";
+		String baseDir=System.getProperty("user.dir")+"\\src\\main\\resources\\excel\\";
+		String fullPath =baseDir+"test2.xlsx";
+		
 		String[] checkTitles= {"序号","班级","姓名","离深时间	","目的地","离深交通工具","返深时间","返深交通工具","家长联系电话"};
 //		String[] checkTitles= {"序号1","班级","姓名2","离深时间	","目的地","离深交通工具","返深时间","返深交通工具","家长联系电话"};
 //		String[] checkTitles= {"序号","班级","姓名","离深时间	","目的地","离深交通工具","返深时间","返深交通工具"};

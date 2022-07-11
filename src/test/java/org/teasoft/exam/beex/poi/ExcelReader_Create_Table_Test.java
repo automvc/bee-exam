@@ -25,8 +25,11 @@ public class ExcelReader_Create_Table_Test {
 
 		System.out.println("================ExcelReaderTest==========start====");
 		
-		String fullPath = "d:\\Users\\Administrator\\Desktop\\物流系统\\设计\\数据表-test.xlsx";
-//		String fullPath = "D:\\test-dataType.xlsx";
+//		String fullPath = "D:\\bee-test\\数据表-test.xlsx";
+		
+		String baseDir=System.getProperty("user.dir")+"\\src\\main\\resources\\excel\\";
+		String fullPath =baseDir+"数据表-test.xlsx";
+		
 		String[] checkTitles= {"字段名","类型","中文注解","英文注解"};
 //		String[] checkTitles= {"序号1","班级","姓名2","离深时间	","目的地","离深交通工具","返深时间","返深交通工具","家长联系电话"};
 //		String[] checkTitles= {"序号","班级","姓名","离深时间	","目的地","离深交通工具","返深时间","返深交通工具"};
@@ -50,7 +53,7 @@ public class ExcelReader_Create_Table_Test {
 		ExcelReader.checkAndReadExcel(fullPath,"字段名,类型,中文注解,英文注解",0);
 		
 		list = ExcelReader.readExcel(fullPath,"Sheet1");
-		list = ExcelReader.readExcel(fullPath,"Sheet1",0,2);
+//		list = ExcelReader.readExcel(fullPath,"Sheet1",0,2);
 		
 		ExcelReader.readExcel(fullPath,0,2);
 		
@@ -61,7 +64,7 @@ public class ExcelReader_Create_Table_Test {
 //		list = ExcelReader.readExcel(fullPath,"stock-库存");
 //		list = ExcelReader.readExcel(fullPath,"customs_list-报关清单",1,-1); // by sheet name
 		
-		ExcelReader.checkAndReadExcel(fullPath,2,"字段名,类型,中文注解,英文注解",0);  //check sheet 2
+//		ExcelReader.checkAndReadExcel(fullPath,2,"字段名,类型,中文注解,英文注解",0);  //check sheet 2
 		list = ExcelReader.readExcel(fullPath,0,1,-1); // by sheet index
 		String create_sql0=DdlViaExcel.toCreateTableSQLForMySQL(list, "customs_list");
 		System.out.println(create_sql0);

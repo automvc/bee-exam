@@ -33,12 +33,12 @@ public class StringIdTest {
 		
 		System.out.println(Integer.MAX_VALUE);
 		
-		Orders2 orders=new Orders2();
+		OrdersIdString orders=new OrdersIdString();
 		orders.setName("Bee");
 		Suid suid=BF.getSuid();
 		suid.insert(orders);
 		
-		Orders2 orders2=new Orders2();
+		OrdersIdString orders2=new OrdersIdString();
 		orders2.setName("Bee");
 		orders2.setRemark("2222");
 		

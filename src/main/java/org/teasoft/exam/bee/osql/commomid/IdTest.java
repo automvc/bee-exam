@@ -19,6 +19,7 @@ public class IdTest {
 		StringIdTest.test();
 		StringIdUUIDTest.test();
 		SuidRichExam.test();
+		NotLongId.test();
 	}
 
 }

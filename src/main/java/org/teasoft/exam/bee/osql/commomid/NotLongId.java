@@ -25,6 +25,9 @@ public class NotLongId {
 	static SuidRich suidRich=BF.getSuidRich();
 	
 	public static void main(String[] args) {
+		test();
+	}
+	public static void test() {
 		
 		
 		Noid noid=new Noid();//@GenUUID
@@ -68,7 +71,7 @@ public class NotLongId {
 		suidRich.update(noid);//默认时,主键为where的过滤条件.
 		
 //		int updateBy(T entity,String whereFields);
-		suidRich.updateBy(noid, "uuid,name"); //updateBy, 通过"uuid,name"字段修改,"uuid,name"会作为where的过滤条件
+		suidRich.updateBy(noid, "uuid,name"); //updateBy, 通过"uuid,name"字段修改记录,"uuid,name"会作为where的过滤条件
 		
 //		int update(T entity,String updateFields);
 		suidRich.update(noid, "num"); //只更新num字段, 则其它字段作为where过滤条件

@@ -36,7 +36,7 @@ public class UnionSelectExam {
 	public static void test() {
 	  try{	
 	   Select joinSelect =new SelectImpl();
-		joinSelect.select("*")
+		joinSelect.select("*")  //分页时,oracle不允许这样写
 		.from("orders,test_user")
 		.where("orders.name=test_user.name")
 		.start(0)

@@ -3,14 +3,15 @@ package org.teasoft.exam.bee.osql.commomid;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-import org.teasoft.bee.osql.annotation.Table;
+//import org.teasoft.bee.osql.annotation.Table;
 
 /**
+*测试String id
 *@author Honey
 *Create on 2022-07-01 16:59:06
 */
-@Table("Orders")
-public class Orders2 implements Serializable {
+//@Table("Orders")
+public class OrdersIdString implements Serializable {
 	
 	private static final long serialVersionUID = 1593472489996L;
 

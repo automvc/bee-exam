@@ -35,7 +35,13 @@ import org.teasoft.exam.bee.osql.UseJson;
 import org.teasoft.exam.bee.osql.chain.ChainSelectExam;
 import org.teasoft.exam.bee.osql.chain.ChainUpdateExam;
 import org.teasoft.exam.bee.osql.chain.UnionSelectExam;
+import org.teasoft.exam.bee.osql.commomid.IntSerialIdTest;
+import org.teasoft.exam.bee.osql.commomid.NotLongId;
+import org.teasoft.exam.bee.osql.commomid.StringIdTest;
+import org.teasoft.exam.bee.osql.commomid.StringIdUUIDTest;
 import org.teasoft.exam.bee.osql.dialect.MyFeatureTest;
+import org.teasoft.exam.bee.osql.dialect.PagingExam;
+import org.teasoft.exam.bee.osql.special.ColumnAnnoTest;
 import org.teasoft.exam.bee.osql.special.ddl.DdlTest;
 import org.teasoft.exam.comm.OrdinaryTest;
 import org.teasoft.exam.comm.TestHelper;
@@ -59,7 +65,7 @@ public class TestNormal {
 		
 		//set DB info in JavaCode
 //		HoneyConfig.getHoneyConfig().setDriverName(driverName);
-//		String url="jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8";
+//		String url="jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8&amp;useSSL=false";
 //		String username="root";
 //		String password="";
 //		HoneyConfig.getHoneyConfig().setUrl(url);
@@ -154,6 +160,8 @@ public class TestNormal {
 		
 		runTest(OrdinaryTest.class);
 		
+		runTest(PagingExam.class);
+		
 		if (DatabaseConst.SQLSERVER.equalsIgnoreCase(DbName)) {
 		    runTest(MyFeatureTest.class);
 		}
@@ -167,6 +175,12 @@ public class TestNormal {
 		runTest(SearchExam.class);
 		
 		runTest(DdlTest.class);
+		
+		runTest(IntSerialIdTest.class);
+		runTest(StringIdTest.class);
+		runTest(StringIdUUIDTest.class);
+		runTest(NotLongId.class);
+		runTest(ColumnAnnoTest.class);
 		
 //		runTest(KotlinTest.class);
 //		runTest(HoneyConfigReset.class);

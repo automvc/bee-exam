@@ -31,10 +31,12 @@ public class TwoDiffDsWithSet {
 		
 		//当操作mysql时
 		SuidRich mysqlSuidRich=getMysqlSuidRich();
+//		mysqlSuidRich.select(new Orders());
 		mysqlSuidRich.select(new Orders(),2);
 		
 		//当操作sqlite时
 		SuidRich sqliteSuidRich=getSqliteSuidRich();
+//		sqliteSuidRich.select(new Orders());
 		sqliteSuidRich.select(new Orders(),2);
 		
 		//mysql

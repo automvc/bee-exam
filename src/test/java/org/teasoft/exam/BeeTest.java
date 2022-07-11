@@ -53,7 +53,7 @@ public class BeeTest {
 			TestNormal.test();
 			TestCache.test();
 			
-			TestMoreDs.test();
+//			TestMoreDs.test();
 			
 			GenBeanExam.test();
 			GenFilesExam.test();
@@ -101,7 +101,7 @@ public class BeeTest {
 			CharTest.test();
 			AnnoTest.test();
 			
-			KotlinTest.test();
+//			KotlinTest.test();
 			
 			TransactionExam.testRollback(true); //ThrowException and rollback
 			

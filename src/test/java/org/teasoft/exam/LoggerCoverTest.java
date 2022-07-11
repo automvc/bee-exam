@@ -21,6 +21,10 @@ public class LoggerCoverTest {
 	
 	@Test
 	public void test() {
+		test0();
+	}
+	
+	private void test0() {
 		NoLogging noLogging=new NoLogging();
 		noLogging.info("test NoLogging");
 		noLogging.debug("test NoLogging");

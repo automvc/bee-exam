@@ -6,7 +6,7 @@
 <!-- 	<version>1.8.99</version> -->
 <!-- 	<version>1.9.5</version> -->
 <!-- 	<version>1.9.8</version> -->
-	<version>1.11.0.4.22-SNAPSHOT</version>
+	<version>1.17.0.8-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<properties>
@@ -21,7 +21,9 @@
 <!-- 		<bee.version>1.9.8</bee.version> -->
 <!--             <bee.version>1.11.0.2.28.SNAPSHOP</bee.version> -->
 <!-- 		<bee.version>1.11.0.3.20-SNAPSHOT</bee.version> -->
-		<bee.version>1.11.0.4.22-SNAPSHOT</bee.version>
+<!-- 		<bee.version>1.11.0.4.22-SNAPSHOT</bee.version> -->
+<!-- 		<bee.version>1.11</bee.version> -->
+		<bee.version>1.17.0.8-SNAPSHOT</bee.version>
 	</properties>
 
 	<dependencies>
@@ -143,8 +145,8 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-<!-- 			<version>1.4.197</version> -->
-			<version>2.1.210</version>
+			<version>1.4.197</version>
+<!-- 			<version>2.1.210</version> -->
 		</dependency>
 
 
@@ -229,6 +231,7 @@
 			<scope>system</scope>
 			<systemPath>G:/download/cassandra-twig-jdbc-3.0.1.jar</systemPath>
 		</dependency>
+		
 
 	</dependencies>
 

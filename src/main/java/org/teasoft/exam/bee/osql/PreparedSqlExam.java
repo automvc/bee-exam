@@ -6,11 +6,18 @@ import java.util.List;
 import java.util.Map;
 
 import org.teasoft.bee.osql.BeeException;
+import org.teasoft.bee.osql.DatabaseConst;
+import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.PreparedSql;
+import org.teasoft.bee.osql.dialect.DbFeatureRegistry;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.CustomSql;
+import org.teasoft.honey.osql.core.HoneyConfig;
+import org.teasoft.honey.osql.core.HoneyContext;
+import org.teasoft.honey.osql.core.HoneyUtil;
 import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.osql.dialect.sqlserver.SqlServerPagingStruct;
 
 public class PreparedSqlExam {
 	
@@ -133,6 +140,46 @@ public class PreparedSqlExam {
 //			HoneyContext.test();
 			
 			
+			if(HoneyUtil.isSqlServer()) {
+				//sql server 自动分页; 自定义sql方式.
+				
+				
+				//sql server>=2012,用新语法: order by id offset 1 row fetch next 3 rows only
+				//当定义的sql语句有order by 时,要告知系统.
+				//面向对象方式分页,则由Bee框架自动处理.
+				
+				String sql2012="select * from orders order by id";
+				SqlServerPagingStruct struct=new SqlServerPagingStruct();
+				struct.setHasOrderBy(true);
+				HoneyContext.setSqlServerPagingStruct(sql2012, struct);
+				preparedSql.select(sql2012, new Orders(), new Object[] {},2,3);
+
+				
+				//sql server>=2012 ,use old type,用回旧语法  默认分页排序,用row_number() over (order by id)
+				HoneyConfig.getHoneyConfig().getDbName();
+				DbFeatureRegistry.register(DatabaseConst.SQLSERVER, null); 
+				HoneyConfig.getHoneyConfig().setDatabaseMajorVersion(0); 
+				List<Orders> list4_2 = preparedSql.select(sql4, new Orders(), new Object[] {},1,3);
+				List<Orders> list4_3 = preparedSql.select(sql4, new Orders(), new Object[] {},2,3);
+				
+//				不是用id分页排序时,要告知系统. //面向对象方式分页,则由Bee框架自动处理.
+				
+				//使用旧语法
+				String sql2008="select * from orders order by id"; //旧语法,sql 语句有order by也可以不用调整
+//				SqlServerPagingStruct struct2=new SqlServerPagingStruct();
+//				struct2.setHasOrderBy(true);
+//				HoneyContext.setSqlServerPagingStruct(sql2008, struct2);
+				preparedSql.select(sql2008, new Orders(), new Object[] {},2,3);
+				
+				String sql2008_2="select * from orders order by name desc";
+				SqlServerPagingStruct struct3=new SqlServerPagingStruct();
+				struct3.setJustChangeOrderColumn(true);
+				struct3.setOrderColumn("name");
+				struct3.setOrderType(OrderType.DESC);
+				HoneyContext.setSqlServerPagingStruct(sql2008_2, struct3);
+				preparedSql.select(sql2008_2, new Orders(), new Object[] {},2,3);
+				
+			}
 		} catch (BeeException e) {
 			Logger.error("In PreparedSqlExam (BeeException):"+e.getMessage());
 			e.printStackTrace();

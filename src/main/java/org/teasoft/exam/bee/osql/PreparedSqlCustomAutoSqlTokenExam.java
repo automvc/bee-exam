@@ -79,6 +79,7 @@ public class PreparedSqlCustomAutoSqlTokenExam {
 			select(CustomSql.getCustomSql("example.autosql.inAndIsNotNull.one"), map3); //the only if is notNull
 			select(CustomSql.getCustomSql("example.autosql.inAndIsNotNull.two"), map3);//the first if is notNull,the second is null
 			
+			//sql server 2012转化有问题
 			Set set2=new HashSet();
 			set2.add(1);
 			set2.add(2);

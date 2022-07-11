@@ -39,7 +39,13 @@ public class MoreTableExam {
 	public static void test() {
 		try {
 			MoreTable moreTable = BeeFactory.getHoneyFactory().getMoreTable();
-
+			
+//			HoneyConfig.getHoneyConfig().getDbName();
+//			DbFeatureRegistry.register(DatabaseConst.SQLSERVER, null); 
+//			HoneyConfig.getHoneyConfig().setDatabaseMajorVersion(0); 
+			
+//			DbFeatureRegistry.register(DatabaseConst.SQLSERVER, new SqlServerFeature());
+			
 			Orders orders1 = new Orders();
 			orders1.setUserid("bee");
 			orders1.setName("Bee");
@@ -51,7 +57,8 @@ public class MoreTableExam {
 			
 			//默认不处理null和空字符串.不用再写一堆的判断;其它有值的字段全部自动作为过滤条件
 			//List<Orders> list1 =moreTable.select(orders1);  //select
-			List<Orders> list1 = moreTable.select(orders1, 0, 10); //select 查询前10条记录
+//			List<Orders> list1 = moreTable.select(orders1, 0, 10); //select 查询前10条记录
+			List<Orders> list1 = moreTable.select(orders1, 2, 10); //select 查询前10条记录
 			Logger.info("size of records:"+list1.size() + "");
 			for (int i = 0; i < list1.size(); i++) {
 				Logger.info(list1.get(i).toString());

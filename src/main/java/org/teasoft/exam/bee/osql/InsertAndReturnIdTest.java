@@ -75,10 +75,12 @@ public class InsertAndReturnIdTest {
 			
 			long id2 = suid.insertAndReturnId(orders1);
 			Logger.info("InsertAndReturnId  : " + id2);
-			Logger.info("------------------------getId : " + orders1.getId());
+			Logger.info("------------------11------getId : " + orders1.getId());
 			
 //			suidRich.setDynamicParameter("test", "11");
 			suidRich.insertAndReturnId(orders1,IncludeType.INCLUDE_EMPTY);
+			
+			Logger.info("-------------------11-----getId : " + orders1.getId());
 
 		} catch (BeeException e) {
 			Logger.error("In InsertAndReturnIdTest (BeeException):" + e.getMessage());

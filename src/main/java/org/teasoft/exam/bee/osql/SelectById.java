@@ -62,8 +62,8 @@ public class SelectById {
 		Logger.info("deleteNum3: "+deleteNum3);
 		
 		suidRich.insert(testUser2);
-		suidRich.insert(testUser2);
-		suidRich.insert(testUser2);
+//		suidRich.insert(testUser2);
+//		suidRich.insert(testUser2);
 		
 		String json=suidRich.selectJson(new TestUser());
 		Logger.info("selectJson(new User()):");

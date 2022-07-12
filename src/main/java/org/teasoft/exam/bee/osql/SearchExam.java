@@ -40,7 +40,7 @@ public class SearchExam {
 
 	public static void test() {
 		
-		Search search[]=new Search[6];
+		Search search[]=new Search[8];
 		search[0]=new Search("id",Operator.between,"100023","100025");
 		search[1]=new Search("id",Operator.between,"100030","100035","or");
 		search[2]=new Search();
@@ -58,8 +58,16 @@ public class SearchExam {
 		search[4].setValue1("100040");
 		search[4].setValue2("100049");
 		
+		
+		
 		search[5]=new Search();
 		search[5].setOp2(")");
+		
+		search[6]=createObj2();
+		search[6].setOp(Operator.notBetween);
+		
+		search[7]=createObj1();
+		search[7].setOp(Operator.like);
 		
 		try {
 			
@@ -77,6 +85,26 @@ public class SearchExam {
 		} catch (BeeSQLException e) {
 			Logger.error(e.getMessage(),e);
 		}
+	}
+	
+	private static Search createObj1() {
+		Search search=new Search();
+		search.setField("id");
+//		search.setOp(Operator.between);
+//		search.setValue1("100040");
+		search.setValue2("100049");
+		
+		return search;
+	}
+	
+	private static Search createObj2() {
+		Search search=new Search();
+		search.setField("id");
+//		search.setOp(Operator.between);
+		search.setValue1("100040");
+		search.setValue2("100049");
+		
+		return search;
 	}
 
 }

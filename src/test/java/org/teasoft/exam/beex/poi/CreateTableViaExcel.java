@@ -6,6 +6,7 @@
 
 package org.teasoft.exam.beex.poi;
 
+import org.junit.Test;
 import org.teasoft.beex.autogen.DdlViaExcel;
 
 /**
@@ -14,7 +15,8 @@ import org.teasoft.beex.autogen.DdlViaExcel;
  */
 public class CreateTableViaExcel {
 
-	public static void main(String[] args) {
+	@Test
+	public void test() {
 		String sheetName0 = "stock-库存"; //表名与中文名用"-"分开
 //		String sheetName1 = "out_stock-出库";
 //		String sheetName2 = "customs_list-报关清单";

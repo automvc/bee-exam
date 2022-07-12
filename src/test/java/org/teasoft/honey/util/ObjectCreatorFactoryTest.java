@@ -28,6 +28,10 @@ public class ObjectCreatorFactoryTest {
 		Logger.info("create(\"1\", long.class)  :  "+long1.getClass().getName());
 		
 		
+		Object float1=ObjectCreatorFactory.create("1", float.class);
+		Logger.info("create(\"1\", float.class)  :  "+float1.getClass().getName());
+		
+		
 		test2(); //class
 		
 	}

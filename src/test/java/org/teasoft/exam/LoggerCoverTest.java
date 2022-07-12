@@ -38,6 +38,7 @@ public class LoggerCoverTest {
 		noLogging.isInfoEnabled();
 		noLogging.isTraceEnabled();
 		noLogging.isWarnEnabled();
+		new NoLogging(LoggerCoverTest.class.getName());
 		
 		SystemLogger systemLogger=new SystemLogger();
 		systemLogger.info("test SystemLogger");
@@ -52,6 +53,10 @@ public class LoggerCoverTest {
 		systemLogger.isInfoEnabled();
 		systemLogger.isTraceEnabled();
 		systemLogger.isWarnEnabled();
+		
+		systemLogger.debug("FileLogger debug", new Exception());
+		SystemLogger systemLogger2=new SystemLogger(LoggerCoverTest.class.getName());
+		systemLogger2.trace("trace");
 		
 		Jdk14LoggingImpl jdk14LoggingImpl=new Jdk14LoggingImpl("test");
 		jdk14LoggingImpl.info("test Jdk14LoggingImpl");
@@ -76,6 +81,17 @@ public class LoggerCoverTest {
 		fileLogger.isInfoEnabled();
 		fileLogger.isTraceEnabled();
 		fileLogger.isWarnEnabled();
+		fileLogger.debug("FileLogger debug");
+		fileLogger.warn("warn");
+		fileLogger.error("error");
+		fileLogger.debug("FileLogger debug", new Exception());
+		fileLogger.warn("FileLogger debug", new Exception());
+		fileLogger.error("FileLogger debug", new Exception());
+		FileLogger fileLogger2=new FileLogger(LoggerCoverTest.class.getName());
+		fileLogger2.trace("trace");
+		fileLogger2.debug("FileLogger debug", new Exception());
+		fileLogger2.warn("FileLogger debug", new Exception());
+		fileLogger2.error("FileLogger debug", new Exception());
 	}
 
 }

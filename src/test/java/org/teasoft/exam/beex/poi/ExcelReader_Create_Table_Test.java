@@ -53,7 +53,7 @@ public class ExcelReader_Create_Table_Test {
 		ExcelReader.checkAndReadExcel(fullPath,"字段名,类型,中文注解,英文注解",0);
 		
 		list = ExcelReader.readExcel(fullPath,"Sheet1");
-//		list = ExcelReader.readExcel(fullPath,"Sheet1",0,2);
+		list = ExcelReader.readExcel(fullPath,"Sheet1",0,2);
 		
 		ExcelReader.readExcel(fullPath,0,2);
 		
@@ -64,7 +64,7 @@ public class ExcelReader_Create_Table_Test {
 //		list = ExcelReader.readExcel(fullPath,"stock-库存");
 //		list = ExcelReader.readExcel(fullPath,"customs_list-报关清单",1,-1); // by sheet name
 		
-//		ExcelReader.checkAndReadExcel(fullPath,2,"字段名,类型,中文注解,英文注解",0);  //check sheet 2
+		ExcelReader.checkAndReadExcel(fullPath,2,"字段名,类型,中文注解,英文注解",0);  //check sheet 2
 		list = ExcelReader.readExcel(fullPath,0,1,-1); // by sheet index
 		String create_sql0=DdlViaExcel.toCreateTableSQLForMySQL(list, "customs_list");
 		System.out.println(create_sql0);

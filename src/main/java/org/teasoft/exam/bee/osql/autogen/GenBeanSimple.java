@@ -36,7 +36,9 @@ public class GenBeanSimple {
 
 			GenBean genBean = new GenBean(config);
 
-			config.setGenFieldFile(true);  //可以使用{实体}_F来引用字段名
+			//可以使用{实体}_F来引用字段名  
+			//V1.17 支持生成ALL_NAMES属性(同时引用所有字段的名称)
+			config.setGenFieldFile(true); 
 			//设置相对Entity的文件夹; 空表示与Entity同一个文件夹
 //			config.setFieldFileRelativeFolder("field"); //默认
 			config.setOverride(true); //是否覆盖原来的文件
@@ -44,8 +46,8 @@ public class GenBeanSimple {
 			genBean.genSomeBeanFile("orders");
 			
 			
-			//it easy way.   最简单的用法,所有的都用默认配置.
-			new GenBean().genSomeBeanFile("t_user");
+			//it is easy way.   最简单的用法,所有的都用默认配置.
+			new GenBean().genSomeBeanFile("test_user");
 			
 		  } catch (BeeException e) {
 			 e.printStackTrace();

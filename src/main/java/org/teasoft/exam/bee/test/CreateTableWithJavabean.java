@@ -6,6 +6,9 @@
 
 package org.teasoft.exam.bee.test;
 
+import org.teasoft.exam.bee.osql.commomid.OrdersIdString;
+import org.teasoft.exam.bee.osql.commomid.Orders3;
+import org.teasoft.exam.bee.osql.dialect.Noid2;
 import org.teasoft.exam.bee.osql.entity.Clazz;
 import org.teasoft.exam.bee.osql.entity.LeafAlloc;
 import org.teasoft.exam.bee.osql.entity.Scores;
@@ -63,8 +66,12 @@ public class CreateTableWithJavabean {
 			Ddl.createTable(new CustomId(), true);
 			
 			Ddl.createTable(new Noid(), true);
+			Ddl.createTable(new Noid2(), true);
 //			Ddl.createTable(new CustomId(), true);
 //			Ddl.createTable(new CustomId(), true);
+			
+			Ddl.createTable(new Orders3(), true);
+			Ddl.createTable(new OrdersIdString(), true);
 			
 			
 		} catch (Exception e) {

@@ -67,7 +67,14 @@ public class PreparedSqlCustomAutoSqlTokenExam {
 			selectNoPage(CustomSql.getCustomSql("example.autosql.isNotBlank"), map2);
 			//可自动去掉where
 			selectNoPage(CustomSql.getCustomSql("example.autosql.like.isNotBlank"), map2);
-			selectNoPage(CustomSql.getCustomSql("example.autosql.like.isNotNull"), map2);
+			
+			try {
+				selectNoPage(CustomSql.getCustomSql("example.autosql.like.isNotNull"), map2);
+//				example.autosql.like.isNotNull=select * from orders where <if isNotNull>name like #{%name}</if>
+				//name的值非null,会保留<if isNotNull></if>之前的内容,但name的值为空字符,会有注入风险,所以报错(从V1.17开始).
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			
 			Map<String, Object> map3 = new HashMap<>();
 			Set set=new HashSet();

@@ -20,7 +20,11 @@ import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
- * V1.17之前的版本,
+ * V1.11及之前版本， 使用Op.like， 需要判断值是否为空字段，是否只含有匹配符(%和_)
+ * <br>Op.like可以创建比左右匹配更复杂的模糊查询,但需要防止,最终的值只包含有匹配符(%和_)
+ * <br>在V1.17( 1.17.0.9) 中,能明确%使用在左还是右,还是同时使用在左右, 则应该选用:likeLeft,likeRight,likeLeftRight;
+ * <br>Bee框架会对这三种用法的值进行转义(匹配符%,由框架添加), 转义后值中的%(如果有),只代表符号%.
+ * <br>where 条件中,不建议只使用not like一个过滤条件(结合其它条件使用则可以)
  * @author Kingstar
  * @since  1.17
  */

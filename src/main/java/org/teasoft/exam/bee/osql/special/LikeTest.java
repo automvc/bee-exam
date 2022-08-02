@@ -6,23 +6,24 @@
 
 package org.teasoft.exam.bee.osql.special;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
-import org.teasoft.bee.osql.PreparedSql;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.honey.osql.core.BeeFactory;
-import org.teasoft.honey.osql.core.CustomSql;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
+ * V1.11及之前版本， 使用Op.like， 需要判断值是否为空字段，是否只含有匹配符(%和_)
+ * <br>Op.like可以创建比左右匹配更复杂的模糊查询,但需要防止,最终的值只包含有匹配符(%和_)
+ * <br>在V1.17( 1.17.0.9) 中,能明确%使用在左还是右,还是同时使用在左右, 则应该选用:likeLeft,likeRight,likeLeftRight;
+ * <br>Bee框架会对这三种用法的值进行转义(匹配符%,由框架添加), 转义后值中的%(如果有),只代表符号%.
+ * <br>where 条件中,不建议只使用not like一个过滤条件(结合其它条件使用则可以)
  * @author Kingstar
- * @since  1.0
+ * @since  1.17
  */
 public class LikeTest {
 	
@@ -62,14 +63,14 @@ public class LikeTest {
 		}
 		
 		condition=BF.getCondition();
-		condition.op("userid", Op.like, "test%"); //test开关的
+		condition.op("userid", Op.like, "test%"); //test开头的
 		list2 = suid.select(orders, condition);
 		for (int i = 0; i < list2.size(); i++) {
 			Logger.info(list2.get(i).toString());
 		}
 		
 		condition=BF.getCondition();
-		condition.op("userid", Op.like, "test_"); //test开关有5个字符的
+		condition.op("userid", Op.like, "test_"); //test开头有5个字符的
 		list2 = suid.select(orders, condition);
 		for (int i = 0; i < list2.size(); i++) {
 			Logger.info(list2.get(i).toString());

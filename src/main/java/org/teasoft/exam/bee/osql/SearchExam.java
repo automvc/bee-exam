@@ -43,6 +43,7 @@ public class SearchExam {
 		Search search[]=new Search[8];
 		search[0]=new Search("id",Operator.between,"100023","100025");
 		search[1]=new Search("id",Operator.between,"100030","100035","or");
+		
 		search[2]=new Search();
 		search[2].setField("name");
 		search[2].setOp(Operator.eq);
@@ -68,6 +69,7 @@ public class SearchExam {
 		
 		search[7]=createObj1();
 		search[7].setOp(Operator.like);
+		search[7].setValue1("Bee");
 		
 		try {
 			

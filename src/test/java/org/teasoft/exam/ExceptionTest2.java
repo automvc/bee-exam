@@ -9,6 +9,9 @@ package org.teasoft.exam;
 import org.junit.Test;
 import org.teasoft.exam.bee.osql.BuzExceptionTest;
 import org.teasoft.exam.bee.osql.ExceptionTest;
+import org.teasoft.exam.bee.osql.TransactionExam;
+import org.teasoft.exam.bee.osql.special.LikeEnhanceTest;
+import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar
@@ -22,7 +25,19 @@ public class ExceptionTest2 {
 		ExceptionTest.test();
 		System.out.println("---------------------");
 		BuzExceptionTest.test();
+		System.out.println("---------------------");
+		LikeEnhanceTest.test(); //V1.17
+		testTransactionRollback();
 		System.out.println("---Bee ExceptionTest2 with junit end.------");
+	}
+	
+	private void testTransactionRollback() {
+		try {
+			TransactionExam.testRollback(true); //ThrowException and rollback
+		} catch (Exception e) {
+			Logger.error(e.getMessage(), e);
+		}
+		
 	}
 
 }

@@ -103,8 +103,6 @@ public class BeeTest {
 			
 //			KotlinTest.test();
 			
-			TransactionExam.testRollback(true); //ThrowException and rollback
-			
 			HoneyConfigReset.test(); //just run one time, put in last.
 			result=true;
 		} catch (Exception e) {

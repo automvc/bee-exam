@@ -91,10 +91,10 @@ public class SearchExam {
 	
 	private static Search createObj1() {
 		Search search=new Search();
-		search.setField("id");
+		search.setField("name");
 //		search.setOp(Operator.between);
 //		search.setValue1("100040");
-		search.setValue2("100049");
+//		search.setValue2("100049");
 		
 		return search;
 	}

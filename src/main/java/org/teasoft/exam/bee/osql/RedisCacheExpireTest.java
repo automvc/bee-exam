@@ -42,7 +42,7 @@ public class RedisCacheExpireTest {
 		}
 		try {
 //			Thread.sleep(2000); //小于一级缓存的过期时间,则会用一级缓存的
-			Thread.sleep(6500);//>=一级缓存的过期时间,则会查二级的
+			Thread.sleep(7500);//>=一级缓存的过期时间,则会查二级的
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

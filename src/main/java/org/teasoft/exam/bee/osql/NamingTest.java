@@ -21,7 +21,6 @@ import org.teasoft.honey.osql.name.UpperCaseUnderScoreAndCamelName;
 public class NamingTest {
 
 	public static void main(String[] args) {
-		//		TestPrepare.init();
 		test();
 	}
 

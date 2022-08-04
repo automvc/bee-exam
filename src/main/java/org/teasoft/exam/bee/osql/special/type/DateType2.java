@@ -6,11 +6,14 @@ import java.sql.Timestamp;
 //import java.sql.Date;
 import java.util.Date;
 
+import org.teasoft.bee.osql.annotation.Entity;
+
 /**
 *@author Honey
 *Create on 2022-03-02 16:38:29
 */
-public class DateType implements Serializable {
+@Entity("DateType")
+public class DateType2 implements Serializable {
 
 	private static final long serialVersionUID = 1592085476311L;
 
@@ -21,13 +24,7 @@ public class DateType implements Serializable {
 	private Date date1;
 	private Date date3;
 	private java.sql.Date date2;
-	
-	private Timestamp createtime;
-	
 	private String remark;
-	
-	private String userId;
-	private String userid;
 	
 	public Date getDate1() {
 		return date1;
@@ -87,30 +84,6 @@ public class DateType implements Serializable {
 		this.remark = remark;
 	}
 
-	public Timestamp getCreatetime() {
-		return createtime;
-	}
-
-	public void setCreatetime(Timestamp createtime) {
-		this.createtime = createtime;
-	}
-	
-	public String getUserId() {
-		return userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-	
-	public String getUserid() {
-		return userid;
-	}
-
-	public void setUserid(String userid) {
-		this.userid = userid;
-	}
-
 	public String toString(){	
 		 StringBuffer str=new StringBuffer();	
 		 str.append("DateType[");			
@@ -118,10 +91,7 @@ public class DateType implements Serializable {
 		 str.append(",date1=").append(date1);		 
 		 str.append(",date2=").append(date2);		 
 		 str.append(",date3=").append(date3);		 
-		 str.append(",createtime=").append(createtime);		 
 		 str.append(",remark=").append(remark);		 
-		 str.append(",userId=").append(userId);		 
-		 str.append(",userid=").append(userid);		 
 		 str.append("]");			 
 		 return str.toString();			 
 	 }		 

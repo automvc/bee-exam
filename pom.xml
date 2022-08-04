@@ -157,12 +157,26 @@
 			<version>3.32.3.2</version>
 		</dependency>
 		
-		<dependency>
+<!-- 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-<!-- 			<version>9.4.1209</version> -->
+			<version>9.4.1209</version>
             <version>9.3-1102-jdbc41</version>
-		</dependency>
+		</dependency> -->
+		
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+<!-- <dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.3.3</version>
+</dependency> -->
+		
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.2.24.jre7</version>
+</dependency>
 		
 		
 		<dependency>

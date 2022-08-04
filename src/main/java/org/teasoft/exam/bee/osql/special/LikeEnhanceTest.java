@@ -34,6 +34,10 @@ public class LikeEnhanceTest {
 	private static Suid suid = BF.getSuid();
 
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		try {
 			Map<String, Object> map = new HashMap<>();
 			map.put("name", "");
@@ -99,8 +103,7 @@ public class LikeEnhanceTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
+
 		try {
 			condition = BF.getCondition();
 			condition.op("userid", Op.likeLeft, ""); // likeLeft
@@ -111,7 +114,7 @@ public class LikeEnhanceTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		try {
 			condition = BF.getCondition();
 			condition.op("userid", Op.likeLeft, null); // likeLeft
@@ -122,7 +125,6 @@ public class LikeEnhanceTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 
 //		PreparedSqlExam.java	
 		PreparedSql preparedSql = BF.getPreparedSql();
@@ -131,9 +133,6 @@ public class LikeEnhanceTest {
 		Map<String, Object> map2 = new HashMap<>();
 //		map2.put("name", "Bee");
 //		map2.put("name", ""); //1.17之前的版本,需要判断传入的值不能为空字符,%,_.
-		
-		
-		
 
 		// case "%"
 		try {
@@ -162,10 +161,9 @@ public class LikeEnhanceTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
+
 		// case null
-		//[WARN] the parameter value in like is null !
+		// [WARN] the parameter value in like is null !
 		try {
 			map2 = new HashMap<>();
 			map2.put("name", null); // 1.17之前的版本,需要判断传入的值不能为空字符,%,_.
@@ -173,7 +171,7 @@ public class LikeEnhanceTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		System.out.println("finished!");
 
 	}

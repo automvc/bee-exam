@@ -6,6 +6,11 @@
 
 package org.teasoft.honey.util;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.junit.Test;
@@ -21,8 +26,18 @@ public class ObjectUtilsTest {
 		
 		Set set=null;
 		ObjectUtils.isNotEmpty(set);
+		ObjectUtils.isNotEmpty(new HashSet());
+		
+		List list=null;
+		ObjectUtils.isNotEmpty(list);
+		ObjectUtils.isNotEmpty(new ArrayList());
+		
+		Map map=null;
+		ObjectUtils.isNotEmpty(map);
+		ObjectUtils.isNotEmpty(new HashMap());
 		
 		String str="";
+		ObjectUtils.isEmpty(str);
 		ObjectUtils.isNotEmpty(str);
 		
 		String strings[]=null;

@@ -7,7 +7,12 @@
 package org.teasoft.exam.coverage;
 
 import org.junit.Test;
+import org.teasoft.bee.distribution.sharding.DsTabStruct;
+import org.teasoft.bee.distribution.sharding.ShardingStruct;
+import org.teasoft.bee.distribution.sharding.algorithm.CalculateRegistry;
 import org.teasoft.honey.osql.core.BeeInitPreLoadService;
+import org.teasoft.honey.osql.interccept.EmptyInterceptor;
+import org.teasoft.honey.osql.shortcut.BF;
 
 /**
  * @author Kingstar
@@ -18,6 +23,46 @@ public class Other {
 	@Test
 	public void test() {
 		BeeInitPreLoadService.init();
+		
+		new BF();
+		
+		EmptyInterceptor emptyInterceptor=new EmptyInterceptor();
+		emptyInterceptor.beforeReturn();
+		emptyInterceptor.afterCompleteSql("just test");
+		emptyInterceptor.getOneTimeDataSource();
+		emptyInterceptor.getOneTimeTabName();
+		emptyInterceptor.getOneTimeTabSuffix();
+		
+		ShardingStruct s=new ShardingStruct();
+		s.setDsAlgorithm(0);
+		s.setDsName("ds1");
+		s.setDsRule("id%2");
+		s.setShardingValue("1");
+		s.setTabAlgorithm(0);
+		s.setTabName("orders");
+		s.setTabRule("id%2");
+		
+		s.getDsAlgorithm();
+		s.getDsName();
+		s.getDsRule();
+		s.getShardingValue();
+		s.getTabAlgorithm();
+		s.getTabName();
+		s.getTabRule();
+		
+		DsTabStruct dsTab=new DsTabStruct();
+		dsTab.setDsName("ds1");
+		dsTab.setTabName("orders");
+		dsTab.setTabSuffix("tab_");
+		dsTab.getDsName();
+		dsTab.getDsName();
+		dsTab.getTabSuffix();
+		
+		CalculateRegistry.register(5, new TestCalculate());
+		CalculateRegistry.getCalculate(5);
+		
+		new DictI18nDefaultHandlerTest();
+		
 	}
 
 }

@@ -46,17 +46,19 @@ public class MainDbTest {
             System.err.println("===================honeyConfig.getUrl():==="+honeyConfig.getUrl());
 			System.err.println("honeyConfig: "+honeyConfig.toString());
             System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test MySQL end.");
+            sleep(3);
 
 			System.err.println();
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Oracle start");
 			honeyConfig.setUrl("jdbc:oracle:thin:@localhost:1521:orcl");
 			honeyConfig.setUsername("scott");
-			honeyConfig.setPassword("aaa");
+			honeyConfig.setPassword("Bee123456");
 			System.err.println("(oracle) honeyConfig: "+honeyConfig.toString());
 			TestNormal.test();
 			System.err.println("===================honeyConfig.getUrl():==="+honeyConfig.getUrl());
 			System.err.println("honeyConfig: "+honeyConfig.toString());
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Oracle end");
+			sleep(3);
 
 			System.err.println();
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test SQLite start");
@@ -65,6 +67,7 @@ public class MainDbTest {
 			honeyConfig.setPassword("");
 			TestNormal.test();
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test SQLite end");
+			sleep(3);
 
 			System.err.println();
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test H2 start");
@@ -73,15 +76,7 @@ public class MainDbTest {
 			honeyConfig.setPassword("sa");
 			TestNormal.test();
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test H2 end");
-
-			System.err.println();
-			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test PostgreSQL start");
-			honeyConfig.setDriverName("org.postgresql.Driver");
-			honeyConfig.setUrl("jdbc:postgresql://127.0.0.1:5432/bee");
-			honeyConfig.setUsername("Administrator");
-			honeyConfig.setPassword("");
-			TestNormal.test();
-			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test PostgreSQL end");
+			sleep(3);
 
 			System.err.println();
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Microsoft SQL Server start");
@@ -90,6 +85,17 @@ public class MainDbTest {
 			honeyConfig.setPassword("123456");
 			TestNormal.test();
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Microsoft SQL Server end");
+			sleep(3);
+			
+			System.err.println();
+			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test PostgreSQL start");
+			honeyConfig.setDriverName("org.postgresql.Driver");
+			honeyConfig.setUrl("jdbc:postgresql://127.0.0.1:5432/bee");
+			honeyConfig.setUsername("Administrator");
+			honeyConfig.setPassword("");
+			TestNormal.test();
+			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test PostgreSQL end");
+			sleep(3);
 			
 //			System.err.println();
 //			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Cassandra start");
@@ -119,5 +125,13 @@ public class MainDbTest {
 		}
 
 		System.out.println("---Bee MainDbTest with junit end.------");
+	}
+	
+	private void sleep(int second) {
+		try {
+			Thread.sleep(second*1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

@@ -13,6 +13,7 @@ import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
+import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.Logger;
 
 /**
@@ -108,6 +109,8 @@ public class SuidExam {
 			suid.select(orders11); 
 			suid.select(orders11); 
 			suid.endSameConnection();
+			
+			System.out.println(HoneyConfig.getHoneyConfig().getSchemaName());
 			
 		} catch (BeeException e) {
 			Logger.error("In SuidExam (BeeException):"+e.getMessage());

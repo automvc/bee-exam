@@ -6,7 +6,7 @@
 <!-- 	<version>1.8.99</version> -->
 <!-- 	<version>1.9.5</version> -->
 <!-- 	<version>1.9.8</version> -->
-	<version>1.17.0.9-SNAPSHOT</version>
+	<version>1.17</version>
 	<packaging>jar</packaging>
 
 	<properties>
@@ -23,7 +23,7 @@
 <!-- 		<bee.version>1.11.0.3.20-SNAPSHOT</bee.version> -->
 <!-- 		<bee.version>1.11.0.4.22-SNAPSHOT</bee.version> -->
 <!-- 		<bee.version>1.11</bee.version> -->
-		<bee.version>1.17.0.9-SNAPSHOT</bee.version>
+		<bee.version>1.17</bee.version>
 	</properties>
 
 	<dependencies>
@@ -245,6 +245,30 @@
 			<scope>system</scope>
 			<systemPath>G:/download/cassandra-twig-jdbc-3.0.1.jar</systemPath>
 		</dependency>
+		
+<!-- 	 <dependency>
+        <groupId>jakarta.persistence</groupId>
+        <artifactId>jakarta.persistence-api</artifactId>
+        <version>2.2.3</version>
+         <scope>provided</scope>
+      </dependency> -->
+      
+      <!-- https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api -->
+<!-- <dependency>
+    <groupId>javax.persistence</groupId>
+    <artifactId>javax.persistence-api</artifactId>
+    <version>2.2</version>
+</dependency> -->
+
+<!-- https://mvnrepository.com/artifact/javax.persistence/persistence-api -->
+<!-- support jdk1.7 -->
+<dependency>
+    <groupId>javax.persistence</groupId>
+    <artifactId>persistence-api</artifactId>
+    <version>1.0.2</version>
+</dependency>
+
+      
 		
 	</dependencies>
 

@@ -7,7 +7,7 @@
 package org.teasoft.exam.bee.osql.ds;
 
 import java.sql.SQLException;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import javax.sql.DataSource;
@@ -38,6 +38,14 @@ public class InitDsUtil {
 //			dataSource2.setUsername("scott");
 //			dataSource2.setPassword("aaa");
 //			dataSource2.init();
+			
+					
+			DruidDataSource dataSource2;
+			dataSource2 = new DruidDataSource();
+			dataSource2.setUrl("jdbc:sqlite:bee.db");
+			dataSource2.setUsername("");
+			dataSource2.setPassword("");
+			dataSource2.init();
 
 			DruidDataSource dataSource3;
 			dataSource3 = new DruidDataSource();
@@ -49,9 +57,9 @@ public class InitDsUtil {
 //			以上数据源,也可以通过XML方式配置
 //			(二十二)ORM框架Bee,Spring配置多数据源实例
 //			https://blog.csdn.net/abckingaa/article/details/120956130
-			Map<String, DataSource> dataSourceMap = new HashMap<>();
+			Map<String, DataSource> dataSourceMap = new LinkedHashMap<>();
 			dataSourceMap.put("ds1", dataSource1);
-			dataSourceMap.put("ds2", dataSource1); //ds2
+			dataSourceMap.put("ds2", dataSource2); //ds2
 			dataSourceMap.put("ds3", dataSource3); //ds3
 			BeeFactory.getInstance().setDataSourceMap(dataSourceMap);
 

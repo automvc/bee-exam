@@ -6,10 +6,13 @@
 
 package org.teasoft.exam.bee.osql;
 
+import java.util.List;
+
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
+import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.Logger;
 
@@ -87,8 +90,10 @@ public class CacheTestJson {
 			suid.select(orders5);
 			suid.select(orders6);
 
-			suidRich.selectJson(orders6);
-//			suid.select(orders6);
+			String json=suidRich.selectJson(orders6);
+			Logger.info(json);
+			List<Orders> orders6List=suid.select(orders6);
+			Printer.printList(orders6List);
 			
 			try {
 				Thread.sleep(12000);

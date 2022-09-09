@@ -10,7 +10,6 @@ import java.math.BigDecimal;
 
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.IncludeType;
-import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.honey.osql.core.BeeFactory;
@@ -23,20 +22,7 @@ import org.teasoft.honey.osql.core.Logger;
  * @since  1.9
  */
 public class InsertAndReturnIdTest2 {
-	private static Suid suid = BeeFactory.getHoneyFactory().getSuid();
 	private static SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
-
-	public static Suid getSuid() {
-		return suid;
-	}
-
-	public static void setSuid(Suid suid) {
-		InsertAndReturnIdTest2.suid = suid;
-	}
-	
-	public static void setSuidRich(SuidRich suidRich) {
-		InsertAndReturnIdTest2.suidRich = suidRich;
-	}
 
 	public static void main(String[] args) {
 		test();
@@ -45,12 +31,9 @@ public class InsertAndReturnIdTest2 {
 	public static void test() {
 		boolean oldFlag=HoneyConfig.getHoneyConfig().genid_forAllTableLongId;
 		
-		
-		HoneyConfig.getHoneyConfig().genid_forAllTableLongId=false;
+		HoneyConfig.getHoneyConfig().genid_forAllTableLongId=false; //测试由DB生成ID
 		test0();
-
 		HoneyConfig.getHoneyConfig().genid_forAllTableLongId=oldFlag;
-		
 	}
 
 	public static void test0() {
@@ -60,7 +43,6 @@ public class InsertAndReturnIdTest2 {
 			orders1.setRemark("InsertAndReturnId");
 			orders1.setUserid("Bee");
 			orders1.setTotal(new BigDecimal("80.80"));
-//			orders1.setId(-1L);
 			Logger.info("------------------------getId : " + orders1.getId());
 			
 //		    Long r_id=suidRich.insertAndReturnId(orders1,IncludeType.EXCLUDE_BOTH); //不包含null和空字符.可以

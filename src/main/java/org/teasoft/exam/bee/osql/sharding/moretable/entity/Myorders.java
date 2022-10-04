@@ -1,47 +1,40 @@
-package org.teasoft.exam.bee.osql.moretable.entity;
+package org.teasoft.exam.bee.osql.sharding.moretable.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.sql.Timestamp;
 
 import org.teasoft.bee.osql.annotation.JoinTable;
 import org.teasoft.bee.osql.annotation.JoinType;
-import org.teasoft.bee.osql.annotation.Table;
 
 /**
-*@author Honey
-*Create on 2020-03-03 11:33:21
-*/
-@Table("orders${month}")
-public class Orders implements Serializable {
+ * @author Honey
+ * Create on 2022-08-23 23:31:36
+ */
+public class Myorders implements Serializable {
 
-	private static final long serialVersionUID = 1592526978329L;
+	private static final long serialVersionUID = 1596710362247L;
 	
-//	@JoinTable(mainField="userid", subField="username")
-//	@JoinTable(mainField="userid", subField="username", joinType=JoinType.LEFT_JOIN)  //ok //... from orders left join test_user on orders.userid=test_user.username where ...
-	@JoinTable(mainField="userid,name", subField="username,name", joinType=JoinType.JOIN)
-//	@JoinTable(mainField="userid", subField="username",subAlias="myuser" , joinType=JoinType.FULL_JOIN)
-//	@JoinTable()
-    private TestUser testUser;
+	@JoinTable(mainField="userid,orderid", subField="userid,orderid", joinType=JoinType.JOIN)
+	Ordersdetail ordersdetail;
 	
-	public TestUser getTestUser() {
-		return testUser;
-	}
-
-	public void setTestUser(TestUser testUser) {
-		this.testUser=testUser;
-	}
-	
-
 	private Long id;
-	private String userid;
+	private Long userid;
+	private Long orderid;
 	private String name;
 	private BigDecimal total;
-	private Timestamp createtime;
+	private String createtime;
 	private String remark;
 	private String sequence;
 	private String abc;
-	private Timestamp updatetime;
+	private String updatetime;
+	
+	public Ordersdetail getOrdersdetail() {
+		return ordersdetail;
+	}
+
+	public void setOrdersdetail(Ordersdetail ordersdetail) {
+		this.ordersdetail = ordersdetail;
+	}
 
 	public Long getId() {
 		return id;
@@ -51,12 +44,20 @@ public class Orders implements Serializable {
 		this.id = id;
 	}
 
-	public String getUserid() {
+	public Long getUserid() {
 		return userid;
 	}
 
-	public void setUserid(String userid) {
+	public void setUserid(Long userid) {
 		this.userid = userid;
+	}
+
+	public Long getOrderid() {
+		return orderid;
+	}
+
+	public void setOrderid(Long orderid) {
+		this.orderid = orderid;
 	}
 
 	public String getName() {
@@ -75,11 +76,11 @@ public class Orders implements Serializable {
 		this.total = total;
 	}
 
-	public Timestamp getCreatetime() {
+	public String getCreatetime() {
 		return createtime;
 	}
 
-	public void setCreatetime(Timestamp createtime) {
+	public void setCreatetime(String createtime) {
 		this.createtime = createtime;
 	}
 
@@ -107,34 +108,34 @@ public class Orders implements Serializable {
 		this.abc = abc;
 	}
 
-	public Timestamp getUpdatetime() {
+	public String getUpdatetime() {
 		return updatetime;
 	}
 
-	public void setUpdatetime(Timestamp updatetime) {
+	public void setUpdatetime(String updatetime) {
 		this.updatetime = updatetime;
 	}
 
 	 public String toString(){	
-		 StringBuffer str=new StringBuffer();	
-		 str.append("Orders[");			
+		 StringBuilder str=new StringBuilder();	
+		 str.append("Orders1[");			
 		 str.append("id=").append(id);		 
 		 str.append(",userid=").append(userid);		 
+		 str.append(",orderid=").append(orderid);		 
 		 str.append(",name=").append(name);		 
 		 str.append(",total=").append(total);		 
 		 str.append(",createtime=").append(createtime);		 
 		 str.append(",remark=").append(remark);		 
 		 str.append(",sequence=").append(sequence);		 
 		 str.append(",abc=").append(abc);		 
-		 str.append(",updatetime=").append(updatetime);		 
+		 str.append(",updatetime=").append(updatetime);	
 		 
-		 if(testUser==null)
+		 if(ordersdetail==null)
 			 str.append(",user").append("=null");	
 		 else 
-		   str.append(",").append(testUser.toString());
+		   str.append(",").append(ordersdetail.toString());
 		 
 		 str.append("]");			 
 		 return str.toString();			 
-	 }		
-	
+	 }		 
 }

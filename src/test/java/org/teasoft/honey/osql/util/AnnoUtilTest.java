@@ -23,7 +23,7 @@ public class AnnoUtilTest {
 		Field field = Orders.class.getDeclaredField("id");
 		AnnoUtil.isAutoSetString(field);
 		AnnoUtil.isDesensitize(field);
-		AnnoUtil.isMultiTenancy(field);
+		AnnoUtil.isMultiTenancyAnno(field);
 		AnnoUtil.isDict(field);
 		AnnoUtil.isDictI18n(field);
 		AnnoUtil.isColumn(field);

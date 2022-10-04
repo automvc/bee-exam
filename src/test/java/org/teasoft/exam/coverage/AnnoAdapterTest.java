@@ -10,7 +10,7 @@ import java.lang.reflect.Field;
 
 import org.junit.Test;
 import org.teasoft.bee.spi.AnnoAdapter;
-import org.teasoft.bee.spi.AnnoAdapterBeeDefault;
+import org.teasoft.bee.spi.defaultimpl.AnnoAdapterBeeDefault;
 import org.teasoft.exam.bee.osql.annotation.moretable.Clazz1;
 import org.teasoft.exam.bee.osql.annotation.moretable.Student1;
 import org.teasoft.honey.osql.core.Logger;

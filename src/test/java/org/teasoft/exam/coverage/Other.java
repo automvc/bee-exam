@@ -7,9 +7,9 @@
 package org.teasoft.exam.coverage;
 
 import org.junit.Test;
-import org.teasoft.bee.distribution.sharding.DsTabStruct;
-import org.teasoft.bee.distribution.sharding.ShardingStruct;
-import org.teasoft.bee.distribution.sharding.algorithm.CalculateRegistry;
+import org.teasoft.bee.sharding.DsTabStruct;
+import org.teasoft.bee.sharding.ShardingSimpleStruct;
+import org.teasoft.bee.sharding.algorithm.CalculateRegistry;
 import org.teasoft.honey.osql.core.BeeInitPreLoadService;
 import org.teasoft.honey.osql.interccept.EmptyInterceptor;
 import org.teasoft.honey.osql.shortcut.BF;
@@ -33,11 +33,12 @@ public class Other {
 		emptyInterceptor.getOneTimeTabName();
 		emptyInterceptor.getOneTimeTabSuffix();
 		
-		ShardingStruct s=new ShardingStruct();
+		ShardingSimpleStruct s=new ShardingSimpleStruct();
 		s.setDsAlgorithm(0);
 		s.setDsName("ds1");
 		s.setDsRule("id%2");
-		s.setShardingValue("1");
+		s.setDsShardingValue("1");
+		s.setTabShardingValue("1");
 		s.setTabAlgorithm(0);
 		s.setTabName("orders");
 		s.setTabRule("id%2");
@@ -45,7 +46,8 @@ public class Other {
 		s.getDsAlgorithm();
 		s.getDsName();
 		s.getDsRule();
-		s.getShardingValue();
+		s.getDsShardingValue();
+		s.getTabShardingValue();
 		s.getTabAlgorithm();
 		s.getTabName();
 		s.getTabRule();

@@ -1,47 +1,31 @@
-package org.teasoft.exam.bee.osql.moretable.entity;
+package org.teasoft.exam.bee.osql.sharding;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.sql.Timestamp;
 
-import org.teasoft.bee.osql.annotation.JoinTable;
-import org.teasoft.bee.osql.annotation.JoinType;
-import org.teasoft.bee.osql.annotation.Table;
+import org.teasoft.bee.osql.annotation.Ignore;
+//import org.teasoft.bee.osql.annotation.customizable.MultiTenancy;
 
 /**
 *@author Honey
-*Create on 2020-03-03 11:33:21
+*Create on 2022-08-21 12:41:06
 */
-@Table("orders${month}")
-public class Orders implements Serializable {
+	public class Orders0 implements Serializable {
 
-	private static final long serialVersionUID = 1592526978329L;
 	
-//	@JoinTable(mainField="userid", subField="username")
-//	@JoinTable(mainField="userid", subField="username", joinType=JoinType.LEFT_JOIN)  //ok //... from orders left join test_user on orders.userid=test_user.username where ...
-	@JoinTable(mainField="userid,name", subField="username,name", joinType=JoinType.JOIN)
-//	@JoinTable(mainField="userid", subField="username",subAlias="myuser" , joinType=JoinType.FULL_JOIN)
-//	@JoinTable()
-    private TestUser testUser;
-	
-	public TestUser getTestUser() {
-		return testUser;
-	}
+	private static final long serialVersionUID = 1593472489996L;
 
-	public void setTestUser(TestUser testUser) {
-		this.testUser=testUser;
-	}
-	
-
+//	@MultiTenancy(dsRule = "id%2",dsName = "ds",tabRule = "id%3")
 	private Long id;
 	private String userid;
 	private String name;
 	private BigDecimal total;
-	private Timestamp createtime;
+	private String createtime;
 	private String remark;
 	private String sequence;
 	private String abc;
-	private Timestamp updatetime;
+	@Ignore
+	private String updatetime;
 
 	public Long getId() {
 		return id;
@@ -50,7 +34,7 @@ public class Orders implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
+	
 	public String getUserid() {
 		return userid;
 	}
@@ -75,11 +59,11 @@ public class Orders implements Serializable {
 		this.total = total;
 	}
 
-	public Timestamp getCreatetime() {
+	public String getCreatetime() {
 		return createtime;
 	}
 
-	public void setCreatetime(Timestamp createtime) {
+	public void setCreatetime(String createtime) {
 		this.createtime = createtime;
 	}
 
@@ -107,11 +91,11 @@ public class Orders implements Serializable {
 		this.abc = abc;
 	}
 
-	public Timestamp getUpdatetime() {
+	public String getUpdatetime() {
 		return updatetime;
 	}
 
-	public void setUpdatetime(Timestamp updatetime) {
+	public void setUpdatetime(String updatetime) {
 		this.updatetime = updatetime;
 	}
 
@@ -127,14 +111,8 @@ public class Orders implements Serializable {
 		 str.append(",sequence=").append(sequence);		 
 		 str.append(",abc=").append(abc);		 
 		 str.append(",updatetime=").append(updatetime);		 
-		 
-		 if(testUser==null)
-			 str.append(",user").append("=null");	
-		 else 
-		   str.append(",").append(testUser.toString());
-		 
 		 str.append("]");			 
 		 return str.toString();			 
-	 }		
-	
+	 }	
+	 
 }

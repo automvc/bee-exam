@@ -61,6 +61,9 @@ public class DiffDdExam {
 			HoneyConfig.getHoneyConfig().multiDS_differentDbType=true;
 			HoneyConfig.getHoneyConfig().multiDS_defalutDS = "ds1";
 			
+			HoneyConfig.getHoneyConfig().multiDS_sharding = false;
+			
+			
 			
 //			HoneyConfig.getHoneyConfig().multiDs_matchEntityClassPath = "ds2:org.teasoft.exam.bee.osql.entity.dynamic.Orders,com.xxx.cc.**;ds3:com.xxx.dd.User";
 //			HoneyConfig.getHoneyConfig().multiDs_matchEntityClassPath = "ds2:org.teasoft.exam.bee.osql.entity.dynamic.Orders,org.teasoft.exam.bee.osql.moretable.entity.**;ds3:com.xxx.dd.User";
@@ -68,10 +71,13 @@ public class DiffDdExam {
 			HoneyConfig.getHoneyConfig().multiDS_matchTable = "ds2:test_user";
 			HoneyContext.setConfigRefresh(true); 
 			
+            System.out.println(">>>>>>>>>>>>>>>>>>>test2");
+			test2(); //与test1不同的数据源
+			
             System.out.println(">>>>>>>>>>>>>>>>>>>test1");
 			test1();
             System.out.println(">>>>>>>>>>>>>>>>>>>test2");
-			test2(); //oracle
+			test2(); //与test1不同的数据源
             System.out.println(">>>>>>>>>>>>>>>>>>>test3");
 //            HoneyConfig.getHoneyConfig().multiDS_defalutDS = "ds2";  // reset  
 //            HoneyContext.setConfigRefresh(true);  //要显示刷新才会更改配置.

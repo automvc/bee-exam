@@ -6,7 +6,7 @@
 
 package org.teasoft.exam.coverage;
 
-import org.teasoft.bee.distribution.sharding.algorithm.Calculate;
+import org.teasoft.bee.sharding.algorithm.Calculate;
 
 /**
  * Just test

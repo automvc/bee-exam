@@ -9,6 +9,7 @@ package org.teasoft.exam.bee.mongodb;
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.exam.bee.osql.entity.Student;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
@@ -43,6 +44,10 @@ public class Test4_count {
 		Condition condition3=BF.getCondition();
 		int c5=suidRich.count(orders,condition3);
 		System.out.println("count="+c5);
+		
+		
+		 c=suidRich.count(new Student());
+		System.out.println("---count="+c);
 		
 		System.out.println("finished!");
 	}

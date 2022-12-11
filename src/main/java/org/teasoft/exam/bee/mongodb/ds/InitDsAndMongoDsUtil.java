@@ -12,7 +12,7 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
-import org.teasoft.beex.mongodb.MongodbSimpleDataSource;
+import org.teasoft.beex.mongodb.ds.MongodbSimpleDataSource;
 import org.teasoft.honey.osql.core.BeeFactory;
 
 import com.alibaba.druid.pool.DruidDataSource;

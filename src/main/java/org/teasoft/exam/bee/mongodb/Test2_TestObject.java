@@ -21,7 +21,7 @@ import org.teasoft.honey.util.Printer;
  * @author AiTeaSoft
  * @since  2.0
  */
-public class Test2_TestOjbct {
+public class Test2_TestObject {
 	
 	public static void main(String[] args) {
 		

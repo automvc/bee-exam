@@ -8,6 +8,7 @@ package org.teasoft.exam.bee.mongodb;
 
 import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.exam.bee.osql.entity.Student;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
@@ -37,6 +38,9 @@ public class SelectWithFun {
 //		Printer.printList(list);
 //		List<Noid0> list2 = suidRich.select(new Noid0());
 //		Printer.printList(list2);
+		
+		 rs = suidRich.selectWithFun(new Student(), FunctionType.MAX, "id", null); // 不是mongodb的string id格式.
+		System.out.println("---max: "+rs);
 		
 		System.out.println("finished!");
 	}

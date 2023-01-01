@@ -15,22 +15,19 @@ import org.teasoft.bee.osql.MapSqlSetting;
 import org.teasoft.bee.osql.annotation.JoinType;
 import org.teasoft.exam.bee.osql.CallExam;
 import org.teasoft.exam.bee.osql.HoneyConfigReset;
-import org.teasoft.exam.bee.osql.InsertAndReturnIdTest;
-import org.teasoft.exam.bee.osql.KotlinTest;
 import org.teasoft.exam.bee.osql.RedisCacheExpireTest;
 import org.teasoft.exam.bee.osql.RedisCacheTest;
 import org.teasoft.exam.bee.osql.SameConnTest;
-import org.teasoft.exam.bee.osql.TransactionExam;
 import org.teasoft.exam.bee.osql.annotation.JustFetchExam;
 import org.teasoft.exam.bee.osql.autogen.GenBeanExam;
 import org.teasoft.exam.bee.osql.autogen.GenFilesExam;
+import org.teasoft.exam.bee.osql.special.jpa.JpaAnnoTest;
 import org.teasoft.exam.bee.osql.special.primarykey.InsertAndReturnIdWithPK;
 import org.teasoft.exam.bee.osql.special.primarykey.PrimaryKeyTest;
 import org.teasoft.exam.bee.osql.special.primarykey.SelectByIdWithPK;
 import org.teasoft.exam.bee.test.AnnoTest;
 import org.teasoft.exam.bee.test.CharTest;
 import org.teasoft.exam.bee.test.TestCache;
-import org.teasoft.exam.bee.test.TestMoreDs;
 import org.teasoft.exam.bee.test.TestNormal;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.HoneyConfig;
@@ -59,7 +56,7 @@ public class BeeTest {
 			GenFilesExam.test();
 			
 			SameConnTest.test();
-			InsertAndReturnIdTest.test();
+//			InsertAndReturnIdTest.test();
 			
 			//二级缓存
 			boolean oldFlag=HoneyConfig.getHoneyConfig().cache_useLevelTwo;
@@ -100,6 +97,8 @@ public class BeeTest {
 			JustFetchExam.test();
 			CharTest.test();
 			AnnoTest.test();
+			
+			JpaAnnoTest.test();
 			
 //			KotlinTest.test();
 			

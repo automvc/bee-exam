@@ -52,8 +52,8 @@ public class PagingExam {
 		exampleField.setUserid("bee");
 		//      select some fields
 //		List<Orders> selectSomeField = suidRich.select(exampleField, "name,total");
-//		List<Orders> selectSomeField = suidRich.select(exampleField, "name,total",0,5);
-		List<Orders> selectSomeField = suidRich.select(exampleField, "name,total",2,5);
+//		List<Orders> selectSomeField = suidRich.select(exampleField,0,5, "name,total");
+		List<Orders> selectSomeField = suidRich.select(exampleField,2,5, "name,total");
 		
 //		List<Orders> selectSomeField = suidRich.select(exampleField, 5);
 		Printer.printList(selectSomeField);
@@ -125,8 +125,8 @@ public class PagingExam {
 		Printer.printList(list4);
 		
 		suidRich.select(new Noid(),2,3);
-		suidRich.select(new Noid(),"uuid",0,3);
-		String json=suidRich.selectJson(new Noid(),"uuid",0,3);
+		suidRich.select(new Noid(),0,3,"uuid");
+		String json=suidRich.selectJson(new Noid(),0,3,"uuid");
 		Logger.info(json);
 		
 		Condition condition5=BF.getCondition();
@@ -136,7 +136,7 @@ public class PagingExam {
 		
 		//测试主键字段要命名转换
 		suidRich.select(new Noid2(),2,3);
-		suidRich.select(new Noid2(),"uuId",0,3);
+		suidRich.select(new Noid2(),0,3,"uuId");
 		
 		Condition condition6=BF.getCondition();
 		condition6.size(5);

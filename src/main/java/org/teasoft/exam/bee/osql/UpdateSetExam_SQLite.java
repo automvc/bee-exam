@@ -39,7 +39,7 @@ public class UpdateSetExam_SQLite {
 
 			Condition conditionSetAdd = new ConditionImpl();
 			conditionSetAdd.setAdd("maxId", "step");
-			int setAddNum = suidRich.updateBy(entity, "bizTag", conditionSetAdd);
+			int setAddNum = suidRich.updateBy(entity, conditionSetAdd, "bizTag");
 			Logger.info("test setAdd , update num: " + setAddNum);
 			
 //			"update leaf_alloc set max_id= ?," +

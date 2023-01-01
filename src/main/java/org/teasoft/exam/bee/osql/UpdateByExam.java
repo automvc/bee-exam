@@ -50,13 +50,13 @@ public class UpdateByExam {
 		 Logger.info("update number:  "+updateNum0);
 		 
 		 Logger.info("IncludeType.INCLUDE_BOTH");
-		 int updateNum=suidRich.updateBy(orders, "userid,name", IncludeType.INCLUDE_BOTH);
+		 int updateNum=suidRich.updateBy(orders, IncludeType.INCLUDE_BOTH, "userid,name");
 		 Logger.info("update number:  "+updateNum);
 		 
 		 Logger.info("IncludeType.INCLUDE_NULL");
-		 suidRich.updateBy(orders, "userid", IncludeType.INCLUDE_NULL);
+		 suidRich.updateBy(orders, IncludeType.INCLUDE_NULL, "userid");
 		 Logger.info("IncludeType.INCLUDE_EMPTY");
-		 suidRich.updateBy(orders, "userid", IncludeType.INCLUDE_EMPTY);
+		 suidRich.updateBy(orders, IncludeType.INCLUDE_EMPTY, "userid");
 		 
 		} catch (BeeException e) {
 			Logger.error("In UpdateByExam (BeeException):"+e.getMessage());

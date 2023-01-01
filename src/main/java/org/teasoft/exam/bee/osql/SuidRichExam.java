@@ -19,6 +19,7 @@ import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.SuidRich;
 //import org.teasoft.exam.bee.osql.entity.LeafAlloc;
 import org.teasoft.exam.bee.osql.entity.Orders;
+import org.teasoft.exam.bee.osql.entity.Orders_F;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
@@ -85,22 +86,22 @@ public class SuidRichExam {
 			//		int updateNum3=suidRich.update(orders, "");
 			//		Logger.info("updateNum3:  "+updateNum3);
 
-			int updateNum4 = suidRich.update(orders, "name", IncludeType.INCLUDE_EMPTY);
+			int updateNum4 = suidRich.update(orders, IncludeType.INCLUDE_EMPTY, "name");
 			Logger.info("updateNum4:  " + updateNum4);
 
-			int updateNum5 = suidRich.update(orders, "name", IncludeType.INCLUDE_NULL);
+			int updateNum5 = suidRich.update(orders, IncludeType.INCLUDE_NULL, "name");
 			Logger.info("updateNum5:  " + updateNum5);
 
-			int updateNum6 = suidRich.update(orders, "name", IncludeType.INCLUDE_BOTH);
+			int updateNum6 = suidRich.update(orders, IncludeType.INCLUDE_BOTH, "name");
 			Logger.info("updateNum6:  " + updateNum6);
 
-			int updateNum4_2 = suidRich.update(orders, "name,total", IncludeType.INCLUDE_EMPTY);
+			int updateNum4_2 = suidRich.update(orders, IncludeType.INCLUDE_EMPTY, "name,total");
 			Logger.info("updateNum4_2:  " + updateNum4_2);
 
-			int updateNum5_2 = suidRich.update(orders, "name,total", IncludeType.INCLUDE_NULL);
+			int updateNum5_2 = suidRich.update(orders, IncludeType.INCLUDE_NULL, "name,total");
 			Logger.info("updateNum5_2:  " + updateNum5_2);
 
-			int updateNum6_2 = suidRich.update(orders, "name,total", IncludeType.INCLUDE_BOTH);
+			int updateNum6_2 = suidRich.update(orders, IncludeType.INCLUDE_BOTH, "name,total");
 			Logger.info("updateNum6_2:  " + updateNum6_2);
 
 			//the id field of entity must not be null !
@@ -307,7 +308,8 @@ public class SuidRichExam {
 			testInsertAndDeleteOrders.setId(100021L);
 			suidRich.selectOne(testInsertAndDeleteOrders);
 			suidRich.selectString(testInsertAndDeleteOrders, testInsertAndDeleteConditon);
-			suidRich.select(testInsertAndDeleteOrders, "id,Remark,userid", 0, 10);
+//			suidRich.select(testInsertAndDeleteOrders, 0, 10, "id,Remark,userid");
+			suidRich.select(testInsertAndDeleteOrders, 0, 10, Orders_F.id,Orders_F.remark,Orders_F.userid);
 			suidRich.selectWithFun(testInsertAndDeleteOrders, FunctionType.MAX, "total", testInsertAndDeleteConditon);
 			suidRich.updateById(testInsertAndDeleteOrders, testInsertAndDeleteConditon);
 
@@ -328,7 +330,8 @@ public class SuidRichExam {
 			suidRich.deleteById(Orders.class, "100023");
 
 			try {
-				suidRich.select(testInsertAndDeleteOrders, "id,Remark,userid", 5, 10);
+//				suidRich.select(testInsertAndDeleteOrders, 5, 10, "id,Remark,userid");
+				suidRich.select(testInsertAndDeleteOrders, 5, 10, Orders_F.id,Orders_F.remark,Orders_F.userid);
 			} catch (Exception e) {
 				Logger.error(e.getMessage());
 				e.printStackTrace();
@@ -403,7 +406,7 @@ public class SuidRichExam {
 		//      select some fields
 		List<Orders> selectSomeField = suidRich.select(exampleField, "name,total");
 		
-		Orders one=suidRich.selectById(exampleField,exampleField.getId());
+		Orders one=suidRich.selectById(Orders.class,exampleField.getId());
 		if(one!=null) suidRich.update(exampleField);
 		else suidRich.insert(exampleField);
 

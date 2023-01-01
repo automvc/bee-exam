@@ -6,6 +6,8 @@
 
 package org.teasoft.exam.bee.osql;
 
+import java.util.List;
+
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.exam.bee.osql.entity.Orders;
@@ -73,8 +75,17 @@ public class CacheTest {
 			
 			
 			suid.select(orders0);
-			suid.select(orders1);
+//			List<Orders> list1=suid.select(orders1);
+//			List<Orders> list2=suid.select(orders1);
+//			System.out.println(list1.hashCode());
+//			System.out.println(list2.hashCode());
 			
+			List<Orders> list1=suid.select(orders1);
+			System.out.println(list1.hashCode());
+			list1=suid.select(orders1);
+			System.out.println(list1.hashCode()); //不一样
+			
+			System.out.println("========================================");
 			orders1.setRemark("other");
 			suid.update(orders1);
 			suid.select(orders1);

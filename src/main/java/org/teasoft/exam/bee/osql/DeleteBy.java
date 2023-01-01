@@ -50,7 +50,7 @@ public class DeleteBy {
 			Orders exampleField = new Orders();
 			exampleField.setUserid("bee");
 			List<Orders> selectSomeField = suidRich.select(exampleField, "name,total");
-			Orders one=suidRich.selectById(exampleField,exampleField.getId());
+			Orders one=suidRich.selectById(Orders.class,exampleField.getId());
 		} catch (BeeException e) {
 			Logger.error("In SuidRichExam (Exception):" + e.getMessage());
 			e.printStackTrace();

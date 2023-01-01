@@ -23,6 +23,9 @@ import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.Logger;
 
+import entity.TestJsonType;
+import entity.TestJsonType2;
+
 /**
  * @author Kingstar
  * @since  1.8
@@ -122,9 +125,13 @@ public class BugTest {
 		    Printer.printList(list);
 			
 		    //V1.9.5
-		    suidRich.selectById(new Orders(), 1012);
+//		    suidRich.selectById(new Orders(), 1012);
+//		    Long id=null;
+//		    suidRich.selectById(new Orders(), id);
+		    
+		    suidRich.selectById(Orders.class, 1012);
 		    Long id=null;
-		    suidRich.selectById(new Orders(), id);
+		    suidRich.selectById(Orders.class, id);
 		    
 		    //V1.9.8之前  不支持   condition.set("fieldName", null);
 			 Orders orders3=new Orders();
@@ -143,7 +150,7 @@ public class BugTest {
 			 suidRich.update(orders3,condition3);  //bug1
 			 
 //			 case 3 : set("remark",null)   , entity field remark has value ,也声明了updateFields
-			 suidRich.update(orders3,"remark",condition3);  //bug1
+			 suidRich.update(orders3,condition3,"remark");  //bug1
 			 
 			 Condition condition4 =BeeFactory.getHoneyFactory().getCondition();
 			 condition4.op("Total", Op.ge, 90);
@@ -151,12 +158,12 @@ public class BugTest {
 			 new_remark=null;
 			 condition4.set("remark", new_remark);
 //			 case 4 : set("remark",null)   , entity field remark is null,也声明了updateFields
-			 suidRich.update(orders3,"remark",condition4);  //bug1
+			 suidRich.update(orders3,condition4,"remark");  //bug1
 			 
 //			 case 5 :一个字段即在指定的updateFields,但也用了Condition.set(arg1,arg2)等方法设置,entity里相应的字段会按规则转化到where部分.(V1.9.8)
 //			 [WARN] The field [remark] which value is 'change Remark', already set in condition! It will be ignored!
 			 orders3.setRemark("new2 remark");
-			 suidRich.update(orders3,"remark,Total",condition3); //bug2
+			 suidRich.update(orders3,condition3,"remark,Total"); //bug2
 			 
 			 Orders orders5=new Orders();
 			 orders5.setId(1004L);
@@ -177,7 +184,15 @@ public class BugTest {
 //			 orders7.setId(1004L);
 			 
 //			 orders7.setRemark("change Remark");
-			 suidRich.updateBy(orders7,"remark",condition7);
+			 suidRich.updateBy(orders7,condition7,"remark");
+			 
+			 
+			 Logger.info("------------------------------V1.11---------");
+//			 String json=suidRich.selectJson(new TestJsonType());
+//			 Logger.info(json);
+//			 
+//			 json=suidRich.selectJson(new TestJsonType2());
+//			 Logger.info(json);
 			
 		} catch (BeeException e) {
 			e.printStackTrace();

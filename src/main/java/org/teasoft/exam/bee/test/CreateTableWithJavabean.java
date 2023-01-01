@@ -6,8 +6,8 @@
 
 package org.teasoft.exam.bee.test;
 
-import org.teasoft.exam.bee.osql.commomid.OrdersIdString;
 import org.teasoft.exam.bee.osql.commomid.Orders3;
+import org.teasoft.exam.bee.osql.commomid.OrdersIdString;
 import org.teasoft.exam.bee.osql.dialect.Noid2;
 import org.teasoft.exam.bee.osql.entity.Clazz;
 import org.teasoft.exam.bee.osql.entity.LeafAlloc;
@@ -20,6 +20,8 @@ import org.teasoft.exam.bee.osql.entity.dynamic.Orders;
 import org.teasoft.exam.bee.osql.moretable.entity.Assigncourse;
 import org.teasoft.exam.bee.osql.moretable.entity.Assignexam;
 import org.teasoft.exam.bee.osql.special.primarykey.entity.CustomId;
+import org.teasoft.exam.bee.osql.special.primarykey.entity.TestPrimaryKey;
+import org.teasoft.exam.bee.osql.special.type.DateType2;
 import org.teasoft.honey.osql.autogen.Ddl;
 import org.teasoft.honey.osql.core.Logger;
 
@@ -72,6 +74,8 @@ public class CreateTableWithJavabean {
 			
 			Ddl.createTable(new Orders3(), true);
 			Ddl.createTable(new OrdersIdString(), true);
+			Ddl.createTable(new DateType2(), true);
+			Ddl.createTable(new TestPrimaryKey(), true);
 			
 			
 		} catch (Exception e) {

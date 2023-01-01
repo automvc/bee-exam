@@ -6,7 +6,10 @@
 
 package org.teasoft.exam.bee.osql.ds;
 
+import java.sql.Timestamp;
+
 import org.teasoft.bee.osql.Condition;
+import org.teasoft.bee.osql.DatabaseConst;
 import org.teasoft.bee.osql.PreparedSql;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.LeafAlloc;
@@ -15,6 +18,8 @@ import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyContext;
 import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.osql.type.TimestampTypeHandler;
+import org.teasoft.honey.osql.type.TypeHandlerRegistry;
 
 /**
  * 支持同时使用多种类型数据库的数据源.
@@ -69,10 +74,10 @@ public class DiffDdExamCustomerSql {
 		String sql="select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc";
 		
 		Object preValues[]=null;
-		preparedSqlOracle.select(sql, new LeafAlloc(), preValues, 0, 2); //分页语句部分由Bee负责
+		preparedSqlOracle.select(sql, LeafAlloc.class, preValues, 0, 2); //分页语句部分由Bee负责
 		
 		
-		preparedSqlMysql.select(sql, new LeafAlloc(), preValues, 0, 2);
+		preparedSqlMysql.select(sql, LeafAlloc.class, preValues, 0, 2);
 		
 		
 		}
@@ -87,7 +92,7 @@ public class DiffDdExamCustomerSql {
 		
 		Condition condition = new ConditionImpl();
 		condition.setAdd("maxId", "step");
-		int num = suidRich.update(leafAlloc, "maxId", condition);
+		int num = suidRich.update(leafAlloc, condition, "maxId");
 		Logger.info("---------------------------------update num is :" + num);
 
 		//"SELECT biz_tag, max_id, step FROM leaf_alloc WHERE biz_tag = #{tag}"

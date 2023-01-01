@@ -33,22 +33,25 @@ import com.alibaba.druid.pool.DruidDataSource;
 public class RwDsExam {
 
 	private static SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
-//	private static String oldDbName="";
-//	static {
-//
-//	}
+	
+	public static void main(String[] args) {
+		test();
+	}
+	
 
 	private static boolean isMysql() {
 		return DatabaseConst.MYSQL.equalsIgnoreCase(HoneyContext.getDbDialect());
 	}
 
 	public static void test() {
-	    String  oldDbName=HoneyConfig.getHoneyConfig().getDbName();
-		HoneyConfig.getHoneyConfig().setDbName(DatabaseConst.MYSQL);
-		if (isMysql()) initDS();
+		boolean old_multiDS_enable=HoneyConfig.getHoneyConfig().multiDS_enable;
+		HoneyConfig.getHoneyConfig().multiDS_enable = true; //多DS,不会在获取dbName时检测.
+	    String  oldDbName=HoneyConfig.getHoneyConfig().getDbName();  //若不是在bee.properties里设置,此时是获取不到的.
+		System.err.println(oldDbName); //null
+		
+	    initDS(); //在操作前,要先设置好数据源.
 		
 		if (isMysql()) {
-			HoneyConfig.getHoneyConfig().multiDS_enable = true;
 			HoneyConfig.getHoneyConfig().multiDS_type = 1;
 			HoneyConfig.getHoneyConfig().multiDS_defalutDS = "ds1";
 			HoneyConfig.getHoneyConfig().multiDS_writeDB = "ds1";
@@ -58,7 +61,7 @@ public class RwDsExam {
 			test1();
 			test2();
 			
-			HoneyConfig.getHoneyConfig().multiDS_enable = false;
+//			HoneyConfig.getHoneyConfig().multiDS_enable = false;
 			HoneyConfig.getHoneyConfig().multiDS_type = 0;
 			HoneyConfig.getHoneyConfig().multiDS_defalutDS = null;
 			HoneyConfig.getHoneyConfig().multiDS_writeDB = null;
@@ -67,12 +70,9 @@ public class RwDsExam {
 			HoneyContext.setConfigRefresh(true);
 		}
 		
+		HoneyConfig.getHoneyConfig().multiDS_enable =old_multiDS_enable;
 		HoneyConfig.getHoneyConfig().setDbName(oldDbName);
 		
-	}
-
-	public static void main(String[] args) {
-		test();
 	}
 
 	public static void initDS() {
@@ -117,7 +117,7 @@ public class RwDsExam {
 		leafAlloc.setBizTag("bee");
 		Condition condition = new ConditionImpl();
 		condition.setAdd("maxId", "step");
-		int num = suidRich.update(leafAlloc, "maxId", condition);
+		int num = suidRich.update(leafAlloc, condition, "maxId");
 		Logger.info("---------------------------------update num is :" + num);
 
 		//"SELECT biz_tag, max_id, step FROM leaf_alloc WHERE biz_tag = #{tag}"

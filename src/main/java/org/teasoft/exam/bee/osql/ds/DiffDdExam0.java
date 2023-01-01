@@ -80,7 +80,7 @@ public class DiffDdExam0 {
 		
 		Condition condition = new ConditionImpl();
 		condition.setAdd("maxId", "step");
-		int num = suidRich.update(leafAlloc, "maxId", condition);
+		int num = suidRich.update(leafAlloc, condition, "maxId");
 		Logger.info("---------------------------------update num is :" + num);
 
 		//"SELECT biz_tag, max_id, step FROM leaf_alloc WHERE biz_tag = #{tag}"

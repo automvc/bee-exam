@@ -58,9 +58,9 @@ public class InitDsUtil {
 //			(二十二)ORM框架Bee,Spring配置多数据源实例
 //			https://blog.csdn.net/abckingaa/article/details/120956130
 			Map<String, DataSource> dataSourceMap = new LinkedHashMap<>();
-			dataSourceMap.put("ds1", dataSource1);
-			dataSourceMap.put("ds2", dataSource2); //ds2
-			dataSourceMap.put("ds3", dataSource3); //ds3
+			dataSourceMap.put("ds0", dataSource1);
+			dataSourceMap.put("ds1", dataSource2); //ds2
+			dataSourceMap.put("ds2", dataSource3); //ds3
 			BeeFactory.getInstance().setDataSourceMap(dataSourceMap);
 
 		} catch (SQLException e) {

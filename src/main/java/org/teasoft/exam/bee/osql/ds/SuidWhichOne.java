@@ -11,6 +11,7 @@ import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.DynamicTableExam;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyContext;
 import org.teasoft.honey.osql.shortcut.BF;
 
@@ -36,8 +37,12 @@ public class SuidWhichOne {
 	
 	public static void test() {
 		
+		HoneyConfig.getHoneyConfig().multiDS_enable = true; //使用多数据源  多个数据源时必须设置
+		HoneyConfig.getHoneyConfig().multiDS_differentDbType=true;  //同时要使用多种数据库,一定要设置
+		HoneyContext.setConfigRefresh(true); 
+		
 		Suid suid1=BF.getSuid();
-		suid1.setDataSourceName("Ds1");
+		suid1.setDataSourceName("ds1");
 		
 		suid1.select(new Orders());
 		

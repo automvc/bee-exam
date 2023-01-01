@@ -7,6 +7,7 @@
 package org.teasoft.exam.bee.osql.special.jpa;
 
 import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
@@ -14,9 +15,13 @@ import org.teasoft.honey.osql.shortcut.BF;
  * @since  1.17
  */
 public class JpaAnnoTest {
-	
+
 	public static void main(String[] args) {
-		Suid suid=BF.getSuid();
+		test();
+	}
+
+	public static void test() {
+		Suid suid = BF.getSuid();
 		suid.select(new Orders());
 	}
 

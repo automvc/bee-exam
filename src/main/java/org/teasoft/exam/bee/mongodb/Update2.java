@@ -31,7 +31,7 @@ public class Update2 {
 		orders.setRemark("changed 1211");
 		
 //		int updateNum=suidRich.update(orders, Orders_F.num,condition); //指定只更新num字段
-		int updateNum=suidRich.updateBy(orders, Orders_F.name,condition); //指定用name作为过滤条件
+		int updateNum=suidRich.updateBy(orders,condition, Orders_F.name); //指定用name作为过滤条件
 		Logger.info("---updateNum: "+ updateNum);
 	}
 

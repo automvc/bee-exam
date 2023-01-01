@@ -3,11 +3,15 @@ package org.teasoft.exam.bee.mongodb;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+import org.teasoft.bee.osql.annotation.Entity;
+import org.teasoft.bee.osql.annotation.JustFetch;
+
 /**
  * @author Honey
  * Create on 2022-10-10 21:35:44
  */
-public class Orders implements Serializable {
+@Entity("Orders")
+public class OrdersGroupResponse implements Serializable {
 
 	private static final long serialVersionUID = 1593604354717L;
 
@@ -21,7 +25,13 @@ public class Orders implements Serializable {
 	private String sequence;
 	private String abc;
 	private String updatetime;
-	private String detailInfo;
+	
+	@JustFetch("")
+	private String maxTotal;
+	
+	@JustFetch("")
+	private Double minTotal;
+	
 
 	public Long getId() {
 		return id;
@@ -102,16 +112,8 @@ public class Orders implements Serializable {
 	public void setUpdatetime(String updatetime) {
 		this.updatetime = updatetime;
 	}
-	
-	 public String getDetailInfo() {
-		return detailInfo;
-	}
 
-	public void setDetailInfo(String detailInfo) {
-		this.detailInfo = detailInfo;
-	}
-
-	public String toString(){	
+	 public String toString(){	
 		 StringBuilder str=new StringBuilder();	
 		 str.append("Orders[");			
 		 str.append("id=").append(id);		 
@@ -124,7 +126,8 @@ public class Orders implements Serializable {
 		 str.append(",sequence=").append(sequence);		 
 		 str.append(",abc=").append(abc);		 
 		 str.append(",updatetime=").append(updatetime);		 
-		 str.append(",detailInfo=").append(detailInfo);		 
+		 str.append(",maxTotal=").append(maxTotal);		 
+		 str.append(",minTotal=").append(minTotal);		 
 		 str.append("]");			 
 		 return str.toString();			 
 	 }		 

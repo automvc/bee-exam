@@ -22,7 +22,7 @@ public class SelectWithFun {
 
 
 		String rs = suidRich.selectWithFun(new Orders(), FunctionType.MAX, "id", null); // 不是mongodb的string id格式.
-		System.out.println("rs: "+rs);
+		System.out.println("max: "+rs);
 		
 		String min = suidRich.selectWithFun(new Orders(), FunctionType.MIN, "id", null); // 不是mongodb的string id格式.
 		System.out.println("min: "+min);

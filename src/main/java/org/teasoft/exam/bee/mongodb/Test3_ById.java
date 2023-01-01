@@ -29,15 +29,15 @@ public class Test3_ById {
 //		
 //		suidRich.insert(orders);
 		
-		Orders orders=suidRich.selectById(new Orders(),10020L);
+		Orders orders=suidRich.selectById(Orders.class,10020L);
 		System.out.println("selectById orders:"+orders.toString());
 		System.out.println("----------------------------");
 		
-		orders=suidRich.selectById(new Orders(),"10021");
+		orders=suidRich.selectById(Orders.class,"10021");
 		System.out.println("selectById orders:"+orders.toString());
 		System.out.println("----------------------------");
 		
-		List<Orders> list=suidRich.selectByIds(new Orders(),"10020,10021");
+		List<Orders> list=suidRich.selectByIds(Orders.class,"10020,10021");
 		Printer.printList(list);
 		
 		int delNum=suidRich.deleteById(Orders.class, 10017L);

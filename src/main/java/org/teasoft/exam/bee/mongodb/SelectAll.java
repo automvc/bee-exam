@@ -22,5 +22,12 @@ public class SelectAll {
 		List<Orders3> list=suidRich.select(new Orders3());
 		System.err.println(list.size());
 		Printer.printList(list);
+		
+		System.err.println("------------------------------------------");
+		list=suidRich.select(new Orders3());
+		System.err.println(list.size());
+		Printer.printList(list);
+		
+		
 	}
 }

@@ -18,7 +18,7 @@ import org.teasoft.honey.osql.shortcut.BF;
  * @author Kingstar
  * @since  2.0
  */
-public class SelectGroupBy3 {
+public class SelectGroupBy3_Response {
 	
 	public static void main(String[] args) {
 		SuidRich suidRich=BF.getSuidRich();
@@ -28,12 +28,13 @@ public class SelectGroupBy3 {
 //		c.groupBy(Orders_F.id);
 //		c.selectField(Orders_F.abc);
 		c.selectFun(FunctionType.MAX, Orders_F.id);
-		c.selectFun(FunctionType.MAX, Orders_F.total,"max_total");
+//		c.selectFun(FunctionType.MAX, Orders_F.total,"max_total");
+		c.selectFun(FunctionType.MAX, Orders_F.total,"maxTotal");
 		c.selectFun(FunctionType.MIN, Orders_F.total,"min_total");
 //		c.selectFun(FunctionType.COUNT, Orders_F.id);
 //		select name,count(*),max(id),min(total) from orders group by name;
 		
-		List<Orders> list=suidRich.select(new Orders(), c);
+		List<OrdersGroupResponse> list=suidRich.select(new OrdersGroupResponse(), c);
 		Printer.printList(list);
 	}
 

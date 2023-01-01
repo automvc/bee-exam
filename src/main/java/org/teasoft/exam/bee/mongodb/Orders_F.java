@@ -19,6 +19,7 @@ public class Orders_F {
 	public static final String abc = "abc";
 	public static final String num = "num"; //diff
 	public static final String updatetime = "updatetime";
+	public static final String detailInfo = "detailInfo";
 	public static final String ENTITY_NAME = "Orders";
 	public static final String TABLE_NAME = "orders";
 	public static final String ALL_NAMES = "id,userid,name,total,createtime,remark,sequence,abc,updatetime";

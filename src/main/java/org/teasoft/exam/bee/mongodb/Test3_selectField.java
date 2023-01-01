@@ -43,10 +43,10 @@ public class Test3_selectField {
 		Printer.printList(list);
 		System.out.println("----------------------------");
 		
-		list=suidRich.select(new Orders(), "name,remark",0,3);
+		list=suidRich.select(new Orders(),0,3, "name,remark");
 		Printer.printList(list);
 		
-		list=suidRich.select(new Orders(), "id,name,remark",0,3);
+		list=suidRich.select(new Orders(),0,3, "id,name,remark");
 		Printer.printList(list);
 		
 		System.out.println("--------------select(new Orders(), 0,3)--------------");

@@ -13,11 +13,10 @@ import org.teasoft.honey.osql.shortcut.BF;
 
 
 /**
- * 条件是多个字段, 要更新的也是多个字段(实体里要更新的,有多个字段,Condition声明要更新的也有多个字段)
  * @author Kingstar
  * @since  2.0
  */
-public class Update3 {
+public class Update_upper {
 
 	public static void main(String[] args) {
 		
@@ -26,18 +25,14 @@ public class Update3 {
 		
 		
 		condition.setMultiply(Orders_F.num, 2);
-		condition.setMultiply(Orders_F.total, 2); //condition声明要更新超过一个字段
+		condition.set("detailInfo", "test detailInfo");
 		
-		//在实体声明要更新两个字段
 		Orders orders=new Orders();
-		orders.setName("mongodb72"); //for filter
-		orders.setAbc("test bee "); //for filter
-		orders.setRemark("changed 1211"); // for update
-		orders.setSequence("124"); // for update
+		orders.setName("mongodb72");
 		
 //		int updateNum=suidRich.update(orders, Orders_F.num,condition); //指定只更新num字段
-		int updateNum=suidRich.updateBy(orders,condition, Orders_F.name); //指定用name作为过滤条件
-		Logger.info("---updateNum: "+ updateNum);
+		int updateNum = suidRich.updateBy(orders, condition, Orders_F.name); // 指定用name作为过滤条件
+		Logger.info("---updateNum: " + updateNum);
 	}
 
 }

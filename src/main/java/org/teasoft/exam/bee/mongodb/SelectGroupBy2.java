@@ -25,7 +25,7 @@ public class SelectGroupBy2 {
 		Condition c=BF.getCondition(); 
 //		c.groupBy(Orders_F.name);
 		c.groupBy(Orders_F.id);
-		c.selectField(Orders_F.abc);
+		c.selectField(Orders_F.abc);  //不能这样指定要查的字段
 		
 		List<Orders> list=suidRich.select(new Orders(), c);
 //		List<Orders3> list=suidRich.select(new Orders3(), c);

@@ -26,7 +26,7 @@ public class Test4_insertOrders3 {
 //		
 		List<Orders3> insertList=new ArrayList<>();
 //		
-		for (int i = 10; i < 20; i++) {
+		for (int i = 20; i < 30; i++) {
 			orders=new Orders3();
 			orders.setName("mongodb" + i);
 			orders.setId(10100L + i+"");

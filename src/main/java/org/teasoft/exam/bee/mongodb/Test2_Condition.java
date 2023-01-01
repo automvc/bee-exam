@@ -47,6 +47,10 @@ public class Test2_Condition {
 		List<Orders> list7=suidRich.select(new Orders(),condtion6);
 		Printer.printList(list7);
 		
+		System.out.println("---------------test cache-----------------");
+		list7=suidRich.select(new Orders(),condtion6);
+		Printer.printList(list7);
+		
 		System.out.println("finished!");
 	}
 

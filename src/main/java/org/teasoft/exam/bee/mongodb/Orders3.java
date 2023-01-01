@@ -6,11 +6,15 @@
 
 package org.teasoft.exam.bee.mongodb;
 
+import java.io.Serializable;
+
 /**
  * @author Kingstar
  * @since  2.0
  */
-public class Orders3 {
+public class Orders3 implements Serializable {
+	
+	private static final long serialVersionUID = 1593604354717L;
 	
 	private String id;
 	private String name;

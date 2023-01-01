@@ -9,7 +9,6 @@ package org.teasoft.exam.bee.mongodb;
 import java.util.List;
 
 import org.teasoft.bee.osql.Condition;
-import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;
@@ -18,22 +17,20 @@ import org.teasoft.honey.osql.shortcut.BF;
  * @author Kingstar
  * @since  2.0
  */
-public class SelectGroupBy3 {
+public class SelectGroupBy2_twoField {
 	
 	public static void main(String[] args) {
 		SuidRich suidRich=BF.getSuidRich();
 		
 		Condition c=BF.getCondition(); 
-		c.groupBy(Orders_F.id);
-//		c.groupBy(Orders_F.id);
-//		c.selectField(Orders_F.abc);
-		c.selectFun(FunctionType.MAX, Orders_F.id);
-		c.selectFun(FunctionType.MAX, Orders_F.total,"max_total");
-		c.selectFun(FunctionType.MIN, Orders_F.total,"min_total");
-//		c.selectFun(FunctionType.COUNT, Orders_F.id);
-//		select name,count(*),max(id),min(total) from orders group by name;
+//		c.groupBy(Orders_F.abc);
+		
+//		c.groupBy("abc");
+//		c.groupBy("name");
+		c.groupBy("abc,name");
 		
 		List<Orders> list=suidRich.select(new Orders(), c);
+//		List<Orders3> list=suidRich.select(new Orders3(), c);
 		Printer.printList(list);
 	}
 

@@ -54,7 +54,7 @@ public class CharTest {
 		
 		String sql="select uuid,name,num,remark,ch from noid";
 		PreparedSql p=BeeFactoryHelper.getPreparedSql();  //自定义sql应用不了类型处理器
-		list=p.select(sql, new Noid());
+		list=p.select(sql, Noid.class);
 		Printer.printList(list);
 		
 		String json=p.selectJson(sql);

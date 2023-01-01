@@ -6,8 +6,9 @@
 <!-- 	<version>1.8.99</version> -->
 <!-- 	<version>1.9.5</version> -->
 <!-- 	<version>1.9.8</version> -->
-	<version>1.17</version>
+<!--    <version>1.17</version> -->
 	<packaging>jar</packaging>
+	<version>2.0-SNAPSHOT</version>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -23,7 +24,8 @@
 <!-- 		<bee.version>1.11.0.3.20-SNAPSHOT</bee.version> -->
 <!-- 		<bee.version>1.11.0.4.22-SNAPSHOT</bee.version> -->
 <!-- 		<bee.version>1.11</bee.version> -->
-		<bee.version>1.17</bee.version>
+<!-- 		<bee.version>1.17</bee.version> -->
+            <bee.version>${project.version}</bee.version>
 	</properties>
 
 	<dependencies>
@@ -90,12 +92,12 @@
 		</dependency>
 
 		<!-- log4j用这个 -->
-		 <dependency>
+		<!--  <dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 			<scope>provided</scope>
-		</dependency> 
+		</dependency>  -->
 		
 
 		<!-- <dependency>
@@ -133,14 +135,14 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.9</version>
 			<scope>provided</scope>
-		</dependency>
+		</dependency>-->
 
-		<dependency>
+<!-- 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>1.1.7</version>
 			<scope>provided</scope>
-		</dependency>  -->
+		</dependency>   -->
 
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -268,7 +270,12 @@
     <version>1.0.2</version>
 </dependency>
 
-      
+   <dependency>
+		<groupId>org.mongodb</groupId>
+		<artifactId>mongodb-driver-sync</artifactId>
+		<version>4.6.1</version>
+		<scope>provided</scope>
+	</dependency> 
 		
 	</dependencies>
 

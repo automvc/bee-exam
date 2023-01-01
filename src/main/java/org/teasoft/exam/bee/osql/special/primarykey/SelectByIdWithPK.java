@@ -29,7 +29,7 @@ public class SelectByIdWithPK {
 //		String key="aaaadd-no-id";
 		String key="aaaacc-no-id";
 		
-		CustomId customId=suidRich.selectById(new CustomId(), key);
+		CustomId customId=suidRich.selectById(CustomId.class, key);
 		if(customId!=null)Logger.info(customId.toString());
 		
 		int delNum=suidRich.deleteById(CustomId.class, key);

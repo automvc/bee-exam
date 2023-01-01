@@ -6,7 +6,10 @@
 
 package org.teasoft.exam.bee.test;
 
+import java.sql.Timestamp;
+
 import org.teasoft.bee.osql.BeeException;
+import org.teasoft.bee.osql.DatabaseConst;
 import org.teasoft.exam.bee.osql.ds.DiffDdExam;
 import org.teasoft.exam.bee.osql.ds.DiffDdExam0;
 import org.teasoft.exam.bee.osql.ds.DiffDdExam00;
@@ -17,6 +20,8 @@ import org.teasoft.exam.bee.osql.ds.RwDsExam;
 import org.teasoft.exam.bee.osql.ds.SuidWhichOne;
 import org.teasoft.exam.comm.TestHelper;
 import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.osql.type.TimestampTypeHandler;
+import org.teasoft.honey.osql.type.TypeHandlerRegistry;
 
 /**
  * @author Kingstar
@@ -24,6 +29,8 @@ import org.teasoft.honey.osql.core.Logger;
  */
 public class TestMoreDs {
 	public static void main(String[] args) throws Exception{
+		//javabean Timestamp updateTime;    mysql 存的是字符.
+		TypeHandlerRegistry.register(Timestamp.class, new TimestampTypeHandler<Timestamp>(),DatabaseConst.MYSQL,true);
 		test();
 	}
 	

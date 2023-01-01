@@ -41,8 +41,11 @@ import org.teasoft.exam.bee.osql.commomid.StringIdTest;
 import org.teasoft.exam.bee.osql.commomid.StringIdUUIDTest;
 import org.teasoft.exam.bee.osql.dialect.MyFeatureTest;
 import org.teasoft.exam.bee.osql.dialect.PagingExam;
+import org.teasoft.exam.bee.osql.naming.DiffNamingTest;
 import org.teasoft.exam.bee.osql.special.ColumnAnnoTest;
+import org.teasoft.exam.bee.osql.special.LikeTest;
 import org.teasoft.exam.bee.osql.special.ddl.DdlTest;
+import org.teasoft.exam.bee.osql.special.type.DateTypeTest;
 import org.teasoft.exam.comm.OrdinaryTest;
 import org.teasoft.exam.comm.TestHelper;
 import org.teasoft.exam.comm.TestPrepare;
@@ -181,6 +184,9 @@ public class TestNormal {
 		runTest(StringIdUUIDTest.class);
 		runTest(NotLongId.class);
 		runTest(ColumnAnnoTest.class);
+		runTest(LikeTest.class);
+		runTest(DiffNamingTest.class);
+		runTest(DateTypeTest.class);
 		
 //		runTest(KotlinTest.class);
 //		runTest(HoneyConfigReset.class);

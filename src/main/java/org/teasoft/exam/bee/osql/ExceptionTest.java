@@ -544,7 +544,7 @@ public class ExceptionTest {
 			conditionUpdate.set("remark", "remark set in condition");
 			Orders_update.setRemark("will be ignored!");//remark 指定为要更新的字段, 当condition设置有时,会忽略此字段
 			Orders_update.setTotal(null);//Total没有声明为更新字段,不受updateFields声明的set字段限制, 但会过虑默认的值
-			int updateNumCondition=suidRich.update(Orders_update, "remark", conditionUpdate); //声明需要更新的字段为:remark
+			int updateNumCondition=suidRich.update(Orders_update, conditionUpdate, "remark"); //声明需要更新的字段为:remark
 			Logger.info("updateNumCondition: "+updateNumCondition);
 		} catch (BeeException e) {
 			Logger.error(e.getMessage());

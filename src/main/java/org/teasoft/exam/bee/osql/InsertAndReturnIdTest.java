@@ -70,7 +70,7 @@ public class InsertAndReturnIdTest {
 			long id = suid.insertAndReturnId(orders1);
 			Logger.info("InsertAndReturnId  : " + id);
 			Logger.info("------------------------getId : " + orders1.getId());
-			Orders insertOrders = suidRich.selectById(new Orders(), id);
+			Orders insertOrders = suidRich.selectById(Orders.class, id);
 			if (insertOrders != null) Logger.info(insertOrders.toString());
 			
 			long id2 = suid.insertAndReturnId(orders1);
@@ -108,7 +108,7 @@ public class InsertAndReturnIdTest {
 			long id = suid.insertAndReturnId(orders1);
 			Logger.info("InsertAndReturnId  : " + id);
 			
-			Orders insertOrders = suidRich.selectById(new Orders(), id);
+			Orders insertOrders = suidRich.selectById(Orders.class, id);
 			if (insertOrders != null) Logger.info(insertOrders.toString());
 			
 			orders1.setId(-1L);  //Trigger will replace it
@@ -144,7 +144,7 @@ public class InsertAndReturnIdTest {
 			long id = suid.insertAndReturnId(orders1);
 			Logger.info("InsertAndReturnId  : " + id);
 			
-			Orders insertOrders = suidRich.selectById(new Orders(), id);
+			Orders insertOrders = suidRich.selectById(Orders.class, id);
 			if (insertOrders != null) Logger.info(insertOrders.toString());
 			
 //			orders1.setId(-1L);  // in mysql, id can do not pass

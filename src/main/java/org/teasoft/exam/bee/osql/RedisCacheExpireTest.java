@@ -21,7 +21,7 @@ import redis.clients.jedis.Jedis;
  * @since  1.0
  */
 public class RedisCacheExpireTest {
-	
+	//RedisCacheTest里也有调用
 	public static void main(String[] args) {
 //		ClearAndInitTestTable.main(null);  //TODO TEST
 		test();

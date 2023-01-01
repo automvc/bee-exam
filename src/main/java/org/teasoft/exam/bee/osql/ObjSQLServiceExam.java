@@ -30,7 +30,7 @@ public class ObjSQLServiceExam {
 		objSQLRichService.select(orders1,0,10);
 		
 		objSQLRichService.selectJson(orders1,"id,name");
-		objSQLRichService.selectJson(orders1,"id,name",0,10);
+		objSQLRichService.selectJson(orders1,0,10,"id,name");
 		
 		Orders orders2 = new Orders();
 		orders2.setId(1001L);

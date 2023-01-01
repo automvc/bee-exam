@@ -87,7 +87,7 @@ public class MoreTableExam {
 			Condition conditionUpdate=BeeFactoryHelper.getCondition();
 			conditionUpdate.op("name", Op.eq, null);
 			SuidRich suidRich=BeeFactoryHelper.getSuidRich();
-			suidRich.update(ordersUpdate, "name", conditionUpdate);
+			suidRich.update(ordersUpdate, conditionUpdate, "name");
 			
 			//			condition.selectField("orders.id,test_user.id,userid,total,orders.createtime");  
 			condition.selectField("orders.id,testUser.id,userid,total,orders.createtime");//只查询部分字段. 没有指定查询的值都为null

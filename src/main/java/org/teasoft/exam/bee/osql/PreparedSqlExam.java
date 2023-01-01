@@ -86,14 +86,14 @@ public class PreparedSqlExam {
 			Logger.info("getCustomSql:  " + sql4); //只能在一行的.
 
 //			List<Orders> list4 = preparedSql.select(sql4, new Orders(), new Object[] {});
-			List<Orders> list4 = preparedSql.select(sql4, new Orders(), new Object[] {},1,3);
+			List<Orders> list4 = preparedSql.select(sql4, Orders.class, new Object[] {},1,3);
 //			List<Orders> list4 = preparedSql.select(sql4, new Orders(), new HashMap());
 			for (int i = 0; i < list4.size(); i++) {
 				Logger.info(list4.get(i).toString());
 			}
 			
 //			preparedSql.select(sql4, new Orders(), new HashMap()); //test: get from cache
-			preparedSql.select(sql4, new Orders(), new Object[] {});
+			preparedSql.select(sql4, Orders.class, new Object[] {});
 			List<String[]> list7 = preparedSql.select(sql4,new Object[] {},1,3);
 			
 			//自定义sql多表查询
@@ -152,15 +152,15 @@ public class PreparedSqlExam {
 				SqlServerPagingStruct struct=new SqlServerPagingStruct();
 				struct.setHasOrderBy(true);
 				HoneyContext.setSqlServerPagingStruct(sql2012, struct);
-				preparedSql.select(sql2012, new Orders(), new Object[] {},2,3);
+				preparedSql.select(sql2012, Orders.class, new Object[] {},2,3);
 
 				
 				//sql server>=2012 ,use old type,用回旧语法  默认分页排序,用row_number() over (order by id)
 				HoneyConfig.getHoneyConfig().getDbName();
 				DbFeatureRegistry.register(DatabaseConst.SQLSERVER, null); 
 				HoneyConfig.getHoneyConfig().setDatabaseMajorVersion(0); 
-				List<Orders> list4_2 = preparedSql.select(sql4, new Orders(), new Object[] {},1,3);
-				List<Orders> list4_3 = preparedSql.select(sql4, new Orders(), new Object[] {},2,3);
+				List<Orders> list4_2 = preparedSql.select(sql4, Orders.class, new Object[] {},1,3);
+				List<Orders> list4_3 = preparedSql.select(sql4, Orders.class, new Object[] {},2,3);
 				
 //				不是用id分页排序时,要告知系统. //面向对象方式分页,则由Bee框架自动处理.
 				
@@ -169,7 +169,7 @@ public class PreparedSqlExam {
 //				SqlServerPagingStruct struct2=new SqlServerPagingStruct();
 //				struct2.setHasOrderBy(true);
 //				HoneyContext.setSqlServerPagingStruct(sql2008, struct2);
-				preparedSql.select(sql2008, new Orders(), new Object[] {},2,3);
+				preparedSql.select(sql2008, Orders.class, new Object[] {},2,3);
 				
 				String sql2008_2="select * from orders order by name desc";
 				SqlServerPagingStruct struct3=new SqlServerPagingStruct();
@@ -177,7 +177,7 @@ public class PreparedSqlExam {
 				struct3.setOrderColumn("name");
 				struct3.setOrderType(OrderType.DESC);
 				HoneyContext.setSqlServerPagingStruct(sql2008_2, struct3);
-				preparedSql.select(sql2008_2, new Orders(), new Object[] {},2,3);
+				preparedSql.select(sql2008_2, Orders.class, new Object[] {},2,3);
 				
 			}
 		} catch (BeeException e) {

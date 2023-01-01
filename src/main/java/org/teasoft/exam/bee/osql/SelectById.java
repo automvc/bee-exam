@@ -41,18 +41,18 @@ public class SelectById {
 		  
 //		SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
 		
-		List<TestUser> listSelectByIds=suidRich.selectByIds(new TestUser(), "800001,800002");  //PostgreSQL 是强类型,不能这种用
+		List<TestUser> listSelectByIds=suidRich.selectByIds(TestUser.class, "800001,800002");  //PostgreSQL 是强类型,不能这种用
 		for (int i = 0; i < listSelectByIds.size(); i++) {
 			Logger.info(listSelectByIds.get(i).toString());
 			Logger.info("=============================================");
 		}
 		
-		TestUser testUser1=suidRich.selectById(new TestUser(), 800001);
+		TestUser testUser1=suidRich.selectById(TestUser.class, 800001);
 		if(testUser1!=null) Logger.info(testUser1.toString());
 		
-		TestUser testUser2=suidRich.selectById(new TestUser(), 800001L);
+		TestUser testUser2=suidRich.selectById(TestUser.class, 800001L);
 		
-		TestUser testUser3=suidRich.selectById(new TestUser(), "800001");
+		TestUser testUser3=suidRich.selectById(TestUser.class, "800001");
 		if(testUser3!=null) Logger.info(testUser3.toString());
 //		test Exception
 //		TestUser testUser3=suidRich.selectById(new TestUser(), "800001,800001");
@@ -70,7 +70,7 @@ public class SelectById {
 		Logger.info(json);
 		
 		
-		TestUser testUser5=suidRich.selectById(new TestUser(), "800001");
+		TestUser testUser5=suidRich.selectById(TestUser.class, "800001");
 		
 		TestUser accout=new TestUser();
 		accout.setUsername("bee"); //username字段设唯一约束

@@ -193,6 +193,20 @@ public class LikeTest {
 			Logger.info(list2.get(i).toString());
 		}
 		
+		condition=BF.getCondition();
+		condition.op("name", Op.like, "12%"); 
+		list2 = suid.select(new Orders(), condition);
+		for (int i = 0; i < list2.size(); i++) {
+			Logger.info(list2.get(i).toString());
+		}
+		
+		condition=BF.getCondition();
+		condition.op("name", Op.likeLeftRight, "12"); 
+		list2 = suid.select(new Orders(), condition);
+		for (int i = 0; i < list2.size(); i++) {
+			Logger.info(list2.get(i).toString());
+		}
+		
 		
 		}catch (Exception e) {
 			Logger.error("In ConditionExam (Exception):"+e.getMessage());

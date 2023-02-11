@@ -26,10 +26,10 @@ public class OrdersGroupResponse implements Serializable {
 	private String abc;
 	private String updatetime;
 	
-	@JustFetch("")
+	@JustFetch
 	private String maxTotal;
 	
-	@JustFetch("")
+	@JustFetch
 	private Double minTotal;
 	
 
@@ -112,8 +112,20 @@ public class OrdersGroupResponse implements Serializable {
 	public void setUpdatetime(String updatetime) {
 		this.updatetime = updatetime;
 	}
+	
+	 public String getMaxTotal() {
+		return maxTotal;
+	}
 
-	 public String toString(){	
+	public Double getMinTotal() {
+		return minTotal;
+	}
+	
+//	public void setMinTotal(Double minTotal) {
+//		this.minTotal = minTotal;
+//	}
+
+	public String toString(){	
 		 StringBuilder str=new StringBuilder();	
 		 str.append("Orders[");			
 		 str.append("id=").append(id);		 

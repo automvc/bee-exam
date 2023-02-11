@@ -31,13 +31,14 @@ public class Test4_insertList {
 		
 		List<Orders> insertList=new ArrayList<>();
 		
-		for (int i = 70; i < 80; i++) {
+		for (int i = 0; i < 10; i++) {
 			orders=new Orders();
 			orders.setAbc("test bee ");
 			orders.setName("mongodb" + i);
-			orders.setId(2000L + i);
-			orders.setUserid(2000L + i);
+			orders.setId(3000L + i);
+			orders.setUserid(3000L + i);
 //			orders.setNum(i);
+//			orders.setRemark(null); //test null   mongodb,批量插入,不处理null
 			orders.setTotal(new BigDecimal((i+i*0.01)+""));
 			
 			insertList.add(orders);

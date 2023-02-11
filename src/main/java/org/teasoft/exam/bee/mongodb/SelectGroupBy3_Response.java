@@ -24,8 +24,8 @@ public class SelectGroupBy3_Response {
 		SuidRich suidRich=BF.getSuidRich();
 		
 		Condition c=BF.getCondition(); 
-		c.groupBy(Orders_F.id);
 //		c.groupBy(Orders_F.id);
+		c.groupBy(Orders_F.abc);
 //		c.selectField(Orders_F.abc);
 		c.selectFun(FunctionType.MAX, Orders_F.id);
 //		c.selectFun(FunctionType.MAX, Orders_F.total,"max_total");
@@ -35,6 +35,10 @@ public class SelectGroupBy3_Response {
 //		select name,count(*),max(id),min(total) from orders group by name;
 		
 		List<OrdersGroupResponse> list=suidRich.select(new OrdersGroupResponse(), c);
+		
+		OrdersGroupResponse res=new OrdersGroupResponse();
+//		res.setMinTotal(-1D);
+		list=suidRich.select(res, c);
 		Printer.printList(list);
 	}
 

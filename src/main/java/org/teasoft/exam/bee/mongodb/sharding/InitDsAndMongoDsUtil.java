@@ -16,14 +16,14 @@ import org.teasoft.honey.osql.core.BeeFactory;
 
 /**
  * @author Kingstar
- * @since  1.11
+ * @since  2.0
  */
 public class InitDsAndMongoDsUtil {
 	
 	public static void initDS() {
 		try {
 
-			MongodbSimpleDataSource dataSource0=new MongodbSimpleDataSource("mongodb://localhost:27017/ds0","","");
+			MongodbSimpleDataSource dataSource0=new MongodbSimpleDataSource("mongodb://localhost:27017/ds0","","");//没有设置用户名和密码,仅用于测试
 			MongodbSimpleDataSource dataSource1=new MongodbSimpleDataSource("mongodb://localhost:28018/ds1","","");
 
 			Map<String, DataSource> dataSourceMap = new LinkedHashMap<>();

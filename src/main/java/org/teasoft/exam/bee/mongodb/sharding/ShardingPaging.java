@@ -21,9 +21,11 @@ public class ShardingPaging {
 		
 		ShardingDoConfig.init();
 		InitDsAndMongoDsUtil.initDS();
-		test(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.
-		test(2);
-		test(-1);
+//		test(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.
+//		test(2);
+//		test(-1);
+		
+		test(0);
 	}
 	
 	public static void test(int startIndex) {
@@ -43,19 +45,18 @@ public class ShardingPaging {
 		.rParentheses()
 		;
 		
-		//全域查询
 		condition
 //		.start(2)   //不是首页开始.
-//		.start(0)  //从首页开始
-		.start(startIndex)
-		.size(1);
+		.start(0)  //从首页开始
+//		.start(startIndex)
+		.size(2);
 		
 		
 		//条件全在condition  case 5
 	 	List<Orders> list=suid.select(orders1,condition);
 	 	Printer.printList(list);
-	 	System.out.println("--------------------:");
-	 	list=suid.select(orders1,condition);
-        Printer.printList(list);
+//	 	System.out.println("--------------------:");
+//	 	list=suid.select(orders1,condition);
+//        Printer.printList(list);
 	}
 }

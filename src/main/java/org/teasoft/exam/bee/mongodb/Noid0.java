@@ -11,7 +11,7 @@ import org.teasoft.bee.osql.annotation.Table;
 *@author Honey
 *Create on 2021-07-08 22:25:17
 */
-@Table("Noid")
+@Table("Noid0")
 public class Noid0 implements Serializable {
 
 	private static final long serialVersionUID = 1590272445571L;

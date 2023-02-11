@@ -32,4 +32,17 @@
 <root level="INFO">
 <appender-ref ref="STDOUT" />
 </root>
+
+<logger name="org.mongodb.driver.cluster" level="WARN"></logger>
+<logger name="org.mongodb.driver.connection" level="WARN"></logger>
+<logger name="org.mongodb.driver.protocol.management" level="WARN"></logger>
+<logger name="org.mongodb.driver.protocol.killcursor" level="WARN"></logger>
+<logger name="org.mongodb.driver.protocol.getmore" level="WARN"></logger>
+
+<logger name="org.mongodb.driver.protocol.insert" level="DEBUG"></logger>
+<logger name="org.mongodb.driver.protocol.update" level="DEBUG"></logger>
+<logger name="org.mongodb.driver.protocol.delete" level="DEBUG"></logger>
+<logger name="org.mongodb.driver.protocol.query" level="DEBUG"></logger>
+<logger name="org.mongodb.driver.protocol.command" level="DEBUG"></logger>
+
 </configuration>

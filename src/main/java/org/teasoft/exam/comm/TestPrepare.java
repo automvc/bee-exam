@@ -26,7 +26,9 @@ public class TestPrepare {
 //	private static String version="v1.9";
 //	private static String version="v1.9.8";
 //	private static String version="v1.11";
-	private static String version="v1.17";
+//	private static String version="v1.17";
+	
+	private static String version="v2.0";
 	
 	public static void init(){
 		init("");

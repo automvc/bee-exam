@@ -11,7 +11,6 @@ import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.sharding.ShardingUtil;
 import org.teasoft.honey.sharding.config.ShardingConfig;
-import org.teasoft.honey.sharding.config.ShardingRegistry;
 
 /**
  * 分页, 多库多表; 无排序
@@ -28,7 +27,7 @@ public class ShardingPaging5 {
 //		ShardingInitData.init();
 		ShardingBean shardingBean=new ShardingBean();
 		shardingBean.setTabField("remark");
-		shardingBean.setActualDataNodes("ds[0..1].orders[0..5]");
+		shardingBean.setFullNodes("ds[0..1].orders[0..5]");
 //		ShardingRegistry.register(Orders.class, shardingBean);
 		ShardingConfig.addShardingBean(Orders.class, shardingBean);
 		
@@ -41,18 +40,18 @@ public class ShardingPaging5 {
 		
 		Suid suid=BF.getSuid(); //1
 		Orders orders1=new Orders();
-//		orders1.setName("Bee(ORM Framework)");
+		orders1.setUserid(3L);
 		
 		Condition condition=BF.getCondition();
 		condition
 //		.op(Orders_F.userid, Op.eq, 0)
-        .lParentheses()
+        .lParentheses()  //(
 		.op(Orders_F.orderid, Op.eq, 1)
-		.or()
+		.or()  // or
 		.op(Orders_F.orderid, Op.eq, 2)
 		.or()
 		.op(Orders_F.orderid, Op.eq, 4)
-		.rParentheses()
+		.rParentheses()  // )
 		
 		.op(Orders_F.remark, Op.eq, "String类型分片值")
 		;

@@ -29,15 +29,15 @@ public class ShardingUpdateExam {
 //		Orders orders=new Orders();
 //		orders.setRemark("testOneTime13");
 //		orders.setId(1L);
-//		int delNum=suidRich.update(orders);
-//		Logger.info("-----------更新的记录数:"+delNum);
+//		int num=suidRich.update(orders);
+//		Logger.info("-----------更新的记录数:"+num);
 //		
 //		//一表一库
 //		Orders orders2=new Orders();
 //		orders2.setOrderid(1L);
 //		orders2.setId(1L);
-//		int delNum2=suidRich.update(orders2);
-//		Logger.info("-----------更新的记录数:"+delNum2);
+//		int num2=suidRich.update(orders2);
+//		Logger.info("-----------更新的记录数:"+num2);
 //		
 //		一库两表
 //		Orders orders3=new Orders();
@@ -47,9 +47,9 @@ public class ShardingUpdateExam {
 //		condition3
 //		.or()
 //		.op(Orders_F.orderid, Op.eq, 2L);
-////		int delNum3=suidRich.update(orders3,condition3);
-//		int delNum3=suidRich.updateById(orders3,condition3);
-//		Logger.info("-----------更新的记录数:"+delNum3);
+////		int num3=suidRich.update(orders3,condition3);
+//		int num3=suidRich.updateById(orders3,condition3);
+//		Logger.info("-----------更新的记录数:"+num3);
 //		
 //		
 //		//一库一表,  condition4无分片
@@ -60,8 +60,8 @@ public class ShardingUpdateExam {
 ////		condition4
 ////		.or()
 ////		.op(Orders_F.orderid, Op.eq, 2L);
-//		int delNum4=suidRich.updateById(orders4,condition4);
-//		Logger.info("-----------更新的记录数:"+delNum4);
+//		int num4=suidRich.updateById(orders4,condition4);
+//		Logger.info("-----------更新的记录数:"+num4);
 //		
 		//多库多表
 //		Orders orders5=new Orders();
@@ -71,8 +71,8 @@ public class ShardingUpdateExam {
 //		condition5
 //		.or()
 //		.op(Orders_F.orderid, Op.eq, 9L);
-//		int delNum5=suidRich.updateById(orders5,condition5);
-//		Logger.info("-----------更新的记录数:"+delNum5);
+//		int num5=suidRich.updateById(orders5,condition5);
+//		Logger.info("-----------更新的记录数:"+num5);
 		
 		Orders orders6=new Orders();
 		orders6.setOrderid(2L);
@@ -83,8 +83,8 @@ public class ShardingUpdateExam {
 		.op(Orders_F.orderid, Op.eq, 9L)
 		.set(Orders_F.remark, "changed by sharding!")
 		;
-		int delNum6=suidRich.update(orders6,condition6);
-		Logger.info("-----------更新的记录数:"+delNum6);
+		int num6=suidRich.update(orders6,condition6);
+		Logger.info("-----------更新的记录数:"+num6);
 		
 		
 		List<Orders> list=suidRich.select(orders6,condition6);

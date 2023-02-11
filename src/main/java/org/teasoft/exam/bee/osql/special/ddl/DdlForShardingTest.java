@@ -6,24 +6,27 @@
 
 package org.teasoft.exam.bee.osql.special.ddl;
 
-import org.teasoft.exam.bee.mongodb.Noid0;
+import org.teasoft.exam.bee.osql.sharding.InitSameDsUtil;
+import org.teasoft.exam.bee.osql.sharding.ShardingInitData;
 import org.teasoft.honey.osql.autogen.Ddl;
 
 /**
  * @author Kingstar
- * @since  1.11
+ * @since  2.0
  */
-public class DdlTest {
+public class DdlForShardingTest {
 
 	public static void main(String[] args) {
+		
+		ShardingInitData.init();
+		InitSameDsUtil.initDS();
+		
 		test();
 	}
 
 	public static void test() {
-//		Ddl.createTable(new NoTypeHowDdl(),true);
-//		Ddl.createTable(new Noid0(),true);
 //		Ddl.createTable(Noid1.class,true);
-		Ddl.createTable(Noid1.class);
+		Ddl.createTable(Noid1.class);  //创建Sharding广播表
 	}
 
 }

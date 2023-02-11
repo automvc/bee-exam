@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
+import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;
@@ -15,7 +16,7 @@ import org.teasoft.honey.sharding.ShardingUtil;
  * @author Kingstar
  * @since  2.0
  */
-public class ShardingPaging {
+public class ShardingPaging01 {
 	
 	public static void main(String[] args) {
 		
@@ -44,11 +45,15 @@ public class ShardingPaging {
 		.rParentheses()
 		;
 		
+		condition.orderBy("userid",OrderType.ASC);
+		condition.orderBy("total",OrderType.DESC);
+//		condition.orderBy("id");
+		
 		condition
 //		.start(6)
-//		.start(0)
-		.start(1)
-		.size(1);
+		.start(0)
+//		.start(1)
+		.size(3);
 		
 		
 		//条件全在condition  case 5

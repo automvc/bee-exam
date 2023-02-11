@@ -73,7 +73,7 @@ public class DateTypeTest {
 		
 //		Ddl.createTable(new DateType2(), true);
 		
-		suidRich.delete(new DateType2());
+//		suidRich.delete(new DateType2());
 		DateType2 dateType2=new DateType2();
 		dateType2.setDate3(new java.util.Date());
 		dateType2.setRemark("test dateType2");

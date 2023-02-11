@@ -11,7 +11,7 @@ public class Dept implements Serializable {
 	private static final long serialVersionUID = 1599384498761L;
 
 	private Integer id;
-	private String dept;
+	private String deptName;
 	//test Json field (eg: mysql 5.7)  
 	private String jsonValue;
 
@@ -23,16 +23,24 @@ public class Dept implements Serializable {
 		this.id = id;
 	}
 
-	public String getDept() {
-		return dept;
-	}
-
-	public void setDept(String dept) {
-		this.dept = dept;
-	}
-
+//	public String getDept() {
+//		return dept;
+//	}
+//
+//	public void setDept(String dept) {
+//		this.dept = dept;
+//	}
+	
 	public String getJsonValue() {
 		return jsonValue;
+	}
+
+	public String getDeptName() {
+		return deptName;
+	}
+
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
 	}
 
 	public void setJsonValue(String jsonValue) {
@@ -43,7 +51,7 @@ public class Dept implements Serializable {
 		 StringBuffer str=new StringBuffer();	
 		 str.append("Dept[");			
 		 str.append("id=").append(id);		 
-		 str.append(",dept=").append(dept);		 
+		 str.append(",deptName=").append(deptName);		 
 		 str.append(",jsonValue=").append(jsonValue);		 
 		 str.append("]");			 
 		 return str.toString();			 

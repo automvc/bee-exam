@@ -37,8 +37,6 @@ public class ShardingFunExam {
 		String max=suidRich.selectWithFun(orders1, FunctionType.MAX, "id");
 		Logger.info("-------------max:"+max);		
 		
-//		Object ojb=OneTimeParameter.getAttribute(StringConst.Route_EC);
-//		System.out.println(ojb);
 		
 		
 /*		String min=suidRich.selectWithFun(orders1, FunctionType.MIN, "id");

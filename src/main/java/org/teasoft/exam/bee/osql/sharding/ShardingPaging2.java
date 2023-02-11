@@ -23,7 +23,7 @@ public class ShardingPaging2 {
 		
 		ShardingInitData.init();
 		InitSameDsUtil.initDS();
-		test(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.
+//		test(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.
 		test(2);
 		test(-1);
 	}

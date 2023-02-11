@@ -10,8 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.teasoft.bee.sharding.ShardingBean;
+import org.teasoft.exam.bee.mongodb.Noid0;
 import org.teasoft.exam.bee.osql.sharding.moretable.entity.Myorders;
 import org.teasoft.exam.bee.osql.sharding.moretable.entity.Ordersdetail;
+import org.teasoft.exam.bee.osql.special.ddl.TestMyUser;
 import org.teasoft.honey.sharding.config.ShardingConfig;
 
 /**
@@ -35,13 +37,17 @@ public class ShardingInitData {
 //		shardingBean.setDsRule("orderid%6/3");
 //		shardingBean.setDsName("ds"); //数据源基本名称
 		
-		shardingBean.setActualDataNodes("ds[0..1].orders[0..5]");
+		shardingBean.setFullNodes("ds[0..1].orders[0..5]");
 		
 		
 //		ShardingRegistry.register(Orders.class, shardingBean);
 //		ShardingConfig.addShardingBean(Orders.class, shardingBean);
 		
-		ShardingConfig.addShardingBean(Orders.class,new ShardingBean("ds[0..1].orders[0..5]", "orderid"));
+//		ShardingConfig.addShardingBean(Orders.class,new ShardingBean("ds[0..1].orders[0..5]", "orderid"));
+		ShardingConfig.addShardingBean("Orders",new ShardingBean("ds[0..1].orders[0..5]", "orderid"));
+		
+//		ShardingConfig.addShardingBean(OrdersGroupResponse.class,new ShardingBean("ds[0..1].orders[0..5]", "orderid"));
+//		ShardingConfig.addShardingBean(OrdersGroupResponse0.class,new ShardingBean("ds[0..1].orders[0..5]", "orderid"));
 		
 		
 		ShardingBean shardingBean2=new ShardingBean();
@@ -52,7 +58,7 @@ public class ShardingInitData {
 		shardingBean2.setDsRule("userid%6/3");
 		shardingBean2.setDsName("ds"); //数据源基本名称
 		
-		shardingBean2.setActualDataNodes("ds[0..1].myorders[0..5]");
+		shardingBean2.setFullNodes("ds[0..1].myorders[0..5]");
 //		ShardingRegistry.register(Myorders.class, shardingBean2);
 		ShardingConfig.addShardingBean(Myorders.class, shardingBean2);
 		
@@ -63,18 +69,28 @@ public class ShardingInitData {
 		shardingBean3.setDsField("userid");
 		shardingBean3.setDsRule("userid%6/3");
 		shardingBean3.setDsName("ds"); //数据源基本名称
-//		shardingBean2.setActualDataNodes("ds[0..1].ordersdetail[0..5]");//test exception :shardingBean2
-		shardingBean3.setActualDataNodes("ds[0..1].ordersdetail[0..5]");
+//		shardingBean2.setFullNodes("ds[0..1].ordersdetail[0..5]");//test exception :shardingBean2
+		shardingBean3.setFullNodes("ds[0..1].ordersdetail[0..5]");
 //		ShardingRegistry.register(Ordersdetail.class, shardingBean3);
 		ShardingConfig.addShardingBean(Ordersdetail.class, shardingBean3);
 		
 		//最佳实践:
-		//只需要设置setActualDataNodes和表分片键(表分片字段).
+		//只需要设置setFullNodes和表分片键(表分片字段).
 		//然后会根据表分片字段的值的余数,对应到[0..n]个表.
 		
 		List<String> broadcastTabList =new ArrayList<>();
 //		broadcastTabList.add("ordersdetail");
-		ShardingConfig.addBroadcastTabList(broadcastTabList);
+		ShardingConfig.addBroadcastTable(broadcastTabList);
+		
+		//配置广播表
+		ShardingConfig.addShardingBean(Noid0.class,new ShardingBean("ds[0..1].noid0[]"));
+		ShardingConfig.addBroadcastTable("noid0");
+		
+		ShardingConfig.addShardingBean(Noid0.class,new ShardingBean("ds[0..1].noid1[]"));
+		ShardingConfig.addBroadcastTable("noid1");
+		
+		ShardingConfig.addShardingBean("test_user",new ShardingBean("ds[0..1].test_user[0..5]", "id"));
+		ShardingConfig.addShardingBean(TestMyUser.class,new ShardingBean("ds[0..1].test_my_user[0..5]", "id"));
 	}
 	
 	public static void init() {}

@@ -40,12 +40,12 @@ public class InitDsUtil {
 //			dataSource2.init();
 			
 					
-			DruidDataSource dataSource2;
-			dataSource2 = new DruidDataSource();
-			dataSource2.setUrl("jdbc:sqlite:bee.db");
-			dataSource2.setUsername("");
-			dataSource2.setPassword("");
-			dataSource2.init();
+//			DruidDataSource dataSource2;
+//			dataSource2 = new DruidDataSource();
+//			dataSource2.setUrl("jdbc:sqlite:bee.db");
+//			dataSource2.setUsername("");
+//			dataSource2.setPassword("");
+//			dataSource2.init();
 
 			DruidDataSource dataSource3;
 			dataSource3 = new DruidDataSource();
@@ -59,7 +59,8 @@ public class InitDsUtil {
 //			https://blog.csdn.net/abckingaa/article/details/120956130
 			Map<String, DataSource> dataSourceMap = new LinkedHashMap<>();
 			dataSourceMap.put("ds0", dataSource1);
-			dataSourceMap.put("ds1", dataSource2); //ds2
+//			dataSourceMap.put("ds1", dataSource2); //ds2
+			dataSourceMap.put("ds1", dataSource1); //ds2
 			dataSourceMap.put("ds2", dataSource3); //ds3
 			BeeFactory.getInstance().setDataSourceMap(dataSourceMap);
 

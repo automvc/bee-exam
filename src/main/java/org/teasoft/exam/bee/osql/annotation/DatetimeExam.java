@@ -28,8 +28,8 @@ public class DatetimeExam {
 		Suid suid=BeeFactory.getHoneyFactory().getSuid();
 		
 		Orders orders1=new Orders();
-		orders1.setId(100001L);
-		orders1.setName("Bee(ORM Framework)");
+//		orders1.setId(100001L);
+//		orders1.setName("Bee(ORM Framework)");
 		
 		List<Orders> list1 =suid.select(orders1);  //select
 		for (int i = 0; i < list1.size(); i++) {

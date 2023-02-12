@@ -23,9 +23,6 @@ import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.Logger;
 
-import entity.TestJsonType;
-import entity.TestJsonType2;
-
 /**
  * @author Kingstar
  * @since  1.8

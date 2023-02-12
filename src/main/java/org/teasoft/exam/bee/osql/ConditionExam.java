@@ -51,21 +51,22 @@ public class ConditionExam {
 		
 //		SimpleDateFormat defaultFormat= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		
-		orders.setName("Bee(ORM Framework)"); //等于的条件,会默认转换
-		orders.setTotal(new BigDecimal("100"));  //不会再处理.因为between已有用
+//		orders.setName("Bee(ORM Framework)"); //等于的条件,会默认转换
+//		orders.setTotal(new BigDecimal("100"));  //不会再处理.因为between已有用
 		
 		 Condition condition=new ConditionImpl();
 		 condition
 //		 .op("1=1 -- userid", Op.like, "bee%") // test invalid field
 		 .op("userid", Op.like, "bee%") //模糊查询
+//		 .op("userid", Op.like, "%") //模糊查询   测试非法模糊查询
 //		 .set("userid", 2)
-		 .between("total", 90, 100)     //范围查询
-		 .op("name", Op.nq, null)     //is not null
+//		 .between("total", 90, 100)     //范围查询
+//		 .op("name", Op.nq, null)     //is not null
 //		 .between("createtime","2020-03-01","2020-03-03")
 //		 .between("createtime",DateUtil.currentDate(),DateUtil.currentDate())
 //		 .between("createtime",new Date(),new Date())
 		 .orderBy("userid",OrderType.ASC) //排序
-		 .start(0).size(10)              //分页
+		 .start(0).size(100)              //分页
 		 ;
 		 
 //       测试顺序异常
@@ -92,134 +93,134 @@ public class ConditionExam {
 			Logger.info(list3.get(i).toString());
 		}
 		
-		//insert 2 records
-		Orders orders1 = new Orders();
-		orders1.setUserid("test condition");
-		orders1.setRemark("test condition delete");
-		orders1.setTotal(new BigDecimal("0.01"));
-		suid.insert(orders1);
-		Orders orders2 = new Orders();
-		orders2.setUserid("test condition");
-		orders2.setRemark("test condition delete");
-		orders2.setTotal(new BigDecimal("0.01"));
-		suid.insert(orders2);
-		
-		Condition conditionDel=new ConditionImpl();
-		conditionDel
-		.op("remark", Op.like, "test condition %")
-		.op("Total", Op.le, 0.01)
-//		.groupBy("userid")  //DELETE do not support the opType: groupBy!
-//		.orderBy("name")
-		;
-		
-		Orders ordersDel = new Orders();
-		ordersDel.setUserid("test condition");
-		int delNum=suid.delete(ordersDel, conditionDel);
-		
-//		test bee.osql.donot.allowed.deleteWholeRecords=true
-//		Condition emptyCondition=new ConditionImpl();
-////		emptyCondition.size(1);
+//		//insert 2 records
+//		Orders orders1 = new Orders();
+//		orders1.setUserid("test condition");
+//		orders1.setRemark("test condition delete");
+//		orders1.setTotal(new BigDecimal("0.01"));
+//		suid.insert(orders1);
+//		Orders orders2 = new Orders();
+//		orders2.setUserid("test condition");
+//		orders2.setRemark("test condition delete");
+//		orders2.setTotal(new BigDecimal("0.01"));
+//		suid.insert(orders2);
+//		
+//		Condition conditionDel=new ConditionImpl();
+//		conditionDel
+//		.op("remark", Op.like, "test condition %")
+//		.op("Total", Op.le, 0.01)
+////		.groupBy("userid")  //DELETE do not support the opType: groupBy!
+////		.orderBy("name")
+//		;
+//		
 //		Orders ordersDel = new Orders();
-//		int delNum=suid.delete(ordersDel, emptyCondition);
-		Logger.info("delete(T entity,Condition condition), delete record num:"+delNum);
-		
-		
-//		SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
-		Orders Orders_update=new Orders();
-		Orders_update.setId(1L);
-//		Orders_update.setRemark("test");
-		Orders_update.setRemark("");
-		Orders_update.setAbc("test for update");
-		Condition conditionUpdate=new ConditionImpl();
-		conditionUpdate
-		.op("Total", Op.ge, 97)
-		.op("remark", Op.like, "test%") //当condition设置有remark:1)updateBy( )指定remark为where条件时,实体的remark也有效(也遵循默认过虑规则);
-		;                                //2)当update( )指定remark为需要更新的字段时,condition设置remark要更新的新值时,实体的remark将被忽略,而condition中用op(  )设置remark的值会转化为SQL中where的条件
-		
-		int updateBy_NumByCondition=suidRich.updateBy(Orders_update, "remark", conditionUpdate);//point to where field
-		Logger.info("updateBy_NumByCondition: "+updateBy_NumByCondition);
-		
-		
-		conditionUpdate.setAdd("total", 1);
-//		Number num=null;
-//		conditionUpdate.setAdd("total", num);
-		conditionUpdate.set("remark", "remark set in condition");
-		Orders_update.setRemark("will be ignored!");//remark 指定为要更新的字段, 当condition设置有时,会忽略此字段
-//		Orders_update.setTotal(new BigDecimal("100"));//Total没有声明为更新字段,不受updateFields声明的set字段限制
-		Orders_update.setTotal(null);//Total没有声明为更新字段,不受updateFields声明的set字段限制, 但会过虑默认的值
-		int updateNumCondition=suidRich.update(Orders_update, "remark", conditionUpdate); //声明需要更新的字段为:remark
-		Logger.info("updateNumCondition: "+updateNumCondition);
-		System.err.println("----------------------------------");
-		
-		if( !(HoneyUtil.isSQLite() || HoneyUtil.isSqlServer()) ) {
-			Orders orders11 = new Orders();
-			orders11.setUserid("bee");
-			Condition condition_add_forUpdate = new ConditionImpl();
-			condition_add_forUpdate.op("id", Op.eq, 100003).forUpdate(); // 用for update锁住某行记录    一般用于事务中
-			List<Orders> list11 = suid.select(orders11, condition_add_forUpdate);
-			for (int i = 0; i < list11.size(); i++) {
-				Logger.info(list11.get(i).toString());
-			}
-		}
-			
-			 //V1.9
-			 //group by userid having count(userid)>=?
-			 Condition conditionHaving=new ConditionImpl();
-			 conditionHaving.selectField("userid");
-			 conditionHaving.groupBy("userid")
-			 .having(FunctionType.COUNT, "userid", Op.ge, 1)
-			 ;
-			 List<Orders> list12 = suid.select(new Orders(), conditionHaving);
-			 
-			 //set with field
-			 Condition conditionSetWithField=new ConditionImpl();
-			 conditionSetWithField.setWithField("name","userid");
-			 conditionSetWithField.op("name", Op.eq, null);
-			 int updateNum= suidRich.update(new Orders(), conditionSetWithField);
-			 Logger.info("updateNum use SetWithField: "+updateNum);
-			 
-			 //OpWithField
-			 Condition conditionOpWithField=new ConditionImpl();
-			 conditionOpWithField.opWithField("name",Op.eq,"userid");
-//			 conditionOpWithField.op("userid", Op.eq, "Bee")
-			 ;
-			 Orders orders14= new Orders();
-//			 orders14.setUserid("Bee2"); //will be parsed
-			 List<Orders> list14 = suid.select(orders14, conditionOpWithField);
-			 Logger.info("record num by select use opWithField: "+list14.size());
-			 
-			 Condition conditionHaving2=new ConditionImpl();
-			 conditionHaving2
-			 .selectField("userid")
-			 .groupBy("userid")
-			 .having(FunctionType.COUNT, "*", Op.ge, 2)
-			 .having(FunctionType.COUNT, "distinct(userid)", Op.ge, 1)
-			 ;
-			 List<Orders> list15 = suid.select(new Orders(), conditionHaving2);
-			 Logger.info(list15.size());
-
-			 Orders orders16= new Orders();
-			 Condition conditionTestNull=new ConditionImpl();
-			 conditionTestNull.op("name", Op.eq, null); //name is null
-			 conditionTestNull.op("userid", Op.nq, null); //name is not null
-			 suid.select(orders16, conditionTestNull);
-			 
-			 
-			 
-			 Condition condition17=BeeFactoryHelper.getCondition();
-			 condition17.op("name", Op.like, "Bee%");
-//			 condition17.op("name", Op.like, "Bee");
-			 
-			List<Orders> list17 = suid.select(new Orders(), condition17);
-			for (int i = 0; i < list17.size(); i++) {
-				Logger.info(list17.get(i).toString());
-			}
-			
-			
-			 Condition condition10=BeeFactoryHelper.getCondition();
-			 condition10.op("email", Op.eq, null);
-			 List<TestUser> list10 = suid.select(new TestUser(), condition10);
-			 Printer.printList(list10);
+//		ordersDel.setUserid("test condition");
+//		int delNum=suid.delete(ordersDel, conditionDel);
+//		
+////		test bee.osql.donot.allowed.deleteWholeRecords=true
+////		Condition emptyCondition=new ConditionImpl();
+//////		emptyCondition.size(1);
+////		Orders ordersDel = new Orders();
+////		int delNum=suid.delete(ordersDel, emptyCondition);
+//		Logger.info("delete(T entity,Condition condition), delete record num:"+delNum);
+//		
+//		
+////		SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
+//		Orders Orders_update=new Orders();
+//		Orders_update.setId(1L);
+////		Orders_update.setRemark("test");
+//		Orders_update.setRemark("");
+//		Orders_update.setAbc("test for update");
+//		Condition conditionUpdate=new ConditionImpl();
+//		conditionUpdate
+//		.op("Total", Op.ge, 97)
+//		.op("remark", Op.like, "test%") //当condition设置有remark:1)updateBy( )指定remark为where条件时,实体的remark也有效(也遵循默认过虑规则);
+//		;                                //2)当update( )指定remark为需要更新的字段时,condition设置remark要更新的新值时,实体的remark将被忽略,而condition中用op(  )设置remark的值会转化为SQL中where的条件
+//		
+//		int updateBy_NumByCondition=suidRich.updateBy(Orders_update, "remark", conditionUpdate);//point to where field
+//		Logger.info("updateBy_NumByCondition: "+updateBy_NumByCondition);
+//		
+//		
+//		conditionUpdate.setAdd("total", 1);
+////		Number num=null;
+////		conditionUpdate.setAdd("total", num);
+//		conditionUpdate.set("remark", "remark set in condition");
+//		Orders_update.setRemark("will be ignored!");//remark 指定为要更新的字段, 当condition设置有时,会忽略此字段
+////		Orders_update.setTotal(new BigDecimal("100"));//Total没有声明为更新字段,不受updateFields声明的set字段限制
+//		Orders_update.setTotal(null);//Total没有声明为更新字段,不受updateFields声明的set字段限制, 但会过虑默认的值
+//		int updateNumCondition=suidRich.update(Orders_update, "remark", conditionUpdate); //声明需要更新的字段为:remark
+//		Logger.info("updateNumCondition: "+updateNumCondition);
+//		System.err.println("----------------------------------");
+//		
+//		if( !(HoneyUtil.isSQLite() || HoneyUtil.isSqlServer()) ) {
+//			Orders orders11 = new Orders();
+//			orders11.setUserid("bee");
+//			Condition condition_add_forUpdate = new ConditionImpl();
+//			condition_add_forUpdate.op("id", Op.eq, 100003).forUpdate(); // 用for update锁住某行记录    一般用于事务中
+//			List<Orders> list11 = suid.select(orders11, condition_add_forUpdate);
+//			for (int i = 0; i < list11.size(); i++) {
+//				Logger.info(list11.get(i).toString());
+//			}
+//		}
+//			
+//			 //V1.9
+//			 //group by userid having count(userid)>=?
+//			 Condition conditionHaving=new ConditionImpl();
+//			 conditionHaving.selectField("userid");
+//			 conditionHaving.groupBy("userid")
+//			 .having(FunctionType.COUNT, "userid", Op.ge, 1)
+//			 ;
+//			 List<Orders> list12 = suid.select(new Orders(), conditionHaving);
+//			 
+//			 //set with field
+//			 Condition conditionSetWithField=new ConditionImpl();
+//			 conditionSetWithField.setWithField("name","userid");
+//			 conditionSetWithField.op("name", Op.eq, null);
+//			 int updateNum= suidRich.update(new Orders(), conditionSetWithField);
+//			 Logger.info("updateNum use SetWithField: "+updateNum);
+//			 
+//			 //OpWithField
+//			 Condition conditionOpWithField=new ConditionImpl();
+//			 conditionOpWithField.opWithField("name",Op.eq,"userid");
+////			 conditionOpWithField.op("userid", Op.eq, "Bee")
+//			 ;
+//			 Orders orders14= new Orders();
+////			 orders14.setUserid("Bee2"); //will be parsed
+//			 List<Orders> list14 = suid.select(orders14, conditionOpWithField);
+//			 Logger.info("record num by select use opWithField: "+list14.size());
+//			 
+//			 Condition conditionHaving2=new ConditionImpl();
+//			 conditionHaving2
+//			 .selectField("userid")
+//			 .groupBy("userid")
+//			 .having(FunctionType.COUNT, "*", Op.ge, 2)
+//			 .having(FunctionType.COUNT, "distinct(userid)", Op.ge, 1)
+//			 ;
+//			 List<Orders> list15 = suid.select(new Orders(), conditionHaving2);
+//			 Logger.info(list15.size());
+//
+//			 Orders orders16= new Orders();
+//			 Condition conditionTestNull=new ConditionImpl();
+//			 conditionTestNull.op("name", Op.eq, null); //name is null
+//			 conditionTestNull.op("userid", Op.nq, null); //name is not null
+//			 suid.select(orders16, conditionTestNull);
+//			 
+//			 
+//			 
+//			 Condition condition17=BeeFactoryHelper.getCondition();
+//			 condition17.op("name", Op.like, "Bee%");
+////			 condition17.op("name", Op.like, "Bee");
+//			 
+//			List<Orders> list17 = suid.select(new Orders(), condition17);
+//			for (int i = 0; i < list17.size(); i++) {
+//				Logger.info(list17.get(i).toString());
+//			}
+//			
+//			
+//			 Condition condition10=BeeFactoryHelper.getCondition();
+//			 condition10.op("email", Op.eq, null);
+//			 List<TestUser> list10 = suid.select(new TestUser(), condition10);
+//			 Printer.printList(list10);
 			
 			 
 		} catch (BeeException e) {

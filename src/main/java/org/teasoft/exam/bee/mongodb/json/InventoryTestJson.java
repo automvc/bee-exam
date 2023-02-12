@@ -2,6 +2,7 @@ package org.teasoft.exam.bee.mongodb.json;
 
 import java.math.BigDecimal;
 
+import org.teasoft.bee.osql.IncludeType;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.beex.json.JsonUtil;
 import org.teasoft.exam.bee.mongodb.json.entity.Inventory;
@@ -34,9 +35,11 @@ public class InventoryTestJson {
 		
 //		String json=suidRich.selectJson(new Inventory());
 //		String json=suidRich.selectJson(new Inventory(),"item,qty,size");
-		String json=suidRich.selectJson(new Inventory(),"size");
+//		String json=suidRich.selectJson(new Inventory(),"size");
 //		String json=suidRich.selectJson(new Inventory(),"id,size");
 //		String json=suidRich.selectJson(new Inventory(),"item,qty");
+		
+		String json=suidRich.selectJson(new Inventory(),IncludeType.EXCLUDE_BOTH,null); //fixed bug
 		
 //		String json=suidRich.selectJson(new Inventory(),BF.getCondition());
 		System.out.println(json);

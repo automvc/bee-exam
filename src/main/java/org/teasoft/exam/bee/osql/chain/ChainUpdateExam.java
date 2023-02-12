@@ -13,6 +13,7 @@ import org.teasoft.bee.osql.chain.Update;
 import org.teasoft.bee.osql.exception.BeeErrorFieldException;
 import org.teasoft.honey.osql.chain.UpdateImpl;
 import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.HoneyUtil;
 import org.teasoft.honey.osql.core.Logger;
 
 /**
@@ -52,8 +53,10 @@ public class ChainUpdateExam {
 		if(updateSql.toSQL().equals(updateSql.toSQL())) {
 			Logger.info("Getting this sql twice is same!");
 		}
-		int updateNum=preparedSql.modify(updateSql.toSQL());
-		Logger.info("updateNum: "+updateNum);
+		if(!HoneyUtil.isMongoDB()) {
+		  int updateNum=preparedSql.modify(updateSql.toSQL());
+		  Logger.info("updateNum: "+updateNum);
+		}
 		
 		//just test sql
         try {

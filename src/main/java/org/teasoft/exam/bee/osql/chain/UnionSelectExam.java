@@ -69,7 +69,7 @@ public class UnionSelectExam {
 		.op("userid", Op.eq, "bee")
 		;
 		unionSelect.union(select1, select2);
-		if(!HoneyUtil.isSQLite()) {
+		if(!HoneyUtil.isSQLite() && !HoneyUtil.isMongoDB()) {
 	        List<String[]> list2= preparedSql.select(unionSelect.toSQL());
 	        Printer.print(list2);
 			unionSelect.unionAll(select1, select2);

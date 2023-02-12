@@ -15,12 +15,11 @@ import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.exam.bee.osql.entity.Orders;
+import org.teasoft.exam.bee.osql.entity.field.Orders_F;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.HoneyUtil;
 import org.teasoft.honey.osql.shortcut.BF;
-
-import entity.field.Orders_F;
 
 /**
  * 关于condition.op(fieldName, Op.in, Value)的示例

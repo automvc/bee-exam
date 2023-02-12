@@ -41,11 +41,12 @@ public class ChangeSqlScript {
 	public static void test()  throws JsonProcessingException,IOException{
 		
 		HoneyConfig honeyConfig=HoneyConfig.getHoneyConfig();
-		honeyConfig.setUrl("jdbc:mysql://localhost:3306/teasoft0?characterEncoding=UTF-8&useSSL=false");
+		honeyConfig.setUrl("jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8&useSSL=false");
 		honeyConfig.setUsername("root");
 		honeyConfig.setPassword("123456");
+		List<ColumnBean> list=ColumnUtil.getColumnList("orders");
 //		List<ColumnBean> list=ColumnUtil.getColumnList("tableinfo");
-		List<ColumnBean> list=ColumnUtil.getColumnList("tableinfo_copy");
+//		List<ColumnBean> list=ColumnUtil.getColumnList("tableinfo_copy");
 //		List<ColumnBean> list=ColumnUtil.getColumnList("columninfo");
 		Map<String,String> map=new HashMap<>();
 		for (int i = 0; i < list.size(); i++) {
@@ -57,6 +58,8 @@ public class ChangeSqlScript {
 		System.err.println(map);
 		InputStream in=new FileInputStream("D:\\temp\\tableinfo.sql");
 //		InputStream in=new FileInputStream("D:\\temp\\columninfo.sql");
+		System.out.println(StreamUtil.stream2String(in,map));
+		
 		System.out.println(StreamUtil.stream2String(in,map));
 		
 		System.err.println(DatabaseConst.MariaDB);

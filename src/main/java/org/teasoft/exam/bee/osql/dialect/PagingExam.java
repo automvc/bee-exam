@@ -19,6 +19,7 @@ import org.teasoft.exam.bee.osql.moretable.entity.TestUser;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.HoneyConfig;
+import org.teasoft.honey.osql.core.HoneyUtil;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
@@ -153,9 +154,11 @@ public class PagingExam {
 		user.setName("Bee");
 		orders1.setTestUser(user);
 		
+		if(!HoneyUtil.isMongoDB()) { //V2.0 MongoDB不支持多表分页
 		Condition condition10=BF.getCondition();
 		condition10.size(5);
 		moreTable.select(orders1,condition10);
+		}
 		
 //		List<org.teasoft.exam.bee.osql.moretable.entity.Orders> list10 = moreTable.select(orders1, 0, 10); //select 查询前10条记录
 //		List<org.teasoft.exam.bee.osql.moretable.entity.Orders> list10 = moreTable.select(orders1, 2, 10); //select 查询前10条记录

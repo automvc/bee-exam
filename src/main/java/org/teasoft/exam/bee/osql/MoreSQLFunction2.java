@@ -11,12 +11,11 @@ import java.util.List;
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.exam.bee.osql.entity.Orders;
+import org.teasoft.exam.bee.osql.entity.field.Orders_F;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.shortcut.BF;
-
-import entity.field.Orders_F;
-import entity.Orders;
 
 /**
  * @author Kingstar

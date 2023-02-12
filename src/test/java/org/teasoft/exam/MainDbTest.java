@@ -108,6 +108,15 @@ public class MainDbTest {
 //			TestNormal.test();
 //			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Cassandra end");
 			
+			System.err.println();
+			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Mongodb start");
+			honeyConfig.setUrl("mongodb://localhost:27017/bee/");
+			honeyConfig.setUsername("");
+			honeyConfig.setPassword("");
+			TestNormal.test();
+			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Mongodb end");
+			sleep(3);
+			
 
 			honeyConfig.setUrl(oldUrl);
 			honeyConfig.setUsername(oldUsername);

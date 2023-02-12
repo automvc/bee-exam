@@ -6,7 +6,7 @@
 
 package org.teasoft.exam.coverage;
 
-import org.teasoft.bee.osql.annotation.customizable.AbstractDictI18nDefaultHandler;
+import org.teasoft.bee.osql.annotation.AbstractDictI18nDefaultHandler;
 
 /**
  * @author Kingstar

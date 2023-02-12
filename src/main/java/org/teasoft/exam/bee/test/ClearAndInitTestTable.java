@@ -23,12 +23,15 @@ public class ClearAndInitTestTable {
 	
 	@SuppressWarnings({"rawtypes","unchecked","deprecation"}) 
 	public static void main(String[] args) {
+		
+     	String dbName=HoneyConfig.getHoneyConfig().getDbName();
+		System.out.println("------------DbName:      "+dbName);
+		
+		if(HoneyUtil.isMongoDB()) return ;
+		
+		
 		PreparedSql preparedSql = BeeFactory.getHoneyFactory().getPreparedSql();
 		Map nullMap=null;
-		
-		String dbName=HoneyConfig.getHoneyConfig().getDbName();
-		
-		System.out.println("------------DbName:      "+dbName);
 
 /*		
 		if (DatabaseConst.SQLite.equalsIgnoreCase(DbName)) { //SQLite

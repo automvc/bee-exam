@@ -30,7 +30,8 @@ public class TestUser implements Serializable {
 //	@JustFetch("CONCAT(last_name,name)")
 //	@JustFetch("last_name-- || name") //非法字符
 //	@JustFetch("last_name; || name") //非法字符
-	@JustFetch("last_name || name")
+//	@JustFetch("last_name || name")
+	@JustFetch("CONCAT(last_name, name)") //mysql
 	private String fullName;
 
 	public Long getId() {
@@ -119,6 +120,7 @@ public class TestUser implements Serializable {
 		 str.append("id=").append(id);		 
 		 str.append(",email=").append(email);		 
 		 str.append(",lastName=").append(lastName);		 
+		 str.append(",fullName=").append(fullName);		 
 		 str.append(",name=").append(name2);		 
 		 str.append(",password=").append(password);		 
 		 str.append(",username=").append(username);		 

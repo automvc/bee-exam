@@ -7,6 +7,7 @@ import java.sql.Timestamp;
 import org.teasoft.bee.osql.SuidType;
 import org.teasoft.bee.osql.annotation.Createtime;
 import org.teasoft.bee.osql.annotation.Datetime;
+import org.teasoft.bee.osql.annotation.Dict;
 
 /**
 *@author Honey
@@ -20,6 +21,7 @@ public class Orders implements Serializable {
 	//time-->String
 	private Long id;
 	private String userid;
+	@Dict(nullToValue="N/A")
 	private String name;
 	private BigDecimal total;
 //	@Datetime

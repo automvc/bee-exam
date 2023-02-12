@@ -70,7 +70,7 @@ public class JsonAnnoTest2 {
 		jsonValue20.setDeptLeaderId("test Json");
 		
 		JsonValue jsonValue21=new JsonValue();
-		jsonValue21.setDeptName("test Json");
+		jsonValue21.setDeptName("test Json(\"包含引号\")");
 		jsonValue21.setDeptLeaderId("test Json");
 		
 		List<JsonValue> jsonValueList=new ArrayList<>();

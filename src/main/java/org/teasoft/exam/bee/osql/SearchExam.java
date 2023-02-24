@@ -40,7 +40,8 @@ public class SearchExam {
 
 	public static void test() {
 		
-		Search search[]=new Search[8];
+		int len=8;
+		Search search[]=new Search[len];
 		search[0]=new Search("id",Operator.between,"100023","100025");
 		search[1]=new Search("id",Operator.between,"100030","100035","or");
 		

@@ -32,7 +32,7 @@ public class Service {
 		
 		ObjSQLRichServiceImpl service2=new ObjSQLRichServiceImpl();
 		service2.setNameTranslate(new UpperCaseUnderScoreAndCamelName());
-		service2.setSuid(new ObjSQL());
+//		service2.setSuid(new ObjSQL());
 		service2.getSuid();
 		
 		service2.setSuidRich(new ObjSQLRich());

@@ -142,7 +142,21 @@ public class LikeTest {
 		}
 		
 		condition=BF.getCondition();
-		condition.op("userid", Op.likeLeft, "test\\u0025"); //likeLeft
+		condition.op("userid", Op.likeLeft, "test\u0025"); //likeLeft  match:userid=test%
+		list2 = suid.select(orders, condition);
+		for (int i = 0; i < list2.size(); i++) {
+			Logger.info(list2.get(i).toString());
+		}
+		
+		condition=BF.getCondition();
+		condition.op("userid", Op.likeLeft, "test\\u0025"); //likeLeft ; match: userid=test\u0025
+		list2 = suid.select(orders, condition);
+		for (int i = 0; i < list2.size(); i++) {
+			Logger.info(list2.get(i).toString());
+		}
+		
+		condition=BF.getCondition();
+		condition.op("userid", Op.likeLeft, "test\\\\u0025"); //likeLeft ; match: userid=test\u0025
 		list2 = suid.select(orders, condition);
 		for (int i = 0; i < list2.size(); i++) {
 			Logger.info(list2.get(i).toString());

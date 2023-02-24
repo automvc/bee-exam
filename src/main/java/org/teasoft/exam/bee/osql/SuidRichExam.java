@@ -130,7 +130,8 @@ public class SuidRichExam {
 			Logger.info("funAvg:" + funAvg);
 			Logger.info("funSum:" + funSum);
 
-			int insertNum00 = suidRich.insert(orders00, IncludeType.INCLUDE_NULL);
+//			int insertNum00 = suidRich.insert(orders00, IncludeType.INCLUDE_NULL);
+			int insertNum00 = suidRich.insert(orders00);
 			Logger.info("insert record:" + insertNum00);
 
 			int updateNum8 = suidRich.update(orders00, IncludeType.INCLUDE_EMPTY);

@@ -57,7 +57,9 @@ public class ConditionExam {
 		 Condition condition=new ConditionImpl();
 		 condition
 //		 .op("1=1 -- userid", Op.like, "bee%") // test invalid field
+//		 .lParentheses()    //(  左括号
 		 .op("userid", Op.like, "bee%") //模糊查询
+//		 .rParentheses()    //) 右括号
 //		 .op("userid", Op.like, "%") //模糊查询   测试非法模糊查询
 //		 .set("userid", 2)
 //		 .between("total", 90, 100)     //范围查询

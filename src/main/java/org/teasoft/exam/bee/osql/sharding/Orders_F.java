@@ -12,6 +12,7 @@ public class Orders_F {
 	public static final String id = "id";
 	public static final String userid = "userid";
 	public static final String orderid = "orderid";
+	public static final String orderId = "orderId";
 	public static final String name = "name";
 	public static final String total = "total";
 	public static final String createtime = "createtime";

@@ -90,6 +90,7 @@ public class ShardingInitData {
 		ShardingConfig.addBroadcastTable("noid1");
 		
 		ShardingConfig.addShardingBean("test_user",new ShardingBean("ds[0..1].test_user[0..5]", "id"));
+		ShardingConfig.addShardingBean("test_users",new ShardingBean("ds[0..1].test_users[0..5]", "id"));
 		ShardingConfig.addShardingBean(TestMyUser.class,new ShardingBean("ds[0..1].test_my_user[0..5]", "id"));
 	}
 	

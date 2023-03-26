@@ -12,7 +12,7 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
-import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.HoneyContext;
 
 import com.alibaba.druid.pool.DruidDataSource;
 
@@ -45,7 +45,8 @@ public class InitSameDsUtil {
 			Map<String, DataSource> dataSourceMap = new HashMap<>();
 			dataSourceMap.put("ds0", dataSource0);
 			dataSourceMap.put("ds1", dataSource1); 
-			BeeFactory.getInstance().setDataSourceMap(dataSourceMap);
+//			BeeFactory.getInstance().setDataSourceMap(dataSourceMap);
+			HoneyContext.setDataSourceMap(dataSourceMap);//V2.1
 
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.exam.bee.osql.sharding.InitSameDsUtil;
+import org.teasoft.exam.bee.osql.sharding.ShardingInitData;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;
 
@@ -18,7 +19,7 @@ public class ShardingSimpleExam9 {
 	
 	public static void main(String[] args) {
 		
-//		ShardingInitData.init();
+		ShardingInitData.init();
 		InitSameDsUtil.initDS();
 		
 		Suid suid=BF.getSuid(); //1

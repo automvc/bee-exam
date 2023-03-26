@@ -8,7 +8,6 @@ package org.teasoft.beex.util;
 
 
 
-import org.junit.Test;
 import org.teasoft.exam.BeeAbstractTest;
 import org.teasoft.honey.osql.core.Logger;
 

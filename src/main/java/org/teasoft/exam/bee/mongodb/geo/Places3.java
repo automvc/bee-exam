@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import org.teasoft.bee.osql.annotation.GenId;
 import org.teasoft.bee.osql.annotation.GenUUID;
+import org.teasoft.bee.osql.annotation.Geo2dsphere;
 import org.teasoft.bee.osql.annotation.Table;
 import org.teasoft.bee.osql.annotation.customizable.Json;
 
@@ -19,7 +20,7 @@ public class Places3 implements Serializable {
 	@GenUUID
 	private String id;
 	private String name;
-	@Json
+	@Geo2dsphere
 	private Location3 location;
 	private String category;
 

@@ -8,9 +8,15 @@ package org.teasoft.exam.bee.mongodb.geo;
 
 import java.util.List;
 
+import org.teasoft.bee.mongodb.BoxPara;
+import org.teasoft.bee.mongodb.CenterPara;
+import org.teasoft.bee.mongodb.NearPara;
+import org.teasoft.bee.osql.Condition;
+import org.teasoft.bee.osql.Op;
 import org.teasoft.beex.osql.mongodb.MongodbSuidRichExt;
 import org.teasoft.beex.osql.shortcut.BFX;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.osql.shortcut.BF;
 
 /**
  * @author Kingstar
@@ -20,29 +26,35 @@ public class GeoTest {
 	
 	public static void main(String[] args) {
 		
-		
-//		Point refPoint = new Point(new Position(-73.9667, 40.78));
-//		collection.find(Filters.near("contact.location", refPoint, 5000.0, 1000.0))
-//		        .forEach(doc -> System.out.println(doc.toJson()));
-		
-		
 		MongodbSuidRichExt suidRichExt=BFX.getMongodbSuidRichExt();
 		
-//		Places places=new Places();
-//		
-//		List<Places> list=suidRichExt.near(places, "location", -73.9667, 40.78, 5000D, 1000D);
-////		List<Places> list=suidRichExt.nearSphere(places, "location", -73.9667, 40.78, 5000D, 1000D);
-//		
-//		System.err.println(list.get(0).getLocation().getCoordinates().size()); //
-//		System.err.println(list.get(0).getLocation().getCoordinates().get(0));//设置list成功
-//		
-////		Printer.printList(list);
-		
-		
-		Places2 places2=new Places2();
-		places2.setName("com");
-		List<Places2> list2=suidRichExt.near(places2, "location", -73.9667, 40.78, 5000D, 1000D);
+		Places places=new Places();
+		places.setName("com");
+		List<Places> list2=suidRichExt.near(places, "location", -73.9667, 40.78, 5000D, 1000D);
 		Printer.printList(list2);
+		
+		Condition condition4=BF.getCondition();
+		condition4.op("name", Op.likeLeft, "Park2"); //左匹配
+		NearPara nearPara=new NearPara("location", -73.9667, 40.78, 5000D, 1000D);
+		List<Places> list3=suidRichExt.near(places, nearPara,condition4);
+		Printer.printList(list3);
+		
+		List<Places> list4=suidRichExt.nearSphere(places, nearPara,condition4);
+		Printer.printList(list4);
+		
+		
+		System.out.println("---------------geoWithinCenter---------------");
+		CenterPara centerPara=new CenterPara("location", -73.9667, 40.78, 5000D);
+		List<Places> list5=suidRichExt.geoWithinCenter(places, centerPara,condition4);
+		Printer.printList(list5);
+		System.out.println("---------------geoWithinCenterSphere---------------");
+		list5=suidRichExt.geoWithinCenterSphere(places, centerPara,condition4);
+		Printer.printList(list5);
+		
+		System.out.println("---------------geoWithinBox---------------");
+		BoxPara boxPara =new BoxPara("location", -78.9667, 20.78, -70.9667, 60.78);
+		list5=suidRichExt.geoWithinBox(places, boxPara, condition4);
+		Printer.printList(list5);
 	}
 
 }

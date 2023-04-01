@@ -2,9 +2,8 @@ package org.teasoft.exam.bee.mongodb.geo;
 
 import java.io.Serializable;
 
-import org.teasoft.bee.osql.annotation.GenUUID;
-import org.teasoft.bee.osql.annotation.Table;
-import org.teasoft.bee.osql.annotation.customizable.Json;
+//import org.teasoft.bee.osql.annotation.GenUUID;
+import org.teasoft.bee.osql.annotation.Geo2dsphere;
 
 /**
  * @author Honey
@@ -15,11 +14,11 @@ public class Places implements Serializable {
 
 	private static final long serialVersionUID = 1596145310658L;
 
-	@GenUUID
+//	@GenUUID
 	private String id;
 	private String name;
-	@Json
-	private Object  location;
+	@Geo2dsphere
+	private Location location;
 	private String category;
 
 	public String getId() {
@@ -38,33 +37,17 @@ public class Places implements Serializable {
 		this.name = name;
 	}
 
-//	public Location getLocation() {
-//		return location;
-//	}
-	
-	public void setLocation(Location location) {
-		this.location = location;
-	}
-	
-	public Object getLocation() {
+	public Location getLocation() {
 		return location;
 	}
 
-	public void setLocation(Object location) {
+	public void setLocation(Location location) {
 		this.location = location;
 	}
 
 	public String getCategory() {
 		return category;
 	}
-
-//	public String getLocation() {
-//		return location;
-//	}
-//
-//	public void setLocation(String location) {
-//		this.location = location;
-//	}
 
 	public void setCategory(String category) {
 		this.category = category;
@@ -75,7 +58,5 @@ public class Places implements Serializable {
 		return "Places [id=" + id + ", name=" + name + ", location=" + location + ", category="
 				+ category + "]";
 	}
-	
-	
 
 }

@@ -19,13 +19,14 @@ import org.teasoft.honey.osql.core.Logger;
  */
 public class ShardingBatchInsert2 {
 
-	private static SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
+//	private static SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
+	private static SuidRich suidRich = null; //要是在Java代码里加配置,应该在添加配置的代码后,才获取对象.
 
 	public static void main(String[] args) {
 
 		ShardingInitData.init(); // 分片
 		InitSameDsUtil.initDS();
-
+		suidRich = BeeFactory.getHoneyFactory().getSuidRich(); //在添加配置的代码后,才获取对象.
 		test();
 	}
 

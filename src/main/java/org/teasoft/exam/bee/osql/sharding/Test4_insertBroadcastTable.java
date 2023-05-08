@@ -11,35 +11,38 @@ import java.util.List;
 
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.mongodb.Noid0;
-import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
  * @author AiTeaSoft
  * @since  2.0
  */
-public class Test4_updateBroadcastTable {
-
+public class Test4_insertBroadcastTable {
+	
 	public static void main(String[] args) {
-
+		
 		ShardingInitData.init();
 		InitSameDsUtil.initDS();
-
-		SuidRich suidRich = BF.getSuidRich();
 		
-		Noid0 noid0_update = new Noid0();
-		noid0_update.setUuid(122121+"");
-		noid0_update.setRemark("change2");
-		int updateNum=suidRich.update(noid0_update);
-		System.out.println("updateNum:"+updateNum);
-
-		Noid0 noid0 = new Noid0();
-
-		List<Noid0> list = new ArrayList<>();
-
-		list = suidRich.select(noid0);
-		Printer.printList(list);
-
+		SuidRich suidRich =BF.getSuidRich();
+		
+		Noid0 noid0=new Noid0();
+		
+		List<Noid0> insertList=new ArrayList<>();
+		
+		for (int i = 16; i < 20; i++) {
+			noid0=new Noid0();
+			if(i==18) noid0.setUuid("839668237074436");
+			noid0.setName(i+"-aa");
+			noid0.setNum(i);
+			noid0.setRemark(null);
+			insertList.add(noid0);
+		}
+		
+		int insertNum=suidRich.insert(insertList);
+		
+		System.out.println("insertNum="+insertNum);
+		
 		System.out.println("finished!");
 	}
 

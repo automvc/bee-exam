@@ -21,7 +21,8 @@ import org.teasoft.honey.osql.core.Logger;
  */
 public class ShardingBatchInsertExam {
 
-	private static SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
+//	private static SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
+	private static SuidRich suidRich = null;
 
 	public static SuidRich getSuidRich() {
 		return suidRich;
@@ -35,6 +36,8 @@ public class ShardingBatchInsertExam {
 		
 		ShardingInitData.init();  //分片
 		InitSameDsUtil.initDS();
+		
+		suidRich = BeeFactory.getHoneyFactory().getSuidRich();
 		
 		test();
 	}

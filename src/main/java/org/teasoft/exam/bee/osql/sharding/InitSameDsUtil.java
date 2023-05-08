@@ -12,6 +12,7 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
+import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyContext;
 
 import com.alibaba.druid.pool.DruidDataSource;
@@ -25,6 +26,12 @@ public class InitSameDsUtil {
 	public static void initDS() {
 		try {
 
+			HoneyConfig config=HoneyConfig.getHoneyConfig();
+			config.setDbName("mysql");
+			config.multiDS_enable=true;
+			config.multiDS_differentDbType=false;
+			config.multiDS_sharding=true;
+			
 			DruidDataSource dataSource0;
 			dataSource0 = new DruidDataSource();
 			dataSource0.setUrl("jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8&useSSL=false");

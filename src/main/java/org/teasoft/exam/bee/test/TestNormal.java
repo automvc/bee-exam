@@ -51,7 +51,6 @@ import org.teasoft.exam.comm.TestHelper;
 import org.teasoft.exam.comm.TestPrepare;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyContext;
-import org.teasoft.honey.osql.core.HoneyUtil;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.util.DateUtil;
 
@@ -97,7 +96,11 @@ public class TestNormal {
 	    
 		String DbName=HoneyConfig.getHoneyConfig().getDbName();
 		
-		
+//		boolean enableMultiDs = HoneyConfig.getHoneyConfig().multiDS_enable;
+//		boolean isDifferentDbType = HoneyConfig.getHoneyConfig().multiDS_differentDbType;
+//		
+//		HoneyConfig.getHoneyConfig().multiDS_enable=true;
+//		HoneyConfig.getHoneyConfig().multiDS_differentDbType=true;
 			
 		//How to generate the Javabean,please see GenBeanExam.
 		//生成Javabean,请查看GenBeanExam.
@@ -131,7 +134,7 @@ public class TestNormal {
 		if (DatabaseConst.SQLite.equalsIgnoreCase(DbName)) {
 		   runTest(UpdateSetExam_SQLite.class);
 		}else{
-			if(!HoneyUtil.isMongoDB()) runTest(UpdateSetExam.class);
+		   runTest(UpdateSetExam.class);
 		}
 		
 		
@@ -142,14 +145,11 @@ public class TestNormal {
 		runTest(MoreSQLFunction.class);
 		runTest(SelectFun.class);
 //		runTest(More.class);
-		
-		if(!HoneyUtil.isMongoDB()) runTest(MapSuidExam.class);
+		runTest(MapSuidExam.class);
 		
 		runTest(LockWaitTimeout.class);
-		if(HoneyUtil.isSQLite()) {
 		runTest(SuidExamEN_SQLite.class);
 		runTest(UpdateSetExam_SQLite.class);
-		}
 		runTest(SelectById.class);
 		
 //		runTest(ObjSQLServiceExam.class);
@@ -157,12 +157,10 @@ public class TestNormal {
 		
 		runTest(IdTest.class);
 		
-		if(!HoneyUtil.isMongoDB()) {
 		//chain coding
 		runTest(ChainUpdateExam.class); 
 		runTest(ChainSelectExam.class); 
 		runTest(UnionSelectExam.class);
-		}
 		
 //		HoneyConfig.getHoneyConfig().sqlKeyWordCase="upper"; //can not change after running.
 //		runTest(SuidExam.class);

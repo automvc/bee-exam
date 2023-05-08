@@ -28,13 +28,25 @@ import org.teasoft.honey.osql.type.TypeHandlerRegistry;
  * @since  1.9
  */
 public class TestMoreDs {
+	
 	public static void main(String[] args) throws Exception{
-		//javabean Timestamp updateTime;    mysql 存的是字符.
-		TypeHandlerRegistry.register(Timestamp.class, new TimestampTypeHandler<Timestamp>(),DatabaseConst.MYSQL,true);
 		test();
 	}
 	
 	public static void test() throws Exception{
+		//javabean Timestamp updateTime;    mysql 存的是字符.
+		TypeHandlerRegistry.register(Timestamp.class, new TimestampTypeHandler<Timestamp>(),DatabaseConst.MYSQL,true);
+		try {
+			test0();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			ClearDsContext.clear();
+		}
+		
+	}
+	
+	public static void test0() throws Exception{
 		
 		try {
 			

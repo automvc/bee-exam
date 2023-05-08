@@ -30,6 +30,10 @@ public class DiffDdExam5 {
 	}
 	
 	public static void main(String[] args) {
+		test();
+	}
+	
+	public static void test() {
 
 		HoneyConfig.getHoneyConfig().multiDS_enable = true;
 		HoneyConfig.getHoneyConfig().multiDS_differentDbType=true;

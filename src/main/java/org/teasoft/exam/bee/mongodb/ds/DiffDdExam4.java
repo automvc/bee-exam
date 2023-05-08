@@ -28,6 +28,10 @@ public class DiffDdExam4 {
 	}
 	
 	public static void main(String[] args) {
+		test();
+	}
+	
+	public static void test() {
 
 		HoneyConfig.getHoneyConfig().multiDS_enable = false;
 //		HoneyConfig.getHoneyConfig().multiDS_type = 2; //同时用多种DB,包含有mongodb不能使用multiDS_type = 2,因为mongodb不是使用JDBC的

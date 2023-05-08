@@ -35,27 +35,27 @@ public class GeoTest3 {
 		Printer.printList(list2);
 		
 		
-		Condition condition4=BF.getCondition();
-		condition4.op("name", Op.likeLeft, "Park2"); //左匹配
+		Condition condition3=BF.getCondition();
+		condition3.op("name", Op.likeLeft, "Park2"); //左匹配
 		NearPara nearPara=new NearPara("location", -73.9667, 40.78, 5000D, 1000D);
-		List<Places3> list3=suidRichExt.near(places3, nearPara,condition4);
+		List<Places3> list3=suidRichExt.near(places3, nearPara,condition3);
 		Printer.printList(list3);
 		
-		List<Places3> list4=suidRichExt.nearSphere(places3, nearPara,condition4);
+		List<Places3> list4=suidRichExt.nearSphere(places3, nearPara,condition3);
 		Printer.printList(list4);
 		
 		
 		System.out.println("---------------geoWithinCenter---------------");
 		CenterPara centerPara=new CenterPara("location", -73.9667, 40.78, 5000D);
-		List<Places3> list5=suidRichExt.geoWithinCenter(places3, centerPara,condition4);
+		List<Places3> list5=suidRichExt.geoWithinCenter(places3, centerPara,condition3);
 		Printer.printList(list5);
 		System.out.println("---------------geoWithinCenterSphere---------------");
-		list5=suidRichExt.geoWithinCenterSphere(places3, centerPara,condition4);
+		list5=suidRichExt.geoWithinCenterSphere(places3, centerPara,condition3);
 		Printer.printList(list5);
 		
 		System.out.println("---------------geoWithinBox---------------");
 		BoxPara boxPara =new BoxPara("location", -78.9667, 20.78, -70.9667, 60.78);
-		list5=suidRichExt.geoWithinBox(places3, boxPara, condition4);
+		list5=suidRichExt.geoWithinBox(places3, boxPara, condition3);
 		Printer.printList(list5);
 	}
 

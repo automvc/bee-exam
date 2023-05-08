@@ -17,6 +17,10 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class Test4_insert {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 		SuidRich suidRich =BF.getSuidRich();
 		
@@ -50,6 +54,8 @@ public class Test4_insert {
 //		long returnId=suidRich.insertAndReturnId(orders);
 		int a=suidRich.insert(noid0);
 		System.out.println("a:  "+a);
+//		long aa=suidRich.insertAndReturnId(noid0);  //bug
+//		System.out.println("aa:  "+aa);
 		
 		System.out.println("finished!");
 	}

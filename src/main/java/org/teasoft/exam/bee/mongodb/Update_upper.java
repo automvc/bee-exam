@@ -21,13 +21,17 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class Update_upper {
 
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 		SuidRich suidRich = BF.getSuidRich();
 		Condition condition = BF.getCondition();
 		
 		
 		condition.setMultiply(Orders_F.num, 2);
-		condition.set("detailInfo", "test detailInfo");
+		condition.set("detailInfo", "test detailInfo8");
 		
 		Orders orders=new Orders();
 		orders.setName("mongodb72");

@@ -20,6 +20,10 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class Test4_count {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 		SuidRich suidRich =BF.getSuidRich();
 		
@@ -37,7 +41,7 @@ public class Test4_count {
 		
 		
 		Condition condition2=BF.getCondition();
-		condition2.op("name", Op.eq, "mongodb2");
+		condition2.op("name", Op.eq, "mongodb37");
 		int c4=suidRich.count(orders,condition2);
 		System.out.println("count="+c4);
 		

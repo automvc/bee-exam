@@ -20,6 +20,10 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class Update_NewOld {
 
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 		SuidRich suidRich = BF.getSuidRich();
 		

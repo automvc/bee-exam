@@ -21,6 +21,10 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class Update5_setNull {
 
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 		SuidRich suidRich = BF.getSuidRich();
 		Condition condition = BF.getCondition();
@@ -41,8 +45,8 @@ public class Update5_setNull {
 		//能找到记录,但与要设置的值一样时,就不会更新,所以此时影响的行是0
 		
 //		int updateNum=suidRich.update(orders, Orders_F.num,condition); //指定只更新num字段
-		int updateNum=suidRich.updateBy(orders,condition, Orders_F.name); //指定用name作为过滤条件
-//		int updateNum=suidRich.updateBy(orders, Orders_F.name); //指定用name作为过滤条件
+//		int updateNum=suidRich.updateBy(orders,condition, Orders_F.name); //指定用name作为过滤条件
+		int updateNum=suidRich.updateBy(orders, Orders_F.name); //指定用name作为过滤条件
 		Logger.info("-(没有用Condition)--updateNum: "+ updateNum);
 	}
 

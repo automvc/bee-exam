@@ -22,6 +22,10 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class Test4_insertList {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 		SuidRich suidRich =BF.getSuidRich();
 		
@@ -29,7 +33,7 @@ public class Test4_insertList {
 		
 		List<Orders> insertList=new ArrayList<>();
 		
-		for (int i = 70; i < 80; i++) {
+		for (int i = 30; i < 40; i++) {
 			orders=new Orders();
 			orders.setAbc("test bee ");
 			orders.setName("mongodb" + i);
@@ -51,7 +55,7 @@ public class Test4_insertList {
 		orders=new Orders();
 		orders.setAbc("test bee ");
 		orders.setName("mongodb" + 99);
-		orders.setId(10200L + 99);
+		orders.setId(10300L + 99);
 //		long returnId=suidRich.insertAndReturnId(orders);
 		long returnId=suidRich.insertAndReturnId(orders,IncludeType.EXCLUDE_BOTH);
 		System.out.println("returnId:  "+returnId);

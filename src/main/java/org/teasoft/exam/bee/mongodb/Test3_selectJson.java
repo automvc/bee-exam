@@ -21,6 +21,10 @@ import org.teasoft.honey.util.Printer;
 public class Test3_selectJson {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 		SuidRich suidRich =BF.getSuidRich();
 		
@@ -57,6 +61,11 @@ public class Test3_selectJson {
 		System.out.println(json);
 		
 		json=suidRich.selectJson(new Orders(), c);  //test cache
+		System.out.println(json);
+		
+		Orders orders=new Orders();
+		orders.setRemark("changed 1211");
+		json=suidRich.selectJson(orders, c);  //test cache
 		System.out.println(json);
 		
 		System.out.println("finished!");

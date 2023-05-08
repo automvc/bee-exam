@@ -21,6 +21,10 @@ import org.teasoft.honey.util.Printer;
 public class Test3_ById2 {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 		SuidRich suidRich =BF.getSuidRich();
 		
@@ -32,17 +36,17 @@ public class Test3_ById2 {
 //		suidRich.insert(orders);
 		
 //		Noid0 noid0=suidRich.selectById(new Noid0(),"63862e06bdcb6d0dac9c02c7");
-		Noid0 noid0=suidRich.selectById(Noid0.class,"ewewewewew"); //不是mongodb的string id格式.
-		if(noid0!=null)System.out.println("selectById Noid0:"+noid0.toString());
-		else {
-			System.out.println("it is null !");
-		}
+//		Noid0 noid0=suidRich.selectById(Noid0.class,"ewewewewew"); //不是mongodb的string id格式.
+//		if(noid0!=null)System.out.println("selectById Noid0:"+noid0.toString());
+//		else {
+//			System.out.println("it is null !");
+//		}
 		
-		List<Noid0> list=suidRich.selectByIds(Noid0.class,"63862e06bdcb6d0dac9c02c7,6386323f3f581a223ab8a10e,ewewewewew");
+		List<Noid0> list=suidRich.selectByIds(Noid0.class,"643fcd4b81c72a273cdebdf7,643fcdd9eb4c0000c9002628,ewewewewew");
 		Printer.printList(list);
 		
 		System.out.println("---------------test cache  in selectByIds----------------");
-		list=suidRich.selectByIds(Noid0.class,"63862e06bdcb6d0dac9c02c7,6386323f3f581a223ab8a10e,ewewewewew");
+		list=suidRich.selectByIds(Noid0.class,"643fcdd9eb4c0000c9002628,6386323f3f581a223ab8a10e,ewewewewew");
 		Printer.printList(list);
 		
 		
@@ -54,10 +58,10 @@ public class Test3_ById2 {
 		Printer.printList(list2);
 		
 		Orders orders=suidRich.selectById(Orders.class,"10021");
-		System.out.println("selectById orders:"+orders.toString());
+		if(orders!=null)System.out.println("selectById orders:"+orders.toString());
 		System.out.println("---------------test cache,  in selectById----On Record------------");
 		orders=suidRich.selectById(Orders.class,"10021");
-		System.out.println("selectById orders:"+orders.toString());
+		if(orders!=null)System.out.println("selectById orders:"+orders.toString());
 //		
 //		List<Orders> list=suidRich.selectByIds(new Orders(),"10020,10021");
 //		Printer.printList(list);

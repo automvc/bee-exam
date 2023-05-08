@@ -22,6 +22,10 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class Update3 {
 
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 		SuidRich suidRich = BF.getSuidRich();
 		Condition condition = BF.getCondition();

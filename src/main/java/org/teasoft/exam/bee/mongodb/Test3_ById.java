@@ -20,6 +20,10 @@ import org.teasoft.honey.util.Printer;
 public class Test3_ById {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 		SuidRich suidRich =BF.getSuidRich();
 		
@@ -31,11 +35,11 @@ public class Test3_ById {
 //		suidRich.insert(orders);
 		
 		Orders orders=suidRich.selectById(Orders.class,10020L);
-		System.out.println("selectById orders:"+orders.toString());
+		if(orders!=null)System.out.println("selectById orders:"+orders.toString());
 		System.out.println("----------------------------");
 		
 		orders=suidRich.selectById(Orders.class,"10021");
-		System.out.println("selectById orders:"+orders.toString());
+		if(orders!=null)System.out.println("selectById orders:"+orders.toString());
 		System.out.println("----------------------------");
 		
 		List<Orders> list=suidRich.selectByIds(Orders.class,"10020,10021");

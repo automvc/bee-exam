@@ -20,6 +20,10 @@ import org.teasoft.honey.util.Printer;
 public class Test3_selectString {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 		SuidRich suidRich =BF.getSuidRich();
 		

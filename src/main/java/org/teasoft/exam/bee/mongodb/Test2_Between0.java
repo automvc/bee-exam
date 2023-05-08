@@ -20,6 +20,10 @@ import org.teasoft.honey.util.Printer;
 public class Test2_Between0 {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 		SuidRich suidRich =BF.getSuidRich(); //SuidRich是包括Select,update,insert,delete操作的接口
 		Condition condtion=BF.getCondition(); //Condition是构造条件的接口

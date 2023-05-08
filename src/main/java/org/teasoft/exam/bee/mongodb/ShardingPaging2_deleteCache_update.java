@@ -17,6 +17,10 @@ import org.teasoft.honey.sharding.ShardingUtil;
 public class ShardingPaging2_deleteCache_update {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 //		ShardingDoConfig.init();
 //		InitDsAndMongoDsUtil.initDS();

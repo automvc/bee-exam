@@ -21,6 +21,10 @@ import org.teasoft.honey.util.Printer;
 public class Test2_Between {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 //		MongodbBeeSqlRegister.register(new MongodbSqlLib());
 //		SuidRich suidRich =BF.getSuidRich();

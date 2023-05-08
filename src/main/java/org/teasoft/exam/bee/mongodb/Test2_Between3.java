@@ -28,6 +28,10 @@ import org.teasoft.honey.util.Printer;
 public class Test2_Between3 {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 		SuidRich suidRich =BF.getSuidRichForMongodb();
 		Orders orders=new Orders();

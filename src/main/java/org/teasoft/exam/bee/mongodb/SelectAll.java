@@ -23,13 +23,13 @@ public class SelectAll {
 
 	public static void test() {
 		SuidRich suidRich = BF.getSuidRich();
-		List<Orders3> list=suidRich.select(new Orders3());
+		List<Orders> list=suidRich.select(new Orders());
 		System.err.println(list.size());
 		Printer.printList(list);
 		
 		System.err.println("------------------------------------------");
-		list=suidRich.select(new Orders3());
-		System.err.println(list.size());
-		Printer.printList(list);
+		List<Orders3> list2=suidRich.select(new Orders3());
+		System.err.println(list2.size());
+		Printer.printList(list2);
 	}
 }

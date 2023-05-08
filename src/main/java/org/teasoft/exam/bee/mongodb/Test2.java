@@ -27,6 +27,10 @@ import org.teasoft.honey.util.Printer;
 public class Test2 {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 		Suid suid=BF.getSuid();
 		

@@ -32,9 +32,14 @@ public class SelectGroupBy {
 		c.selectField(Orders_F.abc);
 		c.groupBy(Orders_F.name);
 		
-//		List<Orders> list=suidRich.select(new Orders(), c);
-		List<Orders3> list=suidRich.select(new Orders3(), c);
+		List<Orders> list=suidRich.select(new Orders(), c);
+//		List<Orders3> list=suidRich.select(new Orders3(), c);
 		Printer.printList(list);
+		
+		Orders orders=new Orders();
+		orders.setAbc("test bee ");
+		List<Orders> list2=suidRich.select(orders, c);
+		Printer.printList(list2);
 	}
 
 }

@@ -19,6 +19,10 @@ import org.teasoft.honey.osql.shortcut.BF;
  */
 public class Select_CollectionNotExist {
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		SuidRich suidRich = BF.getSuidRich();
 //		List<Orders3> list=suidRich.select(new Orders3());
 //		System.err.println(list.size());

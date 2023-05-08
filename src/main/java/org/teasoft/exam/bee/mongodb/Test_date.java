@@ -20,6 +20,10 @@ import org.teasoft.honey.util.Printer;
 public class Test_date {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 		Suid suid=BF.getSuid();
 		

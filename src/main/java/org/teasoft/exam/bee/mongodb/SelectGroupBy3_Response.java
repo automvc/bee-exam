@@ -21,6 +21,10 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class SelectGroupBy3_Response {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		SuidRich suidRich=BF.getSuidRich();
 		
 		Condition c=BF.getCondition(); 
@@ -35,6 +39,7 @@ public class SelectGroupBy3_Response {
 //		select name,count(*),max(id),min(total) from orders group by name;
 		
 		List<OrdersGroupResponse> list=suidRich.select(new OrdersGroupResponse(), c);
+		Printer.printList(list);
 		
 		OrdersGroupResponse res=new OrdersGroupResponse();
 //		res.setMinTotal(-1D);

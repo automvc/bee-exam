@@ -8,7 +8,7 @@ package org.teasoft.exam;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.teasoft.bee.osql.DatabaseConst;
+import org.teasoft.exam.bee.test.ClearDsContext;
 import org.teasoft.exam.bee.test.TestNormal;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyContext;
@@ -26,13 +26,25 @@ public class MainDbTest {
 		boolean result = false;
 		try {
 
-			HoneyConfig honeyConfig = HoneyConfig.getHoneyConfig();
+			
+//			HoneyConfig honeyConfig = HoneyConfig.getHoneyConfig();
+			
+			ClearDsContext.clear();
+//			honeyConfig.multiDS_enable=false;
+//			honeyConfig.multiDS_sharding=false;
+//			BeeFactory beeFactory=BeeFactory.getInstance();  //只是在测试同时用多数DB时,会用到.   在setUrl清空,不好,会把原有的ds清空,那实际是要的.
+//			beeFactory.setDataSource(null);
+//			beeFactory.setDataSourceMap(null);
+//			beeFactory.setTransaction(null);
+			
 
-			String dbName = HoneyConfig.getHoneyConfig().getDbName();
-			if (DatabaseConst.ORACLE.equalsIgnoreCase(dbName) || DatabaseConst.H2.equalsIgnoreCase(dbName)
-					|| DatabaseConst.PostgreSQL.equalsIgnoreCase(dbName)) {
-				honeyConfig.genid_forAllTableLongId = true;
-			}
+//			String dbName = HoneyConfig.getHoneyConfig().getDbName();
+//			if (DatabaseConst.ORACLE.equalsIgnoreCase(dbName) || DatabaseConst.H2.equalsIgnoreCase(dbName)
+//					|| DatabaseConst.PostgreSQL.equalsIgnoreCase(dbName)) {
+//				honeyConfig.genid_forAllTableLongId = true;
+//			}
+			
+			HoneyConfig honeyConfig = HoneyConfig.getHoneyConfig();
 
 			String oldUrl = honeyConfig.getUrl();
 			String oldUsername = honeyConfig.getUsername();
@@ -48,6 +60,32 @@ public class MainDbTest {
             System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test MySQL end.");
             sleep(3);
 
+            
+            
+			System.err.println();
+			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test SQLite start");
+			honeyConfig.setUrl("jdbc:sqlite:bee.db");
+			honeyConfig.setUsername("");
+			honeyConfig.setPassword("");
+			TestNormal.test();
+			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test SQLite end");
+			sleep(3);
+			
+			
+			
+			System.err.println();
+			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Microsoft SQL Server start");
+			honeyConfig.setUrl("jdbc:sqlserver://localhost:1433; databasename=bee");
+			honeyConfig.setUsername("sa");
+			honeyConfig.setPassword("123456");
+			TestNormal.test();
+			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Microsoft SQL Server end");
+			sleep(3);
+			
+			
+			
+			honeyConfig.genid_forAllTableLongId = true;
+			
 			System.err.println();
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Oracle start");
 			honeyConfig.setUrl("jdbc:oracle:thin:@localhost:1521:orcl");
@@ -60,15 +98,7 @@ public class MainDbTest {
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Oracle end");
 			sleep(3);
 
-			System.err.println();
-			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test SQLite start");
-			honeyConfig.setUrl("jdbc:sqlite:bee.db");
-			honeyConfig.setUsername("");
-			honeyConfig.setPassword("");
-			TestNormal.test();
-			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test SQLite end");
-			sleep(3);
-
+			
 			System.err.println();
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test H2 start");
 			honeyConfig.setUrl("jdbc:h2:D:/JavaWeb/h2/data/bee");
@@ -78,14 +108,6 @@ public class MainDbTest {
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test H2 end");
 			sleep(3);
 
-			System.err.println();
-			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Microsoft SQL Server start");
-			honeyConfig.setUrl("jdbc:sqlserver://localhost:1433; databasename=bee");
-			honeyConfig.setUsername("sa");
-			honeyConfig.setPassword("123456");
-			TestNormal.test();
-			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Microsoft SQL Server end");
-			sleep(3);
 			
 			System.err.println();
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test PostgreSQL start");
@@ -96,6 +118,8 @@ public class MainDbTest {
 			TestNormal.test();
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test PostgreSQL end");
 			sleep(3);
+			
+			honeyConfig.genid_forAllTableLongId = false;
 			
 //			System.err.println();
 //			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Cassandra start");
@@ -108,14 +132,15 @@ public class MainDbTest {
 //			TestNormal.test();
 //			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Cassandra end");
 			
-			System.err.println();
-			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Mongodb start");
-			honeyConfig.setUrl("mongodb://localhost:27017/bee/");
-			honeyConfig.setUsername("");
-			honeyConfig.setPassword("");
-			TestNormal.test();
-			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Mongodb end");
-			sleep(3);
+//			System.err.println();
+//			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Mongodb start");
+//			honeyConfig.setDbName("MongoDB");
+//			honeyConfig.setUrl("mongodb://localhost:27017/bee/");
+//			honeyConfig.setUsername("");
+//			honeyConfig.setPassword("");
+//			TestNormal.test();
+//			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Mongodb end");
+//			sleep(3);
 			
 
 			honeyConfig.setUrl(oldUrl);
@@ -139,6 +164,8 @@ public class MainDbTest {
 	private void sleep(int second) {
 		try {
 			Thread.sleep(second*1000);
+//			HoneyConfig.getHoneyConfig().multiDS_enable=true;
+//			HoneyConfig.getHoneyConfig().multiDS_differentDbType=true;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

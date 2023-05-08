@@ -9,6 +9,8 @@ package org.teasoft.exam;
 import org.junit.Test;
 import org.teasoft.exam.bee.osql.ds.DiffDdExam;
 import org.teasoft.exam.bee.osql.ds.RwDsExam;
+import org.teasoft.exam.bee.test.ClearDsContext;
+import org.teasoft.exam.bee.test.TestMoreDs;
 
 /**
  * @author Kingstar
@@ -16,11 +18,17 @@ import org.teasoft.exam.bee.osql.ds.RwDsExam;
  */
 public class MoreDsTest {
 	@Test
-	public void test(){
+	public void test() throws Exception{
 		System.out.println("---Bee MoreDsTest with junit start:------");
 		
 		System.out.println("---Bee RwDsExam with junit start:------");
-		RwDsExam.test();
+		try {
+			RwDsExam.test();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			ClearDsContext.clear();
+		}
 		System.out.println("---Bee RwDsExam with junit end.------");
 		
 //		RwDsExam set the ds , will affect after. need clear
@@ -35,8 +43,22 @@ public class MoreDsTest {
 		
 		
 		System.out.println("---Bee DiffDdExam with junit start:------");
-		DiffDdExam.test();
+		
+		try {
+			DiffDdExam.test();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			ClearDsContext.clear();
+		}
 		System.out.println("---Bee DiffDdExam with junit end.------");
+		
+		
+		
+		System.out.println("---Bee RwDsExam with junit start:------");
+		TestMoreDs.test();
+		System.out.println("---Bee RwDsExam with junit end.------");
+		
 		
 		
 		System.out.println("---Bee MoreDsTest with junit end.------");

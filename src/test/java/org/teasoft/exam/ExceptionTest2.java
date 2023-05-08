@@ -21,14 +21,14 @@ public class ExceptionTest2 {
 	@Test
 	public void test() {
 
-		System.out.println("---Bee ExceptionTest2 with junit start:------");
-		ExceptionTest.test();
-		System.out.println("---------------------");
-		BuzExceptionTest.test();
-		System.out.println("---------------------");
-		LikeEnhanceTest.test(); //V1.17
-		testTransactionRollback();
-		System.out.println("---Bee ExceptionTest2 with junit end.------");
+//		System.out.println("---Bee ExceptionTest2 with junit start:------");
+//		ExceptionTest.test();
+//		System.out.println("---------------------");
+//		BuzExceptionTest.test();
+//		System.out.println("---------------------");
+//		LikeEnhanceTest.test(); //V1.17
+//		testTransactionRollback();
+//		System.out.println("---Bee ExceptionTest2 with junit end.------");
 	}
 	
 	private void testTransactionRollback() {

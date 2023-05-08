@@ -17,6 +17,14 @@ import org.teasoft.honey.osql.autogen.Ddl;
 public class DdlForShardingTest2 {
 
 	public static void main(String[] args) {
+		try {
+			test();
+		} finally {
+			ClearDsAndMongoDsUtil.clearConfig();
+		}
+	}
+
+	public static void test() {
 
 //		ShardingInitData.init();
 //		InitSameDsUtil.initDS();
@@ -24,15 +32,15 @@ public class DdlForShardingTest2 {
 		ShardingDoConfig.init();
 		InitDsAndMongoDsUtil.initDS();
 
-		test();
+		test0();
 		
 		System.err.println("-----------------DdlForShardingTest2-------------");
 	}
 
-	public static void test() {
+	public static void test0() {
 //		Ddl.createTable(TestUser.class,true); // 创建Sharding分库分表
 //		Ddl.createTable(Noid0.class);
-		Ddl.createTable(Noid0.class,true);
+		Ddl.createTable(Noid0.class,true);  //为什么创建完后,线程不停??? TODO
 	}
 
 }

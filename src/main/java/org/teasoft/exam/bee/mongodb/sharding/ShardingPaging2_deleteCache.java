@@ -20,6 +20,14 @@ import org.teasoft.honey.sharding.ShardingUtil;
 public class ShardingPaging2_deleteCache {
 	
 	public static void main(String[] args) {
+		try {
+			test();
+		} finally {
+			ClearDsAndMongoDsUtil.clearConfig();
+		}
+	}
+
+	public static void test() {
 		
 		ShardingDoConfig.init();
 		InitDsAndMongoDsUtil.initDS();
@@ -55,13 +63,14 @@ public class ShardingPaging2_deleteCache {
 		
 		
 		//条件全在condition  case 5
-	 	List<Orders> list=suidRich.select(orders1,condition);
+		List<Orders> list=null;
+	 	list=suidRich.select(orders1,condition);
 	 	Printer.printList(list);
 	 	System.out.println("--------------------:");
 	 	
 	 	
-	 	int delNum=suidRich.deleteById(Orders.class, 1033L);
-	 	System.out.println("delNum: "+delNum);
+//	 	int delNum=suidRich.deleteById(Orders.class, 1033L); //Mongodb ORM V2.1 未支持删除的分片操作 TODO
+//	 	System.out.println("delNum: "+delNum);
 	 	
 //	 	condition.size(6);
 	 	list=suidRich.select(orders1,condition);

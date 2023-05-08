@@ -19,6 +19,14 @@ import org.teasoft.honey.sharding.config.ShardingConfig;
  */
 public class SelectWithFun2 {
 	public static void main(String[] args) {
+		try {
+			test();
+		} finally {
+			ClearDsAndMongoDsUtil.clearConfig();
+		}
+	}
+
+	public static void test() {
 		
 		ShardingDoConfig.init();
 		InitDsAndMongoDsUtil.initDS();

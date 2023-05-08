@@ -13,6 +13,7 @@ import javax.sql.DataSource;
 
 import org.teasoft.beex.mongodb.ds.MongodbSimpleDataSource;
 import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.HoneyConfig;
 
 /**
  * @author Kingstar
@@ -22,12 +23,19 @@ public class InitDsAndMongoDsUtil {
 	
 	public static void initDS() {
 		try {
+			
+			HoneyConfig config=HoneyConfig.getHoneyConfig();
+			config.setDbName("MongoDB");
+			config.multiDS_enable=true;
+			config.multiDS_differentDbType=false;
+			config.multiDS_sharding=true;
 
 			MongodbSimpleDataSource dataSource0=new MongodbSimpleDataSource("mongodb://localhost:27017/ds0","","");//没有设置用户名和密码,仅用于测试
+//			MongodbSimpleDataSource dataSource0=new MongodbSimpleDataSource("mongodb://localhost:27017/testa","","");一般的数据库名也是可以的
 			MongodbSimpleDataSource dataSource1=new MongodbSimpleDataSource("mongodb://localhost:28018/ds1","","");
 
 			Map<String, DataSource> dataSourceMap = new LinkedHashMap<>();
-			dataSourceMap.put("ds0", dataSource0); 
+			dataSourceMap.put("ds0", dataSource0);  //key值需要数据后缀,有规则可以处理更加高效.
 			dataSourceMap.put("ds1", dataSource1);
 			
 			BeeFactory.getInstance().setDataSourceMap(dataSourceMap);

@@ -17,15 +17,23 @@ import org.teasoft.honey.sharding.ShardingUtil;
 public class ShardingPaging_between {
 	
 	public static void main(String[] args) {
+		try {
+			test();
+		} finally {
+			ClearDsAndMongoDsUtil.clearConfig();
+		}
+	}
+
+	public static void test() {
 		
 		ShardingDoConfig.init();
 		InitDsAndMongoDsUtil.initDS();
-		test(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.
-//		test(2);
-//		test(-1);
+		test0(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.
+//		test0(2);
+//		test0(-1);
 	}
 	
-	public static void test(int startIndex) {
+	public static void test0(int startIndex) {
 		
 		Suid suid=BF.getSuid(); //1
 		Orders orders1=new Orders();

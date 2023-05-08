@@ -21,6 +21,14 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class Test4_selectBroadcastTable {
 
 	public static void main(String[] args) {
+		try {
+			test();
+		} finally {
+			ClearDsAndMongoDsUtil.clearConfig();
+		}
+	}
+
+	public static void test() {
 
 		ShardingDoConfig.init();
 		InitDsAndMongoDsUtil.initDS();

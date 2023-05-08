@@ -21,6 +21,14 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class Test4_insertList {
 	
 	public static void main(String[] args) {
+		try {
+			test();
+		} finally {
+			ClearDsAndMongoDsUtil.clearConfig();
+		}
+	}
+
+	public static void test() {
 		
 		ShardingDoConfig.init();
 		InitDsAndMongoDsUtil.initDS();
@@ -31,7 +39,7 @@ public class Test4_insertList {
 		
 		List<Orders> insertList=new ArrayList<>();
 		
-		for (int i = 0; i < 10; i++) {
+		for (int i = 20; i < 30; i++) {
 			orders=new Orders();
 			orders.setAbc("test bee ");
 			orders.setName("mongodb" + i);

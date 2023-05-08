@@ -19,6 +19,14 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class ShardingSimpleExam4_2 {
 	
 	public static void main(String[] args) {
+		try {
+			test();
+		} finally {
+			ClearDsAndMongoDsUtil.clearConfig();
+		}
+	}
+
+	public static void test() {
 		
 //		ShardingInitData.init();
 //		InitSameDsUtil.initDS();

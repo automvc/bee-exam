@@ -8,6 +8,7 @@ package org.teasoft.exam.bee.mongodb.sharding;
 
 import org.teasoft.bee.sharding.ShardingBean;
 import org.teasoft.exam.bee.mongodb.Noid0;
+import org.teasoft.exam.bee.osql.commomid.Noid;
 import org.teasoft.exam.bee.osql.special.ddl.TestMyUser;
 import org.teasoft.honey.sharding.config.ShardingConfig;
 
@@ -26,6 +27,10 @@ public class ShardingDoConfig {
 		
 		ShardingConfig.addShardingBean(Noid0.class,new ShardingBean("ds[0..1].noid0[]"));
 		ShardingConfig.addBroadcastTable("noid0");
+		ShardingConfig.addBroadcastTable("Noid0");
+		
+		ShardingConfig.addShardingBean(Noid.class,new ShardingBean("ds[0..1].noid[]"));
+		ShardingConfig.addBroadcastTable("noid"); //广播表要显式设置
 		
 		ShardingConfig.addShardingBean("test_user",new ShardingBean("ds[0..1].test_user[0..5]", "id"));
 		ShardingConfig.addShardingBean(TestMyUser.class,new ShardingBean("ds[0..1].test_my_user[0..5]", "id"));

@@ -18,6 +18,14 @@ import org.teasoft.honey.sharding.ShardingUtil;
 public class ShardingPaging {
 	
 	public static void main(String[] args) {
+		try {
+			test();
+		} finally {
+			ClearDsAndMongoDsUtil.clearConfig();
+		}
+	}
+
+	public static void test() {
 		
 		ShardingDoConfig.init();
 		InitDsAndMongoDsUtil.initDS();

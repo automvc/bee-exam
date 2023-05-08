@@ -7,7 +7,7 @@
 package org.teasoft.exam.bee.mongodb.sharding;
 
 import org.teasoft.bee.sharding.ShardingBean;
-import org.teasoft.exam.bee.mongodb.Noid0;
+import org.teasoft.exam.bee.mongodb.entity.Noid0;
 import org.teasoft.exam.bee.osql.commomid.Noid;
 import org.teasoft.exam.bee.osql.special.ddl.TestMyUser;
 import org.teasoft.honey.sharding.config.ShardingConfig;

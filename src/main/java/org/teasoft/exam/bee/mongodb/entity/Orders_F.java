@@ -1,4 +1,4 @@
-package org.teasoft.exam.bee.mongodb;
+package org.teasoft.exam.bee.mongodb.entity;
 
 /**
  * Relative field name for Javabean Orders

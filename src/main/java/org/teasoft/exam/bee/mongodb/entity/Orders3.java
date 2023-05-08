@@ -4,7 +4,7 @@
  * The license,see the LICENSE file.
  */
 
-package org.teasoft.exam.bee.mongodb;
+package org.teasoft.exam.bee.mongodb.entity;
 
 import java.io.Serializable;
 

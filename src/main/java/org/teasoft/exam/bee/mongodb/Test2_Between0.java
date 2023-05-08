@@ -10,6 +10,8 @@ import java.util.List;
 
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.exam.bee.mongodb.entity.Orders;
+import org.teasoft.exam.bee.mongodb.entity.Orders_F;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.util.Printer;
 

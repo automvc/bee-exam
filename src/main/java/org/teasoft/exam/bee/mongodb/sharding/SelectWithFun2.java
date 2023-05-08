@@ -9,7 +9,7 @@ package org.teasoft.exam.bee.mongodb.sharding;
 import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.bee.sharding.ShardingBean;
-import org.teasoft.exam.bee.mongodb.Noid0;
+import org.teasoft.exam.bee.mongodb.entity.Noid0;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.sharding.config.ShardingConfig;
 

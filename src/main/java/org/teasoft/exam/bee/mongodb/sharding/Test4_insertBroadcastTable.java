@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.teasoft.bee.osql.SuidRich;
-import org.teasoft.exam.bee.mongodb.Noid0;
+import org.teasoft.exam.bee.mongodb.entity.Noid0;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**

@@ -16,6 +16,7 @@ import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.beex.mongodb.MongodbSqlLib;
+import org.teasoft.exam.bee.mongodb.entity.Orders;
 import org.teasoft.honey.osql.core.MongodbObjSQLRich;
 import org.teasoft.honey.osql.mongodb.MongodbBeeSqlRegister;
 import org.teasoft.honey.osql.shortcut.BF;

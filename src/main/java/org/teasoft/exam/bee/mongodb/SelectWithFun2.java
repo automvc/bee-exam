@@ -8,6 +8,7 @@ package org.teasoft.exam.bee.mongodb;
 
 import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.exam.bee.mongodb.entity.Noid0;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**

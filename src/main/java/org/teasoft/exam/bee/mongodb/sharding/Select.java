@@ -7,7 +7,7 @@
 package org.teasoft.exam.bee.mongodb.sharding;
 
 import org.teasoft.bee.sharding.ShardingBean;
-import org.teasoft.exam.bee.mongodb.Orders;
+import org.teasoft.exam.bee.mongodb.entity.Orders;
 import org.teasoft.honey.sharding.config.ShardingConfig;
 
 /**

@@ -6,6 +6,7 @@
 
 package org.teasoft.exam.comm;
 
+import org.teasoft.exam.bee.test.ClearDsContext;
 import org.teasoft.honey.osql.core.Logger;
 
 /**
@@ -35,6 +36,8 @@ public class TestHelper {
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 			 e.printStackTrace();
+		}finally {
+			ClearDsContext.clear(); //2.1
 		}
 	}
 

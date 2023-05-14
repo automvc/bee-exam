@@ -23,6 +23,10 @@ import org.teasoft.honey.osql.util.DateUtil;
 public class DateTest {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		SuidRich suidRich=BF.getSuidRich();
 		
 		HoneyConfig.getHoneyConfig().dateFormat="yyyy-MM-dd HH:mm:ss.SSS";

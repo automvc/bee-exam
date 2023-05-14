@@ -27,6 +27,10 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class GridFsFileTest {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		MongodbSuidRichExt suidRichExt=BFX.getMongodbSuidRichExt();
 		
 //		List list=suidRichExt.selectFiles(new GridFsFile(), null);

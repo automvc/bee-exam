@@ -3,6 +3,8 @@ package org.teasoft.exam.bee.mongodb.entity;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+import org.teasoft.bee.osql.annotation.GenId;
+
 /**
  * @author Honey
  * Create on 2022-10-10 21:35:44
@@ -11,6 +13,7 @@ public class Orders implements Serializable {
 
 	private static final long serialVersionUID = 1593604354717L;
 
+	@GenId
 	private Long id;
 	private String userid;
 	private String name;

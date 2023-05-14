@@ -12,9 +12,11 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
+import org.teasoft.exam.bee.test.ClearDsContext;
 import org.teasoft.honey.osql.core.BeeFactory;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.sun.xml.internal.rngom.digested.DSchemaBuilderImpl;
 
 /**
  * @author Kingstar
@@ -24,6 +26,8 @@ public class InitDsUtil {
 	
 	public static void initDS() {
 		try {
+			
+			ClearDsContext.clear();
 
 			DruidDataSource dataSource1;
 			dataSource1 = new DruidDataSource();

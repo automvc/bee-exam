@@ -61,7 +61,7 @@ public class DiffDdExamCustomerSql {
 		
 		
 		suidRich.setDataSourceName("ds2");
-//		test1();
+		test1();
 		suidRich.select(leafAlloc,10);
 		
 		

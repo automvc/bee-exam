@@ -17,6 +17,8 @@ import org.teasoft.bee.osql.DatabaseConst;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.bee.osql.transaction.Transaction;
 import org.teasoft.exam.bee.osql.entity.LeafAlloc;
+import org.teasoft.exam.bee.test.ClearDsContext;
+import org.teasoft.exam.comm.ClearDsUtil;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.HoneyConfig;
@@ -62,12 +64,14 @@ public class RwDsExam {
 			test2();
 			
 //			HoneyConfig.getHoneyConfig().multiDS_enable = false;
-			HoneyConfig.getHoneyConfig().multiDS_type = 0;
-			HoneyConfig.getHoneyConfig().multiDS_defalutDS = null;
-			HoneyConfig.getHoneyConfig().multiDS_writeDB = null;
-			HoneyConfig.getHoneyConfig().multiDS_readDB = null;
-			BeeFactory.getInstance().setDataSourceMap(null);
-			HoneyContext.setConfigRefresh(true);
+//			HoneyConfig.getHoneyConfig().multiDS_type = 0;
+//			HoneyConfig.getHoneyConfig().multiDS_defalutDS = null;
+//			HoneyConfig.getHoneyConfig().multiDS_writeDB = null;
+//			HoneyConfig.getHoneyConfig().multiDS_readDB = null;
+//			BeeFactory.getInstance().setDataSource(null);
+//			BeeFactory.getInstance().setDataSourceMap(null);
+//			HoneyContext.setConfigRefresh(true);
+			 ClearDsUtil.clearConfig();
 		}
 		
 		HoneyConfig.getHoneyConfig().multiDS_enable =old_multiDS_enable;
@@ -77,7 +81,8 @@ public class RwDsExam {
 
 	public static void initDS() {
 		try {
-
+			ClearDsContext.clear();
+			
 			DruidDataSource dataSource1;
 			dataSource1 = new DruidDataSource();
 			dataSource1.setUrl("jdbc:mysql://localhost:3306/pro?characterEncoding=UTF-8&useSSL=false");

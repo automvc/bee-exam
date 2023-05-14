@@ -8,12 +8,15 @@ package org.teasoft.exam.bee.osql.ds;
 
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.sql.DataSource;
 
 import org.teasoft.bee.osql.Condition;
+import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.exam.bee.osql.annotation.Orders;
 import org.teasoft.exam.bee.osql.entity.LeafAlloc;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
@@ -60,40 +63,53 @@ public class DiffDdExam000 {
 
 	public static void test1(SuidRich suidRich) {
 
-		LeafAlloc leafAlloc = new LeafAlloc();
-		leafAlloc.setBizTag("bee");
-		LeafAlloc result = suidRich.selectOne(leafAlloc);
-		if (result != null) Logger.info(result.toString());
+//		LeafAlloc leafAlloc = new LeafAlloc();
+//		leafAlloc.setBizTag("bee");
+//		LeafAlloc result = suidRich.selectOne(leafAlloc);
+//		if (result != null) Logger.info(result.toString());
+//		
+//		
+//		Condition condition = new ConditionImpl();
+//		condition.setAdd("maxId", "step");
+//		int num = suidRich.update(leafAlloc, condition, "maxId");
+//		Logger.info("---------------------------------update num is :" + num);
+//
+//		//"SELECT biz_tag, max_id, step FROM leaf_alloc WHERE biz_tag = #{tag}"
+//		result = suidRich.selectOne(leafAlloc);
+//		if (result != null) Logger.info(result.toString());
+//
+//		result = suidRich.selectOne(leafAlloc);
+//		if (result != null) Logger.info(result.toString());
+//		Logger.info("-------------1--dbName: "+HoneyConfig.getHoneyConfig().getDbName());
+//		suidRich.select(leafAlloc,0,10);
+//		Logger.info("-------------2--dbName: "+HoneyConfig.getHoneyConfig().getDbName());
+//		suidRich.select(leafAlloc,10);
+//		Logger.info("-------------3--dbName: "+HoneyConfig.getHoneyConfig().getDbName());
+//		suidRich.select(leafAlloc,10);
+//		Logger.info("-------------4--dbName: "+HoneyConfig.getHoneyConfig().getDbName());
+//		
+//		//上个操作test1(),放入缓存,看下下个操作(不同DB类型),是否会从缓存中获取
+//		leafAlloc = new LeafAlloc();
+//		leafAlloc.setBizTag("bee");
+//		result = suidRich.selectOne(leafAlloc);
+//		if (result != null) Logger.info(result.toString()); 
+//		
+//		Logger.info("");
+//		Logger.info("+++++++++++++++++++++++====================================================+++++++++++++++++++++++");
 		
 		
-		Condition condition = new ConditionImpl();
-		condition.setAdd("maxId", "step");
-		int num = suidRich.update(leafAlloc, condition, "maxId");
-		Logger.info("---------------------------------update num is :" + num);
-
-		//"SELECT biz_tag, max_id, step FROM leaf_alloc WHERE biz_tag = #{tag}"
-		result = suidRich.selectOne(leafAlloc);
-		if (result != null) Logger.info(result.toString());
-
-		result = suidRich.selectOne(leafAlloc);
-		if (result != null) Logger.info(result.toString());
-		Logger.info("-------------1--dbName: "+HoneyConfig.getHoneyConfig().getDbName());
-		suidRich.select(leafAlloc,0,10);
-		Logger.info("-------------2--dbName: "+HoneyConfig.getHoneyConfig().getDbName());
-		suidRich.select(leafAlloc,10);
-		Logger.info("-------------3--dbName: "+HoneyConfig.getHoneyConfig().getDbName());
-		suidRich.select(leafAlloc,10);
-		Logger.info("-------------4--dbName: "+HoneyConfig.getHoneyConfig().getDbName());
+        Suid suid=BeeFactory.getHoneyFactory().getSuid();
 		
-		//上个操作test1(),放入缓存,看下下个操作(不同DB类型),是否会从缓存中获取
-		leafAlloc = new LeafAlloc();
-		leafAlloc.setBizTag("bee");
-		result = suidRich.selectOne(leafAlloc);
-		if (result != null) Logger.info(result.toString()); 
+		Orders orders1=new Orders();
+//		orders1.setId(100001L);
+//		orders1.setName("Bee(ORM Framework)");
 		
-		Logger.info("");
-		Logger.info("+++++++++++++++++++++++====================================================+++++++++++++++++++++++");
+		List<Orders> list1 =suid.select(orders1);  //select
+		for (int i = 0; i < list1.size(); i++) {
+			Logger.info(list1.get(i).toString());
+		}
 		
+		suid.select(orders1); 
 	}
 
 }

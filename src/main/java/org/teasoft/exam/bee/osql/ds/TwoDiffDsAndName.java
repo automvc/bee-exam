@@ -55,7 +55,7 @@ public class TwoDiffDsAndName {
 //		数据源可以使用Java方式配置,也可以使用xml方式配置
 //		mysqlSuidRich.setDataSourceName("mysqlDsName");
 		mysqlSuidRich.setDataSourceName("ds1");  //此实例是在InitDsUtil.initDS();用java设置方式
-		mysqlSuidRich.setNameTranslate(new UnderScoreAndCamelName()); //DB<-->Java,eg: order_no<-->orderNo.
+		mysqlSuidRich.setNameTranslateOneTime(new UnderScoreAndCamelName()); //DB<-->Java,eg: order_no<-->orderNo.
 		return mysqlSuidRich;
 	}
 	

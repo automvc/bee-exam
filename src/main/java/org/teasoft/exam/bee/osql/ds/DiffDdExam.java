@@ -21,6 +21,7 @@ import org.teasoft.bee.osql.transaction.Transaction;
 import org.teasoft.exam.bee.osql.entity.LeafAlloc;
 import org.teasoft.exam.bee.osql.entity.dynamic.Orders;
 import org.teasoft.exam.bee.osql.moretable.entity.TestUser;
+import org.teasoft.exam.comm.ClearDsUtil;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
@@ -59,9 +60,8 @@ public class DiffDdExam {
 			HoneyConfig.getHoneyConfig().multiDS_enable = true;
 			HoneyConfig.getHoneyConfig().multiDS_type = 2;
 			HoneyConfig.getHoneyConfig().multiDS_differentDbType=true;
-			HoneyConfig.getHoneyConfig().multiDS_defalutDS = "ds1";
-			
 			HoneyConfig.getHoneyConfig().multiDS_sharding = false;
+			HoneyConfig.getHoneyConfig().multiDS_defalutDS = "ds1";
 			
 			
 			
@@ -69,7 +69,7 @@ public class DiffDdExam {
 //			HoneyConfig.getHoneyConfig().multiDs_matchEntityClassPath = "ds2:org.teasoft.exam.bee.osql.entity.dynamic.Orders,org.teasoft.exam.bee.osql.moretable.entity.**;ds3:com.xxx.dd.User";
 			HoneyConfig.getHoneyConfig().multiDS_matchEntityClassPath = "ds2:org.teasoft.exam.bee.osql.entity.dynamic.Orders,org.teasoft.exam.bee.osql.moretable.entity.TestUser,org.teasoft.exam.bee.osql.moretable.entity.Orders;ds3:com.xxx.dd.User";
 			HoneyConfig.getHoneyConfig().multiDS_matchTable = "ds2:test_user";
-			HoneyContext.setConfigRefresh(true); 
+			HoneyContext.setConfigRefresh(true); //涉及路由信息更新要刷新
 			
             System.out.println(">>>>>>>>>>>>>>>>>>>test2");
 			test2(); //与test1不同的数据源
@@ -84,11 +84,14 @@ public class DiffDdExam {
             test3();
             
             //clear
-			HoneyConfig.getHoneyConfig().multiDS_enable = false;
-			HoneyConfig.getHoneyConfig().multiDS_type = 0;
-			HoneyConfig.getHoneyConfig().multiDS_differentDbType = false;
-            BeeFactory.getInstance().setDataSourceMap(null);
-            HoneyContext.setConfigRefresh(true);
+//			HoneyConfig.getHoneyConfig().multiDS_enable = false;
+//			HoneyConfig.getHoneyConfig().multiDS_type = 0;
+//			HoneyConfig.getHoneyConfig().multiDS_differentDbType = false;
+//            BeeFactory.getInstance().setDataSource(null);
+//            BeeFactory.getInstance().setDataSourceMap(null);
+//            HoneyContext.setConfigRefresh(true);
+            
+            ClearDsUtil.clearConfig();
 		}
 
 	public static void test1() {

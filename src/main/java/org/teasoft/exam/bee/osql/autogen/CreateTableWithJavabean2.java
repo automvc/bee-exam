@@ -8,7 +8,7 @@ package org.teasoft.exam.bee.osql.autogen;
 
 import org.teasoft.exam.bee.osql.sharding.InitSameDsUtil;
 import org.teasoft.exam.bee.osql.sharding.ShardingInitData;
-import org.teasoft.exam.bee.osql.sharding.TestUsers;
+import org.teasoft.exam.bee.osql.sharding.entity.TestUsers;
 import org.teasoft.honey.osql.autogen.Ddl;
 
 /**

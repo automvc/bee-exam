@@ -16,6 +16,7 @@ import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.PreparedSql;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.osql.entity.LeafAlloc;
+import org.teasoft.exam.comm.ClearDsUtil;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.HoneyConfig;
@@ -63,11 +64,13 @@ public class DiffDdExam0 {
 			test1();
 			
             //clear
-			HoneyConfig.getHoneyConfig().multiDS_enable = false;
-			HoneyConfig.getHoneyConfig().multiDS_type = 0;
-			HoneyConfig.getHoneyConfig().multiDS_differentDbType = false;
-            BeeFactory.getInstance().setDataSourceMap(null);
-            HoneyContext.setConfigRefresh(true);
+//			HoneyConfig.getHoneyConfig().multiDS_enable = false;
+//			HoneyConfig.getHoneyConfig().multiDS_type = 0;
+//			HoneyConfig.getHoneyConfig().multiDS_differentDbType = false;
+//            BeeFactory.getInstance().setDataSource(null);
+//            BeeFactory.getInstance().setDataSourceMap(null);
+//            HoneyContext.setConfigRefresh(true);
+			 ClearDsUtil.clearConfig();
 		}
 
 	public static void test1() {

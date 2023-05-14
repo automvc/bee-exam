@@ -21,7 +21,32 @@ public class Simple {
 	
 	public static void main(String[] args) {
 		Suid suid=BF.getSuid();
-		List<Orders> list=suid.select(new Orders());
+		Orders orders=new Orders();
+		orders.setId(121L);
+		List<Orders> list=suid.select(orders);
 		Printer.printList(list);
+		
+		list.get(0).setName("-------------------");
+		
+		System.err.println("-------------------");
+		
+		List<Orders> list2=suid.select(orders);
+		Printer.printList(list2);
+		
+		list2=suid.select(orders);
+		
+		suid.beginSameConnection();
+		
+		long t1=System.currentTimeMillis();
+		for (int i = 0; i < 10000; i++) {
+			list2=suid.select(orders);
+		}
+		suid.endSameConnection();
+		
+		long t2=System.currentTimeMillis();
+		
+		System.err.println((t2-t1)); //15143,14292 ;  15478
+		//使用同一连接  1143,1221
+		//628;533
 	}
 }

@@ -48,14 +48,16 @@ public class InsertAndReturnIdTest {
 		HoneyConfig.getHoneyConfig().genid_forAllTableLongId=true;
 		test0();
 		
-		HoneyConfig.getHoneyConfig().genid_forAllTableLongId=false;
-		test0();
-		test0();
+		//不能这样测; 前面使用自动生成; 这里有使用表自增, 下次再用回类生成的,就会与表中自增的同号
+//		HoneyConfig.getHoneyConfig().genid_forAllTableLongId=false;
+////		test0();
+//		test0();
+		
 
 		HoneyConfig.getHoneyConfig().genid_forAllTableLongId=oldFlag;
 		
-		if(HoneyUtil.isOracle()) testOracle();
-		if(HoneyUtil.isMysql() || HoneyUtil.isSQLite()) testMySQL();
+//		if(HoneyUtil.isOracle()) testOracle();
+//		if(HoneyUtil.isMysql() || HoneyUtil.isSQLite()) testMySQL();
 	}
 
 	public static void test0() {
@@ -78,7 +80,8 @@ public class InsertAndReturnIdTest {
 			Logger.info("------------------11------getId : " + orders1.getId());
 			
 //			suidRich.setDynamicParameter("test", "11");
-			suidRich.insertAndReturnId(orders1,IncludeType.INCLUDE_EMPTY);
+			long id3 =suidRich.insertAndReturnId(orders1,IncludeType.INCLUDE_EMPTY);
+			Logger.info("InsertAndReturnId 3  : " + id3);
 			
 			Logger.info("-------------------11-----getId : " + orders1.getId());
 

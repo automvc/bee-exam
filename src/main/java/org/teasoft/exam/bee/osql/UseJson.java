@@ -30,6 +30,17 @@ public class UseJson {
 		try{
 			SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
 			
+			
+//			TestUser one=suidRich.selectFirst(new TestUser(),null);
+//			
+//			TestUser one=new TestUser();
+//			one.setId(800001L);
+//			one.setName("Bee");
+//			one.setEmail("beeUser@163.com");
+//			one.setLastName("bee");
+//			int insertNum=suidRich.insert(one);
+//			System.out.println(insertNum);
+			
 			String json = suidRich.selectJson(new TestUser());
 			Logger.info("selectJson(new TestUser()):");
 			Logger.info(json);

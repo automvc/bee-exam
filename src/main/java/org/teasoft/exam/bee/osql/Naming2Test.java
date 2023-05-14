@@ -18,7 +18,7 @@ import org.teasoft.honey.osql.name.UpperCaseUnderScoreAndCamelName;
  * @author Kingstar
  * @since  1.9
  */
-public class NamingTest {
+public class Naming2Test {
 
 	public static void main(String[] args) {
 		test();
@@ -28,27 +28,14 @@ public class NamingTest {
 
 		Suid suid = BeeFactory.getHoneyFactory().getSuid();
 		Orders orders1 = new Orders();
-		System.out.println(NameTranslateHandle.getNameTranslate().toString());
-		suid.select(orders1); //select all
-		
-//		NameTranslate oldNameTranslate=NameTranslateHandle.getNameTranslate();
-
-		NameTranslate originalName = new OriginalName();
-//		BeeFactory.getHoneyFactory().setNameTranslate(originalName);
-//		NameTranslateHandle.setNameTranslate(originalName);
-		suid.setNameTranslateOneTime(originalName);
+//		System.out.println(NameTranslateHandle.getNameTranslate().toString());
 		suid.select(orders1); //select all
 		
 		System.out.println(NameTranslateHandle.getNameTranslate().toString());
 		NameTranslate upperCaseUnderScoreAndCamelName = new UpperCaseUnderScoreAndCamelName();
-//		BeeFactory.getHoneyFactory().setNameTranslate(upperCaseUnderScoreAndCamelName);
-//		NameTranslateHandle.setNameTranslate(upperCaseUnderScoreAndCamelName);
-		suid.setNameTranslateOneTime(upperCaseUnderScoreAndCamelName);
+		suid.setNameTranslateOneTime(upperCaseUnderScoreAndCamelName);  //设置了,要清空字段的缓存.
 		suid.select(orders1); //select all
 		System.out.println(NameTranslateHandle.getNameTranslate().toString());
-		
-//		NameTranslateHandle.setNameTranslate(oldNameTranslate); 
-//		NameTranslateHandle.setNameTranslate(null); 
 		
 	}
 

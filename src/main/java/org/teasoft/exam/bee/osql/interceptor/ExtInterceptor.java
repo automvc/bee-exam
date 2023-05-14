@@ -21,14 +21,14 @@ public class ExtInterceptor implements Interceptor{
 
 	@Override
 	public Object beforePasreEntity(Object entity,SuidType suidType) {
-		System.out.println("---(1)--beforePasreEntity------Ext---------------------");
+//		System.out.println("---(1)--beforePasreEntity------Ext---------------------");
 		setDataSourceOneTime(null); //内容触发
 		return entity;
 	}
 	
 	@Override
 	public Object[] beforePasreEntity(Object entityArray[],SuidType suidType) {
-		System.out.println("---(1)--beforePasreEntity------Ext---------------------");
+//		System.out.println("---(1)--beforePasreEntity------Ext---------------------");
 		setDataSourceOneTime(null); //内容触发
 		return entityArray;
 	}
@@ -46,20 +46,20 @@ public class ExtInterceptor implements Interceptor{
 
 	@Override
 	public String afterCompleteSql(String sql) {
-		System.out.println("---(2)--afterCompleteSql--------Ext-------------------");
+//		System.out.println("---(2)--afterCompleteSql--------Ext-------------------");
 		//NOTICE:if change the sql,need update the context.
 		return sql;
 	}
 
 	@Override
 	public void beforeReturn(List list) {
-		System.out.println("---(3)--beforeReturn(List list)---------Ext------------------");
+//		System.out.println("---(3)--beforeReturn(List list)---------Ext------------------");
 		
 	}
 	
 	@Override
 	public void beforeReturn() {
-		System.out.println("---(3)--beforeReturn()-------Ext--------------------");
+//		System.out.println("---(3)--beforeReturn()-------Ext--------------------");
 	}
 
 	@Override

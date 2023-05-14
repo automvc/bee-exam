@@ -11,6 +11,7 @@ import java.util.List;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.HoneyConfig;
+import org.teasoft.honey.osql.core.NameTranslateHandle;
 import org.teasoft.honey.osql.name.DbUpperAndJavaLower;
 import org.teasoft.honey.osql.name.OriginalName;
 import org.teasoft.honey.osql.shortcut.BF;
@@ -39,14 +40,16 @@ public class DiffNamingTest {
 
 //		Logger.info("===========================naming_translateType=3");
 //		HoneyConfig.getHoneyConfig().naming_translateType=3;  //不起作用,系统级别的只会保留启动后初始的命名转换类
-		suidRich.setNameTranslate(new OriginalName()); // 可以在当前对象设置
+		suidRich.setNameTranslateOneTime(new OriginalName()); // 可以在当前对象设置
 		list = suidRich.select(new Orders(), 10);
 		Printer.printList(list);
 
+		System.out.println(NameTranslateHandle.getNameTranslate().toString());
 //		Logger.info("===========================naming_translateType=4");
 //		HoneyConfig.getHoneyConfig().naming_translateType=4; //不起作用,系统级别的只会保留启动后初始的命名转换类
-		suidRich.setNameTranslate(new DbUpperAndJavaLower()); // 可以在当前对象设置
+		suidRich.setNameTranslateOneTime(new DbUpperAndJavaLower()); // 可以在当前对象设置
 		list = suidRich.select(new Orders(), 10);
+		System.out.println(NameTranslateHandle.getNameTranslate().toString());
 		Printer.printList(list);
 		suidRich.select(new Orders(), 10);
 

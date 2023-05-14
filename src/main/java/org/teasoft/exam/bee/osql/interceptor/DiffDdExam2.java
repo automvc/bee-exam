@@ -84,6 +84,7 @@ public class DiffDdExam2 {
 			HoneyConfig.getHoneyConfig().multiDS_enable = false;
 			HoneyConfig.getHoneyConfig().multiDS_type = 0;
 			HoneyConfig.getHoneyConfig().multiDS_differentDbType = false;
+            BeeFactory.getInstance().setDataSource(null);
             BeeFactory.getInstance().setDataSourceMap(null);
             
             ClearDsContext.clear();//2.1

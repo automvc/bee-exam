@@ -37,7 +37,7 @@ public class Test4_insertList {
 			orders=new Orders();
 			orders.setAbc("test bee ");
 			orders.setName("mongodb" + i);
-			orders.setId(10200L + i);
+//			orders.setId(10200L + i);
 			orders.setNum(i);
 			orders.setTotal(new BigDecimal((i+i*0.01)+""));
 			
@@ -55,7 +55,7 @@ public class Test4_insertList {
 		orders=new Orders();
 		orders.setAbc("test bee ");
 		orders.setName("mongodb" + 99);
-		orders.setId(10300L + 99);
+//		orders.setId(10300L + 99);
 //		long returnId=suidRich.insertAndReturnId(orders);
 		long returnId=suidRich.insertAndReturnId(orders,IncludeType.EXCLUDE_BOTH);
 		System.out.println("returnId:  "+returnId);

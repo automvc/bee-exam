@@ -22,6 +22,10 @@ import org.teasoft.honey.util.Printer;
 public class Test2_Condition {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 		SuidRich suidRich =BF.getSuidRich();
 		

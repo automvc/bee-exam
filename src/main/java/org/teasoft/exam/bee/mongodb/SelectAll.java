@@ -10,7 +10,6 @@ import java.util.List;
 
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.mongodb.entity.Orders;
-import org.teasoft.exam.bee.mongodb.entity.Orders3;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;
 
@@ -30,8 +29,8 @@ public class SelectAll {
 		Printer.printList(list);
 		
 		System.err.println("------------------------------------------");
-		List<Orders3> list2=suidRich.select(new Orders3());
-		System.err.println(list2.size());
-		Printer.printList(list2);
+		list=suidRich.select(new Orders());
+		System.err.println(list.size());
+		Printer.printList(list);
 	}
 }

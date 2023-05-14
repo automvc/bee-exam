@@ -13,6 +13,8 @@ import javax.sql.DataSource;
 
 import org.teasoft.honey.jdbc.SimpleDataSource;
 import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.HoneyConfig;
+import org.teasoft.honey.osql.core.HoneyContext;
 
 /**
  * @author Kingstar
@@ -53,6 +55,13 @@ public class InitSameAccessDsUtil {
 			dataSourceMap.put("ds0", dataSource0);
 			dataSourceMap.put("ds1", dataSource1); 
 			BeeFactory.getInstance().setDataSourceMap(dataSourceMap);
+			
+			HoneyConfig config=HoneyConfig.getHoneyConfig();
+			config.multiDS_enable=true;
+			config.multiDS_differentDbType=false;
+			config.multiDS_sharding=false;
+			config.multiDS_defalutDS="ds0";
+			HoneyContext.setConfigRefresh(true); //涉及路由信息更新要刷新
 
 		} catch (Exception e) {
 			e.printStackTrace();

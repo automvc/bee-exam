@@ -21,6 +21,10 @@ import com.mongodb.client.result.InsertManyResult;
 public class InsertTest {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 //		Map<String,Object> map00=new LinkedHashMap<>();
 //		map00.put("name", "test-geo2d");
 //		map00.put("raid", Arrays.asList(10.5, 10));

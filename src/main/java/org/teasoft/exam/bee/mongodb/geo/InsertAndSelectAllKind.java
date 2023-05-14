@@ -27,6 +27,10 @@ import com.mongodb.client.model.geojson.Position;
 public class InsertAndSelectAllKind {
 
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		insertAndSelect();
 	}
 

@@ -16,6 +16,10 @@ import org.teasoft.beex.osql.shortcut.BFX;
 public class GeoTest_Insert2 {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 		
 		MongodbSuidRichExt suidRichExt=BFX.getMongodbSuidRichExt();

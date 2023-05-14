@@ -19,6 +19,10 @@ import org.teasoft.exam.comm.Printer;
 public class GeoTest0 {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 		
 //		Point refPoint = new Point(new Position(-73.9667, 40.78));

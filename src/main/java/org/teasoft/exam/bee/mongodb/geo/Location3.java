@@ -35,7 +35,16 @@ public class Location3 implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Location [type=" + type + ", coordinates=" + coordinates + "]";
+		return "Location [type=" + type + ", coordinates=" + printDoubleArray(coordinates) + "]";
+	}
+	private String printDoubleArray(Double[] dArray) {
+		if(dArray==null) return "null";
+		String s="[";
+		for (int i = 0; i < dArray.length; i++) {
+			s+=dArray[i]+", ";
+		}
+		s+="]";
+		return s;
 	}
 
 }

@@ -25,6 +25,10 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class GeoTest {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		
 		MongodbSuidRichExt suidRichExt=BFX.getMongodbSuidRichExt();
 		

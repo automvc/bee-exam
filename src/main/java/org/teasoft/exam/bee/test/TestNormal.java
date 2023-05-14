@@ -18,6 +18,8 @@ import org.teasoft.exam.bee.osql.LockWaitTimeout;
 import org.teasoft.exam.bee.osql.MapSuidExam;
 import org.teasoft.exam.bee.osql.MoreSQLFunction;
 import org.teasoft.exam.bee.osql.MoreTableExam;
+import org.teasoft.exam.bee.osql.Naming2Test;
+import org.teasoft.exam.bee.osql.Naming3Test;
 import org.teasoft.exam.bee.osql.NamingTest;
 import org.teasoft.exam.bee.osql.PreparedSqlExam;
 import org.teasoft.exam.bee.osql.SearchExam;
@@ -154,6 +156,8 @@ public class TestNormal {
 		
 //		runTest(ObjSQLServiceExam.class);
 		runTest(NamingTest.class);
+		runTest(Naming2Test.class);
+		runTest(Naming3Test.class);
 		
 		runTest(IdTest.class);
 		

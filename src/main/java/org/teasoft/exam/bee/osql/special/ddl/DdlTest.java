@@ -6,7 +6,7 @@
 
 package org.teasoft.exam.bee.osql.special.ddl;
 
-import org.teasoft.exam.bee.mongodb.Noid0;
+import org.teasoft.exam.bee.mongodb.entity.Noid0;
 import org.teasoft.honey.osql.autogen.Ddl;
 
 /**

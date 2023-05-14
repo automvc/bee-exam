@@ -31,7 +31,7 @@ public class EnterpriseTest {
 	
 	@Test
 	public void test(){
-		
+		MySqlOneConfig.reset(); //预防测试无序,跳到其它类
 		System.out.println("---Bee Test with junit start:------");
 		
 		boolean result=false;

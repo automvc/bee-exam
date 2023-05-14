@@ -44,7 +44,7 @@ public class BeeTest {
 	public void test(){
 		
 		System.out.println("---Bee Test with junit start:------");
-		
+		MySqlOneConfig.reset(); //预防测试无序,跳到其它类
 		boolean result=false;
 		try {
 			TestNormal.test();
@@ -109,6 +109,7 @@ public class BeeTest {
 			Logger.error(e.getMessage(), e);
 			result=false;
 		}finally {
+			MySqlOneConfig.reset(); //预防测试无序,跳到其它类
 			Assert.assertEquals(result,true);
 		}
 		

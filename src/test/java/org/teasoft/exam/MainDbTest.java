@@ -8,10 +8,10 @@ package org.teasoft.exam;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.teasoft.bee.osql.DatabaseConst;
 import org.teasoft.exam.bee.test.ClearDsContext;
 import org.teasoft.exam.bee.test.TestNormal;
 import org.teasoft.honey.osql.core.HoneyConfig;
-import org.teasoft.honey.osql.core.HoneyContext;
 
 /**
  * @author Kingstar
@@ -46,23 +46,12 @@ public class MainDbTest {
 			
 			HoneyConfig honeyConfig = HoneyConfig.getHoneyConfig();
 
-			String oldUrl = honeyConfig.getUrl();
-			String oldUsername = honeyConfig.getUsername();
-			String oldPw = honeyConfig.getPassword();
+//			String oldUrl = honeyConfig.getUrl();
+//			String oldUsername = honeyConfig.getUsername();
+//			String oldPw = honeyConfig.getPassword();
 
-			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test MySQL start.");
-			honeyConfig.setUrl("jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8&useSSL=false");
-			honeyConfig.setUsername("root");
-			honeyConfig.setPassword("123456");
-			TestNormal.test();
-            System.err.println("===================honeyConfig.getUrl():==="+honeyConfig.getUrl());
-			System.err.println("honeyConfig: "+honeyConfig.toString());
-            System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test MySQL end.");
-            sleep(3);
-
-            
-            
 			System.err.println();
+			honeyConfig.setDbName(DatabaseConst.SQLite);
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test SQLite start");
 			honeyConfig.setUrl("jdbc:sqlite:bee.db");
 			honeyConfig.setUsername("");
@@ -84,7 +73,7 @@ public class MainDbTest {
 			
 			
 			
-			honeyConfig.genid_forAllTableLongId = true;
+//			honeyConfig.genid_forAllTableLongId = true;
 			
 			System.err.println();
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Oracle start");
@@ -119,7 +108,7 @@ public class MainDbTest {
 			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test PostgreSQL end");
 			sleep(3);
 			
-			honeyConfig.genid_forAllTableLongId = false;
+//			honeyConfig.genid_forAllTableLongId = false;
 			
 //			System.err.println();
 //			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Cassandra start");
@@ -132,7 +121,7 @@ public class MainDbTest {
 //			TestNormal.test();
 //			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Cassandra end");
 			
-//			System.err.println();
+//			System.err.println(); //Mongodb很多用法与JDBC不一样,不能用这个测.
 //			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test Mongodb start");
 //			honeyConfig.setDbName("MongoDB");
 //			honeyConfig.setUrl("mongodb://localhost:27017/bee/");
@@ -143,12 +132,22 @@ public class MainDbTest {
 //			sleep(3);
 			
 
-			honeyConfig.setUrl(oldUrl);
-			honeyConfig.setUsername(oldUsername);
-			honeyConfig.setPassword(oldPw);
-			honeyConfig.setSchemaName("");
-
-			HoneyContext.setConfigRefresh(true);
+//			honeyConfig.setUrl(oldUrl);
+//			honeyConfig.setUsername(oldUsername);
+//			honeyConfig.setPassword(oldPw);
+//			honeyConfig.setSchemaName("");
+//			HoneyContext.setConfigRefresh(true);
+			
+			System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test MySQL start.");
+			honeyConfig.setDbName(DatabaseConst.MYSQL);
+			honeyConfig.setUrl("jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8&useSSL=false");
+			honeyConfig.setUsername("root");
+			honeyConfig.setPassword("123456");
+			TestNormal.test();
+            System.err.println("===================honeyConfig.getUrl():==="+honeyConfig.getUrl());
+			System.err.println("honeyConfig: "+honeyConfig.toString());
+            System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test MySQL end.");
+            sleep(2);
 
 			result = true;
 		} catch (Exception e) {

@@ -17,9 +17,9 @@ public class ConstTest {
 	
 	@Test
 	public void test() {
-//		System.out.println(DatabaseConst.MYSQL);
-//		String dbName=DatabaseConst.ORACLE;
-//		System.err.println(dbName);
+		System.out.println(DatabaseConst.MYSQL);
+		String dbName=DatabaseConst.ORACLE;
+		System.err.println(dbName);
 	}
 
 }

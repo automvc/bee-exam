@@ -17,18 +17,18 @@ import org.teasoft.honey.osql.core.Logger;
  * @author Kingstar
  * @since  1.9
  */
-public class ExceptionTest2 {
+public class Exception2Test {
 	@Test
 	public void test() {
 
-//		System.out.println("---Bee ExceptionTest2 with junit start:------");
-//		ExceptionTest.test();
-//		System.out.println("---------------------");
-//		BuzExceptionTest.test();
-//		System.out.println("---------------------");
-//		LikeEnhanceTest.test(); //V1.17
-//		testTransactionRollback();
-//		System.out.println("---Bee ExceptionTest2 with junit end.------");
+		System.out.println("---Bee Exception2Test with junit start:------");
+		ExceptionTest.test();
+		System.out.println("---------------------");
+		BuzExceptionTest.test();
+		System.out.println("---------------------");
+		LikeEnhanceTest.test(); //V1.17
+		testTransactionRollback();
+		System.out.println("---Bee Exception2Test with junit end.------");
 	}
 	
 	private void testTransactionRollback() {

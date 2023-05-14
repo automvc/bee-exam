@@ -18,18 +18,25 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * @author Kingstar
- * @since  2.0
+ * @since 2.0
  */
 public class ListJsonTest {
-	
-		private static Suid suid=BeeFactoryHelper.getSuid();
-		public static void main(String[] args) throws Exception{
-			List<Dept> list=suid.select(new Dept());
-			Printer.printList(list);
-			
-			ObjectMapper mapper = new ObjectMapper(); 
+
+	private static Suid suid = BeeFactoryHelper.getSuid();
+
+	public static void main(String[] args) throws Exception{
+		test();
+	}
+
+	public static void test() throws Exception{
+		List<Dept> list = suid.select(new Dept());
+		Printer.printList(list);
+
+		if (list.size() > 0) {
+			ObjectMapper mapper = new ObjectMapper();
 			DeptJson deptJson = mapper.readValue(list.get(0).getOne(), DeptJson.class);
 			System.err.println(deptJson.getDeptName());
 		}
+	}
 
 }

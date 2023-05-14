@@ -22,7 +22,9 @@ public class GenTest {
 //		new GenBean().genSomeBeanFile("Dept");
 		
 //		Ddl.createTable(Inventory.class);
-		Ddl.createTable(Student2.class);
+		
+//		Ddl.createTable(Student2.class);
+		Ddl.createTable(Student2.class,true);
 	}
 
 }

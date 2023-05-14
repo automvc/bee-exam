@@ -1,20 +1,20 @@
 package org.teasoft.exam.bee.mongodb.json;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import org.teasoft.bee.osql.IncludeType;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.beex.json.JsonUtil;
 import org.teasoft.exam.bee.mongodb.json.entity.Inventory;
 import org.teasoft.exam.bee.mongodb.json.entity.Size;
+import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class InventoryTestJson {
+public class InventoryTestJson2 {
 	
 	public static void main(String[] args) throws Exception{
 		test();
@@ -53,13 +53,18 @@ public class InventoryTestJson {
 //		  System.err.println(object.getJSONObject("json").get("size"));
 		
 		//------------------------ali--
-		//有嵌套子文档,ali解析不了
 //		JSONArray array = JSON.parseArray(json);
 //		JSONObject obj=(JSONObject)array.get(0);
 		
+//		List<Inventory> list0 = JSONObject.parseArray(json, Inventory.class);// 把字符串转换成List<>
+//		Printer.printList(list0);
+		
+//		List<Inventory> list0 =JsonUtil.toEntityList(json, Inventory.class);
+//		Printer.printList(list0);
+		
 //		Object objSize=obj.get("size");
 //		System.err.println(objSize.toString());
-		
+//		
 //		Size obj_TranAli = JSONObject.parseObject(objSize.toString(), Size.class);
 //		System.out.println(obj_TranAli);
 //		System.err.println(obj_TranAli.getUom());
@@ -73,9 +78,9 @@ public class InventoryTestJson {
 		
 		
 		//若存储的json,在查出后,又加转义符,会报:can not cast to : com.test.entity.Size
-//		所以存的是Json 字符串就不能再转义
-//		Size size=new Size();
-//		size.setUom("cm(\"OK\")");  //若是嵌入式文档，插入属性入库时就转换; 查出时不用再转换.
+////		所以存的是Json 字符串就不能再转义
+////		Size size=new Size();
+////		size.setUom("cm(\"OK\")");  //若是嵌入式文档，插入属性入库时就转换; 查出时不用再转换.
 //		Inventory tranInventory=obj.toJavaObject(Inventory.class);    
 //		System.out.println(tranInventory.toString());
 		

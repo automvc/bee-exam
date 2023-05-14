@@ -16,7 +16,11 @@ import org.teasoft.honey.util.Printer;
  */
 public class InventoryTestSub {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args){
+		test();
+	}
+
+	public static void test(){
 		Inventory test=new Inventory();
 		test.setItem("fruit");
 		test.setQty(10);

@@ -20,6 +20,8 @@ import java.math.BigDecimal;
 	private String userid;
 	private String name;
 	private BigDecimal total;
+	
+	private Long orderid;
 //	@Createtime
 	private String createtime;
 	private String remark;
@@ -41,6 +43,14 @@ import java.math.BigDecimal;
 
 	public void setUserid(String userid) {
 		this.userid = userid;
+	}
+	
+	public Long getOrderid() {
+		return orderid;
+	}
+
+	public void setOrderid(Long orderid) {
+		this.orderid = orderid;
 	}
 
 	public String getName() {
@@ -104,6 +114,7 @@ import java.math.BigDecimal;
 		 str.append("Orders[");			
 		 str.append("id=").append(id);		 
 		 str.append(",userid=").append(userid);		 
+		 str.append(",orderid=").append(orderid);		 
 		 str.append(",name=").append(name);		 
 		 str.append(",total=").append(total);		 
 		 str.append(",createtime=").append(createtime);		 

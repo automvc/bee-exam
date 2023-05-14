@@ -4,9 +4,11 @@ package org.teasoft.exam.bee.osql.sharding;
 import java.util.List;
 
 import org.teasoft.bee.osql.Suid;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.HoneyContext;
 import org.teasoft.honey.osql.shortcut.BF;
+import org.teasoft.honey.osql.shortcut.HM;
 import org.teasoft.honey.sharding.HintManager;
 
 /**
@@ -20,10 +22,13 @@ import org.teasoft.honey.sharding.HintManager;
 public class ShardingSimpleExam9_1 {
 	
 	public static void main(String[] args) {
-		
-		ShardingInitData.init();  //注释掉,不注册有分片,就不会产生全域查询.
-		
-		InitSameDsUtil.initDS();
+		InitSameDsUtil.initDS(); //注释掉,不注册有分片,就不会产生全域查询.
+		ShardingInitData.init();
+		test();
+	}
+
+	public static void test(){
+		System.out.println("------Sharding test--------ShardingSimpleExam9_1-----");
 		
 		Suid suid=BF.getSuid(); //1
 		Orders orders=new Orders();
@@ -38,7 +43,7 @@ public class ShardingSimpleExam9_1 {
 		
 		//case ,查询是空集的情型:
 		HintManager.setDataSourceName("ds1");
-		HintManager.setTableName("orders5");
+		HM.setTableName("orders5");
 	 	List<Orders> list=suid.select(orders);
         Printer.printList(list);
         

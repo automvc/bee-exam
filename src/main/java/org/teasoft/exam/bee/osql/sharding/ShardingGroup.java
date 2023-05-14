@@ -8,6 +8,8 @@ import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.Suid;
+import org.teasoft.exam.bee.osql.sharding.entity.OrdersGroupResponse;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders_F;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.sharding.ShardingUtil;
@@ -20,15 +22,20 @@ import org.teasoft.honey.sharding.ShardingUtil;
 public class ShardingGroup {
 	
 	public static void main(String[] args) {
-		
 		ShardingInitData.init();
 		InitSameDsUtil.initDS();
-		test(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.   从首条.
-//		test(2); //非首条
-//		test(-1);//不使用start
+		test();
+	}
+
+	public static void test(){
+		System.out.println("------Sharding test--------ShardingGroup-----");
+		
+		test0(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.   从首条.
+//		test0(2); //非首条
+//		test0(-1);//不使用start
 	}
 	
-	public static void test(int startIndex) {
+	public static void test0(int startIndex) {
 		
 		Suid suid=BF.getSuid(); //1
 		OrdersGroupResponse orders1=new OrdersGroupResponse();

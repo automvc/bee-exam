@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.Logger;
 
@@ -33,35 +34,38 @@ public class ShardingBatchInsertExam {
 	}
 
 	public static void main(String[] args) {
-		
-		ShardingInitData.init();  //分片
+		System.out.println("------Sharding test--------ShardingBatchInsertExam-----");
+		ShardingInitData.init(); // 分片
 		InitSameDsUtil.initDS();
-		
-		suidRich = BeeFactory.getHoneyFactory().getSuidRich();
-		
-		test();
+		test0();
 	}
 
-	public static void test() {
+	public static void test(){
+		if(suidRich==null)
+		    suidRich = BeeFactory.getHoneyFactory().getSuidRich();
+		
+		test0();
+	}
 
+	public static void test0() {
 
 			//test batch insert
 			Orders orders0 = new Orders();
-			orders0.setId(1004L);
+//			orders0.setId(10004L);
 			orders0.setUserid(0L);
 			orders0.setOrderid(0L);
 			orders0.setTotal(new BigDecimal(91));
 			orders0.setRemark("testOneTime");
 
 			Orders orders1 = new Orders();
-			orders1.setId(1005L);
+//			orders1.setId(10005L);
 //			orders1.setUserid(0L);
 			orders1.setOrderid(4L);
 			orders1.setRemark("testOneTime");
 			orders1.setTotal(new BigDecimal(20));
 
 			Orders orders2 = new Orders();
-			orders2.setId(1006L);
+//			orders2.setId(10006L);
 			orders2.setUserid(5L);
 			orders2.setOrderid(4L);
 			orders2.setRemark("testOneTime");

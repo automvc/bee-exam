@@ -6,7 +6,10 @@ import java.util.List;
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.Suid;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders_F;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.sharding.ShardingUtil;
 
@@ -18,9 +21,14 @@ import org.teasoft.honey.sharding.ShardingUtil;
 public class ShardingPaging {
 	
 	public static void main(String[] args) {
-		
 		ShardingInitData.init();
 		InitSameDsUtil.initDS();
+		test();
+	}
+
+	public static void test(){
+		Logger.info("------Sharding test--------ShardingPaging-----");
+		
 		test(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.   从首条.
 //		test(2); //非首条
 //		test(-1);//不使用start

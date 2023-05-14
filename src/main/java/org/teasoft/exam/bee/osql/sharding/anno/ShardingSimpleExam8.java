@@ -7,6 +7,7 @@ import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.exam.bee.osql.sharding.InitSameDsUtil;
+import org.teasoft.exam.bee.osql.sharding.ShardingInitData;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;
 
@@ -20,9 +21,13 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class ShardingSimpleExam8 {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test(){
 		
 		InitSameDsUtil.initDS();
-//		ShardingInitData.init(); //使用注解
+		ShardingInitData.init(); //使用注解
 		
 //		@Sharding(tabRule = "userid %6")
 		Suid suid=BF.getSuid(); //1

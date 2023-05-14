@@ -1,12 +1,11 @@
 
 package org.teasoft.exam.bee.osql.sharding;
 
-import java.util.List;
-
 //import org.teasoft.bee.osql.Condition;
 //import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.Suid;
-import org.teasoft.exam.comm.Printer;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
@@ -20,9 +19,13 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class ShardingInsertExam10 {
 	
 	public static void main(String[] args) {
-		
 		ShardingInitData.init();
 		InitSameDsUtil.initDS();
+		test();
+	}
+
+	public static void test(){
+		Logger.info("------Sharding test--------ShardingInsertExam10-----");
 		
 		Suid suid=BF.getSuid(); //1
 		Orders orders1=new Orders();

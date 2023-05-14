@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Suid;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders_F;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.sharding.ShardingUtil;
@@ -18,17 +20,30 @@ import org.teasoft.honey.sharding.ShardingUtil;
 public class ShardingPagingSort3 {
 	
 	public static void main(String[] args) {
+//		System.out.println("-------------------------------start ....-------------: ");
+		InitSameDsUtil.initDS();
+		ShardingInitData.init();
+//		System.out.println("-------------------------------start ....after init-------------: ");
+//		for (int i = 0; i < 100; i++) {
+			test();
+//			System.out.println("-------------------------------finishing ....-------------: "+i);
+//		}
+//		System.out.println("finished!");
+	}
+
+	public static void test(){
 //		test(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.
 //		test(2);
 		
-		ShardingInitData.init();
-		InitSameDsUtil.initDS();
-		test(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.
-		test(2);
-		test(-1);
+		System.out.println("------Sharding test--------ShardingPagingSort3-----");
+//		test0(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.
+		test0(2);
+//		System.out.println("-------------------------------finish one ....");
+		test0(2);
+//		test0(-1);
 	}
 	
-	public static void test(int startIndex) {
+	public static void test0(int startIndex) {
 //		ShardingInitData.init();
 //		InitSameDsUtil.initDS();
 		
@@ -50,7 +65,8 @@ public class ShardingPagingSort3 {
 		//条件全在condition  case 5
 	 	List<Orders> list=suid.select(orders1,condition);
 	 	Printer.printList(list);
-	 	System.out.println("--------------------:");
+	 	System.out.println("--------------------select finished.");
+//	 	List<Orders> list2=suid.select(orders1,condition);  //多一次查询,就会出问题,很久不会结束  已解决. V2.1.5.4
 	 	list=suid.select(orders1,condition);
         Printer.printList(list);
 	}

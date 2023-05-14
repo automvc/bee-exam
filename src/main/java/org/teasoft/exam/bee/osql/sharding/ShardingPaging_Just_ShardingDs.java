@@ -7,6 +7,9 @@ import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.sharding.ShardingBean;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders_F;
+import org.teasoft.exam.bee.test.ClearDsContext;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.sharding.ShardingUtil;
@@ -21,8 +24,13 @@ import org.teasoft.honey.sharding.config.ShardingConfig;
 public class ShardingPaging_Just_ShardingDs {
 	
 	public static void main(String[] args) {
-		
+		ClearDsContext.clear();
 		InitSameDsUtil.initDS();
+		test();
+	}
+
+	public static void test(){
+		System.out.println("------Sharding test--------ShardingPaging_Just_ShardingDs-----");
 		
 		ShardingBean shardingBean=new ShardingBean();
 		shardingBean.setDsField(Orders_F.userid);

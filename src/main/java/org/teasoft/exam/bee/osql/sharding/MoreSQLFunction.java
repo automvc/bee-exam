@@ -12,6 +12,8 @@ import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.exam.bee.osql.sharding.entity.Scores;
+import org.teasoft.exam.bee.osql.sharding.entity.ScoresResponse;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.Logger;
@@ -27,13 +29,14 @@ public class MoreSQLFunction {
 	private static SuidRich suidRich = BeeFactory.getHoneyFactory().getSuidRich();
 	
 	public static void main(String[] args) {
-//		ShardingInitData.init();
 		InitSameDsUtil.initDS();
+		ShardingInitData.init();
 		
 		test();
 	}
 
 	public static void test() {
+		System.out.println("------Sharding test--------MoreSQLFunction-----");
 		testSQLFun();
 	}
 	

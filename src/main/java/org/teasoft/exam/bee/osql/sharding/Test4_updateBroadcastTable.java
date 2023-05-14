@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.teasoft.bee.osql.SuidRich;
-import org.teasoft.exam.bee.mongodb.Noid0;
+import org.teasoft.exam.bee.mongodb.entity.Noid0;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;
 
@@ -21,9 +21,13 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class Test4_updateBroadcastTable {
 
 	public static void main(String[] args) {
-
 		ShardingInitData.init();
 		InitSameDsUtil.initDS();
+		test();
+	}
+
+	public static void test() {
+		System.out.println("------Sharding test--------Test4_updateBroadcastTable-----");
 
 		SuidRich suidRich = BF.getSuidRich();
 		

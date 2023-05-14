@@ -5,6 +5,8 @@ import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders_F;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
@@ -17,9 +19,19 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class ShardingFunAvgExam {
 	
 	public static void main(String[] args) {
-		
 		ShardingInitData.init();
 		InitSameDsUtil.initDS();
+		
+		for (int i = 0; i < 100; i++) {
+			test();
+			System.out.println("-------------------------------finishing ....-------------: "+i);
+		}
+		System.out.println("finished!");
+		
+	}
+
+	public static void test(){
+		System.out.println("------Sharding test--------ShardingFunAvgExam-----");
 		
 		SuidRich suidRich=BF.getSuidRich(); //1
 		Orders orders=new Orders();

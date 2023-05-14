@@ -12,6 +12,7 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
+import org.teasoft.exam.bee.test.ClearDsContext;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyContext;
 
@@ -25,12 +26,15 @@ public class InitSameDsUtil {
 	
 	public static void initDS() {
 		try {
+			ClearDsContext.clear();
 
-			HoneyConfig config=HoneyConfig.getHoneyConfig();
-			config.setDbName("mysql");
-			config.multiDS_enable=true;
-			config.multiDS_differentDbType=false;
-			config.multiDS_sharding=true;
+			HoneyConfig honeyConfig = HoneyConfig.getHoneyConfig();
+			honeyConfig.multiDS_enable = true;
+			honeyConfig.multiDS_sharding = true;
+			honeyConfig.multiDS_type = 0;
+			honeyConfig.multiDS_differentDbType = false;
+			honeyConfig.multiDS_defalutDS="ds0"; //路由信息
+			HoneyContext.setConfigRefresh(true); //涉及路由信息更新要刷新
 			
 			DruidDataSource dataSource0;
 			dataSource0 = new DruidDataSource();
@@ -54,6 +58,8 @@ public class InitSameDsUtil {
 			dataSourceMap.put("ds1", dataSource1); 
 //			BeeFactory.getInstance().setDataSourceMap(dataSourceMap);
 			HoneyContext.setDataSourceMap(dataSourceMap);//V2.1
+			
+
 
 		} catch (SQLException e) {
 			e.printStackTrace();

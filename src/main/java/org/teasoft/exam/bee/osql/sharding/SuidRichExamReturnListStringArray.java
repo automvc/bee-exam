@@ -11,6 +11,8 @@ import java.util.List;
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders_F;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
@@ -35,15 +37,13 @@ public class SuidRichExamReturnListStringArray {
 	}
 
 	public static void main(String[] args) {
-		
-		ShardingInitData.init();  //分片
+		ShardingInitData.init();
 		InitSameDsUtil.initDS();
-		
 		test();
 	}
 
 	public static void test() {
-
+		System.out.println("------Sharding test--------SuidRichExamReturnListStringArray-----");
 //		try {
 
 //			//test batch insert

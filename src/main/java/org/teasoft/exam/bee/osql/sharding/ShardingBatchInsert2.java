@@ -9,8 +9,9 @@ package org.teasoft.exam.bee.osql.sharding;
 import java.math.BigDecimal;
 
 import org.teasoft.bee.osql.SuidRich;
-import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders;
 import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.osql.shortcut.BF;
 
 /**
  * 批量插入的分片
@@ -23,14 +24,18 @@ public class ShardingBatchInsert2 {
 	private static SuidRich suidRich = null; //要是在Java代码里加配置,应该在添加配置的代码后,才获取对象.
 
 	public static void main(String[] args) {
-
+		System.out.println("------Sharding test--------ShardingBatchInsert2-----");
 		ShardingInitData.init(); // 分片
 		InitSameDsUtil.initDS();
-		suidRich = BeeFactory.getHoneyFactory().getSuidRich(); //在添加配置的代码后,才获取对象.
 		test();
 	}
 
-	public static void test() {
+	public static void test(){
+		if(suidRich==null) suidRich = BF.getSuidRich(); //在添加配置的代码后,才获取对象.
+		test0();
+	}
+
+	public static void test0() {
 		
 		int SIZE=20;
 

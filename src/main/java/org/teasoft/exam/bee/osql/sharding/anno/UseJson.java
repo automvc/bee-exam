@@ -15,7 +15,7 @@ import org.teasoft.exam.bee.osql.entity.TestUser;
 import org.teasoft.exam.bee.osql.sharding.InitSameDsUtil;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.Logger;
-import org.teasoft.honey.sharding.HintManager;
+import org.teasoft.honey.osql.shortcut.HM;
 import org.teasoft.honey.util.Printer;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -47,7 +47,8 @@ public class UseJson {
 			String json2=toJson(list);
 			Logger.info(json2);*/
 			
-			HintManager.setTableName("orders2");
+//			HintManager.setTableName("orders2");
+			HM.setTableName("orders2");
 			Orders orders=new Orders();
 			String json = suidRich.selectJson(orders);
 			Logger.info("selectJson(new Orders()):");

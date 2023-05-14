@@ -10,7 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.teasoft.bee.sharding.ShardingBean;
-import org.teasoft.exam.bee.mongodb.Noid0;
+import org.teasoft.exam.bee.mongodb.entity.Noid0;
+import org.teasoft.exam.bee.osql.sharding.entity.Scores;
 import org.teasoft.exam.bee.osql.sharding.moretable.entity.Myorders;
 import org.teasoft.exam.bee.osql.sharding.moretable.entity.Ordersdetail;
 import org.teasoft.exam.bee.osql.special.ddl.TestMyUser;
@@ -23,7 +24,7 @@ import org.teasoft.honey.sharding.config.ShardingConfig;
  */
 public class ShardingInitData {
 	
-	static {
+	public static void init() {
 		
 //		InterceptorChainRegistry.addInterceptor(new CustomInterceptor()); //添加定制拦截器.
 		
@@ -82,6 +83,8 @@ public class ShardingInitData {
 //		broadcastTabList.add("ordersdetail");
 		ShardingConfig.addBroadcastTable(broadcastTabList);
 		
+		ShardingConfig.addShardingBean("Scores",new ShardingBean("ds[0].scores[0..1]")); //配置单库的
+		
 		//配置广播表
 		ShardingConfig.addShardingBean(Noid0.class,new ShardingBean("ds[0..1].noid0[]"));
 		ShardingConfig.addBroadcastTable("noid0");
@@ -94,6 +97,5 @@ public class ShardingInitData {
 		ShardingConfig.addShardingBean(TestMyUser.class,new ShardingBean("ds[0..1].test_my_user[0..5]", "id"));
 	}
 	
-	public static void init() {}
 
 }

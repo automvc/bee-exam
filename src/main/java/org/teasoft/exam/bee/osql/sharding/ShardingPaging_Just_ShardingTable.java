@@ -12,6 +12,9 @@ import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.sharding.ShardingBean;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders_F;
+import org.teasoft.exam.bee.test.ClearDsContext;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.shortcut.BF;
@@ -28,9 +31,14 @@ import com.alibaba.druid.pool.DruidDataSource;
  */
 public class ShardingPaging_Just_ShardingTable {
 	
-	public static void main(String[] args) throws SQLException{
-		
+	public static void main(String[] args) throws SQLException {
 //		InitSameDsUtil.initDS();//仅分表,只有一个数据源,不应该使用多个.
+		ClearDsContext.clear();
+		test();
+	}
+
+		public static void test() throws SQLException{
+			System.out.println("------Sharding test--------ShardingPaging_Just_ShardingTable-----");
 		
 		DruidDataSource dataSource0;
 		dataSource0 = new DruidDataSource();

@@ -20,6 +20,10 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class ShardingSimpleExam8_3 {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test(){
 		
 		InitSameDsUtil.initDS();
 //		ShardingInitData.init(); //使用注解

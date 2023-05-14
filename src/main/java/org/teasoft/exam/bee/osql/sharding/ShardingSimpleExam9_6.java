@@ -7,9 +7,10 @@ import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.sharding.ShardingBean;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;
-import org.teasoft.honey.sharding.HintManager;
+import org.teasoft.honey.osql.shortcut.HM;
 import org.teasoft.honey.sharding.config.ShardingConfig;
 
 /**
@@ -21,12 +22,16 @@ import org.teasoft.honey.sharding.config.ShardingConfig;
 public class ShardingSimpleExam9_6 {
 	
 	public static void main(String[] args) {
+		InitSameDsUtil.initDS();
+		test();
+	}
+
+	public static void test(){
+		System.out.println("------Sharding test--------ShardingSimpleExam9_6-----");
 		
 //		ShardingInitData.init();  //注释掉,不注册有分片,就不会产生全域查询.
 		
 		ShardingConfig.addShardingBean("Orders",new ShardingBean("ds[0..1].orders[0..5]", "orderid", "orderid"));
-		
-		InitSameDsUtil.initDS();
 		
 		Suid suid=BF.getSuid(); //1
 		Orders orders=new Orders();
@@ -35,7 +40,7 @@ public class ShardingSimpleExam9_6 {
 		
 		List<Orders> list=null;
         
-		HintManager.setDataSourceName("ds0");  //查某个节点的所有分表
+		HM.setDataSourceName("ds0");  //查某个节点的所有分表
 //		HintManager.setTableName("orders1");  //只设置tab时,首先会反查ds,得到ds为ds0;  能反查,不会使用计算得来的ds1
 		
 		Condition c=BF.getCondition();

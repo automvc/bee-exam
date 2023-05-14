@@ -1,4 +1,4 @@
-package org.teasoft.exam.bee.osql.sharding;
+package org.teasoft.exam.bee.osql.sharding.entity;
 
 import java.io.Serializable;
 import java.sql.Timestamp;

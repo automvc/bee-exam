@@ -1,3 +1,4 @@
+package org.teasoft.exam.bee.osql.sharding.entity;
 /*
  * Copyright 2016-2022 the original author.All rights reserved.
  * Kingstar(honeysoft@126.com)

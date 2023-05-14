@@ -6,7 +6,10 @@ import java.util.List;
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.Suid;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders;
+import org.teasoft.exam.bee.osql.sharding.entity.Orders_F;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
@@ -18,10 +21,13 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class ShardingInExam11 {
 	
 	public static void main(String[] args) {
-		
 		ShardingInitData.init();  //注释掉,不注册有分片,就不会产生全域查询.
-		
 		InitSameDsUtil.initDS();
+		test();
+	}
+
+	public static void test(){
+		Logger.info("------Sharding test--------ShardingInExam11-----");
 		
 		Suid suid=BF.getSuid(); //1
 		Orders orders=new Orders();
@@ -38,7 +44,7 @@ public class ShardingInExam11 {
 	 	List<Orders> list=suid.select(orders,condition);
         Printer.printList(list);
         
-        System.out.println("--------------------:");
+        Logger.info("--------------------:");
         
         list=suid.select(orders,condition);
         Printer.printList(list);

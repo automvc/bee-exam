@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Suid;
+import org.teasoft.exam.bee.osql.sharding.entity.TestUsers;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.sharding.ShardingUtil;
@@ -18,11 +19,16 @@ import org.teasoft.honey.sharding.ShardingUtil;
 public class ShardingPagingSort3_2 {
 	
 	public static void main(String[] args) {
+		InitSameDsUtil.initDS();
+		ShardingInitData.init();
+		test();
+	}
+
+	public static void test(){
 //		test(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.
 //		test(2);
 		
-		ShardingInitData.init();
-		InitSameDsUtil.initDS();
+		System.out.println("------Sharding test--------ShardingPagingSort3_2-----");
 		test(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.
 		test(2);
 		test(-1);

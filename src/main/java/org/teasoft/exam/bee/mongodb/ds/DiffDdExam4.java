@@ -11,8 +11,10 @@ import java.util.List;
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.mongodb.entity.Orders;
+import org.teasoft.exam.bee.mongodb.sharding.ClearDsAndMongoDsUtil;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.HoneyConfig;
+import org.teasoft.honey.osql.core.HoneyContext;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
@@ -24,19 +26,25 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class DiffDdExam4 {
 	
 	static {
-//		InitDsUtil.initDS();
+		ClearDsAndMongoDsUtil.clearConfig();
+		InitOtherDsAndMongoDsUtil.initDS();
 	}
 	
 	public static void main(String[] args) {
-		test();
+		try {
+			test();
+		} finally {
+			ClearDsAndMongoDsUtil.clearConfig();
+		}
 	}
 	
 	public static void test() {
 
-		HoneyConfig.getHoneyConfig().multiDS_enable = false;
-//		HoneyConfig.getHoneyConfig().multiDS_type = 2; //同时用多种DB,包含有mongodb不能使用multiDS_type = 2,因为mongodb不是使用JDBC的
-		HoneyConfig.getHoneyConfig().multiDS_differentDbType=false;
+//		HoneyConfig.getHoneyConfig().multiDS_enable = true;
+////		HoneyConfig.getHoneyConfig().multiDS_type = 2; //同时用多种DB,包含有mongodb不能使用multiDS_type = 2,因为mongodb不是使用JDBC的
+//		HoneyConfig.getHoneyConfig().multiDS_differentDbType=true;
 		HoneyConfig.getHoneyConfig().multiDS_defalutDS = "ds0";
+		HoneyContext.setConfigRefresh(true); //涉及路由信息更新要刷新
 		
 		SuidRich suidRich =BF.getSuidRichForMongodb();
 		Orders orders=new Orders();

@@ -13,7 +13,10 @@ import java.util.Map;
 import javax.sql.DataSource;
 
 import org.teasoft.beex.mongodb.ds.MongodbSimpleDataSource;
+import org.teasoft.exam.bee.test.ClearDsContext;
 import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.HoneyConfig;
+import org.teasoft.honey.osql.core.HoneyContext;
 
 import com.alibaba.druid.pool.DruidDataSource;
 
@@ -21,10 +24,12 @@ import com.alibaba.druid.pool.DruidDataSource;
  * @author Kingstar
  * @since  1.11
  */
-public class InitDsAndMongoDsUtil {
+public class InitOtherDsAndMongoDsUtil {
 	
 	public static void initDS() {
 		try {
+			
+			ClearDsContext.clear();
 
 			MongodbSimpleDataSource dataSource0=new MongodbSimpleDataSource("mongodb://localhost:27017/bee","","");
 			
@@ -37,7 +42,7 @@ public class InitDsAndMongoDsUtil {
 
 			DruidDataSource dataSource2;
 			dataSource2 = new DruidDataSource();
-			dataSource2.setUrl("jdbc:mysql://localhost:3306/pro?characterEncoding=UTF-8&useSSL=false");
+			dataSource2.setUrl("jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8&useSSL=false");
 			dataSource2.setUsername("root");
 			dataSource2.setPassword("123456");
 			dataSource2.init();
@@ -50,7 +55,14 @@ public class InitDsAndMongoDsUtil {
 			dataSourceMap.put("ds1", dataSource1);
 			dataSourceMap.put("ds2", dataSource2); 
 			
+//			HoneyContext.setDsMapRefresh(true);  //需要解析才设置
 			BeeFactory.getInstance().setDataSourceMap(dataSourceMap);
+			
+			HoneyConfig config=HoneyConfig.getHoneyConfig();
+			config.multiDS_enable=true;
+			config.multiDS_differentDbType=true;
+			config.multiDS_sharding=false;
+			
 
 		} catch (SQLException e) {
 			e.printStackTrace();

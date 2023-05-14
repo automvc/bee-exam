@@ -11,6 +11,7 @@ import java.util.List;
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.SuidRich;
 import org.teasoft.exam.bee.mongodb.entity.Orders;
+import org.teasoft.exam.bee.mongodb.sharding.ClearDsAndMongoDsUtil;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.HoneyConfig;
@@ -26,18 +27,26 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class DiffDdExam5 {
 	
 	static {
-		InitDsAndMongoDsUtil.initDS();
+		System.out.println("----------static--------");
+		ClearDsAndMongoDsUtil.clearConfig();
+		InitOtherDsAndMongoDsUtil.initDS();
 	}
 	
 	public static void main(String[] args) {
-		test();
+		System.out.println("----------main--------");
+		try {
+			test();
+		} finally {
+			System.out.println("----------finally--------");
+			ClearDsAndMongoDsUtil.clearConfig();
+		}
 	}
 	
 	public static void test() {
 
 		HoneyConfig.getHoneyConfig().multiDS_enable = true;
 		HoneyConfig.getHoneyConfig().multiDS_differentDbType=true;
-		HoneyConfig.getHoneyConfig().multiDS_defalutDS = "ds0";
+//		HoneyConfig.getHoneyConfig().multiDS_defalutDS = "ds0";
 //		HoneyConfig.getHoneyConfig().multiDS_type = 2; //同时用多种DB,包含有mongodb不宜使用multiDS_type = 2,因为mongodb不是使用JDBC的
 		
 		
@@ -46,16 +55,19 @@ public class DiffDdExam5 {
 		
 		mongodbTest();
 		
-        //clear
-		HoneyConfig.getHoneyConfig().multiDS_enable = false;
-		HoneyConfig.getHoneyConfig().multiDS_type = 0;
-		HoneyConfig.getHoneyConfig().multiDS_differentDbType = false;
-        BeeFactory.getInstance().setDataSourceMap(null);
-        HoneyContext.setConfigRefresh(true);
+//        //clear
+//		HoneyConfig.getHoneyConfig().multiDS_enable = false;
+//		HoneyConfig.getHoneyConfig().multiDS_type = 0;
+//		HoneyConfig.getHoneyConfig().multiDS_differentDbType = false;
+//        BeeFactory.getInstance().setDataSource(null);
+//        BeeFactory.getInstance().setDataSourceMap(null);
+//        HoneyContext.setConfigRefresh(true);
 		
 	}
 	
 	public static void mysqlTest() {
+		System.out.println("----------mysqlTest--------");
+		
 		SuidRich suidRich =BF.getSuidRich();
 		suidRich.setDataSourceName("ds1"); //set mysql dataSource
 		Orders orders=new Orders();
@@ -69,7 +81,9 @@ public class DiffDdExam5 {
 	}
 	
 	public static void mongodbTest() {
+		System.out.println("----------mongodbTest--------");
 		SuidRich suidRich =BF.getSuidRichForMongodb(); // ForMongodb
+		suidRich.setDataSourceName("ds0");
 		Orders orders=new Orders();
 		Condition condtion=BF.getCondition();
 		condtion.start(2).size(5);

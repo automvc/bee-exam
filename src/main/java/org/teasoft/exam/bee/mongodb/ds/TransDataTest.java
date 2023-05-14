@@ -25,7 +25,7 @@ public class TransDataTest {
 	static {
 		HoneyConfig.getHoneyConfig().multiDS_enable = true;
 		HoneyConfig.getHoneyConfig().multiDS_differentDbType=true;
-		InitDsAndMongoDsUtil.initDS();
+		InitOtherDsAndMongoDsUtil.initDS();
 		HoneyConfig.getHoneyConfig().naming_translateType=1;
 	}
 	

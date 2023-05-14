@@ -20,7 +20,12 @@ import org.teasoft.honey.util.Printer;
 //两个插入， 中间有异常，两个都提交不正确
 public class TransactionTest5_3 {
 
+	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		InitDsAndMongoDsUtil.initDS();
 //		String uri = "mongodb://127.0.0.1:28011/testa,127.0.0.1:28012/testa,127.0.0.1:28013/testa";
 //		MongoClient client = MongoClients.create(uri);

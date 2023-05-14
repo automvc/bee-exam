@@ -8,6 +8,7 @@ package org.teasoft.exam.bee.mongodb.sharding;
 
 import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.exam.bee.mongodb.entity.Noid0;
 import org.teasoft.exam.bee.osql.commomid.Noid;
 import org.teasoft.honey.osql.shortcut.BF;
 
@@ -18,6 +19,8 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class SelectWithFun {
 	public static void main(String[] args) {
 		try {
+			InitDsAndMongoDsUtil.initDS();
+			ShardingDoConfig.init();
 			test();
 		} finally {
 			ClearDsAndMongoDsUtil.clearConfig();
@@ -25,9 +28,6 @@ public class SelectWithFun {
 	}
 
 	public static void test() {
-		
-		ShardingDoConfig.init();
-		InitDsAndMongoDsUtil.initDS();
 		
 		SuidRich suidRich =BF.getSuidRich();
 
@@ -45,8 +45,10 @@ public class SelectWithFun {
 //		System.out.println("sum: "+sum);
 
 		
-		String rs = suidRich.selectWithFun(new Noid(), FunctionType.MAX, "num", null); // 不是mongodb的string id格式.
-		System.out.println("---max: "+rs);
+//		String rs = suidRich.selectWithFun(new Noid(), FunctionType.MAX, "num", null); // 不是mongodb的string id格式.
+		String rs2 = suidRich.selectWithFun(new Noid0(), FunctionType.MAX, "num", null); // 不是mongodb的string id格式.
+//		System.out.println("---max: "+rs);
+		System.out.println("---max: "+rs2);
 		
 		System.out.println("finished!");
 	}

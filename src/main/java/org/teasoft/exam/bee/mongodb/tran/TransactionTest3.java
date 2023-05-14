@@ -19,7 +19,12 @@ import com.mongodb.client.result.InsertOneResult;
 //两个插入， 中间有异常，两个都提交不正确
 public class TransactionTest3 {
 
+	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		String uri = "mongodb://127.0.0.1:28011,127.0.0.1:28012,127.0.0.1:28013";
 //		String uri = "mongodb://localhost:27017/testb?retryWrites=false";
 		MongoClient client = MongoClients.create(uri);

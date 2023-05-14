@@ -22,6 +22,8 @@ public class Test4_selectBroadcastTable {
 
 	public static void main(String[] args) {
 		try {
+			InitDsAndMongoDsUtil.initDS();
+			ShardingDoConfig.init();
 			test();
 		} finally {
 			ClearDsAndMongoDsUtil.clearConfig();
@@ -29,9 +31,6 @@ public class Test4_selectBroadcastTable {
 	}
 
 	public static void test() {
-
-		ShardingDoConfig.init();
-		InitDsAndMongoDsUtil.initDS();
 
 		SuidRich suidRich = BF.getSuidRich();
 

@@ -25,12 +25,15 @@ public class ShardingDoConfig {
 //		broadcastTable1.setFullNodes("ds[0..1].noid0[]"); //表名,就是noid0,用于测试
 //		ShardingConfig.addShardingBean(Noid0.class, broadcastTable1);
 		
-		ShardingConfig.addShardingBean(Noid0.class,new ShardingBean("ds[0..1].noid0[]"));
+//		ShardingConfig.addShardingBean(Noid0.class,new ShardingBean("ds[0..1].noid0[]"));  
+//		ShardingConfig.addShardingBean(Noid.class,new ShardingBean("ds[0..1].noid0[]"));
+		
+		ShardingConfig.addShardingBean("Noid0",new ShardingBean("ds[0..1].noid0[]"));
+		
+//		ShardingConfig.addShardingBean("noid0",new ShardingBean("ds[0..1].noid0[]"));
+//		ShardingConfig.addShardingBean("noid",new ShardingBean("ds[0..1].noid0[]"));
 		ShardingConfig.addBroadcastTable("noid0");
 		ShardingConfig.addBroadcastTable("Noid0");
-		
-		ShardingConfig.addShardingBean(Noid.class,new ShardingBean("ds[0..1].noid[]"));
-		ShardingConfig.addBroadcastTable("noid"); //广播表要显式设置
 		
 		ShardingConfig.addShardingBean("test_user",new ShardingBean("ds[0..1].test_user[0..5]", "id"));
 		ShardingConfig.addShardingBean(TestMyUser.class,new ShardingBean("ds[0..1].test_my_user[0..5]", "id"));

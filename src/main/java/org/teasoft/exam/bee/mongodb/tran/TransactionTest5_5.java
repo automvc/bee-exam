@@ -20,7 +20,12 @@ import org.teasoft.honey.util.Printer;
 //两个插入， 中间有异常，两个都提交不正确
 public class TransactionTest5_5 {
 
+	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 //		InitDsAndMongoDsUtil.initDS();
 		
 		Transaction tran=new MongodbTransaction();

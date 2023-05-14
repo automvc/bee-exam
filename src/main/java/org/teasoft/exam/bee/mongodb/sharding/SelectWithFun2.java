@@ -8,10 +8,7 @@ package org.teasoft.exam.bee.mongodb.sharding;
 
 import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.SuidRich;
-import org.teasoft.bee.sharding.ShardingBean;
-import org.teasoft.exam.bee.mongodb.entity.Noid0;
 import org.teasoft.honey.osql.shortcut.BF;
-import org.teasoft.honey.sharding.config.ShardingConfig;
 
 /**
  * @author AiTeaSoft
@@ -20,6 +17,8 @@ import org.teasoft.honey.sharding.config.ShardingConfig;
 public class SelectWithFun2 {
 	public static void main(String[] args) {
 		try {
+			InitDsAndMongoDsUtil.initDS();
+			ShardingDoConfig.init();
 			test();
 		} finally {
 			ClearDsAndMongoDsUtil.clearConfig();
@@ -27,9 +26,6 @@ public class SelectWithFun2 {
 	}
 
 	public static void test() {
-		
-		ShardingDoConfig.init();
-		InitDsAndMongoDsUtil.initDS();
 		
 		SuidRich suidRich =BF.getSuidRich();
 		

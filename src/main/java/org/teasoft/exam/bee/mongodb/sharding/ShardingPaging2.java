@@ -21,6 +21,8 @@ public class ShardingPaging2 {
 	
 	public static void main(String[] args) {
 		try {
+			InitDsAndMongoDsUtil.initDS();
+			ShardingDoConfig.init();
 			test();
 		} finally {
 			ClearDsAndMongoDsUtil.clearConfig();
@@ -29,11 +31,9 @@ public class ShardingPaging2 {
 
 	public static void test() {
 		
-		ShardingDoConfig.init();
-		InitDsAndMongoDsUtil.initDS();
 		test(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.
-//		test(2);
-//		test(-1);
+		test(2);
+		test(-1);
 	}
 	
 	public static void test(int startIndex) {

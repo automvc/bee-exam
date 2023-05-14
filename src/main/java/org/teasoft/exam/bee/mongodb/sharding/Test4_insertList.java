@@ -22,6 +22,8 @@ public class Test4_insertList {
 	
 	public static void main(String[] args) {
 		try {
+			InitDsAndMongoDsUtil.initDS();
+			ShardingDoConfig.init();
 			test();
 		} finally {
 			ClearDsAndMongoDsUtil.clearConfig();
@@ -30,16 +32,13 @@ public class Test4_insertList {
 
 	public static void test() {
 		
-		ShardingDoConfig.init();
-		InitDsAndMongoDsUtil.initDS();
-		
 		SuidRich suidRich =BF.getSuidRich();
 		
 		Orders orders=new Orders();
 		
 		List<Orders> insertList=new ArrayList<>();
 		
-		for (int i = 20; i < 30; i++) {
+		for (int i = 0; i < 10; i++) {
 			orders=new Orders();
 			orders.setAbc("test bee ");
 			orders.setName("mongodb" + i);

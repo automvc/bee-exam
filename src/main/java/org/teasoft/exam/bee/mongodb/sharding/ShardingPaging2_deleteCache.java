@@ -21,6 +21,8 @@ public class ShardingPaging2_deleteCache {
 	
 	public static void main(String[] args) {
 		try {
+			InitDsAndMongoDsUtil.initDS();
+			ShardingDoConfig.init();
 			test();
 		} finally {
 			ClearDsAndMongoDsUtil.clearConfig();
@@ -29,8 +31,6 @@ public class ShardingPaging2_deleteCache {
 
 	public static void test() {
 		
-		ShardingDoConfig.init();
-		InitDsAndMongoDsUtil.initDS();
 		test(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.
 		test(2);
 		test(-1);
@@ -63,14 +63,13 @@ public class ShardingPaging2_deleteCache {
 		
 		
 		//条件全在condition  case 5
-		List<Orders> list=null;
-	 	list=suidRich.select(orders1,condition);
+	 	List<Orders> list=suidRich.select(orders1,condition);
 	 	Printer.printList(list);
 	 	System.out.println("--------------------:");
 	 	
 	 	
-//	 	int delNum=suidRich.deleteById(Orders.class, 1033L); //Mongodb ORM V2.1 未支持删除的分片操作 TODO
-//	 	System.out.println("delNum: "+delNum);
+	 	int delNum=suidRich.deleteById(Orders.class, 1033L);
+	 	System.out.println("delNum: "+delNum);
 	 	
 //	 	condition.size(6);
 	 	list=suidRich.select(orders1,condition);

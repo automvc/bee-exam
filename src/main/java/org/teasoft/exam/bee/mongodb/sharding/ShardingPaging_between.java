@@ -18,6 +18,8 @@ public class ShardingPaging_between {
 	
 	public static void main(String[] args) {
 		try {
+			InitDsAndMongoDsUtil.initDS();
+			ShardingDoConfig.init();
 			test();
 		} finally {
 			ClearDsAndMongoDsUtil.clearConfig();
@@ -26,8 +28,6 @@ public class ShardingPaging_between {
 
 	public static void test() {
 		
-		ShardingDoConfig.init();
-		InitDsAndMongoDsUtil.initDS();
 		test0(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.
 //		test0(2);
 //		test0(-1);

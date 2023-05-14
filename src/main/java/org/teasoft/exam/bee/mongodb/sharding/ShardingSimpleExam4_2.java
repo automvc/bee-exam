@@ -20,6 +20,8 @@ public class ShardingSimpleExam4_2 {
 	
 	public static void main(String[] args) {
 		try {
+			InitDsAndMongoDsUtil.initDS();
+			ShardingDoConfig.init();
 			test();
 		} finally {
 			ClearDsAndMongoDsUtil.clearConfig();
@@ -27,12 +29,6 @@ public class ShardingSimpleExam4_2 {
 	}
 
 	public static void test() {
-		
-//		ShardingInitData.init();
-//		InitSameDsUtil.initDS();
-		
-		ShardingDoConfig.init();
-		InitDsAndMongoDsUtil.initDS();
 		
 		Suid suid=BF.getSuid(); //1
 		Orders orders1=new Orders();

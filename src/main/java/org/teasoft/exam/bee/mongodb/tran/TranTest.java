@@ -19,7 +19,12 @@ import org.teasoft.honey.util.Printer;
  */
 public class TranTest {
 	
+	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		TranTest test=new TranTest();
 		test.testTran();
 	}

@@ -21,7 +21,11 @@ import com.mongodb.client.MongoDatabase;
  * @since 1.0
  */
 public class MongoDbTest2_Cluster {
-	public static void main(String args[]) {
+	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		MongoClient mongoClient = null;
 		try {
 //	          mongoClient =MongoClients.create("mongodb://localhost:28018");

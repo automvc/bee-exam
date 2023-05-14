@@ -18,6 +18,8 @@ public class DdlForShardingTest2 {
 
 	public static void main(String[] args) {
 		try {
+			ShardingDoConfig.init();
+			InitDsAndMongoDsUtil.initDS();
 			test();
 		} finally {
 			ClearDsAndMongoDsUtil.clearConfig();
@@ -25,22 +27,16 @@ public class DdlForShardingTest2 {
 	}
 
 	public static void test() {
-
-//		ShardingInitData.init();
-//		InitSameDsUtil.initDS();
-		
-		ShardingDoConfig.init();
-		InitDsAndMongoDsUtil.initDS();
-
 		test0();
-		
-		System.err.println("-----------------DdlForShardingTest2-------------");
+		System.out.println("-----------------DdlForShardingTest2-------------");
 	}
 
 	public static void test0() {
 //		Ddl.createTable(TestUser.class,true); // 创建Sharding分库分表
 //		Ddl.createTable(Noid0.class);
-		Ddl.createTable(Noid0.class,true);  //为什么创建完后,线程不停??? TODO
+		
+		Ddl.createTable(Noid0.class,true);
+		System.out.println("--createTable finished!");
 	}
 
 }

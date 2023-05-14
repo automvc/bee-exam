@@ -23,11 +23,16 @@ public class Reader {
 		PropertiesReader reader0=new PropertiesReader();
 		
 		String fileName="/bee.properties";
+//		String fileName="bee.properties"; //会报错
 		InputStream in = PropertiesReader.class.getResourceAsStream(fileName);
 		PropertiesReader reader=new PropertiesReader(in);
 		
-		reader.getValueText("abc");
-		reader.getValue("abc","can not found");
+		String abc=reader.getValueText("abc");
+		String abc2=reader.getValue("abc","can not found");
+		
+		System.out.println(abc);
+		System.out.println(abc2);
+		System.out.println(reader.getValueText("bee.db.username"));
 	}
 
 }

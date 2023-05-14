@@ -20,6 +20,7 @@ public class DistributeIdTest {
 	public void test() {
 		HoneyConfig.getHoneyConfig().genid_startYear = 2022;
 		PearFlowerId pearFlowerId=new PearFlowerId();
+		System.out.println(pearFlowerId.get());
 	}
 
 }

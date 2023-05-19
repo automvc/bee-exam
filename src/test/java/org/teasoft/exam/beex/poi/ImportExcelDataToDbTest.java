@@ -9,7 +9,7 @@ package org.teasoft.exam.beex.poi;
 import java.util.List;
 
 import org.junit.Test;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.beex.poi.ExcelReader;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.exam.beex.poi.entity.LeftszInfo;

@@ -10,12 +10,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.teasoft.bee.osql.Condition;
-import org.teasoft.bee.osql.MoreTable;
 import org.teasoft.bee.osql.Op;
-import org.teasoft.bee.osql.PreparedSql;
-import org.teasoft.bee.osql.Suid;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.Condition;
+import org.teasoft.bee.osql.api.MoreTable;
+import org.teasoft.bee.osql.api.PreparedSql;
+import org.teasoft.bee.osql.api.Suid;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;
 

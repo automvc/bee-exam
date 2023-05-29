@@ -7,8 +7,8 @@
 package org.teasoft.exam.coverage;
 
 import org.junit.Test;
+import org.teasoft.bee.mvc.service.ObjSQLRichService;
 import org.teasoft.bee.osql.NameTranslate;
-import org.teasoft.bee.osql.service.ObjSQLRichService;
 import org.teasoft.honey.osql.core.NameTranslateHandle;
 import org.teasoft.honey.osql.core.ObjSQL;
 import org.teasoft.honey.osql.core.ObjSQLRich;

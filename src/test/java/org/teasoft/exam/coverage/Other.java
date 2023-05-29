@@ -55,7 +55,8 @@ public class Other {
 		DsTabStruct dsTab=new DsTabStruct();
 		dsTab.setDsName("ds1");
 		dsTab.setTabName("orders");
-		dsTab.setTabSuffix("tab_");
+		dsTab.setTabSuffix("_1");
+		dsTab.setTabSuffix("1");
 		dsTab.getDsName();
 		dsTab.getDsName();
 		dsTab.getTabSuffix();

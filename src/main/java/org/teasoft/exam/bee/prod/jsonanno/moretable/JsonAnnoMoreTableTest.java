@@ -8,8 +8,8 @@ package org.teasoft.exam.bee.prod.jsonanno.moretable;
 
 import java.util.List;
 
-import org.teasoft.bee.osql.MoreTable;
-import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.api.MoreTable;
+import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.beex.type.JsonDefaultHandler;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;

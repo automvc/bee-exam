@@ -8,7 +8,7 @@ package org.teasoft.exam.bee.prod.jsonanno.moretable;
 
 import java.util.List;
 
-import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.beex.type.JsonDefaultHandler;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
@@ -33,9 +33,12 @@ public class JsonAnnoTest3 {
 		JsonDefaultHandler.init();
 //		直接查询Json数据,由Bee负责转化.
 		List<Dept> list=suid.select(new Dept());
-		Logger.info(list.get(0).getJsonValue().getDeptId());
-		Logger.info(list.get(0).getJsonValue().getDeptName());
 		Printer.printList(list);
+		if(list.get(0)!=null && list.get(0).getJsonValue()!=null) {
+		  Logger.info(list.get(0).getJsonValue().getDeptId());
+		  Logger.info(list.get(0).getJsonValue().getDeptName());
+		}
+		
 		
 		
 		

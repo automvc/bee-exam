@@ -9,14 +9,11 @@ package org.teasoft.exam.bee.prod.jsonanno;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.beex.json.JsonUtil;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
 import org.teasoft.honey.osql.core.Logger;
-
-import com.fasterxml.jackson.databind.JavaType;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * Test Json field (eg: mysql 5.7)
@@ -53,7 +50,7 @@ public class JsonAnnoTest {
 		
 		Dept d=new Dept();
 		d.setJsonValue(jsonValue);
-		d.setId(11118);
+		d.setId(11138);
 		suid.insert(d);
 		
 		

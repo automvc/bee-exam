@@ -9,7 +9,7 @@ package org.teasoft.exam.bee.prod.jsonanno;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.beex.json.JsonUtil;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
@@ -49,7 +49,7 @@ public class JsonAnnoTest2 {
 		
 		Dept d=new Dept();
 		d.setJsonValue(jsonValue);
-		d.setId(11118);
+		d.setId(11148);
 		suid.insert(d);
 		
 		

@@ -1,7 +1,7 @@
 import java.util.List;
 
-import org.teasoft.bee.osql.MoreTable;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.MoreTable;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
 

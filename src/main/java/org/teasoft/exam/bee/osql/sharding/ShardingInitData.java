@@ -45,7 +45,11 @@ public class ShardingInitData {
 //		ShardingConfig.addShardingBean(Orders.class, shardingBean);
 		
 //		ShardingConfig.addShardingBean(Orders.class,new ShardingBean("ds[0..1].orders[0..5]", "orderid"));
-		ShardingConfig.addShardingBean("Orders",new ShardingBean("ds[0..1].orders[0..5]", "orderid"));
+		ShardingConfig.addShardingBean("Orders",new ShardingBean("ds[0..1].orders[0..5]", "orderid")); //ok
+//		ShardingConfig.addShardingBean("Orders",new ShardingBean("ds_[0..1].orders_[0..5]", "userid"));  //ok
+		
+		// tabField,  dsField都设置
+//		ShardingConfig.addShardingBean("Orders",new ShardingBean("ds_[0..1].orders_[0..5]", "orderid","orderid")); 
 		
 //		ShardingConfig.addShardingBean(OrdersGroupResponse.class,new ShardingBean("ds[0..1].orders[0..5]", "orderid"));
 //		ShardingConfig.addShardingBean(OrdersGroupResponse0.class,new ShardingBean("ds[0..1].orders[0..5]", "orderid"));

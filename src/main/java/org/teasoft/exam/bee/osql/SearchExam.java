@@ -9,8 +9,8 @@ package org.teasoft.exam.bee.osql;
 import java.util.List;
 
 import org.teasoft.bee.osql.BeeSQLException;
-import org.teasoft.bee.osql.Condition;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.Condition;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.bee.osql.search.Operator;
 import org.teasoft.bee.osql.search.Search;
 import org.teasoft.exam.bee.osql.entity.TestUser;

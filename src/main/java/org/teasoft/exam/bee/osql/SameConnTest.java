@@ -9,10 +9,10 @@ package org.teasoft.exam.bee.osql;
 import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
-import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
-import org.teasoft.bee.osql.Suid;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.Condition;
+import org.teasoft.bee.osql.api.Suid;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;

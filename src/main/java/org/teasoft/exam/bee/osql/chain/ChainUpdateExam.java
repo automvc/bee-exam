@@ -8,7 +8,7 @@ package org.teasoft.exam.bee.osql.chain;
 
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.Op;
-import org.teasoft.bee.osql.PreparedSql;
+import org.teasoft.bee.osql.api.PreparedSql;
 import org.teasoft.bee.osql.chain.Update;
 import org.teasoft.bee.osql.exception.BeeErrorFieldException;
 import org.teasoft.honey.osql.chain.UpdateImpl;

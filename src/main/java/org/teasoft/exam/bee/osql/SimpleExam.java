@@ -1,7 +1,7 @@
 
 package org.teasoft.exam.bee.osql;
 
-import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
 

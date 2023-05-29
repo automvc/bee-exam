@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.teasoft.bee.osql.BeeException;
-import org.teasoft.bee.osql.PreparedSql;
+import org.teasoft.bee.osql.api.PreparedSql;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.CustomSql;

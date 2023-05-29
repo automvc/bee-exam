@@ -8,7 +8,7 @@ package org.teasoft.exam.bee.osql.special;
 
 import java.util.List;
 
-import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.exam.bee.osql.entity2.TypeTest;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
 

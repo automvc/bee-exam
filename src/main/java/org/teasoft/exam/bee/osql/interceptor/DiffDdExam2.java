@@ -12,9 +12,9 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
-import org.teasoft.bee.osql.Condition;
-import org.teasoft.bee.osql.PreparedSql;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.Condition;
+import org.teasoft.bee.osql.api.PreparedSql;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.bee.osql.interccept.InterceptorChain;
 import org.teasoft.bee.osql.transaction.Transaction;
 import org.teasoft.exam.bee.osql.ds.InitDsUtil;

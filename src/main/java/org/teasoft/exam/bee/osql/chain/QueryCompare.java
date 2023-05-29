@@ -9,7 +9,7 @@ package org.teasoft.exam.bee.osql.chain;
 import java.util.List;
 
 import org.teasoft.bee.osql.Op;
-import org.teasoft.bee.osql.PreparedSql;
+import org.teasoft.bee.osql.api.PreparedSql;
 import org.teasoft.bee.osql.chain.Select;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.exam.comm.Printer;

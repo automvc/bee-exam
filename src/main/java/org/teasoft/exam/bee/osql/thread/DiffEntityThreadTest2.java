@@ -7,7 +7,7 @@
 package org.teasoft.exam.bee.osql.thread;
 
 import org.teasoft.bee.osql.BeeException;
-import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.exam.bee.osql.entity.TestUser;
 import org.teasoft.honey.distribution.GenIdFactory;
 import org.teasoft.honey.osql.core.BeeFactory;

@@ -9,7 +9,7 @@ package org.teasoft.exam.bee.osql.special.type;
 import java.util.List;
 
 import org.teasoft.bee.osql.DatabaseConst;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.osql.type.SetParaTypeConverterRegistry;

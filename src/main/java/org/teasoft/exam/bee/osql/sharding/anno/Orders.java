@@ -15,6 +15,7 @@ public class Orders implements Serializable {
 
 	private Long id;
 	@Sharding(dsRule = "userid %2",dsName = "ds",tabRule = "userid %6")
+//	@Sharding(tabName="orders_", dsRule = "userid %2",dsName = "ds_",tabRule = "userid %6") //只使用注解,不能用:tabName="orders_"
 	private Long userid;
 	private Long orderid;
 	private String name;

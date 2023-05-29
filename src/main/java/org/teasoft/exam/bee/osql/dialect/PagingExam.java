@@ -8,11 +8,11 @@ package org.teasoft.exam.bee.osql.dialect;
 
 import java.util.List;
 
-import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.DatabaseConst;
-import org.teasoft.bee.osql.MoreTable;
 import org.teasoft.bee.osql.OrderType;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.Condition;
+import org.teasoft.bee.osql.api.MoreTable;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.bee.osql.dialect.DbFeatureRegistry;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.exam.bee.osql.moretable.entity.TestUser;

@@ -8,9 +8,9 @@ package org.teasoft.exam.bee.osql;
 
 import java.util.List;
 
-import org.teasoft.bee.osql.Condition;
-import org.teasoft.bee.osql.MoreTable;
 import org.teasoft.bee.osql.Op;
+import org.teasoft.bee.osql.api.Condition;
+import org.teasoft.bee.osql.api.MoreTable;
 import org.teasoft.exam.bee.osql.entity.Clazz;
 import org.teasoft.exam.bee.osql.entity.Clazz0;
 import org.teasoft.exam.bee.osql.entity.Clazz00;

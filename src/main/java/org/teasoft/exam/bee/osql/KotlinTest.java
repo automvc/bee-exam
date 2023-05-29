@@ -6,8 +6,8 @@
 
 package org.teasoft.exam.bee.osql;
 
-import org.teasoft.bee.osql.MoreTable;
-import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.api.MoreTable;
+import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.exam.bee.osql.entity.Columns;
 import org.teasoft.exam.bee.osql.entity.Tables2;
 import org.teasoft.honey.osql.core.BeeFactory;

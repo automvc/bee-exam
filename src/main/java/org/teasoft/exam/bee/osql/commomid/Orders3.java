@@ -19,6 +19,7 @@ public class Orders3 implements Serializable {
 	@GenUUID
 	private String id;
 	private String userid;
+	private Long orderid;
 	private String name;
 	private BigDecimal total;
 	private String createtime;
@@ -49,6 +50,14 @@ public class Orders3 implements Serializable {
 
 	public void setUserid(String userid) {
 		this.userid = userid;
+	}
+	
+	public Long getOrderid() {
+		return orderid;
+	}
+
+	public void setOrderid(Long orderid) {
+		this.orderid = orderid;
 	}
 
 	public String getName() {
@@ -112,6 +121,7 @@ public class Orders3 implements Serializable {
 		 str.append("Orders[");			
 		 str.append("id=").append(id);		 
 		 str.append(",userid=").append(userid);		 
+		 str.append(",orderid=").append(orderid);		 
 		 str.append(",name=").append(name);		 
 		 str.append(",total=").append(total);		 
 		 str.append(",createtime=").append(createtime);		 

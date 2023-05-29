@@ -9,8 +9,8 @@ package org.teasoft.exam.bee.osql.special.primarykey;
 import java.util.List;
 
 import org.teasoft.bee.osql.IncludeType;
-import org.teasoft.bee.osql.Suid;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.Suid;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.special.primarykey.entity.CustomId;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;

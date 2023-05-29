@@ -8,8 +8,8 @@ package org.teasoft.exam.bee.osql;
 
 import java.util.List;
 
-import org.teasoft.bee.osql.Suid;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.Suid;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Noid;
 import org.teasoft.exam.bee.osql.entity.Testnum;
 import org.teasoft.exam.comm.Printer;

@@ -8,7 +8,7 @@ package org.teasoft.exam.bee.osql.sharding.moretable;
 
 import java.math.BigDecimal;
 
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.sharding.InitSameDsUtil;
 import org.teasoft.exam.bee.osql.sharding.ShardingInitData;
 import org.teasoft.exam.bee.osql.sharding.moretable.entity.Myorders;

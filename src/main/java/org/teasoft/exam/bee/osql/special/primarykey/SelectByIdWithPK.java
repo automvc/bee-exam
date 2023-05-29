@@ -6,7 +6,7 @@
 
 package org.teasoft.exam.bee.osql.special.primarykey;
 
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.special.primarykey.entity.CustomId;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;

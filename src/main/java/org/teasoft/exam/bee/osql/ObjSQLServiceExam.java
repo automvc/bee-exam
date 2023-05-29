@@ -6,8 +6,8 @@
 
 package org.teasoft.exam.bee.osql;
 
-import org.teasoft.bee.osql.service.ObjSQLRichService;
-import org.teasoft.bee.osql.service.ObjSQLService;
+import org.teasoft.bee.mvc.service.ObjSQLRichService;
+import org.teasoft.bee.mvc.service.ObjSQLService;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.honey.osql.serviceimpl.ObjSQLRichServiceImpl;
 import org.teasoft.honey.osql.serviceimpl.ObjSQLServiceImpl;

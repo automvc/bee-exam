@@ -8,8 +8,8 @@ package org.teasoft.exam.bee.osql.assist;
 
 import java.util.List;
 
-import org.teasoft.bee.osql.Condition;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.Condition;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.assist.entity.TestUser;
 import org.teasoft.exam.bee.osql.assist.entity.field.TestUser_F;
 import org.teasoft.exam.comm.Printer;

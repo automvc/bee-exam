@@ -9,9 +9,9 @@ package org.teasoft.exam.bee.osql.sharding.moretable;
 import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
-import org.teasoft.bee.osql.Condition;
-import org.teasoft.bee.osql.MoreTable;
 import org.teasoft.bee.osql.Op;
+import org.teasoft.bee.osql.api.Condition;
+import org.teasoft.bee.osql.api.MoreTable;
 import org.teasoft.exam.bee.osql.sharding.InitSameDsUtil;
 import org.teasoft.exam.bee.osql.sharding.ShardingInitData;
 import org.teasoft.exam.bee.osql.sharding.moretable.entity.Myorders;

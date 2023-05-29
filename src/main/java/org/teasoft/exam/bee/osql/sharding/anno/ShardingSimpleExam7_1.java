@@ -3,8 +3,9 @@ package org.teasoft.exam.bee.osql.sharding.anno;
 
 import java.util.List;
 
-import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.exam.bee.osql.sharding.InitSameDsUtil;
+import org.teasoft.exam.bee.osql.sharding.ShardingInitData;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;
 
@@ -26,6 +27,7 @@ public class ShardingSimpleExam7_1 {
 
 	public static void test(){
 		
+//		ShardingInitData.init();
 //		ShardingInitData.init(); //使用注解
 		InitSameDsUtil.initDS();
 		
@@ -34,7 +36,7 @@ public class ShardingSimpleExam7_1 {
 		
 		Suid suid=BF.getSuid(); //1
 		Orders orders1=new Orders();
-//		orders1.setUserid(1L);  TODO 检测设置的与计算的不一样.
+//		orders1.setUserid(1L);  //TODO 检测设置的与计算的不一样.
 		orders1.setUserid(0L);
 		
 //		Condition condition=BF.getCondition();

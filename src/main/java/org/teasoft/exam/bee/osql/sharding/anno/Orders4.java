@@ -23,6 +23,7 @@ public class Orders4 implements Serializable {
 	private String createtime;
 //	@Sharding(tabRule = "remark %6")  //Sharding注解,不用appointDS,appointTab时,至少要以下三项
 	@Sharding(tabRule = "remark %6",dsName="ds",dsRule = "remark %6/3")
+//	@Sharding(tabRule = "remark %6",dsName="ds_",dsRule = "remark %6/3")   //datasource有"_"后缀时
 	private String remark;
 	private String sequence;
 	private String abc;

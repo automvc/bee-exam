@@ -10,7 +10,7 @@ import java.util.List;
 
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.OrderType;
-import org.teasoft.bee.osql.PreparedSql;
+import org.teasoft.bee.osql.api.PreparedSql;
 import org.teasoft.bee.osql.chain.Select;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.chain.Aggregate;

@@ -9,9 +9,9 @@ package org.teasoft.exam.bee.osql.sharding.anno;
 import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
-import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.Condition;
+import org.teasoft.bee.osql.api.SuidRich;
 //import org.teasoft.exam.bee.osql.entity.User;
 import org.teasoft.exam.bee.osql.entity.TestUser;
 import org.teasoft.exam.bee.osql.sharding.InitSameDsUtil;

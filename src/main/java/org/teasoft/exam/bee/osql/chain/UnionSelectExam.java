@@ -10,7 +10,7 @@ import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.Op;
-import org.teasoft.bee.osql.PreparedSql;
+import org.teasoft.bee.osql.api.PreparedSql;
 import org.teasoft.bee.osql.chain.Select;
 import org.teasoft.bee.osql.chain.UnionSelect;
 import org.teasoft.exam.comm.Printer;

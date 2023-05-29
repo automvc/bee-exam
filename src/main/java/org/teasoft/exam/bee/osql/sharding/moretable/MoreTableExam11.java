@@ -7,8 +7,8 @@
 package org.teasoft.exam.bee.osql.sharding.moretable;
 
 import org.teasoft.bee.osql.BeeException;
-import org.teasoft.bee.osql.MoreTable;
-import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.api.MoreTable;
+import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.exam.bee.osql.moretable.entity.Assigncourse;
 import org.teasoft.exam.bee.osql.moretable.entity.Assignexam;
 import org.teasoft.honey.osql.core.BeeFactory;

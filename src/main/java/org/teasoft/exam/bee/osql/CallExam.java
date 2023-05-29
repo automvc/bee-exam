@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
-import org.teasoft.bee.osql.CallableSql;
+import org.teasoft.bee.osql.api.CallableSql;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.CallableSqlLib;

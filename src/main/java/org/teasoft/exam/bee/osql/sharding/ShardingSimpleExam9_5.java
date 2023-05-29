@@ -3,7 +3,7 @@ package org.teasoft.exam.bee.osql.sharding;
 
 import java.util.List;
 
-import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.bee.sharding.ShardingBean;
 import org.teasoft.exam.bee.osql.sharding.entity.Orders;
 import org.teasoft.exam.comm.Printer;

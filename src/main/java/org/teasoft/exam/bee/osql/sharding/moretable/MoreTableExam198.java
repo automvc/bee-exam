@@ -9,7 +9,7 @@ package org.teasoft.exam.bee.osql.sharding.moretable;
 import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
-import org.teasoft.bee.osql.MoreTable;
+import org.teasoft.bee.osql.api.MoreTable;
 import org.teasoft.exam.bee.osql.moretable.entity.Orders20;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;

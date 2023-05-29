@@ -8,13 +8,12 @@ package org.teasoft.exam.bee.prod;
 
 import java.util.List;
 
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.prod.entity.Student;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyContext;
-import org.teasoft.honey.osql.interccept.annotation.CustomInterceptor;
 
 /**
  * @author Kingstar

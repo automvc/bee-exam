@@ -8,8 +8,8 @@ package org.teasoft.exam;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.teasoft.bee.osql.Suid;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.Suid;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.ConditionExam;
 import org.teasoft.exam.bee.osql.DynamicTableExam;
 import org.teasoft.exam.bee.osql.InsertAndReturnIdTest;

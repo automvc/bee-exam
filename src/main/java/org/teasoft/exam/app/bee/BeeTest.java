@@ -8,6 +8,10 @@ package org.teasoft.exam.app.bee;
 
 import org.teasoft.exam.app.bee.entity.*;
 import org.teasoft.bee.osql.*;
+import org.teasoft.bee.osql.api.Condition;
+import org.teasoft.bee.osql.api.PreparedSql;
+import org.teasoft.bee.osql.api.Suid;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.bee.osql.transaction.Transaction;
 import org.teasoft.honey.osql.autogen.Ddl;
 import org.teasoft.honey.osql.core.*;

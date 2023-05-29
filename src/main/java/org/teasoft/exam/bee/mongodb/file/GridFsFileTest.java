@@ -13,8 +13,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.teasoft.bee.mongodb.GridFsFile;
-import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.OrderType;
+import org.teasoft.bee.osql.api.Condition;
 import org.teasoft.beex.osql.mongodb.MongodbSuidRichExt;
 import org.teasoft.beex.osql.shortcut.BFX;
 import org.teasoft.exam.comm.Printer;

@@ -36,6 +36,7 @@ public class DdlForShardingTest2 {
 //		Ddl.createTable(Noid0.class);
 		
 		Ddl.createTable(Noid0.class,true);
+//		Ddl.createTable(Orders.class,true);
 		System.out.println("--createTable finished!");
 	}
 

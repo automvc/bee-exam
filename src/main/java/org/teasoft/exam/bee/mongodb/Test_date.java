@@ -8,7 +8,7 @@ package org.teasoft.exam.bee.mongodb;
 
 import java.util.List;
 
-import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.exam.bee.mongodb.entity.Orders;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.osql.util.DateUtil;
@@ -31,7 +31,7 @@ public class Test_date {
 		Orders orders=new Orders();
 		orders.setAbc("test bee ");
 		orders.setName("mongodb");
-		orders.setId(10110L);
+//		orders.setId(10110L);
 		orders.setCreatetime(DateUtil.currentDate());
 		
 		suid.insert(orders);

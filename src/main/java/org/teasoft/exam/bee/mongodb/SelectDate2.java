@@ -10,8 +10,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import org.teasoft.bee.osql.Condition;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.Condition;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.mongodb.entity.Report;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;

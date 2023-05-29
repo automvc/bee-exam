@@ -8,7 +8,7 @@ package org.teasoft.exam.bee.mongodb.json;
 
 import java.util.List;
 
-import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.exam.bee.mongodb.json.entity.Dept;
 import org.teasoft.exam.bee.osql.special.DeptJson;
 import org.teasoft.exam.comm.Printer;

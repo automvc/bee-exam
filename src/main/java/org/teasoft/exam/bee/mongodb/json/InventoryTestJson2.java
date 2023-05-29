@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import org.teasoft.bee.osql.IncludeType;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.beex.json.JsonUtil;
 import org.teasoft.exam.bee.mongodb.json.entity.Inventory;
 import org.teasoft.exam.bee.mongodb.json.entity.Size;

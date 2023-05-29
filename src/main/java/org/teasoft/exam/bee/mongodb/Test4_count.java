@@ -6,9 +6,9 @@ getMongodbBeeSql() * Copyright 2016-2022 the original author.All rights reserved
 
 package org.teasoft.exam.bee.mongodb;
 
-import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.Condition;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.mongodb.entity.Orders;
 import org.teasoft.exam.bee.osql.entity.Student;
 import org.teasoft.honey.osql.shortcut.BF;

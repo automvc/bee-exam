@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.teasoft.bee.osql.IncludeType;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**

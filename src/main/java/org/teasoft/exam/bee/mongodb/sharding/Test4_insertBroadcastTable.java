@@ -9,7 +9,7 @@ package org.teasoft.exam.bee.mongodb.sharding;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.mongodb.entity.Noid0;
 import org.teasoft.honey.osql.shortcut.BF;
 
@@ -44,10 +44,23 @@ public class Test4_insertBroadcastTable {
 			noid0.setRemark(null);
 			insertList.add(noid0);
 		}
+		try {
+			
 		
 		int insertNum=suidRich.insert(insertList);
 		
+		for (int i = 0; i < insertList.size(); i++) {
+		  System.out.println("---------getUuid: "+insertList.get(i).getUuid());
+		}
 		System.out.println("insertNum="+insertNum);
+		} catch (Exception e) {
+			System.err.println("-----------have exception");
+			e.printStackTrace();
+		}
+		
+		for (int i = 0; i < 300; i++) {
+			int insertNum=suidRich.insert(insertList);
+		}
 		
 		System.out.println("finished!");
 	}

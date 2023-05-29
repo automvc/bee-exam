@@ -6,19 +6,11 @@
 
 package org.teasoft.exam.bee.mongodb;
 
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-import org.teasoft.bee.mongodb.MongodbBeeSql;
-import org.teasoft.bee.osql.Condition;
-import org.teasoft.bee.osql.Op;
-import org.teasoft.bee.osql.SuidRich;
-import org.teasoft.beex.mongodb.MongodbSqlLib;
+import org.teasoft.bee.osql.api.Condition;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.mongodb.entity.Orders;
-import org.teasoft.honey.osql.core.MongodbObjSQLRich;
-import org.teasoft.honey.osql.mongodb.MongodbBeeSqlRegister;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.util.Printer;
 

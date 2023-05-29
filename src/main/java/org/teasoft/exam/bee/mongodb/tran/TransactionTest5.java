@@ -7,7 +7,7 @@ package org.teasoft.exam.bee.mongodb.tran;
 
 import java.util.List;
 
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.bee.osql.transaction.Transaction;
 import org.teasoft.beex.mongodb.MongodbTransaction;
 import org.teasoft.honey.osql.shortcut.BF;

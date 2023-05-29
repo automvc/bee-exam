@@ -12,9 +12,9 @@ import java.util.List;
 import java.util.Set;
 
 import org.teasoft.bee.mongodb.MongodbBeeSql;
-import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.Condition;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.beex.mongodb.MongodbSqlLib;
 import org.teasoft.exam.bee.osql.entity.dynamic.Orders;
 import org.teasoft.honey.osql.core.MongodbObjSQLRich;

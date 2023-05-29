@@ -8,7 +8,7 @@ package org.teasoft.exam.bee.mongodb;
 
 import java.util.List;
 
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.mongodb.entity.UserInfo;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;

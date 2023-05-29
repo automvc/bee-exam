@@ -7,7 +7,7 @@
 package org.teasoft.exam.bee.mongodb.sharding;
 
 import org.teasoft.bee.osql.FunctionType;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**

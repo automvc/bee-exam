@@ -20,6 +20,7 @@ public class ShardingDoConfig {
 
 	public static void init() {
 		ShardingConfig.addShardingBean(Orders.class, new ShardingBean("ds[0..1].orders[0..5]", "userid"));
+//		ShardingConfig.addShardingBean(Orders.class, new ShardingBean("ds_[0..1].orders_[0..5]", "userid"));
 
 //		ShardingBean broadcastTable1 = new ShardingBean();
 //		broadcastTable1.setFullNodes("ds[0..1].noid0[]"); //表名,就是noid0,用于测试

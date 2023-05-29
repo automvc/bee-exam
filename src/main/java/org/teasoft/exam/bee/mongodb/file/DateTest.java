@@ -8,7 +8,7 @@ package org.teasoft.exam.bee.mongodb.file;
 
 import java.util.List;
 
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.mongodb.ds.Orderhistory;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.HoneyConfig;

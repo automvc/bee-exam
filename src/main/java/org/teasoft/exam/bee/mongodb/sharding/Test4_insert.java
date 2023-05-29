@@ -7,7 +7,7 @@ getMongodbBeeSql() * Copyright 2016-2022 the original author.All rights reserved
 package org.teasoft.exam.bee.mongodb.sharding;
 
 import org.teasoft.bee.osql.IncludeType;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
@@ -35,7 +35,7 @@ public class Test4_insert {
 		orders = new Orders();
 		orders.setAbc("test bee ");
 		orders.setName("mongodb");
-		orders.setId(21L);
+//		orders.setId(21L);
 		orders.setUserid(21L);
 		orders.setRemark(""); //
 		orders.setSequence(null);//test null   mongodb,批量插入,不处理null

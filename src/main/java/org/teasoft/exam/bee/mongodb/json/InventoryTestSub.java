@@ -3,9 +3,9 @@ package org.teasoft.exam.bee.mongodb.json;
 import java.math.BigDecimal;
 import java.util.List;
 
-import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Op;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.Condition;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.mongodb.json.entity.Inventory;
 import org.teasoft.exam.bee.mongodb.json.entity.Size;
 import org.teasoft.honey.osql.shortcut.BF;

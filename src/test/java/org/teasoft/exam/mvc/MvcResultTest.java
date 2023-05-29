@@ -10,7 +10,7 @@ import java.util.List;
 
 import org.junit.Test;
 import org.teasoft.bee.mvc.Result;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.beex.json.JsonUtil;
 import org.teasoft.exam.MySqlOneConfig;
 import org.teasoft.exam.bee.osql.entity.Orders;

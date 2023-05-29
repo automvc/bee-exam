@@ -9,7 +9,7 @@ package org.teasoft.exam.bee.test;
 import java.util.Map;
 
 import org.teasoft.bee.osql.DatabaseConst;
-import org.teasoft.bee.osql.PreparedSql;
+import org.teasoft.bee.osql.api.PreparedSql;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyUtil;

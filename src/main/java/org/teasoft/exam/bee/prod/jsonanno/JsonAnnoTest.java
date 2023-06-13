@@ -14,6 +14,7 @@ import org.teasoft.beex.json.JsonUtil;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
 import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.osql.shortcut.BF;
 
 /**
  * Test Json field (eg: mysql 5.7)
@@ -51,6 +52,8 @@ public class JsonAnnoTest {
 		Dept d=new Dept();
 		d.setJsonValue(jsonValue);
 		d.setId(11138);
+		int a=BF.getSuidRich().deleteById(Dept.class,11138);
+		System.out.println(a);
 		suid.insert(d);
 		
 		

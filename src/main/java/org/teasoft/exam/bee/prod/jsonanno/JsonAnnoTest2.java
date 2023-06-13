@@ -14,6 +14,7 @@ import org.teasoft.beex.json.JsonUtil;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
 import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.osql.shortcut.BF;
 
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -37,8 +38,8 @@ public class JsonAnnoTest2 {
 //		JsonDefaultHandler.init();
 //		直接查询Json数据,由Bee负责转化.
 		List<Dept> list=suid.select(new Dept());
-		Logger.info(list.get(0).getJsonValue().getDeptId());
-		Logger.info(list.get(0).getJsonValue().getDeptName());
+		Logger.info(list.get(1).getJsonValue().getDeptId());
+		Logger.info(list.get(1).getJsonValue().getDeptName());
 		Printer.printList(list);
 		
 		
@@ -100,6 +101,11 @@ public class JsonAnnoTest2 {
 		
 		List<JsonValue> list22=list2.get(0).getList();
 		System.err.println(list22.get(0).getDeptLeaderId());
+		
+//		suid.delete(d);
+//		suid.delete(dept2);
+		
+		BF.getSuidRich().deleteById(Dept.class, "11148,11120");
 		
 		
 //		List<Dept2> list2=suid.select(new Dept2());

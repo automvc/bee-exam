@@ -42,6 +42,7 @@ public class MvcResultTest {
         
         
         result=new Result("Some error msg");
+        result.setErrorCode("404");
         
         result=new Result();
         result.setErrorMsg("Some error msg2");

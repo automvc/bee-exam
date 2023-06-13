@@ -29,6 +29,12 @@ public class ListJsonTest {
 	}
 
 	public static void test() throws Exception{
+		
+		String jsonValue="{\"deptId\": \"1\", \"deptName\": \"部门1\", \"deptLeaderId\": \"3\"}";
+		Dept dept=new Dept();
+		dept.setOne(jsonValue);
+		suid.insert(dept);
+		
 		List<Dept> list = suid.select(new Dept());
 		Printer.printList(list);
 

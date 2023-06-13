@@ -94,3 +94,33 @@ bee-exam(v1.9)2021-04-03 21.56.05.780-normal(H2).txt
 bee-exam(v1.9)2021-04-03 21.56.10.191-normal(PostgreSQL).txt
 bee-exam(v1.9)2021-04-03 21.56.22.701-normal(Microsoft SQL Server).txt
 bee-exam(v1.9)2021-04-03 21.56.30.119-cache(MySQL).txt
+
+bee-exam(v1.9)2021-05-02 02.53.30.778-normal(MySQL).txt
+bee-exam(v1.9)2021-05-02 02.53.47.666-normal(Oracle).txt
+bee-exam(v1.9)2021-05-02 02.54.08.829-normal(SQLite).txt
+bee-exam(v1.9)2021-05-02 02.54.26.717-normal(H2).txt
+bee-exam(v1.9)2021-05-02 02.54.34.977-normal(PostgreSQL).txt
+bee-exam(v1.9)2021-05-02 02.54.55.328-normal(Microsoft SQL Server).txt
+bee-exam(v1.9)2021-05-02 02.55.16.45-cache(MySQL).txt
+
+test V1.9.8 with well-known and major database  
+bee-exam(v1.9.8)2021-10-22 13.28.59.122-normal(MySQL).txt
+bee-exam(v1.9.8)2021-10-22 13.29.18.02-normal(Oracle).txt
+bee-exam(v1.9.8)2021-10-22 13.29.41.620-normal(SQLite).txt
+bee-exam(v1.9.8)2021-10-22 13.30.00.709-normal(H2).txt
+bee-exam(v1.9.8)2021-10-22 13.30.07.72-normal(PostgreSQL).txt
+bee-exam(v1.9.8)2021-10-22 13.30.26.941-normal(Microsoft SQL Server).txt
+bee-exam(v1.9.8)2021-10-22 13.30.36.536-normal(MySQL).txt
+bee-exam(v1.9.8)2021-10-22 13.30.58.799-cache(MySQL).txt
+
+//V2.1  Sharding, MongoDB ORM
+bee-exam(v2.1)2023-06-13 23.57.30.177-cache(MySQL).txt
+bee-exam(v2.1)2023-06-13 23.56.56.71-normal(MySQL).txt
+bee-exam(v2.1)2023-06-13 23.56.31.297-normal(MySQL).txt
+bee-exam(v2.1)2023-06-13 23.56.00.371-normal(PostgreSQL).txt
+bee-exam(v2.1)2023-06-13 23.55.50.59-normal(H2).txt
+bee-exam(v2.1)2023-06-13 23.55.02.288-normal(Oracle).txt
+bee-exam(v2.1)2023-06-13 23.54.51.219-normal(Microsoft SQL Server).txt
+bee-exam(v2.1)2023-06-13 23.54.19.39-normal(SQLite).txt
+bee-exam(v2.1)2023-06-13 23.53.26.232-normal(MongoDB).txt
+bee-exam(v2.1)2023-06-13 23.53.23.176-Sharding(MySQL).txt

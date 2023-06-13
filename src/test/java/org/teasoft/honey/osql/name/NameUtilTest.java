@@ -6,6 +6,7 @@
 
 package org.teasoft.honey.osql.name;
 
+import org.junit.Test;
 import org.teasoft.bee.osql.NameTranslate;
 import org.teasoft.honey.osql.core.Logger;
 
@@ -14,11 +15,14 @@ import org.teasoft.honey.osql.core.Logger;
  * @since  1.11
  */
 public class NameUtilTest {
-	public static void main(String[] args) {
+	
+	
+	@Test
+	public void test() {
 		Logger.info(NameUtil.getClassFullName(Class.class));
 		
-		Logger.info(NameUtil.getClassFullName(TestUser.class));
-		Logger.info(NameUtil.getClassFullName(new TestUser()));
+//		Logger.info(NameUtil.getClassFullName(TestUser.class));
+//		Logger.info(NameUtil.getClassFullName(new TestUser()));
 		
 //		beeName->bee_name,beeTName->bee_t_name
 		Logger.info(NameUtil.toUnderscoreNaming("beeName"));

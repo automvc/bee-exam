@@ -338,6 +338,7 @@ public class ExceptionTest {
 			HoneyConfig.getHoneyConfig().genid_workerid=1024;
 			Logger.info("distribute id is: "+GenIdFactory.get());
 		} catch (BeeException e) {
+			HoneyConfig.getHoneyConfig().genid_workerid=100;
 			Logger.error(e.getMessage());
 			e.printStackTrace();
 		} catch (Exception e) {

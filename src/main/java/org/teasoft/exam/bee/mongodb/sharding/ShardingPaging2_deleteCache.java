@@ -68,7 +68,7 @@ public class ShardingPaging2_deleteCache {
 	 	System.out.println("--------------------:");
 	 	
 	 	
-	 	int delNum=suidRich.deleteById(Orders.class, 1033L);
+	 	int delNum=suidRich.deleteById(Orders.class, 1033L); //Mongodb delete还不支持Sharding
 	 	System.out.println("delNum: "+delNum);
 	 	
 //	 	condition.size(6);

@@ -24,14 +24,13 @@ public class InitDsAndMongoDsUtil {
 	
 	public static void initDS() {
 		try {
-
-			
-			
 			HoneyConfig config=HoneyConfig.getHoneyConfig();
 			config.multiDS_enable=true;
 			config.multiDS_differentDbType=false;
 			config.multiDS_sharding=true;
-//			config.multiDS_defalutDS="ds0";
+			config.multiDS_justMongodb=true;
+			config.multiDS_defalutDS="ds0";  //没有默认ds,像delete,在V2.1还不支持Sharding时,则会报错
+			
 //			HoneyContext.setConfigRefresh(true); //涉及路由信息更新要刷新
 //			HoneyContext.setDsMapRefresh(true); //在配置文件中修改才要刷新解析
 			

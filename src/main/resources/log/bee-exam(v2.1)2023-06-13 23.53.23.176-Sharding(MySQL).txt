@@ -1,0 +1,541 @@
+[INFO] [Bee] Parse DataSourceMap: dataSource name to database name , result: {ds0=MySQL, ds1=MySQL}
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] ds[0..1].orders[0..5]
+[INFO] [Bee] fullNodes: {orders={ds0=[0, 1, 2], ds1=[3, 4, 5]}}
+[INFO] [Bee] tabToDsMap: {orders0=ds0, orders1=ds0, orders2=ds0, orders3=ds1, orders4=ds1, orders5=ds1}
+[INFO] ds[0..1].myorders[0..5]
+[INFO] [Bee] fullNodes: {myorders={ds0=[0, 1, 2], ds1=[3, 4, 5]}}
+[INFO] [Bee] tabToDsMap: {myorders0=ds0, myorders1=ds0, myorders2=ds0, myorders3=ds1, myorders4=ds1, myorders5=ds1}
+[INFO] ds[0..1].ordersdetail[0..5]
+[INFO] [Bee] fullNodes: {ordersdetail={ds0=[0, 1, 2], ds1=[3, 4, 5]}}
+[INFO] [Bee] tabToDsMap: {ordersdetail0=ds0, ordersdetail1=ds0, ordersdetail2=ds0, ordersdetail3=ds1, ordersdetail4=ds1, ordersdetail5=ds1}
+[INFO] ds[0].scores[0..1]
+[INFO] [Bee] fullNodes: {scores={ds0=[0, 1]}}
+[INFO] [Bee] tabToDsMap: {scores0=ds0, scores1=ds0}
+[INFO] ds[0..1].noid0[]
+[INFO] [Bee] fullNodes: {noid0={ds0=[], ds1=[]}}
+[INFO] [Bee] tabToDsMap: {noid0=ds1}
+[INFO] ds[0..1].noid1[]
+[INFO] [Bee] fullNodes: {noid1={ds0=[], ds1=[]}}
+[INFO] [Bee] tabToDsMap: {noid1=ds1}
+[INFO] ds[0..1].test_user[0..5]
+[INFO] [Bee] fullNodes: {test_user={ds0=[0, 1, 2], ds1=[3, 4, 5]}}
+[INFO] [Bee] tabToDsMap: {test_user0=ds0, test_user1=ds0, test_user2=ds0, test_user3=ds1, test_user4=ds1, test_user5=ds1}
+[INFO] ds[0..1].test_users[0..5]
+[INFO] [Bee] fullNodes: {test_users={ds0=[0, 1, 2], ds1=[3, 4, 5]}}
+[INFO] [Bee] tabToDsMap: {test_users0=ds0, test_users1=ds0, test_users2=ds0, test_users3=ds1, test_users4=ds1, test_users5=ds1}
+[INFO] ds[0..1].test_my_user[0..5]
+[INFO] [Bee] fullNodes: {test_my_user={ds0=[0, 1, 2], ds1=[3, 4, 5]}}
+[INFO] [Bee] tabToDsMap: {test_my_user0=ds0, test_my_user1=ds0, test_my_user2=ds0, test_my_user3=ds1, test_my_user4=ds1, test_my_user5=ds1}
+[INFO] [Bee] Drop SQL: DROP TABLE IF EXISTS test_my_user[$#(index)#$]
+[INFO] [Bee] ========= Do sharding , the size of sub operation is :6
+[INFO] [Bee] modify SQL(sharding 1) :  DROP TABLE IF EXISTS test_my_user0
+[INFO] [Bee] modify SQL(sharding 2) :  DROP TABLE IF EXISTS test_my_user1
+[INFO] [Bee] modify SQL(sharding 3) :  DROP TABLE IF EXISTS test_my_user2
+[INFO] [Bee] modify SQL(sharding 6) :  DROP TABLE IF EXISTS test_my_user5
+[INFO] [Bee] modify SQL(sharding 5) :  DROP TABLE IF EXISTS test_my_user4
+[INFO] [Bee] modify SQL(sharding 4) :  DROP TABLE IF EXISTS test_my_user3
+[INFO] [Bee] ========= the current DataSource name is :ds1 (sharding 6)
+[INFO] [Bee] ========= the current DataSource name is :ds0 (sharding 1)
+[INFO] [Bee] ========= the current DataSource name is :ds0 (sharding 2)
+[INFO] [Bee] ========= the current DataSource name is :ds0 (sharding 3)
+[INFO] [Bee] ========= the current DataSource name is :ds1 (sharding 4)
+[INFO] [Bee] ========= the current DataSource name is :ds1 (sharding 5)
+[INFO] [Bee]  | <--  Affected rows: 0 (sharding 2)
+[INFO] [Bee]  | <--  Affected rows: 0 (sharding 6)
+[INFO] [Bee]  | <--  Affected rows: 0 (sharding 5)
+[INFO] [Bee]  | <--  Affected rows: 0 (sharding 1)
+[INFO] [Bee]  | <--  Affected rows: 0 (sharding 3)
+[INFO] [Bee]  | <--  Affected rows: 0 (sharding 4)
+[INFO] [Bee] DDL SQL:CREATE TABLE test_my_user[$#(index)#$] (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+password  varchar(255) DEFAULT NULL,  
+username  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee] ========= Do sharding , the size of sub operation is :6
+[INFO] [Bee] modify SQL(sharding 1) : CREATE TABLE test_my_user0 (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+password  varchar(255) DEFAULT NULL,  
+username  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee] modify SQL(sharding 2) : CREATE TABLE test_my_user1 (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+password  varchar(255) DEFAULT NULL,  
+username  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee] modify SQL(sharding 3) : CREATE TABLE test_my_user2 (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+password  varchar(255) DEFAULT NULL,  
+username  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee] modify SQL(sharding 6) : CREATE TABLE test_my_user5 (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+password  varchar(255) DEFAULT NULL,  
+username  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee] ========= the current DataSource name is :ds0 (sharding 1)
+[INFO] [Bee] modify SQL(sharding 5) : CREATE TABLE test_my_user4 (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+password  varchar(255) DEFAULT NULL,  
+username  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee] modify SQL(sharding 4) : CREATE TABLE test_my_user3 (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+password  varchar(255) DEFAULT NULL,  
+username  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee] ========= the current DataSource name is :ds0 (sharding 2)
+[INFO] [Bee] ========= the current DataSource name is :ds0 (sharding 3)
+[INFO] [Bee] ========= the current DataSource name is :ds1 (sharding 4)
+[INFO] [Bee] ========= the current DataSource name is :ds1 (sharding 6)
+[INFO] [Bee] ========= the current DataSource name is :ds1 (sharding 5)
+[INFO] [Bee]  | <--  Affected rows: 0 (sharding 6)
+[INFO] [Bee]  | <--  Affected rows: 0 (sharding 2)
+[INFO] [Bee]  | <--  Affected rows: 0 (sharding 3)
+[INFO] [Bee]  | <--  Affected rows: 0 (sharding 4)
+[INFO] [Bee]  | <--  Affected rows: 0 (sharding 1)
+[INFO] [Bee]  | <--  Affected rows: 0 (sharding 5)
+[INFO] [Bee] DDL SQL:CREATE TABLE noid1 (
+uuid  varchar(255) PRIMARY KEY NOT NULL,  
+name  varchar(255) DEFAULT NULL,  
+num  int(11) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee] ========= Do sharding , the size of sub operation is :2
+[INFO] [Bee] modify SQL(sharding 2) : CREATE TABLE noid1 (
+uuid  varchar(255) PRIMARY KEY NOT NULL,  
+name  varchar(255) DEFAULT NULL,  
+num  int(11) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee] ========= the current DataSource name is :ds1 (sharding 2)
+[INFO] [Bee] modify SQL(sharding 1) : CREATE TABLE noid1 (
+uuid  varchar(255) PRIMARY KEY NOT NULL,  
+name  varchar(255) DEFAULT NULL,  
+num  int(11) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee] ========= the current DataSource name is :ds0 (sharding 1)
+[ERROR] org.teasoft.bee.osql.BeeSQLException: Table 'noid1' already exists
+org.teasoft.bee.osql.BeeSQLException: Table 'noid1' already exists
+[ERROR] org.teasoft.bee.osql.BeeSQLException: Table 'noid1' already exists
+org.teasoft.bee.osql.BeeSQLException: Table 'noid1' already exists
+[INFO] [Bee] Parse DataSourceMap: dataSource name to database name , result: {ds0=MySQL, ds1=MySQL}
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] Reset the DataSource OneTime, ds name:ds1
+[INFO] [Bee] Reset the tabName OneTime, tabName:orders4
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders4 where remark=?   [values]: String类型分片值(String)
+[INFO] [Bee] select SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders4 where remark='String类型分片值' ;
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] Reset the DataSource OneTime, ds name:ds1
+[INFO] [Bee] Reset the tabName OneTime, tabName:orders4
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders4 where remark=?   [values]: String类型分片值(String)
+[INFO] [Bee] select SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders4 where remark='String类型分片值' ;
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[DEBUG] dsNameList: [ds1]
+[DEBUG] tabNameList: [orders4]
+[DEBUG] tabSuffixList: [4]
+[DEBUG] tab2DsMap: {orders4=ds1, 4=ds1}
+[INFO] [Bee] Reset the DataSource OneTime, ds name:ds1
+[INFO] [Bee] Reset the tabName OneTime, tabName:orders4
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders4 where remark=? and (userid=?)   [values]: String类型分片值(String),4(Integer)
+[INFO] [Bee] select SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders4 where remark='String类型分片值' and (userid=4) ;
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  select rows: 0
+[DEBUG] dsNameList: [ds1]
+[DEBUG] tabNameList: [orders4]
+[DEBUG] tabSuffixList: [4]
+[DEBUG] tab2DsMap: {orders4=ds1, 4=ds1}
+[INFO] [Bee] Reset the DataSource OneTime, ds name:ds1
+[INFO] [Bee] Reset the tabName OneTime, tabName:orders4
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders4 where remark=? and (userid=?)   [values]: String类型分片值(String),4(Integer)
+[INFO] [Bee] select SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders4 where remark='String类型分片值' and (userid=4) ;
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] Parse DataSourceMap: dataSource name to database name , result: {ds0=MySQL, ds1=MySQL}
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] Reset the DataSource OneTime, ds name:ds0
+[INFO] [Bee] Reset the tabName OneTime, tabName:orders0
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders0 where userid=?   [values]: 0(Long)
+[INFO] [Bee] select SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders0 where userid=0 ;
+[INFO] [Bee] ========= the current DataSource name is :ds0
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] Orders1[id=853421104037909,userid=0,orderid=0,name=null,total=91.000000,createtime=null,remark=testOneTime0,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037929,userid=0,orderid=0,name=null,total=91.000000,createtime=null,remark=testOneTime0,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037949,userid=0,orderid=0,name=null,total=91.000000,createtime=null,remark=testOneTime0,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] Reset the DataSource OneTime, ds name:ds0
+[INFO] [Bee] Reset the tabName OneTime, tabName:orders0
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders0 where userid=?   [values]: 0(Long)
+[INFO] [Bee] select SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders0 where userid=0 ;
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] Orders1[id=853421104037909,userid=0,orderid=0,name=null,total=91.000000,createtime=null,remark=testOneTime0,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037929,userid=0,orderid=0,name=null,total=91.000000,createtime=null,remark=testOneTime0,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037949,userid=0,orderid=0,name=null,total=91.000000,createtime=null,remark=testOneTime0,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] Parse DataSourceMap: dataSource name to database name , result: {ds0=MySQL, ds1=MySQL}
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] Reset the DataSource OneTime, ds name:ds0
+[INFO] [Bee] Reset the tabName OneTime, tabName:orders0
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders0 where userid=?   [values]: 0(Long)
+[INFO] [Bee] select SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders0 where userid=0 ;
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] Orders1[id=853421104037909,userid=0,orderid=0,name=null,total=91.000000,createtime=null,remark=testOneTime0,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037929,userid=0,orderid=0,name=null,total=91.000000,createtime=null,remark=testOneTime0,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037949,userid=0,orderid=0,name=null,total=91.000000,createtime=null,remark=testOneTime0,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] Reset the DataSource OneTime, ds name:ds0
+[INFO] [Bee] Reset the tabName OneTime, tabName:orders0
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders0 where userid=?   [values]: 0(Long)
+[INFO] [Bee] select SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders0 where userid=0 ;
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] Orders1[id=853421104037909,userid=0,orderid=0,name=null,total=91.000000,createtime=null,remark=testOneTime0,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037929,userid=0,orderid=0,name=null,total=91.000000,createtime=null,remark=testOneTime0,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037949,userid=0,orderid=0,name=null,total=91.000000,createtime=null,remark=testOneTime0,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] Parse DataSourceMap: dataSource name to database name , result: {ds0=MySQL, ds1=MySQL}
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] Reset the DataSource OneTime, ds name:ds0
+[INFO] [Bee] Reset the tabName OneTime, tabName:orders1
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders1 where userid=?   [values]: 1(Long)
+[INFO] [Bee] select SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders1 where userid=1 ;
+[INFO] [Bee] ========= the current DataSource name is :ds0
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] Orders1[id=853421104037910,userid=1,orderid=1,name=null,total=92.000000,createtime=null,remark=testOneTime1,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037930,userid=1,orderid=1,name=null,total=92.000000,createtime=null,remark=testOneTime1,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037950,userid=1,orderid=1,name=null,total=92.000000,createtime=null,remark=testOneTime1,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] Reset the DataSource OneTime, ds name:ds0
+[INFO] [Bee] Reset the tabName OneTime, tabName:orders1
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders1 where userid=?   [values]: 1(Long)
+[INFO] [Bee] select SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders1 where userid=1 ;
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] Orders1[id=853421104037910,userid=1,orderid=1,name=null,total=92.000000,createtime=null,remark=testOneTime1,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037930,userid=1,orderid=1,name=null,total=92.000000,createtime=null,remark=testOneTime1,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037950,userid=1,orderid=1,name=null,total=92.000000,createtime=null,remark=testOneTime1,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] Parse DataSourceMap: dataSource name to database name , result: {ds0=MySQL, ds1=MySQL}
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] ds[0..1].orders[0..5]
+[INFO] [Bee] fullNodes: {orders={ds0=[0, 1, 2], ds1=[3, 4, 5]}}
+[INFO] [Bee] tabToDsMap: {orders0=ds0, orders1=ds0, orders2=ds0, orders3=ds1, orders4=ds1, orders5=ds1}
+[INFO] ds[0..1].myorders[0..5]
+[INFO] [Bee] fullNodes: {myorders={ds0=[0, 1, 2], ds1=[3, 4, 5]}}
+[INFO] [Bee] tabToDsMap: {myorders0=ds0, myorders1=ds0, myorders2=ds0, myorders3=ds1, myorders4=ds1, myorders5=ds1}
+[INFO] ds[0..1].ordersdetail[0..5]
+[INFO] [Bee] fullNodes: {ordersdetail={ds0=[0, 1, 2], ds1=[3, 4, 5]}}
+[INFO] [Bee] tabToDsMap: {ordersdetail0=ds0, ordersdetail1=ds0, ordersdetail2=ds0, ordersdetail3=ds1, ordersdetail4=ds1, ordersdetail5=ds1}
+[INFO] ds[0].scores[0..1]
+[INFO] [Bee] fullNodes: {scores={ds0=[0, 1]}}
+[INFO] [Bee] tabToDsMap: {scores0=ds0, scores1=ds0}
+[INFO] ds[0..1].noid0[]
+[INFO] [Bee] fullNodes: {noid0={ds0=[], ds1=[]}}
+[INFO] [Bee] tabToDsMap: {noid0=ds1}
+[INFO] ds[0..1].noid1[]
+[INFO] [Bee] fullNodes: {noid1={ds0=[], ds1=[]}}
+[INFO] [Bee] tabToDsMap: {noid1=ds1}
+[INFO] ds[0..1].test_user[0..5]
+[INFO] [Bee] fullNodes: {test_user={ds0=[0, 1, 2], ds1=[3, 4, 5]}}
+[INFO] [Bee] tabToDsMap: {test_user0=ds0, test_user1=ds0, test_user2=ds0, test_user3=ds1, test_user4=ds1, test_user5=ds1}
+[INFO] ds[0..1].test_users[0..5]
+[INFO] [Bee] fullNodes: {test_users={ds0=[0, 1, 2], ds1=[3, 4, 5]}}
+[INFO] [Bee] tabToDsMap: {test_users0=ds0, test_users1=ds0, test_users2=ds0, test_users3=ds1, test_users4=ds1, test_users5=ds1}
+[INFO] ds[0..1].test_my_user[0..5]
+[INFO] [Bee] fullNodes: {test_my_user={ds0=[0, 1, 2], ds1=[3, 4, 5]}}
+[INFO] [Bee] tabToDsMap: {test_my_user0=ds0, test_my_user1=ds0, test_my_user2=ds0, test_my_user3=ds1, test_my_user4=ds1, test_my_user5=ds1}
+[DEBUG] dsNameList: [ds1, ds0]
+[DEBUG] tabNameList: [orders3, orders2]
+[DEBUG] tabSuffixList: [3, 2]
+[DEBUG] tab2DsMap: {orders2=ds0, orders3=ds1, 2=ds0, 3=ds1}
+[DEBUG] after process: 
+[DEBUG] dsNameList: [ds1, ds0]
+[DEBUG] tabNameList: [orders3, orders2]
+[DEBUG] tabSuffixList: [3, 2]
+[DEBUG] tab2DsMap: {orders2=ds0, orders3=ds1, 2=ds0, 3=ds1}
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders[$#(index)#$] where userid=? and (userid=?)   [values]: 3(Long),2(Integer)
+[INFO] [Bee] select SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders[$#(index)#$] where userid=3 and (userid=2) ;
+[INFO] [Bee] ========= Do sharding , the size of sub operation is :2
+[INFO] [Bee] select SQL(sharding 2) : select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders2 where userid=? and (userid=?)   [values]: 3(Long),2(Integer)
+[INFO] [Bee] select SQL(sharding 1) : select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders3 where userid=? and (userid=?)   [values]: 3(Long),2(Integer)
+[INFO] [Bee] select SQL(sharding 2) :  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders2 where userid=3 and (userid=2) ;
+[INFO] [Bee] select SQL(sharding 1) :  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders3 where userid=3 and (userid=2) ;
+[INFO] [Bee] ========= the current DataSource name is :ds1 (sharding 1)
+[INFO] [Bee] ========= the current DataSource name is :ds0 (sharding 2)
+[INFO] [Bee]  | <--  select rows: 0
+[DEBUG] dsNameList: [ds1, ds0]
+[DEBUG] tabNameList: [orders3, orders2]
+[DEBUG] tabSuffixList: [3, 2]
+[DEBUG] tab2DsMap: {orders2=ds0, orders3=ds1, 2=ds0, 3=ds1}
+[DEBUG] after process: 
+[DEBUG] dsNameList: [ds1, ds0]
+[DEBUG] tabNameList: [orders3, orders2]
+[DEBUG] tabSuffixList: [3, 2]
+[DEBUG] tab2DsMap: {orders2=ds0, orders3=ds1, 2=ds0, 3=ds1}
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders[$#(index)#$] where userid=? and (userid=?)   [values]: 3(Long),2(Integer)
+[INFO] [Bee] select SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders[$#(index)#$] where userid=3 and (userid=2) ;
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] ========= Involved DataSource: [ds1, ds0]  ,Involved Table: [orders3, orders2]
+[INFO] [Bee] Parse DataSourceMap: dataSource name to database name , result: {ds0=MySQL, ds1=MySQL}
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[DEBUG] dsNameList: [ds0]
+[DEBUG] tabNameList: [orders1]
+[DEBUG] tabSuffixList: [1]
+[DEBUG] tab2DsMap: {orders1=ds0, 1=ds0}
+[INFO] [Bee] Reset the DataSource OneTime, ds name:ds0
+[INFO] [Bee] Reset the tabName OneTime, tabName:orders1
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders1 where userid=? and name=?   [values]: 1(Long),test1_6(String)
+[INFO] [Bee] select SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders1 where userid=1 and name='test1_6' ;
+[INFO] [Bee] ========= the current DataSource name is :ds0
+[INFO] [Bee]  | <--  select rows: 0
+[DEBUG] dsNameList: [ds0]
+[DEBUG] tabNameList: [orders1]
+[DEBUG] tabSuffixList: [1]
+[DEBUG] tab2DsMap: {orders1=ds0, 1=ds0}
+[INFO] [Bee] Reset the DataSource OneTime, ds name:ds0
+[INFO] [Bee] Reset the tabName OneTime, tabName:orders1
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders1 where userid=? and name=?   [values]: 1(Long),test1_6(String)
+[INFO] [Bee] select SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders1 where userid=1 and name='test1_6' ;
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] Parse DataSourceMap: dataSource name to database name , result: {ds0=MySQL, ds1=MySQL}
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[DEBUG] dsNameList: [ds0]
+[DEBUG] tabNameList: [orders2]
+[DEBUG] tabSuffixList: [2]
+[DEBUG] tab2DsMap: {orders2=ds0, 2=ds0}
+[INFO] [Bee] Reset the DataSource OneTime, ds name:ds0
+[INFO] [Bee] Reset the tabName OneTime, tabName:orders2
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders2 where (userid=?)   [values]: 2(Integer)
+[INFO] [Bee] select SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders2 where (userid=2) ;
+[INFO] [Bee] ========= the current DataSource name is :ds0
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] Orders1[id=853421104037911,userid=2,orderid=2,name=null,total=93.000000,createtime=null,remark=changed by sharding!,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037931,userid=2,orderid=2,name=null,total=93.000000,createtime=null,remark=changed by sharding!,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037951,userid=2,orderid=2,name=null,total=93.000000,createtime=null,remark=changed by sharding!,sequence=null,abc=null,updatetime=null]
+[DEBUG] dsNameList: [ds0]
+[DEBUG] tabNameList: [orders2]
+[DEBUG] tabSuffixList: [2]
+[DEBUG] tab2DsMap: {orders2=ds0, 2=ds0}
+[INFO] [Bee] Reset the DataSource OneTime, ds name:ds0
+[INFO] [Bee] Reset the tabName OneTime, tabName:orders2
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders2 where (userid=?)   [values]: 2(Integer)
+[INFO] [Bee] select SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders2 where (userid=2) ;
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] Orders1[id=853421104037911,userid=2,orderid=2,name=null,total=93.000000,createtime=null,remark=changed by sharding!,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037931,userid=2,orderid=2,name=null,total=93.000000,createtime=null,remark=changed by sharding!,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037951,userid=2,orderid=2,name=null,total=93.000000,createtime=null,remark=changed by sharding!,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] Parse DataSourceMap: dataSource name to database name , result: {ds0=MySQL, ds1=MySQL}
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders[$#(index)#$] where remark=?   [values]: Bee(ORM Framework)(String)
+[INFO] [Bee] select SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders[$#(index)#$] where remark='Bee(ORM Framework)' ;
+[INFO] [Bee] ========= Do sharding , the size of sub operation is :6
+[INFO] [Bee] select SQL(sharding 1) : select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders0 where remark=?   [values]: Bee(ORM Framework)(String)
+[INFO] [Bee] select SQL(sharding 2) : select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders1 where remark=?   [values]: Bee(ORM Framework)(String)
+[INFO] [Bee] select SQL(sharding 3) : select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders2 where remark=?   [values]: Bee(ORM Framework)(String)
+[INFO] [Bee] select SQL(sharding 4) : select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders3 where remark=?   [values]: Bee(ORM Framework)(String)
+[INFO] [Bee] select SQL(sharding 1) :  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders0 where remark='Bee(ORM Framework)' ;
+[INFO] [Bee] select SQL(sharding 5) : select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders4 where remark=?   [values]: Bee(ORM Framework)(String)
+[INFO] [Bee] select SQL(sharding 2) :  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders1 where remark='Bee(ORM Framework)' ;
+[INFO] [Bee] select SQL(sharding 6) : select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders5 where remark=?   [values]: Bee(ORM Framework)(String)
+[INFO] [Bee] select SQL(sharding 3) :  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders2 where remark='Bee(ORM Framework)' ;
+[INFO] [Bee] select SQL(sharding 4) :  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders3 where remark='Bee(ORM Framework)' ;
+[INFO] [Bee] ========= the current DataSource name is :ds0 (sharding 1)
+[INFO] [Bee] select SQL(sharding 5) :  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders4 where remark='Bee(ORM Framework)' ;
+[INFO] [Bee] ========= the current DataSource name is :ds0 (sharding 2)
+[INFO] [Bee] select SQL(sharding 6) :  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders5 where remark='Bee(ORM Framework)' ;
+[INFO] [Bee] ========= the current DataSource name is :ds0 (sharding 3)
+[INFO] [Bee] ========= the current DataSource name is :ds1 (sharding 4)
+[INFO] [Bee] ========= the current DataSource name is :ds1 (sharding 5)
+[INFO] [Bee] ========= the current DataSource name is :ds1 (sharding 6)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders[$#(index)#$] where remark=?   [values]: Bee(ORM Framework)(String)
+[INFO] [Bee] select SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders[$#(index)#$] where remark='Bee(ORM Framework)' ;
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] ========= Involved DataSource: null  ,Involved Table: null
+[INFO] [Bee] selectJson SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders2   [values]: 
+[INFO] [Bee] selectJson SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders2
+[INFO] [Bee] ========= the current DataSource name is :ds0
+[INFO] [Bee]  | <--  select rows: 9
+[INFO] selectJson(new Orders()):
+[INFO] [{"id":"853421104037911","userid":"2","orderid":"2","name":null,"total":93.000000,"createtime":null,"remark":"changed by sharding!","sequence":null,"abc":null,"updatetime":null},{"id":"853421104037917","userid":"8","orderid":"8","name":null,"total":99.000000,"createtime":null,"remark":"testOneTime8","sequence":null,"abc":null,"updatetime":null},{"id":"853421104037923","userid":"14","orderid":"14","name":null,"total":105.000000,"createtime":null,"remark":"testOneTime14","sequence":null,"abc":null,"updatetime":null},{"id":"853421104037931","userid":"2","orderid":"2","name":null,"total":93.000000,"createtime":null,"remark":"changed by sharding!","sequence":null,"abc":null,"updatetime":null},{"id":"853421104037937","userid":"8","orderid":"8","name":null,"total":99.000000,"createtime":null,"remark":"testOneTime8","sequence":null,"abc":null,"updatetime":null},{"id":"853421104037943","userid":"14","orderid":"14","name":null,"total":105.000000,"createtime":null,"remark":"testOneTime14","sequence":null,"abc":null,"updatetime":null},{"id":"853421104037951","userid":"2","orderid":"2","name":null,"total":93.000000,"createtime":null,"remark":"changed by sharding!","sequence":null,"abc":null,"updatetime":null},{"id":"853421104037957","userid":"8","orderid":"8","name":null,"total":99.000000,"createtime":null,"remark":"testOneTime8","sequence":null,"abc":null,"updatetime":null},{"id":"853421104037963","userid":"14","orderid":"14","name":null,"total":105.000000,"createtime":null,"remark":"testOneTime14","sequence":null,"abc":null,"updatetime":null}]
+[INFO] Orders1[id=853421104037911,userid=2,orderid=2,name=null,total=93.000000,createtime=null,remark=changed by sharding!,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037917,userid=8,orderid=8,name=null,total=99.000000,createtime=null,remark=testOneTime8,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037923,userid=14,orderid=14,name=null,total=105.000000,createtime=null,remark=testOneTime14,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037931,userid=2,orderid=2,name=null,total=93.000000,createtime=null,remark=changed by sharding!,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037937,userid=8,orderid=8,name=null,total=99.000000,createtime=null,remark=testOneTime8,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037943,userid=14,orderid=14,name=null,total=105.000000,createtime=null,remark=testOneTime14,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037951,userid=2,orderid=2,name=null,total=93.000000,createtime=null,remark=changed by sharding!,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037957,userid=8,orderid=8,name=null,total=99.000000,createtime=null,remark=testOneTime8,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037963,userid=14,orderid=14,name=null,total=105.000000,createtime=null,remark=testOneTime14,sequence=null,abc=null,updatetime=null]
+[INFO] [{"id":853421104037911,"userid":2,"orderid":2,"name":null,"total":93.000000,"createtime":null,"remark":"changed by sharding!","sequence":null,"abc":null,"updatetime":null},{"id":853421104037917,"userid":8,"orderid":8,"name":null,"total":99.000000,"createtime":null,"remark":"testOneTime8","sequence":null,"abc":null,"updatetime":null},{"id":853421104037923,"userid":14,"orderid":14,"name":null,"total":105.000000,"createtime":null,"remark":"testOneTime14","sequence":null,"abc":null,"updatetime":null},{"id":853421104037931,"userid":2,"orderid":2,"name":null,"total":93.000000,"createtime":null,"remark":"changed by sharding!","sequence":null,"abc":null,"updatetime":null},{"id":853421104037937,"userid":8,"orderid":8,"name":null,"total":99.000000,"createtime":null,"remark":"testOneTime8","sequence":null,"abc":null,"updatetime":null},{"id":853421104037943,"userid":14,"orderid":14,"name":null,"total":105.000000,"createtime":null,"remark":"testOneTime14","sequence":null,"abc":null,"updatetime":null},{"id":853421104037951,"userid":2,"orderid":2,"name":null,"total":93.000000,"createtime":null,"remark":"changed by sharding!","sequence":null,"abc":null,"updatetime":null},{"id":853421104037957,"userid":8,"orderid":8,"name":null,"total":99.000000,"createtime":null,"remark":"testOneTime8","sequence":null,"abc":null,"updatetime":null},{"id":853421104037963,"userid":14,"orderid":14,"name":null,"total":105.000000,"createtime":null,"remark":"testOneTime14","sequence":null,"abc":null,"updatetime":null}]
+[DEBUG] dsNameList: []
+[DEBUG] tabNameList: []
+[DEBUG] tabSuffixList: []
+[DEBUG] tab2DsMap: {}
+[WARN] Do not set the sharding value for table!
+[INFO] [Bee] selectJson SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders[$#(index)#$] limit 0,2   [values]: 
+[INFO] [Bee] selectJson SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders[$#(index)#$] limit 0,2
+[INFO] [Bee] ========= Do sharding , the size of sub operation is :6
+[INFO] [Bee] selectJson SQL(sharding 1) : select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders0 limit 0,2   [values]: 
+[INFO] [Bee] selectJson SQL(sharding 2) : select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders1 limit 0,2   [values]: 
+[INFO] [Bee] selectJson SQL(sharding 3) : select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders2 limit 0,2   [values]: 
+[INFO] [Bee] selectJson SQL(sharding 6) : select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders5 limit 0,2   [values]: 
+[INFO] [Bee] selectJson SQL(sharding 2) :  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders1 limit 0,2
+[INFO] [Bee] selectJson SQL(sharding 4) : select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders3 limit 0,2   [values]: 
+[INFO] [Bee] selectJson SQL(sharding 5) : select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders4 limit 0,2   [values]: 
+[INFO] [Bee] selectJson SQL(sharding 1) :  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders0 limit 0,2
+[INFO] [Bee] selectJson SQL(sharding 6) :  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders5 limit 0,2
+[INFO] [Bee] selectJson SQL(sharding 3) :  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders2 limit 0,2
+[INFO] [Bee] selectJson SQL(sharding 4) :  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders3 limit 0,2
+[INFO] [Bee] ========= the current DataSource name is :ds0 (sharding 2)
+[INFO] [Bee] selectJson SQL(sharding 5) :  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders4 limit 0,2
+[INFO] [Bee] ========= the current DataSource name is :ds0 (sharding 3)
+[INFO] [Bee] ========= the current DataSource name is :ds0 (sharding 1)
+[INFO] [Bee] ========= the current DataSource name is :ds1 (sharding 4)
+[INFO] [Bee] ========= the current DataSource name is :ds1 (sharding 6)
+[INFO] [Bee] ========= the current DataSource name is :ds1 (sharding 5)
+[INFO] [Bee]  | <--  select rows: 2 (sharding 2)
+[INFO] [Bee]  | <--  select rows: 2 (sharding 1)
+[INFO] [Bee]  | <--  select rows: 2 (sharding 3)
+[INFO] [Bee]  | <--  select rows: 2 (sharding 4)
+[INFO] [Bee]  | <--  select rows: 2 (sharding 5)
+[INFO] [Bee]  | <--  select rows: 2 (sharding 6)
+[INFO] Use the json jar is com.fasterxml.jackson!
+[INFO] [Bee]  | <--  select rows: 2
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] selectJson(new Orders()):
+[INFO] [{"id":853421104037911,"userid":2,"orderid":2,"name":null,"total":93.000000,"createtime":null,"remark":"changed by sharding!","sequence":null,"abc":null,"updatetime":null},{"id":853421104037917,"userid":8,"orderid":8,"name":null,"total":99.000000,"createtime":null,"remark":"testOneTime8","sequence":null,"abc":null,"updatetime":null}]
+[INFO] Orders1[id=853421104037911,userid=2,orderid=2,name=null,total=93.000000,createtime=null,remark=changed by sharding!,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037917,userid=8,orderid=8,name=null,total=99.000000,createtime=null,remark=testOneTime8,sequence=null,abc=null,updatetime=null]
+[INFO] [{"id":853421104037911,"userid":2,"orderid":2,"name":null,"total":93.000000,"createtime":null,"remark":"changed by sharding!","sequence":null,"abc":null,"updatetime":null},{"id":853421104037917,"userid":8,"orderid":8,"name":null,"total":99.000000,"createtime":null,"remark":"testOneTime8","sequence":null,"abc":null,"updatetime":null}]
+[DEBUG] dsNameList: [ds0]
+[DEBUG] tabNameList: [orders0, orders1]
+[DEBUG] tabSuffixList: [0, 1]
+[DEBUG] tab2DsMap: {0=ds0, orders1=ds0, 1=ds0, orders0=ds0}
+[DEBUG] after process: 
+[DEBUG] dsNameList: [ds0]
+[DEBUG] tabNameList: [orders0, orders1]
+[DEBUG] tabSuffixList: [0, 1]
+[DEBUG] tab2DsMap: {0=ds0, orders1=ds0, 1=ds0, orders0=ds0}
+[INFO] [Bee] selectJson SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders[$#(index)#$] where userid=? or userid=? limit 0,2   [values]: 0(Integer),1(Integer)
+[INFO] [Bee] selectJson SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders[$#(index)#$] where userid=0 or userid=1 limit 0,2 ;
+[INFO] [Bee] ========= Do sharding , the size of sub operation is :1
+[INFO] [Bee] selectJson SQL(sharding 1) : select * from ((select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders0 where userid=? or userid=? limit 0,2) union all (select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders1 where userid=? or userid=? limit 0,2)) _union_select limit 0,2   [values]: 0(Integer),1(Integer),0(Integer),1(Integer)
+[INFO] [Bee] selectJson SQL(sharding 1) :  ( ExecutableSql )
+select * from ((select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders0 where userid=0 or userid=1 limit 0,2) union all (select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders1 where userid=0 or userid=1 limit 0,2)) _union_select limit 0,2 ;
+[INFO] [Bee] ========= the current DataSource name is :ds0 (sharding 1)
+[INFO] [Bee]  | <--  select rows: 2 (sharding 1)
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] selectJson(new Orders()):
+[INFO] [{"id":"853421104037909","userid":"0","orderid":"0","name":null,"total":91.000000,"createtime":null,"remark":"testOneTime0","sequence":null,"abc":null,"updatetime":null},{"id":"853421104037929","userid":"0","orderid":"0","name":null,"total":91.000000,"createtime":null,"remark":"testOneTime0","sequence":null,"abc":null,"updatetime":null}]
+[INFO] Orders1[id=853421104037909,userid=0,orderid=0,name=null,total=91.000000,createtime=null,remark=testOneTime0,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037929,userid=0,orderid=0,name=null,total=91.000000,createtime=null,remark=testOneTime0,sequence=null,abc=null,updatetime=null]
+[INFO] [{"id":853421104037909,"userid":0,"orderid":0,"name":null,"total":91.000000,"createtime":null,"remark":"testOneTime0","sequence":null,"abc":null,"updatetime":null},{"id":853421104037929,"userid":0,"orderid":0,"name":null,"total":91.000000,"createtime":null,"remark":"testOneTime0","sequence":null,"abc":null,"updatetime":null}]
+[DEBUG] dsNameList: [ds0, ds1]
+[DEBUG] tabNameList: [orders0, orders1, orders4]
+[DEBUG] tabSuffixList: [0, 1, 4]
+[DEBUG] tab2DsMap: {0=ds0, orders1=ds0, 1=ds0, orders4=ds1, 4=ds1, orders0=ds0}
+[DEBUG] after process: 
+[DEBUG] dsNameList: [ds0, ds1]
+[DEBUG] tabNameList: [orders0, orders1, orders4]
+[DEBUG] tabSuffixList: [0, 1, 4]
+[DEBUG] tab2DsMap: {0=ds0, orders1=ds0, 1=ds0, orders4=ds1, 4=ds1, orders0=ds0}
+[INFO] [Bee] selectJson SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders[$#(index)#$] where userid=? or userid=? or userid=? limit 0,2   [values]: 0(Integer),1(Integer),4(Integer)
+[INFO] [Bee] selectJson SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders[$#(index)#$] where userid=0 or userid=1 or userid=4 limit 0,2 ;
+[WARN] Involved many dataSource or not supported union all!! 
+[INFO] [Bee] ========= Do sharding , the size of sub operation is :3
+[INFO] [Bee] selectJson SQL(sharding 1) : select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders0 where userid=? or userid=? or userid=? limit 0,2   [values]: 0(Integer),1(Integer),4(Integer)
+[INFO] [Bee] selectJson SQL(sharding 2) : select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders1 where userid=? or userid=? or userid=? limit 0,2   [values]: 0(Integer),1(Integer),4(Integer)
+[INFO] [Bee] selectJson SQL(sharding 3) : select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders4 where userid=? or userid=? or userid=? limit 0,2   [values]: 0(Integer),1(Integer),4(Integer)
+[INFO] [Bee] selectJson SQL(sharding 1) :  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders0 where userid=0 or userid=1 or userid=4 limit 0,2 ;
+[INFO] [Bee] selectJson SQL(sharding 2) :  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders1 where userid=0 or userid=1 or userid=4 limit 0,2 ;
+[INFO] [Bee] selectJson SQL(sharding 3) :  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders4 where userid=0 or userid=1 or userid=4 limit 0,2 ;
+[INFO] [Bee] ========= the current DataSource name is :ds0 (sharding 1)
+[INFO] [Bee] ========= the current DataSource name is :ds1 (sharding 3)
+[INFO] [Bee] ========= the current DataSource name is :ds0 (sharding 2)
+[INFO] [Bee]  | <--  select rows: 2 (sharding 1)
+[INFO] [Bee]  | <--  select rows: 2 (sharding 2)
+[INFO] [Bee]  | <--  select rows: 2 (sharding 3)
+[INFO] [Bee]  | <--  select rows: 2
+[INFO] selectJson(new Orders()):
+[INFO] [{"id":853421104037909,"userid":0,"orderid":0,"name":null,"total":91.000000,"createtime":null,"remark":"testOneTime0","sequence":null,"abc":null,"updatetime":null},{"id":853421104037929,"userid":0,"orderid":0,"name":null,"total":91.000000,"createtime":null,"remark":"testOneTime0","sequence":null,"abc":null,"updatetime":null}]
+[INFO] Orders1[id=853421104037909,userid=0,orderid=0,name=null,total=91.000000,createtime=null,remark=testOneTime0,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037929,userid=0,orderid=0,name=null,total=91.000000,createtime=null,remark=testOneTime0,sequence=null,abc=null,updatetime=null]
+[DEBUG] dsNameList: [ds0, ds1]
+[DEBUG] tabNameList: [orders0, orders1, orders4]
+[DEBUG] tabSuffixList: [0, 1, 4]
+[DEBUG] tab2DsMap: {0=ds0, orders1=ds0, 1=ds0, orders4=ds1, 4=ds1, orders0=ds0}
+[DEBUG] after process: 
+[DEBUG] dsNameList: [ds0, ds1]
+[DEBUG] tabNameList: [orders0, orders1, orders4]
+[DEBUG] tabSuffixList: [0, 1, 4]
+[DEBUG] tab2DsMap: {0=ds0, orders1=ds0, 1=ds0, orders4=ds1, 4=ds1, orders0=ds0}
+[INFO] [Bee] selectJson SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders[$#(index)#$] where userid=? or userid=? or userid=? limit 0,2   [values]: 0(Integer),1(Integer),4(Integer)
+[INFO] [Bee] selectJson SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders[$#(index)#$] where userid=0 or userid=1 or userid=4 limit 0,2 ;
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee] ========= Involved DataSource: [ds0, ds1]  ,Involved Table: [orders0, orders1, orders4]
+[DEBUG] dsNameList: [ds0]
+[DEBUG] tabNameList: [orders0]
+[DEBUG] tabSuffixList: [0]
+[DEBUG] tab2DsMap: {0=ds0, orders0=ds0}
+[INFO] [Bee] Reset the DataSource OneTime, ds name:ds0
+[INFO] [Bee] Reset the tabName OneTime, tabName:orders0
+[INFO] [Bee] selectJson SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders0 where userid=? limit ?,?   [values]: 0(Integer),0(Integer),2(Integer)
+[INFO] [Bee] selectJson SQL:  ( ExecutableSql )
+select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders0 where userid=0 limit 0,2 ;
+[INFO] [Bee] ========= the current DataSource name is :ds0
+[INFO] [Bee]  | <--  select rows: 2
+[INFO] selectJson(new Orders()):
+[INFO] [{"id":"853421104037909","userid":"0","orderid":"0","name":null,"total":91.000000,"createtime":null,"remark":"testOneTime0","sequence":null,"abc":null,"updatetime":null},{"id":"853421104037929","userid":"0","orderid":"0","name":null,"total":91.000000,"createtime":null,"remark":"testOneTime0","sequence":null,"abc":null,"updatetime":null}]
+[INFO] Orders1[id=853421104037909,userid=0,orderid=0,name=null,total=91.000000,createtime=null,remark=testOneTime0,sequence=null,abc=null,updatetime=null]
+[INFO] Orders1[id=853421104037929,userid=0,orderid=0,name=null,total=91.000000,createtime=null,remark=testOneTime0,sequence=null,abc=null,updatetime=null]
+[INFO] [{"id":853421104037909,"userid":0,"orderid":0,"name":null,"total":91.000000,"createtime":null,"remark":"testOneTime0","sequence":null,"abc":null,"updatetime":null},{"id":853421104037929,"userid":0,"orderid":0,"name":null,"total":91.000000,"createtime":null,"remark":"testOneTime0","sequence":null,"abc":null,"updatetime":null}]
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] select limit 0 5 * from orders
+[INFO] select limit 1 5 * from orders
+[INFO] select * from orders offset 0 rows fetch next 5 rows
+[INFO] select * from orders offset 1 rows fetch next 5 rows

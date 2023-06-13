@@ -29,11 +29,12 @@ public abstract class BaseMongoTest {
 	@Before
 	public void setUp() {
 		ClearDsAndMongoDsUtil.clearConfig(); //先清空 
-		
+//		HoneyConfig.getHoneyConfig().multiDS_justMongodb=true;
 		HoneyConfig config=HoneyConfig.getHoneyConfig();
 		config.setUrl("mongodb://localhost:27017/bee/");
 		config.setUsername("");
 		config.setPassword("");
+		config.multiDS_justMongodb=true;
 		
 //		InitDsAndMongoDsUtil.initDS();
 	}

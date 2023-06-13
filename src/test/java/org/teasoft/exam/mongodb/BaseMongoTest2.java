@@ -20,6 +20,7 @@ import org.teasoft.honey.osql.core.HoneyConfig;
  * @author Kingstar
  * @since  2.1
  */
+//sharding
 public abstract class BaseMongoTest2 {
 	
 	static {

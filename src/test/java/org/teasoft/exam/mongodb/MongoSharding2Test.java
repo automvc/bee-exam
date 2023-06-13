@@ -6,29 +6,18 @@ import org.teasoft.exam.bee.mongodb.sharding.*;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.Logger;
 
-public class MongoShardingTest extends BaseMongoTest2 {
+public class MongoSharding2Test extends BaseMongoTest2 {
 
 	@Test
 	public void test() {
 
-		System.out.println("---Bee MongoShardingTest with junit start:------");
+		System.out.println("---Bee MongoSharding2Test with junit start:------");
 
 		boolean result = false;
 		try {
 			HoneyConfig.getHoneyConfig().multiDS_justMongodb=true;
+			System.out.println("---------------db: "+HoneyConfig.getHoneyConfig().getDbName());
 			DdlForShardingTest2.test();
-//			Select.test();
-			SelectWithFun.test();
-			SelectWithFun2.test();
-			ShardingPaging.test();
-			ShardingPaging2.test();
-			ShardingPaging2_deleteCache.test();
-			ShardingPaging_between.test();
-			ShardingSimpleExam4_2.test();
-			Test4_insert.test();
-			Test4_insertBroadcastTable.test();
-			Test4_insertList.test();
-			Test4_selectBroadcastTable.test();
 			
 			result = true;
 		} catch (Exception e) {
@@ -39,6 +28,6 @@ public class MongoShardingTest extends BaseMongoTest2 {
 			Assert.assertEquals(result, true);
 		}
 
-		System.out.println("---Bee MongoShardingTest with junit end.------");
+		System.out.println("---Bee MongoSharding2Test with junit end.------");
 	}
 }

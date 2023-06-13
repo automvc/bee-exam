@@ -8,13 +8,14 @@ package org.teasoft.exam.coverage;
 
 import org.junit.Test;
 import org.teasoft.bee.mvc.service.ObjSQLRichService;
-import org.teasoft.bee.osql.NameTranslate;
-import org.teasoft.honey.osql.core.NameTranslateHandle;
+import org.teasoft.bee.osql.api.Condition;
+import org.teasoft.exam.bee.osql.commomid.Noid;
 import org.teasoft.honey.osql.core.ObjSQL;
 import org.teasoft.honey.osql.core.ObjSQLRich;
 import org.teasoft.honey.osql.name.UpperCaseUnderScoreAndCamelName;
 import org.teasoft.honey.osql.serviceimpl.ObjSQLRichServiceImpl;
 import org.teasoft.honey.osql.serviceimpl.ObjSQLServiceImpl;
+import org.teasoft.honey.osql.shortcut.BF;
 
 /**
  * @author Kingstar
@@ -22,7 +23,7 @@ import org.teasoft.honey.osql.serviceimpl.ObjSQLServiceImpl;
  */
 public class Service {
 	
-//	@Test
+	@Test
 	public void test() {
 		
 //		NameTranslate oldNameTranslate=NameTranslateHandle.getNameTranslate();
@@ -44,6 +45,27 @@ public class Service {
 //		NameTranslateHandle.setNameTranslate(oldNameTranslate); 
 		service2.setSuidRich(new ObjSQLRich());
 		service2.getSuidRich();
+		
+		
+		service2.indexNormal(Noid.class, "uuid", "indexNormal_uuid");
+		service2.dropIndex(Noid.class, "indexNormal_uuid");
+		
+		service2.unique(Noid.class, "uuid", "indexNormal_uuid");
+		service2.dropIndex(Noid.class, "indexNormal_uuid");
+		
+		service2.primaryKey(Noid.class, "uuid", "indexNormal_uuid");
+		service2.dropIndex(Noid.class, "indexNormal_uuid");
+		
+		Noid noid = new Noid();
+		noid.setUuid("aaaaaa-no-id");
+		noid.setName("new name--new");
+
+		service2.update(noid, "name");
+		service2.updateBy(noid, "uuid");
+
+		Condition c = BF.getCondition();
+		service2.update(noid, c, "name");
+		service2.updateBy(noid, c, "uuid");
 		
 	}
 }

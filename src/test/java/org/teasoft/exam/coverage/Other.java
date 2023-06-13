@@ -6,13 +6,21 @@
 
 package org.teasoft.exam.coverage;
 
+import java.sql.SQLException;
+
 import org.junit.Test;
+import org.teasoft.bee.android.CreateAndUpgradeRegistry;
+import org.teasoft.bee.ds.DataSourceBuilderFactory;
 import org.teasoft.bee.sharding.DsTabStruct;
 import org.teasoft.bee.sharding.ShardingSimpleStruct;
 import org.teasoft.bee.sharding.algorithm.CalculateRegistry;
+import org.teasoft.beex.ds.C3p0DataSourceBuilder;
+import org.teasoft.honey.jdbc.EmptyConnection;
+import org.teasoft.honey.jdbc.EmptyDataSource;
 import org.teasoft.honey.osql.core.BeeInitPreLoadService;
 import org.teasoft.honey.osql.interccept.EmptyInterceptor;
 import org.teasoft.honey.osql.shortcut.BF;
+import org.teasoft.honey.osql.shortcut.HM;
 
 /**
  * @author Kingstar
@@ -66,6 +74,43 @@ public class Other {
 		
 		new DictI18nDefaultHandlerTest();
 		
+		new HM();
+		
+		DataSourceBuilderFactory.register("Test_DbBuilder", new C3p0DataSourceBuilder());
+		DataSourceBuilderFactory.getDataSourceBuilder("Test_DbBuilder");
+		
+		CreateAndUpgradeRegistry.getCreateAndUpgrade();
+		CreateAndUpgradeRegistry.register(null);
+		
+		try {
+
+			EmptyDataSource emptyDataSource = new EmptyDataSource();
+			emptyDataSource.getConnection();
+			emptyDataSource.getLoginTimeout();
+			emptyDataSource.getLoginTimeout();
+			emptyDataSource.getLogWriter();
+			emptyDataSource.getParentLogger();
+
+		} catch (SQLException e) {
+//			e.printStackTrace();
+		}
+		try {
+		EmptyConnection ec=new EmptyConnection();
+		ec.getAutoCommit();
+		ec.getCatalog();
+		ec.getClientInfo();
+		ec.getHoldability();
+		ec.getMetaData();
+		ec.getMetaData();
+		ec.getNetworkTimeout();
+		ec.getSchema();
+		ec.getSchema();
+		ec.getTransactionIsolation();
+		ec.getTypeMap();
+		ec.getWarnings();
+		} catch (SQLException e) {
+//			e.printStackTrace();
+		}
 	}
 
 }

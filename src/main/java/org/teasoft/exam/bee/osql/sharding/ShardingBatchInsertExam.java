@@ -37,7 +37,7 @@ public class ShardingBatchInsertExam {
 		System.out.println("------Sharding test--------ShardingBatchInsertExam-----");
 		ShardingInitData.init(); // 分片
 		InitSameDsUtil.initDS();
-		test0();
+		test();
 	}
 
 	public static void test(){
@@ -59,7 +59,7 @@ public class ShardingBatchInsertExam {
 
 			Orders orders1 = new Orders();
 //			orders1.setId(10005L);
-//			orders1.setUserid(0L);
+			orders1.setUserid(4L);
 			orders1.setOrderid(4L);
 			orders1.setRemark("testOneTime");
 			orders1.setTotal(new BigDecimal(20));

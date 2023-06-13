@@ -45,9 +45,15 @@ public class ShardingGroup3 {
 		Condition condition=BF.getCondition();
 		condition
         .lParentheses()
-		.op(Orders_F3.orderid, Op.eq, 1)
+		.op(Orders_F.orderid, Op.eq, 1)
 		.or()
-		.op(Orders_F3.orderid, Op.eq, 2)
+		.op(Orders_F.orderid, Op.eq, 2)
+		.or()
+		.op(Orders_F.orderid, Op.eq, 3)
+		.or()
+		.op(Orders_F.orderid, Op.eq, 4)
+		.or()
+		.op(Orders_F.orderid, Op.eq, 5)
 		.rParentheses()
 		;
 		
@@ -59,8 +65,8 @@ public class ShardingGroup3 {
 		condition.groupBy(Orders_F3.orderid);
 		
 //		condition.orderBy("userid",OrderType.DESC);// bug
-		condition.orderBy("userId",OrderType.DESC);// bug
-//		condition.orderBy("userid",OrderType.ASC);
+//		condition.orderBy("userId",OrderType.DESC);// bug
+		condition.orderBy("userid",OrderType.ASC);
 //		condition.orderBy("userId",OrderType.ASC);
 //		condition.orderBy("total",OrderType.DESC);
 		

@@ -42,16 +42,22 @@ public class ShardingGroup4 {
 //		orders1.setName("Bee(ORM Framework)");
 		
 		Condition condition=BF.getCondition();
-		condition
-        .lParentheses()
-		.op(Orders_F.orderid, Op.eq, 1)
-		.or()
-		.op(Orders_F.orderid, Op.eq, 2)
-		.rParentheses()
-		;
+//		condition
+//        .lParentheses()
+//		.op(Orders_F.orderid, Op.eq, 1)
+//		.or()
+//		.op(Orders_F.orderid, Op.eq, 2)
+//		.or()
+//		.op(Orders_F.orderid, Op.eq, 3)
+//		.or()
+//		.op(Orders_F.orderid, Op.eq, 4)
+//		.or()
+//		.op(Orders_F.orderid, Op.eq, 5)
+//		.rParentheses()
+//		;
 		
-		condition.selectFun(FunctionType.MAX, Orders_F.total,"maxTotal");
-//		condition.selectFun(FunctionType.AVG, Orders_F.total,"avgTotal");
+//		condition.selectFun(FunctionType.MAX, Orders_F.total,"maxTotal");
+		condition.selectFun(FunctionType.AVG, Orders_F.total,"avgTotal");
 		condition.selectField("userid,orderid");
 		
 		condition.groupBy(Orders_F.userid);

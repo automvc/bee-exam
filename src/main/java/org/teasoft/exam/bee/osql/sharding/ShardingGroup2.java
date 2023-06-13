@@ -47,6 +47,12 @@ public class ShardingGroup2 {
 		.op(Orders_F.orderid, Op.eq, 1)
 		.or()
 		.op(Orders_F.orderid, Op.eq, 2)
+		.or()
+		.op(Orders_F.orderid, Op.eq, 3)
+		.or()
+		.op(Orders_F.orderid, Op.eq, 4)
+		.or()
+		.op(Orders_F.orderid, Op.eq, 5)
 		.rParentheses()
 		;
 		
@@ -63,8 +69,8 @@ public class ShardingGroup2 {
 		
 		condition
 //		.start(6)
-		.start(0)
-//		.start(1)
+//		.start(0)
+		.start(1)
 		.size(5);
 		
 		

@@ -48,7 +48,8 @@ public class ShardingBatchInsert2 {
 			orders.setRemark("testOneTime" + i);
 			ordersArray[i] = orders;
 		}
-		int insertArray = suidRich.insert(ordersArray, 3, "id,createtime,updatetime");// batch insert
+//		int insertArray = suidRich.insert(ordersArray, 3, "id,createtime,updatetime");// bug
+		int insertArray = suidRich.insert(ordersArray, 3);// batch insert
 		Logger.info(insertArray);
 	
 //		int r=0;

@@ -14,23 +14,23 @@ import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.sharding.ShardingUtil;
 
 /**
- * 多库多表+ 排序+分页.
+ * 同库多个表 +分页 +  排序
  * @author Kingstar
  * @since  2.0
  */
-public class ShardingPagingSort {
+public class ShardingPagingSort2_2 {
 	
 	public static void main(String[] args) {
-		InitSameDsUtil.initDS();
-		ShardingInitData.init();
+		InitSameDsUtil2.initDS();
+		ShardingInitData2.init();
 		test();
 	}
 
 	public static void test(){
-		System.out.println("------Sharding test--------ShardingPagingSort-----");
+		System.out.println("------Sharding test--------ShardingPagingSort2-----");
 		
-//		test(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.
-//		test(2);
+		test(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.
+		test(2);
 		test(-1);
 	}
 	
@@ -42,15 +42,14 @@ public class ShardingPagingSort {
 		
 		Condition condition=BF.getCondition();
 		condition
+//		.op(Orders_F.userid, Op.eq, 0)
         .lParentheses()
-		.op(Orders_F.userid, Op.eq, 1)
+		.op(Orders_F.orderid, Op.eq, 1)
 		.or()
-		.op(Orders_F.userid, Op.eq, 2)
+		.op(Orders_F.orderid, Op.eq, 2)
 		.or()
-		.op(Orders_F.userid, Op.eq, 3)
+		.op(Orders_F.orderid, Op.eq, 0)
 		.rParentheses()
-		.or()
-		.op(Orders_F.orderid, Op.eq, 3)
 		;
 		
 		condition
@@ -61,6 +60,7 @@ public class ShardingPagingSort {
 		
 		condition
 //		.start(6)
+//		.start(1)
 		.start(startIndex)
 		.size(2);
 		

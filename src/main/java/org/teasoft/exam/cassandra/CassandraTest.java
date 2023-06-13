@@ -13,8 +13,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.teasoft.bee.osql.PreparedSql;
-import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.api.PreparedSql;
+import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.core.NameTranslateHandle;

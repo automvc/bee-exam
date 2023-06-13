@@ -38,6 +38,12 @@ public class AnnoAdapterTest {
 			
 			Field field = new Clazz1().getClass().getDeclaredField("remark");
 			annoAdapter.getValue(field);
+			
+			annoAdapter.isPrimaryKey(field);
+			annoAdapter.isTable(Student1.class);
+			annoAdapter.isColumn(field);
+			annoAdapter.isIgnore(field);
+			
 		} catch (Exception e) {
 			Logger.debug(e.getMessage());
 		}

@@ -7,9 +7,9 @@
 package org.teasoft.honey.osql.util;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 import org.junit.Test;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar
@@ -39,6 +39,20 @@ public class DateUtilTest {
 		System.out.println(d1);
 		Timestamp d2=DateUtil.jumpDays(d1,8);
 		System.out.println(d2);
+		
+		DateUtil.currentDate("yyyy-MM-dd HH:mm:ss");
+		DateUtil.toSqlDate(new Date());
+		DateUtil.toTimestamp(new Date());
+		DateUtil.toDateStr(new Date());
+		DateUtil.countAge("2010-10-20");
+		DateUtil.yyyy_MM_dd("2010-10-20");
+		DateUtil.yyyy_MM_dd("2010-02-29");
+		DateUtil.yyyy_MM_dd("2010-10-32");
+		DateUtil.yyyyMMdd("20101020");
+		DateUtil.yyyyMMdd("20100228");
+		DateUtil.yyyyMMdd("20101032");
+		DateUtil.yyyyMMdd("2010-10-30"); //写多了-
+		DateUtil.checkDate("2010-10-20", "yyyy-MM-dd");
 		
 		
 		System.out.println(DateUtil.jumpDaysExact(0));

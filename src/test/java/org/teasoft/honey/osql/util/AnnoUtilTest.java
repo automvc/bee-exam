@@ -27,6 +27,7 @@ public class AnnoUtilTest {
 		AnnoUtil.isDict(field);
 		AnnoUtil.isDictI18n(field);
 		AnnoUtil.isColumn(field);
+		AnnoUtil.isGenPkAnno(field);
 	}
 
 }

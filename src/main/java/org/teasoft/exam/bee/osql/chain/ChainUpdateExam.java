@@ -58,12 +58,15 @@ public class ChainUpdateExam {
 		  Logger.info("updateNum: "+updateNum);
 		}
 		
+		Number remark3=null;
 		//just test sql
         try {
         	Update updateSql2=new UpdateImpl();
         	updateSql2.update("team_id")
     		.set("total", 11)
     		.set("remark", "test")
+    		.set("remark2", "")
+    		.set("remark3", remark3)
 //    		.where()
     		.where("1=1")
     		.op("price", 99)

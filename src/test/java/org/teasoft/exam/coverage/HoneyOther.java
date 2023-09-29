@@ -8,6 +8,7 @@ package org.teasoft.exam.coverage;
 
 import org.junit.Test;
 import org.teasoft.honey.osql.autogen.GenConfig;
+import org.teasoft.honey.osql.core.BootApplicationProp;
 import org.teasoft.honey.osql.core.NoCache;
 
 /**
@@ -36,6 +37,12 @@ public class HoneyOther {
 		noCache.add("test noCache", null);
 		noCache.clear("test noCache");
 		noCache.get("test noCache");
+		
+//		BeeActiveProp prop=new BeeActiveProp("bee-dev.properties");
+		BootApplicationProp prop=new BootApplicationProp();
+		prop.getKeys();
+		prop.getProp(BootApplicationProp.DATASOURCE_URL);
+		prop.getPropText(BootApplicationProp.DATASOURCE_USERNAME);
 		
 	}
 

@@ -13,6 +13,7 @@ import org.teasoft.bee.spi.AnnoAdapter;
 import org.teasoft.bee.spi.defaultimpl.AnnoAdapterBeeDefault;
 import org.teasoft.exam.bee.osql.annotation.moretable.Clazz1;
 import org.teasoft.exam.bee.osql.annotation.moretable.Student1;
+import org.teasoft.exam.bee.osql.entity.dynamic.Orders;
 import org.teasoft.honey.osql.core.Logger;
 
 /**
@@ -39,10 +40,19 @@ public class AnnoAdapterTest {
 			Field field = new Clazz1().getClass().getDeclaredField("remark");
 			annoAdapter.getValue(field);
 			
+			Field field2 = org.teasoft.exam.bee.osql.special.Orders.class.getDeclaredField("name2");
+			annoAdapter.getValue(field2);
+			
+			
 			annoAdapter.isPrimaryKey(field);
 			annoAdapter.isTable(Student1.class);
 			annoAdapter.isColumn(field);
 			annoAdapter.isIgnore(field);
+			
+			annoAdapter.getValue(Orders.class);
+			
+			
+			
 			
 		} catch (Exception e) {
 			Logger.debug(e.getMessage());

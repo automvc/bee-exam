@@ -11,8 +11,15 @@ import java.sql.SQLException;
 import org.junit.Test;
 import org.teasoft.bee.android.CreateAndUpgradeRegistry;
 import org.teasoft.bee.ds.DataSourceBuilderFactory;
+import org.teasoft.bee.mongodb.BoxPara;
+import org.teasoft.bee.mongodb.CenterPara;
+import org.teasoft.bee.mongodb.GridFsFile;
+import org.teasoft.bee.mongodb.NearPara;
+import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.sharding.DsTabStruct;
+import org.teasoft.bee.sharding.FunStruct;
 import org.teasoft.bee.sharding.ShardingSimpleStruct;
+import org.teasoft.bee.sharding.ShardingSortStruct;
 import org.teasoft.bee.sharding.algorithm.CalculateRegistry;
 import org.teasoft.beex.ds.C3p0DataSourceBuilder;
 import org.teasoft.honey.jdbc.EmptyConnection;
@@ -69,6 +76,31 @@ public class Other {
 		dsTab.getDsName();
 		dsTab.getTabSuffix();
 		
+		ShardingSortStruct strutct=new ShardingSortStruct();
+		strutct.setCaseSensitive(new boolean[]{false,false});
+		strutct.setIndex(new int[] {0,1});
+		strutct.setNullFirst(new boolean[]{false,false});
+		strutct.setOrderFields(new String[]{"id","name"});
+		strutct.setOrderSql("");
+		strutct.setOrderTypes(new OrderType[] {OrderType.ASC,OrderType.DESC});
+		strutct.setRegFlag(false);
+		strutct.setType(new String[]{"Number","String"});
+		
+		strutct.getCaseSensitive();
+		strutct.getIndex();
+		strutct.getNullFirst();
+		strutct.getOrderFields();
+		strutct.getOrderFields();
+		strutct.getOrderSql();
+		strutct.getOrderTypes();
+		strutct.isRegFlag();
+		
+		FunStruct funStruct=new FunStruct();
+		funStruct.setFieldName("id");
+		funStruct.setFunctionType("max");
+		funStruct.getFieldName();
+		funStruct.getFunctionType();
+		
 		CalculateRegistry.register(5, new TestCalculate());
 		CalculateRegistry.getCalculate(5);
 		
@@ -111,6 +143,38 @@ public class Other {
 		} catch (SQLException e) {
 //			e.printStackTrace();
 		}
+		
+		//mongodb
+		
+		NearPara nearPara=new NearPara();
+		nearPara.setGeoFieldName("test");
+		nearPara.setX(1D);
+		nearPara.setY(1D);
+		nearPara.setMinDistance(1d);
+		nearPara.setMaxDistance(2D);
+		
+		CenterPara centerPara=new CenterPara();
+		centerPara.setGeoFieldName("test");
+		centerPara.setX(1D);
+		centerPara.setY(1D);
+		centerPara.setRadius(0.5D);
+		
+		BoxPara boxPara=new BoxPara();
+		boxPara.setGeoFieldName("test");
+		boxPara.setLowerLeftX(1D);
+		boxPara.setLowerLeftY(2D);
+		boxPara.setUpperRightX(1D);
+		boxPara.setUpperRightY(1D);
+		
+		GridFsFile gridFsFile=new GridFsFile();
+		gridFsFile.setFilename("testid");
+		gridFsFile.setLength(1L);
+		gridFsFile.setChunkSize(1);
+		gridFsFile.getChunkSize();
+		gridFsFile.getFilename();
+		gridFsFile.getId();
+		gridFsFile.getLength();
+		
 	}
 
 }

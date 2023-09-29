@@ -18,10 +18,9 @@ import org.teasoft.exam.bee.osql.LockWaitTimeout;
 import org.teasoft.exam.bee.osql.MapSuidExam;
 import org.teasoft.exam.bee.osql.MoreSQLFunction;
 import org.teasoft.exam.bee.osql.MoreTableExam;
-import org.teasoft.exam.bee.osql.Naming2Test;
-import org.teasoft.exam.bee.osql.Naming3Test;
 import org.teasoft.exam.bee.osql.NamingTest;
 import org.teasoft.exam.bee.osql.PreparedSqlExam;
+import org.teasoft.exam.bee.osql.PreparedSqlUpdateExam;
 import org.teasoft.exam.bee.osql.SearchExam;
 import org.teasoft.exam.bee.osql.SelectById;
 import org.teasoft.exam.bee.osql.SelectFun;
@@ -90,19 +89,15 @@ public class TestNormal {
 //	   TestPrepare.init("normal(H2)");
 //	   TestPrepare.init("normal(PostgreSQL)");
 		
-		TestPrepare.init("normal("+HoneyContext.getDbDialect()+")");
 		
 	    try {
+	    	TestPrepare.init("normal("+HoneyContext.getDbDialect()+")");
 	    	
 	    ClearAndInitTestTable.main(null);   //TODO Notice! Just For test.
 	    
 		String DbName=HoneyConfig.getHoneyConfig().getDbName();
 		
-//		boolean enableMultiDs = HoneyConfig.getHoneyConfig().multiDS_enable;
-//		boolean isDifferentDbType = HoneyConfig.getHoneyConfig().multiDS_differentDbType;
-//		
-//		HoneyConfig.getHoneyConfig().multiDS_enable=true;
-//		HoneyConfig.getHoneyConfig().multiDS_differentDbType=true;
+		
 			
 		//How to generate the Javabean,please see GenBeanExam.
 		//生成Javabean,请查看GenBeanExam.
@@ -122,6 +117,7 @@ public class TestNormal {
 		runTest(UpdateByExam.class);
 		
 		runTest(PreparedSqlExam.class);
+		runTest(PreparedSqlUpdateExam.class);
 		
 		runTest(TransactionExam.class);
 		
@@ -156,8 +152,6 @@ public class TestNormal {
 		
 //		runTest(ObjSQLServiceExam.class);
 		runTest(NamingTest.class);
-		runTest(Naming2Test.class);
-		runTest(Naming3Test.class);
 		
 		runTest(IdTest.class);
 		

@@ -135,6 +135,28 @@ public class StringUtilsTest {
 		System.out.println(getUnicode("_"));
 		
 		
+		
+		String file = "abcd.jpg";
+		System.out.println(subRight(file, 3));
+		file = "jpg";
+		System.out.println(subRight(file, 3));
+		file = "pg";
+		System.out.println(subRight(file, 3));
+		file = "";
+		System.out.println(subRight(file, 3));
+		file = null;
+		System.out.println(subRight(file, 3));
+		
+//		String aa=StringUtils.toCommasString(Project_F.name,Project_F.orgId,Project_F.schoolId);
+//		System.out.println(aa);
+		
+		String bb[]= {"abc","cdef"};
+		String bb2=StringUtils.toCommasString(bb);
+		System.out.println(bb2);
+		
+		System.out.println(StringUtils.toCommasString(3));
+		
+		
 	}
 
 }

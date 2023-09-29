@@ -29,5 +29,10 @@ public class CurrencyArithmeticTest {
 		System.out.println(CurrencyArithmetic.subtract("-1", "2"));
 		System.out.println(CurrencyArithmetic.multiply("-1", "2"));
 		System.out.println(CurrencyArithmetic.divide("-1", "2"));
+		System.out.println(CurrencyArithmetic.calculate("-1","+", "2"));
+		System.out.println(CurrencyArithmetic.calculate("1","/", "3",2));
+		
+		
+		
 	}
 }

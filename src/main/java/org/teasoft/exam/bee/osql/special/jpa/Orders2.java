@@ -3,10 +3,12 @@ package org.teasoft.exam.bee.osql.special.jpa;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+//import javax.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
+
+import jakarta.persistence.Column;
 
 //import org.teasoft.bee.osql.annotation.Column;
 
@@ -15,14 +17,14 @@ import javax.persistence.Transient;
 *Create on 2022-08-11 12:41:06
 */
 @Table(name = "ORDERS")
-public class Orders implements Serializable {
+public class Orders2 implements Serializable {
 
 	private static final long serialVersionUID = 1593472489996L;
 
 	@Id
 	private Long id;
 	private String userid;
-	@Column(name = "name")
+	@Column(name = "name") //jakarta
 //	@Column(value = "name")
 	private String name2;
 	private BigDecimal total;

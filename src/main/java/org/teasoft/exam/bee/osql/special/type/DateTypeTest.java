@@ -15,7 +15,7 @@ import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.osql.type.SetParaTypeConverterRegistry;
 import org.teasoft.honey.osql.type.SqlDotDateTypeHandler;
 import org.teasoft.honey.osql.type.TypeHandlerRegistry;
-import org.teasoft.honey.osql.type.UtilDotDateTypeConvert;
+//import org.teasoft.honey.osql.type.UtilDotDateTypeConvert;
 import org.teasoft.honey.osql.type.UtilDotDateTypeHandler;
 import org.teasoft.honey.osql.util.DateUtil;
 
@@ -73,6 +73,7 @@ public class DateTypeTest {
 		
 //		Ddl.createTable(new DateType2(), true);
 		
+		
 //		suidRich.delete(new DateType2());
 		DateType2 dateType2=new DateType2();
 		dateType2.setDate3(new java.util.Date());
@@ -82,8 +83,8 @@ public class DateTypeTest {
 		suidRich.insert(dateType2);
 		
 //		SetParaTypeConverterRegistry.register(java.util.Date.class, new UtilDotDateTypeConvert<java.util.Date>());
-		SetParaTypeConverterRegistry.register(java.util.Date.class, new UtilDotDateTypeConvert<java.util.Date>(), DatabaseConst.MYSQL);
-		SetParaTypeConverterRegistry.register(java.util.Date.class, new UtilDotDateTypeConvert<java.util.Date>(), DatabaseConst.H2);
+//		SetParaTypeConverterRegistry.register(java.util.Date.class, new UtilDotDateTypeConvert<java.util.Date>(), DatabaseConst.MYSQL);
+//		SetParaTypeConverterRegistry.register(java.util.Date.class, new UtilDotDateTypeConvert<java.util.Date>(), DatabaseConst.H2);
 		//优先使用结果转换处理;  没有声明优先使用,则是默认转换不了,才使用
 //		TypeHandlerRegistry.register(java.util.Date.class, new UtilDotDateTypeHandler<java.util.Date>(),true); 
 //		TypeHandlerRegistry.register(java.sql.Date.class, new SqlDotDateTypeHandler<java.util.Date>(),true);  //SQLite

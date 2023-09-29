@@ -102,7 +102,7 @@ public class BeeTest {
 			
 //			KotlinTest.test();
 			
-			HoneyConfigReset.test(); //just run one time, put in last.
+//			HoneyConfigReset.test(); //just run one time, put in last.
 			result=true;
 		} catch (Exception e) {
 			e.printStackTrace();

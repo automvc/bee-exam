@@ -85,7 +85,7 @@ public class ServiceTest {
 			InsertAndReturnIdTest.setSuidRich(new ObjSQLRichServiceImpl());
 			InsertAndReturnIdTest.test();
 			
-			ObjSQLServiceExam.test();
+//			ObjSQLServiceExam.test();
 			
 //			DiffDdExamCustomerSql.setSuidRich(new ObjSQLRichServiceImpl());
 //			DiffDdExamCustomerSql.test();

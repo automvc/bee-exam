@@ -8,9 +8,26 @@ package org.teasoft.exam;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.teasoft.bee.osql.api.Suid;
+import org.teasoft.bee.osql.api.SuidRich;
+import org.teasoft.exam.bee.osql.ConditionExam;
+import org.teasoft.exam.bee.osql.DynamicTableExam;
 import org.teasoft.exam.bee.osql.InsertAndReturnIdTest;
+import org.teasoft.exam.bee.osql.InsertTest;
+import org.teasoft.exam.bee.osql.ObjSQLServiceExam;
+import org.teasoft.exam.bee.osql.SelectById;
+import org.teasoft.exam.bee.osql.SuidExam;
+import org.teasoft.exam.bee.osql.SuidRichExam;
+import org.teasoft.exam.bee.osql.UpdateByExam;
+import org.teasoft.exam.bee.osql.UpdateSetExam;
+import org.teasoft.exam.bee.osql.annotation.DatetimeExam;
+import org.teasoft.exam.bee.osql.annotation.DatetimeExam2;
+import org.teasoft.exam.bee.osql.ds.DiffDdExamCustomerSql;
+import org.teasoft.exam.bee.osql.ds.SuidWhichOne;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyContext;
+import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.osql.serviceimpl.ObjSQLRichServiceImpl;
 import org.teasoft.honey.osql.serviceimpl.ObjSQLServiceImpl;
 
 /**
@@ -31,61 +48,61 @@ public class ServiceTest2 {
 		boolean result = false;
 		try {
 			System.out.println("================ServiceTest==========start====");
-//			SuidExam.setSuid(new ObjSQLServiceImpl());
-//			SuidExam.test();
-//			System.out.println("================ServiceTest============SuidExam finished==");
-//			
-//			try {
-//				SuidRichExam.setSuidRich(new ObjSQLRichServiceImpl());
-//				SuidRichExam.test();
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//				Logger.error(e.getMessage(), e);
-//			}
+			SuidExam.setSuid(new ObjSQLServiceImpl());
+			SuidExam.test();
+			System.out.println("================ServiceTest============SuidExam finished==");
 			
-//			ConditionExam.setSuidRich(new ObjSQLRichServiceImpl());
-//			ConditionExam.test();
-//			
-//			InsertTest.setSuidRich(new ObjSQLRichServiceImpl());
-//			InsertTest.test();
-//			
-//			SelectById.setSuidRich(new ObjSQLRichServiceImpl());
-//			SelectById.test();
-//			
-//			UpdateByExam.setSuidRich(new ObjSQLRichServiceImpl());
-//			UpdateByExam.test();
-//			
-//			UpdateSetExam.setSuidRich(new ObjSQLRichServiceImpl());
-//			UpdateSetExam.test();
-//			
+			try {
+				SuidRichExam.setSuidRich(new ObjSQLRichServiceImpl());
+				SuidRichExam.test();
+			} catch (Exception e) {
+				e.printStackTrace();
+				Logger.error(e.getMessage(), e);
+			}
+			
+			ConditionExam.setSuidRich(new ObjSQLRichServiceImpl());
+			ConditionExam.test();
+			
+			InsertTest.setSuidRich(new ObjSQLRichServiceImpl());
+			InsertTest.test();
+			
+			SelectById.setSuidRich(new ObjSQLRichServiceImpl());
+			SelectById.test();
+			
+			UpdateByExam.setSuidRich(new ObjSQLRichServiceImpl());
+			UpdateByExam.test();
+			
+			UpdateSetExam.setSuidRich(new ObjSQLRichServiceImpl());
+			UpdateSetExam.test();
+			
+			DynamicTableExam.setSuid(new ObjSQLServiceImpl());
+			DynamicTableExam.test();
+			
+			SuidRich suidRichService=new ObjSQLRichServiceImpl();
+			suidRichService.setDynamicParameter("month", "_202007");
 //			DynamicTableExam.setSuid(new ObjSQLServiceImpl());
-//			DynamicTableExam.test();
-//			
-//			SuidRich suidRichService=new ObjSQLRichServiceImpl();
-//			suidRichService.setDynamicParameter("month", "_202007");
-////			DynamicTableExam.setSuid(new ObjSQLServiceImpl());
-//			DynamicTableExam.setSuid(suidRichService);
-//			DynamicTableExam.test();
+			DynamicTableExam.setSuid(suidRichService);
+			DynamicTableExam.test();
 			
 			InsertAndReturnIdTest.setSuid(new ObjSQLServiceImpl());
 			InsertAndReturnIdTest.test();
-//			InsertAndReturnIdTest.test();
-//			InsertAndReturnIdTest.setSuidRich(new ObjSQLRichServiceImpl());
-//			InsertAndReturnIdTest.test();
+			InsertAndReturnIdTest.test();
+			InsertAndReturnIdTest.setSuidRich(new ObjSQLRichServiceImpl());
+			InsertAndReturnIdTest.test();
 			
-//			ObjSQLServiceExam.test();
+			ObjSQLServiceExam.test();
 //			
-//			DiffDdExamCustomerSql.setSuidRich(new ObjSQLRichServiceImpl());
-//			DiffDdExamCustomerSql.test();
-//			
-//			Suid suidService=new ObjSQLServiceImpl();
-//			suidService.setDataSourceName("ds3-test");
-////			SuidWhichOne.setSuid(new ObjSQLServiceImpl());
-//			SuidWhichOne.setSuid(suidService);
-//			SuidWhichOne.test();
-//			
-//			DatetimeExam.test();
-//			DatetimeExam2.test();
+			DiffDdExamCustomerSql.setSuidRich(new ObjSQLRichServiceImpl());
+			DiffDdExamCustomerSql.test();
+			
+			Suid suidService=new ObjSQLServiceImpl();
+			suidService.setDataSourceName("ds3-test");
+//			SuidWhichOne.setSuid(new ObjSQLServiceImpl());
+			SuidWhichOne.setSuid(suidService);
+			SuidWhichOne.test();
+			
+			DatetimeExam.test();
+			DatetimeExam2.test();
 			
 			System.out.println("================ServiceTest==========end====");
 

@@ -44,6 +44,8 @@ public class ColumnAnnoTest {
 		List<ColumnTest> list=suid.select(columnTest);
 		Printer.printList(list);
 		
+		
+		
 		//case 2 : PreparedSql
 //		String sql="select uuid,name,num,remark,ch from column_test";
 		String sql="select uuid,name,num,remark,ch from column_test where uuid=#{uuid}";
@@ -61,6 +63,13 @@ public class ColumnAnnoTest {
 //		suidRich.selectById(columnTest, "aaaaaa");
 		
 		suidRich.update(columnTest);
+		
+		
+		ColumnTest2 columnTest0=new ColumnTest2();
+		columnTest0.setId("aaaaaa-no-id");
+		columnTest0.setNum2(2);
+		suidRich.update(columnTest0);
+		
 		
 		//case 4 : SuidRich  Condition
 		Condition condition=BF.getCondition();

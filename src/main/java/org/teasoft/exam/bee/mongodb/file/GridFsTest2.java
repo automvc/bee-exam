@@ -21,7 +21,7 @@ import org.teasoft.honey.osql.shortcut.BF;
  * @author Kingstar
  * @since  2.1
  */
-public class GridFsTest {
+public class GridFsTest2 {
 	
 	public static void main(String[] args) throws Exception{
 		test();
@@ -55,16 +55,18 @@ public class GridFsTest {
 		
 		Map<String,Object> metadata=new HashMap<>();
 		metadata.put("type", "txt-7z-23");
-		history.setMetadata(metadata);
+		history.setMetadata(metadata);   //TODO select时,可以作为过滤条件吗?  不可以.  因mongodb Java接口不友好.  客户端可以使用: db.fs.files.find({"metadata.type":"7z"});
+		//最好是插入文件时,将文件id或文件名保存在实体.
+		
 		
 //		SuidRich suidRich=BF.getSuidRich();
 		SuidRich suidRich=BF.getSuidRichForMongodb();
-		int insertNum=suidRich.insert(history);
-		stream.close();
-		
+//		int insertNum=suidRich.insert(history);
+//		stream.close();
+//		
 		
 		suidRich.select(history);
-		System.out.println("insertNum: "+insertNum);
+//		System.out.println("insertNum: "+insertNum);
 	}
 
 }

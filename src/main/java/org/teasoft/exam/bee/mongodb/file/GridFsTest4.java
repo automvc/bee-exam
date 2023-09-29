@@ -16,12 +16,13 @@ import org.teasoft.exam.bee.mongodb.sharding.ClearDsAndMongoDsUtil;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyContext;
 import org.teasoft.honey.osql.shortcut.BF;
+import org.teasoft.honey.util.StreamUtil;
 
 /**
  * @author Kingstar
  * @since  2.1
  */
-public class GridFsTest {
+public class GridFsTest4 {
 	
 	public static void main(String[] args) throws Exception{
 		test();
@@ -45,11 +46,10 @@ public class GridFsTest {
 //		String filePath = "G:\\msdia80.7z";
 		String filePath = "G:\\运行环境.7z";
 		InputStream stream = new FileInputStream(filePath) ;
-
 		
-		HistoryFile history=new HistoryFile();
+		HistoryFile4 history=new HistoryFile4();
 		history.setName("test");
-		history.setFile(stream);
+		history.setFile(StreamUtil.stream2ByteArray(stream));
 //		history.setFilename("msdia80.7z");
 		history.setFilename(filePath);
 		

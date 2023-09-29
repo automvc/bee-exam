@@ -21,7 +21,7 @@ import org.teasoft.honey.osql.shortcut.BF;
  * @author Kingstar
  * @since  2.1
  */
-public class GridFsTest {
+public class GridFsTest3 {
 	
 	public static void main(String[] args) throws Exception{
 		test();
@@ -29,17 +29,13 @@ public class GridFsTest {
 
 	public static void test() throws Exception{
 		
+		
+//		ClearDsAndMongoDsUtil.clearConfig(); //先清空 
 //		HoneyConfig config=HoneyConfig.getHoneyConfig();
 //		config.setUrl("mongodb://localhost:27017/bee/");
 //		config.setUsername("");
 //		config.setPassword("");
-		
-		ClearDsAndMongoDsUtil.clearConfig(); //先清空 
-		HoneyConfig config=HoneyConfig.getHoneyConfig();
-		config.setUrl("mongodb://localhost:27017/bee/");
-		config.setUsername("");
-		config.setPassword("");
-		HoneyContext.setConfigRefresh(true);
+//		HoneyContext.setConfigRefresh(true);
 		
 		
 //		String filePath = "G:\\msdia80.7z";
@@ -53,18 +49,18 @@ public class GridFsTest {
 //		history.setFilename("msdia80.7z");
 		history.setFilename(filePath);
 		
-		Map<String,Object> metadata=new HashMap<>();
-		metadata.put("type", "txt-7z-23");
-		history.setMetadata(metadata);
+//		Map<String,Object> metadata=new HashMap<>();
+//		metadata.put("type", "txt-7z-23");
+//		history.setMetadata(metadata);   //TODO select时,可以作为过滤条件吗?
 		
 //		SuidRich suidRich=BF.getSuidRich();
 		SuidRich suidRich=BF.getSuidRichForMongodb();
-		int insertNum=suidRich.insert(history);
-		stream.close();
-		
-		
+//		int insertNum=suidRich.insert(history);
+//		stream.close();
+//		
+		suidRich.setDataSourceName("ds0");
 		suidRich.select(history);
-		System.out.println("insertNum: "+insertNum);
+//		System.out.println("insertNum: "+insertNum);
 	}
 
 }

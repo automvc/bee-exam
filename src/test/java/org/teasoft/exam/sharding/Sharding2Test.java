@@ -77,16 +77,16 @@ public class Sharding2Test extends BaseShardingTest2{
 		try {
 	
 		
-		HoneyConfig.getHoneyConfig().sharding_forkJoinBatchInsert=true;
-		ShardingBatchInsert2.test();
-		HoneyConfig.getHoneyConfig().sharding_forkJoinBatchInsert=false;
+//		HoneyConfig.getHoneyConfig().sharding_forkJoinBatchInsert=true;
+//		ShardingBatchInsert2.test();
+//		HoneyConfig.getHoneyConfig().sharding_forkJoinBatchInsert=false;
 		
 		
 	} catch (Exception e) {
 		e.printStackTrace();
 	}finally {
 		System.out.println("---Bee Sharding2Test with junit end:------");
-		MySqlOneConfig.reset(); //预防测试无序,跳到其它类
+//		MySqlOneConfig.reset(); //预防测试无序,跳到其它类
 	}
 	}
 

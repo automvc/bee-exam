@@ -3,7 +3,7 @@ package entity.field;
 /**
  * Relative field name for Javabean TestUser
  * @author Honey
- * Create on 2023-09-17 23:46:03
+ * Create on 2023-10-03 13:31:47
  */
 public class TestUser_F {
 

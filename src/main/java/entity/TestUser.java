@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 /**
  * @author Honey
- * Create on 2023-09-17 23:46:03
+ * Create on 2023-10-03 13:31:47
  */
 public class TestUser implements Serializable {
 
-	private static final long serialVersionUID = 1592196218295L;
+	private static final long serialVersionUID = 1590649089005L;
 
 	private Long id;
 	private String email;

@@ -61,9 +61,10 @@ public class Test2 {
 		set.add(10008L);
 		
 //		condtion.op("id", Op.in, new String[] { "10006,10007" });
-//		condtion.op("id", Op.in, new Long[] { 10006L,10008L });  //数组不行.     set, list可以
+		condtion.op("id", Op.in, new Long[] { 1062L,1061L });  //数组也可以.     set, list可以
+		                                                      //db.orders.find({"_id": {"$in": [1062, 1061]}})
 //		condtion.op("id", Op.in, idList);
-		condtion.op("id", Op.in, set);
+//		condtion.op("id", Op.in, set);
 		orders=new Orders();
 		List<Orders> list=suid.select(orders,condtion);
 		Printer.printList(list);

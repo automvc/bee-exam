@@ -28,7 +28,7 @@ public class HoneyConfigReset {
 		SpecialTest.testNoId();
 		
 		HoneyConfig.getHoneyConfig().active="test";//重新new后,值不见了
-		HoneyConfig.getHoneyConfig().type=1; //重新new后,值不见了
+//		HoneyConfig.getHoneyConfig().type=1; //重新new后,值不见了
 		HoneyConfig.getHoneyConfig().resetBeeProperties("D:\\temp"); //  bee.properties所在的路径
 		SpecialTest.testNoId();
 	}

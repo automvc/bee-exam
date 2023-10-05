@@ -54,9 +54,13 @@ public class PreparedSqlExam {
 
 			Map<String, Object> map = new HashMap<>();
 			map.put("userid", "bee");
+//			map.put("userid", null);
+			
 //			List<Orders> list2 = preparedSql.select(sql2, new Orders(), map);//map
 //			List<Orders> list2 = preparedSql.select(sql2, new Orders(), map,1,3);//map
 			preparedSql.selectSomeField(sql2, new Orders(), map,1,3);//use cache
+			
+			
 			List<Orders> list2 = preparedSql.selectSomeField(sql2, new Orders(), map,1,3);//map  selectSomeField
 			for (int i = 0; i < list2.size(); i++) {
 				Logger.info(list2.get(i).toString());

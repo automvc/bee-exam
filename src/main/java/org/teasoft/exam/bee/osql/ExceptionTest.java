@@ -36,6 +36,7 @@ import org.teasoft.bee.osql.exception.JoinTableException;
 import org.teasoft.bee.osql.exception.JoinTableParameterException;
 import org.teasoft.bee.osql.exception.NoConfigException;
 import org.teasoft.bee.osql.exception.NotSupportedException;
+import org.teasoft.bee.osql.exception.ShardingErrorException;
 import org.teasoft.bee.osql.exception.SqlNullException;
 import org.teasoft.bee.osql.transaction.Transaction;
 import org.teasoft.exam.bee.osql.entity.Orders;
@@ -486,6 +487,7 @@ public class ExceptionTest {
 			new ConfigWrongException("test BeeIllegalParameterException",new Throwable(" test "));
 			new NotSupportedException("test BeeIllegalParameterException",new Throwable(" test "));
 			new BeeIllegalSQLException("test BeeIllegalSQLException",new Throwable(" test "));
+			new ShardingErrorException("test ShardingErrorException",new Throwable(" test "));
 			
 			new BeeSQLException(new Throwable(" test "));
 			new ObjSQLException(new Throwable(" test "));
@@ -514,9 +516,14 @@ public class ExceptionTest {
 			new BeeInstantiationException("test");
 			new BeeIllegalSQLException("test");
 			
+			new ShardingErrorException(new Throwable(" test "));
+			
 			BeeSQLException beeSQLException=new BeeSQLException();
 			beeSQLException.getErrorCode();
 			beeSQLException.getSQLState();
+			
+			ShardingErrorException sharding=new ShardingErrorException();
+			
 			
 		} catch (BeeException e) {
 			Logger.error(e.getMessage());

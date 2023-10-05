@@ -22,6 +22,8 @@ public class SuidExamEN {
 	
 	public static void main(String[] args) {
 //		ClearAndInitTestTable.main(null);  //TODO TEST
+		
+//		HoneyContext.setDsMapConfigRefresh(true);
 		test();
 	}
 	public static void test() {

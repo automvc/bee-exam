@@ -2,7 +2,6 @@ package org.teasoft.exam.bee.osql.annotation;
 
 import java.io.Serializable;
 
-import org.teasoft.bee.osql.annotation.Datetime;
 import org.teasoft.bee.osql.annotation.JustFetch;
 
 /**
@@ -33,7 +32,10 @@ public class TestUser implements Serializable {
 //	@JustFetch("last_name || name")
 	@JustFetch("CONCAT(last_name, name)") //mysql
 	private String fullName;
-
+	
+	@JustFetch() //只获取值,不会用字段转到select,where中
+	private String count1;
+	
 	public Long getId() {
 		return id;
 	}
@@ -113,6 +115,14 @@ public class TestUser implements Serializable {
 	public void setCreatetime(String createtime) {
 		this.createtime = createtime;
 	}	
+	
+	public String getCount1() {
+		return count1;
+	}
+
+	public void setCount1(String count1) {
+		this.count1 = count1;
+	}
 
 	public String toString(){	
 		 StringBuffer str=new StringBuffer();	
@@ -122,6 +132,7 @@ public class TestUser implements Serializable {
 		 str.append(",lastName=").append(lastName);		 
 		 str.append(",fullName=").append(fullName);		 
 		 str.append(",name=").append(name2);		 
+		 str.append(",count1=").append(count1);		 
 		 str.append(",password=").append(password);		 
 		 str.append(",username=").append(username);		 
 		 str.append(",createtime=").append(createtime);		 

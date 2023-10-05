@@ -28,7 +28,7 @@ public class DatetimeExam2 {
 		Suid suid=BeeFactory.getHoneyFactory().getSuid();
 		
 		Orders2 orders1=new Orders2();
-		orders1.setId(100002L);
+		orders1.setId(102202L);
 		orders1.setName("Bee(ORM Framework)");
 		
 		suid.insert(orders1);

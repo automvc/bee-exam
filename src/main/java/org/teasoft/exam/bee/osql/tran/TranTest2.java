@@ -16,8 +16,6 @@ public class TranTest2 {
 
 	public static void main(String[] args) {
 		
-		
-//		new GenBean().genSomeBeanFile("org");
 		HoneyConfig.getHoneyConfig().notCatchModifyDuplicateException=true;
 
 		Transaction transaction = SessionFactory.getTransaction();
@@ -30,13 +28,11 @@ public class TranTest2 {
 			Org org1=new Org();
 			org1.setOrgName("aaa");
 			
-			
 			Org org2=new Org();
 			org2.setOrgName("bbb");
 			
-			
 			Org org3=new Org();
-			org3.setOrgName("aa0");
+			org3.setOrgName("aa0"); //这个会重复,检查aaa,bbb是否能插入
 			
 			List<Org> list=new ArrayList<>();
 			list.add(org1);
@@ -44,7 +40,7 @@ public class TranTest2 {
 			list.add(org3);
 			
 			int a=suidRich.insert(list, 2);  //分多批执行时，前面的批在内部会先提交
-//			int a=suidRich.insert(list, 100); // 确保放在一批,可以避免这个问题
+//			int a=suidRich.insert(list, 100); // 确保放在一批,可以避免每个批提交一次; 2.2之前,批量插入在方法内还是会提交;
 			System.out.println("------------------: "+a);
 			if(a!=list.size()) {
 				System.out.println("业务触发事务回滚");
@@ -53,27 +49,6 @@ public class TranTest2 {
 			   transaction.commit();
 			}
 			//批量插入时，一批就会有一个commint;
-			
-			
-//			int a1=suidRich.insert(org1);
-//			System.out.println("a1:"+a1);
-//			
-//			int a2=suidRich.insert(org2);
-//			System.out.println("a2:"+a2);
-//			
-//			int a3=suidRich.insert(org3); //异常的在中间，后面正常的一条，是能插入的
-//			System.out.println("a3:"+a3);
-//			
-////			int a2=suidRich.insert(org2); //bbb   在捕获异常的情况下，上一句有异常， modify里，清了conn上下文，这句拿不了事务的conn
-////			System.out.println("a2:"+a2);
-//			
-//			if((a1+a2+a3)!=list.size()) {
-//			System.out.println("业务触发事务回滚");
-//			transaction.rollback();
-//		    }else {
-//		    transaction.commit();
-//		    }
-			
 			
 		} catch (BeeException e) {
 			Logger.error("In TransactionExam (BeeException):" + e.getMessage());

@@ -15,8 +15,8 @@ import org.teasoft.honey.osql.autogen.Ddl;
 public class Gen {
 	
 	public static void main(String[] args) {
-		Ddl.createTable(Org.class,true);
-		Ddl.unique(Org.class, "orgName");
+		Ddl.createTable(Org.class,true); //创建表,并覆盖
+		Ddl.unique(Org.class, "orgName"); //创建唯一约束
 	}
 
 }

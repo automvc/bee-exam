@@ -38,7 +38,7 @@ public class MoreTableFun {
 //			 List<Assignexam> list=moreTable.select(new Assignexam(), distinctCondition0);
 //			 Printer.printList(list);
 			 
-			 
+			 //V2.4.0
 			 Condition funCondition =BF.getCondition();
 //			 funCondition.selectFun(FunctionType.COUNT, "Assignexam.id", "count1");
 //			 funCondition.selectFun(FunctionType.MIN, "Assignexam.id", "count1");

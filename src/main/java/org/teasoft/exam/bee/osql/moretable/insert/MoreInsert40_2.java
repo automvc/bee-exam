@@ -1,8 +1,9 @@
 package org.teasoft.exam.bee.osql.moretable.insert;
 
 import org.teasoft.bee.osql.api.MoreTable;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
-
+//1:1:1 子表里又有子表
 public class MoreInsert40_2 {
 	
 	public static void main(String[] args) throws Exception{
@@ -36,8 +37,8 @@ public class MoreInsert40_2 {
 //		MoreTableInsert aaa=new MoreTableInsert();
 		
 		MoreTable moreTable=BF.getMoreTable();
-		moreTable.insert(entity);	
-			
+		int num=moreTable.insert(entity);	
+		Logger.info("MoreTable insert(1:1:1 子表里又有子表), num(main table):"+num); //只是主表受影响的行数	
 		
 //		List<BookDetail> list2=book.getBookDetailList();
 //		if(list2!=null && list2.size()>0) {

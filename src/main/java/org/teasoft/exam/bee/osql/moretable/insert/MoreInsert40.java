@@ -1,6 +1,7 @@
 package org.teasoft.exam.bee.osql.moretable.insert;
 
 import org.teasoft.bee.osql.api.MoreTable;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 public class MoreInsert40 {
@@ -36,8 +37,8 @@ public class MoreInsert40 {
 		
 	
 		MoreTable moreTable=BF.getMoreTable();
-		moreTable.insert(entity);	
-			
+		int num=moreTable.insert(entity);	
+		Logger.info("MoreTable insert(one to one), num(main table):"+num); //只是主表受影响的行数	
 		
 //		List<BookDetail> list2=book.getBookDetailList();
 //		if(list2!=null && list2.size()>0) {

@@ -1,8 +1,10 @@
 package org.teasoft.exam.bee.osql.moretable.insert;
 
 import org.teasoft.bee.osql.api.MoreTable;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
+//主表有两个从表
 public class MoreInsert60 {
 	
 	public static void main(String[] args) throws Exception{
@@ -23,13 +25,13 @@ public class MoreInsert60 {
 		entity.setBookDetail(bookDetail);
 		
 		BookReal bookReal=new BookReal();
-		bookReal.setRemark("测试1:2");
+		bookReal.setRemark("测试1:2"); //即使设置有值, 父表有的,也会用父表的
 		entity.setBookReal(bookReal);
 		
 	
 		MoreTable moreTable=BF.getMoreTable();
-		moreTable.insert(entity);	
-			
+		int num=moreTable.insert(entity);	
+		Logger.info("MoreTable insert(主表有两个从表), num(main table):"+num); //只是主表受影响的行数	
 		
 //		List<BookDetail> list2=book.getBookDetailList();
 //		if(list2!=null && list2.size()>0) {

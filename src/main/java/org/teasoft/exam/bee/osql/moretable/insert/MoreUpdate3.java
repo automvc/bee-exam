@@ -1,9 +1,15 @@
 package org.teasoft.exam.bee.osql.moretable.insert;
 
 import org.teasoft.bee.osql.api.MoreTable;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
-public class MoreUpdate {
+/**
+ * 多表更新,不设置从表的主键时,使用关联字段的值来过滤要更新的记录
+ * @author Kingstar
+ * @since  2.4.0
+ */
+public class MoreUpdate3 {
 	
 	public static void main(String[] args) throws Exception{
 		
@@ -11,13 +17,13 @@ public class MoreUpdate {
 		Book2 entity=new Book2();
 		entity.setIsbn("isbn123456");
 		entity.setName("Java开发");
-		entity.setId(868503003332609L);  //插入时, 返回的id,可以自动填入外键; 但delete和modify时,则不行.
+//		entity.setId(868503003332609L);  //插入时, 返回的id,可以自动填入外键; 但delete和modify时,则不行.
 		
 		BookDetail bookDetail=new BookDetail();
-		bookDetail.setId(880477460234241L); //业务上,是否可以设置?
+//		bookDetail.setId(880477460234241L); //不设置从表的主键时,使用关联字段的值来过滤要更新的记录  V2.2bug.  V2.4.0已更新
 		bookDetail.setCodeId("2001");
 		bookDetail.setRemark("第一本");
-		bookDetail.setBookId(868878901051398L); //没用, 外键会使用关联主表的对应键的值
+//		bookDetail.setBookId(868878901051398L); 
 	
 		
 //	          update,delete:主表,设置所有的外键对应字段时,从表会自动关联更新;
@@ -32,8 +38,13 @@ public class MoreUpdate {
 		
 	
 		MoreTable moreTable=BF.getMoreTable();
-		moreTable.update(entity);	
-
+		int updateNum=moreTable.update(entity);	
+		Logger.info("MoreTable update,updateNum:"+updateNum);
+		
+//		int delNum=moreTable.delete(entity);
+//		Logger.info("MoreTable delete,delNum:"+delNum);
+		
+		//主表没设置id??  至少要设置关联属性,否则没法更新.
 	}
 
 }

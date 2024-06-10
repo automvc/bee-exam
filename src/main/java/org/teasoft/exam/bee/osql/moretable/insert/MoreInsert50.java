@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.teasoft.bee.osql.api.MoreTable;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
+//一对多, 子表使用List
 public class MoreInsert50 {
 	
 	public static void main(String[] args) throws Exception{
@@ -39,8 +41,8 @@ public class MoreInsert50 {
 		
 	
 		MoreTable moreTable=BF.getMoreTable();
-		moreTable.insert(entity);	
-			
+		int num=moreTable.insert(entity);	
+	    Logger.info("MoreTable insert(one to may 一对多, 子表使用List), num(main table):"+num); //只是主表受影响的行数
 		
 //		List<BookDetail> list2=book.getBookDetailList();
 //		if(list2!=null && list2.size()>0) {

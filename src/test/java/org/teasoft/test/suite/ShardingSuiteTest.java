@@ -6,19 +6,16 @@
 //
 //package org.teasoft.test.suite;
 //
-///**
-// * @author Kingstar
-// * @since  2.1
-// */
 //import org.junit.platform.runner.JUnitPlatform;
 //import org.junit.platform.suite.api.ExcludePackages;
 //import org.junit.platform.suite.api.SelectPackages;
 //import org.junit.runner.RunWith;
 //
 //@RunWith(JUnitPlatform.class)
-//@SelectPackages("org.teasoft.exam") 
-////@SelectPackages("org.teasoft.exam,org.teasoft.bee,org.teasoft.honey") 
-//@ExcludePackages({"org.teasoft.exam.mongodb","org.teasoft.exam.sharding"})
-//public class CoreTest {
+////@RunWith(Suite.class)
+////@Suite.SuiteClasses({})
+//@SelectPackages({"org.teasoft.exam.sharding","org.teasoft.exam.bee.osql.sharding.moretable"})
+//@ExcludePackages({ "org.teasoft.exam.mongodb" })
+//public class ShardingSuiteTest {
 //
 //}

@@ -16,8 +16,9 @@
 //import org.junit.runner.RunWith;
 //
 //@RunWith(JUnitPlatform.class)
-//@SelectPackages("org.teasoft.exam") 
-//@IncludePackages("org.teasoft.exam.mongodb")
+////@SelectPackages("org.teasoft.exam") 
+////@IncludePackages("org.teasoft.exam.mongodb")
+//@SelectPackages("org.teasoft.exam.mongodb")
 //public class JustMongodbTest {
 //
 //}

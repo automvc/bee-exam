@@ -287,8 +287,8 @@ public class SuidRichExam {
 			suidRich.selectJson(testInsertAndDeleteOrders, IncludeType.EXCLUDE_BOTH);
 			Condition testInsertAndDeleteConditon = new ConditionImpl();
 			testInsertAndDeleteConditon.op("id", Op.ge, 100018);
-			suidRich.select(testInsertAndDeleteOrders, IncludeType.EXCLUDE_BOTH, testInsertAndDeleteConditon);
-			suidRich.selectJson(testInsertAndDeleteOrders, IncludeType.EXCLUDE_BOTH, testInsertAndDeleteConditon);
+//			suidRich.select(testInsertAndDeleteOrders, IncludeType.EXCLUDE_BOTH, testInsertAndDeleteConditon);
+//			suidRich.selectJson(testInsertAndDeleteOrders, IncludeType.EXCLUDE_BOTH, testInsertAndDeleteConditon);
 			suidRich.select(testInsertAndDeleteOrders, testInsertAndDeleteConditon);
 			suidRich.selectJson(testInsertAndDeleteOrders, testInsertAndDeleteConditon);
 			suidRich.count(testInsertAndDeleteOrders, testInsertAndDeleteConditon);

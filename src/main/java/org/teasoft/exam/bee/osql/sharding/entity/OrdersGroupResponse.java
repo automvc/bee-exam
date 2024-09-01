@@ -33,7 +33,7 @@ public class OrdersGroupResponse implements Serializable {
 	private String abc;
 	private String updatetime;
 	
-	@JustFetch("")
+	@JustFetch()
 	private String maxTotal;
 	
 	@JustFetch("")

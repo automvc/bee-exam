@@ -7,6 +7,7 @@ import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.api.Condition;
 import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.exam.bee.osql.sharding.InitSameDsUtil;
+import org.teasoft.exam.bee.osql.sharding.ShardingInitData;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.shortcut.BF;
 
@@ -31,7 +32,7 @@ public class ShardingSimpleExam8_2 {
 //		@Sharding(tabRule = "userid %6")
 		
 		Suid suid=BF.getSuid(); //1
-		Orders3 orders3=new Orders3();
+		Orders orders3=new Orders();
 		orders3.setUserid(1L);
 		
 		Condition condition=BF.getCondition();
@@ -39,8 +40,9 @@ public class ShardingSimpleExam8_2 {
 		.op(Orders_F.name, Op.eq, "test1_6")
 		;
 		
-		
-	 	List<Orders3> list=suid.select(orders3,condition);
+//		select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from orders[$#(index)#$]1[$#(index)#$] where userid=1 and name='test1_6' ;
+
+	 	List<Orders> list=suid.select(orders3,condition);
 	 	Printer.printList(list);
 	 	System.out.println("--------------------:");
 	 	list=suid.select(orders3,condition);

@@ -6,13 +6,16 @@
 
 package org.teasoft.honey.util;
 
+import org.junit.Test;
+
 /**
  * @author Kingstar
  * @since  2.1.8
  */
 public class NumUtilTest {
 	
-	public static void main(String[] args) {
+	@Test
+	public void test() {
 		System.out.println(NumUtil.getRandomNum(6));
 		System.out.println(NumUtil.getRandomNum6());
 		

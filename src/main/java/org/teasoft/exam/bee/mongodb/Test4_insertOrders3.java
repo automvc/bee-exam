@@ -30,8 +30,11 @@ public class Test4_insertOrders3 {
 		Orders3 orders=new Orders3();
 //		
 		List<Orders3> insertList=new ArrayList<>();
+		orders.setId("0");
+		orders.setRemark("changed 12112");
+		insertList.add(orders);
 //		
-		for (int i = 20; i < 30; i++) {
+		for (int i = 1; i < 30; i++) {
 			orders=new Orders3();
 			orders.setName("mongodb" + i);
 			orders.setId(10100L + i+"");

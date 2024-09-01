@@ -37,7 +37,8 @@ public class Printer {
 			return ;
 		}
 		for (int i = 0; i < list.size(); i++) {
-			Logger.info(list.get(i).toString());
+			if(list.get(i)==null) Logger.info("null");
+			else Logger.info(list.get(i).toString());
 		}
 	}
 }

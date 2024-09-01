@@ -35,6 +35,7 @@ public class UseSupperEntityTest {
 			MoreTest.test();
 			MoreTest2.test();
 
+			result = true;
 		} catch (Exception e) {
 			e.printStackTrace();
 			Logger.error(e.getMessage(), e);

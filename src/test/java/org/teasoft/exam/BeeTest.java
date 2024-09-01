@@ -14,7 +14,6 @@ import org.teasoft.bee.osql.MapSqlKey;
 import org.teasoft.bee.osql.MapSqlSetting;
 import org.teasoft.bee.osql.annotation.JoinType;
 import org.teasoft.exam.bee.osql.CallExam;
-import org.teasoft.exam.bee.osql.HoneyConfigReset;
 import org.teasoft.exam.bee.osql.RedisCacheExpireTest;
 import org.teasoft.exam.bee.osql.RedisCacheTest;
 import org.teasoft.exam.bee.osql.SameConnTest;
@@ -25,6 +24,7 @@ import org.teasoft.exam.bee.osql.special.jpa.JpaAnnoTest;
 import org.teasoft.exam.bee.osql.special.primarykey.InsertAndReturnIdWithPK;
 import org.teasoft.exam.bee.osql.special.primarykey.PrimaryKeyTest;
 import org.teasoft.exam.bee.osql.special.primarykey.SelectByIdWithPK;
+import org.teasoft.exam.bee.prod.DictI18nExam;
 import org.teasoft.exam.bee.test.AnnoTest;
 import org.teasoft.exam.bee.test.CharTest;
 import org.teasoft.exam.bee.test.TestCache;
@@ -98,6 +98,7 @@ public class BeeTest {
 			CharTest.test();
 			AnnoTest.test();
 			
+			DictI18nExam.test();
 			JpaAnnoTest.test();
 			
 //			KotlinTest.test();

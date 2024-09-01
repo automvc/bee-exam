@@ -47,10 +47,10 @@ public class ServiceTest2 {
 
 		boolean result = false;
 		try {
-			System.out.println("================ServiceTest==========start====");
+			System.out.println("================ServiceTest2==========start====");
 			SuidExam.setSuid(new ObjSQLServiceImpl());
 			SuidExam.test();
-			System.out.println("================ServiceTest============SuidExam finished==");
+			System.out.println("================ServiceTest2============SuidExam finished==");
 			
 			try {
 				SuidRichExam.setSuidRich(new ObjSQLRichServiceImpl());
@@ -104,7 +104,7 @@ public class ServiceTest2 {
 			DatetimeExam.test();
 			DatetimeExam2.test();
 			
-			System.out.println("================ServiceTest==========end====");
+			System.out.println("================ServiceTest2==========end====");
 
 			result = true;
 		} catch (Exception e) {

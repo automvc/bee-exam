@@ -3,8 +3,10 @@ package org.teasoft.exam.bee.osql.sharding.moretable.entity;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+import org.teasoft.bee.osql.annotation.Ignore;
 import org.teasoft.bee.osql.annotation.JoinTable;
 import org.teasoft.bee.osql.annotation.JoinType;
+import org.teasoft.bee.osql.annotation.JustFetch;
 
 /**
  * @author Honey
@@ -27,6 +29,15 @@ public class Myorders implements Serializable {
 	private String sequence;
 	private String abc;
 	private String updatetime;
+	
+	@Ignore()
+	private String maxTotal;
+	
+	@Ignore()
+	private Double minTotal;
+	
+	@Ignore()
+	private Double avgTotal;
 	
 	public Ordersdetail getOrdersdetail() {
 		return ordersdetail;
@@ -118,7 +129,7 @@ public class Myorders implements Serializable {
 
 	 public String toString(){	
 		 StringBuilder str=new StringBuilder();	
-		 str.append("Orders1[");			
+		 str.append("Myorders[");			
 		 str.append("id=").append(id);		 
 		 str.append(",userid=").append(userid);		 
 		 str.append(",orderid=").append(orderid);		 
@@ -128,10 +139,13 @@ public class Myorders implements Serializable {
 		 str.append(",remark=").append(remark);		 
 		 str.append(",sequence=").append(sequence);		 
 		 str.append(",abc=").append(abc);		 
+		 str.append(",maxTotal=").append(maxTotal);		 
+		 str.append(",minTotal=").append(minTotal);		 
+		 str.append(",avgTotal=").append(avgTotal);	
 		 str.append(",updatetime=").append(updatetime);	
 		 
 		 if(ordersdetail==null)
-			 str.append(",user").append("=null");	
+			 str.append(",ordersdetail").append("=null");	
 		 else 
 		   str.append(",").append(ordersdetail.toString());
 		 

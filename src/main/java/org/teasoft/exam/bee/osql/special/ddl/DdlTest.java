@@ -8,6 +8,7 @@ package org.teasoft.exam.bee.osql.special.ddl;
 
 import org.teasoft.exam.bee.mongodb.entity.Noid0;
 import org.teasoft.honey.osql.autogen.Ddl;
+import org.teasoft.honey.osql.shortcut.BF;
 
 /**
  * @author Kingstar
@@ -23,7 +24,10 @@ public class DdlTest {
 //		Ddl.createTable(new NoTypeHowDdl(),true);
 //		Ddl.createTable(new Noid0(),true);
 //		Ddl.createTable(Noid1.class,true);
+		BF.getPreparedSql().modify("drop table noid1");
 		Ddl.createTable(Noid1.class);
+		
+		Ddl.createTable(Noid1.class,true);
 	}
 
 }

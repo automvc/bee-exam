@@ -6,6 +6,7 @@
 
 package org.teasoft.exam.beex.poi.entity;
 
+import org.junit.Test;
 import org.teasoft.honey.osql.autogen.Ddl;
 
 /**
@@ -13,7 +14,8 @@ import org.teasoft.honey.osql.autogen.Ddl;
  * @since  1.9
  */
 public class CreateTableWithJavabean2 {
-	public static void main(String[] args) {
+	@Test
+	public void test() {
 		Ddl.createTable(new LeftszInfo(), true);
 	}
 

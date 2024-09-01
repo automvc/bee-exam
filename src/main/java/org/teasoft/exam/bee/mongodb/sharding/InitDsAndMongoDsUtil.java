@@ -27,9 +27,12 @@ public class InitDsAndMongoDsUtil {
 			HoneyConfig config=HoneyConfig.getHoneyConfig();
 			config.multiDS_enable=true;
 			config.multiDS_differentDbType=false;
-			config.multiDS_sharding=true;
+//			config.multiDS_sharding=true;
+			config.setMultiDsSharding(true); //仅用于测试;在生产上,bee.dosql.multiDS.sharding应该放在配置文件中设置;且运行过程不宜更改,否则会丢失有关配置和上下文信息.
 			config.multiDS_justMongodb=true;
 			config.multiDS_defalutDS="ds0";  //没有默认ds,像delete,在V2.1还不支持Sharding时,则会报错
+			
+//			HoneyConfig.getHoneyConfig().effect(); //通过java方式(如config.multiDS_sharding=true;)才要调用.  应在操作数据库前,尽快调用
 			
 //			HoneyContext.setConfigRefresh(true); //涉及路由信息更新要刷新
 //			HoneyContext.setDsMapRefresh(true); //在配置文件中修改才要刷新解析

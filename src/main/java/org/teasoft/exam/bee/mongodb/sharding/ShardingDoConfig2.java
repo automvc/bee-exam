@@ -16,11 +16,10 @@ import org.teasoft.honey.sharding.config.ShardingConfig;
  * @author Kingstar
  * @since  2.0
  */
-public class ShardingDoConfig {
+public class ShardingDoConfig2 {
 
 	public static void init() {
 		ShardingConfig.addShardingBean(Orders.class, new ShardingBean("ds[0..1].orders[0..5]", "userid"));
-//		ShardingConfig.addShardingBean(Orders.class, new ShardingBean("ds_[0..1].orders_[0..5]", "userid"));
 
 //		ShardingBean broadcastTable1 = new ShardingBean();
 //		broadcastTable1.setFullNodes("ds[0..1].noid0[]"); //表名,就是noid0,用于测试
@@ -35,9 +34,6 @@ public class ShardingDoConfig {
 //		ShardingConfig.addShardingBean("noid",new ShardingBean("ds[0..1].noid0[]"));
 		ShardingConfig.addBroadcastTable("noid0");
 		ShardingConfig.addBroadcastTable("Noid0");
-		
-		ShardingConfig.addShardingBean("Noid",new ShardingBean("ds[0..1].noid[]"));//2.4.0
-		ShardingConfig.addBroadcastTable("noid");//2.4.0
 		
 		ShardingConfig.addShardingBean("test_user",new ShardingBean("ds[0..1].test_user[0..5]", "id"));
 		ShardingConfig.addShardingBean(TestMyUser.class,new ShardingBean("ds[0..1].test_my_user[0..5]", "id"));

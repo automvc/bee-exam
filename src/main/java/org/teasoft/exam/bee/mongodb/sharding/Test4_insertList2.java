@@ -18,7 +18,7 @@ import org.teasoft.honey.osql.shortcut.BF;
  * @author AiTeaSoft
  * @since  2.0
  */
-public class Test4_insertList {
+public class Test4_insertList2 {
 	
 	public static void main(String[] args) {
 		try {
@@ -38,12 +38,12 @@ public class Test4_insertList {
 		
 		List<Orders> insertList=new ArrayList<>();
 		
-		for (int i = 0; i < 30; i++) {
+		for (int i = 0; i < 10; i++) {
 			orders=new Orders();
 			orders.setAbc("test bee ");
 			orders.setName("mongodb" + i);
-			orders.setId((long)i);
-			orders.setUserid((long)i);
+//			orders.setId(3000L + i);
+			orders.setUserid(3000L + i);
 //			orders.setNum(i);
 //			orders.setRemark(null); //test null   mongodb,批量插入,不处理null
 			orders.setTotal(new BigDecimal((i+i*0.01)+""));
@@ -52,20 +52,10 @@ public class Test4_insertList {
 		}
 		
 		int insertNum=suidRich.insert(insertList);
-//		int insertNum=suidRich.insert(insertList,3);
-//		int insertNum=suidRich.insert(insertList,5);
 		
 		System.out.println("insertNum="+insertNum);
 		
 		
-		
-//		orders=new Orders();
-//		orders.setAbc("test bee ");
-//		orders.setName("mongodb" + 99);
-//		orders.setId(10200L + 99);
-////		long returnId=suidRich.insertAndReturnId(orders);
-//		long returnId=suidRich.insertAndReturnId(orders,IncludeType.EXCLUDE_BOTH);
-//		System.out.println("returnId:  "+returnId);
 		
 		System.out.println("finished!");
 	}

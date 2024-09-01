@@ -11,7 +11,7 @@ import java.util.List;
 
 import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.mongodb.entity.Noid0;
-import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
@@ -39,7 +39,9 @@ public class Test4_selectBroadcastTable {
 		List<Noid0> list = new ArrayList<>();
 
 		list = suidRich.select(noid0);
-		Printer.printList(list);
+//		Printer.printList(list);
+		if(list!=null && list.size()>0)
+		 Logger.info(list.get(0).toString());
 
 		System.out.println("finished!");
 	}

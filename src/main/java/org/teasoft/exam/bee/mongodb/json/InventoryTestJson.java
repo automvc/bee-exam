@@ -43,10 +43,10 @@ public class InventoryTestJson {
 //		String json=suidRich.selectJson(new Inventory(),"id,size");
 //		String json=suidRich.selectJson(new Inventory(),"item,qty");
 		
-		String json=suidRich.selectJson(new Inventory(),IncludeType.EXCLUDE_BOTH,null); //fixed bug
-		
-//		String json=suidRich.selectJson(new Inventory(),BF.getCondition());
-		System.out.println(json);
+//		String json=suidRich.selectJson(new Inventory(),IncludeType.EXCLUDE_BOTH,null); //fixed bug
+//		
+////		String json=suidRich.selectJson(new Inventory(),BF.getCondition());
+//		System.out.println(json);
 		
 		
 //		  JSONObject object= JSONObject.parseObject(json);

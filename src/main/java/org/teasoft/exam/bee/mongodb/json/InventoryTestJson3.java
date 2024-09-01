@@ -34,7 +34,7 @@ public class InventoryTestJson3 {
 		System.out.println(num);
 		
 		
-		String json=suidRich.selectJson(new Inventory(),IncludeType.EXCLUDE_BOTH,null); //fixed bug
+//		String json=suidRich.selectJson(new Inventory(),IncludeType.EXCLUDE_BOTH,null); //fixed bug
 		
 		List<Inventory> list0=suidRich.select(new Inventory(),IncludeType.EXCLUDE_BOTH);
 		Printer.printList(list0);

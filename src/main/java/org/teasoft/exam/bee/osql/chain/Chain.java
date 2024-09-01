@@ -15,7 +15,11 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class Chain {
 	
 	public static void main(String[] args) {
-		BF.getSuid().select(new User().setUsername("张三").setPassword("abc"));
+		test();
+	}
+	
+	public static void test() {
+		BF.getSuid().select(new TestUser().setUsername("张三").setPassword("abc"));
 	}
 
 }

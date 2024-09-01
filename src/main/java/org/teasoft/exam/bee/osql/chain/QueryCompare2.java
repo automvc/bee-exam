@@ -24,6 +24,10 @@ import org.teasoft.honey.osql.core.BeeFactory;
 public class QueryCompare2 {
 	private static PreparedSql preparedSql = BeeFactory.getHoneyFactory().getPreparedSql();
 	public static void main(String[] args) {
+		test();
+	}
+	
+	public static void test() {
 		 try {
 				Select t = new SelectImpl();
 				String sql = "";

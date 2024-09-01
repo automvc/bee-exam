@@ -75,6 +75,16 @@ public class UnionSelectExam {
 			unionSelect.unionAll(select1, select2);
 	        List<String[]> list3= preparedSql.select(unionSelect.toSQL());
 	        Printer.print(list3);
+	        
+	        String subSelects[]= {"select * from orders1","select * from orders2","select * from orders3"};
+	        
+	        String subSelectsSql1=unionSelect.unionAll(subSelects).toSQL();
+//	        Logger.info(subSelectsSql1);
+	        preparedSql.select(subSelectsSql1);
+	        String subSelectsSql2=unionSelect.unionAll(subSelects).toSQL(); //重新调用toSQL(),不会受前面调用 的影响
+//	        Logger.info(subSelectsSql2);
+	        preparedSql.select(subSelectsSql1);
+	        
 		}
 
 	  } catch (BeeException e) {

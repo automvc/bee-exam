@@ -62,9 +62,9 @@ public class ChainSelectExam {
         
         
 //      sql= t.from("abc") //重新用t写,就可以从原来的开始.
-        sql= t.toSQL();
-        List<String[]> list1= preparedSql.select(sql);
+        List<String[]> list1= preparedSql.select(t.toSQL());
         Printer.print(list1);
+        preparedSql.select(t.toSQL());
 		
 		Select goodOrders = new SelectImpl();
 //		goodOrders.distinct("id")
@@ -257,6 +257,7 @@ public class ChainSelectExam {
         .where()
         .in("id",subSelect)
         ;
+        System.out.println("subSelect:"+subSelect.toSQL());
         List<String[]> list14= preparedSql.select(select3.toSQL());
         Printer.print(list14);
         

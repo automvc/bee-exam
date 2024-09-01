@@ -14,6 +14,10 @@ import org.teasoft.honey.osql.shortcut.CSF;
 public class Select24 {
 	
 	public static void main(String[] args) {
+		test();
+	}
+	
+	public static void test() {
 //		Insert insert =new InsertImpl();
 //		insert.insert("test");
 //		insert.column("id").column("name");
@@ -27,7 +31,7 @@ public class Select24 {
 		Select select=CSF.getSelect();
 //		select.select().from("orders"); 
 		select.from("orders"); //默认加select *
-		select.where().op("userid", 1001); //默认加where
+		select.where().op("userid", "1001"); //默认加where
 		
 		PreparedSql pre=BF.getPreparedSql();
 		pre.select(select.toSQL());

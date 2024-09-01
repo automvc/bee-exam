@@ -33,11 +33,23 @@ public class QueryCompare {
 		.isNotNull("createtime")
         ;
         
-        List<Orders> list= preparedSql.select(t.toSQL(),Orders.class);
+        List<String[]> list0= preparedSql.select(t.toSQL());
+        Printer.print(list0);
+        
+        List<Orders> list= preparedSql.select(t.toSQL(),Orders.class); //bug
         Printer.printList(list);
+        
+        String sql="select * from orders where name='Bee' and createtime is not null ;";
+        List<String[]> list2= preparedSql.select(sql);
+        Printer.print(list2);
+        
 	}
 	
 	public static void main(String[] args) {
+		test();
+	}
+	
+	public static void test() {
 		QueryCompare query=new QueryCompare();
 		query.query("Bee");
 	}

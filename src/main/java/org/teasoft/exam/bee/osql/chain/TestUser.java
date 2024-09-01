@@ -10,7 +10,7 @@ package org.teasoft.exam.bee.osql.chain;
  * @author Kingstar
  * @since  2.1
  */
-public class User {
+public class TestUser {
 
 	private Long id;
 	private String username;
@@ -20,7 +20,7 @@ public class User {
 		return id;
 	}
 
-	public User setId(Long id) {
+	public TestUser setId(Long id) {
 		this.id = id;
 		return this;
 	}
@@ -29,7 +29,7 @@ public class User {
 		return username;
 	}
 
-	public User setUsername(String username) {
+	public TestUser setUsername(String username) {
 		this.username = username;
 		return this;
 	}
@@ -38,7 +38,7 @@ public class User {
 		return password;
 	}
 
-	public User setPassword(String password) {
+	public TestUser setPassword(String password) {
 		this.password = password;
 		return this;
 	}

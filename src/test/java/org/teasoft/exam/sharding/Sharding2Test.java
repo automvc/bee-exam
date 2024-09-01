@@ -63,6 +63,7 @@ import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
+ * createTable in sharding
  * @author Kingstar
  * @since  2.1
  */
@@ -73,8 +74,8 @@ public class Sharding2Test extends BaseShardingTest2{
 		
 		System.out.println("---Bee Sharding2Test with junit start:------");
 		System.out.println("---------------db: "+HoneyConfig.getHoneyConfig().getDbName());
-		Ddl.createTable(Orders.class,true);
 		try {
+			Ddl.createTable(Orders.class,true);
 	
 		
 //		HoneyConfig.getHoneyConfig().sharding_forkJoinBatchInsert=true;

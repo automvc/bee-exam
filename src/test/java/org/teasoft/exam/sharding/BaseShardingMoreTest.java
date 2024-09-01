@@ -9,21 +9,18 @@ import org.teasoft.exam.bee.osql.special.ddl.DdlForShardingTest;
 import org.teasoft.exam.bee.osql.special.ddl.DdlForShardingTest2;
 import org.teasoft.exam.comm.ClearDsUtil;
 
-public abstract class BaseShardingTest {
+public abstract class BaseShardingMoreTest {
 	
 	static {
-		System.out.println("---------Sharding Test----------");
+		System.out.println("---------BaseShardingMoreTest----------");
 		StartSharding.reMark();
 	}
 	
 	@Before
 	public void setUp() {
-//		ClearDsUtil.clearConfig();
-		InitSameDsUtil.initDS(); //有clearConfig
-		ShardingInitData.init();
+		ShardingInitData.init(); // 分片
+		InitSameDsUtil.initDS();
 		
-//		DdlForShardingTest2.test();
-//		DdlForShardingTest.test();
 	}
 
 	@After
@@ -31,6 +28,8 @@ public abstract class BaseShardingTest {
 		ClearDsUtil.clearConfig();
 		
 		MySqlOneConfig.reset(); //预防测试无序,跳到其它类
+		
+		System.out.println("---------BaseShardingMoreTest-----after-----");
 	}
 
 }

@@ -11,6 +11,8 @@ import org.teasoft.exam.bee.osql.sharding.entity.Orders;
 import org.teasoft.exam.bee.osql.sharding.entity.Orders_F;
 import org.teasoft.exam.bee.test.ClearDsContext;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.osql.core.HoneyContext;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.sharding.ShardingUtil;
 import org.teasoft.honey.sharding.config.ShardingConfig;
@@ -31,6 +33,7 @@ public class ShardingPaging_Just_ShardingDs {
 
 	public static void test(){
 		System.out.println("------Sharding test--------ShardingPaging_Just_ShardingDs-----");
+		Logger.info("------Sharding test--------ShardingPaging_Just_ShardingDs-----");
 		
 		ShardingBean shardingBean=new ShardingBean();
 		shardingBean.setDsField(Orders_F.userid);
@@ -68,11 +71,16 @@ public class ShardingPaging_Just_ShardingDs {
 		
 		
 		//条件全在condition  case 5
-	 	List<Orders> list=suid.select(orders1,condition);
+	 	List<Orders> list=suid.select(orders1,condition); //bug;No value specified for parameter 1 ;    select id, userid from orders where (userid=? or userid=?) limit 0,2
+	 	//可能是多条语句共用一个上下文;被前面的清除了上下文
 	 	Printer.printList(list);
 	 	System.out.println("--------------------:");
-	 	list=suid.select(orders1,condition);
-        Printer.printList(list);
+	 	Logger.info("-------------ShardingPaging_Just_ShardingDs-------:");
+//	 	list=suid.select(orders1,condition);
+//        Printer.printList(list);
         
+//        String sql0="select id, userid from orders[$#(index)#$] where (userid=? or userid=?) limit 0,2";  //作为id的sql与运行的sql不一样
+//        List listPV=HoneyContext.justGetPreparedValue(sql0); 
+//        System.err.println("分片时,主线程上下文是否已被删除? "+listPV.size());
 	}
 }

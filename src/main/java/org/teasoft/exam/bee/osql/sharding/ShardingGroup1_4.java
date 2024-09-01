@@ -19,7 +19,7 @@ import org.teasoft.honey.sharding.ShardingUtil;
  * @author Kingstar
  * @since  2.0
  */
-public class ShardingGroup {
+public class ShardingGroup1_4 {
 	
 	public static void main(String[] args) {
 		ShardingInitData.init();
@@ -47,20 +47,23 @@ public class ShardingGroup {
 		.op(Orders_F.orderid, Op.eq, 1)
 		.or()
 		.op(Orders_F.orderid, Op.eq, 2)
+		.or()
+		.op(Orders_F.orderid, Op.eq, 4)
 		.rParentheses()
 		;
 		
 		condition.selectFun(FunctionType.MAX, Orders_F.total,"maxTotal");
-		condition.selectField("userid,orderid");
+//		condition.selectField("userid,orderid");
+		condition.selectField("userid"); //有一个分组字段没有查出来.
 		
-		condition.groupBy(Orders_F.userid);
 		condition.groupBy(Orders_F.orderid);
+		condition.groupBy(Orders_F.userid);
 		
-////		condition.orderBy("userid",OrderType.DESC);// bug
-//		condition.orderBy("userId",OrderType.DESC);// bug
-////		condition.orderBy("userid",OrderType.ASC);
-////		condition.orderBy("userId",OrderType.ASC);
-////		condition.orderBy("total",OrderType.DESC);
+//		condition.orderBy("userid",OrderType.DESC);// bug
+		condition.orderBy("userId",OrderType.DESC);// bug
+//		condition.orderBy("userid",OrderType.ASC);
+//		condition.orderBy("userId",OrderType.ASC);
+//		condition.orderBy("total",OrderType.DESC);
 		
 		condition
 //		.start(6)

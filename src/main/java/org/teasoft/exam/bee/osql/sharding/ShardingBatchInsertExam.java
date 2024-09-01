@@ -7,8 +7,6 @@
 package org.teasoft.exam.bee.osql.sharding;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.sharding.entity.Orders;

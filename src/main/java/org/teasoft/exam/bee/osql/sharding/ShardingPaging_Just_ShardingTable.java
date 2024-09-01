@@ -17,6 +17,7 @@ import org.teasoft.exam.bee.osql.sharding.entity.Orders_F;
 import org.teasoft.exam.bee.test.ClearDsContext;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.sharding.ShardingUtil;
 import org.teasoft.honey.sharding.config.ShardingConfig;
@@ -39,6 +40,7 @@ public class ShardingPaging_Just_ShardingTable {
 
 		public static void test() throws SQLException{
 			System.out.println("------Sharding test--------ShardingPaging_Just_ShardingTable-----");
+			Logger.info("------Sharding test--------ShardingPaging_Just_ShardingTable-----");
 		
 		DruidDataSource dataSource0;
 		dataSource0 = new DruidDataSource();

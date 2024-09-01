@@ -62,17 +62,17 @@ public class ShardingPagingSort5 {
 		
 		condition
 //		.start(6)
-//		.start(1)
-		.start(startIndex)
+		.start(0)
+//		.start(startIndex)
 		.size(2);
 		
 		
-		//条件全在condition  case 5
-	 	List<Orders> list=suid.select(orders1,condition);
+		//条件全在condition  case 5                      //bug 2.4.0: select * from () _union_select order by id asc,userid desc limit 0,2 ;
+	 	List<Orders> list=suid.select(orders1,condition); //select * from () _union_select order by id asc,userid desc limit 0,2 ;
 	 	Printer.printList(list);
 	 	System.out.println("--------------------:");
-	 	list=suid.select(orders1,condition);
-        Printer.printList(list);
+//	 	list=suid.select(orders1,condition);
+//        Printer.printList(list);
         
         
         //全表查询, 分页; 批量插入,  modify等

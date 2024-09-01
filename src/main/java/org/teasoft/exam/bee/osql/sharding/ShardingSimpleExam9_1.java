@@ -42,7 +42,7 @@ public class ShardingSimpleExam9_1 {
 //		.op("id", Op.eq, 100002);
 		
 		//case ,查询是空集的情型:
-		HintManager.setDataSourceName("ds1");
+		HM.setDataSourceName("ds1");
 		HM.setTableName("orders5");
 	 	List<Orders> list=suid.select(orders);
         Printer.printList(list);

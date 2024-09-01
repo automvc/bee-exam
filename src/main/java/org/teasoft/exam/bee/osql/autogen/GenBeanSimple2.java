@@ -17,6 +17,10 @@ import org.teasoft.honey.osql.core.HoneyConfig;
  */
 public class GenBeanSimple2 {
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		 try{
 			
 			

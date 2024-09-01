@@ -53,13 +53,15 @@ public class GenBeanExam {
 //			genBean.genAllBeanFile();  //生成某个库所有表对应的Javabean
 			
 			//mongodb
-			genBean.genSomeBeanFile("test_user");
+//			genBean.genSomeBeanFile("test_user");
 
 			
 //			System.out.println(System.getProperty("user.dir"));
 			
 			//it is easy way.   最简单的用法,所有的都用默认配置.
-			new GenBean().genSomeBeanFile("orderhistory");
+//			new GenBean().genSomeBeanFile("orders");
+			new GenBean(config).genSomeBeanFile("orders");
+//			new GenBean().genSomeBeanFile("image");
 		  } catch (BeeException e) {
 			 e.printStackTrace();
 		  }

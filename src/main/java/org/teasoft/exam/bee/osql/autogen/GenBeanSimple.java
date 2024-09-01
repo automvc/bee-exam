@@ -47,7 +47,8 @@ public class GenBeanSimple {
 			
 			
 			//it is easy way.   最简单的用法,所有的都用默认配置.
-			new GenBean().genSomeBeanFile("orderhistory");
+//			new GenBean().genSomeBeanFile("orderhistory");
+			new GenBean().genSomeBeanFile("tyte_table");
 			
 		  } catch (BeeException e) {
 			 e.printStackTrace();

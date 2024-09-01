@@ -16,6 +16,10 @@ import org.teasoft.honey.osql.autogen.GenConfig;
 public class GenSwaggerJavabean {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		GenConfig config = new GenConfig();
 		
 		config.setGenSerializable(false);
@@ -29,10 +33,8 @@ public class GenSwaggerJavabean {
 //		config.setLombokSetter(true);
 		
 		GenBean genBean = new GenBean(config);
+		genBean.genSomeBeanFile("orders");
 		
-//		genBean.genSomeBeanFile("numblue");
-		genBean.genSomeBeanFile("numseq");
-		genBean.genSomeBeanFile("numrecord");
 	}
 
 }

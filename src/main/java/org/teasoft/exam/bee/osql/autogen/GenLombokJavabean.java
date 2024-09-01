@@ -16,6 +16,10 @@ import org.teasoft.honey.osql.autogen.GenConfig;
 public class GenLombokJavabean {
 	
 	public static void main(String[] args) {
+		test();
+	}
+
+	public static void test() {
 		GenConfig config = new GenConfig();
 		config.setLombokGetter(true);
 		config.setLombokSetter(true);

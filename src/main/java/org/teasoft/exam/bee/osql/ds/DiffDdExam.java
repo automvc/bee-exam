@@ -60,7 +60,8 @@ public class DiffDdExam {
 			HoneyConfig.getHoneyConfig().multiDS_enable = true;
 			HoneyConfig.getHoneyConfig().multiDS_type = 2;
 			HoneyConfig.getHoneyConfig().multiDS_differentDbType=true;
-			HoneyConfig.getHoneyConfig().multiDS_sharding = false;
+//			HoneyConfig.getHoneyConfig().multiDS_sharding = false;
+			HoneyConfig.getHoneyConfig().setMultiDsSharding(false); //仅用于测试;在生产上,bee.dosql.multiDS.sharding应该放在配置文件中设置;且运行过程不宜更改,否则会丢失有关配置和上下文信息.
 			HoneyConfig.getHoneyConfig().multiDS_defalutDS = "ds1";
 			
 			

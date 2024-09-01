@@ -21,6 +21,10 @@ import org.teasoft.honey.osql.shortcut.BF;
 public class TestBFX {
 	
 	public static void main(String[] args) {
+		test();
+	}
+	
+	public static void test() {
 		ConditionExt conditionExt=BFX.getConditionExt();
 		conditionExt.op(Orders::getAbc, Op.eq, "value11");
 		SuidRich suidRich=BF.getSuidRich();

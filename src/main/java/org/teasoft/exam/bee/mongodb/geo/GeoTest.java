@@ -13,9 +13,11 @@ import org.teasoft.bee.mongodb.CenterPara;
 import org.teasoft.bee.mongodb.NearPara;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.api.Condition;
+import org.teasoft.beex.osql.mongodb.IndexType;
 import org.teasoft.beex.osql.mongodb.MongodbSuidRichExt;
 import org.teasoft.beex.osql.shortcut.BFX;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
@@ -31,6 +33,9 @@ public class GeoTest {
 	public static void test() {
 		
 		MongodbSuidRichExt suidRichExt=BFX.getMongodbSuidRichExt();
+		
+		String indexReturn1 = suidRichExt.index("places", "location", IndexType.geo2dsphere);
+		Logger.info(indexReturn1);
 		
 		Places places=new Places();
 		places.setName("com");

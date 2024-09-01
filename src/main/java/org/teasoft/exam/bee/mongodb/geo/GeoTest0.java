@@ -8,9 +8,11 @@ package org.teasoft.exam.bee.mongodb.geo;
 
 import java.util.List;
 
+import org.teasoft.beex.osql.mongodb.IndexType;
 import org.teasoft.beex.osql.mongodb.MongodbSuidRichExt;
 import org.teasoft.beex.osql.shortcut.BFX;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar
@@ -31,6 +33,9 @@ public class GeoTest0 {
 		
 		
 		MongodbSuidRichExt suidRichExt=BFX.getMongodbSuidRichExt();
+		
+		String indexReturn1 = suidRichExt.index("places", "location", IndexType.geo2dsphere);
+		Logger.info(indexReturn1);
 		
 //		Places places=new Places();
 //		

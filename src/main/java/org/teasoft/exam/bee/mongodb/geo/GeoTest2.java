@@ -10,12 +10,15 @@ import java.util.List;
 
 import org.teasoft.bee.mongodb.BoxPara;
 import org.teasoft.bee.mongodb.CenterPara;
+import org.teasoft.bee.mongodb.MongodbRawSql;
 import org.teasoft.bee.mongodb.NearPara;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.api.Condition;
+import org.teasoft.beex.osql.mongodb.IndexType;
 import org.teasoft.beex.osql.mongodb.MongodbSuidRichExt;
 import org.teasoft.beex.osql.shortcut.BFX;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
@@ -32,6 +35,14 @@ public class GeoTest2 {
 		
 		
 		MongodbSuidRichExt suidRichExt=BFX.getMongodbSuidRichExt();
+		
+//		String createIndex="db.places.createIndex({ location: \"2dsphere\" }) "; 
+//		MongodbRawSql raw=BF.getMongodbRawSql();
+//		raw.modify(createIndex);
+		
+		String indexReturn1 = suidRichExt.index("places", "location", IndexType.geo2dsphere);
+		Logger.info(indexReturn1);
+		
 		
 //		Places places=new Places();
 //		

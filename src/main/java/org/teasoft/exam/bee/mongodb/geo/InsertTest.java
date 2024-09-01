@@ -9,6 +9,7 @@ import java.util.Arrays;
 
 import org.bson.Document;
 import org.teasoft.beex.mongodb.ds.SingleMongodbFactory;
+import org.teasoft.honey.osql.core.Logger;
 
 import com.mongodb.client.model.geojson.Point;
 import com.mongodb.client.model.geojson.Position;
@@ -49,6 +50,8 @@ public class InsertTest {
 		Document doc8 = new Document("name", "barry").append("raid", Arrays.asList(10.4, 10)).append("gps", new Point(new Position(10.4, 10)));
 		Document doc9 = new Document("name", "anne").append("raid", Arrays.asList(10.5, 10)).append("gps", new Point(new Position(10.5, 10)));
 		InsertManyResult a=SingleMongodbFactory.getMongoDb().getCollection("hotel").insertMany(Arrays.asList(doc1, doc2, doc3, doc4, doc5, doc6, doc7, doc8, doc9));
+	
+		Logger.info(a.getInsertedIds().toString());
 	}
 
 }

@@ -168,6 +168,30 @@ public class EmptyDatabaseMetaDataTest {
 		try{ebm.getTableTypes();} catch (Exception e) {  }
 		try{ebm.getRowIdLifetime();} catch (Exception e) {  }
 		try{ebm.getClientInfoProperties();} catch (Exception e) {  }
+		
+
+		try{	ebm.getColumnPrivileges("", "", "", "");} catch (Exception e) {  }
+		try{ebm.getTablePrivileges("", "","");} catch (Exception e) {  }
+		try{ebm.getBestRowIdentifier("", "","",1,false);} catch (Exception e) {  }
+		try{ebm.getVersionColumns("", "","");} catch (Exception e) {  } 
+		try{ebm.getPrimaryKeys("", "","");} catch (Exception e) {  } 
+		try{ebm.getImportedKeys("", "","");} catch (Exception e) {  } 
+		try{ebm.getExportedKeys("", "","");} catch (Exception e) {  } 
+		try{ebm.getSuperTypes("", "","");} catch (Exception e) {  } 
+		try{ebm.getIndexInfo("", "","",false,false);} catch (Exception e) {  }
+		try{ebm.getUDTs("", "","",new int[] {1,2});} catch (Exception e) {  }
+		try{ebm.getSuperTables("", "","");} catch (Exception e) {  } 
+		try{ebm.getAttributes("", "","","");} catch (Exception e) {  } 
+		try{ebm.supportsResultSetHoldability(1);} catch (Exception e) {  } 
+		try{ebm.getSchemas("","");} catch (Exception e) {  } 
+		try{ebm.getFunctions("","","");} catch (Exception e) {  } 
+		try{ebm.getFunctionColumns("","","","");} catch (Exception e) {  } 
+		try{ebm.getPseudoColumns("","","","");} catch (Exception e) {  } 
+		
+		try{ebm.getClientInfoProperties();} catch (Exception e) {  }
+		try{ebm.getClientInfoProperties();} catch (Exception e) {  }
+		try{ebm.getClientInfoProperties();} catch (Exception e) {  }
+		try{ebm.getClientInfoProperties();} catch (Exception e) {  }
 
 
 		ebm.supportsResultSetType(0);
@@ -180,6 +204,13 @@ public class EmptyDatabaseMetaDataTest {
 		ebm.updatesAreDetected(0);
 		ebm.deletesAreDetected(0);
 		ebm.insertsAreDetected(0);
+		
+		ebm.unwrap(null);
+		ebm.isWrapperFor(null);
+		ebm.supportsConvert(1, 1);
+		ebm.getColumns("", "", "", "");
+		ebm.supportsResultSetConcurrency(1, 1);
+
 	}
 
 }

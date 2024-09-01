@@ -54,7 +54,7 @@ public class Service {
 		service2.dropIndex(Noid.class, "indexNormal_uuid");
 		
 		service2.primaryKey(Noid.class, "uuid", "indexNormal_uuid");
-		service2.dropIndex(Noid.class, "indexNormal_uuid");
+		service2.dropIndex(Noid.class, "indexNormal_uuid"); //bug
 		
 		Noid noid = new Noid();
 		noid.setUuid("aaaaaa-no-id");

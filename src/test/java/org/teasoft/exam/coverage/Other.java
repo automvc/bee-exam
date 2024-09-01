@@ -27,6 +27,7 @@ import org.teasoft.honey.jdbc.EmptyDataSource;
 import org.teasoft.honey.osql.core.BeeInitPreLoadService;
 import org.teasoft.honey.osql.interccept.EmptyInterceptor;
 import org.teasoft.honey.osql.shortcut.BF;
+import org.teasoft.honey.osql.shortcut.CSF;
 import org.teasoft.honey.osql.shortcut.HM;
 
 /**
@@ -40,6 +41,7 @@ public class Other {
 		BeeInitPreLoadService.init();
 		
 		new BF();
+		new CSF();
 		
 		EmptyInterceptor emptyInterceptor=new EmptyInterceptor();
 		emptyInterceptor.beforeReturn();
@@ -174,6 +176,9 @@ public class Other {
 		gridFsFile.getFilename();
 		gridFsFile.getId();
 		gridFsFile.getLength();
+		
+		
+		EmptyConnection empty=new EmptyConnection();
 		
 	}
 

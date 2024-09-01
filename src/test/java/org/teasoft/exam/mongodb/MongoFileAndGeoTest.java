@@ -44,16 +44,19 @@ public class MongoFileAndGeoTest extends BaseMongoTest {
 			
 			
 			//geo:
+			InsertAndSelectAllKind.test();
+			InsertAndSelectAllKind2.test();
+			InsertTest.test();
+			GeoTest_Insert.test();
+			GeoTest_Insert2.test();
+			
 			GeoTest.test();
 			GeoTest0.test();
 			GeoTest2.test();
 			GeoTest3.test();
-			GeoTest_Insert.test();
-			GeoTest_Insert2.test();
 
-			InsertAndSelectAllKind.test();
-			InsertAndSelectAllKind2.test();
-			InsertTest.test();
+
+
 			
 			
 			

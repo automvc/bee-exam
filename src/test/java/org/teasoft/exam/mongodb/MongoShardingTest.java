@@ -25,8 +25,13 @@ public class MongoShardingTest extends BaseMongoTest2 {
 			ShardingPaging2_deleteCache.test();
 			ShardingPaging_between.test();
 			ShardingSimpleExam4_2.test();
+			ShardingSelectJson.test();
+			ShardingSelectListStringArray.test();
+			
 			Test4_insert.test();
 			Test4_insertBroadcastTable.test();
+			Test4_insertBroadcastTable2.test();
+			Test4_insertBroadcastTable3.test();
 			Test4_insertList.test();
 			Test4_selectBroadcastTable.test();
 			

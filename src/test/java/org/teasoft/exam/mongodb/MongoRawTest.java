@@ -2,6 +2,7 @@ package org.teasoft.exam.mongodb;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.teasoft.exam.bee.mongodb.raw.MongoshellTest;
 import org.teasoft.exam.bee.mongodb.raw.RawSqlTest;
 import org.teasoft.honey.osql.core.Logger;
 
@@ -16,6 +17,7 @@ public class MongoRawTest extends BaseMongoTest {
 		try {
 
 			RawSqlTest.test();
+			MongoshellTest.test();
 
 			result = true;
 		} catch (Exception e) {

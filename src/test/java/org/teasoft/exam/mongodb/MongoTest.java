@@ -14,7 +14,9 @@ public class MongoTest extends BaseMongoTest {
 		
 		boolean result=false;
 		try {
-			
+			Test4_insert.test();
+			Test4_insertList.test();
+			Test4_insertOrders3.test();
 			Delete.test();
 			SelectAll.test();
 			SelectAll2.test();
@@ -50,9 +52,6 @@ public class MongoTest extends BaseMongoTest {
 			Test3_selectString.test();
 			Test3_selectString2.test();
 			Test4_count.test();
-			Test4_insert.test();
-			Test4_insertList.test();
-			Test4_insertOrders3.test();
 			Test_date.test();
 			Update.test();
 			Update2.test();
@@ -67,6 +66,8 @@ public class MongoTest extends BaseMongoTest {
 			Update_upper2.test();
 			
 			Update_All.test();
+			
+			GenBeanTest.test();
 			
 			result=true;
 			} catch (Exception e) {

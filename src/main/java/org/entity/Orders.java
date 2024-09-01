@@ -1,15 +1,15 @@
-package entity;
+package org.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
  * @author Honey
- * Create on 2024-09-01 01:19:23
+ * Create on 2024-08-26 23:33:42
  */
 public class Orders implements Serializable {
 
-	private static final long serialVersionUID = 1593042574874L;
+	private static final long serialVersionUID = 1597486589979L;
 
 	private Long id;
 	private String userid;

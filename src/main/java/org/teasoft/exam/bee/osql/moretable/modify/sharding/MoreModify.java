@@ -1,11 +1,15 @@
-package org.teasoft.exam.bee.osql.moretable.modify;
+package org.teasoft.exam.bee.osql.moretable.modify.sharding;
 
 import org.teasoft.bee.osql.api.MoreTable;
+import org.teasoft.exam.bee.osql.moretable.modify.Book2;
+import org.teasoft.exam.bee.osql.moretable.modify.BookDetail;
 import org.teasoft.honey.osql.shortcut.BF;
 
 public class MoreModify {
 	
 	public static void main(String[] args) throws Exception{
+		ShardingInitData.init(); // 分片
+		InitSameDsUtil.initDS();
 		test();
 	}
 	

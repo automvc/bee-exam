@@ -62,5 +62,14 @@ public class Book {
 		this.bookDetailList = bookDetailList;
 	}
 
-	
+	 public String toString(){	
+		 StringBuilder str=new StringBuilder();	
+		 str.append("Book[");			
+		 str.append("id=").append(id2);		 
+		 str.append(",name=").append(name);		 
+		 str.append(",remark=").append(remark);		 
+		 str.append(",isbn=").append(isbn);		 
+		 str.append("]");			 
+		 return str.toString();			 
+	 }	
 }

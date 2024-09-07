@@ -22,7 +22,7 @@ import com.alibaba.druid.pool.DruidDataSource;
  * @author Kingstar
  * @since  2.0
  */
-public class InitSameDsUtil {
+public class InitSameDsUtil_pgsql {
 	
 	public static void initDS() {
 		try {
@@ -38,9 +38,9 @@ public class InitSameDsUtil {
 			
 			DruidDataSource dataSource0;  //只是测试,在开发/测试阶段,不想引入DruidDataSource也可以换成SimpleDataSource
 			dataSource0 = new DruidDataSource();
-			dataSource0.setUrl("jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8&useSSL=false");
-			dataSource0.setUsername("root");
-			dataSource0.setPassword("123456");
+			dataSource0.setUrl("jdbc:postgresql://127.0.0.1:5432/bee");
+			dataSource0.setUsername("Administrator");
+			dataSource0.setPassword("");
 			
 //			bee.db.dbName=PostgreSQL
 //					bee.db.driverName =org.postgresql.Driver
@@ -58,9 +58,9 @@ public class InitSameDsUtil {
 
 			DruidDataSource dataSource1;
 			dataSource1 = new DruidDataSource();
-			dataSource1.setUrl("jdbc:mysql://localhost:3306/pro?characterEncoding=UTF-8&useSSL=false");
-			dataSource1.setUsername("root");
-			dataSource1.setPassword("123456");
+			dataSource1.setUrl("jdbc:postgresql://127.0.0.1:5432/postgres");
+			dataSource1.setUsername("Administrator");
+			dataSource1.setPassword("");
 			dataSource1.init();
 
 //			以上数据源,也可以通过XML方式配置

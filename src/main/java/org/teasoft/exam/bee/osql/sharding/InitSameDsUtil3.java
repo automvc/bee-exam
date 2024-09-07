@@ -22,7 +22,7 @@ import com.alibaba.druid.pool.DruidDataSource;
  * @author Kingstar
  * @since  2.0
  */
-public class InitSameDsUtil {
+public class InitSameDsUtil3 {
 	
 	public static void initDS() {
 		try {
@@ -41,12 +41,6 @@ public class InitSameDsUtil {
 			dataSource0.setUrl("jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8&useSSL=false");
 			dataSource0.setUsername("root");
 			dataSource0.setPassword("123456");
-			
-//			bee.db.dbName=PostgreSQL
-//					bee.db.driverName =org.postgresql.Driver
-//					bee.db.url =jdbc:postgresql://127.0.0.1:5432/bee
-//					bee.db.username =Administrator
-//					bee.db.password =
 			
 //			dataSource0.setUrl("jdbc:oracle:thin:@localhost:1521:orcl");
 //			dataSource0.setUsername("scott");

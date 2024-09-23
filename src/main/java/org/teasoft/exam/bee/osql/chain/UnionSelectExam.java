@@ -9,6 +9,7 @@ package org.teasoft.exam.bee.osql.chain;
 import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
+import org.teasoft.bee.osql.DatabaseConst;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.api.PreparedSql;
 import org.teasoft.bee.osql.chain.Select;
@@ -17,6 +18,7 @@ import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.chain.SelectImpl;
 import org.teasoft.honey.osql.chain.UnionSelectImpl;
 import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyUtil;
 import org.teasoft.honey.osql.core.Logger;
 
@@ -30,7 +32,16 @@ public class UnionSelectExam {
 	
 	
 	public static void main(String[] args) {
-		test();
+		
+		String DbName=HoneyConfig.getHoneyConfig().getDbName();
+		if (DatabaseConst.PostgreSQL.equalsIgnoreCase(DbName)) {
+			Logger.warn("PostgreSQL do not support (select * from table1) union all (select * from table2)! can not use *");
+		    return ;
+		}else {
+			test();
+		}
+		
+		
 	}
 	
 	public static void test() {

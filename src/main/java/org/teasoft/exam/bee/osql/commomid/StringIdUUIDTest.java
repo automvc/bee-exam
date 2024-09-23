@@ -34,7 +34,7 @@ public class StringIdUUIDTest {
 		
 		System.out.println(Integer.MAX_VALUE);
 		
-		Ddl.createTable(new Orders3(), false);
+		Ddl.createTable(Orders3.class, false);
 		
 		Orders3 orders=new Orders3();
 		orders.setName("Bee");

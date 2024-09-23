@@ -9,6 +9,7 @@ package org.teasoft.exam.bee.osql.chain;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.api.PreparedSql;
 import org.teasoft.bee.osql.chain.Update;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.osql.shortcut.CSF;
 
@@ -37,8 +38,11 @@ public class Update24 {
 //		.where("t2.a=t.a");
 		.where()
 		.opWithField("t2.a", Op.eq, "t.a");
-		
-		preparedSql.modify(update.toSQL());
+		try {
+			preparedSql.modify(update.toSQL());
+		} catch (Exception e) {
+			Logger.warn("Exception in Update24.  "+e.getMessage());
+		}
 		
 		update=CSF.getUpdate();
 		update.update("t2").update("t")

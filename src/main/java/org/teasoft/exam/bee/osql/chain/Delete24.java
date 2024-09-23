@@ -29,6 +29,7 @@ public class Delete24 {
 		
 		Delete del=CSF.getDelete();
 		del.delete("orders0_copy1");
+		del.where();
 		del.op("id", Op.gt, 20);
 		int r=pre.modify(del.toSQL());
 		Logger.info("delete count ,the count:"+r);

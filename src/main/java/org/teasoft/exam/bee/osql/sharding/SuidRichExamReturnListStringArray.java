@@ -104,14 +104,14 @@ public class SuidRichExamReturnListStringArray {
 //			ordersForString.setUserid(0L);
 			ordersForString.setOrderid(0L);
 			
-			suidRich.selectString(ordersForString);
-			List<String[]> listString = suidRich.selectString(ordersForString, "id,userid,total,createtime");
-			for (String str[] : listString) {
-				for (String s : str) {
-					System.out.print(s + "  , ");
-				}
-				Logger.info("");
-			}
+//			suidRich.selectString(ordersForString);
+//			List<String[]> listString = suidRich.selectString(ordersForString, "id,userid,total,createtime");
+//			for (String str[] : listString) {
+//				for (String s : str) {
+//					System.out.print(s + "  , ");
+//				}
+//				Logger.info("");
+//			}
 			
 			
 			
@@ -127,7 +127,7 @@ public class SuidRichExamReturnListStringArray {
 			.op(Orders_F.orderid, Op.eq, 2)
 			;
 			
-			suidRich.selectString(ordersForString, conditon2);
+//			suidRich.selectString(ordersForString, conditon2);
 
 			Condition distinctCondition0=BeeFactoryHelper.getCondition();
 			distinctCondition0.selectDistinctField("userid");

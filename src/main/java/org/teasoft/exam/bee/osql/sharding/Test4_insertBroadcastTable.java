@@ -34,7 +34,7 @@ public class Test4_insertBroadcastTable {
 		
 		List<Noid0> insertList=new ArrayList<>();
 		
-		for (int i = 160; i < 2000; i++) {
+		for (int i = 1; i < 100; i++) {
 			noid0=new Noid0();
 			if(i==18) noid0.setUuid("839668237074436");
 			noid0.setName(i+"-aa");

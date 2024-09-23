@@ -33,6 +33,7 @@ public class InitSameDsUtil {
 			honeyConfig.multiDS_type = 0;
 			honeyConfig.multiDS_differentDbType = false;
 			honeyConfig.multiDS_defalutDS="ds0"; //路由信息
+//			honeyConfig.multiDS_sharding=true;
 			honeyConfig.setMultiDsSharding(true); //仅用于测试;在生产上,bee.dosql.multiDS.sharding应该放在配置文件中设置;且运行过程不宜更改,否则会丢失有关配置和上下文信息.
 			HoneyContext.setConfigRefresh(true); //涉及路由信息更新要刷新
 			

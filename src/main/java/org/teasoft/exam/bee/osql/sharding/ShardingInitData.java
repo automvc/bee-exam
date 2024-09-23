@@ -11,10 +11,13 @@ import java.util.List;
 
 import org.teasoft.bee.sharding.ShardingBean;
 import org.teasoft.exam.bee.mongodb.entity.Noid0;
+import org.teasoft.exam.bee.osql.moretable.entity.Assigncourse;
+import org.teasoft.exam.bee.osql.moretable.entity.Assignexam;
 import org.teasoft.exam.bee.osql.sharding.entity.Scores;
 import org.teasoft.exam.bee.osql.sharding.moretable.entity.Myorders;
 import org.teasoft.exam.bee.osql.sharding.moretable.entity.Ordersdetail;
 import org.teasoft.exam.bee.osql.special.ddl.TestMyUser;
+import org.teasoft.honey.osql.autogen.Ddl;
 import org.teasoft.honey.sharding.config.ShardingConfig;
 
 /**
@@ -99,6 +102,19 @@ public class ShardingInitData {
 		ShardingConfig.addShardingBean("test_user",new ShardingBean("ds[0..1].test_user[0..5]", "id"));
 		ShardingConfig.addShardingBean("test_users",new ShardingBean("ds[0..1].test_users[0..5]", "id"));
 		ShardingConfig.addShardingBean(TestMyUser.class,new ShardingBean("ds[0..1].test_my_user[0..5]", "id"));
+		
+		ShardingConfig.addShardingBean(Assignexam.class,new ShardingBean("ds[0..1].assignexam[0..5]", "id"));
+		ShardingConfig.addShardingBean(Assigncourse.class,new ShardingBean("ds[0..1].assigncourse[0..5]", "id"));
+		
+//		package org.teasoft.exam.bee.osql.moretable.entity;
+//		Orders20
+		
+		ShardingConfig.addShardingBean(org.teasoft.exam.bee.osql.moretable.entity.Orders20.class,new ShardingBean("ds[0..1].orders[0..5]", "id"));
+	
+//	    moretable select test
+		ShardingConfig.addShardingBean("clazz",new ShardingBean("ds[0..1].clazz[0..5]", "id"));
+		ShardingConfig.addShardingBean("student",new ShardingBean("ds[0..1].student[0..5]", "id"));
+		ShardingConfig.addShardingBean("student_hobby",new ShardingBean("ds[0..1].student_hobby[0..5]", "id"));
 	}
 	
 

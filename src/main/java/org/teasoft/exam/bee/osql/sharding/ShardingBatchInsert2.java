@@ -24,13 +24,14 @@ public class ShardingBatchInsert2 {
 	private static SuidRich suidRich = null; //要是在Java代码里加配置,应该在添加配置的代码后,才获取对象.
 
 	public static void main(String[] args) {
-		System.out.println("------Sharding test--------ShardingBatchInsert2-----");
-		ShardingInitData.init(); // 分片
-		InitSameDsUtil.initDS();
+
 		test();
 	}
 
 	public static void test(){
+		System.out.println("------Sharding test--------ShardingBatchInsert2-----");
+		ShardingInitData.init(); // 分片
+		InitSameDsUtil.initDS();
 		if(suidRich==null) suidRich = BF.getSuidRich(); //在添加配置的代码后,才获取对象.
 		test0();
 	}

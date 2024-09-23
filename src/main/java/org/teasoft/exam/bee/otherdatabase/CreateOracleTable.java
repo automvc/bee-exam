@@ -98,16 +98,16 @@ public class CreateOracleTable {
 //			statement.executeUpdate(sql3.replace(" leaf_alloc", " leaf_alloc2"));
 			
 			
-			boolean f=Ddl.createTable(new Scores(),true);
+			boolean f=Ddl.createTable( Scores.class,true);
 			
 //			Ddl.setDynamicParameter("version", ""); //default
-			boolean f2=Ddl.createTable(new LeafAlloc3(),true);
+			boolean f2=Ddl.createTable( LeafAlloc3.class,true);
 			
 			Ddl.setDynamicParameter("version", "2");
-			boolean f3=Ddl.createTable(new LeafAlloc3(),true);
+			boolean f3=Ddl.createTable( LeafAlloc3.class,true);
 			
-			Ddl.createTable(new Assignexam(),true);
-			Ddl.createTable(new Assigncourse(),true);
+			Ddl.createTable( Assignexam.class,true);
+			Ddl.createTable( Assigncourse.class,true);
 			
 
 			System.out.println("Create Oracle tables finished.");

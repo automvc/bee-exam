@@ -21,7 +21,7 @@ public class IndexAndPkExam {
 	}
 	
 	public static void test() {
-		Ddl.createTable(new TestUser(), false); //如果还没有表,则创建表
+		Ddl.createTable(TestUser.class, false); //如果还没有表,则创建表
 		
 		//1. 一般索引
 		Ddl.indexNormal(TestUser.class, "name", "test_index_name");

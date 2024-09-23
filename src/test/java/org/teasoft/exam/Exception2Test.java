@@ -20,15 +20,24 @@ import org.teasoft.honey.osql.core.Logger;
 public class Exception2Test {
 	@Test
 	public void test() {
-
+		Logger.info("-------------------------- test Exception2Test start.  --------------------------");
 		System.out.println("---Bee Exception2Test with junit start:------");
 		ExceptionTest.test();
 		System.out.println("---------------------");
+		Logger.info("------------ test BuzExceptionTest start:  --------------------------");
 		BuzExceptionTest.test();
+		Logger.info("------------ test BuzExceptionTest finished.  --------------------------");
 		System.out.println("---------------------");
+		Logger.info("------------ test LikeEnhanceTest start:  --------------------------");
 		LikeEnhanceTest.test(); //V1.17
+		Logger.info("------------ test LikeEnhanceTest finished.  --------------------------");
+		
+		Logger.info("------------ test testTransactionRollback start:  --------------------------");
 		testTransactionRollback();
+		Logger.info("------------ test LikeEnhanceTest finished.  --------------------------");
 		System.out.println("---Bee Exception2Test with junit end.------");
+		
+		Logger.info("-------------------------- test Exception2Test finished.  --------------------------");
 	}
 	
 	private void testTransactionRollback() {

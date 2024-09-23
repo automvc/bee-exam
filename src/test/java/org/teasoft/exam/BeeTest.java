@@ -28,6 +28,7 @@ import org.teasoft.exam.bee.prod.DictI18nExam;
 import org.teasoft.exam.bee.test.AnnoTest;
 import org.teasoft.exam.bee.test.CharTest;
 import org.teasoft.exam.bee.test.TestCache;
+import org.teasoft.exam.bee.test.TestMoreTable;
 import org.teasoft.exam.bee.test.TestNormal;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.HoneyConfig;
@@ -49,6 +50,8 @@ public class BeeTest {
 		try {
 			TestNormal.test();
 			TestCache.test();
+			
+			TestMoreTable.test();
 			
 //			TestMoreDs.test();
 			
@@ -100,6 +103,8 @@ public class BeeTest {
 			
 			DictI18nExam.test();
 			JpaAnnoTest.test();
+			
+			TestMoreTable.test();
 			
 //			KotlinTest.test();
 			

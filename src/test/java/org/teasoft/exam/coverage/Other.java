@@ -7,6 +7,7 @@
 package org.teasoft.exam.coverage;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 
 import org.junit.Test;
 import org.teasoft.bee.android.CreateAndUpgradeRegistry;
@@ -16,19 +17,26 @@ import org.teasoft.bee.mongodb.CenterPara;
 import org.teasoft.bee.mongodb.GridFsFile;
 import org.teasoft.bee.mongodb.NearPara;
 import org.teasoft.bee.osql.OrderType;
+import org.teasoft.bee.osql.type.PostgreSQLJsonString;
+import org.teasoft.bee.osql.type.PostgreSQLJsonbString2;
 import org.teasoft.bee.sharding.DsTabStruct;
 import org.teasoft.bee.sharding.FunStruct;
+import org.teasoft.bee.sharding.ShardingBean;
 import org.teasoft.bee.sharding.ShardingSimpleStruct;
 import org.teasoft.bee.sharding.ShardingSortStruct;
+import org.teasoft.bee.sharding.algorithm.Calculate;
 import org.teasoft.bee.sharding.algorithm.CalculateRegistry;
 import org.teasoft.beex.ds.C3p0DataSourceBuilder;
 import org.teasoft.honey.jdbc.EmptyConnection;
 import org.teasoft.honey.jdbc.EmptyDataSource;
 import org.teasoft.honey.osql.core.BeeInitPreLoadService;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.interccept.EmptyInterceptor;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.osql.shortcut.CSF;
 import org.teasoft.honey.osql.shortcut.HM;
+import org.teasoft.honey.sharding.algorithm.CustomCalculate;
+import org.teasoft.honey.sharding.algorithm.DateCalculate;
 
 /**
  * @author Kingstar
@@ -37,11 +45,15 @@ import org.teasoft.honey.osql.shortcut.HM;
 public class Other {
 	
 	@Test
-	public void test() {
+	public void test() throws Exception{
 		BeeInitPreLoadService.init();
 		
 		new BF();
 		new CSF();
+		
+		new PostgreSQLJsonString();
+		new PostgreSQLJsonbString2();
+	
 		
 		EmptyInterceptor emptyInterceptor=new EmptyInterceptor();
 		emptyInterceptor.beforeReturn();
@@ -96,6 +108,12 @@ public class Other {
 		strutct.getOrderSql();
 		strutct.getOrderTypes();
 		strutct.isRegFlag();
+		
+		ShardingBean shardingBean=new ShardingBean();
+		shardingBean.setTabAlgorithmClass(null);
+		shardingBean.setDsAlgorithmClass(null);
+		shardingBean.setTabAssignType(1);
+		new ShardingBean(new HashMap<>());
 		
 		FunStruct funStruct=new FunStruct();
 		funStruct.setFieldName("id");
@@ -180,6 +198,17 @@ public class Other {
 		
 		EmptyConnection empty=new EmptyConnection();
 		
+		Calculate calculate=new CustomCalculate();
+		calculate.process("", ""); //CustomCalculate is a example class
+		
+		
+		Calculate calculate2=new DateCalculate();
+		String date1=calculate2.process("", "2020-04");
+		String date2=calculate2.process("", "20200406");
+		String date3=calculate2.process("", "2020/04/06");
+		Logger.info(date1);
+		Logger.info(date2);
+		Logger.info(date3);
 	}
 
 }

@@ -8,6 +8,11 @@ package org.teasoft.exam.sharding;
 
 import org.junit.Test;
 import org.teasoft.exam.MySqlOneConfig;
+import org.teasoft.exam.bee.osql.moretable.modify.MoreInsert40_2;
+import org.teasoft.exam.bee.osql.moretable.modify.sharding.MoreInsert40_3;
+import org.teasoft.exam.bee.osql.moretable.modify.sharding.MoreInsert40_4;
+import org.teasoft.exam.bee.osql.moretable.modify.sharding.MoreInsert40_5;
+import org.teasoft.exam.bee.osql.moretable.modify.sharding.MoreInsert40_6;
 import org.teasoft.exam.bee.osql.sharding.moretable.MoreTableExam;
 import org.teasoft.exam.bee.osql.sharding.moretable.MoreTableExam11;
 import org.teasoft.exam.bee.osql.sharding.moretable.MoreTableExam198;
@@ -42,6 +47,12 @@ public class ShardingMoreTest2 extends BaseShardingTest2 {
 			MoreTableExam5.test();
 			MoreTableExam6.test();
 			MoreTableExam7.test();
+			
+			MoreInsert40_2.test();
+			MoreInsert40_3.test();
+			MoreInsert40_4.test();
+			MoreInsert40_5.test();
+			MoreInsert40_6.test();
 
 //			try {
 //			} catch (Exception e) {

@@ -31,6 +31,7 @@ public class UpperKeyTest {
 		Logger.info(k.delete()+k.from());
 		Logger.info(k.update()+k.set());
 		Logger.info(k.Null()+k.or()+k.offset()+k.on()+k.notBetween()+k.notIn()+k.having()+k.as());
+		Logger.info(k.union()+k.unionAll()+k.not()+k.truncate()+k.drop()+k.table()+k.If()+k.to_date());
 	}
 
 }

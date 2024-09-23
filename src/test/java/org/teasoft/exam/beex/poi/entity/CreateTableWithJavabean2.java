@@ -16,7 +16,7 @@ import org.teasoft.honey.osql.autogen.Ddl;
 public class CreateTableWithJavabean2 {
 	@Test
 	public void test() {
-		Ddl.createTable(new LeftszInfo(), true);
+		Ddl.createTable( LeftszInfo.class, true);
 	}
 
 }

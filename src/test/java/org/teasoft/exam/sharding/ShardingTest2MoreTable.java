@@ -7,22 +7,27 @@
 package org.teasoft.exam.sharding;
 
 import org.junit.Test;
+import org.teasoft.bee.osql.DatabaseConst;
 import org.teasoft.exam.MySqlOneConfig;
-import org.teasoft.exam.bee.mongodb.sharding.ShardingPaging2_deleteCache;
+import org.teasoft.exam.bee.osql.annotation.listmoretable2.MoreTableExam11;
+import org.teasoft.exam.bee.osql.annotation.listmoretable2.MoreTableExam11_2;
+import org.teasoft.exam.bee.osql.annotation.listmoretable2.MoreTableExam11_3;
+import org.teasoft.exam.bee.osql.annotation.listmoretable2.MoreTableExam11_3_2;
+import org.teasoft.exam.bee.osql.annotation.listmoretable2.MoreTableExam11_4;
 import org.teasoft.exam.bee.osql.sharding.MoreSQLFunction;
 import org.teasoft.exam.bee.osql.sharding.ShardingBatchInsert2;
-import org.teasoft.exam.bee.osql.sharding.ShardingBatchInsertExam;
-import org.teasoft.exam.bee.osql.sharding.ShardingDeleteExam;
 import org.teasoft.exam.bee.osql.sharding.ShardingFunAvgExam;
 import org.teasoft.exam.bee.osql.sharding.ShardingFunExam;
 import org.teasoft.exam.bee.osql.sharding.ShardingGroup;
 import org.teasoft.exam.bee.osql.sharding.ShardingGroup1_2;
 import org.teasoft.exam.bee.osql.sharding.ShardingGroup1_3;
+import org.teasoft.exam.bee.osql.sharding.ShardingGroup1_4;
+import org.teasoft.exam.bee.osql.sharding.ShardingGroup1_5;
+import org.teasoft.exam.bee.osql.sharding.ShardingGroup1_6;
 import org.teasoft.exam.bee.osql.sharding.ShardingGroup2;
 import org.teasoft.exam.bee.osql.sharding.ShardingGroup3;
 import org.teasoft.exam.bee.osql.sharding.ShardingGroup4;
 import org.teasoft.exam.bee.osql.sharding.ShardingInExam11;
-import org.teasoft.exam.bee.osql.sharding.ShardingInsertExam10;
 import org.teasoft.exam.bee.osql.sharding.ShardingJsonExam;
 import org.teasoft.exam.bee.osql.sharding.ShardingPaging;
 import org.teasoft.exam.bee.osql.sharding.ShardingPaging01;
@@ -57,38 +62,40 @@ import org.teasoft.exam.bee.osql.sharding.Test4_insertBroadcastTable;
 import org.teasoft.exam.bee.osql.sharding.Test4_selectBroadcastTable;
 import org.teasoft.exam.bee.osql.sharding.Test4_updateBroadcastTable;
 import org.teasoft.exam.bee.osql.sharding.entity.Orders;
+import org.teasoft.exam.bee.test.TestMoreTable;
 import org.teasoft.honey.osql.autogen.Ddl;
 import org.teasoft.honey.osql.core.HoneyConfig;
-import org.teasoft.honey.osql.core.Logger;
-import org.teasoft.honey.osql.shortcut.BF;
 
 /**
- * createTable in sharding
  * @author Kingstar
  * @since  2.1
  */
-public class Sharding2Test extends BaseShardingTest2{
-	
+public class ShardingTest2MoreTable extends BaseShardingTest2 {
+
 	@Test
 	public void test() {
-		
-		System.out.println("---Bee Sharding2Test with junit start:------");
-		System.out.println("---------------db: "+HoneyConfig.getHoneyConfig().getDbName());
+
+		System.out.println("---Bee ShardingTest2MoreTable with junit start:------");
+
 		try {
-			Ddl.createTable(Orders.class,true);
-	
-		
-//		HoneyConfig.getHoneyConfig().sharding_forkJoinBatchInsert=true;
-//		ShardingBatchInsert2.test();
-//		HoneyConfig.getHoneyConfig().sharding_forkJoinBatchInsert=false;
-		
-		
-	} catch (Exception e) {
-		e.printStackTrace();
-	}finally {
-		System.out.println("---Bee Sharding2Test with junit end:------");
-//		MySqlOneConfig.reset(); //预防测试无序,跳到其它类
-	}
+			
+			String DbName = HoneyConfig.getHoneyConfig().getDbName();
+			if (!DatabaseConst.MYSQL.equalsIgnoreCase(DbName)) return; // 只使用MYSQL测试.
+
+//			TestMoreTable.test();
+			
+			MoreTableExam11.test();
+			MoreTableExam11_2.test();
+			MoreTableExam11_3.test();
+			MoreTableExam11_3_2.test();
+			MoreTableExam11_4.test();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			System.out.println("---Bee ShardingTest2MoreTable with junit end:------");
+			MySqlOneConfig.reset(); // 预防测试无序,跳到其它类
+		}
 	}
 
 }

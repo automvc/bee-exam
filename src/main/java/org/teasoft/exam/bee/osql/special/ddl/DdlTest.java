@@ -24,8 +24,10 @@ public class DdlTest {
 //		Ddl.createTable(new NoTypeHowDdl(),true);
 //		Ddl.createTable(new Noid0(),true);
 //		Ddl.createTable(Noid1.class,true);
-		BF.getPreparedSql().modify("drop table noid1");
-		Ddl.createTable(Noid1.class);
+//		BF.getPreparedSql().modify("drop table noid1");  //2.4.0.8 fixed ERROR: table "noid1" does not exist
+//		Ddl.createTable(Noid1.class);
+		
+		Ddl.createTable(Noid1.class,true);
 		
 		Ddl.createTable(Noid1.class,true);
 	}

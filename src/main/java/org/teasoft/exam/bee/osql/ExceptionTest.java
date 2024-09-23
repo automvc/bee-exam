@@ -68,6 +68,10 @@ public class ExceptionTest {
 	}
 
 	public static void test() {
+		try {
+			
+		Logger.info("-------------------------- test ExceptionTest start.  --------------------------");	
+		
 		test1();  //SqlNullException
 		test2(); //ObjSQLException
 		test3(); //BeeSQLException
@@ -101,6 +105,12 @@ public class ExceptionTest {
 		ExceptionHelper.convert(new IllegalAccessException());
 		ExceptionHelper.convert(new InstantiationException());
 		ExceptionHelper.convert(new Exception());
+		
+		} catch (Exception e) {
+			Logger.info("in ExceptionTest: " +e.getMessage());
+		}finally {
+			Logger.info("-------------------------- test ExceptionTest finished.  --------------------------");
+		}
 	}
 
 	public static void test1() {

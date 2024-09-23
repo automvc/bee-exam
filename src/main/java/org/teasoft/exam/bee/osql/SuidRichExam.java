@@ -52,7 +52,8 @@ public class SuidRichExam {
 	public static void test() {
 
 		try {
-
+			Logger.info("=============SuidRichExam=========================start==");
+			System.out.println("=============SuidRichExam=========================start==");
 			Orders orders = new Orders();
 			orders.setName("client");
 			orders.setUserid("client");
@@ -410,6 +411,10 @@ public class SuidRichExam {
 		Orders one=suidRich.selectById(Orders.class,exampleField.getId());
 		if(one!=null) suidRich.update(exampleField);
 		else suidRich.insert(exampleField);
+		
+		
+		Logger.info("=============SuidRichExam=========================end==");
+		System.out.println("=============SuidRichExam=========================end==");
 
 	}
 	

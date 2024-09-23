@@ -23,7 +23,7 @@ public class Clazz implements Serializable {
 	private String place;
 	private String teachername;
 	
-	@Datetime(suidType=SuidType.SELECT)
+//	@Datetime(suidType=SuidType.SELECT)
 	private String remark;
 	
 //	@JoinTable(mainField="id", subField="classno", joinType=JoinType.LEFT_JOIN,subAlias="stu",subClass="Student")

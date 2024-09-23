@@ -12,6 +12,8 @@ import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.api.Condition;
 import org.teasoft.bee.osql.api.MoreTable;
 import org.teasoft.exam.bee.osql.moretable.entity.Assignexam;
+import org.teasoft.exam.bee.osql.sharding.InitSameDsUtil;
+import org.teasoft.exam.bee.osql.sharding.ShardingInitData;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
@@ -24,6 +26,10 @@ import org.teasoft.honey.osql.core.Logger;
 public class MoreTableFun {
 
 	public static void main(String[] args) {
+		
+		ShardingInitData.init(); // 分片
+		InitSameDsUtil.initDS();
+		
 		test();
 	}
 
@@ -31,7 +37,7 @@ public class MoreTableFun {
 		try {
 			MoreTable moreTable = BeeFactory.getHoneyFactory().getMoreTable();
 			Condition distinctCondition0 = BeeFactoryHelper.getCondition();
-			distinctCondition0.selectDistinctField("assignexam.id")
+			distinctCondition0.selectDistinctField("assignexam.id") 
 			//	.selectFun(FunctionType.MAX, "assignexam.id")
 			//	.selectField("assignexam.id")
 			;

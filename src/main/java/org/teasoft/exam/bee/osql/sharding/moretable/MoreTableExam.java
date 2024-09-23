@@ -43,26 +43,29 @@ public class MoreTableExam {
 			orders1.setUserid(1L);
 			
 //			//一库一表
-//			List<Myorders> list1 = moreTable.select(orders1, 0, 10); //select 查询前10条记录
-//			Logger.info("size of records:"+list1.size() + "");
-//            Printer.printList(list1);
+			List<Myorders> list1 = moreTable.select(orders1, 0, 10); //select 查询前10条记录
+			Logger.info("size of records:"+list1.size() + "");
+            Printer.printList(list1);
 			
 			
-			//一库多表
-			Condition condition = BF.getCondition();
-			condition
-//			.op("orders.Userid", Op.eq, 2) 
-			.op("userid", Op.eq, 2) 
-			.start(0).size(10) //分页
-			;
+//			BF.getSuidRich().select(orders1, 0, 10);
+			
+			
+//			//一库多表
+//			Condition condition = BF.getCondition();
+//			condition
+////			.op("orders.Userid", Op.eq, 2) 
+//			.op("userid", Op.eq, 2) 
+//			.start(0).size(10) //分页
+//			;
 			
 			Ordersdetail ordersdetail=new Ordersdetail();
 //			ordersdetail.setRemark("aaa");
 			orders1.setOrdersdetail(ordersdetail);
 			
-			List<Myorders> list2 = moreTable.select(orders1, condition); //select
-			Logger.info("size of records:"+list2.size() + "");
-			Printer.printList(list2);
+//			List<Myorders> list2 = moreTable.select(orders1, condition); //select
+//			Logger.info("size of records:"+list2.size() + "");
+//			Printer.printList(list2);
 			
 			
 //			//全域查询.  但分页不准确. 数量,排序 TODO

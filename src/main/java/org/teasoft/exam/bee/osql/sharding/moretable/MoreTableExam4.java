@@ -40,12 +40,12 @@ public class MoreTableExam4 {
 			MoreTable moreTable = BeeFactory.getHoneyFactory().getMoreTable();
 			
 			Myorders orders1 = new Myorders();
-			orders1.setUserid(2L);
+//			orders1.setUserid(2L);
 			
 			//一库多表
 			Condition condition = BF.getCondition();
 			condition
-			.op("myorders.userid", Op.eq, 2) 
+			.op("myorders.userid", Op.eq, 3) 
 //			.op("myorders.userid", Op.eq, 1) 
 //			.op("ordersdetail.userid", Op.eq, 1) 
 //			.op("userid", Op.eq, 2) 

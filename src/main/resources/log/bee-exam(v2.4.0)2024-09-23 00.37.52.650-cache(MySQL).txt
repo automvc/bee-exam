@@ -1,0 +1,1184 @@
+[INFO] [Bee] PreparedSql modify SQL: DROP TABLE IF EXISTS `test_primary_key`;
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL: CREATE TABLE `test_primary_key` (  `myid` bigint(20) NOT NULL AUTO_INCREMENT, `name` varchar(100) COLLATE utf8_bin DEFAULT NULL,  `remark` varchar(100) COLLATE utf8_bin DEFAULT NULL,  `remark2` varchar(100) COLLATE utf8_bin DEFAULT NULL,  PRIMARY KEY (`myid`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+[INFO] [Bee]  | <--  Affected rows: 0
+[WARN] Auto table: parameter  ${month} in Orders${month} still has not value, will be ignore it!
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS Orders
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE Orders (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+userid  varchar(255) DEFAULT NULL,  
+orderid  bigint(20) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+total  DECIMAL(19,6) DEFAULT NULL,  
+createtime  varchar(255) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL,  
+sequence  varchar(255) DEFAULT NULL,  
+abc  varchar(255) DEFAULT NULL,  
+updatetime  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS Orders_202007
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE Orders_202007 (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+userid  varchar(255) DEFAULT NULL,  
+orderid  bigint(20) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+total  DECIMAL(19,6) DEFAULT NULL,  
+createtime  varchar(255) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL,  
+sequence  varchar(255) DEFAULT NULL,  
+abc  varchar(255) DEFAULT NULL,  
+updatetime  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS Orders1
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE Orders1 (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+userid  varchar(255) DEFAULT NULL,  
+orderid  bigint(20) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+total  DECIMAL(19,6) DEFAULT NULL,  
+createtime  varchar(255) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL,  
+sequence  varchar(255) DEFAULT NULL,  
+abc  varchar(255) DEFAULT NULL,  
+updatetime  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE Orders2 (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+userid  varchar(255) DEFAULT NULL,  
+orderid  bigint(20) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+total  DECIMAL(19,6) DEFAULT NULL,  
+createtime  varchar(255) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL,  
+sequence  varchar(255) DEFAULT NULL,  
+abc  varchar(255) DEFAULT NULL,  
+updatetime  varchar(255) DEFAULT NULL
+ )
+[DEBUG] Table 'orders2' already exists
+Table 'orders2' already exists
+[INFO] [Bee] DDL SQL:CREATE TABLE Orders3 (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+userid  varchar(255) DEFAULT NULL,  
+orderid  bigint(20) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+total  DECIMAL(19,6) DEFAULT NULL,  
+createtime  varchar(255) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL,  
+sequence  varchar(255) DEFAULT NULL,  
+abc  varchar(255) DEFAULT NULL,  
+updatetime  varchar(255) DEFAULT NULL
+ )
+[DEBUG] Table 'orders3' already exists
+Table 'orders3' already exists
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS test_user
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE test_user (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+email  varchar(255) DEFAULT NULL,  
+last_name  varchar(255) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+password  varchar(255) DEFAULT NULL,  
+username  varchar(255) DEFAULT NULL,  
+createtime  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS leaf_alloc
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE leaf_alloc (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+biz_tag  varchar(255) DEFAULT NULL,  
+max_id  bigint(20) DEFAULT NULL,  
+step  int(11) DEFAULT NULL,  
+description  varchar(255) DEFAULT NULL,  
+update_time  timestamp DEFAULT CURRENT_TIMESTAMP,  
+version  int(11) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS leaf_alloc2
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE leaf_alloc2 (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+biz_tag  varchar(255) DEFAULT NULL,  
+max_id  bigint(20) DEFAULT NULL,  
+step  int(11) DEFAULT NULL,  
+description  varchar(255) DEFAULT NULL,  
+update_time  varchar(255) DEFAULT NULL,  
+version  int(11) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS leaf_alloc3
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE leaf_alloc3 (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+biz_tag  varchar(255) DEFAULT NULL,  
+max_id  bigint(20) DEFAULT NULL,  
+step  int(11) DEFAULT NULL,  
+description  varchar(255) DEFAULT NULL,  
+update_time  varchar(255) DEFAULT NULL,  
+version  int(11) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS scores
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE scores (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+classno  varchar(255) DEFAULT NULL,  
+term  varchar(255) DEFAULT NULL,  
+examno  varchar(255) DEFAULT NULL,  
+subjectno  varchar(255) DEFAULT NULL,  
+subject  varchar(255) DEFAULT NULL,  
+stuno  varchar(255) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+teacherno  varchar(255) DEFAULT NULL,  
+teachername  varchar(255) DEFAULT NULL,  
+score  Double DEFAULT NULL,  
+creater  varchar(255) DEFAULT NULL,  
+createtime  timestamp DEFAULT CURRENT_TIMESTAMP,  
+updater  varchar(255) DEFAULT NULL,  
+updatetime  timestamp DEFAULT CURRENT_TIMESTAMP,  
+remark  varchar(255) DEFAULT NULL,  
+ext1  varchar(255) DEFAULT NULL,  
+status  varchar(255) DEFAULT NULL,  
+schoolno  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS assignexam
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE assignexam (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+classno  varchar(255) DEFAULT NULL,  
+term  varchar(255) DEFAULT NULL,  
+examno  varchar(255) DEFAULT NULL,  
+subjectno  varchar(255) DEFAULT NULL,  
+subject  varchar(255) DEFAULT NULL,  
+creater  varchar(255) DEFAULT NULL,  
+createtime  timestamp DEFAULT CURRENT_TIMESTAMP,  
+updater  varchar(255) DEFAULT NULL,  
+updatetime  timestamp DEFAULT CURRENT_TIMESTAMP,  
+remark  varchar(255) DEFAULT NULL,  
+ext1  varchar(255) DEFAULT NULL,  
+status  varchar(255) DEFAULT NULL,  
+schoolno  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS assigncourse
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE assigncourse (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+classno  varchar(255) DEFAULT NULL,  
+term  varchar(255) DEFAULT NULL,  
+teacherno  varchar(255) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+subjectno  varchar(255) DEFAULT NULL,  
+subject  varchar(255) DEFAULT NULL,  
+creater  varchar(255) DEFAULT NULL,  
+createtime  timestamp DEFAULT CURRENT_TIMESTAMP,  
+updater  varchar(255) DEFAULT NULL,  
+updatetime  timestamp DEFAULT CURRENT_TIMESTAMP,  
+remark  varchar(255) DEFAULT NULL,  
+status  varchar(255) DEFAULT NULL,  
+schoolno  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS clazz
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE clazz (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+classname  varchar(255) DEFAULT NULL,  
+place  varchar(255) DEFAULT NULL,  
+teachername  varchar(255) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS student
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE student (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+sid  int(11) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+age  int(11) DEFAULT NULL,  
+sex  BIT DEFAULT NULL,  
+majorid  varchar(255) DEFAULT NULL,  
+flag  BIT DEFAULT NULL,  
+classno  int(11) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS student_hobby
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE student_hobby (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+stu_id  varchar(255) DEFAULT NULL,  
+hobby  varchar(255) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS Noid
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE Noid (
+uuid  varchar(255) PRIMARY KEY NOT NULL,  
+name  varchar(255) DEFAULT NULL,  
+num  int(11) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS noid
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE noid (
+uuid  varchar(255) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+num  int(11) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL,  
+ch  char(1) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS noid2
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE noid2 (
+uu_id  varchar(255) PRIMARY KEY NOT NULL,  
+name  varchar(255) DEFAULT NULL,  
+num  int(11) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS noid1
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE noid1 (
+uuid  varchar(255) PRIMARY KEY NOT NULL,  
+name  varchar(255) DEFAULT NULL,  
+num  int(11) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS orders3
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE orders3 (
+id  varchar(255) PRIMARY KEY NOT NULL,  
+userid  varchar(255) DEFAULT NULL,  
+orderid  bigint(20) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+total  DECIMAL(19,6) DEFAULT NULL,  
+createtime  varchar(255) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL,  
+sequence  varchar(255) DEFAULT NULL,  
+abc  varchar(255) DEFAULT NULL,  
+updatetime  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS orders_id_string
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE orders_id_string (
+id  varchar(255) PRIMARY KEY NOT NULL,  
+userid  varchar(255) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+total  DECIMAL(19,6) DEFAULT NULL,  
+createtime  varchar(255) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL,  
+sequence  varchar(255) DEFAULT NULL,  
+abc  varchar(255) DEFAULT NULL,  
+updatetime  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS date_type
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE date_type (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+date1  datetime DEFAULT CURRENT_TIMESTAMP,  
+date3  datetime DEFAULT CURRENT_TIMESTAMP,  
+date2  datetime DEFAULT CURRENT_TIMESTAMP,  
+remark  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS test_primary_key
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE test_primary_key (
+myid  bigint(20) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL,  
+remark2  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS clazz
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE clazz (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+classname  varchar(255) DEFAULT NULL,  
+place  varchar(255) DEFAULT NULL,  
+teachername  varchar(255) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS student
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE student (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+sid  int(11) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+age  int(11) DEFAULT NULL,  
+sex  BIT DEFAULT NULL,  
+majorid  varchar(255) DEFAULT NULL,  
+flag  BIT DEFAULT NULL,  
+classno  int(11) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS student_hobby
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE student_hobby (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+stu_id  varchar(255) DEFAULT NULL,  
+hobby  varchar(255) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL
+ )
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO orders VALUES ('100001', 'Bee', 1,'Bee(ORM Framework)', '95.01', '2020-03-02 11:29:28', 'test', '12345601', 'test1', null);
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO orders VALUES ('100002', 'bee', 1,'Bee', '96.01', '2020-03-02 11:29:28', 'test%a', '12345602', 'test2', '2020-03-02 16:34:19');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO orders VALUES ('100003', 'bee', 1,'Bee', '97.01', '2020-03-02 11:29:28', 'testx%', '12345603', 'test3', '2020-03-02 16:34:19');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO orders_202007 VALUES ('100001', 'Bee', 1,'Bee(ORM Framework)', '95.01', '2020-03-02 11:29:28', 'test', '12345601', 'test1', null);
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO orders_202007 VALUES ('100002', 'bee', 1,'Bee', '96.01', '2020-03-02 11:29:28', 'test%a', '12345602', 'test2', '2020-03-02 16:34:19');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO orders_202007 VALUES ('100003', 'bee', 1,'Bee', '97.01', '2020-03-02 11:29:28', 'testx%', '12345603', 'test3', '2020-03-02 16:34:19');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO test_user VALUES ('800001', 'beeUser@163.com', null, 'Bee', 'bee', 'bee', null);
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO test_user VALUES ('800002', 'honey@163.com', 'cn', 'Honey', 'honey', 'honey', null);
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc3 VALUES ('456537470402562', 'test', '100', '100', 'test segment', '2020-07-04 22:42:09', '1');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc3 VALUES ('456537470402563', 'order', '100', '100', 'order segment', '2020-07-04 22:42:10', '1');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc3 VALUES ('456537470402564', 'bee', '100', '100', 'order segment', '2020-09-19 19:05:10', '1');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc2 VALUES ('456537470402562', 'test', '100', '100', 'test segment', '2020-07-04 22:42:09', '1');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc2 VALUES ('456537470402563', 'order', '100', '100', 'order segment', '2020-07-04 22:42:10', '1');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc2 VALUES ('456537470402564', 'bee', '100', '100', 'order segment', '2020-09-19 19:05:10', '1');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc(id,biz_tag,max_id,step,description,version) VALUES ('456537470402562', 'test', '100', '100', 'test segment', '1');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc(id,biz_tag,max_id,step,description,version) VALUES ('456537470402563', 'order', '100', '100', 'test segment', '1');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc(id,biz_tag,max_id,step,description,version) VALUES ('456537470402564', 'bee', '100', '100', 'test segment', '1');
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [bee-exam] ====================CacheTest.test======start:
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee0(String)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001(Long),Bee(ORM Framework)(String)
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001(Long),Bee(ORM Framework)(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] update SQL: update orders set name=? , remark=? where id=?   [values]: Bee(ORM Framework)(String),other(String),100001(Long)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=? and remark=?   [values]: 100001(Long),Bee(ORM Framework)(String),other(String)
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=?   [values]: bee2(String),Bee--ORM Framework(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3(String)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee4(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee5(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee6(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee6(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3(String)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee7(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee9(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee10(String)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee11(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee11(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [bee-exam] ====================CacheTest.test======end.
+
+[INFO] [bee-exam] ====================CacheTestDel.test======start:
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee0(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001(Long),Bee(ORM Framework)(String)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] update SQL: update orders set name=? , remark=? where id=?   [values]: Bee(ORM Framework)(String),other(String),100001(Long)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=? and remark=?   [values]: 100001(Long),Bee(ORM Framework)(String),other(String)
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=?   [values]: bee2(String),Bee--ORM Framework(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee4(String)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee5(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee6(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee7(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8(String)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee7(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee9(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee10(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee11(String)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee11(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [bee-exam] ====================CacheTestDel.test======end.
+
+[INFO] [bee-exam] ====================CacheTestInsertArray.test======start:
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee0(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001(Long),Bee--ORM Framework(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee0(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] update SQL: update orders set name=? , remark=? where id=?   [values]: Bee--ORM Framework(String),other(String),100001(Long)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 1022667813552298(Long),bee4(String),null(String),12.3(java.math.BigDecimal),null(Long),null(String),null(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:1 ,  [values]: 1022667813552299(Long),bee5(String),null(String),12.3(java.math.BigDecimal),null(Long),null(String),null(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:2 ,  [values]: 1022667813552300(Long),bee6(String),null(String),12.3(java.math.BigDecimal),null(Long),null(String),null(String),null(String),null(String),null(String)
+[INFO] [Bee]  | <-- [Batch:0] Affected rows: 3
+[INFO] [Bee]  | <--  Affected rows: 3
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=? and remark=?   [values]: 100001(Long),Bee--ORM Framework(String),other(String)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=?   [values]: bee2(String),Bee--ORM Framework(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? and total=?   [values]: bee4(String),12.3(java.math.BigDecimal)
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? and total=?   [values]: bee5(String),12.3(java.math.BigDecimal)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? and total=?   [values]: bee6(String),12.3(java.math.BigDecimal)
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee7(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee9(String)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee10(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee11(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee11(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee8(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [bee-exam] ====================CacheTestInsertArray.test======end.
+
+[INFO] [bee-exam] ====================CacheTestJson.test======start:
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee0(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001(Long),Bee--ORM Framework(String)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=?   [values]: bee2(String),Bee--ORM Framework(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee4(String)
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee5(String)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee6(String)
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] selectJson SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee6(String)
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [{"id":1022667813552300,"userid":"bee6","name":null,"total":12.300000,"orderid":null,"createtime":null,"remark":null,"sequence":null,"abc":null,"updatetime":null}]
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee6(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] Orders[id=1022667813552300,userid=bee6,orderid=null,name=null,total=12.300000,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: bee3(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [bee-exam] ====================CacheTestJson.test======end.
+
+[INFO] 2024-09-23 00:40:03  test cache Finished!
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [bee-exam] ====================MoreTableExam11.test======start:
+[INFO] [Bee] select SQL: select clazz.id,clazz.classname,clazz.place,clazz.teachername,clazz.remark,student.id,student.sid,student.name,student.age,student.sex,student.majorid,student.flag,student.classno,student_hobby.id,student_hobby.stu_id,student_hobby.hobby,student_hobby.remark from clazz left join student on clazz.id=student.classno  join student_hobby on student.id=student_hobby.stu_id
+[INFO] [Bee]  | <--  ( select raw record rows: 0 )
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [bee-exam] ====================MoreTableExam11.test======end.
+
+[INFO] [bee-exam] ====================MoreTableExam11_2.test======start:
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [Bee] select SQL: select clazz.id,clazz.classname,clazz.place,clazz.teachername,clazz.remark,student.id,student.sid,student.name,student.age,student.sex,student.majorid,student.flag,student.classno,student_hobby.id,student_hobby.stu_id,student_hobby.hobby,student_hobby.remark from (select * from clazz limit 0,2) clazz left join student on clazz.id=student.classno  join student_hobby on student.id=student_hobby.stu_id
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  ( select raw record rows: 0 )
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [bee-exam] ====================MoreTableExam11_2.test======end.
+
+[INFO] [bee-exam] ====================MoreTableExam11_3.test======start:
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [Bee] select SQL: select clazz.id,clazz.classname,clazz.place,clazz.teachername,clazz.remark,student.id,student.sid,student.name,student.age,student.sex,student.majorid,student.flag,student.classno,student_hobby.id,student_hobby.stu_id,student_hobby.hobby,student_hobby.remark from clazz left join student on clazz.id=student.classno  join student_hobby on student.id=student_hobby.stu_id where clazz.id=? and clazz.classname=? limit ?,?   [values]: 6(Integer),class one(String),0(Integer),2(Integer)
+[INFO] [Bee]  | <--  ( select raw record rows: 0 )
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [bee-exam] ====================MoreTableExam11_3.test======end.
+
+[INFO] [bee-exam] ====================MoreTableExam11_3_2.test======start:
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [Bee] select SQL: select clazz.id,clazz.classname,clazz.place,clazz.teachername,clazz.remark,student.id,student.sid,student.name,student.age,student.sex,student.majorid,student.flag,student.classno,student_hobby.id,student_hobby.stu_id,student_hobby.hobby,student_hobby.remark from clazz left join student on clazz.id=student.classno  join student_hobby on student.id=student_hobby.stu_id where clazz.id=? and clazz.classname=? limit ?,?   [values]: 6(Integer),class one(String),0(Integer),2(Integer)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [bee-exam] ====================MoreTableExam11_3_2.test======end.
+
+[INFO] [bee-exam] ====================MoreTableExam11_4.test======start:
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [Bee] select SQL: select clazz.id,clazz.classname,clazz.place,clazz.teachername,clazz.remark,student.id,student.sid,student.name,student.age,student.sex,student.majorid,student.flag,student.classno,student_hobby.id,student_hobby.stu_id,student_hobby.hobby,student_hobby.remark from clazz left join student on clazz.id=student.classno  join student_hobby on student.id=student_hobby.stu_id where clazz.classname=? and student.age=?   [values]: class one(String),20(Integer)
+[INFO] [Bee]  | <--  ( select raw record rows: 0 )
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [bee-exam] ====================MoreTableExam11_4.test======end.
+
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] Generating...
+[DEBUG] Override file:  D:\JavaWeb\workspaceGit19\bee-exam\src\main\java\entity\Idclaim.java
+[INFO] The Honey gen the JavaBean: entity.Idclaim
+[DEBUG] Override file:  D:\JavaWeb\workspaceGit19\bee-exam\src\main\java\entity\field\Idclaim_F.java
+[INFO] The Honey gen the FieldFile for JavaBean: entity.field.Idclaim_F
+[INFO] Generate Success!
+[INFO] Please check folder: D:\JavaWeb\workspaceGit19\bee-exam\src\main\java\entity
+[INFO] The file already exist.
+[INFO] Backup file successful. path: D:\JavaWeb\workspaceGit19\bee-exam\src\main\java\org\teasoft\exam\bee\osql\autogen\OrderhistoryRest.java.txt_1727023203304.bak
+[INFO] Generate file successful. path: D:\JavaWeb\workspaceGit19\bee-exam\src\main\java\org\teasoft\exam\bee\osql\autogen\OrderhistoryRest.java.txt
+[INFO] The file already exist.
+[INFO] Backup file successful. path: D:\JavaWeb\workspaceGit19\bee-exam\src\main\java\com\automvc\enet\order\rest\OrderhistoryRest.java.txt_1727023203318.bak
+[INFO] Generate file successful. path: D:\JavaWeb\workspaceGit19\bee-exam\src\main\java\com\automvc\enet\order\rest\OrderhistoryRest.java.txt
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100001(Long)
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100001(Long)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100001(Long)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 1
+[WARN] Do not get the new Connection in the SameConnection. Maybe all the results get from cache! 
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100002(Long)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100002(Long)
+[INFO] [Bee]  | <--  select rows: 1
+[WARN] Calling the endSameConnection(), but miss the beginSameConnection()
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100003(Long)
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100003(Long)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100003(Long)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and id=? limit ?,? for update   [values]: 100003(Long),100003(Integer),0(Integer),300(Integer)
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] Orders[id=100003,userid=bee,orderid=1,name=Bee,total=97.010000,createtime=2020-03-02 11:29:28,remark=testx%,sequence=12345603,abc=test3,updatetime=2020-03-02 16:34:19]
+[INFO] [Bee] update SQL: update orders set userid=? , name=? , total=? , orderid=? , createtime=? , remark=? , sequence=? , abc=? , updatetime=? where id=?   [values]: bee(String),Bee(String),97.010000(java.math.BigDecimal),1(Long),2020-03-02 11:29:28(String),testx%(String),12345603(String),test3(String),2020-03-02 16:34:19(String),100003(Long)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100008(Long)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100004(Long)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100004(Long)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100004(Long)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and id=? limit ?,? for update   [values]: 100004(Long),100003(Integer),0(Integer),300(Integer)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100004(Long)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100004(Long)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 100002(Long)
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] update SQL: update orders set name=? where id=?   [values]: Bee(ORM Framework)(String),100002(Long)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100002(Long),Bee(ORM Framework)(String)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001(Long),Bee(ORM Framework)(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001(Long),Bee(ORM Framework)(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] update SQL: update orders set name=? where id=?   [values]: Bee(ORM Framework)(String),100001(Long)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] update record:1
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total) values (?,?,?,?)   [values]: 1022667813552301(Long),bee(String),Bee(String),91.99(java.math.BigDecimal)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] insert record:1
+[INFO] [Bee] delete SQL: delete from orders where userid=? and name=? and total=?   [values]: bee(String),Bee(String),91.99(java.math.BigDecimal)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] delete record:1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001(Long),Bee(ORM Framework)(String)
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] Orders[id=100001,userid=Bee,orderid=1,name=Bee(ORM Framework),total=95.010000,createtime=2020-03-02 11:29:28,remark=other,sequence=12345601,abc=test1,updatetime=null]
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001(Long),Bee(ORM Framework)(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] Orders[id=100001,userid=Bee,orderid=1,name=Bee(ORM Framework),total=95.010000,createtime=2020-03-02 11:29:28,remark=other,sequence=12345601,abc=test1,updatetime=null]
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001(Long),Bee(ORM Framework)(String)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] update SQL: update orders set name=? where id=?   [values]: Bee(ORM Framework)(String),100001(Long)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] update record:1
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total) values (?,?,?,?)   [values]: 1022667813552302(Long),bee(String),Bee(String),91.99(java.math.BigDecimal)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] insert record:1
+[INFO] [Bee] delete SQL: delete from orders where userid=? and name=? and total=?   [values]: bee(String),Bee(String),91.99(java.math.BigDecimal)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] delete record:1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001(Long),Bee(ORM Framework)(String)
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] Orders[id=100001,userid=Bee,orderid=1,name=Bee(ORM Framework),total=95.010000,createtime=2020-03-02 11:29:28,remark=other,sequence=12345601,abc=test1,updatetime=null]
+[INFO] [Bee] Callable SQL,getCallableStatement: {call updateOrders(?)}
+[INFO] 1
+[INFO] [Bee] Callable SQL: {call updateOrders(?)}  values: 100004
+[INFO] 0
+[INFO] [Bee] Callable SQL: {call updateOrders(?)}  values: 10000588888
+[INFO] 0
+[INFO] [Bee] Callable SQL: {call selectOrders(?)}  values: change via CallableSql
+[INFO] Orders[id=100003,userid=bee,orderid=1,name=Bee,total=97.010000,createtime=2020-03-02 11:29:28,remark=change via CallableSql,sequence=12345603,abc=test3,updatetime=2024-09-23 00:40:18]
+[INFO] [Bee] Callable SQL: {call selectOrders(?)}  values: change via CallableSql
+[INFO] 100003   bee   1   Bee   97.010000   2020-03-02 11:29:28   change via CallableSql   12345603   test3   2024-09-23 00:40:18   
+[INFO] [Bee] Callable SQL: {call selectOrders(?)}  values: change via CallableSql
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [{"id":100003,"userid":"bee","orderid":1,"name":"Bee","total":97.010000,"createtime":"2020-03-02 11:29:28","remark":"change via CallableSql","sequence":"12345603","abc":"test3","updatetime":"2024-09-23 00:40:18"}]
+[INFO] [Bee] Callable SQL: {call selectOrders(?)}  values: change via CallableSql--no
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] []
+[INFO] D:\JavaWeb\workspaceGit19\bee-exam\src\main\resources\log\bee-exam(v2.4.0)2024-09-23 00.37.52.650-cache(MySQL).txt
+[INFO]  join 
+[INFO] Table
+[INFO] IsNamingTransfer
+[INFO] MySQL
+[INFO] [Bee] In MapSuid, insertAndReturnId SQL: insert into test_primary_key (name,myid) values (?,?)   [values]: test_pk(String),1022668698550273(Long)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] 1022668698550273
+[INFO] [Bee] In MapSuid, insertAndReturnId SQL: insert into test_primary_key (name,myid) values (?,?)   [values]: test_pk(String),1022668698550274(Long)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] 1022668698550274
+[INFO] [Bee] In MapSuid, insertAndReturnId SQL: insert into test_primary_key (name,remark2,myid) values (?,?,?)   [values]: test_pk(String),(String),1022668698550275(Long)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] 1022668698550275
+[INFO] [Bee] In MapSuid, insertAndReturnId SQL: insert into test_primary_key (name,remark,remark2,myid) values (?,?,?,?)   [values]: test_pk(String),null(Object),(String),1022668698550276(Long)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] 1022668698550276
+[INFO] [Bee] insert SQL: insert into Noid(uuid,name) values (?,?)   [values]: aaaadd-no-id(String),test no id(String)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL: select uuid,name,num,remark from Noid where uuid=? and name=?   [values]: aaaadd-no-id(String),test no id(String)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] CustomId[uuid=aaaadd-no-id,name=test no id,num=null,remark=null]
+[INFO] [Bee] update SQL: update Noid set name=? where uuid=?   [values]: new name--new(String),aaaadd-no-id(String)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] update SQL: update Noid set name=? , num =null , remark =null where uuid=?   [values]: new name--new(String),aaaadd-no-id(String)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL: select uuid,name,num,remark from Noid where uuid=? and name=?   [values]: aaaadd-no-id(String),new name--new(String)
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] CustomId[uuid=aaaadd-no-id,name=new name--new,num=null,remark=null]
+[INFO] [Bee] select SQL: select classno,term,examno,subjectno,subject,creater,createtime,updater,updatetime,remark,ext1,status,schoolno from assignexam where classno=? and term=? and remark=?   [values]: 2001(String),200101(String),联合主键更新(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] update SQL: update assignexam set remark=? where classno=? and term=?   [values]: 联合主键更新(String),2001(String),200101(String)
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] update SQL(whereFields) :update assignexam set remark=? where classno=? and term=?   [values]: 联合主键更新(String),2001(String),200101(String)
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] selectById SQL: select uuid,name,num,remark from Noid where uuid=?   [values]: aaaacc-no-id(String)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] deleteById SQL: delete from Noid where uuid=?   [values]: aaaacc-no-id(String)
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] 0
+[INFO] [Bee] select SQL: select id,email,last_name,name name2,password,username,createtime,CONCAT(last_name, name) full_name from test_user
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 2
+[INFO] TestUser[id=800001,email=beeUser@163.com,lastName=null,fullName=null,name=Bee,count1=null,password=bee,username=bee,createtime=null]
+[INFO] TestUser[id=800002,email=honey@163.com,lastName=cn,fullName=cnHoney,name=Honey,count1=null,password=honey,username=honey,createtime=null]
+[INFO] [Bee] select SQL: select id,email,last_name,name name2,password,username,createtime,CONCAT(last_name, name) full_name from test_user
+[INFO] [Bee]  | <--  select rows: 2
+[INFO] [Bee] select SQL: select uuid,name,num,remark,ch from noid where num=? and ch=?   [values]: 2(int),a(char)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] PreparedSql select SQL: select uuid,name,num,remark,ch from noid
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] Noid[uuid=aaaadd-no-id,name=new name--new,num=0,remark=null,ch= ]
+[INFO] [Bee] PreparedSql selectJson SQL: select uuid,name,num,remark,ch from noid
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [{"uuid":"aaaadd-no-id","name":"new name--new","num":null,"remark":null,"ch":null}]
+[INFO] [Bee] selectJson SQL: select uuid,name,num,remark,ch from noid where num=? and ch=?   [values]: 2(int),a(char)
+[INFO] [Bee]  | <--  select rows: 0
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] []
+[INFO] [Bee] PreparedSql select MoreTable SQL: select uuid,name,num,remark,ch from noid
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] Noid[uuid=aaaadd-no-id,name=new name--new,num=0,remark=null,ch= ]
+[INFO] [Bee] select SQL: select noid.uuid,noid.name,noid.num,noid.remark,noid.ch,aanoid2.uuid,aanoid2.name,aanoid2.num,aanoid2.remark,aanoid2.ch from noid left join noid aanoid2 on noid.uuid=aanoid2.uuid where noid.num=? and noid.ch=?   [values]: 2(int),a(char)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select uuid,name,num,remark,ch from noid where num=? and ch=?   [values]: 2(int),a(char)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] PreparedSql select SQL: select uuid,name,num,remark,ch from noid
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] Noid[uuid=aaaadd-no-id,name=new name--new,num=0,remark=null,ch= ]
+[INFO] [Bee] PreparedSql selectJson SQL: select uuid,name,num,remark,ch from noid
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [{"uuid":"aaaadd-no-id","name":"new name--new","num":null,"remark":null,"ch":null}]
+[INFO] [Bee] selectJson SQL: select uuid,name,num,remark,ch from noid where num=? and ch=?   [values]: 2(int),a(char)
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] []
+[INFO] [Bee] PreparedSql select MoreTable SQL: select uuid,name,num,remark,ch from noid
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] Noid[uuid=aaaadd-no-id,name=new name--new,num=0,remark=null,ch= ]
+[INFO] [Bee] select SQL: select noid.uuid,noid.name,noid.num,noid.remark,noid.ch,aanoid2.uuid,aanoid2.name,aanoid2.num,aanoid2.remark,aanoid2.ch from noid left join noid aanoid2 on noid.uuid=aanoid2.uuid where noid.num=? and noid.ch=?   [values]: 2(int),a(char)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] $jacocoData
+[INFO] [Bee] select SQL: select id,table_name,col_name,lang,key1,value1,status,creater,createtime,updater,updatetime,remark from dict_i18n
+[INFO] [Bee]  | <--  select rows: 10
+[INFO] [Bee] select SQL(entity,size): select id,sid,name,age,sex,majorid,flag,classno from Student2 limit ?,?   [values]: 0(Integer),10(Integer)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 5
+[INFO] Student2[id=1,sid=1,name=张三,age=20,sex=未知,majorid=计算机,flag=未知,classno=1001]
+[INFO] Student2[id=2,sid=2,name=李四,age=20,sex=男,majorid=外语,flag=是,classno=1001]
+[INFO] Student2[id=3,sid=3,name=王五,age=20,sex=女,majorid=3,flag=否,classno=1002]
+[INFO] Student2[id=4,sid=null,name=黄花,age=19,sex=,majorid=4,flag=,classno=1003]
+[INFO] Student2[id=5,sid=null,name=陈五,age=18,sex=未知,majorid=null,flag=未知,classno=1004]
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,updatetime from ORDERS
+[INFO] [Bee]  | <--  select rows: 6
+[INFO] [bee-exam] ====================MoreTableExam11.test======start:
+[INFO] [Bee] select SQL: select clazz.id,clazz.classname,clazz.place,clazz.teachername,clazz.remark,student.id,student.sid,student.name,student.age,student.sex,student.majorid,student.flag,student.classno,student_hobby.id,student_hobby.stu_id,student_hobby.hobby,student_hobby.remark from clazz left join student on clazz.id=student.classno  join student_hobby on student.id=student_hobby.stu_id
+[INFO] [Bee]  | <--  ( select raw record rows: 0 )
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [bee-exam] ====================MoreTableExam11.test======end.
+
+[INFO] [bee-exam] ====================MoreTableExam11_2.test======start:
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [Bee] select SQL: select clazz.id,clazz.classname,clazz.place,clazz.teachername,clazz.remark,student.id,student.sid,student.name,student.age,student.sex,student.majorid,student.flag,student.classno,student_hobby.id,student_hobby.stu_id,student_hobby.hobby,student_hobby.remark from clazz left join student on clazz.id=student.classno  join student_hobby on student.id=student_hobby.stu_id limit ?,?   [values]: 0(Integer),2(Integer)
+[INFO] [Bee]  | <--  ( select raw record rows: 0 )
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [bee-exam] ====================MoreTableExam11_2.test======end.
+
+[INFO] [bee-exam] ====================MoreTableExam11_3.test======start:
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [Bee] select SQL: select clazz.id,clazz.classname,clazz.place,clazz.teachername,clazz.remark,student.id,student.sid,student.name,student.age,student.sex,student.majorid,student.flag,student.classno,student_hobby.id,student_hobby.stu_id,student_hobby.hobby,student_hobby.remark from clazz left join student on clazz.id=student.classno  join student_hobby on student.id=student_hobby.stu_id where clazz.id=? and clazz.classname=? limit ?,?   [values]: 6(Integer),class one(String),0(Integer),2(Integer)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  ( select raw record rows: 0 )
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [bee-exam] ====================MoreTableExam11_3.test======end.
+
+[INFO] [bee-exam] ====================MoreTableExam11_3_2.test======start:
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [Bee] select SQL: select clazz.id,clazz.classname,clazz.place,clazz.teachername,clazz.remark,student.id,student.sid,student.name,student.age,student.sex,student.majorid,student.flag,student.classno,student_hobby.id,student_hobby.stu_id,student_hobby.hobby,student_hobby.remark from clazz left join student on clazz.id=student.classno  join student_hobby on student.id=student_hobby.stu_id where clazz.id=? and clazz.classname=? limit ?,?   [values]: 6(Integer),class one(String),0(Integer),2(Integer)
+[INFO] [Bee]  | <--  ( select raw record rows: 0 )
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [bee-exam] ====================MoreTableExam11_3_2.test======end.
+
+[INFO] [bee-exam] ====================MoreTableExam11_4.test======start:
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [Bee] select SQL: select clazz.id,clazz.classname,clazz.place,clazz.teachername,clazz.remark,student.id,student.sid,student.name,student.age,student.sex,student.majorid,student.flag,student.classno,student_hobby.id,student_hobby.stu_id,student_hobby.hobby,student_hobby.remark from clazz left join student on clazz.id=student.classno  join student_hobby on student.id=student_hobby.stu_id where clazz.classname=? and student.age=?   [values]: class one(String),20(Integer)
+[INFO] [Bee]  | <--  ( select raw record rows: 0 )
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [bee-exam] ====================MoreTableExam11_4.test======end.
+
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] 1047212751610445824
+[INFO] 1047212751610450823
+[INFO] 111010001000011100100111001100000000000000000000000000000000
+[INFO] 111010001000011100100111001100000000000000000001001110000111
+[INFO] The generated id are continuous!
+[INFO] 1047212751618834433
+[INFO] 1047212751618839432
+[INFO] 111010001000011100100111001100000000100000000000000000000001
+[INFO] 111010001000011100100111001100000000100000000001001110001000
+[INFO] The generated id are continuous!
+[INFO] 
+[INFO] 1047212751610445825
+[INFO] 1047212751610450824
+[INFO] 111010001000011100100111001100000000000000000000000000000001
+[INFO] 111010001000011100100111001100000000000000000001001110001000
+[INFO] The generated id are continuous!
+[INFO] 1047212751618834433
+[INFO] 1047212751618839432
+[INFO] 111010001000011100100111001100000000100000000000000000000001
+[INFO] 111010001000011100100111001100000000100000000001001110001000
+[INFO] The generated id are continuous!
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [Bee] Parse DataSourceMap: dataSource name to database name , result: {ds0=MySQL, ds1=MySQL, ds2=MySQL}
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= get the dbName in real time is :MySQL
+[INFO] [Bee] select SQL(entity,size): select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where updatetime=? limit ?,?   [values]: 2024-09-23 00:40:19(String),0(Integer),10(Integer)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] ========= get the dbName in real time is :MySQL
+[INFO] [Bee] select SQL(entity,size): select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where updatetime=? limit ?,?   [values]: 2024-09-23 00:40:19(String),0(Integer),10(Integer)
+[INFO] [Bee] ========= the current DataSource name is :ds2
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] Parse DataSourceMap: dataSource name to database name , result: {ds0=MySQL, ds1=MySQL, ds2=MySQL}
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[WARN] The InterceptorChain already contain the Interceptor, type: org.teasoft.honey.osql.interccept.annotation.CustomInterceptor
+[INFO] [Bee] ========= get the dbName in real time is :MySQL
+[INFO] [Bee] select SQL(entity,size): select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where updatetime=? limit ?,?   [values]: 2024-09-23 00:40:19(String),0(Integer),10(Integer)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] ========= get the dbName in real time is :MySQL
+[INFO] [Bee] select SQL(entity,size): select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where updatetime=? limit ?,?   [values]: 2024-09-23 00:40:19(String),0(Integer),10(Integer)
+[INFO] [Bee] ========= the current DataSource name is :ds2
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] Parse DataSourceMap: dataSource name to database name , result: {ds0=MySQL, ds1=MySQL, ds2=MySQL}
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= get the dbName in real time is :MySQL
+[INFO] [Bee] select SQL(entity,size): select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders limit ?,?   [values]: 0(Integer),10(Integer)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  select rows: 6
+[INFO] Orders[id=100001,userid=Bee,name=Bee(ORM Framework),total=95.010000,createtime=2020-03-02 11:29:28,remark=other,sequence=12345**1,abc=t**t1,updatetime=null]
+[INFO] Orders[id=100002,userid=bee,name=Bee(ORM Framework),total=96.010000,createtime=2020-03-02 11:29:28,remark=test%a,sequence=12345**2,abc=t**t2,updatetime=2020-03-02 16:34:19]
+[INFO] Orders[id=100003,userid=bee,name=Bee,total=97.010000,createtime=2020-03-02 11:29:28,remark=change via CallableSql,sequence=12345**3,abc=t**t3,updatetime=2024-09-23 00:40:18]
+[INFO] Orders[id=1022667813552298,userid=bee4,name=null,total=12.300000,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1022667813552299,userid=bee5,name=null,total=12.300000,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1022667813552300,userid=bee6,name=null,total=12.300000,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] ========= get the dbName in real time is :MySQL
+[INFO] [Bee] select SQL(entity,size): select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders limit ?,?   [values]: 0(Integer),10(Integer)
+[INFO] [Bee] ========= the current DataSource name is :ds2
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] ========= get the dbName in real time is :MySQL
+[INFO] [Bee] select SQL(entity,size): select id,sid,name,age,sex,majorid,flag,classno from student2 limit ?,?   [values]: 0(Integer),10(Integer)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 5
+[INFO] Student2[id=1,sid=1,name=张三,age=20,sex=未知,majorid=计算机,flag=?,classno=1001]
+[INFO] Student2[id=2,sid=2,name=李四,age=20,sex=男,majorid=外语,flag=Yes,classno=1001]
+[INFO] Student2[id=3,sid=3,name=王五,age=20,sex=女,majorid=3,flag=No,classno=1002]
+[INFO] Student2[id=4,sid=null,name=黄花,age=19,sex=,majorid=4,flag=empty,classno=1003]
+[INFO] Student2[id=5,sid=null,name=陈五,age=18,sex=未知,majorid=null,flag=?,classno=1004]
+[INFO] [Bee] select SQL: select id,table_name,col_name,lang,key1,value1,status,creater,createtime,updater,updatetime,remark from dict_i18n
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  select rows: 10
+[INFO] [Bee] ========= get the dbName in real time is :MySQL
+[INFO] [Bee] select SQL(entity,size): select id,sid,name,age,sex,majorid,flag,classno from Student2 limit ?,?   [values]: 0(Integer),10(Integer)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  select rows: 5
+[INFO] Student2[id=1,sid=1,name=张三,age=20,sex=未知,majorid=计算机,flag=未知,classno=1001]
+[INFO] Student2[id=2,sid=2,name=李四,age=20,sex=男,majorid=外语,flag=是,classno=1001]
+[INFO] Student2[id=3,sid=3,name=王五,age=20,sex=女,majorid=3,flag=否,classno=1002]
+[INFO] Student2[id=4,sid=null,name=黄花,age=19,sex=,majorid=4,flag=,classno=1003]
+[INFO] Student2[id=5,sid=null,name=陈五,age=18,sex=未知,majorid=null,flag=未知,classno=1004]
+[INFO] [Bee] Parse DataSourceMap: dataSource name to database name , result: {ds0=MySQL, ds1=MySQL, ds2=MySQL}
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= get the dbName in real time is :MySQL
+[INFO] [Bee] select SQL(entity,size): select id,sid,name,age,sex,majorid,flag,classno from student where id=? limit ?,?   [values]: 5(Long),0(Integer),10(Integer)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] ========= get the dbName in real time is :MySQL
+[INFO] [Bee] select SQL(entity,size): select id,sid,name,age,sex,majorid,flag,classno from student where id=? limit ?,?   [values]: 5(Long),0(Integer),10(Integer)
+[INFO] [Bee] ==========get from Cache.
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select uuid,name,num,remark,ch from column_test where uuid=? and remark=?   [values]: aaaaaa(String),test(String)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] PreparedSql select SQL: select uuid,name,num,remark,ch from column_test where uuid=?   [values]: aaaaaa(String)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] ColumnAnnoTest[id=aaaaaa,name=test no id,num=1,remark=test-column-anno,ch=null]
+[INFO] [Bee] update SQL: update column_test set remark=? where uuid=?   [values]: test(String),aaaaaa(String)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] update SQL: update column_test set num=? where uuid=?   [values]: 2(Integer),aaaaaa-no-id(String)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL: select uuid,name,num,remark,ch from column_test where uuid=? and remark=? and num>?   [values]: aaaaaa(String),test(String),0(Integer)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] [Bee] update SQL(condition) :update column_test set remark=? where uuid=? and remark=? and num>?   [values]: test-column-anno(String),aaaaaa(String),test(String),0(Integer)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] update SQL(condition) :update column_test set num=num+? where uuid=?   [values]: 2(Integer),aaaaaa-no-id(String)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] update SQL(condition) :update column_test set num=num*? where uuid=?   [values]: 2(Integer),aaaaaa-no-id(String)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL: select clazz.id,clazz.classname,clazz.place,clazz.teachername,clazz.remark,student.id,student.sid,student.name,student.age,student.sex,student.majorid,student.flag,student.classno,student_hobby.id,student_hobby.stu_id,student_hobby.hobby,student_hobby.remark from clazz left join student on clazz.id=student.classno  left join student_hobby on student.id=student_hobby.id
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  ( select raw record rows: 0 )
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,dept_name,json_value from dept
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] null
+[INFO] test Json
+[INFO] Dept[id=11138,dept=null,jsonValue=JsonValue[deptId=null,deptName=test Json,deptLeaderId=test Json]]
+[INFO] Dept[id=11147,dept=null,jsonValue=JsonValue[deptId=null,deptName=test Json,deptLeaderId=test Json]]
+[INFO] Dept[id=11150,dept=null,jsonValue=null]
+[INFO] [Bee] deleteById SQL: delete from dept where id=?   [values]: 11138(Integer)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] insert SQL: insert into dept(id,json_value) values (?,?)   [values]: 11138(Integer),{"deptId":null,"deptName":"test Json","deptLeaderId":"test Json"}(org.teasoft.exam.bee.prod.jsonanno.JsonValue)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] update SQL: update dept set dept_name=? , json_value=? where id=?   [values]: update-test(String),{"deptId":null,"deptName":"test Json-update","deptLeaderId":"test Json"}(org.teasoft.exam.bee.prod.jsonanno.JsonValue),11116(Integer)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] select SQL: select id,dept_name,json_value from dept
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] null
+[INFO] test Json
+[INFO] Dept[id=11138,dept=null,jsonValue=JsonValue[deptId=null,deptName=test Json,deptLeaderId=test Json]]
+[INFO] Dept[id=11147,dept=null,jsonValue=JsonValue[deptId=null,deptName=test Json,deptLeaderId=test Json]]
+[INFO] Dept[id=11150,dept=null,jsonValue=null]
+[INFO] [Bee] insert SQL: insert into dept(id,json_value) values (?,?)   [values]: 11148(Integer),{"deptId":null,"deptName":"test Json","deptLeaderId":"test Json"}(org.teasoft.exam.bee.prod.jsonanno.JsonValue)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] update SQL: update dept set dept_name=? , json_value=? where id=?   [values]: update-test(String),{"deptId":null,"deptName":"test Json-update","deptLeaderId":"test Json"}(org.teasoft.exam.bee.prod.jsonanno.JsonValue),11116(Integer)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] [Bee] insert SQL: insert into Dept(id,list) values (?,?)   [values]: 11120(Integer),[{"deptId":null,"deptName":"test Json","deptLeaderId":"test Json"},{"deptId":null,"deptName":"test Json(\"包含引号\")","deptLeaderId":"test Json"}](java.util.List)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL: select id,dept_name,json_value,list from Dept where id=?   [values]: 11120(Integer)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] Dept[id=11120,dept=null,jsonValue=null,list=[JsonValue[deptId=null,deptName=test Json,deptLeaderId=test Json], JsonValue[deptId=null,deptName=test Json("包含引号"),deptLeaderId=test Json]]]
+[INFO] JsonValue[deptId=null,deptName=test Json,deptLeaderId=test Json]
+[INFO] JsonValue[deptId=null,deptName=test Json("包含引号"),deptLeaderId=test Json]
+[INFO] [Bee] deleteById SQL: delete from dept where id=? or id=?   [values]: 11148(Integer),11120(Integer)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  Affected rows: 2
+[INFO] [Bee] select SQL: select company.id,company.com_name,company.dept_id,company.remark,dept.id,dept.dept_name,dept.json_value from company,dept where company.dept_id=dept.id
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select company.id,company.com_name,company.dept_id,company.remark,dept.id,dept.dept_name,dept.json_value from company,dept where company.dept_id=dept.id and company.id=? and company.com_name=? and company.dept_id=?   [values]: 111(Integer),Bee(String),11114(Integer)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select company.id,company.com_name,company.dept_id,company.remark,dept.id,dept.dept_name,dept.json_value from company,dept where company.dept_id=dept.id and company.id=? and company.com_name=? and company.dept_id=? and dept.id=?   [values]: 111(Integer),Bee(String),11114(Integer),11114(Integer)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,dept_name,json_value from dept
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] Dept[id=11138,dept=null,jsonValue=JsonValue[deptId=null,deptName=test Json,deptLeaderId=test Json]]
+[INFO] Dept[id=11147,dept=null,jsonValue=JsonValue[deptId=null,deptName=test Json,deptLeaderId=test Json]]
+[INFO] Dept[id=11150,dept=null]
+[INFO] null
+[INFO] test Json
+[INFO] [Bee] update SQL: update dept set dept_name=? , json_value=? where id=?   [values]: update-test400(String),{"deptId":null,"deptName":"test Json-update400","deptLeaderId":"test Json"}(org.teasoft.exam.bee.prod.jsonanno.moretable.JsonValue),11115(Integer)
+[INFO] [Bee] ========= the current DataSource name is :ds1
+[INFO] [Bee]  | <--  Affected rows: 0
+[INFO] -------------------------- test Exception2Test start.  --------------------------
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :MySQL
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] -------------------------- test ExceptionTest start.  --------------------------
+[ERROR] The sql statement string get by sqlId:osql.donot.exist, is Null !
+[ERROR] ObjSQLException:updateFieldList at least include one field.
+[INFO] [Bee] insert SQL: insert into test_user(id,username) values (?,?)   [values]: 1022668027461634(Long),testuser(String)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] insert SQL: insert into orders(id,userid,total) values (?,?,?)   [values]: 1022667813552303(Long),bee(String),91.99(java.math.BigDecimal)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] JdbcTransaction commit. 
+[ERROR] The Transaction did not to begin!
+[DEBUG] Please confirm the field(s) is right or not :testWrongField
+[INFO] [Bee] select SQL(selectFields) : select test_wrong_field from orders where name=?   [values]: client(String)
+[ERROR] Unknown column 'test_wrong_field' in 'field list'
+[DEBUG] The parameter entityClass is from Java library
+[ERROR] BeeIllegalEntityException: Illegal Entity, java.lang.String
+[ERROR] Parameter 'size' need >0 .
+[ERROR] The 'having' must be after 'group by' !
+[INFO] update team_id set total=? , remark=? where 1=1 and price=? and price>=? and name like ? and remark=? and orderid in (?,?)
+[ERROR] The name: '-- total' is illegal!
+[ERROR] The name: '-- price' is illegal!
+[ERROR] The expression: ' --count(*)=sum(case when status='aaa' then 1 else 0 end)' is invalid!
+[INFO] [Bee] delete SQL: delete from orders
+[INFO] [Bee]  | <--  Affected rows: 7
+[ERROR]  workerid is wrong, need in [0,1023]
+[ERROR] Select result did not support paging! You can set the DbFeature implements class with HoneyFactory.
+[ERROR]  test NoConfigException!
+[ERROR]  test JoinTableException!
+[ERROR]  test JoinTableParameterException!
+[ERROR]  test ObjSQLIllegalSQLStringException!
+[ERROR] null
+[ERROR] null
+[ERROR] null
+[ERROR] the value is null (UPDATE, method:setAdd, fieldName:total)!
+[INFO] -------------------------- test ExceptionTest finished.  --------------------------
+[INFO] ------------ test BuzExceptionTest start:  --------------------------
+[DEBUG] org.teasoft.exam.bee.osql.entity.TestUser
+[DEBUG] org.teasoft.exam.bee.osql.entity.Orders
+[ERROR] BeeErrorGrammarException: the oldEntity and newEntity must be same type!
+BeeErrorGrammarException: the oldEntity and newEntity must be same type!
+[DEBUG] org.teasoft.exam.bee.osql.entity.Orders
+[DEBUG] org.teasoft.exam.bee.osql.entity.Orders
+[INFO] [Bee] update(T oldEntity, T newEntity), 
+[INFO] [Bee] update SQL(condition) :update orders set name=?,remark=?   [values]: update(T oldEntity,T newEntity)(String),update(T oldEntity,T newEntity)(String)
+[INFO] [Bee]  | <--  Affected rows: 0
+[DEBUG] org.teasoft.exam.bee.osql.entity.Orders
+[DEBUG] org.teasoft.exam.bee.osql.entity.Orders
+[INFO] [Bee] update(T oldEntity, T newEntity), 
+[ERROR] ObjSQLException: in SQL update set at least include one field.
+ObjSQLException: in SQL update set at least include one field.
+[INFO] ------------ test BuzExceptionTest finished.  --------------------------
+[INFO] ------------ test LikeEnhanceTest start:  --------------------------
+[WARN] the parameter value in like is null !
+null
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid like ?   [values]: null(Object)
+[INFO] [Bee]  | <--  select rows: 0
+[WARN] the parameter value in like is null !
+null
+[INFO] [Bee] PreparedSql select SQL: select * from orders where name like ?   [values]: null(Object)
+[WARN] [Bee] ==========Cache would be full!
+[WARN] [Bee] ==========Cache already used more than 90% !
+[INFO] [Bee]  | <--  select rows: 0
+[INFO] ------------ test LikeEnhanceTest finished.  --------------------------
+[INFO] ------------ test testTransactionRollback start:  --------------------------
+[INFO] [Bee] JdbcTransaction begin. 
+[INFO] [Bee] update SQL(condition) :update leaf_alloc set max_id=max_id+step,update_time=null where biz_tag=?   [values]: bee(String)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] update SQL(condition) :update leaf_alloc set max_id=max_id+step,update_time=null,update_time=? where biz_tag=?   [values]: 2024-09-23 00:40:20(String),bee(String)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL(entity,size): select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc where biz_tag=? limit ?,?   [values]: bee(String),0(Integer),2(Integer)
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] LeafAlloc3[id=456537470402564,bizTag=bee,maxId=300,step=100,description=test segment,updateTime=2024-09-23 00:40:20.0,version=1]
+[INFO] [Bee] select(entity,start,size) SQL: select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc where biz_tag=? limit ?,?   [values]: bee(String),0(Integer),10(Integer)
+[INFO] [Bee]  | <--  select rows: 1
+[INFO] LeafAlloc3[id=456537470402564,bizTag=bee,maxId=300,step=100,description=test segment,updateTime=2024-09-23 00:40:20.0,version=1]
+[INFO] [Bee] update SQL(whereFields) :update leaf_alloc set update_time=? where biz_tag=?   [values]: 2024-09-23 00:40:20.119(java.sql.Timestamp),bee(String)
+[INFO] [Bee]  | <--  Affected rows: 1
+[INFO] 1
+[INFO] [Bee] select(entity,start,size) SQL: select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc limit ?,?   [values]: 0(Integer),10(Integer)
+[INFO] [Bee]  | <--  select rows: 3
+[INFO] LeafAlloc3[id=456537470402562,bizTag=test,maxId=100,step=100,description=test segment,updateTime=2024-09-23 00:38:10.0,version=1]
+[INFO] LeafAlloc3[id=456537470402563,bizTag=order,maxId=100,step=100,description=test segment,updateTime=2024-09-23 00:38:10.0,version=1]
+[INFO] LeafAlloc3[id=456537470402564,bizTag=bee,maxId=300,step=100,description=test segment,updateTime=2024-09-23 00:40:20.0,version=1]
+[ERROR] / by zero
+[ERROR]  Transaction rollback !
+[INFO] [Bee] JdbcTransaction rollback. 
+[INFO] ------------ test LikeEnhanceTest finished.  --------------------------
+[INFO] -------------------------- test Exception2Test finished.  --------------------------
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :SQLite
+[INFO] [Bee] ========= reset the dbName in HoneyConfig is :SQLite
+[INFO] [Bee] ========= get the dbName via url is: SQLite

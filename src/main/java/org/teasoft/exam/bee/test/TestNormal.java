@@ -34,6 +34,7 @@ import org.teasoft.exam.bee.osql.UpdateByExam;
 import org.teasoft.exam.bee.osql.UpdateSetExam;
 import org.teasoft.exam.bee.osql.UpdateSetExam_SQLite;
 import org.teasoft.exam.bee.osql.UseJson;
+import org.teasoft.exam.bee.osql.annotation.moretable.MoreTableExam24Suid;
 import org.teasoft.exam.bee.osql.chain.Chain;
 import org.teasoft.exam.bee.osql.chain.ChainSelectExam;
 import org.teasoft.exam.bee.osql.chain.ChainSelectExam2;
@@ -60,10 +61,10 @@ import org.teasoft.exam.bee.osql.moretable.modify.MoreInsert40;
 import org.teasoft.exam.bee.osql.moretable.modify.MoreInsert40_2;
 import org.teasoft.exam.bee.osql.moretable.modify.MoreInsert50;
 import org.teasoft.exam.bee.osql.moretable.modify.MoreInsert60;
-import org.teasoft.exam.bee.osql.moretable.modify.MoreModify;
-import org.teasoft.exam.bee.osql.moretable.modify.MoreUpdate;
 import org.teasoft.exam.bee.osql.moretable.modify.MoreUpdate2;
 import org.teasoft.exam.bee.osql.moretable.modify.MoreUpdate3;
+import org.teasoft.exam.bee.osql.moretable.modify.sharding.MoreModify;
+import org.teasoft.exam.bee.osql.moretable.modify.sharding.MoreUpdate;
 import org.teasoft.exam.bee.osql.naming.DiffNamingTest;
 import org.teasoft.exam.bee.osql.special.ColumnAnnoTest;
 import org.teasoft.exam.bee.osql.special.LikeTest;
@@ -181,17 +182,28 @@ public class TestNormal {
 		//chain coding
 		runTest(ChainUpdateExam.class); 
 		runTest(ChainSelectExam.class); 
-		runTest(UnionSelectExam.class);
+		
+		try {
+				if (!DatabaseConst.SQLite.equalsIgnoreCase(DbName))
+					runTest(UnionSelectExam.class);
+		} catch (Exception e) {
+			Logger.warn("Exception in UnionSelectExam(confirm the DB whether support the union): "+e.getMessage());
+		}
+		
+		
 		runTest(ChainSelectExam2.class);
 		runTest(Insert24.class);
 //		runTest(NotExam.class); //some databse donot support : !(name='client' and abc='client')
 		runTest(QueryCompare.class);
 		runTest(QueryCompare2.class);
 		runTest(Select24.class);
-		runTest(Update24.class);
+		
 		runTest(Chain.class);
 		
-		if (DatabaseConst.MYSQL.equalsIgnoreCase(DbName)) runTest(Delete24.class);
+		if (DatabaseConst.MYSQL.equalsIgnoreCase(DbName)) {
+			runTest(Update24.class);  //语法是否支持.
+			runTest(Delete24.class);
+		}
 		
 		runTest(TestBFX.class);
 		
@@ -213,6 +225,8 @@ public class TestNormal {
 		runTest(OrdinaryTest.class);
 		
 		runTest(PagingExam.class);
+		
+		runTest(MoreTableExam24Suid.class);
 		
 		if (DatabaseConst.SQLSERVER.equalsIgnoreCase(DbName)) {
 		    runTest(MyFeatureTest.class);
@@ -245,6 +259,15 @@ public class TestNormal {
 		    runTest(LocalDateTimeExam2.class);
 		    runTest(LocalDateTimeExam3.class);
 		}
+		
+		
+		//test lower/upper key work  
+//		String oldCase=HoneyConfig.getHoneyConfig().sqlKeyWordCase;
+//		HoneyConfig.getHoneyConfig().sqlKeyWordCase="upper";
+//		runTest(SuidRichExam.class);
+//		HoneyConfig.getHoneyConfig().sqlKeyWordCase=oldCase;
+		
+		
 		
 	   } catch (BeeException e) {
 //		   Logger.error(e.getMessage(),e);

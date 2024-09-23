@@ -5,6 +5,7 @@ import java.io.Serializable;
 import org.teasoft.bee.osql.SuidType;
 import org.teasoft.bee.osql.annotation.Datetime;
 import org.teasoft.bee.osql.annotation.Entity;
+import org.teasoft.bee.osql.annotation.FK;
 import org.teasoft.bee.osql.annotation.JoinTable;
 import org.teasoft.bee.osql.annotation.JoinType;
 
@@ -21,11 +22,13 @@ public class Clazz1 implements Serializable {
 	private String classname;
 	private String place;
 	private String teachername;
-	@Datetime(suidType=SuidType.SELECT)
+//	@Datetime(suidType=SuidType.SELECT)
+	@Datetime(suidType=SuidType.MODIFY)
 	private String remark;
 	
 //	@JoinTable(mainField="id", subField="classno", joinType=JoinType.JOIN)
 	@JoinTable(mainField="id", subField="classno", joinType=JoinType.JOIN,subClass="Student1")
+	@FK(refBy="id", value="classno") //2.4.0  Student1的外键是classno,引用自主表Student1的id. 表结构可以不用外键约束
 	private Student1 student;  //Student1
 
 	public Integer getId() {

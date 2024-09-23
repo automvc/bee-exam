@@ -7,6 +7,7 @@ import java.util.List;
 import org.teasoft.bee.osql.SuidType;
 //import org.teasoft.bee.osql.annotation.Datetime;
 import org.teasoft.bee.osql.annotation.Entity;
+import org.teasoft.bee.osql.annotation.FK;
 import org.teasoft.bee.osql.annotation.JoinTable;
 import org.teasoft.bee.osql.annotation.JoinType;
 
@@ -31,7 +32,10 @@ public class Student1 implements Serializable {
 	
 //	@JoinTable(mainField="sid", subField="stuId", joinType=JoinType.LEFT_JOIN)
 //	@JoinTable(mainField="sid", subField="stuId", joinType=JoinType.JOIN)
-	@JoinTable(mainField="sid", subField="stuId", joinType=JoinType.JOIN,subClazz=StudentHobby.class,subClass="org.teasoft.exam.bee.osql.annotation.moretable22.StudentHobby")
+	
+//	@JoinTable(mainField="sid", subField="stuId", joinType=JoinType.JOIN,subClazz=StudentHobby.class,subClass="org.teasoft.exam.bee.osql.annotation.moretable22.StudentHobby")
+	@JoinTable(mainField="id", subField="stuId", joinType=JoinType.JOIN,subClazz=StudentHobby.class,subClass="org.teasoft.exam.bee.osql.annotation.moretable22.StudentHobby")
+	@FK(refBy="id",value="stuId") //2.4.0  stuId是StudentHobby的外键,该外键引用自主表的id.表结构可以不用外键约束
 	private List<StudentHobby> studentHobbyList=new ArrayList<>();
 //	private StudentHobby studentHobbyList;
 	
@@ -99,21 +103,20 @@ public class Student1 implements Serializable {
 		this.flag = flag;
 	}
 
-	public Integer getClassno() {
-		return classno;
-	}
-
-	public void setClassno(Integer classno) {
-		this.classno = classno;
-	}
-	
-
 	 public List<StudentHobby> getStudentHobbyList() {
 		return studentHobbyList;
 	}
 
 	public void setStudentHobbyList(List<StudentHobby> studentHobbyList) {
 		this.studentHobbyList = studentHobbyList;
+	}
+	
+	public Integer getClassno() {
+		return classno;
+	}
+
+	public void setClassno(Integer classno) {
+		this.classno = classno;
 	}
 
 	public String toString(){	

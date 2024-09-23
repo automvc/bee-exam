@@ -14,9 +14,11 @@ public class StudentHobby implements Serializable {
 	private static final long serialVersionUID = 1593647669662L;
 
 	private Integer id;
-	private String stuId;
+//	private String stuId;
+	private Integer stuId;
 	private String hobby;
-	@Datetime(suidType=SuidType.SELECT)
+//	@Datetime(suidType=SuidType.SELECT)
+	@Datetime(suidType=SuidType.MODIFY)
 	private String remark;
 
 	public Integer getId() {
@@ -27,16 +29,25 @@ public class StudentHobby implements Serializable {
 		this.id = id;
 	}
 
-	public String getStuId() {
-		return stuId;
-	}
-
-	public void setStuId(String stuId) {
-		this.stuId = stuId;
-	}
+//	public String getStuId() {
+//		return stuId;
+//	}
+//
+//	public void setStuId(String stuId) {
+//		this.stuId = stuId;
+//	}
+	
 
 	public String getHobby() {
 		return hobby;
+	}
+
+	public Integer getStuId() {
+		return stuId;
+	}
+
+	public void setStuId(Integer stuId) {
+		this.stuId = stuId;
 	}
 
 	public void setHobby(String hobby) {

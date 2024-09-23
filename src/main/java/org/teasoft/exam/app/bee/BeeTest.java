@@ -31,9 +31,9 @@ public class BeeTest {
 	private SuidRich suidRich=BF.getSuidRich(); 
 	
 	public void testCreateTable() {
-		Ddl.createTable(new Orders(), false);
-		Ddl.createTable(new TestUser(), false);
-		Ddl.createTable(new LeafAlloc(), true);
+		Ddl.createTable(Orders.class, false);
+		Ddl.createTable(TestUser.class, false);
+		Ddl.createTable(LeafAlloc.class, true);
 	}
 	
 	public void testInsertAndReturn() {

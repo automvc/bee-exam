@@ -27,11 +27,17 @@ public class AppTest {
 	
 	
 	private void create() {
-        Ddl.createTable(new LeafAlloc());
-        Ddl.createTable(new Orders());;
-        Ddl.createTable(new Tb_inaccount());
-        Ddl.createTable(new Tb_outaccount());
-        Ddl.createTable(new TestUser());
+//        Ddl.createTable(new LeafAlloc());
+//        Ddl.createTable(new Orders());;
+//        Ddl.createTable(new Tb_inaccount());
+//        Ddl.createTable(new Tb_outaccount());
+//        Ddl.createTable(new TestUser());
+		
+		Ddl.createTable(LeafAlloc.class);
+		Ddl.createTable(Orders.class);
+		Ddl.createTable(Tb_inaccount.class);
+		Ddl.createTable(Tb_outaccount.class);
+		Ddl.createTable(TestUser.class);
 
 
 //        HoneyContext.setCurrentAppDB(store);

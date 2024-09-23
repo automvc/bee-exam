@@ -37,7 +37,7 @@ public class Test4_insertBroadcastTable3 {
 		
 		List<Noid> insertList=new ArrayList<>();
 		
-		for (int i = 0; i < 1; i++) {
+		for (int i = 20; i < 22; i++) {
 			noid=new Noid();
 			noid.setName(i+"-aa");
 			noid.setNum(i);
@@ -52,7 +52,7 @@ public class Test4_insertBroadcastTable3 {
 //			int insertNum=suidRich.insert(noid); //bug
 //			int insertNum=suidRich.insert(noid,null); //bug
 			
-			int insertNum=(int)suidRich.insertAndReturnId(noid);
+			int insertNum=(int)suidRich.insertAndReturnId(noid);  //不支持分片.
 		
 		for (int i = 0; i < insertList.size(); i++) {
 		  System.out.println("---------getUuid: "+insertList.get(i).getUuid());

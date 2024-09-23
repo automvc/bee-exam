@@ -37,7 +37,7 @@ public class Test4_insertBroadcastTable {
 		
 		List<Noid0> insertList=new ArrayList<>();
 		
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < 2; i++) {
 			noid0=new Noid0();
 			noid0.setName(i+"-aa");
 			noid0.setNum(i);
@@ -61,9 +61,9 @@ public class Test4_insertBroadcastTable {
 		}
 		
 //		for (int i = 0; i < 300; i++) { 
-		for (int i = 0; i < 2; i++) {
+//		for (int i = 0; i < 2; i++) {
 			int insertNum=suidRich.insert(insertList);
-		}
+//		}
 		
 		System.out.println("finished!");
 	}

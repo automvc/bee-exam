@@ -38,7 +38,7 @@ public class Test4_insertList {
 		
 		List<Orders> insertList=new ArrayList<>();
 		
-		for (int i = 0; i < 30; i++) {
+		for (int i = 30; i < 40; i++) {
 			orders=new Orders();
 			orders.setAbc("test bee ");
 			orders.setName("mongodb" + i);

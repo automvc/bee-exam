@@ -35,8 +35,8 @@ public class DdlForShardingTest2 {
 //		Ddl.createTable(TestUser.class,true); // 创建Sharding分库分表
 //		Ddl.createTable(Noid0.class);
 		
-		Ddl.createTable(Noid0.class,true);
-//		Ddl.createTable(Orders.class,true);
+//		Ddl.createTable(Noid0.class,true);
+		Ddl.createTable(Orders.class,true);
 		System.out.println("--createTable finished!");
 	}
 

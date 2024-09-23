@@ -37,7 +37,7 @@ public class Test4_insertBroadcastTable2 {
 		
 		List<Noid> insertList=new ArrayList<>();
 		
-		for (int i = 0; i < 1; i++) {
+		for (int i = 10; i < 13; i++) {
 			noid=new Noid();
 			noid.setName(i+"-aa");
 			noid.setNum(i);

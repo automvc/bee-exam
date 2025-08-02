@@ -12,8 +12,8 @@ import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.api.Condition;
 import org.teasoft.bee.osql.api.Suid;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
-import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**

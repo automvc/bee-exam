@@ -9,22 +9,10 @@ package org.teasoft.exam.bee.osql.annotation.listmoretable2;
 import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
-import org.teasoft.bee.osql.FunctionType;
-import org.teasoft.bee.osql.Op;
-import org.teasoft.bee.osql.api.Condition;
 import org.teasoft.bee.osql.api.MoreTable;
-import org.teasoft.bee.osql.api.Suid;
-import org.teasoft.bee.osql.api.SuidRich;
-import org.teasoft.exam.bee.osql.moretable.entity.Assigncourse;
-import org.teasoft.exam.bee.osql.moretable.entity.Assignexam;
-import org.teasoft.exam.bee.osql.moretable.entity.Orders;
-//import org.teasoft.exam.bee.osql.moretable.entity.User;
-import org.teasoft.exam.bee.osql.moretable.entity.TestUser;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
-import org.teasoft.honey.osql.core.BeeFactoryHelper;
-import org.teasoft.honey.osql.core.ConditionImpl;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar

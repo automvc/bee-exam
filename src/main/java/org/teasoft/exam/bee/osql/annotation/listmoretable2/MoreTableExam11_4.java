@@ -13,8 +13,8 @@ import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.api.Condition;
 import org.teasoft.bee.osql.api.MoreTable;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
-import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**

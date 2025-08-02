@@ -13,7 +13,7 @@ import org.teasoft.exam.bee.superclass.supertestanno.UseSuperEntityTest2;
 import org.teasoft.exam.bee.superclass.supertestmore.MoreTest;
 import org.teasoft.exam.bee.superclass.supertestmore.MoreTest2;
 import org.teasoft.exam.bee.superclass.supertestmore.UseSuperEntityTest3;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 /**
  * @author Kingstar

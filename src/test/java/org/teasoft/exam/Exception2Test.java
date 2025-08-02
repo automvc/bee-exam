@@ -11,7 +11,7 @@ import org.teasoft.exam.bee.osql.BuzExceptionTest;
 import org.teasoft.exam.bee.osql.ExceptionTest;
 import org.teasoft.exam.bee.osql.TransactionExam;
 import org.teasoft.exam.bee.osql.special.LikeEnhanceTest;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 /**
  * @author Kingstar

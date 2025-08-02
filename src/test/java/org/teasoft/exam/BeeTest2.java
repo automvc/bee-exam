@@ -9,7 +9,7 @@ package org.teasoft.exam;
 import org.junit.Assert;
 import org.junit.Test;
 import org.teasoft.exam.bee.osql.autogen.IndexAndPkExam;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 /**
  * @author Kingstar

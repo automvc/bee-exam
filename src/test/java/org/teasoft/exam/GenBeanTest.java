@@ -10,7 +10,7 @@ import org.teasoft.exam.bee.osql.autogen.GenBeanExam;
 import org.teasoft.exam.bee.osql.autogen.GenBeanSimple2;
 import org.teasoft.exam.bee.osql.autogen.GenLombokJavabean;
 import org.teasoft.exam.bee.osql.autogen.GenSwaggerJavabean;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 /**
  * @author Kingstar

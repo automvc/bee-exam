@@ -24,9 +24,9 @@ import org.teasoft.exam.bee.osql.annotation.DatetimeExam;
 import org.teasoft.exam.bee.osql.annotation.DatetimeExam2;
 import org.teasoft.exam.bee.osql.ds.DiffDdExamCustomerSql;
 import org.teasoft.exam.bee.osql.ds.SuidWhichOne;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyContext;
-import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.serviceimpl.ObjSQLRichServiceImpl;
 import org.teasoft.honey.osql.serviceimpl.ObjSQLServiceImpl;
 

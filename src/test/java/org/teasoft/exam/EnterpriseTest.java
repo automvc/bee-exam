@@ -21,7 +21,7 @@ import org.teasoft.exam.bee.prod.jsonanno.JsonAnnoTest2;
 import org.teasoft.exam.bee.prod.jsonanno.moretable.JsonAnnoMoreTableTest;
 import org.teasoft.exam.bee.prod.jsonanno.moretable.JsonAnnoTest3;
 import org.teasoft.exam.bee.test.ClearDsContext;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 /**
  * @author Kingstar

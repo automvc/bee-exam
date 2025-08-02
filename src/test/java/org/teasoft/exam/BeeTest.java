@@ -30,10 +30,10 @@ import org.teasoft.exam.bee.test.CharTest;
 import org.teasoft.exam.bee.test.TestCache;
 import org.teasoft.exam.bee.test.TestMoreTable;
 import org.teasoft.exam.bee.test.TestNormal;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyUtil;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar

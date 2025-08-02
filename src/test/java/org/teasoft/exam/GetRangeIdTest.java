@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.teasoft.bee.distribution.GenId;
 import org.teasoft.honey.distribution.OneTimeSnowflakeId;
 import org.teasoft.honey.distribution.PearFlowerId;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 /**
  * @author Kingstar

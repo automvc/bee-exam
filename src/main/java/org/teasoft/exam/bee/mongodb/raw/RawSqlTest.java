@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.teasoft.bee.mongodb.MongodbRawSql;
 import org.teasoft.exam.bee.mongodb.entity.Movies;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.MongodbRawSqlLib;
 import org.teasoft.honey.util.Printer;
 

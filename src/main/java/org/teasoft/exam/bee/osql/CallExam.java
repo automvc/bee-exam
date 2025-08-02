@@ -8,8 +8,8 @@ import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.api.CallableSql;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.CallableSqlLib;
-import org.teasoft.honey.osql.core.Logger;
 
 public class CallExam {
 

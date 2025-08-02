@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 import org.bson.Document;
 import org.teasoft.beex.mongodb.ds.SingleMongodbFactory;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 import com.mongodb.client.model.geojson.Point;
 import com.mongodb.client.model.geojson.Position;

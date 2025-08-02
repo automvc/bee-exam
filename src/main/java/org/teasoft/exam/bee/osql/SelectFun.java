@@ -13,9 +13,9 @@ import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.api.Condition;
 import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Scores;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar

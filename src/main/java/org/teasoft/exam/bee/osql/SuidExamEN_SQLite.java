@@ -14,8 +14,8 @@ import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.exam.bee.osql.entity.sqlite.Orders;  //sqlite
 import org.teasoft.exam.bee.test.ClearAndInitTestTable;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar

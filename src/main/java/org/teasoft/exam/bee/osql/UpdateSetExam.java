@@ -12,9 +12,9 @@ import org.teasoft.bee.osql.api.Condition;
 import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.entity.LeafAlloc;
 import org.teasoft.exam.bee.osql.entity.Orders;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar

@@ -11,12 +11,12 @@ import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.api.PreparedSql;
 import org.teasoft.bee.osql.dialect.DbFeatureRegistry;
 import org.teasoft.exam.bee.osql.entity.Orders;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.CustomSql;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyContext;
 import org.teasoft.honey.osql.core.HoneyUtil;
-import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.dialect.sqlserver.SqlServerPagingStruct;
 
 public class PreparedSqlExam {

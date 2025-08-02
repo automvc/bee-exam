@@ -17,7 +17,7 @@ import org.teasoft.beex.osql.mongodb.IndexType;
 import org.teasoft.beex.osql.mongodb.MongodbSuidRichExt;
 import org.teasoft.beex.osql.shortcut.BFX;
 import org.teasoft.exam.comm.Printer;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**

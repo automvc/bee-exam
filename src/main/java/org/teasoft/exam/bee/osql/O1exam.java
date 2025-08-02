@@ -12,8 +12,8 @@ import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.exam.bee.osql.entity.Student;
 import org.teasoft.exam.bee.osql.entity.StudentHobby;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar

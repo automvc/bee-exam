@@ -8,9 +8,9 @@ package org.teasoft.exam.bee.osql;
 
 import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.entity.TestUser;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.HoneyConfig;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * 测试单条插入遇到重复键约束, 异常捕获和显示的问题

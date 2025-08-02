@@ -2,7 +2,7 @@
 package org.teasoft.exam.bee.mongodb.sharding;
 
 import org.teasoft.bee.osql.api.SuidRich;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**

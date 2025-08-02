@@ -21,12 +21,12 @@ import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.exam.bee.osql.entity.Orders_F;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyUtil;
-import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
@@ -245,6 +245,7 @@ public class SuidRichExam {
 				Logger.info(listMore.get(i).toString());
 			}
 			
+			suidRich.select(order_more, 6);
 			listMore = suidRich.select(order_more, 2, 6);
 
 			//		int deleteNum2=suidRich.delete(order_more);   // bug : Lock wait timeout exceeded;

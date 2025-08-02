@@ -13,8 +13,8 @@ import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
 //import org.teasoft.exam.bee.osql.entity.User;
 import org.teasoft.exam.bee.osql.entity.TestUser;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
-import org.teasoft.honey.osql.core.Logger;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

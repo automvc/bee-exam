@@ -10,9 +10,9 @@ import java.util.Set;
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.api.PreparedSql;
 import org.teasoft.exam.bee.osql.entity.Orders;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.CustomSql;
-import org.teasoft.honey.osql.core.Logger;
 
 public class PreparedSqlCustomAutoSqlTokenExam {
 	

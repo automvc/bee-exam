@@ -21,10 +21,10 @@ import org.teasoft.exam.bee.osql.moretable.entity.Orders;
 //import org.teasoft.exam.bee.osql.moretable.entity.User;
 import org.teasoft.exam.bee.osql.moretable.entity.TestUser;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
 import org.teasoft.honey.osql.core.ConditionImpl;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar

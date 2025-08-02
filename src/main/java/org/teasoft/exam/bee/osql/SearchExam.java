@@ -14,8 +14,8 @@ import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.bee.osql.search.Operator;
 import org.teasoft.bee.osql.search.Search;
 import org.teasoft.exam.bee.osql.entity.TestUser;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
-import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.core.SearchProcessor;
 
 /**

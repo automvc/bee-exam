@@ -13,10 +13,9 @@ import org.teasoft.bee.osql.IncludeType;
 import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.entity.Orders;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.HoneyConfig;
-import org.teasoft.honey.osql.core.HoneyUtil;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar

@@ -7,8 +7,8 @@ import org.teasoft.exam.bee.osql.moretable.modify.Book;
 import org.teasoft.exam.bee.osql.moretable.modify.BookDetail;
 import org.teasoft.exam.bee.osql.moretable.modify.BookReal;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.HoneyConfig;
-import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 //1:1:1 子表里又有子表
 public class MoreInsert40_4 {

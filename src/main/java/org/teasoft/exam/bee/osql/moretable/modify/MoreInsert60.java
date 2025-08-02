@@ -1,7 +1,7 @@
 package org.teasoft.exam.bee.osql.moretable.modify;
 
 import org.teasoft.bee.osql.api.MoreTable;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 //主表有两个从表

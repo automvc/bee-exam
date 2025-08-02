@@ -10,8 +10,8 @@ import java.math.BigDecimal;
 
 import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.sharding.entity.Orders;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * 批量插入的分片

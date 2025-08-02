@@ -8,7 +8,7 @@ import org.teasoft.bee.osql.api.Condition;
 import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.sharding.entity.Orders;
 import org.teasoft.exam.bee.osql.sharding.entity.Orders_F;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.util.Printer;
 

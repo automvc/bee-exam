@@ -14,9 +14,9 @@ import org.teasoft.bee.osql.api.Condition;
 import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.sharding.entity.Scores;
 import org.teasoft.exam.bee.osql.sharding.entity.ScoresResponse;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * 同时查多个最值,若涉及分片,Bee框架不负责合并结果.

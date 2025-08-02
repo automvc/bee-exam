@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.teasoft.bee.osql.api.MoreTable;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 //一对多, 子表使用List

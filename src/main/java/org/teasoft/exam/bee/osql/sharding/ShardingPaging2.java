@@ -62,6 +62,7 @@ public class ShardingPaging2 {
 		
 		//条件全在condition  case 5
 	 	List<Orders> list=suid.select(orders1,condition);
+//	 	System.out.println("----after select...");
 	 	Printer.printList(list);
 	 	System.out.println("--------------------:");
 	 	list=suid.select(orders1,condition);

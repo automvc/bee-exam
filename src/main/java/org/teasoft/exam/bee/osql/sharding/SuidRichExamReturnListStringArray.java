@@ -14,10 +14,10 @@ import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.sharding.entity.Orders;
 import org.teasoft.exam.bee.osql.sharding.entity.Orders_F;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
 import org.teasoft.honey.osql.core.ConditionImpl;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * 返回值是List<String[]>的查询的分片

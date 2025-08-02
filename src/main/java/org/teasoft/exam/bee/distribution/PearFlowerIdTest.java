@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.teasoft.honey.distribution.GenIdFactory;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 /**
  * @author Kingstar

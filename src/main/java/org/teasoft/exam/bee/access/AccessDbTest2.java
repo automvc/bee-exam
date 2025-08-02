@@ -8,6 +8,7 @@ package org.teasoft.exam.bee.access;
 
 import java.util.List;
 
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
@@ -44,6 +45,8 @@ public class AccessDbTest2 {
 //		使用驱动：ucanaccess
 //		https://mvnrepository.com/artifact/net.sf.ucanaccess/ucanaccess
 		
+		SuidRich suidRich=BF.getSuidRich();
+		suidRich.createTable(Stu.class,false);
 		
 		List<Stu> list=BF.getSuid().select(new Stu());
 		

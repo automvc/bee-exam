@@ -8,7 +8,7 @@ package org.teasoft.exam.bee.distribution;
 
 import org.teasoft.bee.distribution.GenId;
 import org.teasoft.honey.distribution.SerialUniqueId;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 /**
  * @author Kingstar

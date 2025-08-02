@@ -9,7 +9,7 @@ package org.teasoft.beex.util;
 
 
 import org.teasoft.exam.BeeAbstractTest;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 /**
  * @author Kingstar

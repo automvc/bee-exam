@@ -10,7 +10,7 @@ import static org.teasoft.beex.util.CnNum.tran;
 import static org.teasoft.beex.util.CnNum.tranToUpper;
 
 import org.junit.Test;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 /**
  * @author Kingstar

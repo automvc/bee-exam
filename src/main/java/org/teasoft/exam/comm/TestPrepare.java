@@ -33,7 +33,10 @@ public class TestPrepare {
 //	private static String version="v2.1.8"; //2023.8
 //	private static String version="v2.1.10"; //2023.12
 //	private static String version="v2.2"; //2024.1.1
-	private static String version="v2.4.0"; //2024.2
+//	private static String version="v2.4.0"; //2024.2
+//	private static String version="v2.4.2"; //2024.12
+	
+	private static String version="v2.5.2"; //2025.7
 	
 	public static void init(){
 		init("");

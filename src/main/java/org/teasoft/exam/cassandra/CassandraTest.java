@@ -16,7 +16,7 @@ import java.util.Set;
 import org.teasoft.bee.osql.api.PreparedSql;
 import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.exam.comm.Printer;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.NameTranslateHandle;
 import org.teasoft.honey.osql.shortcut.BF;
 

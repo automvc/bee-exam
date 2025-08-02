@@ -15,7 +15,7 @@ import org.teasoft.honey.osql.autogen.Ddl;
 public class CreateTableWithJavabean3 {
 	public static void main(String[] args) {
 //		Ddl.createTable(new CassandraTable(), false);
-		Ddl.createTable(new CassandraTable(), true);
+		Ddl.createTable( CassandraTable.class, true);
 		System.exit(0);
 	}
 

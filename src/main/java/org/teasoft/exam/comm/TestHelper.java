@@ -7,7 +7,7 @@
 package org.teasoft.exam.comm;
 
 import org.teasoft.exam.bee.test.ClearDsContext;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 /**
  * @author Kingstar

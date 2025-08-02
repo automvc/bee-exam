@@ -9,7 +9,7 @@ package org.teasoft.exam.bee.osql;
 import org.junit.Test;
 import org.teasoft.bee.osql.SqlKeyWord;
 import org.teasoft.bee.osql.UpperKey;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 /**
 	* @author Kingstar

@@ -1,0 +1,113 @@
+[INFO] [Bee] PreparedSql modify SQL: DROP TABLE IF EXISTS `test_primary_key`;
+[DEBUG] Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders
+[DEBUG] Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[ERROR] In SuidExam (BeeException):Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[INFO] =============SuidRichExam=========================start==
+[INFO] ==============orders.getId(): null
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total,remark) values (?,?,?,?,?)   [values]: 1131744774324664(Long),client(String),client(String),93.99(java.math.BigDecimal),testOneTime(String)
+[DEBUG] Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[ERROR] In SuidRichExam (Exception):Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[INFO] [Bee] select SQL(entity, selectFields): select name, total from orders where userid=?   [values]: bee(String)
+[DEBUG] Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[ERROR] Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid like ? order by userid asc limit ?,?   [values]: bee%(String),0(Integer),100(Integer)
+[DEBUG] Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[ERROR] In ConditionExam (BeeException):Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total,remark) values (?,?,?,?,?)   [values]: 1131744774324665(Long),client(String),client(String),93.99(java.math.BigDecimal),testOneTime(String)
+[DEBUG] Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[ERROR] In InsertTest (Exception):Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[INFO] [Bee] selectByIds SQL: select id,email,last_name,name,password,username,createtime from test_user where id=? or id=?   [values]: 800001(Long),800002(Long)
+[DEBUG] Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[ERROR] In SelectById (Exception):Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[INFO] [Bee] update SQL(updateBy): update orders set total=? , remark=? where userid=?   [values]: 100(java.math.BigDecimal),new2(String),bee(String)
+[DEBUG] Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[ERROR] In UpdateByExam (BeeException):Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[INFO] [Bee] select SQL(entity, size): select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc where biz_tag=? limit ?,?   [values]: test(String),0(Integer),2(Integer)
+[DEBUG] Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[ERROR] In UpdateSetExam (BeeException):Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from Orders_202007
+[DEBUG] Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from Orders_202007
+[DEBUG] Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[INFO] ------------------------getId : null
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total,remark) values (?,?,?,?,?)   [values]: 1131744774324666(Long),Bee(String),Bee(ORM Framework)(String),80.80(java.math.BigDecimal),InsertAndReturnId(String)
+[DEBUG] Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[ERROR] In InsertAndReturnIdTest (BeeException):Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[INFO] ------------------------getId : null
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total,remark) values (?,?,?,?,?)   [values]: 1131744774324667(Long),Bee(String),Bee(ORM Framework)(String),80.80(java.math.BigDecimal),InsertAndReturnId(String)
+[DEBUG] Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[ERROR] In InsertAndReturnIdTest (BeeException):Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders
+[DEBUG] Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[DEBUG] FileLogger debug
+[WARN] warn
+[ERROR] error
+[DEBUG] FileLogger debug
+null
+[WARN] FileLogger debug
+null
+[ERROR] FileLogger debug
+null
+[TRACE] [org.teasoft.exam.LoggerCoverTest] trace
+[DEBUG] [org.teasoft.exam.LoggerCoverTest] FileLogger debug
+null
+[WARN] [org.teasoft.exam.LoggerCoverTest] FileLogger debug
+null
+[ERROR] [org.teasoft.exam.LoggerCoverTest] FileLogger debug
+null

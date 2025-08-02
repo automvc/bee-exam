@@ -9,7 +9,7 @@ package org.teasoft.exam.bee.osql.chain;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.api.PreparedSql;
 import org.teasoft.bee.osql.chain.Update;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.osql.shortcut.CSF;
 

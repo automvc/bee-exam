@@ -16,9 +16,9 @@ import org.teasoft.bee.osql.api.MapSql;
 import org.teasoft.bee.osql.api.MapSuid;
 import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.bee.osql.api.SuidRich;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.autogen.Ddl;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
-import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
@@ -34,7 +34,7 @@ public class StringIdUUIDTest {
 		
 		System.out.println(Integer.MAX_VALUE);
 		
-		Ddl.createTable(Orders3.class, false);
+		Ddl.createTable(Orders3.class, true);
 		
 		Orders3 orders=new Orders3();
 		orders.setName("Bee");

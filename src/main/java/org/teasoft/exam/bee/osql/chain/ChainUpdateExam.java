@@ -11,10 +11,10 @@ import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.api.PreparedSql;
 import org.teasoft.bee.osql.chain.Update;
 import org.teasoft.bee.osql.exception.BeeErrorFieldException;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.chain.UpdateImpl;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.HoneyUtil;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar

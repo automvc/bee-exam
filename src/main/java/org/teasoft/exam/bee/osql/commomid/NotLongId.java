@@ -13,7 +13,7 @@ import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.dialect.Noid2;
 import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.distribution.UUID;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**

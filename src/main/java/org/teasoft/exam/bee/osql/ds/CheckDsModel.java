@@ -6,7 +6,7 @@
 
 package org.teasoft.exam.bee.osql.ds;
 
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 /**
  * @author Kingstar

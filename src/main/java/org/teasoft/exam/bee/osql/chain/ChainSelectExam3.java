@@ -13,11 +13,11 @@ import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.api.PreparedSql;
 import org.teasoft.bee.osql.chain.Select;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.chain.Aggregate;
 import org.teasoft.honey.osql.chain.SelectImpl;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.HoneyUtil;
-import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.CSF;
 
 /**

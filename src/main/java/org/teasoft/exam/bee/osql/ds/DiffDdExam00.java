@@ -15,11 +15,11 @@ import javax.sql.DataSource;
 import org.teasoft.bee.osql.api.Condition;
 import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.entity.LeafAlloc;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyContext;
-import org.teasoft.honey.osql.core.Logger;
 
 import com.alibaba.druid.pool.DruidDataSource;
 

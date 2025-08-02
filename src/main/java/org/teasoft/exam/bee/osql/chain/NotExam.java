@@ -11,8 +11,8 @@ import java.util.List;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.api.PreparedSql;
 import org.teasoft.bee.osql.chain.Select;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
-import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.CSF;
 import org.teasoft.honey.util.Printer;
 

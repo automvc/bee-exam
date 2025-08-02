@@ -19,11 +19,11 @@ import org.teasoft.bee.osql.transaction.Transaction;
 import org.teasoft.exam.bee.osql.entity.LeafAlloc;
 import org.teasoft.exam.bee.test.ClearDsContext;
 import org.teasoft.exam.comm.ClearDsUtil;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyContext;
-import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.core.SessionFactory;
 
 import com.alibaba.druid.pool.DruidDataSource;
@@ -76,7 +76,7 @@ public class RwDsExam {
 		
 		HoneyConfig.getHoneyConfig().multiDS_enable =old_multiDS_enable;
 		HoneyConfig.getHoneyConfig().setDbName(oldDbName);
-		
+//		HoneyContext.resetAferSetDbName(); //2.5.2
 	}
 
 	public static void initDS() {

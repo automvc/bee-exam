@@ -40,6 +40,7 @@ public class AccessDbTest {
 		List<Stu> list2=suidRich.select(new Stu(),1,2);
 		Printer.printList(list2);
 		
+		ClearDsAndMongoDsUtil.clearConfig(); //先清空 
 		System.out.println("finished");
 	}
 }

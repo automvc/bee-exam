@@ -59,7 +59,7 @@ public class InitSameAccessDsUtil {
 			HoneyConfig config=HoneyConfig.getHoneyConfig();
 			config.multiDS_enable=true;
 			config.multiDS_differentDbType=false;
-			config.setMultiDsSharding(true); //仅用于测试;在生产上,bee.dosql.multiDS.sharding应该放在配置文件中设置;且运行过程不宜更改,否则会丢失有关配置和上下文信息.
+			HoneyContext.resetMultiDsSharding(true); //仅用于测试;在生产上,bee.dosql.multiDS.sharding应该放在配置文件中设置;且运行过程不宜更改,否则会丢失有关配置和上下文信息.
 			config.multiDS_defalutDS="ds0";
 			HoneyContext.setConfigRefresh(true); //涉及路由信息更新要刷新
 

@@ -6,7 +6,7 @@
 
 package org.teasoft.exam.bee.osql.thread;
 
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.util.DateUtil;
 
 /**

@@ -15,9 +15,9 @@ import org.teasoft.exam.bee.osql.moretable.entity.Assignexam;
 import org.teasoft.exam.bee.osql.sharding.InitSameDsUtil;
 import org.teasoft.exam.bee.osql.sharding.ShardingInitData;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar

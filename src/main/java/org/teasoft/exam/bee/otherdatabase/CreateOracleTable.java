@@ -8,8 +8,8 @@ import org.teasoft.exam.bee.osql.entity.Scores;
 import org.teasoft.exam.bee.osql.entity.dynamic.LeafAlloc3;
 import org.teasoft.exam.bee.osql.moretable.entity.Assigncourse;
 import org.teasoft.exam.bee.osql.moretable.entity.Assignexam;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.autogen.Ddl;
-import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.core.SessionFactory;
 
 public class CreateOracleTable {

@@ -9,17 +9,14 @@ package org.teasoft.exam.bee.osql.sharding.moretable;
 import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
-import org.teasoft.bee.osql.Op;
-import org.teasoft.bee.osql.api.Condition;
 import org.teasoft.bee.osql.api.MoreTable;
 import org.teasoft.exam.bee.osql.sharding.InitSameDsUtil;
 import org.teasoft.exam.bee.osql.sharding.ShardingInitData;
 import org.teasoft.exam.bee.osql.sharding.moretable.entity.Myorders;
 import org.teasoft.exam.bee.osql.sharding.moretable.entity.Ordersdetail;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
-import org.teasoft.honey.osql.core.Logger;
-import org.teasoft.honey.osql.shortcut.BF;
 
 /**
  * @author Kingstar

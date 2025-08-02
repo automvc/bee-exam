@@ -11,8 +11,8 @@ import org.teasoft.bee.osql.MapSqlSetting;
 import org.teasoft.bee.osql.api.MapSql;
 import org.teasoft.bee.osql.api.MapSuid;
 import org.teasoft.honey.distribution.GenIdFactory;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar

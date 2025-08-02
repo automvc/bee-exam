@@ -13,8 +13,8 @@ import org.teasoft.exam.bee.osql.sharding.InitSameDsUtil;
 import org.teasoft.exam.bee.osql.sharding.ShardingInitData;
 import org.teasoft.exam.bee.osql.sharding.moretable.entity.Myorders;
 import org.teasoft.exam.bee.osql.sharding.moretable.entity.Ordersdetail;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * 批量插入的分片

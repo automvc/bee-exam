@@ -11,8 +11,8 @@ import java.util.List;
 import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.beex.type.JsonDefaultHandler;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * Test Json field (eg: mysql 5.7)

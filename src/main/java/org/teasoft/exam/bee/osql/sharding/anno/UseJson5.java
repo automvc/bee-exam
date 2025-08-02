@@ -15,8 +15,8 @@ import org.teasoft.bee.osql.api.SuidRich;
 //import org.teasoft.exam.bee.osql.entity.User;
 import org.teasoft.exam.bee.osql.entity.TestUser;
 import org.teasoft.exam.bee.osql.sharding.InitSameDsUtil;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
-import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.util.Printer;
 

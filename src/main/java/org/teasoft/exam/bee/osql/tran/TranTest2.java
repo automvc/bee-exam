@@ -6,8 +6,8 @@ import java.util.List;
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.bee.osql.transaction.Transaction;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.HoneyConfig;
-import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.core.SessionFactory;
 import org.teasoft.honey.osql.shortcut.BF;
 

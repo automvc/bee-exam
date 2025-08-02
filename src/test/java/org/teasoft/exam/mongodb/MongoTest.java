@@ -3,7 +3,7 @@ package org.teasoft.exam.mongodb;
 import org.junit.Assert;
 import org.junit.Test;
 import org.teasoft.exam.bee.mongodb.*;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 public class MongoTest extends BaseMongoTest {
 	

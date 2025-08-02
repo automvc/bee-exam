@@ -12,7 +12,7 @@ import static org.teasoft.honey.util.currency.BeeFinancialCalculator.preCheckExp
 import java.math.RoundingMode;
 
 import org.junit.Test;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.util.currency.CurrencyExpressionArith;
 
 /**

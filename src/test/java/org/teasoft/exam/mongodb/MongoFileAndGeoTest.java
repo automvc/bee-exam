@@ -14,7 +14,7 @@ import org.teasoft.exam.bee.mongodb.geo.GeoTest_Insert2;
 import org.teasoft.exam.bee.mongodb.geo.InsertAndSelectAllKind;
 import org.teasoft.exam.bee.mongodb.geo.InsertAndSelectAllKind2;
 import org.teasoft.exam.bee.mongodb.geo.InsertTest;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 public class MongoFileAndGeoTest extends BaseMongoTest {
 

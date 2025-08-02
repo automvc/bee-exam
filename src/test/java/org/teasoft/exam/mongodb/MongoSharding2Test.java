@@ -3,8 +3,8 @@ package org.teasoft.exam.mongodb;
 import org.junit.Assert;
 import org.junit.Test;
 import org.teasoft.exam.bee.mongodb.sharding.*;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.HoneyConfig;
-import org.teasoft.honey.osql.core.Logger;
 
 public class MongoSharding2Test extends BaseMongoTest2 {
 

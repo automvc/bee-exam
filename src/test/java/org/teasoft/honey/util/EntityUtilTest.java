@@ -8,7 +8,7 @@ package org.teasoft.honey.util;
 
 import org.junit.Test;
 import org.teasoft.exam.bee.osql.annotation.moretable.Clazz1;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 import static org.teasoft.honey.util.EntityUtil.*;
 

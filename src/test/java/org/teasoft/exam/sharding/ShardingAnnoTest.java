@@ -3,7 +3,7 @@ package org.teasoft.exam.sharding;
 import org.junit.Assert;
 import org.junit.Test;
 import org.teasoft.exam.bee.osql.sharding.anno.*;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 public class ShardingAnnoTest extends BaseShardingTest{
 	

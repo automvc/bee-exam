@@ -10,7 +10,7 @@ import org.teasoft.exam.bee.mongodb.json.InventoryTestJson3;
 import org.teasoft.exam.bee.mongodb.json.InventoryTestString;
 import org.teasoft.exam.bee.mongodb.json.InventoryTestSub;
 import org.teasoft.exam.bee.mongodb.json.ListJsonTest;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 public class MongoJsonTest extends BaseMongoTest {
 

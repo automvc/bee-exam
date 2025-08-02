@@ -8,7 +8,7 @@ package org.teasoft.exam.coverage;
 
 import org.junit.Test;
 import org.teasoft.honey.distribution.UUID;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 /**
  * @author Kingstar

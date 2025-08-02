@@ -8,7 +8,7 @@ package org.teasoft.honey.osql.name;
 
 import org.junit.Test;
 import org.teasoft.bee.osql.NameTranslate;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 /**
  * @author Kingstar
@@ -51,6 +51,11 @@ public class NameUtilTest {
 		Logger.info(nameTranslate.toFieldName("_bee_x"));//首字母不支持下横线
 		Logger.info(nameTranslate.toFieldName("Bee_x"));//先转成小写,再转换无问题,首字母不推荐用大写
 		Logger.info(nameTranslate.toColumnName("BeeX"));//首字母作为转换,首字母不推荐用大写
+		
+		Logger.info(nameTranslate.toColumnName("name"));
+		Logger.info(nameTranslate.toColumnName("comment"));
+		Logger.info(nameTranslate.toColumnName("update"));
+		Logger.info(nameTranslate.toColumnName("key"));
 		
 		
 		long t1=System.currentTimeMillis();

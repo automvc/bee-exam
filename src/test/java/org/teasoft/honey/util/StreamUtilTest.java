@@ -10,7 +10,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 import org.junit.Test;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 import static org.teasoft.honey.util.StreamUtil.*;
 

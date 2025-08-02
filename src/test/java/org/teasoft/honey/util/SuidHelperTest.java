@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar

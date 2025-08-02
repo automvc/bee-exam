@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.teasoft.exam.MySqlOneConfig;
 import org.teasoft.exam.bee.mongodb.ds.*;
 import org.teasoft.exam.bee.mongodb.sharding.ClearDsAndMongoDsUtil;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 public class MongoDsTest {
 

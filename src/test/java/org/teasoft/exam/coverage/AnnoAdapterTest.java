@@ -14,7 +14,7 @@ import org.teasoft.bee.spi.defaultimpl.AnnoAdapterBeeDefault;
 import org.teasoft.exam.bee.osql.annotation.moretable.Clazz1;
 import org.teasoft.exam.bee.osql.annotation.moretable.Student1;
 import org.teasoft.exam.bee.osql.entity.dynamic.Orders;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 
 /**
  * @author Kingstar

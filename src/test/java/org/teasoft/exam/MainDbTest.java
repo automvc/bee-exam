@@ -45,6 +45,7 @@ public class MainDbTest {
 //			}
 			
 			HoneyConfig honeyConfig = HoneyConfig.getHoneyConfig();
+			honeyConfig.multiDS_enable = false;
 
 //			String oldUrl = honeyConfig.getUrl();
 //			String oldUsername = honeyConfig.getUsername();

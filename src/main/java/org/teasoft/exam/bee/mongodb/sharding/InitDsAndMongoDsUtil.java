@@ -28,7 +28,7 @@ public class InitDsAndMongoDsUtil {
 			config.multiDS_enable=true;
 			config.multiDS_differentDbType=false;
 //			config.multiDS_sharding=true;
-			config.setMultiDsSharding(true); //仅用于测试;在生产上,bee.dosql.multiDS.sharding应该放在配置文件中设置;且运行过程不宜更改,否则会丢失有关配置和上下文信息.
+			HoneyContext.resetMultiDsSharding(true); //仅用于测试;在生产上,bee.dosql.multiDS.sharding应该放在配置文件中设置;且运行过程不宜更改,否则会丢失有关配置和上下文信息.
 			config.multiDS_justMongodb=true;
 			config.multiDS_defalutDS="ds0";  //没有默认ds,像delete,在V2.1还不支持Sharding时,则会报错
 			

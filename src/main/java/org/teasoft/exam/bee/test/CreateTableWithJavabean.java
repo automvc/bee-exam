@@ -25,8 +25,8 @@ import org.teasoft.exam.bee.osql.special.ddl.Noid1;
 import org.teasoft.exam.bee.osql.special.primarykey.entity.CustomId;
 import org.teasoft.exam.bee.osql.special.primarykey.entity.TestPrimaryKey;
 import org.teasoft.exam.bee.osql.special.type.DateType2;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.autogen.Ddl;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar

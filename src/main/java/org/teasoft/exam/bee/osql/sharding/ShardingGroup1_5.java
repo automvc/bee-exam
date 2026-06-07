@@ -60,8 +60,8 @@ public class ShardingGroup1_5 {
 		condition.groupBy(Orders_F.userid);
 		
 //		condition.orderBy("userid",OrderType.DESC);// bug
-		condition.orderBy("userId",OrderType.DESC);// bug
-//		condition.orderBy("userid",OrderType.ASC);
+//		condition.orderBy("userId",OrderType.DESC);// bug
+		condition.orderBy("userid",OrderType.ASC);
 //		condition.orderBy("userId",OrderType.ASC);
 //		condition.orderBy("total",OrderType.DESC);
 		

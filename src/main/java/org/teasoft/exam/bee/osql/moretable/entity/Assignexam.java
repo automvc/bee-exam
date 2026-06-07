@@ -9,6 +9,7 @@ package org.teasoft.exam.bee.osql.moretable.entity;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
+import org.teasoft.bee.osql.annotation.FK;
 import org.teasoft.bee.osql.annotation.JoinTable;
 import org.teasoft.bee.osql.annotation.JoinType;
 
@@ -19,10 +20,8 @@ import org.teasoft.bee.osql.annotation.JoinType;
  */
 public class Assignexam implements Serializable {
 
-	
-	
-    @JoinTable(mainField="classno,term,subjectno", subField="classno,term,subjectno", joinType=JoinType.JOIN)
-//    @JoinTable(mainField="classno,term,subjectno", subField="classno,term,subjectno", joinType=JoinType.LEFT_JOIN)
+    @JoinTable(mainField="classno,term,subjectno", subField="classno,term,subjectno", joinType=JoinType.LEFT_JOIN)
+    @FK(value= {"bookDetailId","remark"},refBy= {"id","name"})
     private Assigncourse assigncourse;
     
     private static final long serialVersionUID = 1593279039448L;

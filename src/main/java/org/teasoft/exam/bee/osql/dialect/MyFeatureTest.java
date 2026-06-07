@@ -10,7 +10,7 @@ import org.teasoft.bee.osql.DatabaseConst;
 import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.bee.osql.dialect.DbFeatureRegistry;
 import org.teasoft.exam.bee.osql.entity.Orders;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
@@ -30,6 +30,8 @@ public class MyFeatureTest {
 			suidRich.select(new Orders(), 10, 10);
 		} catch (Exception e) {
 			Logger.error(e.getMessage(), e);
+		}finally {
+			DbFeatureRegistry.register(DatabaseConst.SQLSERVER, null);
 		}
 		
 	}

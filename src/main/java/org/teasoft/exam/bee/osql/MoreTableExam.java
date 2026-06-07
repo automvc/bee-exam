@@ -105,7 +105,7 @@ public class MoreTableExam {
 			assignexam.setStatus("1");
 			assignexam.setAssigncourse(assigncourse);
 			
-			moreTable.select(assignexam);
+			List<Assignexam> list0=moreTable.select(assignexam);
 			
 			assignexam.setClassno("aaa");
 //			System.out.println("---------------select before----------------------");

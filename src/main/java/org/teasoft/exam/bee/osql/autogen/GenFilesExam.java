@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.teasoft.honey.osql.autogen.GenFiles;
-import org.teasoft.honey.osql.core.BeeInitPreLoadService;
+import org.teasoft.honey.osql.util.FileUtil;
 /**
  * @author Kingstar
  * @since  1.7.2
@@ -34,8 +34,14 @@ public class GenFilesExam {
 //		String basePath = "D:\\xxx\\yyy\\bee-exam\\src\\main\\java\\org\\teasoft\\exam\\bee\\osql\\autogen\\";
 		
 		String templatePath = basePath + "OrderhistoryRest.java.template";
-		String targetFilePath = basePath + "OrderhistoryRest.java";
+		String targetFilePath = basePath + "OrderhistoryRest.java.txt";
 		GenFiles.genFile(templatePath, map, targetFilePath);
+		
+//		FileUtil.genFile(basePath, "OrderhistoryRest.java.txt", "aaaa2222"); //Can override the file if it exists.
+//		FileUtil.genFile(targetFilePath,"aaaa2222"); //will create fail, if the file exists.
+		
+//		FileUtil.genFile("D:\\JavaWeb\\xxx\\bee-exam\\src\\main\\java","com.automvc.enet.order.rest", "OrderhistoryRest.java.txt", "fdsfsadfd"); //Can override the file if it exists.
+		
 		
 		System.out.println("finished!");
 	}

@@ -73,9 +73,9 @@ import org.teasoft.exam.bee.osql.special.type.DateTypeTest;
 import org.teasoft.exam.comm.OrdinaryTest;
 import org.teasoft.exam.comm.TestHelper;
 import org.teasoft.exam.comm.TestPrepare;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyContext;
-import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.util.DateUtil;
 
 /**
@@ -157,7 +157,6 @@ public class TestNormal {
 		}else{
 		   runTest(UpdateSetExam.class);
 		}
-		
 		
 		runTest(InsertTest.class);
 		runTest(DynamicTableExam.class);

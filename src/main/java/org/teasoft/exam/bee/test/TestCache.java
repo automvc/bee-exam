@@ -12,8 +12,8 @@ import org.teasoft.exam.bee.osql.CacheTestInsertArray;
 import org.teasoft.exam.bee.osql.CacheTestJson;
 import org.teasoft.exam.comm.TestHelper;
 import org.teasoft.exam.comm.TestPrepare;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.HoneyContext;
-import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.util.DateUtil;
 
 /**

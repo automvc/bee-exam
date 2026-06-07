@@ -13,7 +13,7 @@ public class Orders implements Serializable {
 
 	private static final long serialVersionUID = 1596710362247L;
 
-	@GenId
+//	@GenId
 	private Long id;
 	private Long userid;
 	private Long orderid;

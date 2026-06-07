@@ -21,7 +21,8 @@ public class OrdersGroupResponse implements Serializable {
 //	private Long userid;
 	
 	@Column("userid")
-	private Long userId;
+//	private Long userId;
+	private Long userid;
 	
 	private Long orderid;
 	private String name;
@@ -64,16 +65,24 @@ public class OrdersGroupResponse implements Serializable {
 		return orderid;
 	}
 
-	public Long getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
-
+//	public Long getUserId() {
+//		return userId;
+//	}
+//
+//	public void setUserId(Long userId) {
+//		this.userId = userId;
+//	}
+	
 	public void setOrderid(Long orderid) {
 		this.orderid = orderid;
+	}
+
+	public Long getUserid() {
+		return userid;
+	}
+
+	public void setUserid(Long userid) {
+		this.userid = userid;
 	}
 
 	public String getName() {
@@ -144,8 +153,8 @@ public class OrdersGroupResponse implements Serializable {
 		 StringBuilder str=new StringBuilder();	
 		 str.append("Orders[");			
 		 str.append("id=").append(id);		 
-//		 str.append(",userid=").append(userid);		 
-		 str.append(",userId=").append(userId);		 
+		 str.append(",userid=").append(userid);		 
+//		 str.append(",userId=").append(userId);		 
 		 str.append(",orderid=").append(orderid);		 
 		 str.append(",name=").append(name);		 
 		 str.append(",total=").append(total);		 

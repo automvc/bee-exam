@@ -16,8 +16,10 @@ import org.teasoft.exam.bee.osql.sharding.entity.Orders;
 import org.teasoft.exam.bee.osql.sharding.entity.Orders_F;
 import org.teasoft.exam.bee.test.ClearDsContext;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.osql.core.HoneyConfig;
+import org.teasoft.honey.osql.core.HoneyContext;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.sharding.ShardingUtil;
 import org.teasoft.honey.sharding.config.ShardingConfig;
@@ -35,6 +37,14 @@ public class ShardingPaging_Just_ShardingTable {
 	public static void main(String[] args) throws SQLException {
 //		InitSameDsUtil.initDS();//仅分表,只有一个数据源,不应该使用多个.
 		ClearDsContext.clear();
+		
+		HoneyConfig honeyConfig = HoneyConfig.getHoneyConfig();
+		honeyConfig.multiDS_enable = true;
+		honeyConfig.multiDS_type = 0;
+		honeyConfig.multiDS_differentDbType = false;
+		HoneyContext.resetMultiDsSharding(true);
+//		honeyConfig.multiDS_sharding=true;
+		
 		test();
 	}
 

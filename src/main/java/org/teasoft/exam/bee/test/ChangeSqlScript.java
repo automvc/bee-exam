@@ -25,6 +25,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 /**
  * @author Kingstar
  * @since  1.9.8
+ * @since  2.4.2
  */
 
 //不知如何,自动测试时,会导致测试率降低.
@@ -51,7 +52,7 @@ public class ChangeSqlScript {
 		Map<String,String> map=new HashMap<>();
 		for (int i = 0; i < list.size(); i++) {
 			ColumnBean b=list.get(i);
-			map.put("  `" +b.getName()+ "` ", "  `" +NameTranslateHandle.toColumnName(b.getName())+ "` ");
+			map.put("  `" +b.getCol()+ "` ", "  `" +NameTranslateHandle.toColumnName(b.getCol())+ "` ");
 		}
 		
 //		Logger.info(map.toString());//导致测试率降低

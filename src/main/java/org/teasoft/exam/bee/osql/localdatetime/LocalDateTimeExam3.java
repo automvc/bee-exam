@@ -45,6 +45,13 @@ public class LocalDateTimeExam3 {
 
 		List<LocaldatetimeTable> list = suidRich.select(selectBean, condition);
 		Printer.printList(list);
+		
+		selectBean = new LocaldatetimeTable();
+		selectBean.setId(1);
+		condition = BF.getCondition();
+		condition.op("localdatetime", Op.ge, new TO_DATE("2024-07-08", "YYYY-MM-DD"));
+		list = suidRich.select(selectBean, condition);
+		Printer.printList(list);
 
 		String dateString = "2024-07-08T23:55:35.534";
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");

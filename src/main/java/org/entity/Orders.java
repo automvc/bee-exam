@@ -13,7 +13,7 @@ public class Orders implements Serializable {
 
 	private Long id;
 	private String userid;
-	private Long orderid;
+//	private Long orderid;
 	private String name;
 	private BigDecimal total;
 	private String createtime;
@@ -38,13 +38,13 @@ public class Orders implements Serializable {
 		this.userid = userid;
 	}
 
-	public Long getOrderid() {
-		return orderid;
-	}
-
-	public void setOrderid(Long orderid) {
-		this.orderid = orderid;
-	}
+//	public Long getOrderid() {
+//		return orderid;
+//	}
+//
+//	public void setOrderid(Long orderid) {
+//		this.orderid = orderid;
+//	}
 
 	public String getName() {
 		return name;
@@ -107,7 +107,7 @@ public class Orders implements Serializable {
 		 str.append("Orders[");			
 		 str.append("id=").append(id);		 
 		 str.append(",userid=").append(userid);		 
-		 str.append(",orderid=").append(orderid);		 
+//		 str.append(",orderid=").append(orderid);		 
 		 str.append(",name=").append(name);		 
 		 str.append(",total=").append(total);		 
 		 str.append(",createtime=").append(createtime);		 

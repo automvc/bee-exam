@@ -12,8 +12,8 @@ import java.util.Map;
 
 import org.teasoft.bee.osql.annotation.Ignore;
 import org.teasoft.bee.osql.annotation.JoinTable;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.HoneyUtil;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar

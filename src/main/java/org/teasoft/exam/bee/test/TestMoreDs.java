@@ -19,7 +19,7 @@ import org.teasoft.exam.bee.osql.ds.DiffDdExamCustomerSql;
 import org.teasoft.exam.bee.osql.ds.RwDsExam;
 import org.teasoft.exam.bee.osql.ds.SuidWhichOne;
 import org.teasoft.exam.comm.TestHelper;
-import org.teasoft.honey.osql.core.Logger;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.type.TimestampTypeHandler;
 import org.teasoft.honey.osql.type.TypeHandlerRegistry;
 

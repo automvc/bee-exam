@@ -43,6 +43,7 @@ import org.teasoft.exam.bee.osql.entity.Orders;
 import org.teasoft.exam.bee.osql.entity.TestUser;
 import org.teasoft.honey.distribution.GenIdFactory;
 import org.teasoft.honey.logging.Jdk14LoggingImpl;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.chain.SelectImpl;
 import org.teasoft.honey.osql.chain.UpdateImpl;
 import org.teasoft.honey.osql.core.BeeFactory;
@@ -50,7 +51,6 @@ import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.CustomSql;
 import org.teasoft.honey.osql.core.ExceptionHelper;
 import org.teasoft.honey.osql.core.HoneyConfig;
-import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.core.SessionFactory;
 import org.teasoft.honey.osql.dialect.NoPagingSupported;
 
@@ -359,10 +359,11 @@ public class ExceptionTest {
 	}
 	
 	public static void test11() {
-		DbFeature  oldDbFeature=BeeFactory.getHoneyFactory().getDbFeature();
+//		DbFeature  oldDbFeature=BeeFactory.getHoneyFactory().getDbFeature();
 		try {
-			BeeFactory.getHoneyFactory().setDbFeature(new NoPagingSupported());
-			suidRich.select(new Orders(),1,10);
+//			通过DB关联.DbFeatureRegistry.register(databaseName, dbFeature)
+//			BeeFactory.getHoneyFactory().setDbFeature(new NoPagingSupported());
+//			suidRich.select(new Orders(),1,10);
 		} catch (BeeException e) {
 			Logger.error(e.getMessage());
 			e.printStackTrace();
@@ -370,7 +371,9 @@ public class ExceptionTest {
 			Logger.error(e.getMessage());
 			e.printStackTrace();
 		}finally {
-			BeeFactory.getHoneyFactory().setDbFeature(oldDbFeature);
+//			BeeFactory.getHoneyFactory().setDbFeature(oldDbFeature);
+			//不能设置为具体的值; 清空即可;框架会动态获取.
+//			BeeFactory.getHoneyFactory().setDbFeature(null);
 		}
 	}
 	

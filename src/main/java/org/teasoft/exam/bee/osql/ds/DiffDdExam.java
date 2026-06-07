@@ -23,11 +23,11 @@ import org.teasoft.exam.bee.osql.entity.dynamic.Orders;
 import org.teasoft.exam.bee.osql.moretable.entity.TestUser;
 import org.teasoft.exam.comm.ClearDsUtil;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.ConditionImpl;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyContext;
-import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.core.SessionFactory;
 
 import com.alibaba.druid.pool.DruidDataSource;
@@ -61,7 +61,7 @@ public class DiffDdExam {
 			HoneyConfig.getHoneyConfig().multiDS_type = 2;
 			HoneyConfig.getHoneyConfig().multiDS_differentDbType=true;
 //			HoneyConfig.getHoneyConfig().multiDS_sharding = false;
-			HoneyConfig.getHoneyConfig().setMultiDsSharding(false); //仅用于测试;在生产上,bee.dosql.multiDS.sharding应该放在配置文件中设置;且运行过程不宜更改,否则会丢失有关配置和上下文信息.
+			HoneyContext.resetMultiDsSharding(false); //仅用于测试;在生产上,bee.dosql.multiDS.sharding应该放在配置文件中设置;且运行过程不宜更改,否则会丢失有关配置和上下文信息.
 			HoneyConfig.getHoneyConfig().multiDS_defalutDS = "ds1";
 			
 			

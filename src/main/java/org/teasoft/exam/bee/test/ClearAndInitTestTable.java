@@ -10,10 +10,10 @@ import java.util.Map;
 
 import org.teasoft.bee.osql.DatabaseConst;
 import org.teasoft.bee.osql.api.PreparedSql;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyUtil;
-import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar

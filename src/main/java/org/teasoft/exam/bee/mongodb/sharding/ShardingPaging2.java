@@ -31,9 +31,10 @@ public class ShardingPaging2 {
 
 	public static void test() {
 		
-		test(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.
+//		test(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.
 		test(2);
-		test(-1);
+//		test(-1);
+		System.out.println("finished!!!");
 	}
 	
 	public static void test(int startIndex) {
@@ -64,13 +65,14 @@ public class ShardingPaging2 {
 		
 		//条件全在condition  case 5
 	 	List<Orders> list=suid.select(orders1,condition);
+	 	System.out.println("after select...");
 	 	Printer.printList(list);
 	 	System.out.println("--------------------:");
 	 	
 	 	
 	 	
 //	 	condition.size(6);
-	 	list=suid.select(orders1,condition);
+//	 	list=suid.select(orders1,condition);
         Printer.printList(list);
 	}
 }

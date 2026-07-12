@@ -12,6 +12,7 @@ import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.api.Condition;
 import org.teasoft.bee.osql.api.MoreTable;
+import org.teasoft.beex.json.JsonUtil;
 import org.teasoft.exam.bee.osql.sharding.InitSameDsUtil;
 import org.teasoft.exam.bee.osql.sharding.ShardingInitData;
 import org.teasoft.exam.bee.osql.sharding.moretable.entity.Myorders;
@@ -68,7 +69,8 @@ public class MoreTableExam6 {
 			Logger.info("size of records:"+list3.size() + "");
 			Printer.print(list3);
 			
-			String resultJosn=moreTable.selectJson(orders1, condition); 
+//			String resultJosn=moreTable.selectJson(orders1, condition); 
+			String resultJosn=JsonUtil.toJson(moreTable.select(orders1, condition)); 
 			Logger.info("--MoreTable---resultJosn: "+resultJosn);
 
 		} catch (BeeException e) {

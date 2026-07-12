@@ -12,6 +12,7 @@ import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.api.Condition;
 import org.teasoft.bee.osql.api.MoreTable;
+import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.osql.sharding.InitSameDsUtil;
 import org.teasoft.exam.bee.osql.sharding.ShardingInitData;
 import org.teasoft.exam.bee.osql.sharding.moretable.entity.Myorders;
@@ -37,6 +38,10 @@ public class MoreTableExam2 {
 
 	public static void test() {
 		try {
+			SuidRich suidRich=BF.getSuidRich();
+			suidRich.createTable(Myorders.class, false);
+			suidRich.createTable(Ordersdetail.class, false);
+			
 			MoreTable moreTable = BeeFactory.getHoneyFactory().getMoreTable();
 			
 			Myorders orders1 = new Myorders();
@@ -74,14 +79,6 @@ public class MoreTableExam2 {
 //			List<Myorders> list3 = moreTable.select(new Myorders(), 0, 10); // select 查询前10条记录
 //			Logger.info("size of records:" + list3.size() + "");
 //			Printer.printList(list3);
-			
-			
-			
-			
-			
-			
-			
-			
 			
 //			Orders ordersUpdate=new Orders();
 //			ordersUpdate.setUserid("bee");

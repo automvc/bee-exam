@@ -16,7 +16,7 @@ public class Myorders implements Serializable {
 
 	private static final long serialVersionUID = 1596710362247L;
 	
-	@JoinTable(mainField="userid,orderid", subField="userid,orderid", joinType=JoinType.JOIN)
+	@JoinTable(mainField="userid, orderid", subField="userid, orderid", joinType=JoinType.JOIN)
 	Ordersdetail ordersdetail;
 	
 	private Long id;

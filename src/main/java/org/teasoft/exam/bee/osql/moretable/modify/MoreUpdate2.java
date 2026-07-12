@@ -19,6 +19,9 @@ public class MoreUpdate2 {
 		
 		
 		Book2 entity=new Book2();
+//      update moretable, the main entity need set id
+		entity.setId(1L);
+
 		entity.setIsbn("isbn123456");
 		entity.setName("Java开发");
 //		entity.setId(868503003332609L);  //插入时, 返回的id,可以自动填入外键; 但delete和modify时,则不行.
@@ -42,6 +45,8 @@ public class MoreUpdate2 {
 		
 	
 		MoreTable moreTable=BF.getMoreTable();
+		moreTable.select(entity); //select要用JoinTable
+		
 		int updateNum=moreTable.update(entity);	
 		Logger.info("MoreTable update,updateNum:"+updateNum);
 		

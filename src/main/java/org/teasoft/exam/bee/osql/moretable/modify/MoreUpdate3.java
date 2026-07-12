@@ -19,6 +19,8 @@ public class MoreUpdate3 {
 		
 		
 		Book2 entity=new Book2();
+//      update moretable, the main entity need set id
+		entity.setId(1L);
 		entity.setIsbn("isbn123456");
 		entity.setName("Java开发");
 //		entity.setId(868503003332609L);  //插入时, 返回的id,可以自动填入外键; 但delete和modify时,则不行.

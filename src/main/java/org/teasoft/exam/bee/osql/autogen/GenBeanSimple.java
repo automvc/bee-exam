@@ -41,14 +41,16 @@ public class GenBeanSimple {
 			//设置相对Entity目录的文件夹名称; 空表示与Entity同一个文件夹
 //			config.setFieldFileRelativeFolder("field"); //默认
 			config.setOverride(true); //是否覆盖原来的文件
+			config.setUpperFieldNameInFieldFile(true);
 			
 //			genBean.genSomeBeanFile("orders");
+//			genBean.genSomeBeanFile("exam");
 //			genBean.genSomeBeanFile("store.shopping_cart"); //cassandra 需要带keyspace (store.)
 			
 			
 			//it is easy way.   最简单的用法,所有的都用默认配置.
 //			new GenBean().genSomeBeanFile("orderhistory");
-			new GenBean().genSomeBeanFile("tyte_table");
+//			new GenBean().genSomeBeanFile("tyte_table");
 			
 		  } catch (BeeException e) {
 			 e.printStackTrace();

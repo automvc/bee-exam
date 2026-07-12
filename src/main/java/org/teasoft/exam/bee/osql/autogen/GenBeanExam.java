@@ -61,6 +61,8 @@ public class GenBeanExam {
 			//it is easy way.   最简单的用法,所有的都用默认配置.
 //			new GenBean().genSomeBeanFile("orders");
 			new GenBean(config).genSomeBeanFile("orders");
+//			new GenBean(config).genSomeBeanFile("idClaim");
+//			new GenBean(config).genSomeBeanFile("pg_type1");
 //			new GenBean().genSomeBeanFile("image");
 		  } catch (BeeException e) {
 			 e.printStackTrace();

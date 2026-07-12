@@ -5,7 +5,9 @@ import org.teasoft.honey.osql.shortcut.BF;
 
 import entity.City;
 import entity.News;
+import entity.ProvinceHistory;
 import entity.Road;
+import entity.S;
 import entity.Town;
 import entity.Village;
 
@@ -34,11 +36,14 @@ public class Gen {
 //		
 //		genBean.genSomeBeanFile("s");
 		
-//		BF.getSuidRich().createTable(Province.class, false);
-//		BF.getSuidRich().createTable(City.class, false);
-//		BF.getSuidRich().createTable(Town.class, false);
-//		BF.getSuidRich().createTable(Village.class, false);
-//		BF.getSuidRich().createTable(Road.class, false);
+		BF.getSuidRich().createTable(Province.class, false);
+		BF.getSuidRich().createTable(City.class, false);
+		BF.getSuidRich().createTable(Town.class, false);
+		BF.getSuidRich().createTable(Village.class, false);
+		BF.getSuidRich().createTable(Road.class, false);
+		
+		BF.getSuidRich().createTable(ProvinceHistory.class, false);
+		BF.getSuidRich().createTable(S.class, false);
 		
 		BF.getSuidRich().createTable(News.class, false);
 	}

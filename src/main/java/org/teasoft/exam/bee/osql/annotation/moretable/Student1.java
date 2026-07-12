@@ -34,8 +34,8 @@ public class Student1 implements Serializable {
 //	@JoinTable(mainField="sid", subField="stuId", joinType=JoinType.JOIN)
 	
 //	@JoinTable(mainField="sid", subField="stuId", joinType=JoinType.JOIN,subClazz=StudentHobby.class,subClass="org.teasoft.exam.bee.osql.annotation.moretable22.StudentHobby")
-	@JoinTable(mainField="id", subField="stuId", joinType=JoinType.JOIN,subClazz=StudentHobby.class,subClass="org.teasoft.exam.bee.osql.annotation.moretable22.StudentHobby")
-	@FK(refBy="id",value="stuId") //2.4.0  stuId是StudentHobby的外键,该外键引用自主表的id.表结构可以不用外键约束
+	@JoinTable(mainField="id", subField="stuId", joinType=JoinType.JOIN, subClass=StudentHobby.class)
+	@FK(mainField="id", subField="stuId") //2.4.0  stuId是StudentHobby的外键,该外键引用自主表的id.表结构可以不用外键约束
 	private List<StudentHobby> studentHobbyList=new ArrayList<>();
 //	private StudentHobby studentHobbyList;
 	

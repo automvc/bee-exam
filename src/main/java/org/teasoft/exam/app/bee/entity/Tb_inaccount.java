@@ -18,7 +18,7 @@ public class Tb_inaccount// 收入信息实体类
 	private String handler;// 存储收入付款方
 	private String mark;// 存储收入备注
 
-	@JoinTable(mainField = "_id",subField = "_id",subClazz =Tb_outaccount.class )
+	@JoinTable(mainField = "_id",subField = "_id", subClass =Tb_outaccount.class )
 	private List<Tb_outaccount> list;
 	
 	public List<Tb_outaccount> getList() {

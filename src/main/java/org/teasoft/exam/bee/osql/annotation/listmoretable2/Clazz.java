@@ -23,7 +23,7 @@ public class Clazz implements Serializable {
 	
 	private String remark;
 	
-	@JoinTable(mainField="id", subField="classno", joinType=JoinType.LEFT_JOIN,subClazz=Student1.class)
+	@JoinTable(mainField="id", subField="classno", joinType=JoinType.LEFT_JOIN, subClass=Student1.class)
 	private List<Student1> studentList=new ArrayList<>();
 	
 	public Integer getId() {

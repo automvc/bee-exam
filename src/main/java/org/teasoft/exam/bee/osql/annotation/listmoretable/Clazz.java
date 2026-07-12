@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.teasoft.bee.osql.SuidType;
-import org.teasoft.bee.osql.annotation.Datetime;
 import org.teasoft.bee.osql.annotation.JoinTable;
 import org.teasoft.bee.osql.annotation.JoinType;
 import org.teasoft.exam.bee.osql.annotation.moretable.Student1;
@@ -29,8 +27,8 @@ public class Clazz implements Serializable {
 //	@JoinTable(mainField="id", subField="classno", joinType=JoinType.LEFT_JOIN,subAlias="stu",subClass="Student")
 //	private List<Student> studentList=new ArrayList<>();
 	
-	@JoinTable(mainField="id", subField="classno", joinType=JoinType.LEFT_JOIN,subAlias="stu",subClazz=Student1.class,subClass="org.teasoft.exam.bee.osql.annotation.moretable1111.Student1")
-	private List<Student1> studentList=new ArrayList<>();
+	@JoinTable(mainField="id", subField="classno", joinType=JoinType.LEFT_JOIN,subAlias="stu",subClass=Student.class)
+	private List<Student> studentList=new ArrayList<>();
 	
 	public Integer getId() {
 		return id;
@@ -82,11 +80,11 @@ public class Clazz implements Serializable {
 //		this.studentList = studentList;
 //	}
 	
-	public List<Student1> getStudentList() {
+	public List<Student> getStudentList() {
 		return studentList;
 	}
 
-	public void setStudentList(List<Student1> studentList) {
+	public void setStudentList(List<Student> studentList) {
 		this.studentList = studentList;
 	}
 

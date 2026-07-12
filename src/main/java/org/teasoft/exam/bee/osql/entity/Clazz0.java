@@ -23,8 +23,7 @@ public class Clazz0 implements Serializable {
 	private String teachername;
 	private String remark;
 	
-	@JoinTable(mainField="id", subField="classno", joinType=JoinType.LEFT_JOIN,
-			   subClass="org.teasoft.exam.bee.osql.entity.Student")
+	@JoinTable(mainField="id", subField="classno", joinType=JoinType.LEFT_JOIN, subClass=Student.class)
 //	@JoinTable(mainField="id", subField="classno", joinType=JoinType.LEFT_JOIN,subAlias="stu")
 	private List<Student> studentList=new ArrayList<>();
 	

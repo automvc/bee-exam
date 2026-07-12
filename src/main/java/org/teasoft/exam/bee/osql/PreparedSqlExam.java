@@ -16,6 +16,7 @@ import org.teasoft.honey.osql.core.BeeFactory;
 import org.teasoft.honey.osql.core.CustomSql;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyContext;
+import org.teasoft.honey.osql.core.HoneyContext1;
 import org.teasoft.honey.osql.core.HoneyUtil;
 import org.teasoft.honey.osql.dialect.sqlserver.SqlServerPagingStruct;
 
@@ -155,7 +156,8 @@ public class PreparedSqlExam {
 				String sql2012="select * from orders order by id";
 				SqlServerPagingStruct struct=new SqlServerPagingStruct();
 				struct.setHasOrderBy(true);
-				HoneyContext.setSqlServerPagingStruct(sql2012, struct);
+//				HoneyContext.setSqlServerPagingStruct(sql2012, struct);
+				HoneyContext1.set(SqlServerPagingStruct.class.getName() + sql, struct);
 				preparedSql.select(sql2012, Orders.class, new Object[] {},2,3);
 
 				
@@ -180,7 +182,8 @@ public class PreparedSqlExam {
 				struct3.setJustChangeOrderColumn(true);
 				struct3.setOrderColumn("name");
 				struct3.setOrderType(OrderType.DESC);
-				HoneyContext.setSqlServerPagingStruct(sql2008_2, struct3);
+//				HoneyContext.setSqlServerPagingStruct(sql2008_2, struct3);
+				HoneyContext1.set(SqlServerPagingStruct.class.getName() + sql2008_2, struct3);
 				preparedSql.select(sql2008_2, Orders.class, new Object[] {},2,3);
 				
 			}

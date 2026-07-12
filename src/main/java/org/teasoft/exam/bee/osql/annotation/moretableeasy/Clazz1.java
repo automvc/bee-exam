@@ -25,7 +25,7 @@ public class Clazz1 implements Serializable {
 	@Datetime(suidType=SuidType.SELECT)
 	private String remark;
 	
-	@JoinTable(mainField="id", subField="classno", joinType=JoinType.JOIN,subClass="Student1")
+	@JoinTable(mainField="id", subField="classno", joinType=JoinType.JOIN, subClass=Student1.class)
 	private Student1 student;  //Student1
 
 	public Integer getId() {

@@ -27,8 +27,8 @@ public class Clazz1 implements Serializable {
 	private String remark;
 	
 //	@JoinTable(mainField="id", subField="classno", joinType=JoinType.JOIN)
-	@JoinTable(mainField="id", subField="classno", joinType=JoinType.JOIN,subClass="Student1")
-	@FK(refBy="id", value="classno") //2.4.0  Student1的外键是classno,引用自主表Student1的id. 表结构可以不用外键约束
+	@JoinTable(mainField="id", subField="classno", joinType=JoinType.JOIN,subClass=Student1.class)
+	@FK(mainField="id", subField="classno") //2.4.0  Student1的外键是classno,引用自主表Student1的id. 表结构可以不用外键约束
 	private Student1 student;  //Student1
 
 	public Integer getId() {

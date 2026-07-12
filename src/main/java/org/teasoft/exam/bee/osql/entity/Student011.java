@@ -26,7 +26,7 @@ public class Student011 implements Serializable {
 	private Boolean flag;
 	private Integer classno;	
 	
-	@JoinTable(mainField="sid", subField="stuId", joinType=JoinType.LEFT_JOIN,subClass="StudentHobby")
+	@JoinTable(mainField="sid", subField="stuId", joinType=JoinType.LEFT_JOIN, subClass=StudentHobby.class)
 	private List<StudentHobby> studentHobbyList=new ArrayList<>();  //List type
 	
 //	@JoinTable(mainField="sid", subField="stuId", joinType=JoinType.LEFT_JOIN)

@@ -19,7 +19,7 @@ public class Tables2 implements Serializable {
 	private Integer tableId;
 	private String tableName;
 	
-	@JoinTable(mainField="table_id", subField="table_id",subClass="Columns", joinType=JoinType.JOIN)
+	@JoinTable(mainField="table_id", subField="table_id",subClass=Columns.class, joinType=JoinType.JOIN)
 	private List<Columns> list;
 	
 	public List<Columns> getList() {

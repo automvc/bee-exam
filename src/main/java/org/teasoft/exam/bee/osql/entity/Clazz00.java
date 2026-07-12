@@ -25,7 +25,7 @@ public class Clazz00 implements Serializable {
 	
 	
 //	subClass 配置 不带包含
-	@JoinTable(mainField="id", subField="classno", joinType=JoinType.LEFT_JOIN,subClass="Student")
+	@JoinTable(mainField="id", subField="classno", joinType=JoinType.LEFT_JOIN, subClass=Student.class)
 	private List<Student> studentList=new ArrayList<>();
 
 

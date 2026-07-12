@@ -25,8 +25,17 @@ import org.teasoft.exam.bee.osql.special.ddl.Noid1;
 import org.teasoft.exam.bee.osql.special.primarykey.entity.CustomId;
 import org.teasoft.exam.bee.osql.special.primarykey.entity.TestPrimaryKey;
 import org.teasoft.exam.bee.osql.special.type.DateType2;
+import org.teasoft.exam.moretable26.moretable3.selectlist.layer3.Province;
 import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.autogen.Ddl;
+
+import entity.City;
+import entity.News;
+import entity.ProvinceHistory;
+import entity.Road;
+import entity.S;
+import entity.Town;
+import entity.Village;
 
 /**
  * @author Kingstar
@@ -93,6 +102,17 @@ public class CreateTableWithJavabean {
 			Ddl.createTable( Clazz1.class, true);
 			Ddl.createTable( Student1.class, true);
 			Ddl.createTable( StudentHobby.class, true);
+			
+			Ddl.createTable(Province.class, false);
+			Ddl.createTable(City.class, false);
+			Ddl.createTable(Town.class, false);
+			Ddl.createTable(Village.class, false);
+			Ddl.createTable(Road.class, false);
+			
+			Ddl.createTable(ProvinceHistory.class, false);
+			Ddl.createTable(S.class, false);
+			
+			Ddl.createTable(News.class, false);
 			
 		} catch (Exception e) {
 			Logger.error("In CreateTableWithJavabean3 (Exception):" + e.getMessage());

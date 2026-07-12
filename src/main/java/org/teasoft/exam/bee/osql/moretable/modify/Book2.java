@@ -16,6 +16,7 @@ public class Book2 {
 //	@FK("bookId")
 ////	@FK(value="codeId",refBy="name")   //测试关系字段,不是主键;  实体设置没有设置主键值,只设置关联字段时的情形
 	@FK(mainField = "id", subField = "bookId")
+	@JoinTable(mainField = "id", subField = "bookId")
 	BookDetail bookDetail;
 	
 	public Long getId() {

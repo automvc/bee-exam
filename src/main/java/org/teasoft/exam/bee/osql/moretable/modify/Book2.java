@@ -13,8 +13,9 @@ public class Book2 {
 	private String remark;
 	
 //	@JoinTable  //暂时放这。  要改旧逻辑，碰到FK不解析。
-	@FK("bookId")
-//	@FK(value="codeId",refBy="name")   //测试关系字段,不是主键;  实体设置没有设置主键值,只设置关联字段时的情形
+//	@FK("bookId")
+////	@FK(value="codeId",refBy="name")   //测试关系字段,不是主键;  实体设置没有设置主键值,只设置关联字段时的情形
+	@FK(mainField = "id", subField = "bookId")
 	BookDetail bookDetail;
 	
 	public Long getId() {

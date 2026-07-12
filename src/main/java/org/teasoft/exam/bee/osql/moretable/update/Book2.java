@@ -14,8 +14,9 @@ public class Book2 {
 	private String remark;
 	
 //	@JoinTable  //暂时放这。  要改旧逻辑，碰到FK不解析。
-	@FK("bookId")
+//	@FK("bookId")
 //	BookDetail bookDetail;
+	@FK(mainField="id", subField="bookId")
 	List<BookDetail> bookDetail;
 	
 	public Long getId() {

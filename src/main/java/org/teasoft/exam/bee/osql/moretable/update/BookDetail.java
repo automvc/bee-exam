@@ -10,7 +10,8 @@ public class BookDetail {
 	private String remark;
 	
 //	@JoinTable
-	@FK("bookDetailId")
+//	@FK("bookDetailId")
+	@FK(mainField="id", subField="bookDetailId")
 	private BookReal bookReal;
 	
 	public Long getId() {

@@ -18,9 +18,8 @@ public class Book {
 	private String isbn;
 	private String remark;
 	
-//	@JoinTable
-	@FK(value="bookId",refBy="id2")
-//	@FK(value="bookId",refBy="id")
+//	@FK(value="bookId",refBy="id2")
+	@FK(mainField="id2",subField="bookId")
 	List<BookDetail> bookDetailList;
 	
 //	public Long getId() {

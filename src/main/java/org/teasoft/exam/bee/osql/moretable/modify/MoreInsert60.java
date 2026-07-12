@@ -18,7 +18,7 @@ public class MoreInsert60 {
 		//单表插入，解析到List类型时，要提示。
 		
 		Book3 entity=new Book3();
-//		book.setId(1L);
+//		entity.setId(1L);
 		entity.setIsbn("isbn12345622222");
 		entity.setName("Java开发");
 		

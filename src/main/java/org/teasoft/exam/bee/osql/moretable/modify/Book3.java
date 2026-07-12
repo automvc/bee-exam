@@ -11,11 +11,12 @@ public class Book3 {
 	private String isbn;
 	private String remark;
 	
-	@FK("bookId")
+//	@FK("bookId")
+	@FK(mainField="id",subField="bookId")
 	BookDetail bookDetail;
 	
-//	@FK("bookDetailId")
-	@FK(value= {"bookDetailId","remark"},refBy= {"id","name"})
+//	@FK(mainField= {"bookDetailId","remark"},subField= {"id","name"}) //error
+	@FK(mainField= {"id","name"}, subField= {"bookDetailId","remark"})
 	private BookReal bookReal;
 	
 	public Long getId() {

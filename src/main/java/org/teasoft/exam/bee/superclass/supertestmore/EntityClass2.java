@@ -17,7 +17,7 @@ public class EntityClass2 extends BaseClass{
 //	@JoinTable(mainField="id", subField="id")
 //	private School school;
 	
-	@JoinTable(mainField="id", subField="id",subClazz = Course.class ,joinType=JoinType.LEFT_JOIN)
+	@JoinTable(mainField="id", subField="id", subClass = Course.class ,joinType=JoinType.LEFT_JOIN)
 	private List<Course> list;
 	
 	public Long getId() {

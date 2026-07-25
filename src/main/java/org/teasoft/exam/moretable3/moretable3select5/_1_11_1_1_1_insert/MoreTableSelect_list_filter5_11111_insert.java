@@ -62,12 +62,12 @@ public class MoreTableSelect_list_filter5_11111_insert {
 			town.setVillage(village);
 
 			City city = new City();
-			city.setId(2010);
+//			city.setId(2010);
 			city.setName("西安");
 			city.setTown(town);
 
 			province = new Province();
-			province.setId(1010);
+//			province.setId(1010);
 			province.setName("陕西省");
 			province.setCity(city);
 			
@@ -83,7 +83,7 @@ public class MoreTableSelect_list_filter5_11111_insert {
 			village.setName("阿房村-update");
 			city.setName("西安-update");
 			city.setRemark("test update");
-			moreTable.update(province);
+//			moreTable.update(province);
 			
 			moreTable.delete(province);
 		} catch (BeeException e) {
@@ -160,7 +160,6 @@ class Province implements Serializable {
 	public void setCity(City city) {
 		this.city = city;
 	}
-	
 	
 	public ProvinceHistory getProvinceHistory() {
 		return provinceHistory;

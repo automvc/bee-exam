@@ -73,6 +73,7 @@ class S implements Serializable {
 //    sub_alias='y',
 //    main_alias='x'
 	
+//	@JoinTable(mainField = " ", subField = " ", joinType = JoinType.WHERE, subAlias = "y", mainAlias = "x")
 	@JoinTable(mainField = {}, subField = {}, joinType = JoinType.WHERE, subAlias = "y", mainAlias = "x")
 	private S x;
 	

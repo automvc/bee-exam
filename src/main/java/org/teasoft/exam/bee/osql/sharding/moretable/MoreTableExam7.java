@@ -79,9 +79,11 @@ public class MoreTableExam7 {
 			Ordersdetail ordersdetail=new Ordersdetail();
 			orders1.setOrdersdetail(ordersdetail);
 			
-			List<Myorders> list2 = moreTable.select(orders1, condition); //select
-			Logger.info("size of records:"+list2.size() + "");
-			Printer.printList(list2);
+			List<Myorders> list2 = moreTable.select(orders1, condition); // select
+			if (list2 != null) {
+				Logger.info("size of records:" + list2.size() + "");
+				Printer.printList(list2);
+			}
 			
 //			List<String[]> list3 = moreTable.selectString(orders1, condition); 
 //			Logger.info("size of records:"+list3.size() + "");

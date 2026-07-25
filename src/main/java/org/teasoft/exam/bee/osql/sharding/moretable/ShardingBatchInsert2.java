@@ -18,6 +18,7 @@ import org.teasoft.honey.osql.core.BeeFactory;
 
 /**
  * 批量插入的分片
+ * 用suidRich批量插入.
  * @author Kingstar
  * @since  2.0
  */
@@ -61,11 +62,12 @@ public class ShardingBatchInsert2 {
 			ordersdetail2.setRemark("分片测试"+(i*2+1));
 			OrdersdetailArray[i*2+1]=ordersdetail2;
 		}
-//		int insertArray = suidRich.insert(ordersArray, 3, "id,createtime,updatetime");// batch insert
-//		Logger.info(insertArray);
+		int insertArray = suidRich.insert(ordersArray, 3, "id,createtime,updatetime");// batch insert
+		Logger.info(insertArray);
 		
 		int insertArray2 = suidRich.insert(OrdersdetailArray, 3, "id");// batch insert
 		Logger.info(insertArray2);
+		
 	
 //		int r=0;
 //		long t1=System.currentTimeMillis();

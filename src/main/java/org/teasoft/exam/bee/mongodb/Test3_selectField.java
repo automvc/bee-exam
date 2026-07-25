@@ -9,6 +9,7 @@ package org.teasoft.exam.bee.mongodb;
 import java.util.List;
 
 import org.teasoft.bee.osql.api.SuidRich;
+import org.teasoft.beex.json.JsonUtil;
 import org.teasoft.exam.bee.mongodb.entity.Orders;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.shortcut.BF;
@@ -63,6 +64,9 @@ public class Test3_selectField {
 		System.out.println("--------json");
 		String json=suidRich.selectJson(new Orders());
 		System.out.println("json::  "+json);
+		
+		list=suidRich.select(new Orders());
+		System.out.println(JsonUtil.toJson(list));
 		
 		System.out.println("finished!");
 	}

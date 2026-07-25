@@ -16,7 +16,6 @@ import org.teasoft.exam.bee.osql.entity.LeafAlloc;
 import org.teasoft.exam.bee.osql.entity.Scores;
 import org.teasoft.exam.bee.osql.entity.Student;
 import org.teasoft.exam.bee.osql.entity.StudentHobby;
-import org.teasoft.exam.bee.osql.entity.TestUser;
 import org.teasoft.exam.bee.osql.entity.dynamic.LeafAlloc3;
 import org.teasoft.exam.bee.osql.entity.dynamic.Orders;
 import org.teasoft.exam.bee.osql.moretable.entity.Assigncourse;
@@ -26,6 +25,7 @@ import org.teasoft.exam.bee.osql.special.primarykey.entity.CustomId;
 import org.teasoft.exam.bee.osql.special.primarykey.entity.TestPrimaryKey;
 import org.teasoft.exam.bee.osql.special.type.DateType2;
 import org.teasoft.exam.moretable26.moretable3.selectlist.layer3.Province;
+import org.teasoft.exam.moretable3.simple.TestUser;
 import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.autogen.Ddl;
 
@@ -66,7 +66,7 @@ public class CreateTableWithJavabean {
 			Ddl.setDynamicParameter("month", "3"); //要对应实现有该注解才有效
 			Ddl.createTable( Orders.class, false);
 			
-			Ddl.createTable( TestUser.class, true);
+			Ddl.createTable(TestUser.class, true);
 			
 			Ddl.createTable( LeafAlloc.class, true);
 //
@@ -91,8 +91,8 @@ public class CreateTableWithJavabean {
 			Ddl.createTable( Noid.class, true);
 			Ddl.createTable( Noid2.class, true);
 			Ddl.createTable( Noid1.class, true);
-//			Ddl.createTable(new CustomId(), true);
-//			Ddl.createTable(new CustomId(), true);
+			
+			Ddl.createTable(TestUser.class, true);
 			
 			Ddl.createTable( Orders3.class, true);
 			Ddl.createTable( OrdersIdString.class, true);
@@ -103,16 +103,16 @@ public class CreateTableWithJavabean {
 			Ddl.createTable( Student1.class, true);
 			Ddl.createTable( StudentHobby.class, true);
 			
-			Ddl.createTable(Province.class, false);
-			Ddl.createTable(City.class, false);
-			Ddl.createTable(Town.class, false);
-			Ddl.createTable(Village.class, false);
-			Ddl.createTable(Road.class, false);
-			
-			Ddl.createTable(ProvinceHistory.class, false);
-			Ddl.createTable(S.class, false);
-			
-			Ddl.createTable(News.class, false);
+//			Ddl.createTable(Province.class, false);
+//			Ddl.createTable(City.class, false);
+//			Ddl.createTable(Town.class, false);
+//			Ddl.createTable(Village.class, false);
+//			Ddl.createTable(Road.class, false);
+//			
+//			Ddl.createTable(ProvinceHistory.class, false);
+//			Ddl.createTable(S.class, false);
+//			
+//			Ddl.createTable(News.class, false);
 			
 		} catch (Exception e) {
 			Logger.error("In CreateTableWithJavabean3 (Exception):" + e.getMessage());

@@ -63,6 +63,9 @@ public class ClearAndInitTestTable {
 		}  //else
 */		
 		
+		//通过Javabean创建表
+		CreateTableWithJavabean.test();
+		
 		if(HoneyUtil.isMysql()) {
 			String sql1=""
 			+"DROP TABLE IF EXISTS `test_primary_key`; ";
@@ -79,8 +82,7 @@ public class ClearAndInitTestTable {
 			preparedSql.modify(sql2);
 		}
 		
-		//通过Javabean创建表
-		CreateTableWithJavabean.test();
+
 		
 		if (DatabaseConst.ORACLE.equalsIgnoreCase(dbName)
 		  ||DatabaseConst.H2.equalsIgnoreCase(dbName)
@@ -118,8 +120,8 @@ public class ClearAndInitTestTable {
 		preparedSql.modify(insertOrders3.replace(" orders", " orders_202007"), nullMap);
 		
 		
-		String insertUser1="INSERT INTO test_user VALUES ('800001', 'beeUser@163.com', null, 'Bee', 'bee', 'bee', null);";
-		String insertUser2="INSERT INTO test_user VALUES ('800002', 'honey@163.com', 'cn', 'Honey', 'honey', 'honey', null);";
+		String insertUser1="INSERT INTO test_user VALUES (800001,800001, 'beeUser@163.com', null, 'Bee', 'bee', 'bee', null);";
+		String insertUser2="INSERT INTO test_user VALUES (800002,800002, 'honey@163.com', 'cn', 'Honey', 'honey', 'honey', null);";
 		preparedSql.modify(insertUser1);
 //		preparedSql.modify(insertUser2, nullMap);
 		preparedSql.modify(insertUser2); //v1.9

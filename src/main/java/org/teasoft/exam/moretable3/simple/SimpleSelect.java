@@ -45,6 +45,9 @@ public class SimpleSelect {
 			}
 			}
 			
+			System.out.println(user.getClass());
+			System.out.println(user.getClass().getName());
+			
 //			Condition condition = new ConditionImpl();
 //			condition
 //			//.op("myuser.id", Op.gt,6)//模糊查询   取别名

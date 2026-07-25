@@ -7,6 +7,7 @@ import org.teasoft.bee.osql.annotation.JoinType;
 import org.teasoft.exam.bee.osql.entity.Student;
 
 /**
+*One to Many
 *@author Honey
 *Create on 2021-08-26 00:08:47
 */

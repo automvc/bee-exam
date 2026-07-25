@@ -6,14 +6,13 @@ getMongodbBeeSql() * Copyright 2016-2022 the original author.All rights reserved
 
 package org.teasoft.exam.bee.osql.sharding;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.teasoft.bee.osql.api.SuidRich;
 import org.teasoft.exam.bee.mongodb.entity.Noid0;
-import org.teasoft.exam.comm.Printer;
 import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
+import org.teasoft.honey.util.Printer;
 
 /**
  * @author AiTeaSoft
@@ -34,10 +33,10 @@ public class Test4_selectBroadcastTable {
 
 		Noid0 noid0 = new Noid0();
 
-		List<Noid0> list = new ArrayList<>();
+//		List<Noid0> list = new ArrayList<>();
 
-		list = suidRich.select(noid0);
-//		Printer.printList(list);
+		List<Noid0> list = suidRich.select(noid0);
+		Printer.printList(list);
 		if(list!=null)
 		  Logger.info("list size is :"+ list.size());
 

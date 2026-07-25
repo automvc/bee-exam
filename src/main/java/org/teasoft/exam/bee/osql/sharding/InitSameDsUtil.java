@@ -33,7 +33,6 @@ public class InitSameDsUtil {
 			honeyConfig.multiDS_type = 0;
 			honeyConfig.multiDS_differentDbType = false;
 			honeyConfig.multiDS_defalutDS="ds0"; //路由信息
-//			honeyConfig.multiDS_sharding=true;
 			HoneyContext.resetMultiDsSharding(true); //仅用于测试;在生产上,bee.dosql.multiDS.sharding应该放在配置文件中设置;且运行过程不宜更改,否则会丢失有关配置和上下文信息.
 			HoneyContext.setConfigRefresh(true); //涉及路由信息更新要刷新
 			
@@ -55,8 +54,6 @@ public class InitSameDsUtil {
 			
 			dataSource0.init();
 			
-
-
 			DruidDataSource dataSource1;
 			dataSource1 = new DruidDataSource();
 			dataSource1.setUrl("jdbc:mysql://localhost:3306/pro?characterEncoding=UTF-8&useSSL=false");
@@ -70,11 +67,7 @@ public class InitSameDsUtil {
 			Map<String, DataSource> dataSourceMap = new HashMap<>();
 			dataSourceMap.put("ds0", dataSource0);
 			dataSourceMap.put("ds1", dataSource1); 
-//			dataSourceMap.put("ds1", dataSource0); 
-//			BeeFactory.getInstance().setDataSourceMap(dataSourceMap);
-			HoneyContext.setDataSourceMap(dataSourceMap);//V2.1
-			
-
+			HoneyContext.setDataSourceMap(dataSourceMap);
 
 		} catch (SQLException e) {
 			e.printStackTrace();

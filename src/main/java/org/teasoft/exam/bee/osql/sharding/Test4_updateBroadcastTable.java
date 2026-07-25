@@ -32,7 +32,8 @@ public class Test4_updateBroadcastTable {
 		SuidRich suidRich = BF.getSuidRich();
 		
 		Noid0 noid0_update = new Noid0();
-		noid0_update.setUuid(122121+"");
+//		noid0_update.setUuid(122121+"");
+		noid0_update.setUuid(1263496423538695L+"");
 		noid0_update.setRemark("change2");
 		int updateNum=suidRich.update(noid0_update);
 		System.out.println("updateNum:"+updateNum);

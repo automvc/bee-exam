@@ -4,23 +4,23 @@ import java.io.Serializable;
 
 /**
  * @author Honey
- * Create on 2026-02-25 22:25:22
+ * Create on 2026-07-25 17:19:20
  */
 public class City implements Serializable {
 
-	private static final long serialVersionUID = 1592879680416L;
+	private static final long serialVersionUID = 1594752893400L;
 
-	private Integer id;
+	private Long id;
 	private String name;
 	private Integer level;
 	private String remark;
 	private Integer provinceId;
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -58,7 +58,7 @@ public class City implements Serializable {
 
 	public String toString() {
 		StringBuilder str = new StringBuilder();
-		str.append("City[");
+		str.append("City {");
 		str.append("id=").append(id);
 		str.append(",name=").append(name);
 		str.append(",level=").append(level);

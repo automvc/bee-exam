@@ -75,11 +75,11 @@ public class StringUtilsTest {
 		System.out.println(isInteger("a123456789"));
 		System.out.println(isNumber("a123456789"));
 		
-		Integer a[]= {1,2,3};
-		toCommasString(a);
-		
-		String strArray[]= {"1","2","3"};
-		toCommasString(strArray);
+//		Integer a[]= {1,2,3};
+//		toCommasString(a);
+//		
+//		String strArray[]= {"1","2","3"};
+//		toCommasString(strArray);
 		
 		
 		String s1="%";
@@ -150,9 +150,9 @@ public class StringUtilsTest {
 //		String aa=StringUtils.toCommasString(Project_F.name,Project_F.orgId,Project_F.schoolId);
 //		System.out.println(aa);
 		
-		String bb[]= {"abc","cdef"};
-		String bb2=StringUtils.toCommasString(bb);
-		System.out.println(bb2);
+//		String bb[]= {"abc","cdef"};
+//		String bb2=StringUtils.toCommasString(bb);
+//		System.out.println(bb2);
 		
 		System.out.println(StringUtils.toCommasString(3));
 		

@@ -1,0 +1,190 @@
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[INFO] The layer is: 1, class is: class org.teasoft.exam.bee.osql.moretable.entity.Orders, alias is: orders
+[INFO] The layer is: 2, class is: org.teasoft.exam.bee.osql.moretable.entity.TestUser, alias is: test_user
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[INFO] [Bee] select MoreTable SQL: select orders.id,orders.userid,orders.name,orders.total,orders.createtime,orders.remark,orders.sequence,orders.abc,orders.updatetime,test_user.id,test_user.email,test_user.last_name,test_user.name,test_user.password,test_user.username,test_user.createtime from orders orders  left join test_user test_user on orders.userid = test_user.username where orders.userid = ? and orders.name = ? and test_user.name = ? limit ?,?   [values]: bee(String),Bee(String),Bee(String),2(Integer),10(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select orders.id,orders.userid,orders.name,orders.total,orders.createtime,orders.remark,orders.sequence,orders.abc,orders.updatetime,test_user.id,test_user.email,test_user.last_name,test_user.name,test_user.password,test_user.username,test_user.createtime from orders orders  left join test_user test_user on orders.userid = test_user.username where orders.userid = 'bee' and orders.name = 'Bee' and test_user.name = 'Bee' limit 2,10 ;
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[INFO]  | <--  select rows: 0
+[INFO] size of records:0
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[INFO] The layer is: 1, class is: class org.teasoft.exam.bee.osql.moretable.entity.Orders, alias is: orders
+[INFO] The layer is: 2, class is: org.teasoft.exam.bee.osql.moretable.entity.TestUser, alias is: test_user
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[INFO] [Bee] select MoreTable SQL: select orders.id,orders.userid,orders.name,orders.total,orders.createtime,orders.remark,orders.sequence,orders.abc,orders.updatetime,test_user.id,test_user.email,test_user.last_name,test_user.name,test_user.password,test_user.username,test_user.createtime from orders orders  left join test_user test_user on orders.userid = test_user.username where orders.userid = ? and orders.name = ? and test_user.name = ? and orders.id>=? limit ?,?   [values]: bee(String),Bee(String),Bee(String),1001(Integer),0(Integer),5(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select orders.id,orders.userid,orders.name,orders.total,orders.createtime,orders.remark,orders.sequence,orders.abc,orders.updatetime,test_user.id,test_user.email,test_user.last_name,test_user.name,test_user.password,test_user.username,test_user.createtime from orders orders  left join test_user test_user on orders.userid = test_user.username where orders.userid = 'bee' and orders.name = 'Bee' and test_user.name = 'Bee' and orders.id>=1001 limit 0,5 ;
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[INFO]  | <--  select rows: 0
+[INFO] size of records:0
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[INFO] The layer is: 1, class is: class org.teasoft.exam.bee.osql.moretable.entity.Orders, alias is: orders
+[INFO] The layer is: 2, class is: org.teasoft.exam.bee.osql.moretable.entity.TestUser, alias is: test_user
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[INFO] [Bee] select MoreTable SQL: select orders.id, test_user.id, orders.userid, orders.total, orders.createtime from orders orders  left join test_user test_user on orders.userid = test_user.username where orders.userid = ? and orders.name = ? and test_user.name = ? and orders.id>=? limit ?,?   [values]: bee(String),Bee(String),Bee(String),1001(Integer),0(Integer),5(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select orders.id, test_user.id, orders.userid, orders.total, orders.createtime from orders orders  left join test_user test_user on orders.userid = test_user.username where orders.userid = 'bee' and orders.name = 'Bee' and test_user.name = 'Bee' and orders.id>=1001 limit 0,5 ;
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[INFO]  | <--  select rows: 0
+[INFO] size of records:0
+[INFO] [Bee] DDL SQL:CREATE TABLE myorders (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+userid  bigint(20) DEFAULT NULL,  
+orderid  bigint(20) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+total  decimal(19,6) DEFAULT NULL,  
+createtime  varchar(255) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL,  
+sequence  varchar(255) DEFAULT NULL,  
+abc  varchar(255) DEFAULT NULL,  
+updatetime  varchar(255) DEFAULT NULL
+ )
+[DEBUG] Table 'myorders' already exists
+Table 'myorders' already exists
+[INFO] [Bee] DDL SQL:CREATE TABLE ordersdetail (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+orderid  bigint(20) DEFAULT NULL,  
+userid  bigint(20) DEFAULT NULL,  
+item  bigint(20) DEFAULT NULL,  
+detail  varchar(255) DEFAULT NULL,  
+remark  varchar(255) DEFAULT NULL
+ )
+[DEBUG] Table 'ordersdetail' already exists
+Table 'ordersdetail' already exists
+[INFO] The layer is: 1, class is: class org.teasoft.exam.bee.osql.sharding.moretable.entity.Myorders, alias is: myorders
+[INFO] The layer is: 2, class is: org.teasoft.exam.bee.osql.sharding.moretable.entity.Ordersdetail, alias is: ordersdetail
+[INFO] [Bee] select SQL(return List<String[]>): select myorders.id,myorders.userid,myorders.orderid,myorders.name,myorders.total,myorders.createtime,myorders.remark,myorders.sequence,myorders.abc,myorders.updatetime,ordersdetail.id,ordersdetail.orderid,ordersdetail.userid,ordersdetail.item,ordersdetail.detail,ordersdetail.remark from myorders myorders  join ordersdetail ordersdetail on myorders.userid = ordersdetail.userid and myorders.orderid = ordersdetail.orderid where myorders.userid = ? and myorders.userid=? limit ?,?   [values]: 2(Long),2(Integer),0(Integer),10(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] size of records:0
+[INFO] The layer is: 1, class is: class org.teasoft.exam.bee.osql.sharding.moretable.entity.Myorders, alias is: myorders
+[INFO] The layer is: 2, class is: org.teasoft.exam.bee.osql.sharding.moretable.entity.Ordersdetail, alias is: ordersdetail
+[INFO] [Bee] select MoreTable SQL: select myorders.id,myorders.userid,myorders.orderid,myorders.name,myorders.total,myorders.createtime,myorders.remark,myorders.sequence,myorders.abc,myorders.updatetime,ordersdetail.id,ordersdetail.orderid,ordersdetail.userid,ordersdetail.item,ordersdetail.detail,ordersdetail.remark from myorders myorders  join ordersdetail ordersdetail on myorders.userid = ordersdetail.userid and myorders.orderid = ordersdetail.orderid where myorders.userid = ? and myorders.userid=? limit ?,?   [values]: 2(Long),2(Integer),0(Integer),10(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] size of records:0
+[INFO] The layer is: 1, class is: class org.teasoft.exam.moretable26.moretable3.entity.Orders2026, alias is: orders2026
+[INFO] The layer is: 2, class is: org.teasoft.exam.moretable26.moretable3.entity.TestUser, alias is: test_user
+[INFO] [Bee] select MoreTable SQL: select orders2026.id,orders2026.userid,orders2026.name,orders2026.total,orders2026.createtime,orders2026.remark,orders2026.sequence,orders2026.abc,orders2026.updatetime,test_user.id,test_user.email,test_user.last_name,test_user.name,test_user.password,test_user.username,test_user.createtime from orders2026 orders2026  join test_user test_user on orders2026.userid = test_user.username and orders2026.name = test_user.name where orders2026.id>=? limit ?,?   [values]: 1002(Integer),0(Integer),2(Integer)
+[ERROR] In MoreTableExam (BeeException):org.teasoft.bee.osql.BeeSQLException: Table 'bee.orders2026' doesn't exist
+[INFO] The layer is: 1, class is: class entity.Province, alias is: province
+[INFO] The layer is: 2, class is: entity.City, alias is: city
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province  join city city on province.id = city.province_id limit ?,?   [values]: 0(Integer),10(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] The layer is: 1, class is: class entity.Province, alias is: province
+[INFO] The layer is: 2, class is: entity.City, alias is: city
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province  join city city on province.id = city.province_id where province.id = ? limit ?,?   [values]: 1002(Integer),0(Integer),10(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] The layer is: 1, class is: class entity.Province, alias is: province
+[INFO] The layer is: 2, class is: entity.City, alias is: city
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province  join city city on province.id = city.province_id where city.level = ? limit ?,?   [values]: 2(Integer),0(Integer),10(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] _SYS_Bee_FunType value is:null
+[INFO] [Bee] insert SQL: insert into test_user(id,email) values (?,?)   [values]: 1(Long),test@163.com(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL(entity, start, size): select id,email,last_name,name,password,username,createtime from test_user limit ?,?   [values]: 0(Integer),9(Integer)
+[INFO]  | <--  select rows: 9
+[INFO] TestUser[id=1,email=test@163.com,lastName=null,name=null,password=null,username=null,createtime=null}
+[INFO] TestUser[id=800001,email=beeUser@163.com,lastName=null,name=Bee,password=bee-new,username=bee,createtime=null}
+[INFO] TestUser[id=800002,email=honey@163.com,lastName=cn,name=Honey,password=honey,username=honey,createtime=null}
+[INFO] TestUser[id=1219424275,email=test@gmail.com,lastName=MapSuid,name=null,password=password@gmail.com,username=null,createtime=null}
+[INFO] TestUser[id=1219424276,email=test@gmail.com,lastName=MapSuid,name=null,password=password@gmail.com,username=null,createtime=null}
+[INFO] TestUser[id=1219424277,email=test@gmail.com,lastName=MapSuid,name=null,password=password@gmail.com,username=null,createtime=null}
+[INFO] TestUser[id=1261091640311816,email=null,lastName=null,name=null,password=bee-user,username=testuser,createtime=null}
+[INFO] TestUser[id=1261091657089057,email=test@gmail.com,lastName=MapSuid,name=null,password=password@gmail.com,username=null,createtime=null}
+[INFO] TestUser[id=1261091657089058,email=test@gmail.com,lastName=MapSuid,name=,password=password@gmail.com,username=null,createtime=null}
+[INFO] The layer is: 1, class is: class entity.Province, alias is: province
+[INFO] The layer is: 2, class is: entity.City, alias is: city
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province  join city city on province.id = city.province_id limit ?,?   [values]: 0(Integer),10(Integer)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] The layer is: 1, class is: class entity.Province, alias is: province
+[INFO] The layer is: 2, class is: entity.City, alias is: city
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province  join city city on province.id = city.province_id where city.level = ? limit ?,?   [values]: 2(Integer),0(Integer),10(Integer)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] _SYS_Bee_FunType value is:null
+[INFO] The layer is: 1, class is: class org.teasoft.exam.moretable26.moretable3.selectlist.layer3.Province, alias is: province
+[INFO] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable26.moretable3.selectlist.layer3.City, alias is: city
+[INFO] The layer is: 3, class is List, element type is: org.teasoft.exam.moretable26.moretable3.selectlist.layer3.Town, alias is: town
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id from province province  join city city on province.id = city.province_id join town town on city.id = town.city_id limit ?,?   [values]: 0(Integer),10(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] The layer is: 1, class is: class org.teasoft.exam.moretable26.moretable3.selectlist.Province, alias is: province
+[INFO] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable26.moretable3.selectlist.City, alias is: city
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province  join city city on province.id = city.province_id where province.id = ? limit ?,?   [values]: 1002(Integer),0(Integer),10(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] The layer is: 1, class is: class org.teasoft.exam.moretable26.moretable3.selectlist.Province, alias is: province
+[INFO] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable26.moretable3.selectlist.City, alias is: city
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province  join city city on province.id = city.province_id where province.id = ? and city.id = ? limit ?,?   [values]: 1002(Integer),2001(Integer),0(Integer),10(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] The layer is: 1, class is: class org.teasoft.exam.moretable26.moretable3.selectlist.Province, alias is: province
+[INFO] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable26.moretable3.selectlist.City, alias is: city
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province  join city city on province.id = city.province_id where city.level = ? limit ?,?   [values]: 2(Integer),0(Integer),10(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] The layer is: 1, class is: class org.teasoft.exam.moretable26.moretable3.selectlist.layer3.Province, alias is: province
+[INFO] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable26.moretable3.selectlist.layer3.City, alias is: city
+[INFO] The layer is: 3, class is List, element type is: org.teasoft.exam.moretable26.moretable3.selectlist.layer3.Town, alias is: town
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id from province province  join city city on province.id = city.province_id join town town on city.id = town.city_id limit ?,?   [values]: 0(Integer),10(Integer)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] The layer is: 1, class is: class org.teasoft.exam.moretable26.moretable3.selectlist.layer3.Province, alias is: province
+[INFO] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable26.moretable3.selectlist.layer3.City, alias is: city
+[INFO] The layer is: 3, class is List, element type is: org.teasoft.exam.moretable26.moretable3.selectlist.layer3.Town, alias is: town
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id from province province  join city city on province.id = city.province_id join town town on city.id = town.city_id where province.id = ? limit ?,?   [values]: 1002(Integer),0(Integer),10(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] The layer is: 1, class is: class org.teasoft.exam.moretable26.moretable3.selectlist.layer3.Province, alias is: province
+[INFO] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable26.moretable3.selectlist.layer3.City, alias is: city
+[INFO] The layer is: 3, class is List, element type is: org.teasoft.exam.moretable26.moretable3.selectlist.layer3.Town, alias is: town
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id from province province  join city city on province.id = city.province_id join town town on city.id = town.city_id where province.id = ? and city.id = ? limit ?,?   [values]: 1002(Integer),2001(Integer),0(Integer),10(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select.Province, alias is: province
+[INFO] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select.City, alias is: city
+[INFO] The layer is: 3, class is List, element type is: org.teasoft.exam.moretable3.moretable3select.Town, alias is: town
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id from province province  join city city on province.id = city.province_id join town town on city.id = town.city_id where province.id = ? limit ?,?   [values]: 1002(Integer),0(Integer),10(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] The layer is: 1, class is: class org.teasoft.exam.moretable26.moretable3.selectlist.Province, alias is: province
+[INFO] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable26.moretable3.selectlist.City, alias is: city
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province  join city city on province.id = city.province_id where city.level = ? limit ?,?   [values]: 2(Integer),0(Integer),10(Integer)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [Bee] Drop SQL:DROP TABLE IF EXISTS leftsz_info
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL:CREATE TABLE leftsz_info (
+id  bigint(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+orderno  int(11) DEFAULT NULL,  
+name  varchar(255) DEFAULT NULL,  
+leftdate  varchar(255) DEFAULT NULL,  
+target  varchar(255) DEFAULT NULL,  
+vehicle1  varchar(255) DEFAULT NULL,  
+comedate  varchar(255) DEFAULT NULL,  
+vehicle2  varchar(255) DEFAULT NULL,  
+mobileno  bigint(20) DEFAULT NULL
+ )
+[INFO]  | <--  Affected rows: 0
+[WARN] Warn: the length of hopeTitleArray and excelTitle are diffenent!
+[WARN] Warn: the length of hopeTitleArray and excelTitle are diffenent!
+[INFO] [Bee]  insert[] SQL : insert into leftsz_info(id,orderno,name,leftdate,target,vehicle1,comedate,vehicle2,mobileno) values (?,?,?,?,?,?,?,?,?), (?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 1261132304089089(Long),1(Integer),郭嘉(String),1月24日(String),郭嘉故里(String),火车(String),未定(String),火车(String),13800138000(Long)
+[INFO] [Bee] --> index:1 ,  [values]: 1261132304089090(Long),2(Integer),郭嘉(String),1月22日(String),郭嘉故里(String),火车(String),未定(String),火车(String),13800138000(Long)
+[INFO]  | <-- [Batch:0] Affected rows: 2
+[INFO]  | <--  Affected rows: 2
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 57
+[INFO] [Bee] PreparedSql modify SQL: DROP TABLE IF EXISTS stock
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL: CREATE TABLE stock (
+id  varchar(255) PRIMARY KEY NOT NULL COMMENT 'id',  
+in_order_no  varchar(255) DEFAULT NULL COMMENT '进仓单号',  
+in_date  timestamp DEFAULT CURRENT_TIMESTAMP COMMENT '入库日期',  
+goods_nAme2  varchar(255) DEFAULT NULL COMMENT '中文品名',  
+ctns  varchar(255) DEFAULT NULL COMMENT '库存件数',  
+volume  varchar(255) DEFAULT NULL COMMENT '库存体积',  
+packaging  varchar(255) DEFAULT NULL COMMENT '包装',  
+quantity  varchar(255) DEFAULT NULL COMMENT '数量',  
+supplier  varchar(255) DEFAULT NULL COMMENT '供应商名称',  
+pic  varchar(255) DEFAULT NULL COMMENT '图片',  
+customer  varchar(255) DEFAULT NULL COMMENT '客户',  
+remark  varchar(255) DEFAULT NULL COMMENT '备注'
+ ) COMMENT='库存'
+[INFO]  | <--  Affected rows: 0

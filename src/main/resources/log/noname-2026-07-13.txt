@@ -1,0 +1,27 @@
+[INFO] [Bee] -------- Bee    3.0.0 -------- 
+[INFO] [Bee] -------- Honey  3.0.0 -------- 
+[INFO] [Bee] -------- BeeExt 3.0.0 -------- 
+[DEBUG] [Bee] ========= Bee    buildId  3.0.0.6
+[DEBUG] [Bee] ========= Honey  buildId  3.0.0.6
+[DEBUG] [Bee] ========= BeeExt buildId  3.0.0.6
+[INFO] [Bee] ========= BeeInitPreLoadService initLoad...
+[INFO] [Bee] ========= Preload class PreLoadInit, load...
+[INFO] [Bee] ========= Preload class ExtPreLoadInit, load...
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n11_11_n_1_subvalueList.Province, alias is: province
+[INFO] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_n11_11_n_1_subvalueList.City, alias is: city
+[INFO] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1_n11_11_n_1_subvalueList.Town, alias is: town
+[INFO] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_n11_11_n_1_subvalueList.Village, alias is: village
+[INFO] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1_n11_11_n_1_subvalueList.Road, alias is: road
+[INFO] The layer is: 4, class is: entity.News, alias is: news
+[INFO] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n11_11_n_1_subvalueList.Province, alias is: province
+[INFO] The layer is: 2, class is: entity.ProvinceHistory, alias is: province_history
+[INFO] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n11_11_n_1_subvalueList.Province, alias is: province
+[INFO] The layer is: 2, class is: entity.News, alias is: news
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id,news.id,news.name,news.f_id,news.desc_str,province_history.id,province_history.name,province_history.province_id,province_history.desc_str from province province  join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join news news on province.id = news.f_id left join province_history province_history on province.id = province_history.province_id where province.id = ? and city.name = ? limit ?,?   [values]: 1002(Integer),广州市(String),0(Integer),10(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id,news.id,news.name,news.f_id,news.desc_str,province_history.id,province_history.name,province_history.province_id,province_history.desc_str from province province  join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join news news on province.id = news.f_id left join province_history province_history on province.id = province_history.province_id where province.id = 1002 and city.name = '广州市' limit 0,10 ;
+[WARN] Do not set the database info: bee.db.driverName do not config; 
+[DEBUG] Use OriginalConn!
+[INFO]  | <--  select rows: 0
+[INFO] ------ spent time(ms): 3135

@@ -29,5 +29,9 @@ HoneyConfigReset.test(),放在最后.
 不是整体测试,可将Exception2Test里的异常测试先关了.  
 RedisCacheTest,RedisCacheExpireTest应该独立测试一次,因启动后,SPI 服务类不一定能执行.  
 
+多表查询:  
+org\teasoft\exam\bee\osql\sharding\moretable  
+
+
 
 

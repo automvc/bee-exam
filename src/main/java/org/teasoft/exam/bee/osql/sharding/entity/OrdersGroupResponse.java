@@ -27,7 +27,7 @@ public class OrdersGroupResponse implements Serializable {
 	private Long orderid;
 	private String name;
 	private BigDecimal total;
-	private Integer num;
+//	private Integer num;
 	private String createtime;
 	private String remark;
 	private String sequence;
@@ -101,13 +101,13 @@ public class OrdersGroupResponse implements Serializable {
 		this.total = total;
 	}
 	
-	public Integer getNum() {
-		return num;
-	}
-
-	public void setNum(Integer num) {
-		this.num = num;
-	}
+//	public Integer getNum() {
+//		return num;
+//	}
+//
+//	public void setNum(Integer num) {
+//		this.num = num;
+//	}
 
 	public String getCreatetime() {
 		return createtime;
@@ -158,7 +158,7 @@ public class OrdersGroupResponse implements Serializable {
 		 str.append(",orderid=").append(orderid);		 
 		 str.append(",name=").append(name);		 
 		 str.append(",total=").append(total);		 
-		 str.append(",num=").append(num);		 
+//		 str.append(",num=").append(num);		 
 		 str.append(",createtime=").append(createtime);		 
 		 str.append(",remark=").append(remark);		 
 		 str.append(",sequence=").append(sequence);		 

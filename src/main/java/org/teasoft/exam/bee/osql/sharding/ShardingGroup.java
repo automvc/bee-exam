@@ -52,6 +52,7 @@ public class ShardingGroup {
 		
 		condition.selectFun(FunctionType.MAX, Orders_F.total,"maxTotal");
 		condition.selectField("userid,orderid");
+//		condition.selectField("userid"); //测试自动补列
 		
 		condition.groupBy(Orders_F.userid);
 		condition.groupBy(Orders_F.orderid);

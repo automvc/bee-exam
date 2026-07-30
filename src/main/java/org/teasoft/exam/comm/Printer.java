@@ -8,37 +8,44 @@ package org.teasoft.exam.comm;
 
 import java.util.List;
 
-import org.teasoft.honey.logging.Logger;
-import org.teasoft.honey.util.ObjectUtils;
-
 /**
  * @author Kingstar
  * @since  1.9
  */
 public class Printer {
-
-	public static void print(List<String[]> list) {
-		if (ObjectUtils.isEmpty(list)) return;
-		String a[] = null;
-		String row = null;
-		for (int i = 0; list != null && i < list.size(); i++) {
-			a = list.get(i);
-			row = "";
-			for (int j = 0; j < a.length; j++) {
-				row += a[j] + "   ";
-			}
-			Logger.info(row);
-		}
-	}
 	
-	public static void printList(List list) {
-		if (list == null) {
-			Logger.info("null");
-			return ;
-		}
-		for (int i = 0; i < list.size(); i++) {
-			if(list.get(i)==null) Logger.info("null");
-			else Logger.info(list.get(i).toString());
-		}
+	public static void print(List<String[]> list) {
+		org.teasoft.honey.util.Printer.print(list);
 	}
+
+	public static void printList(List list) {
+		org.teasoft.honey.util.Printer.printList(list);
+	}
+
+//	public static void print(List<String[]> list) {
+//		if (ObjectUtils.isEmpty(list)) return;
+//		String a[] = null;
+//		String row = null;
+//		for (int i = 0; list != null && i < list.size(); i++) {
+//			a = list.get(i);
+//			row = "";
+//			for (int j = 0; j < a.length; j++) {
+//				row += a[j] + "   ";
+//			}
+//			Logger.info(row);
+//		}
+//	}
+//
+//	public static void printList(List list) {
+//		if (list == null) {
+//			Logger.info("null");
+//			return;
+//		}
+//		for (int i = 0; i < list.size(); i++) {
+//			if (list.get(i) == null)
+//				Logger.info("null");
+//			else
+//				Logger.info(list.get(i).toString());
+//		}
+//	}
 }

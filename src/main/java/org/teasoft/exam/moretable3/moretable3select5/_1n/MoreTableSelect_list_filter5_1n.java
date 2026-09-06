@@ -34,9 +34,9 @@ public class MoreTableSelect_list_filter5_1n {
 			MoreTable moreTable = BeeFactory.getHoneyFactory().getMoreTable();
 
 			Province province = new Province();
-			province.setId(1002); //主表条件
+//			province.setId(1002); //主表条件
 
-			List<Province> list1 = moreTable.select(province, 0, 10); // select 查询前10条记录
+			List<Province> list1 = moreTable.select(province, 0, 20);
 
 			if (list1 != null) {
 				for (int i = 0; i < list1.size(); i++) {

@@ -89,7 +89,8 @@ class Province implements Serializable {
 	private Integer cityCount;
 	
 	@JustFetch
-	private Integer citySum;
+//	private Integer citySum;
+	private Long citySum;
 	
 
 	public Integer getId() {

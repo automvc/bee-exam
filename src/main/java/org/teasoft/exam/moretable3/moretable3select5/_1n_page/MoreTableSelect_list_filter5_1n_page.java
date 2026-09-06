@@ -12,6 +12,7 @@ import java.util.List;
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.annotation.JoinTable;
 import org.teasoft.bee.osql.annotation.JoinType;
+import org.teasoft.bee.osql.annotation.PrimaryKey;
 import org.teasoft.bee.osql.api.Condition;
 import org.teasoft.bee.osql.api.MoreTable;
 import org.teasoft.beex.json.JacksonJsonUtil;
@@ -40,7 +41,7 @@ public class MoreTableSelect_list_filter5_1n_page {
 			
 			condition.orderBy("id");
 			
-			condition.start(2);
+			condition.start(0);
 			condition.size(2);
 
 			List<Province> list1 = moreTable.select(province, condition); // select 查询前10条记录
@@ -66,6 +67,7 @@ class Province implements Serializable {
 
 	private static final long serialVersionUID = 1597409278693L;
 
+	@PrimaryKey()
 	private Integer id;
 	private String name;
 	private Integer level;

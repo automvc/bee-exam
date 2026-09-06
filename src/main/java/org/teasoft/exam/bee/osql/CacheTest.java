@@ -81,9 +81,9 @@ public class CacheTest {
 //			System.out.println(list2.hashCode());
 			
 			List<Orders> list1=suid.select(orders1);
-			System.out.println(list1.hashCode());
+			if(list1!=null)System.out.println(list1.hashCode());
 			list1=suid.select(orders1);
-			System.out.println(list1.hashCode()); //不一样
+			if(list1!=null)System.out.println(list1.hashCode()); //不一样
 			
 			System.out.println("========================================");
 			orders1.setRemark("other");

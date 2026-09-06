@@ -3,7 +3,7 @@ package entity.field;
 /**
  * Relative field name for Javabean Orders
  * @author Honey
- * Create on 2026-07-12 18:12:54
+ * Create on 2026-09-03 00:11:42
  */
 public interface Orders_F {
 
@@ -17,9 +17,7 @@ public interface Orders_F {
 	String sequence = "sequence";
 	String abc = "abc";
 	String updatetime = "updatetime";
-	String detailInfo = "detailInfo";
-	String num = "num";
 	String ENTITY_NAME = "Orders";
 	String TABLE_NAME = "orders";
-	String ALL_NAMES = "id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime,detailInfo,num";
+	String ALL_NAMES = "id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime";
 }

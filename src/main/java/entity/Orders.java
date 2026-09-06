@@ -5,11 +5,11 @@ import java.math.BigDecimal;
 
 /**
  * @author Honey
- * Create on 2026-07-12 18:12:54
+ * Create on 2026-09-03 00:11:42
  */
 public class Orders implements Serializable {
 
-	private static final long serialVersionUID = 1593512042030L;
+	private static final long serialVersionUID = 1591680891280L;
 
 	private Long id;
 	private String userid;
@@ -21,8 +21,6 @@ public class Orders implements Serializable {
 	private String sequence;
 	private String abc;
 	private String updatetime;
-	private String detailInfo;
-	private Integer num;
 
 	public Long getId() {
 		return id;
@@ -104,22 +102,6 @@ public class Orders implements Serializable {
 		this.updatetime = updatetime;
 	}
 
-	public String getDetailInfo() {
-		return detailInfo;
-	}
-
-	public void setDetailInfo(String detailInfo) {
-		this.detailInfo = detailInfo;
-	}
-
-	public Integer getNum() {
-		return num;
-	}
-
-	public void setNum(Integer num) {
-		this.num = num;
-	}
-
 	public String toString() {
 		StringBuilder str = new StringBuilder();
 		str.append("Orders {");
@@ -133,8 +115,6 @@ public class Orders implements Serializable {
 		str.append(",sequence=").append(sequence);
 		str.append(",abc=").append(abc);
 		str.append(",updatetime=").append(updatetime);
-		str.append(",detailInfo=").append(detailInfo);
-		str.append(",num=").append(num);
 		str.append("}");
 		return str.toString();
 	}

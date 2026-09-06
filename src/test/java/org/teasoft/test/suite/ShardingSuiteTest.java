@@ -14,7 +14,7 @@
 //@RunWith(JUnitPlatform.class)
 ////@RunWith(Suite.class)
 ////@Suite.SuiteClasses({})
-//@SelectPackages({"org.teasoft.exam.sharding","org.teasoft.exam.bee.osql.sharding.moretable"})
+//@SelectPackages({"org.teasoft.exam.sharding","org.teasoft.exam.bee.osql.sharding","org.teasoft.exam.bee.osql.sharding.moretable"})
 //@ExcludePackages({ "org.teasoft.exam.mongodb" })
 //public class ShardingSuiteTest {
 //

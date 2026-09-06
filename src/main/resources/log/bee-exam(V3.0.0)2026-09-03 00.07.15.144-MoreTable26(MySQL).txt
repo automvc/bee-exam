@@ -1,0 +1,846 @@
+[INFO] [Bee] -------- Bee    3.0.0 -------- 
+[INFO] [Bee] -------- Honey  3.0.0 -------- 
+[INFO] [Bee] -------- BeeExt 3.0.0 -------- 
+[DEBUG] [Bee] ========= Bee    buildId  3.0.0.8
+[DEBUG] [Bee] ========= Honey  buildId  3.0.0.8
+[DEBUG] [Bee] ========= BeeExt buildId  3.0.0.8
+[INFO] [Bee] ========= BeeInitPreLoadService initLoad...
+[INFO] [Bee] ========= Preload class PreLoadInit, load...
+[INFO] [Bee] ========= Preload class ExtPreLoadInit, load...
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select.City, alias is: city
+[DEBUG] The layer is: 3, class is List, element type is: org.teasoft.exam.moretable3.moretable3select.Town, alias is: town
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id where province.id = ? limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id where province.id = ?   [values]: 1002(Integer),0(Integer),10(Integer),1002(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id where province.id = 1002 limit 0,10) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id where province.id = 1002 ;
+[WARN] Do not set the database info: bee.db.driverName do not config; 
+[DEBUG] Use OriginalConn!
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select2._11.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select2._11.City, alias is: city
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province join city city on province.id = city.province_id limit ?,?   [values]: 0(Integer),10(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province join city city on province.id = city.province_id limit 0,10 ;
+[INFO]  | <--  ( select raw record rows: 6 )
+[INFO]  | <--  select rows: 6
+[INFO] Province[id=1026,name=陕西省,level=null,remark=null city={City[id=1256382977,name=西安,level=null,remark=null,provinceId=1026}}}
+[INFO] Province[id=1026,name=陕西省,level=null,remark=null city={City[id=1256382978,name=咸阳,level=null,remark=null,provinceId=1026}}}
+[INFO] Province[id=1026,name=陕西省,level=null,remark=null city={City[id=1256382979,name=长安,level=null,remark=null,provinceId=1026}}}
+[INFO] Province[id=1027,name=广东省,level=null,remark=test city={City[id=1256382980,name=广州,level=null,remark=null,provinceId=1027}}}
+[INFO] Province[id=1027,name=广东省,level=null,remark=test city={City[id=1256382981,name=深圳,level=null,remark=null,provinceId=1027}}}
+[INFO] Province[id=1027,name=广东省,level=null,remark=test city={City[id=1256382982,name=东莞,level=null,remark=null,provinceId=1027}}}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select2._11_more2joinCondition.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select2._11_more2joinCondition.City, alias is: city
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province join city city on province.id = city.province_id and province.remark = city.remark where province.id = ? limit ?,?   [values]: 100211(Integer),0(Integer),10(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province join city city on province.id = city.province_id and province.remark = city.remark where province.id = 100211 limit 0,10 ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select2._11.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select2._11.City, alias is: city
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province join city city on province.id = city.province_id limit ?,?   [values]: 0(Integer),10(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province join city city on province.id = city.province_id limit 0,10 ;
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 6
+[INFO] Province[id=1026,name=陕西省,level=null,remark=null city={City[id=1256382977,name=西安,level=null,remark=null,provinceId=1026}}}
+[INFO] Province[id=1026,name=陕西省,level=null,remark=null city={City[id=1256382978,name=咸阳,level=null,remark=null,provinceId=1026}}}
+[INFO] Province[id=1026,name=陕西省,level=null,remark=null city={City[id=1256382979,name=长安,level=null,remark=null,provinceId=1026}}}
+[INFO] Province[id=1027,name=广东省,level=null,remark=test city={City[id=1256382980,name=广州,level=null,remark=null,provinceId=1027}}}
+[INFO] Province[id=1027,name=广东省,level=null,remark=test city={City[id=1256382981,name=深圳,level=null,remark=null,provinceId=1027}}}
+[INFO] Province[id=1027,name=广东省,level=null,remark=test city={City[id=1256382982,name=东莞,level=null,remark=null,provinceId=1027}}}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select2_many2one.City, alias is: city
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select2_many2one.Province, alias is: province
+[INFO] [Bee] select MoreTable SQL: select city.id,city.name,city.level,city.remark,city.province_id,province.id,province.name,province.level,province.remark from city city join province province on city.province_id = province.id limit ?,?   [values]: 0(Integer),10(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select city.id,city.name,city.level,city.remark,city.province_id,province.id,province.name,province.level,province.remark from city city join province province on city.province_id = province.id limit 0,10 ;
+[INFO]  | <--  ( select raw record rows: 6 )
+[INFO]  | <--  select rows: 6
+[INFO] {"id":1256382977,"name":"西安","level":null,"remark":null,"provinceId":1026,"province":{"id":1026,"name":"陕西省","level":null,"remark":null}}
+[INFO] {"id":1256382978,"name":"咸阳","level":null,"remark":null,"provinceId":1026,"province":{"id":1026,"name":"陕西省","level":null,"remark":null}}
+[INFO] {"id":1256382979,"name":"长安","level":null,"remark":null,"provinceId":1026,"province":{"id":1026,"name":"陕西省","level":null,"remark":null}}
+[INFO] {"id":1256382980,"name":"广州","level":null,"remark":null,"provinceId":1027,"province":{"id":1027,"name":"广东省","level":null,"remark":"test"}}
+[INFO] {"id":1256382981,"name":"深圳","level":null,"remark":null,"provinceId":1027,"province":{"id":1027,"name":"广东省","level":null,"remark":"test"}}
+[INFO] {"id":1256382982,"name":"东莞","level":null,"remark":null,"provinceId":1027,"province":{"id":1027,"name":"广东省","level":null,"remark":"test"}}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select4.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select4.City, alias is: city
+[DEBUG] The layer is: 3, class is List, element type is: org.teasoft.exam.moretable3.moretable3select4.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select4.Village, alias is: village
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id where province.id = ? limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id where province.id = ?   [values]: 1002(Integer),0(Integer),10(Integer),1002(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id where province.id = 1002 limit 0,10) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id where province.id = 1002 ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select4.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select4.City, alias is: city
+[DEBUG] The layer is: 3, class is List, element type is: org.teasoft.exam.moretable3.moretable3select4.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select4.Village, alias is: village
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id where province.id = ? limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id where province.id = ?   [values]: 1002(Integer),0(Integer),10(Integer),1002(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id where province.id = 1002 limit 0,10) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id where province.id = 1002 ;
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5.City, alias is: city
+[DEBUG] The layer is: 3, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = ? limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = ?   [values]: 1002(Integer),0(Integer),10(Integer),1002(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = 1002 limit 0,10) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = 1002 ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5.whereJoin.S, alias is: x
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5.whereJoin.S, alias is: y
+[INFO] [Bee] select MoreTable SQL: select x.sname from s x , s y where y.sname=? and x.sno>y.sno and x.age<y.age   [values]: WANG(String)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select x.sname from s x , s y where y.sname='WANG' and x.sno>y.sno and x.age<y.age ;
+[INFO]  | <--  ( select raw record rows: 1 )
+[INFO]  | <--  select rows: 1
+[INFO] S[id=null,sname=LI,sno=null,age=null]
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11111.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11111.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._11111.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11111.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11111.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit ?,?   [values]: 0(Integer),20(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit 0,20 ;
+[INFO]  | <--  ( select raw record rows: 1 )
+[INFO]  | <--  select rows: 1
+[INFO] {"id":1026,"name":"陕西省","level":null,"remark":null,"city":{"id":1256382977,"name":"西安","level":null,"remark":null,"provinceId":1026,"town":{"id":1256382977,"name":"长安区","level":null,"remark":null,"cityId":1256382977,"village":{"id":1256382977,"name":"阿房村","level":null,"remark":null,"townId":1256382977}}}}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11111_insert.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit ?,?   [values]: 0(Integer),20(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit 0,20 ;
+[INFO]  | <--  ( select raw record rows: 1 )
+[INFO]  | <--  select rows: 1
+[INFO] {"id":1026,"name":"陕西省","level":null,"remark":null,"city":{"id":1256382977,"name":"西安","level":null,"remark":null,"provinceId":1026,"town":{"id":1256382977,"name":"长安区","level":null,"remark":null,"cityId":1256382977,"village":{"id":1256382977,"name":"阿房村","level":null,"remark":null,"townId":1256382977}}}}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11111_insert.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.Road, alias is: road
+[INFO] [Bee] insert SQL: insert into province(id,name) values (?,?)   [values]: 1010(Integer),陕西省(String)
+[Bee] insert SQL:  ( ExecutableSql )
+insert into province(id,name) values (1010,'陕西省') ;
+[INFO]  | <--  Affected rows: 1
+[INFO] provinceId is null, will set with the value of id
+[INFO] [Bee] insert SQL: insert into city(id,name,province_id) values (?,?,?)   [values]: 2010(Integer),西安(String),1010(Integer)
+[Bee] insert SQL:  ( ExecutableSql )
+insert into city(id,name,province_id) values (2010,'西安',1010) ;
+[WARN] Duplicate entry '2010' for key 'PRIMARY'
+[INFO] insert sub entity:org.teasoft.exam.moretable3.moretable3select5._11111_insert.City, Affected rows: 0
+[INFO] cityId is null, will set with the value of id
+[INFO] [Bee] insert SQL: insert into town(id,name,city_id) values (?,?,?)   [values]: 3010(Integer),长安区(String),2010(Integer)
+[Bee] insert SQL:  ( ExecutableSql )
+insert into town(id,name,city_id) values (3010,'长安区',2010) ;
+[INFO]  | <--  Affected rows: 1
+[INFO] insert sub entity:org.teasoft.exam.moretable3.moretable3select5._11111_insert.Town, Affected rows: 1
+[INFO] townId is null, will set with the value of id
+[INFO] [Bee] insert SQL: insert into village(id,name,town_id) values (?,?,?)   [values]: 4010(Integer),阿房村(String),3010(Integer)
+[Bee] insert SQL:  ( ExecutableSql )
+insert into village(id,name,town_id) values (4010,'阿房村',3010) ;
+[WARN] Duplicate entry '4010' for key 'PRIMARY'
+[INFO] insert sub entity:org.teasoft.exam.moretable3.moretable3select5._11111_insert.Village, Affected rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11111_insert.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.Road, alias is: road
+[INFO] [Bee] delete SQL: delete from province where id=? and name=?   [values]: 1010(Integer),陕西省(String)
+[Bee] delete SQL:  ( ExecutableSql )
+delete from province where id=1010 and name='陕西省' ;
+[INFO]  | <--  Affected rows: 1
+[INFO] provinceId is null, will set with the value of id
+[INFO] [Bee] delete SQL: delete from city where id=? and name=? and province_id=?   [values]: 2010(Integer),西安(String),1010(Integer)
+[Bee] delete SQL:  ( ExecutableSql )
+delete from city where id=2010 and name='西安' and province_id=1010 ;
+[INFO]  | <--  Affected rows: 0
+[INFO] delete sub entity:org.teasoft.exam.moretable3.moretable3select5._11111_insert.City, Affected rows: 0
+[INFO] cityId is null, will set with the value of id
+[INFO] [Bee] delete SQL: delete from town where id=? and name=? and city_id=?   [values]: 3010(Integer),长安区(String),2010(Integer)
+[Bee] delete SQL:  ( ExecutableSql )
+delete from town where id=3010 and name='长安区' and city_id=2010 ;
+[INFO]  | <--  Affected rows: 1
+[INFO] delete sub entity:org.teasoft.exam.moretable3.moretable3select5._11111_insert.Town, Affected rows: 1
+[INFO] townId is null, will set with the value of id
+[INFO] [Bee] delete SQL: delete from village where id=? and name=? and town_id=?   [values]: 4010(Integer),阿房村(String),3010(Integer)
+[Bee] delete SQL:  ( ExecutableSql )
+delete from village where id=4010 and name='阿房村' and town_id=3010 ;
+[INFO]  | <--  Affected rows: 0
+[INFO] delete sub entity:org.teasoft.exam.moretable3.moretable3select5._11111_insert.Village, Affected rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select city.id, city.name from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = ?   [values]: 1002(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select city.id, city.name from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = 1002 ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select city.id, town.id, town.name from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = ?   [values]: 1002(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select city.id, town.id, town.name from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = 1002 ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select town.id, town.name from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = ?   [values]: 1002(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select town.id, town.name from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = 1002 ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select city.id, town.id, village.name from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = ?   [values]: 1002(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select city.id, town.id, village.name from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = 1002 ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select village.name from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = ?   [values]: 1002(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select village.name from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = 1002 ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11111_selectcolumn.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select city.id, village.name from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = ?   [values]: 1002(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select city.id, village.name from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = 1002 ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11111_update.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11111_update.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._11111_update.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11111_update.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11111_update.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit ?,?   [values]: 0(Integer),20(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit 0,20 ;
+[INFO]  | <--  ( select raw record rows: 1 )
+[INFO]  | <--  select rows: 1
+[INFO] {"id":1026,"name":"陕西省","level":null,"remark":null,"city":{"id":1256382977,"name":"西安","level":null,"remark":null,"provinceId":1026,"town":{"id":1256382977,"name":"长安区","level":null,"remark":null,"cityId":1256382977,"village":{"id":1256382977,"name":"阿房村","level":null,"remark":null,"townId":1256382977}}}}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11111_update.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11111_update.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._11111_update.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11111_update.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11111_update.Road, alias is: road
+[INFO] [Bee] insert SQL: insert into province(id,name) values (?,?)   [values]: 1010(Integer),陕西省(String)
+[Bee] insert SQL:  ( ExecutableSql )
+insert into province(id,name) values (1010,'陕西省') ;
+[INFO]  | <--  Affected rows: 1
+[INFO] provinceId is null, will set with the value of id
+[INFO] [Bee] insert SQL: insert into city(id,name,province_id) values (?,?,?)   [values]: 2010(Integer),西安(String),1010(Integer)
+[Bee] insert SQL:  ( ExecutableSql )
+insert into city(id,name,province_id) values (2010,'西安',1010) ;
+[WARN] Duplicate entry '2010' for key 'PRIMARY'
+[INFO] insert sub entity:org.teasoft.exam.moretable3.moretable3select5._11111_update.City, Affected rows: 0
+[INFO] cityId is null, will set with the value of id
+[INFO] [Bee] insert SQL: insert into town(id,name,city_id) values (?,?,?)   [values]: 3010(Integer),长安区(String),2010(Integer)
+[Bee] insert SQL:  ( ExecutableSql )
+insert into town(id,name,city_id) values (3010,'长安区',2010) ;
+[INFO]  | <--  Affected rows: 1
+[INFO] insert sub entity:org.teasoft.exam.moretable3.moretable3select5._11111_update.Town, Affected rows: 1
+[INFO] townId is null, will set with the value of id
+[INFO] [Bee] insert SQL: insert into village(id,name,town_id) values (?,?,?)   [values]: 4010(Integer),阿房村(String),3010(Integer)
+[Bee] insert SQL:  ( ExecutableSql )
+insert into village(id,name,town_id) values (4010,'阿房村',3010) ;
+[WARN] Duplicate entry '4010' for key 'PRIMARY'
+[INFO] insert sub entity:org.teasoft.exam.moretable3.moretable3select5._11111_update.Village, Affected rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11111_update.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11111_update.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._11111_update.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11111_update.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11111_update.Road, alias is: road
+[INFO] [Bee] update SQL: update province set name=? where id=?   [values]: 陕西省(String),1010(Integer)
+[Bee] update SQL:  ( ExecutableSql )
+update province set name='陕西省' where id=1010 ;
+[INFO]  | <--  Affected rows: 0
+[INFO] provinceId is null, will set with the value of id
+[INFO] [Bee] update SQL: update city set name=? , remark=? , province_id=? where id=?   [values]: 西安-update(String),test update(String),1010(Integer),2010(Integer)
+[Bee] update SQL:  ( ExecutableSql )
+update city set name='西安-update' , remark='test update' , province_id=1010 where id=2010 ;
+[INFO]  | <--  Affected rows: 0
+[INFO] update sub entity:org.teasoft.exam.moretable3.moretable3select5._11111_update.City, Affected rows: 0
+[INFO] cityId is null, will set with the value of id
+[INFO] [Bee] update SQL: update town set name=? , city_id=? where id=?   [values]: 长安区(String),2010(Integer),3010(Integer)
+[Bee] update SQL:  ( ExecutableSql )
+update town set name='长安区' , city_id=2010 where id=3010 ;
+[INFO]  | <--  Affected rows: 0
+[INFO] update sub entity:org.teasoft.exam.moretable3.moretable3select5._11111_update.Town, Affected rows: 0
+[INFO] townId is null, will set with the value of id
+[INFO] [Bee] update SQL: update village set name=? , town_id=? where id=?   [values]: 阿房村-update(String),3010(Integer),4010(Integer)
+[Bee] update SQL:  ( ExecutableSql )
+update village set name='阿房村-update' , town_id=3010 where id=4010 ;
+[INFO]  | <--  Affected rows: 0
+[INFO] update sub entity:org.teasoft.exam.moretable3.moretable3select5._11111_update.Village, Affected rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11111_update.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11111_update.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._11111_update.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11111_update.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11111_update.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = ? and province.name = ? and city.id = ? and city.name = ? and city.remark = ? and town.id = ? and town.name = ? and village.id = ? and village.name = ? limit ?,?   [values]: 1010(Integer),陕西省(String),2010(Integer),西安-update(String),test update(String),3010(Integer),长安区(String),4010(Integer),阿房村-update(String),0(Integer),20(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = 1010 and province.name = '陕西省' and city.id = 2010 and city.name = '西安-update' and city.remark = 'test update' and town.id = 3010 and town.name = '长安区' and village.id = 4010 and village.name = '阿房村-update' limit 0,20 ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11n11.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11n11.City, alias is: city
+[DEBUG] The layer is: 3, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._11n11.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11n11.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11n11.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id   [values]: 0(Integer),10(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit 0,10) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id ;
+[INFO]  | <--  ( select raw record rows: 1 )
+[INFO]  | <--  select rows: 1
+[INFO] {"id":1026,"name":"陕西省","level":null,"remark":null,"city":{"id":1256382977,"name":"西安","level":null,"remark":null,"provinceId":1026,"listTown":[{"id":1256382977,"name":"长安区","level":null,"remark":null,"cityId":1256382977,"village":{"id":1256382977,"name":"阿房村","level":null,"remark":null,"townId":1256382977}}]}}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.City, alias is: city
+[DEBUG] The layer is: 3, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = ? limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = ?   [values]: 广州市(String),0(Integer),10(Integer),广州市(String)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = '广州市' limit 0,10) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = '广州市' ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.City, alias is: city
+[DEBUG] The layer is: 3, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = ? limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = ?   [values]: 广州市(String),0(Integer),10(Integer),广州市(String)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = '广州市' limit 0,10) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = '广州市' ;
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.City, alias is: city
+[DEBUG] The layer is: 3, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = ? limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = ?   [values]: 广州市(String),0(Integer),10(Integer),广州市(String)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = '广州市' limit 0,10) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = '广州市' ;
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.City, alias is: city
+[DEBUG] The layer is: 3, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = ? limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = ?   [values]: 广州市(String),0(Integer),10(Integer),广州市(String)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = '广州市' limit 0,10) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = '广州市' ;
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.City, alias is: city
+[DEBUG] The layer is: 3, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11n11_subvalue.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = ? limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = ?   [values]: 广州市(String),0(Integer),10(Integer),广州市(String)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = '广州市' limit 0,10) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where city.name = '广州市' ;
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1n.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n.City, alias is: city
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province join (select distinct province.id from province join city city on province.id = city.province_id limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id   [values]: 0(Integer),20(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province join (select distinct province.id from province join city city on province.id = city.province_id limit 0,20) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id ;
+[INFO]  | <--  ( select raw record rows: 7 )
+[INFO]  | <--  select rows: 3
+[INFO] {"id":1010,"name":"陕西省","level":null,"remark":null,"listCity":[{"id":2010,"name":"西安-update","level":null,"remark":"test update","provinceId":1010}]}
+[INFO] {"id":1026,"name":"陕西省","level":null,"remark":null,"listCity":[{"id":1256382977,"name":"西安","level":null,"remark":null,"provinceId":1026},{"id":1256382978,"name":"咸阳","level":null,"remark":null,"provinceId":1026},{"id":1256382979,"name":"长安","level":null,"remark":null,"provinceId":1026}]}
+[INFO] {"id":1027,"name":"广东省","level":null,"remark":"test","listCity":[{"id":1256382980,"name":"广州","level":null,"remark":null,"provinceId":1027},{"id":1256382981,"name":"深圳","level":null,"remark":null,"provinceId":1027},{"id":1256382982,"name":"东莞","level":null,"remark":null,"provinceId":1027}]}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1n1n1.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id   [values]: 0(Integer),2(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit 0,2) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id ;
+[INFO]  | <--  ( select raw record rows: 1 )
+[INFO]  | <--  select rows: 1
+[INFO] Province[id=1026,name=陕西省,level=null,remark=null, listCity=[ city={City[id=1256382977,name=西安,level=null,remark=null,provinceId=1026, town={Town[id=1256382977,name=长安区,level=null,remark=null,cityId=1256382977, listVillage=[ village={Village[id=1256382977,name=阿房村,level=null,remark=null,townId=1256382977, road={Road[id=1256382977,name=深南路,level=null,remark=null,villageId=1256382977}}}}]}}}}]}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1n1n1.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id   [values]: 0(Integer),2(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit 0,2) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id ;
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 1
+[INFO] Province[id=1026,name=陕西省,level=null,remark=null, listCity=[ city={City[id=1256382977,name=西安,level=null,remark=null,provinceId=1026, town={Town[id=1256382977,name=长安区,level=null,remark=null,cityId=1256382977, listVillage=[ village={Village[id=1256382977,name=阿房村,level=null,remark=null,townId=1256382977, road={Road[id=1256382977,name=深南路,level=null,remark=null,villageId=1256382977}}}}]}}}}]}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1n1n1_column_condition.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_column_condition.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_column_condition.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_column_condition.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_column_condition.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.name=?   [values]: 广东省(String)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.name='广东省' ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1n1n1_column_condition2.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_column_condition2.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_column_condition2.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_column_condition2.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_column_condition2.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.name=? and province.level=? and city.name=?   [values]: 广东省(String),1(Integer),深圳市(String)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.name='广东省' and province.level=1 and city.name='深圳市' ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1n1n1_column_condition3.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_column_condition3.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_column_condition3.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_column_condition3.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_column_condition3.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id, province.name, city.name, city.remark from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.name is null and province.level=? and city.name=?   [values]: 1(Integer),深圳市(String)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id, province.name, city.name, city.remark from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.name is null and province.level=1 and city.name='深圳市' ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The name is '*' , does not conform to naming conventions!
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1n1n1_count.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_count.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_count.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_count.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_count.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.name, count(*) 'province.city_count' from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id group by province.name
+[INFO]  | <--  ( select raw record rows: 1 )
+[INFO]  | <--  select rows: 1
+[INFO] Province[id=null,name=陕西省,level=null,remark=null,cityCount=1,listCity=null}
+[DEBUG] The name is '*' , does not conform to naming conventions!
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1n1n1_count_sum.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_count_sum.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_count_sum.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_count_sum.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_count_sum.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.name, count(*) 'province.city_count', sum(city.id) 'province.city_sum' from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id group by province.name
+[INFO]  | <--  ( select raw record rows: 1 )
+[INFO]  | <--  select rows: 1
+[INFO] Province[id=null,name=陕西省,level=null,remark=null,cityCount=1,citySum=1256382977,listCity=null}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1n1n1_count_sum2.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_count_sum2.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_count_sum2.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_count_sum2.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_count_sum2.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.name, count(province.name) 'province.city_count', sum(city.id) 'province.city_sum' from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id group by province.name
+[INFO]  | <--  ( select raw record rows: 1 )
+[INFO]  | <--  select rows: 1
+[INFO] Province[id=null,name=陕西省,level=null,remark=null,cityCount=1,citySum=1256382977,listCity=null}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1n1n1_count_sum3.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_count_sum3.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_count_sum3.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_count_sum3.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_count_sum3.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.name, count(province.name) 'province.city_count', sum(city.id) 'province.city_sum' from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id group by province.name
+[INFO]  | <--  ( select raw record rows: 1 )
+[INFO]  | <--  select rows: 1
+[INFO] Province[id=null,name1=陕西省,level=null,remark=null,cityCount=1,citySum=1256382977,listCity=null}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1n1n1_selectcolumn.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_selectcolumn.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_selectcolumn.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_selectcolumn.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1n1n1_selectcolumn.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select city.id, town.id, village.name from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = ?   [values]: 1002(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select city.id, town.id, village.name from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = 1002 ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1n1_paging3.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n1_paging3.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1n1_paging3.Town, alias is: town
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id where city.level=? order by province.id limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id where city.level=? order by province.id   [values]: 2(Integer),0(Integer),2(Integer),2(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id where city.level=2 order by province.id limit 0,2) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id where city.level=2 order by province.id ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5.City, alias is: city
+[DEBUG] The layer is: 3, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = ? limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = ?   [values]: 1002(Integer),0(Integer),10(Integer),1002(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = 1002 limit 0,10) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id where province.id = 1002 ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1nnn1.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1nnn1.City, alias is: city
+[DEBUG] The layer is: 3, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1nnn1.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1nnn1.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1nnn1.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id   [values]: 0(Integer),10(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit 0,10) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id ;
+[INFO]  | <--  ( select raw record rows: 1 )
+[INFO]  | <--  select rows: 1
+[INFO] Province[id=1026,name=陕西省,level=null,remark=null, listCity=[ city={City[id=1256382977,name=西安,level=null,remark=null,provinceId=1026, listTown=[town={Town[id=1256382977,name=长安区,level=null,remark=null,cityId=1256382977, listVillage=[ village={Village[id=1256382977,name=阿房村,level=null,remark=null,townId=1256382977, road={Road[id=1256382977,name=深南路,level=null,remark=null,villageId=1256382977}}}}]}}]}}]}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1nnnn.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1nnnn.City, alias is: city
+[DEBUG] The layer is: 3, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1nnnn.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1nnnn.Village, alias is: village
+[DEBUG] The layer is: 5, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1nnnn.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id   [values]: 0(Integer),10(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit 0,10) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id ;
+[INFO]  | <--  ( select raw record rows: 1 )
+[INFO]  | <--  select rows: 1
+[INFO] {"id":1026,"name":"陕西省","level":null,"remark":null,"listCity":[{"id":1256382977,"name":"西安","level":null,"remark":null,"provinceId":1026,"listTown":[{"id":1256382977,"name":"长安区","level":null,"remark":null,"cityId":1256382977,"listVillage":[{"id":1256382977,"name":"阿房村","level":null,"remark":null,"townId":1256382977,"listRoad":[{"id":1256382977,"name":"深南路","level":null,"remark":null,"villageId":1256382977}]}]}]}]}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1n_page.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n_page.City, alias is: city
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province join (select distinct province.id from province join city city on province.id = city.province_id order by province.id limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id order by province.id   [values]: 0(Integer),2(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province join (select distinct province.id from province join city city on province.id = city.province_id order by province.id limit 0,2) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id order by province.id ;
+[INFO]  | <--  ( select raw record rows: 4 )
+[INFO]  | <--  select rows: 2
+[INFO] {"id":1010,"name":"陕西省","level":null,"remark":null,"listCity":[{"id":2010,"name":"西安-update","level":null,"remark":"test update","provinceId":1010}]}
+[INFO] {"id":1026,"name":"陕西省","level":null,"remark":null,"listCity":[{"id":1256382977,"name":"西安","level":null,"remark":null,"provinceId":1026},{"id":1256382978,"name":"咸阳","level":null,"remark":null,"provinceId":1026},{"id":1256382979,"name":"长安","level":null,"remark":null,"provinceId":1026}]}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1n_paging2.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1n_paging2.City, alias is: city
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province join (select distinct province.id from province left join city city on province.id = city.province_id where city.name=? limit ?,?) bee_paging on province.id = bee_paging.id left join city city on province.id = city.province_id where city.name=?   [values]: 苏州市(String),0(Integer),2(Integer),苏州市(String)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id from province province join (select distinct province.id from province left join city city on province.id = city.province_id where city.name='苏州市' limit 0,2) bee_paging on province.id = bee_paging.id left join city city on province.id = city.province_id where city.name='苏州市' ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_11n_1_n_1.Province, alias is: province
+[DEBUG] The layer is: 2, class is: entity.ProvinceHistory, alias is: province_history
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_11n_1_n_1.Province, alias is: province
+[DEBUG] The layer is: 2, class is: entity.News, alias is: news
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_11n_1_n_1.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_11n_1_n_1.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1_11n_1_n_1.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_11n_1_n_1.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1_11n_1_n_1.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,province_history.id,province_history.name,province_history.province_id,province_history.desc_str,news.id,news.name,news.f_id,news.desc_str,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit ?,?) bee_paging on province.id = bee_paging.id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id   [values]: 0(Integer),10(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,province_history.id,province_history.name,province_history.province_id,province_history.desc_str,news.id,news.name,news.f_id,news.desc_str,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit 0,10) bee_paging on province.id = bee_paging.id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id ;
+[INFO]  | <--  ( select raw record rows: 2 )
+[INFO]  | <--  select rows: 1
+[INFO] {"id":1026,"name":"陕西省","level":null,"remark":null,"provinceHistory":{"id":1256382977,"name":"陕西历史","provinceId":1026,"descStr":null},"news":{"id":1223174658,"name":"province news","fId":1026,"descStr":"省新闻"},"listCity":[{"id":1256382977,"name":"西安","level":null,"remark":null,"provinceId":1026,"town":{"id":1256382977,"name":"长安区","level":null,"remark":null,"cityId":1256382977,"listVillage":[{"id":1256382977,"name":"阿房村","level":null,"remark":null,"townId":1256382977}]}}]}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_11_111.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._1_11_111.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1_11_111.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._1_11_111.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1_11_111.Road, alias is: road
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_11_111.Province, alias is: province
+[DEBUG] The layer is: 2, class is: entity.ProvinceHistory, alias is: province_history
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id,province_history.id,province_history.name,province_history.province_id,province_history.desc_str from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id limit ?,?   [values]: 0(Integer),10(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id,province_history.id,province_history.name,province_history.province_id,province_history.desc_str from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id limit 0,10 ;
+[INFO]  | <--  ( select raw record rows: 1 )
+[INFO]  | <--  select rows: 1
+[INFO] {"id":1026,"name":"陕西省","level":null,"remark":null,"city":{"id":1256382977,"name":"西安","level":null,"remark":null,"provinceId":1026,"town":{"id":1256382977,"name":"长安区","level":null,"remark":null,"cityId":1256382977,"village":{"id":1256382977,"name":"阿房村","level":null,"remark":null,"townId":1256382977}}},"provinceHistory":{"id":1256382977,"name":"陕西历史","provinceId":1026,"descStr":null}}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11111_insert.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit ?,?   [values]: 0(Integer),20(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit 0,20 ;
+[INFO]  | <--  ( select raw record rows: 1 )
+[INFO]  | <--  select rows: 1
+[INFO] {"id":1026,"name":"陕西省","level":null,"remark":null,"city":{"id":1256382977,"name":"西安","level":null,"remark":null,"provinceId":1026,"town":{"id":1256382977,"name":"长安区","level":null,"remark":null,"cityId":1256382977,"village":{"id":1256382977,"name":"阿房村","level":null,"remark":null,"townId":1256382977}}}}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11111_insert.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.Road, alias is: road
+[INFO] [Bee] insert SQL: insert into province(id,name) values (?,?)   [values]: 1010(Integer),陕西省(String)
+[Bee] insert SQL:  ( ExecutableSql )
+insert into province(id,name) values (1010,'陕西省') ;
+[WARN] Duplicate entry '1010' for key 'PRIMARY'
+[WARN] insert main entity org.teasoft.exam.moretable3.moretable3select5._11111_insert.Province, affected rows is 0, will ignore insert sub entity!
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._11111_insert.Province, alias is: province
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.Town, alias is: town
+[DEBUG] The layer is: 4, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._11111_insert.Road, alias is: road
+[INFO] [Bee] delete SQL: delete from province where id=? and name=?   [values]: 1010(Integer),陕西省(String)
+[Bee] delete SQL:  ( ExecutableSql )
+delete from province where id=1010 and name='陕西省' ;
+[INFO]  | <--  Affected rows: 1
+[INFO] provinceId is null, will set with the value of id
+[INFO] [Bee] delete SQL: delete from city where id=? and name=? and province_id=?   [values]: 2010(Integer),西安(String),1010(Integer)
+[Bee] delete SQL:  ( ExecutableSql )
+delete from city where id=2010 and name='西安' and province_id=1010 ;
+[INFO]  | <--  Affected rows: 0
+[INFO] delete sub entity:org.teasoft.exam.moretable3.moretable3select5._11111_insert.City, Affected rows: 0
+[INFO] cityId is null, will set with the value of id
+[INFO] [Bee] delete SQL: delete from town where id=? and name=? and city_id=?   [values]: 3010(Integer),长安区(String),2010(Integer)
+[Bee] delete SQL:  ( ExecutableSql )
+delete from town where id=3010 and name='长安区' and city_id=2010 ;
+[INFO]  | <--  Affected rows: 1
+[INFO] delete sub entity:org.teasoft.exam.moretable3.moretable3select5._11111_insert.Town, Affected rows: 1
+[INFO] townId is null, will set with the value of id
+[INFO] [Bee] delete SQL: delete from village where id=? and name=? and town_id=?   [values]: 4010(Integer),阿房村(String),3010(Integer)
+[Bee] delete SQL:  ( ExecutableSql )
+delete from village where id=4010 and name='阿房村' and town_id=3010 ;
+[INFO]  | <--  Affected rows: 0
+[INFO] delete sub entity:org.teasoft.exam.moretable3.moretable3select5._11111_insert.Village, Affected rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_1n1_1_n_1.Province, alias is: province
+[DEBUG] The layer is: 2, class is: entity.ProvinceHistory, alias is: province_history
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_1n1_1_n_1.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_1n1_1_n_1.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1_1n1_1_n_1.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_1n1_1_n_1.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1_1n1_1_n_1.Road, alias is: road
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_1n1_1_n_1.Province, alias is: province
+[DEBUG] The layer is: 2, class is: entity.News, alias is: news
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,province_history.id,province_history.name,province_history.province_id,province_history.desc_str,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id,news.id,news.name,news.f_id,news.desc_str from province province join (select distinct province.id from province left join province_history province_history on province.id = province_history.province_id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join news news on province.id = news.f_id limit ?,?) bee_paging on province.id = bee_paging.id left join province_history province_history on province.id = province_history.province_id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join news news on province.id = news.f_id   [values]: 0(Integer),10(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,province_history.id,province_history.name,province_history.province_id,province_history.desc_str,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id,news.id,news.name,news.f_id,news.desc_str from province province join (select distinct province.id from province left join province_history province_history on province.id = province_history.province_id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join news news on province.id = news.f_id limit 0,10) bee_paging on province.id = bee_paging.id left join province_history province_history on province.id = province_history.province_id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join news news on province.id = news.f_id ;
+[INFO]  | <--  ( select raw record rows: 2 )
+[INFO]  | <--  select rows: 1
+[INFO] {"id":1026,"name":"陕西省","level":null,"remark":null,"provinceHistory":{"id":1256382977,"name":"陕西历史","provinceId":1026,"descStr":null},"listCity":[{"id":1256382977,"name":"西安","level":null,"remark":null,"provinceId":1026,"town":{"id":1256382977,"name":"长安区","level":null,"remark":null,"cityId":1256382977,"listVillage":[{"id":1256382977,"name":"阿房村","level":null,"remark":null,"townId":1256382977}]}}],"news":{"id":1223174658,"name":"province news","fId":1026,"descStr":"省新闻"}}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_1n_1_n_1.Province, alias is: province
+[DEBUG] The layer is: 2, class is: entity.ProvinceHistory, alias is: province_history
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_1n_1_n_1.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_1n_1_n_1.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1_1n_1_n_1.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_1n_1_n_1.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1_1n_1_n_1.Road, alias is: road
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,province_history.id,province_history.name,province_history.province_id,province_history.desc_str,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province left join province_history province_history on province.id = province_history.province_id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit ?,?) bee_paging on province.id = bee_paging.id left join province_history province_history on province.id = province_history.province_id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id   [values]: 0(Integer),10(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,province_history.id,province_history.name,province_history.province_id,province_history.desc_str,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id from province province join (select distinct province.id from province left join province_history province_history on province.id = province_history.province_id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id limit 0,10) bee_paging on province.id = bee_paging.id left join province_history province_history on province.id = province_history.province_id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id ;
+[INFO]  | <--  ( select raw record rows: 1 )
+[INFO]  | <--  select rows: 1
+[INFO] {"id":1026,"name":"陕西省","level":null,"remark":null,"provinceHistory":{"id":1256382977,"name":"陕西历史","provinceId":1026,"descStr":null},"listCity":[{"id":1256382977,"name":"西安","level":null,"remark":null,"provinceId":1026,"town":{"id":1256382977,"name":"长安区","level":null,"remark":null,"cityId":1256382977,"listVillage":[{"id":1256382977,"name":"阿房村","level":null,"remark":null,"townId":1256382977}]}}]}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1.Road, alias is: road
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1.Province, alias is: province
+[DEBUG] The layer is: 2, class is: entity.ProvinceHistory, alias is: province_history
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1.Province, alias is: province
+[DEBUG] The layer is: 2, class is: entity.News, alias is: news
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id,province_history.id,province_history.name,province_history.province_id,province_history.desc_str,news.id,news.name,news.f_id,news.desc_str from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id   [values]: 0(Integer),10(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id,province_history.id,province_history.name,province_history.province_id,province_history.desc_str,news.id,news.name,news.f_id,news.desc_str from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id limit 0,10) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id ;
+[INFO]  | <--  ( select raw record rows: 2 )
+[INFO]  | <--  select rows: 1
+[INFO] {"id":1026,"name":"陕西省","level":null,"remark":null,"listCity":[{"id":1256382977,"name":"西安","level":null,"remark":null,"provinceId":1026,"town":{"id":1256382977,"name":"长安区","level":null,"remark":null,"cityId":1256382977,"listVillage":[{"id":1256382977,"name":"阿房村","level":null,"remark":null,"townId":1256382977}]}}],"provinceHistory":{"id":1256382977,"name":"陕西历史","provinceId":1026,"descStr":null},"news":{"id":1223174658,"name":"province news","fId":1026,"descStr":"省新闻"}}
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueEmptyList.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueEmptyList.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueEmptyList.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueEmptyList.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueEmptyList.Road, alias is: road
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueEmptyList.Province, alias is: province
+[DEBUG] The layer is: 2, class is: entity.ProvinceHistory, alias is: province_history
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueEmptyList.Province, alias is: province
+[DEBUG] The layer is: 2, class is: entity.News, alias is: news
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id,province_history.id,province_history.name,province_history.province_id,province_history.desc_str,news.id,news.name,news.f_id,news.desc_str from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id where province.id = ? limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id where province.id = ?   [values]: 1002(Integer),0(Integer),10(Integer),1002(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id,province_history.id,province_history.name,province_history.province_id,province_history.desc_str,news.id,news.name,news.f_id,news.desc_str from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id where province.id = 1002 limit 0,10) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id where province.id = 1002 ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.Road, alias is: road
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.Province, alias is: province
+[DEBUG] The layer is: 2, class is: entity.ProvinceHistory, alias is: province_history
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.Province, alias is: province
+[DEBUG] The layer is: 2, class is: entity.News, alias is: news
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id,province_history.id,province_history.name,province_history.province_id,province_history.desc_str,news.id,news.name,news.f_id,news.desc_str from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id where province.id = ? and city.name = ? limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id where province.id = ? and city.name = ?   [values]: 1002(Integer),广州市(String),0(Integer),10(Integer),1002(Integer),广州市(String)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id,province_history.id,province_history.name,province_history.province_id,province_history.desc_str,news.id,news.name,news.f_id,news.desc_str from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id where province.id = 1002 and city.name = '广州市' limit 0,10) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id where province.id = 1002 and city.name = '广州市' ;
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.Road, alias is: road
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.Province, alias is: province
+[DEBUG] The layer is: 2, class is: entity.ProvinceHistory, alias is: province_history
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.Province, alias is: province
+[DEBUG] The layer is: 2, class is: entity.News, alias is: news
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id,province_history.id,province_history.name,province_history.province_id,province_history.desc_str,news.id,news.name,news.f_id,news.desc_str from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id where province.id = ? and city.name = ? limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id where province.id = ? and city.name = ?   [values]: 1002(Integer),广州市(String),0(Integer),10(Integer),1002(Integer),广州市(String)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id,province_history.id,province_history.name,province_history.province_id,province_history.desc_str,news.id,news.name,news.f_id,news.desc_str from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id where province.id = 1002 and city.name = '广州市' limit 0,10) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id where province.id = 1002 and city.name = '广州市' ;
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.Road, alias is: road
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.Province, alias is: province
+[DEBUG] The layer is: 2, class is: entity.ProvinceHistory, alias is: province_history
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n11_1_n_1_subvalueList.Province, alias is: province
+[DEBUG] The layer is: 2, class is: entity.News, alias is: news
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id,province_history.id,province_history.name,province_history.province_id,province_history.desc_str,news.id,news.name,news.f_id,news.desc_str from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id where province.id = ? and city.name = ? limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id where province.id = ? and city.name = ?   [values]: 1002(Integer),广州市(String),0(Integer),10(Integer),1002(Integer),广州市(String)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id,province_history.id,province_history.name,province_history.province_id,province_history.desc_str,news.id,news.name,news.f_id,news.desc_str from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id where province.id = 1002 and city.name = '广州市' limit 0,10) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id left join news news on province.id = news.f_id where province.id = 1002 and city.name = '广州市' ;
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n1_1_n_1.Province, alias is: province
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_n1_1_n_1.City, alias is: city
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.moretable3.moretable3select5._1_n1_1_n_1.Town, alias is: town
+[DEBUG] The layer is: 4, class is List, element type is: org.teasoft.exam.moretable3.moretable3select5._1_n1_1_n_1.Village, alias is: village
+[DEBUG] The layer is: 5, class is: org.teasoft.exam.moretable3.moretable3select5._1_n1_1_n_1.Road, alias is: road
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.moretable3.moretable3select5._1_n1_1_n_1.Province, alias is: province
+[DEBUG] The layer is: 2, class is: entity.ProvinceHistory, alias is: province_history
+[INFO] [Bee] select MoreTable SQL: select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id,province_history.id,province_history.name,province_history.province_id,province_history.desc_str from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id limit ?,?) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id   [values]: 0(Integer),10(Integer)
+[Bee] select MoreTable SQL:  ( ExecutableSql )
+select province.id,province.name,province.level,province.remark,city.id,city.name,city.level,city.remark,city.province_id,town.id,town.name,town.level,town.remark,town.city_id,village.id,village.name,village.level,village.remark,village.town_id,road.id,road.name,road.level,road.remark,road.village_id,province_history.id,province_history.name,province_history.province_id,province_history.desc_str from province province join (select distinct province.id from province join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id limit 0,10) bee_paging on province.id = bee_paging.id join city city on province.id = city.province_id join town town on city.id = town.city_id join village village on town.id = village.town_id join road road on village.id = road.village_id left join province_history province_history on province.id = province_history.province_id ;
+[INFO]  | <--  ( select raw record rows: 1 )
+[INFO]  | <--  select rows: 1
+[INFO] {"id":1026,"name":"陕西省","level":null,"remark":null,"listCity":[{"id":1256382977,"name":"西安","level":null,"remark":null,"provinceId":1026,"town":{"id":1256382977,"name":"长安区","level":null,"remark":null,"cityId":1256382977,"listVillage":[{"id":1256382977,"name":"阿房村","level":null,"remark":null,"townId":1256382977}]}}],"provinceHistory":{"id":1256382977,"name":"陕西历史","provinceId":1026,"descStr":null}}
+[INFO] [Bee] select SQL(entity, start, size): select id,id2,email,last_name,name,password,username,createtime from test_user where id=? limit ?,?   [values]: 4(Integer),0(Integer),1(Integer)
+[Bee] select SQL(entity, start, size):  ( ExecutableSql )
+select id,id2,email,last_name,name,password,username,createtime from test_user where id=4 limit 0,1 ;
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [Bee] select fun SQL : select count(*) from orders
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders
+[INFO]  | <--  select rows: 47
+[INFO] Use the json jar is com.fasterxml.jackson!
+[INFO] java.lang.Class
+[INFO] bee_name
+[INFO] bee_t_name
+[INFO] bee_x
+[INFO] bee_xa
+[INFO] beeName
+[INFO] beeTName
+[INFO] beeX
+[INFO] bee_
+[INFO] _bee
+[INFO] BEENAME
+[INFO] BEETNAME
+[INFO] beeName
+[INFO] beeTName
+[INFO] beeX
+[INFO] bee_x
+[INFO] _beeX
+[INFO] beeX
+[INFO] bee_x
+[INFO] name
+[INFO] comment
+[INFO] update
+[INFO] key
+[INFO] ObjSQLException-test
+[INFO] BeeSQLException-test
+[INFO] ObjSQLIllegalSQLStringException-test
+[INFO] ================UpperKeyTest==============
+[INFO] SELECTCOUNTDISTINCTFROM
+[INFO] WHEREANDBETWEENGROUP BYORDER BYASCFOR UPDATE
+[INFO] IS NOT NULLIS NULLINEXISTSNOT EXISTS
+[INFO] INNER JOINJOINLEFT JOINRIGHT JOIN
+[INFO] LIMITTOP 
+[INFO] INSERTINTOVALUES
+[INFO] REPLACE
+[INFO] DELETEFROM
+[INFO] UPDATESET
+[INFO] NULLOROFFSETONNOT BETWEENNOT INHAVINGAS
+[INFO] UNIONUNION ALL!TRUNCATEDROPTABLEIFTO_DATE
+[INFO] [Bee] ========= get the dbName via url is: SQLite
+[INFO] [Bee] select SQL(entity, size): select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name=? limit ?   [values]: Bee(ORM Framework)(String),3(Integer)
+[Bee] select SQL(entity, size):  ( ExecutableSql )
+select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name='Bee(ORM Framework)' limit 3 ;
+[INFO]  | <--  select rows: 3
+[INFO] Orders[id=100001,userid=Bee,orderid=1,name=Bee(ORM Framework),total=95.01,createtime=2020-03-02 11:29:28,remark=null,sequence=12345601,abc=test1,updatetime=2026-09-03 00:00:35]
+[INFO] Orders[id=1279953127604428,userid=bee,orderid=null,name=Bee(ORM Framework),total=91.99,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279953127604452,userid=bee,orderid=null,name=Bee(ORM Framework),total=91.99,createtime=2026-09-03 00:00:35,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] ========= get the dbName via url is: Microsoft SQL Server
+[INFO] [Bee] select SQL(entity, size): select top 3 id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name=?   [values]: Bee(ORM Framework)(String)
+[Bee] select SQL(entity, size):  ( ExecutableSql )
+select top 3 id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name='Bee(ORM Framework)' ;
+[INFO]  | <--  select rows: 3
+[INFO] Orders[id=100001,userid=Bee,orderid=null,name=Bee(ORM Framework),total=100.000000,createtime=null,remark=new2,sequence=,abc=null,updatetime=2026-09-03 00:00:54]
+[INFO] Orders[id=1279953127604482,userid=bee,orderid=null,name=Bee(ORM Framework),total=91.990000,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279953127604506,userid=bee,orderid=null,name=Bee(ORM Framework),total=91.990000,createtime=2026-09-03 00:00:54,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] select SQL(entity, size): select * from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name=? ) where rownum <= ?   [values]: Bee(ORM Framework)(String),3(Integer)
+[Bee] select SQL(entity, size):  ( ExecutableSql )
+select * from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name='Bee(ORM Framework)' ) where rownum <= 3 ;
+[INFO]  | <--  select rows: 2
+[INFO] Orders[id=100001,userid=Bee,orderid=1,name=Bee(ORM Framework),total=95,createtime=2020-03-02 11:29:28,remark=null,sequence=12345601,abc=test1,updatetime=2026-09-03 00:01:36]
+[INFO] Orders[id=1279953127604559,userid=bee,orderid=null,name=Bee(ORM Framework),total=92,createtime=2026-09-03 00:01:37,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] ========= get the dbName via url is: H2
+[INFO] [Bee] select SQL(entity, size): select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name=? limit ?   [values]: Bee(ORM Framework)(String),3(Integer)
+[Bee] select SQL(entity, size):  ( ExecutableSql )
+select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name='Bee(ORM Framework)' limit 3 ;
+[INFO]  | <--  select rows: 3
+[INFO] Orders[id=100001,userid=Bee,orderid=1,name=Bee(ORM Framework),total=95.01,createtime=2020-03-02 11:29:28,remark=null,sequence=12345601,abc=test1,updatetime=2026-09-03 00:02:15]
+[INFO] Orders[id=1279953127604589,userid=bee,orderid=null,name=Bee(ORM Framework),total=91.99,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279953127604613,userid=bee,orderid=null,name=Bee(ORM Framework),total=91.99,createtime=2026-09-03 00:02:15,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] ========= get the dbName via url is: PostgreSQL
+[INFO] [Bee] select SQL(entity, size): select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name=? limit ?   [values]: Bee(ORM Framework)(String),3(Integer)
+[Bee] select SQL(entity, size):  ( ExecutableSql )
+select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name='Bee(ORM Framework)' limit 3 ;
+[INFO]  | <--  select rows: 3
+[INFO] Orders[id=100001,userid=Bee,orderid=1,name=Bee(ORM Framework),total=95.010000,createtime=2020-03-02 11:29:28,remark=null,sequence=12345601,abc=test1,updatetime=2026-09-03 00:02:36]
+[INFO] Orders[id=1279953127604643,userid=bee,orderid=null,name=Bee(ORM Framework),total=91.990000,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279953127604667,userid=bee,orderid=null,name=Bee(ORM Framework),total=91.990000,createtime=2026-09-03 00:02:36,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [Bee] select SQL(entity, size): select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name=? limit ?,?   [values]: Bee(ORM Framework)(String),0(Integer),3(Integer)
+[Bee] select SQL(entity, size):  ( ExecutableSql )
+select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name='Bee(ORM Framework)' limit 0,3 ;
+[INFO]  | <--  select rows: 3
+[INFO] Orders[id=102202,userid=null,orderid=null,name=Bee(ORM Framework),total=null,createtime=2026-09-03 00:02:53.122,remark=null,sequence=null,abc=null,updatetime=2026-09-03]
+[INFO] Orders[id=1279953127604733,userid=Bee,orderid=null,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279953127604734,userid=Bee,orderid=null,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] ========= get the dbName via url is: SQLite
+[INFO] [Bee] select SQL(entity, size): select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name=? limit ?   [values]: Bee(ORM Framework)(String),3(Integer)
+[Bee] select SQL(entity, size):  ( ExecutableSql )
+select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name='Bee(ORM Framework)' limit 3 ;
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 3
+[INFO] Orders[id=100001,userid=Bee,orderid=1,name=Bee(ORM Framework),total=95.01,createtime=2020-03-02 11:29:28,remark=null,sequence=12345601,abc=test1,updatetime=2026-09-03 00:00:35]
+[INFO] Orders[id=1279953127604428,userid=bee,orderid=null,name=Bee(ORM Framework),total=91.99,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279953127604452,userid=bee,orderid=null,name=Bee(ORM Framework),total=91.99,createtime=2026-09-03 00:00:35,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] ========= get the dbName via url is: Microsoft SQL Server
+[INFO] [Bee] select SQL(entity, size): select top 3 id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name=?   [values]: Bee(ORM Framework)(String)
+[Bee] select SQL(entity, size):  ( ExecutableSql )
+select top 3 id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name='Bee(ORM Framework)' ;
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 3
+[INFO] Orders[id=100001,userid=Bee,orderid=null,name=Bee(ORM Framework),total=100.000000,createtime=null,remark=new2,sequence=,abc=null,updatetime=2026-09-03 00:00:54]
+[INFO] Orders[id=1279953127604482,userid=bee,orderid=null,name=Bee(ORM Framework),total=91.990000,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279953127604506,userid=bee,orderid=null,name=Bee(ORM Framework),total=91.990000,createtime=2026-09-03 00:00:54,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] select SQL(entity, size): select * from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name=? ) where rownum <= ?   [values]: Bee(ORM Framework)(String),3(Integer)
+[Bee] select SQL(entity, size):  ( ExecutableSql )
+select * from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name='Bee(ORM Framework)' ) where rownum <= 3 ;
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 2
+[INFO] Orders[id=100001,userid=Bee,orderid=1,name=Bee(ORM Framework),total=95,createtime=2020-03-02 11:29:28,remark=null,sequence=12345601,abc=test1,updatetime=2026-09-03 00:01:36]
+[INFO] Orders[id=1279953127604559,userid=bee,orderid=null,name=Bee(ORM Framework),total=92,createtime=2026-09-03 00:01:37,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] ========= get the dbName via url is: H2
+[INFO] [Bee] select SQL(entity, size): select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name=? limit ?   [values]: Bee(ORM Framework)(String),3(Integer)
+[Bee] select SQL(entity, size):  ( ExecutableSql )
+select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name='Bee(ORM Framework)' limit 3 ;
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 3
+[INFO] Orders[id=100001,userid=Bee,orderid=1,name=Bee(ORM Framework),total=95.01,createtime=2020-03-02 11:29:28,remark=null,sequence=12345601,abc=test1,updatetime=2026-09-03 00:02:15]
+[INFO] Orders[id=1279953127604589,userid=bee,orderid=null,name=Bee(ORM Framework),total=91.99,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279953127604613,userid=bee,orderid=null,name=Bee(ORM Framework),total=91.99,createtime=2026-09-03 00:02:15,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] ========= get the dbName via url is: MySQL
+[INFO] [Bee] select SQL(entity, size): select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name=? limit ?,?   [values]: Bee(ORM Framework)(String),0(Integer),3(Integer)
+[Bee] select SQL(entity, size):  ( ExecutableSql )
+select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name='Bee(ORM Framework)' limit 0,3 ;
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 3
+[INFO] Orders[id=102202,userid=null,orderid=null,name=Bee(ORM Framework),total=null,createtime=2026-09-03 00:02:53.122,remark=null,sequence=null,abc=null,updatetime=2026-09-03]
+[INFO] Orders[id=1279953127604733,userid=Bee,orderid=null,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279953127604734,userid=Bee,orderid=null,name=Bee(ORM Framework),total=80.800000,createtime=null,remark=InsertAndReturnId,sequence=null,abc=null,updatetime=null]

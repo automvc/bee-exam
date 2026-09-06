@@ -1,0 +1,2110 @@
+[WARN] Auto table: parameter  ${month} in Orders${month} still has not value, will be ignore it!
+[INFO] [Bee] Drop SQL: DROP TABLE Orders
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE Orders (
+id number(19) PRIMARY KEY,  
+userid varchar2(255),  
+orderid number(19),  
+name varchar2(255),  
+total number(19),  
+createtime varchar2(255),  
+remark varchar2(255),  
+sequence varchar2(255),  
+abc varchar2(255),  
+updatetime varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE Orders_202007
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE Orders_202007 (
+id number(19) PRIMARY KEY,  
+userid varchar2(255),  
+orderid number(19),  
+name varchar2(255),  
+total number(19),  
+createtime varchar2(255),  
+remark varchar2(255),  
+sequence varchar2(255),  
+abc varchar2(255),  
+updatetime varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE Orders1
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE Orders1 (
+id number(19) PRIMARY KEY,  
+userid varchar2(255),  
+orderid number(19),  
+name varchar2(255),  
+total number(19),  
+createtime varchar2(255),  
+remark varchar2(255),  
+sequence varchar2(255),  
+abc varchar2(255),  
+updatetime varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE Orders2 (
+id number(19) PRIMARY KEY,  
+userid varchar2(255),  
+orderid number(19),  
+name varchar2(255),  
+total number(19),  
+createtime varchar2(255),  
+remark varchar2(255),  
+sequence varchar2(255),  
+abc varchar2(255),  
+updatetime varchar2(255)
+ )
+[DEBUG] ORA-00955: 名称已由现有对象使用
+
+ORA-00955: 名称已由现有对象使用
+
+[INFO] [Bee] DDL SQL: CREATE TABLE Orders3 (
+id number(19) PRIMARY KEY,  
+userid varchar2(255),  
+orderid number(19),  
+name varchar2(255),  
+total number(19),  
+createtime varchar2(255),  
+remark varchar2(255),  
+sequence varchar2(255),  
+abc varchar2(255),  
+updatetime varchar2(255)
+ )
+[DEBUG] ORA-00955: 名称已由现有对象使用
+
+ORA-00955: 名称已由现有对象使用
+
+[INFO] [Bee] Drop SQL: DROP TABLE test_user
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE test_user (
+id number(10) PRIMARY KEY,  
+id2 number(10),  
+email varchar2(255),  
+last_name varchar2(255),  
+name varchar2(255),  
+password varchar2(255),  
+username varchar2(255),  
+createtime varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE leaf_alloc
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE leaf_alloc (
+id number(19) PRIMARY KEY,  
+biz_tag varchar2(255),  
+max_id number(19),  
+step number(10),  
+description varchar2(255),  
+update_time timestamp,  
+version number(10)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE leaf_alloc2
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE leaf_alloc2 (
+id number(19) PRIMARY KEY,  
+biz_tag varchar2(255),  
+max_id number(19),  
+step number(10),  
+description varchar2(255),  
+update_time varchar2(255),  
+version number(10)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE leaf_alloc3
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE leaf_alloc3 (
+id number(19) PRIMARY KEY,  
+biz_tag varchar2(255),  
+max_id number(19),  
+step number(10),  
+description varchar2(255),  
+update_time varchar2(255),  
+version number(10)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE scores
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE scores (
+id number(19) PRIMARY KEY,  
+classno varchar2(255),  
+term varchar2(255),  
+examno varchar2(255),  
+subjectno varchar2(255),  
+subject varchar2(255),  
+stuno varchar2(255),  
+name varchar2(255),  
+teacherno varchar2(255),  
+teachername varchar2(255),  
+score number(19,6),  
+creater varchar2(255),  
+createtime timestamp,  
+updater varchar2(255),  
+updatetime timestamp,  
+remark varchar2(255),  
+ext1 varchar2(255),  
+status varchar2(255),  
+schoolno varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE assignexam
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE assignexam (
+id number(19) PRIMARY KEY,  
+classno varchar2(255),  
+term varchar2(255),  
+examno varchar2(255),  
+subjectno varchar2(255),  
+subject varchar2(255),  
+creater varchar2(255),  
+createtime timestamp,  
+updater varchar2(255),  
+updatetime timestamp,  
+remark varchar2(255),  
+ext1 varchar2(255),  
+status varchar2(255),  
+schoolno varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE assigncourse
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE assigncourse (
+id number(19) PRIMARY KEY,  
+classno varchar2(255),  
+term varchar2(255),  
+teacherno varchar2(255),  
+name varchar2(255),  
+subjectno varchar2(255),  
+subject varchar2(255),  
+creater varchar2(255),  
+createtime timestamp,  
+updater varchar2(255),  
+updatetime timestamp,  
+remark varchar2(255),  
+status varchar2(255),  
+schoolno varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE clazz
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE clazz (
+id number(10) PRIMARY KEY,  
+classname varchar2(255),  
+place varchar2(255),  
+teachername varchar2(255),  
+remark varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE student
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE student (
+id number(10) PRIMARY KEY,  
+sid number(10),  
+name varchar2(255),  
+age number(10),  
+sex varchar2(1),  
+majorid varchar2(255),  
+flag varchar2(1),  
+classno number(10)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE student_hobby
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE student_hobby (
+id number(10) PRIMARY KEY,  
+stu_id varchar2(255),  
+hobby varchar2(255),  
+remark varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE Noid
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE Noid (
+uuid varchar2(255) PRIMARY KEY,  
+name varchar2(255),  
+num number(10),  
+remark varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE noid
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE noid (
+uuid varchar2(255),  
+name varchar2(255),  
+num number(10),  
+remark varchar2(255),  
+ch char(1)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE noid2
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE noid2 (
+uu_id varchar2(255) PRIMARY KEY,  
+name varchar2(255),  
+num number(10),  
+remark varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE noid1
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE noid1 (
+uuid varchar2(255) PRIMARY KEY,  
+name varchar2(255),  
+num number(10),  
+remark varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE test_user
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE test_user (
+id number(10) PRIMARY KEY,  
+id2 number(10),  
+email varchar2(255),  
+last_name varchar2(255),  
+name varchar2(255),  
+password varchar2(255),  
+username varchar2(255),  
+createtime varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE orders3
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE orders3 (
+id varchar2(255) PRIMARY KEY,  
+userid varchar2(255),  
+orderid number(19),  
+name varchar2(255),  
+total number(19),  
+createtime varchar2(255),  
+remark varchar2(255),  
+sequence varchar2(255),  
+abc varchar2(255),  
+updatetime varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE orders_id_string
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE orders_id_string (
+id varchar2(255) PRIMARY KEY,  
+userid varchar2(255),  
+name varchar2(255),  
+total number(19),  
+createtime varchar2(255),  
+remark varchar2(255),  
+sequence varchar2(255),  
+abc varchar2(255),  
+updatetime varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE date_type
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE date_type (
+id number(19) PRIMARY KEY,  
+date1 date,  
+date3 date,  
+date2 date,  
+remark varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE test_primary_key
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE test_primary_key (
+myid number(19),  
+name varchar2(255),  
+remark varchar2(255),  
+remark2 varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE clazz
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE clazz (
+id number(10) PRIMARY KEY,  
+classname varchar2(255),  
+place varchar2(255),  
+teachername varchar2(255),  
+remark varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE student
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE student (
+id number(10) PRIMARY KEY,  
+sid number(10),  
+name varchar2(255),  
+age number(10),  
+sex varchar2(1),  
+majorid varchar2(255),  
+flag varchar2(1),  
+classno number(10)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE student_hobby
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE student_hobby (
+id number(10) PRIMARY KEY,  
+stu_id varchar2(255),  
+hobby varchar2(255),  
+remark varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO orders VALUES ('100001', 'Bee', 1,'Bee(ORM Framework)', '95.01', '2020-03-02 11:29:28', 'test', '12345601', 'test1', null);
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO orders VALUES ('100002', 'bee', 1,'Bee', '96.01', '2020-03-02 11:29:28', 'test%a', '12345602', 'test2', '2020-03-02 16:34:19');
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO orders VALUES ('100003', 'bee', 1,'Bee', '97.01', '2020-03-02 11:29:28', 'testx%', '12345603', 'test3', '2020-03-02 16:34:19');
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO orders_202007 VALUES ('100001', 'Bee', 1,'Bee(ORM Framework)', '95.01', '2020-03-02 11:29:28', 'test', '12345601', 'test1', null);
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO orders_202007 VALUES ('100002', 'bee', 1,'Bee', '96.01', '2020-03-02 11:29:28', 'test%a', '12345602', 'test2', '2020-03-02 16:34:19');
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO orders_202007 VALUES ('100003', 'bee', 1,'Bee', '97.01', '2020-03-02 11:29:28', 'testx%', '12345603', 'test3', '2020-03-02 16:34:19');
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO test_user VALUES (800001,800001, 'beeUser@163.com', null, 'Bee', 'bee', 'bee', null);
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO test_user VALUES (800002,800002, 'honey@163.com', 'cn', 'Honey', 'honey', 'honey', null);
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc3 VALUES ('456537470402562', 'test', '100', '100', 'test segment', '2020-07-04 22:42:09', '1');
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc3 VALUES ('456537470402563', 'order', '100', '100', 'order segment', '2020-07-04 22:42:10', '1');
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc3 VALUES ('456537470402564', 'bee', '100', '100', 'order segment', '2020-09-19 19:05:10', '1');
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc2 VALUES ('456537470402562', 'test', '100', '100', 'test segment', '2020-07-04 22:42:09', '1');
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc2 VALUES ('456537470402563', 'order', '100', '100', 'order segment', '2020-07-04 22:42:10', '1');
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc2 VALUES ('456537470402564', 'bee', '100', '100', 'order segment', '2020-09-19 19:05:10', '1');
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc(id,biz_tag,max_id,step,description,version) VALUES ('456537470402562', 'test', '100', '100', 'test segment', '1');
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc(id,biz_tag,max_id,step,description,version) VALUES ('456537470402563', 'order', '100', '100', 'test segment', '1');
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: INSERT INTO leaf_alloc(id,biz_tag,max_id,step,description,version) VALUES ('456537470402564', 'bee', '100', '100', 'test segment', '1');
+[INFO]  | <--  Affected rows: 1
+[INFO] [bee-exam] ====================SuidExam.test======start:
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001(Long),Bee(ORM Framework)(String)
+[INFO]  | <--  select rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001(Long),Bee(ORM Framework)(String)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 1
+[INFO] Orders[id=100001,userid=Bee,orderid=1,name=Bee(ORM Framework),total=95,createtime=2020-03-02 11:29:28,remark=test,sequence=12345601,abc=test1,updatetime=null]
+[INFO] [Bee] update SQL: update orders set name=? where id=?   [values]: Bee(ORM Framework)(String),100001(Long)
+[INFO]  | <--  Affected rows: 1
+[INFO] update record:1
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total) values (?,?,?,?)   [values]: 1279955962954012(Long),bee(String),Bee-ORM Framework(String),91.99(java.math.BigDecimal)
+[INFO]  | <--  Affected rows: 1
+[INFO] insert record:1
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total) values (?,?,?,?)   [values]: 1279955962954013(Long),bee(String),Bee-ORM Framework(String),91.99(java.math.BigDecimal)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total) values (?,?,?,?)   [values]: 1279955962954014(Long),bee(String),Bee-ORM Framework(String),91.99(java.math.BigDecimal)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=? and total=?   [values]: bee(String),Bee-ORM Framework(String),91.99(java.math.BigDecimal)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=? and total=?   [values]: bee(String),Bee-ORM Framework(String),91.99(java.math.BigDecimal)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] delete SQL: delete from orders where userid=? and name=? and total=?   [values]: bee(String),Bee-ORM Framework(String),91.99(java.math.BigDecimal)
+[INFO]  | <--  Affected rows: 0
+[INFO] delete record:0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders
+[INFO]  | <--  select rows: 6
+[INFO] Orders[id=100002,userid=bee,orderid=1,name=Bee,total=96,createtime=2020-03-02 11:29:28,remark=test%a,sequence=12345602,abc=test2,updatetime=2020-03-02 16:34:19]
+[INFO] Orders[id=1279955962954012,userid=bee,orderid=null,name=Bee-ORM Framework,total=92,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954013,userid=bee,orderid=null,name=Bee-ORM Framework,total=92,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954014,userid=bee,orderid=null,name=Bee-ORM Framework,total=92,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100003,userid=bee,orderid=1,name=Bee,total=97,createtime=2020-03-02 11:29:28,remark=testx%,sequence=12345603,abc=test3,updatetime=2020-03-02 16:34:19]
+[INFO] Orders[id=100001,userid=Bee,orderid=1,name=Bee(ORM Framework),total=95,createtime=2020-03-02 11:29:28,remark=test,sequence=12345601,abc=test1,updatetime=null]
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=? and total=?   [values]: bee(String),Bee-ORM Framework(String),91.99(java.math.BigDecimal)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=? and total=?   [values]: bee(String),Bee-ORM Framework(String),91.99(java.math.BigDecimal)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=? and total=?   [values]: bee(String),Bee-ORM Framework(String),91.99(java.math.BigDecimal)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 6
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 6
+[WARN] Do not get the new Connection in the SameConnection. Maybe all the results get from cache! 
+[INFO] [bee-exam] ====================SuidExam.test======end.
+
+[INFO] [bee-exam] ====================SuidExamEN.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001(Long),Bee(ORM Framework)(String)
+[INFO]  | <--  select rows: 1
+[INFO] Orders[id=100001,userid=Bee,orderid=1,name=Bee(ORM Framework),total=95,createtime=2020-03-02 11:29:28,remark=test,sequence=12345601,abc=test1,updatetime=null]
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001(Long),Bee(ORM Framework)(String)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 1
+[INFO] [Bee] update SQL: update orders set name=? where id=?   [values]: Bee(ORM Framework)(String),100001(Long)
+[INFO]  | <--  Affected rows: 1
+[INFO] update record:1
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total) values (?,?,?,?)   [values]: 1279955962954015(Long),bee(String),Bee(String),91.99(java.math.BigDecimal)
+[INFO]  | <--  Affected rows: 1
+[INFO] insert record:1
+[INFO] [Bee] delete SQL: delete from orders where userid=? and name=? and total=?   [values]: bee(String),Bee(String),91.99(java.math.BigDecimal)
+[INFO]  | <--  Affected rows: 0
+[INFO] delete record:0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001(Long),Bee(ORM Framework)(String)
+[INFO]  | <--  select rows: 1
+[INFO] Orders[id=100001,userid=Bee,orderid=1,name=Bee(ORM Framework),total=95,createtime=2020-03-02 11:29:28,remark=test,sequence=12345601,abc=test1,updatetime=null]
+[INFO] [bee-exam] ====================SuidExamEN.test======end.
+
+[INFO] [bee-exam] ====================SuidRichExam.test======start:
+[INFO] =============SuidRichExam=========================start==
+[INFO] ==============orders.getId(): null
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total,remark) values (?,?,?,?,?)   [values]: 1279955962954016(Long),client(String),client(String),93.99(java.math.BigDecimal),testOneTime(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] insert record:1
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total,orderid,createtime,remark,abc,updatetime) values (?,?,?,?,?,?,?,?,?)   [values]: 1279955962954017(Long),client(String),client(String),93.99(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] insert record:1
+[INFO] ==============orders.getId(): null
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total,remark,sequence) values (?,?,?,?,?,?)   [values]: 1279955962954018(Long),client(String),client(String),93.99(java.math.BigDecimal),testOneTime(String),(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] insert record:1
+[INFO] ==============orders.getId(): null
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?,?)   [values]: 1279955962954019(Long),client(String),client(String),93.99(java.math.BigDecimal),null(Long),null(String),testOneTime(String),(String),null(String),null(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] insert record:1
+[INFO] [Bee] update SQL: update orders set name=?, remark=? where userid=? and total=?   [values]: client(String),testOneTime(String),client(String),93.99(java.math.BigDecimal)
+[INFO]  | <--  Affected rows: 0
+[INFO] updateNum1:  0
+[INFO] [Bee] update SQL: update orders set name=? where userid=? and total=? and remark=?   [values]: client(String),client(String),93.99(java.math.BigDecimal),testOneTime(String)
+[INFO]  | <--  Affected rows: 0
+[INFO] updateNum2:  0
+[INFO] [Bee] update SQL: update orders set name=? where userid=? and total=? and remark=? and sequence=?   [values]: client(String),client(String),93.99(java.math.BigDecimal),testOneTime(String),(String)
+[INFO]  | <--  Affected rows: 0
+[INFO] updateNum4:  0
+[INFO] [Bee] update SQL: update orders set name=? where userid=? and total=? and orderid is null and createtime is null and remark=? and abc is null and updatetime is null   [values]: client(String),client(String),93.99(java.math.BigDecimal),testOneTime(String)
+[INFO]  | <--  Affected rows: 0
+[INFO] updateNum5:  0
+[INFO] [Bee] update SQL: update orders set name=? where userid=? and total=? and orderid is null and createtime is null and remark=? and sequence=? and abc is null and updatetime is null   [values]: client(String),client(String),93.99(java.math.BigDecimal),testOneTime(String),(String)
+[INFO]  | <--  Affected rows: 0
+[INFO] updateNum6:  0
+[INFO] [Bee] update SQL: update orders set name=?, total=? where userid=? and remark=? and sequence=?   [values]: client(String),93.99(java.math.BigDecimal),client(String),testOneTime(String),(String)
+[INFO]  | <--  Affected rows: 0
+[INFO] updateNum4_2:  0
+[INFO] [Bee] update SQL: update orders set name=?, total=? where userid=? and orderid is null and createtime is null and remark=? and abc is null and updatetime is null   [values]: client(String),93.99(java.math.BigDecimal),client(String),testOneTime(String)
+[INFO]  | <--  Affected rows: 4
+[INFO] updateNum5_2:  4
+[INFO] [Bee] update SQL: update orders set name=?, total=? where userid=? and orderid is null and createtime is null and remark=? and sequence=? and abc is null and updatetime is null   [values]: client(String),93.99(java.math.BigDecimal),client(String),testOneTime(String),(String)
+[INFO]  | <--  Affected rows: 0
+[INFO] updateNum6_2:  0
+[INFO] [Bee] select fun SQL : select count(total) from orders where userid=? and name=? and total=? and remark=?   [values]: client(String),client(String),93.99(java.math.BigDecimal),testOneTime(String)
+[INFO] [Bee] select fun SQL : select max(total) from orders where userid=? and name=? and total=? and remark=?   [values]: client(String),client(String),93.99(java.math.BigDecimal),testOneTime(String)
+[INFO] [Bee] select fun SQL : select min(total) from orders where userid=? and name=? and total=? and remark=?   [values]: client(String),client(String),93.99(java.math.BigDecimal),testOneTime(String)
+[INFO] [Bee] select fun SQL : select avg(total) from orders where userid=? and name=? and total=? and remark=?   [values]: client(String),client(String),93.99(java.math.BigDecimal),testOneTime(String)
+[INFO] [Bee] select fun SQL : select sum(total) from orders where userid=? and name=? and total=? and remark=?   [values]: client(String),client(String),93.99(java.math.BigDecimal),testOneTime(String)
+[INFO] funCount:0
+[INFO] funMax:
+[INFO] funMin:
+[INFO] funAvg:
+[INFO] funSum:
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total,remark) values (?,?,?,?,?)   [values]: 100(Long),client00(String),client01(String),93.99(java.math.BigDecimal),testOneTime(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] insert record:1
+[INFO] [Bee] update SQL: update orders set userid=? , name=? , total=? , remark=? , sequence=? where id=?   [values]: client00(String),client01(String),93.99(java.math.BigDecimal),testOneTime(String),(String),100(Long)
+[INFO]  | <--  Affected rows: 1
+[INFO] updateNum8:  1
+[INFO] [Bee] update SQL: update orders set userid=? , name=? , total=? , orderid =null , createtime =null , remark=? , abc =null , updatetime =null where id=?   [values]: client00(String),client01(String),93.99(java.math.BigDecimal),testOneTime(String),100(Long)
+[INFO]  | <--  Affected rows: 1
+[INFO] updateNum9:  1
+[INFO] [Bee] update SQL: update orders set userid=? , name=? , total=? , orderid =null , createtime =null , remark=? , sequence=? , abc =null , updatetime =null where id=?   [values]: client00(String),client01(String),93.99(java.math.BigDecimal),testOneTime(String),(String),100(Long)
+[INFO]  | <--  Affected rows: 1
+[INFO] updateNum10:  1
+[INFO] [Bee] delete SQL: delete from orders where id=? and userid=? and name=? and total=? and remark=?   [values]: 100(Long),client00(String),client01(String),93.99(java.math.BigDecimal),testOneTime(String)
+[INFO]  | <--  Affected rows: 0
+[INFO] deleteNum: 0
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 1004(Long),client01(String),null(String),91(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:1 ,  [values]: 1005(Long),client02(String),null(String),20(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO]  | <-- index[0~1] Affected rows: 2
+[INFO] [Bee] --> index:2 ,  [values]: 1006(Long),client03(String),null(String),23(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO]  | <-- index[2~2] Affected rows: 1
+[INFO]  | <--  Affected rows: 3
+[INFO] 3
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 1007(Long),client01(String),null(String),91(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:1 ,  [values]: 1008(Long),client02(String),null(String),20(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:2 ,  [values]: 1009(Long),client03(String),null(String),23(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO]  | <-- index[0~2] Affected rows: 3
+[INFO]  | <--  Affected rows: 3
+[INFO] 3
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 10010(Long),client01(String),null(String),91(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:1 ,  [values]: 10011(Long),client02(String),null(String),20(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:2 ,  [values]: 10012(Long),client03(String),null(String),23(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO]  | <-- index[0~2] Affected rows: 3
+[INFO]  | <--  Affected rows: 3
+[INFO] 3
+[INFO] [Bee] select SQL(entity, selectFields): select name, total from orders where userid=?   [values]: bee(String)
+[INFO]  | <--  select rows: 6
+[INFO] 6
+[INFO] [Bee] select SQL(return List<String[]>): select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=?   [values]: client01(String)
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] select SQL(entity, selectFields): select id, userid, total, createtime from orders where userid=?   [values]: client01(String)
+[INFO]  | <--  select rows: 3
+[INFO] 1007  , 
+[INFO] client01  , 
+[INFO] 91  , 
+[INFO] null  , 
+[INFO] 
+[INFO] 1004  , 
+[INFO] client01  , 
+[INFO] 91  , 
+[INFO] null  , 
+[INFO] 
+[INFO] 10010  , 
+[INFO] client01  , 
+[INFO] 91  , 
+[INFO] null  , 
+[INFO] 
+[INFO] test paging
+[INFO] Oracle
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where remark=?   [values]: testOneTime(String)
+[INFO]  | <--  select rows: 14
+[INFO] [Bee] select SQL(entity, size): select * from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where remark=? ) where rownum <= ?   [values]: testOneTime(String),3(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] select SQL(entity, start, size): select * from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where remark=? ) where rownum <= ?   [values]: testOneTime(String),3(Integer)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 3
+[INFO] Orders[id=1279955962954017,userid=client,orderid=null,name=client,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954019,userid=client,orderid=null,name=client,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1007,userid=client01,orderid=null,name=null,total=91,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] select SQL(entity, size): select * from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where remark=? ) where rownum <= ?   [values]: testOneTime(String),6(Integer)
+[INFO]  | <--  select rows: 6
+[INFO] [Bee] select SQL(entity, start, size): select * from ( select table_.*, rownum rn_ from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where remark=? ) table_ where rownum < ?) where rn_ >= ?   [values]: testOneTime(String),8(Integer),2(Integer)
+[INFO]  | <--  select rows: 6
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 100018(Long),client18(String),null(String),18.18(java.math.BigDecimal),null(Long),null(String),test insert and delete(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:1 ,  [values]: 100019(Long),client19(String),null(String),19.19(java.math.BigDecimal),null(Long),null(String),test insert and delete(String),null(String),null(String),null(String)
+[INFO]  | <-- index[0~1] Affected rows: 2
+[INFO] [Bee] --> index:2 ,  [values]: 100020(Long),client20(String),null(String),20.20(java.math.BigDecimal),null(Long),null(String),test insert and delete(String),null(String),null(String),null(String)
+[INFO]  | <-- index[2~2] Affected rows: 1
+[INFO]  | <--  Affected rows: 3
+[INFO] [Bee] delete SQL: delete from orders where remark=?   [values]: test insert and delete(String)
+[INFO]  | <--  Affected rows: 3
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 100018(Long),client18(String),null(String),18.18(java.math.BigDecimal),null(Long),null(String),test insert and delete(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:1 ,  [values]: 100019(Long),client19(String),null(String),19.19(java.math.BigDecimal),null(Long),null(String),test insert and delete(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:2 ,  [values]: 100020(Long),client20(String),null(String),20.20(java.math.BigDecimal),null(Long),null(String),test insert and delete(String),null(String),null(String),null(String)
+[INFO]  | <-- index[0~2] Affected rows: 3
+[INFO]  | <--  Affected rows: 3
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,orderid,createtime,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 100021(Long),client18(String),null(String),18.18(java.math.BigDecimal),null(Long),null(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:1 ,  [values]: 100022(Long),client19(String),null(String),19.19(java.math.BigDecimal),null(Long),null(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:2 ,  [values]: 100023(Long),client20(String),null(String),20.20(java.math.BigDecimal),null(Long),null(String),null(String),null(String),null(String)
+[INFO]  | <-- index[0~2] Affected rows: 3
+[INFO]  | <--  Affected rows: 3
+[INFO] [Bee] select fun SQL : select count(*) from orders where remark=?   [values]: test insert and delete(String)
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where remark=?   [values]: test insert and delete(String)
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] selectJson SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where remark=?   [values]: test insert and delete(String)
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where remark=? and id>=?   [values]: test insert and delete(String),100018(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] selectJson SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where remark=? and id>=?   [values]: test insert and delete(String),100018(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] select fun SQL : select count(*) from orders where remark=? and id>=?   [values]: test insert and delete(String),100018(Integer)
+[INFO] [Bee] selectOrderBy SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where remark=? order by id asc   [values]: test insert and delete(String)
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] selectOrderBy SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where remark=? order by id asc,name desc   [values]: test insert and delete(String)
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] select SQL(entity, size): select * from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and remark=? ) where rownum <= ?   [values]: 100021(Long),test insert and delete(String),2(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL(return List<String[]>): select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=? and remark=? and id>=?   [values]: 100021(Long),test insert and delete(String),100018(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL(entity, start, size, selectFields): select * from ( select id, remark, userid from orders where id=? and remark=? ) where rownum <= ?   [values]: 100021(Long),test insert and delete(String),10(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select fun SQL : select max(total) from orders where id=? and remark=? and id>=?   [values]: 100021(Long),test insert and delete(String),100018(Integer)
+[INFO] [Bee] update SQL(updateBy): update orders set remark=? where id=? and id>=?   [values]: test insert and delete(String),100021(Long),100018(Integer)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] update SQL :update orders set remark=? where id=? and remark=? and id=?   [values]: test update(String),100021(Long),test insert and delete(String),100023(Integer)
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] delete SQL: delete from orders where id=? and remark=?   [values]: 100021(Long),test insert and delete(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] delete SQL: delete from orders where id=? and remark=? and id>=?   [values]: 100021(Long),test insert and delete(String),100018(Integer)
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] deleteById SQL: delete from orders where id=?   [values]: 100021(Integer)
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] deleteById SQL: delete from orders where id=?   [values]: 100022(Long)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] deleteById SQL: delete from orders where id=?   [values]: 100023(Long)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL(entity, start, size, selectFields): select * from ( select table_.*, rownum rn_ from ( select id, remark, userid from orders where id=? and remark=? ) table_ where rownum < ?) where rn_ >= ?   [values]: 100021(Long),test insert and delete(String),15(Integer),5(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] =====================================
+[INFO] [Bee] select SQL: select * from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? and id=? ) where rownum <= ? for update   [values]: bee(String),100003(Integer),300(Integer)
+[INFO]  | <--  select rows: 1
+[INFO] Orders[id=100003,userid=bee,orderid=1,name=Bee,total=97,createtime=2020-03-02 11:29:28,remark=testx%,sequence=12345603,abc=test3,updatetime=2020-03-02 16:34:19]
+[INFO] [Bee] update SQL: update orders set remark=? where id=?   [values]: test(String),100003(Long)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL(return List<String[]>): select distinct(userid) from orders
+[INFO]  | <--  select rows: 10
+[INFO] [Bee] select SQL(return List<String[]>): select distinct(userid) unique_userid from orders where name is not null
+[INFO]  | <--  select rows: 4
+[INFO] client   
+[INFO] Bee   
+[INFO] bee   
+[INFO] client00   
+[INFO] [Bee] select fun SQL : select count(*) from orders where id=?   [values]: 1005(Long)
+[INFO] [Bee] insert SQL: insert into orders(id,name,remark) values (?,?,?)   [values]: 1279955962954038(Long),update(T oldEntity,T newEntity)(String),update(T oldEntity,T newEntity)(String)
+[INFO]  | <--  Affected rows: 1
+[DEBUG] org.teasoft.exam.bee.osql.entity.Orders
+[DEBUG] org.teasoft.exam.bee.osql.entity.Orders
+[INFO] update(T oldEntity, T newEntity), 
+[INFO] [Bee] update SQL :update orders set remark=? where name=? and remark=?   [values]: by update with : update(T oldEntity,T newEntity)(String),update(T oldEntity,T newEntity)(String),update(T oldEntity,T newEntity)(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] delete SQL: delete from orders where remark=?   [values]: by update with : update(T oldEntity,T newEntity)(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL(entity, selectFields): select name, total from orders where userid=?   [values]: bee(String)
+[INFO]  | <--  select rows: 6
+[WARN] in method selectById, id is null! 
+[INFO] [Bee] insert SQL: insert into orders(id,userid) values (?,?)   [values]: 1279955962954039(Long),bee(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] =============SuidRichExam=========================end==
+[INFO] [bee-exam] ====================SuidRichExam.test======end.
+
+[INFO] [bee-exam] ====================UpdateByExam.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] update SQL(updateBy): update orders set total=? , remark=? where userid=?   [values]: 100(java.math.BigDecimal),new2(String),bee(String)
+[INFO]  | <--  Affected rows: 7
+[INFO] update number:  7
+[INFO] IncludeType.INCLUDE_BOTH
+[INFO] [Bee] update SQL(updateBy): update orders set total=? , orderid =null , createtime =null , remark=? , sequence=? , abc =null , updatetime =null where userid=? and name is null   [values]: 100(java.math.BigDecimal),new2(String),(String),bee(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] update number:  1
+[INFO] IncludeType.INCLUDE_NULL
+[INFO] [Bee] update SQL(updateBy): update orders set name =null , total=? , orderid =null , createtime =null , remark=? , abc =null , updatetime =null where userid=?   [values]: 100(java.math.BigDecimal),new2(String),bee(String)
+[INFO]  | <--  Affected rows: 7
+[INFO] IncludeType.INCLUDE_EMPTY
+[INFO] [Bee] update SQL(updateBy): update orders set total=? , remark=? , sequence=? where userid=?   [values]: 100(java.math.BigDecimal),new2(String),(String),bee(String)
+[INFO]  | <--  Affected rows: 7
+[INFO] [bee-exam] ====================UpdateByExam.test======end.
+
+[INFO] [bee-exam] ====================PreparedSqlExam.test======start:
+[INFO] getCustomSql:  select * from orders where userid=?
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] PreparedSql select SQL: select * from ( select * from orders where userid=? ) where rownum <= ?   [values]: bee(String),3(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] PreparedSql select SQL: select * from ( select * from orders where userid=? ) where rownum <= ?   [values]: bee(String),3(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] PreparedSql select SQL: select * from ( select * from orders where userid=? ) where rownum <= ?   [values]: bee(String),3(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] PreparedSql selectSomeField SQL: select * from ( select table_.*, rownum rn_ from ( select * from orders where userid=? ) table_ where rownum < ?) where rn_ >= ?   [values]: bee(String),5(Integer),2(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] Orders[id=1279955962954039,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100002,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954012,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] PreparedSql selectJson SQL: select * from ( select * from orders where userid=? ) where rownum <= ?   [values]: bee(String),3(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] [{"id":1279955962954015,"userid":"bee","orderid":null,"name":null,"total":100,"createtime":null,"remark":"new2","sequence":null,"abc":null,"updatetime":null},{"id":1279955962954039,"userid":"bee","orderid":null,"name":null,"total":100,"createtime":null,"remark":"new2","sequence":null,"abc":null,"updatetime":null},{"id":100002,"userid":"bee","orderid":null,"name":null,"total":100,"createtime":null,"remark":"new2","sequence":null,"abc":null,"updatetime":null}]
+[INFO] getCustomSql:  select * from orders where userid=#{userid}
+[INFO] [Bee] PreparedSql selectSomeField SQL: select * from ( select * from orders where userid=? ) where rownum <= ?   [values]: bee(String),3(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] PreparedSql selectSomeField SQL: select * from ( select * from orders where userid=? ) where rownum <= ?   [values]: bee(String),3(Integer)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 3
+[INFO] Orders[id=1279955962954015,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954039,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100002,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] PreparedSql selectJson SQL: select * from ( select * from orders where userid=? ) where rownum <= ?   [values]: bee(String),3(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] [{"id":1279955962954015,"userid":"bee","orderid":null,"name":null,"total":100,"createtime":null,"remark":"new2","sequence":null,"abc":null,"updatetime":null},{"id":1279955962954039,"userid":"bee","orderid":null,"name":null,"total":100,"createtime":null,"remark":"new2","sequence":null,"abc":null,"updatetime":null},{"id":100002,"userid":"bee","orderid":null,"name":null,"total":100,"createtime":null,"remark":"new2","sequence":null,"abc":null,"updatetime":null}]
+[INFO] getCustomSql:  select * from orders where name like #{name%}
+[INFO] [Bee] PreparedSql select SQL: select * from ( select * from orders where name like ? ) where rownum <= ?   [values]: Bee%(String),3(Integer)
+[INFO]  | <--  select rows: 1
+[INFO] Orders[id=100001,userid=Bee,orderid=1,name=Bee(ORM Framework),total=95,createtime=2020-03-02 11:29:28,remark=test,sequence=12345601,abc=test1,updatetime=null]
+[INFO] [Bee] PreparedSql select SQL: select * from ( select * from orders where name like ? ) where rownum <= ?   [values]: %Bee(String),3(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] PreparedSql select SQL: select * from ( select * from orders where name like ? ) where rownum <= ?   [values]: %Bee%(String),3(Integer)
+[INFO]  | <--  select rows: 1
+[INFO] getCustomSql:  select * from orders
+[INFO] [Bee] PreparedSql select SQL: select * from ( select * from orders ) where rownum <= ?   [values]: 3(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] Orders[id=1279955962954015,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954017,userid=client,orderid=null,name=client,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954019,userid=client,orderid=null,name=client,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] PreparedSql select SQL: select * from orders
+[INFO]  | <--  select rows: 25
+[INFO] [Bee] PreparedSql select SQL: select * from ( select * from orders ) where rownum <= ?   [values]: 3(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] PreparedSql select SQL: select orders.userid,test_user.name,orders.total,orders.createtime from orders,test_user where orders.userid=test_user.username and orders.sequence=?   [values]: 123456(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] PreparedSql modify SQL: delete from orders where id=121 or id=122 or id=123
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee]  insert[] SQL : INSERT INTO orders(id,name,userid) VALUES (?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 121(Long),bee(String),1001(String)
+[INFO] [Bee] --> index:1 ,  [values]: 122(Long),bee(String),1001(String)
+[INFO]  | <-- index[0~1] Affected rows: 2
+[INFO] [Bee] --> index:2 ,  [values]: 123(Long),bee(String),1001(String)
+[INFO]  | <-- index[2~2] Affected rows: 1
+[INFO]  | <--  Affected rows: 3
+[INFO] [Bee] PreparedSql modify SQL: delete from orders where id=121 or id=122 or id=123
+[INFO]  | <--  Affected rows: 3
+[INFO] [Bee]  insert[] SQL : INSERT INTO orders(id,name,userid) VALUES (?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 121(Long),bee(String),1001(String)
+[INFO] [Bee] --> index:1 ,  [values]: 122(Long),bee(String),1001(String)
+[INFO] [Bee] --> index:2 ,  [values]: 123(Long),bee(String),1001(String)
+[INFO]  | <-- index[0~2] Affected rows: 3
+[INFO]  | <--  Affected rows: 3
+[INFO] [bee-exam] ====================PreparedSqlExam.test======end.
+
+[INFO] [bee-exam] ====================PreparedSqlUpdateExam.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] PreparedSql modify SQL: update orders set remark=?,abc=? where id=?   [values]: null(Object),abc-changed(String),11(Integer)
+[INFO]  | <--  Affected rows: 0
+[INFO] 0
+[INFO] [Bee] PreparedSql modify SQL: update orders set remark=?,abc=? where id=? and remark=?   [values]: null(Object),abc-changed(String),11(Integer),null(Object)
+[INFO]  | <--  Affected rows: 0
+[INFO] 0
+[INFO] [Bee] PreparedSql modify SQL: update orders set remark=?,abc=? where id=? and remark is null   [values]: null(Object),abc-changed(String),11(Integer)
+[INFO]  | <--  Affected rows: 0
+[INFO] 0
+[INFO] [bee-exam] ====================PreparedSqlUpdateExam.test======end.
+
+[INFO] [bee-exam] ====================TransactionExam.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] JdbcTransaction begin. 
+[INFO] [Bee] insert SQL: insert into test_user(id,password,username) values (?,?,?)   [values]: 1279956269137925(Long),bee-user(String),testuser(String)
+[ERROR] In TransactionExam (BeeException):ORA-01438: 值大于为此列指定的允许精度
+
+[INFO] [Bee] select SQL(entity, selectFields): select name, total from orders where userid=?   [values]: bee(String)
+[INFO]  | <--  select rows: 7
+[INFO] [bee-exam] ====================TransactionExam.test======end.
+
+[INFO] [bee-exam] ====================ConditionExam.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] select SQL: select * from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid like ? order by userid asc ) where rownum <= ?   [values]: bee%(String),100(Integer)
+[INFO]  | <--  select rows: 7
+[INFO] Orders[id=1279955962954015,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954039,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100002,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954012,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954013,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954014,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100003,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] select SQL: select * from ( select userid, total, createtime from orders where userid like ? order by userid asc ) where rownum <= ?   [values]: bee%(String),100(Integer)
+[INFO]  | <--  select rows: 7
+[INFO] Orders[id=null,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] [bee-exam] ====================ConditionExam.test======end.
+
+[INFO] [bee-exam] ====================MoreTableExam.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.bee.osql.moretable.entity.Orders, alias is: orders
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.bee.osql.moretable.entity.TestUser, alias is: test_user
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[INFO] [Bee] select MoreTable SQL: select * from ( select table_.*, rownum rn_ from ( select orders.id,orders.userid,orders.name,orders.total,orders.createtime,orders.remark,orders.sequence,orders.abc,orders.updatetime,test_user.id test_user_id_$,test_user.email,test_user.last_name,test_user.name test_user_name_$,test_user.password,test_user.username,test_user.createtime test_user_createtime_$ from orders orders left join test_user test_user on orders.userid = test_user.username where orders.userid = ? and orders.name = ? and test_user.name = ? ) table_ where rownum < ?) where rn_ >= ?   [values]: bee(String),Bee(String),Bee(String),12(Integer),2(Integer)
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[INFO]  | <--  select rows: 0
+[INFO] size of records:0
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.bee.osql.moretable.entity.Orders, alias is: orders
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.bee.osql.moretable.entity.TestUser, alias is: test_user
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[INFO] [Bee] select MoreTable SQL: select * from ( select orders.id,orders.userid,orders.name,orders.total,orders.createtime,orders.remark,orders.sequence,orders.abc,orders.updatetime,test_user.id test_user_id_$,test_user.email,test_user.last_name,test_user.name test_user_name_$,test_user.password,test_user.username,test_user.createtime test_user_createtime_$ from orders orders left join test_user test_user on orders.userid = test_user.username where orders.userid = ? and orders.name = ? and test_user.name = ? and orders.id>=? ) where rownum <= ?   [values]: bee(String),Bee(String),Bee(String),1001(Integer),5(Integer)
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[INFO]  | <--  select rows: 0
+[INFO] size of records:0
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.bee.osql.moretable.entity.Orders, alias is: orders
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.bee.osql.moretable.entity.TestUser, alias is: test_user
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[INFO] [Bee] select MoreTable SQL: select * from ( select orders.id, test_user.id test_user_id_$, orders.userid, orders.total, orders.createtime from orders orders left join test_user test_user on orders.userid = test_user.username where orders.userid = ? and orders.name = ? and test_user.name = ? and orders.id>=? ) where rownum <= ?   [values]: bee(String),Bee(String),Bee(String),1001(Integer),5(Integer)
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[INFO]  | <--  select rows: 0
+[INFO] size of records:0
+[INFO] [bee-exam] ====================MoreTableExam.test======end.
+
+[INFO] [bee-exam] ====================UseJson.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] selectJson SQL: select id,email,last_name,name,password,username,createtime from test_user
+[INFO]  | <--  select rows: 2
+[INFO] selectJson(new TestUser()):
+[INFO] [{"id":800001,"email":"beeUser@163.com","lastName":null,"name":"Bee","password":"bee","username":"bee","createtime":null},{"id":800002,"email":"honey@163.com","lastName":"cn","name":"Honey","password":"honey","username":"honey","createtime":null}]
+[INFO] 将直接查询的json转成对象:
+[INFO] TestUser[id=800001,email=beeUser@163.com,lastName=null,name=Bee,password=bee,username=bee,createtime=null]
+[INFO] TestUser[id=800002,email=honey@163.com,lastName=cn,name=Honey,password=honey,username=honey,createtime=null]
+[INFO] [Bee] select SQL: select id,email,last_name,name,password,username,createtime from test_user
+[INFO]  | <--  select rows: 2
+[INFO] TestUser[id=800001,email=beeUser@163.com,lastName=null,name=Bee,password=bee,username=bee,createtime=null]
+[INFO] TestUser[id=800002,email=honey@163.com,lastName=cn,name=Honey,password=honey,username=honey,createtime=null]
+[INFO] [Bee] selectJson SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders
+[INFO]  | <--  select rows: 28
+[INFO] selectJson(new Orders()):
+[INFO] [{"id":121,"userid":"1001","name":"bee","total":null,"orderid":null,"createtime":null,"remark":null,"sequence":null,"abc":null,"updatetime":null},{"id":122,"userid":"1001","name":"bee","total":null,"orderid":null,"createtime":null,"remark":null,"sequence":null,"abc":null,"updatetime":null},{"id":123,"userid":"1001","name":"bee","total":null,"orderid":null,"createtime":null,"remark":null,"sequence":null,"abc":null,"updatetime":null},{"id":1279955962954015,"userid":"bee","name":null,"total":100,"orderid":null,"createtime":null,"remark":"new2","sequence":null,"abc":null,"updatetime":null},{"id":1279955962954017,"userid":"client","name":"client","total":94,"orderid":null,"createtime":null,"remark":"testOneTime","sequence":null,"abc":null,"updatetime":null},{"id":1279955962954019,"userid":"client","name":"client","total":94,"orderid":null,"createtime":null,"remark":"testOneTime","sequence":null,"abc":null,"updatetime":null},{"id":1007,"userid":"client01","name":null,"total":91,"orderid":null,"createtime":null,"remark":"testOneTime","sequence":null,"abc":null,"updatetime":null},{"id":1008,"userid":"client02","name":null,"total":20,"orderid":null,"createtime":null,"remark":"testOneTime","sequence":null,"abc":null,"updatetime":null},{"id":1009,"userid":"client03","name":null,"total":23,"orderid":null,"createtime":null,"remark":"testOneTime","sequence":null,"abc":null,"updatetime":null},{"id":100018,"userid":"client18","name":null,"total":18,"orderid":null,"createtime":null,"remark":"test insert and delete","sequence":null,"abc":null,"updatetime":null},{"id":100019,"userid":"client19","name":null,"total":19,"orderid":null,"createtime":null,"remark":"test insert and delete","sequence":null,"abc":null,"updatetime":null},{"id":100020,"userid":"client20","name":null,"total":20,"orderid":null,"createtime":null,"remark":"test insert and delete","sequence":null,"abc":null,"updatetime":null},{"id":1279955962954039,"userid":"bee","name":null,"total":100,"orderid":null,"createtime":null,"remark":"new2","sequence":null,"abc":null,"updatetime":null},{"id":100002,"userid":"bee","name":null,"total":100,"orderid":null,"createtime":null,"remark":"new2","sequence":null,"abc":null,"updatetime":null},{"id":1279955962954012,"userid":"bee","name":null,"total":100,"orderid":null,"createtime":null,"remark":"new2","sequence":null,"abc":null,"updatetime":null},{"id":1279955962954013,"userid":"bee","name":null,"total":100,"orderid":null,"createtime":null,"remark":"new2","sequence":null,"abc":null,"updatetime":null},{"id":1279955962954014,"userid":"bee","name":null,"total":100,"orderid":null,"createtime":null,"remark":"new2","sequence":null,"abc":null,"updatetime":null},{"id":1279955962954018,"userid":"client","name":"client","total":94,"orderid":null,"createtime":null,"remark":"testOneTime","sequence":null,"abc":null,"updatetime":null},{"id":1004,"userid":"client01","name":null,"total":91,"orderid":null,"createtime":null,"remark":"testOneTime","sequence":null,"abc":null,"updatetime":null},{"id":1005,"userid":"client02","name":null,"total":20,"orderid":null,"createtime":null,"remark":"testOneTime","sequence":null,"abc":null,"updatetime":null},{"id":1006,"userid":"client03","name":null,"total":23,"orderid":null,"createtime":null,"remark":"testOneTime","sequence":null,"abc":null,"updatetime":null},{"id":10010,"userid":"client01","name":null,"total":91,"orderid":null,"createtime":null,"remark":"testOneTime","sequence":null,"abc":null,"updatetime":null},{"id":10011,"userid":"client02","name":null,"total":20,"orderid":null,"createtime":null,"remark":"testOneTime","sequence":null,"abc":null,"updatetime":null},{"id":10012,"userid":"client03","name":null,"total":23,"orderid":null,"createtime":null,"remark":"testOneTime","sequence":null,"abc":null,"updatetime":null},{"id":100003,"userid":"bee","name":null,"total":100,"orderid":null,"createtime":null,"remark":"new2","sequence":null,"abc":null,"updatetime":null},{"id":100001,"userid":"Bee","name":"Bee(ORM Framework)","total":95,"orderid":1,"createtime":"2020-03-02 11:29:28","remark":"test","sequence":"12345601","abc":"test1","updatetime":null},{"id":1279955962954016,"userid":"client","name":"client","total":94,"orderid":null,"createtime":null,"remark":"testOneTime","sequence":null,"abc":null,"updatetime":null},{"id":100,"userid":"client00","name":"client01","total":94,"orderid":null,"createtime":null,"remark":"testOneTime","sequence":null,"abc":null,"updatetime":null}]
+[INFO] 将直接查询的json转成对象:
+[INFO] Orders[id=121,userid=1001,orderid=null,name=bee,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=122,userid=1001,orderid=null,name=bee,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=123,userid=1001,orderid=null,name=bee,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954015,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954017,userid=client,orderid=null,name=client,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954019,userid=client,orderid=null,name=client,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1007,userid=client01,orderid=null,name=null,total=91,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1008,userid=client02,orderid=null,name=null,total=20,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1009,userid=client03,orderid=null,name=null,total=23,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100018,userid=client18,orderid=null,name=null,total=18,createtime=null,remark=test insert and delete,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100019,userid=client19,orderid=null,name=null,total=19,createtime=null,remark=test insert and delete,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100020,userid=client20,orderid=null,name=null,total=20,createtime=null,remark=test insert and delete,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954039,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100002,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954012,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954013,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954014,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954018,userid=client,orderid=null,name=client,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1004,userid=client01,orderid=null,name=null,total=91,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1005,userid=client02,orderid=null,name=null,total=20,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1006,userid=client03,orderid=null,name=null,total=23,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=10010,userid=client01,orderid=null,name=null,total=91,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=10011,userid=client02,orderid=null,name=null,total=20,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=10012,userid=client03,orderid=null,name=null,total=23,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100003,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100001,userid=Bee,orderid=1,name=Bee(ORM Framework),total=95,createtime=2020-03-02 11:29:28,remark=test,sequence=12345601,abc=test1,updatetime=null]
+[INFO] Orders[id=1279955962954016,userid=client,orderid=null,name=client,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100,userid=client00,orderid=null,name=client01,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders
+[INFO]  | <--  select rows: 28
+[INFO] Orders[id=121,userid=1001,orderid=null,name=bee,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=122,userid=1001,orderid=null,name=bee,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=123,userid=1001,orderid=null,name=bee,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954015,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954017,userid=client,orderid=null,name=client,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954019,userid=client,orderid=null,name=client,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1007,userid=client01,orderid=null,name=null,total=91,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1008,userid=client02,orderid=null,name=null,total=20,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1009,userid=client03,orderid=null,name=null,total=23,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100018,userid=client18,orderid=null,name=null,total=18,createtime=null,remark=test insert and delete,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100019,userid=client19,orderid=null,name=null,total=19,createtime=null,remark=test insert and delete,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100020,userid=client20,orderid=null,name=null,total=20,createtime=null,remark=test insert and delete,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954039,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100002,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954012,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954013,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954014,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954018,userid=client,orderid=null,name=client,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1004,userid=client01,orderid=null,name=null,total=91,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1005,userid=client02,orderid=null,name=null,total=20,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1006,userid=client03,orderid=null,name=null,total=23,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=10010,userid=client01,orderid=null,name=null,total=91,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=10011,userid=client02,orderid=null,name=null,total=20,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=10012,userid=client03,orderid=null,name=null,total=23,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100003,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100001,userid=Bee,orderid=1,name=Bee(ORM Framework),total=95,createtime=2020-03-02 11:29:28,remark=test,sequence=12345601,abc=test1,updatetime=null]
+[INFO] Orders[id=1279955962954016,userid=client,orderid=null,name=client,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100,userid=client00,orderid=null,name=client01,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] [bee-exam] ====================UseJson.test======end.
+
+[INFO] [bee-exam] ====================BugTest.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 28
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 28
+[INFO] [Bee] selectJson SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders
+[INFO] ==========get from Cache.
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 10010(Long),client01(String),null(String),91(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:1 ,  [values]: 10011(Long),client02(String),null(String),20(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[WARN] ORA-00001: 违反唯一约束条件 (SCOTT.SYS_C0017977)
+
+[INFO]  | <-- index[0~1] Affected rows: 0  , this batch have exception !
+[INFO] [Bee] --> index:2 ,  [values]: 1012(Long),client03(String),null(String),23(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO]  | <-- index[2~2] Affected rows: 1
+[INFO]  | <--  Affected rows: 1
+[INFO] 1
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders
+[INFO]  | <--  select rows: 29
+[INFO] [Bee] PreparedSql select SQL: select * from orders
+[INFO]  | <--  select rows: 29
+[INFO] [Bee] PreparedSql select SQL: select * from orders
+[INFO]  | <--  select rows: 29
+[WARN] Use Condition's set method(s) in SELECT type, but it just effect in UPDATE type! Involved field(s): [test]
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where remark like ?   [values]: test\%%(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] deleteById SQL: delete from orders where id=?   [values]: 100021(Integer)
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] deleteById SQL: delete from orders where id=?   [values]: 100022(Long)
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] deleteById SQL: delete from orders where id=?   [values]: 100023(Long)
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] selectOrderBy SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where remark=? order by id asc,name desc   [values]: testOneTime(String)
+[INFO]  | <--  select rows: 15
+[INFO] Orders[id=100,userid=client00,orderid=null,name=client01,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1004,userid=client01,orderid=null,name=null,total=91,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1005,userid=client02,orderid=null,name=null,total=20,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1006,userid=client03,orderid=null,name=null,total=23,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1007,userid=client01,orderid=null,name=null,total=91,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1008,userid=client02,orderid=null,name=null,total=20,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1009,userid=client03,orderid=null,name=null,total=23,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1012,userid=client03,orderid=null,name=null,total=23,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=10010,userid=client01,orderid=null,name=null,total=91,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=10011,userid=client02,orderid=null,name=null,total=20,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=10012,userid=client03,orderid=null,name=null,total=23,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954016,userid=client,orderid=null,name=client,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954017,userid=client,orderid=null,name=client,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954018,userid=client,orderid=null,name=client,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954019,userid=client,orderid=null,name=client,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] selectById SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where id=?   [values]: 1012(Integer)
+[INFO]  | <--  select rows: 1
+[WARN] in method selectById, id is null! 
+[INFO] [Bee] update SQL :update orders set remark=? where id=? and total>=?   [values]: null(Object),1004(Long),90(Integer)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] update SQL :update orders set remark=? where id=? and remark=? and total>=?   [values]: null(Object),1004(Long),change Remark(String),90(Integer)
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] update SQL: update orders set remark=? where id=? and remark=? and total>=?   [values]: null(Object),1004(Long),change Remark(String),90(Integer)
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] update SQL: update orders set remark=? where id=? and total>=?   [values]: null(Object),1004(Long),90(Integer)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] update SQL: update orders set remark=?, total=null where id=? and remark=? and total>=?   [values]: null(Object),1004(Long),new2 remark(String),90(Integer)
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] update SQL: update orders set remark=null where id=?   [values]: 1004(Long)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] update SQL(updateBy): update orders set remark=? where id=?   [values]: change Remark(String),1004(Long)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] update SQL(updateBy): update orders set remark=? where total>=? and remark>=?   [values]: null(Object),90(Integer),old remark(String)
+[INFO]  | <--  Affected rows: 8
+[INFO] ------------------------------V1.11---------
+[INFO] [bee-exam] ====================BugTest.test======end.
+
+[INFO] [bee-exam] ====================UpdateSetExam.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] select SQL(entity, size): select * from ( select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc where biz_tag=? ) where rownum <= ?   [values]: test(String),2(Integer)
+[INFO]  | <--  select rows: 1
+[INFO] [Bee] update SQL :update leaf_alloc set max_id=max_id + step,version=version + ? where id=? and biz_tag=? and max_id=? and version=?   [values]: 1(Integer),456537470402562(Long),test(String),100(Long),1(Integer)
+[INFO]  | <--  Affected rows: 1
+[INFO] test setMultiply , update num: 1
+[INFO] [Bee] select SQL(entity, size): select * from ( select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc where biz_tag=? ) where rownum <= ?   [values]: test(String),2(Integer)
+[INFO]  | <--  select rows: 1
+[INFO] [Bee] update SQL :update leaf_alloc set max_id=?,version=version + ? where id=? and biz_tag=? and max_id=? and version=?   [values]: 10003(Integer),1(Integer),456537470402562(Long),test(String),200(Long),2(Integer)
+[INFO]  | <--  Affected rows: 1
+[INFO] test setMultiply , update num: 1
+[INFO] [bee-exam] ====================UpdateSetExam.test======end.
+
+[INFO] [bee-exam] ====================InsertTest.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total,remark) values (?,?,?,?,?)   [values]: 1279955962954043(Long),client(String),client(String),93.99(java.math.BigDecimal),testOneTime(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] 1
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total,remark) values (?,?,?,?,?)   [values]: 1279955962954044(Long),client(String),client(String),93.99(java.math.BigDecimal),testOneTime(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] 1
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 1279955962954045(Long),client(String),client(String),93.99(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:1 ,  [values]: 1279955962954046(Long),client(String),client(String),94.99(java.math.BigDecimal),null(Long),null(String),testOneTime(String),(String),null(String),null(String)
+[INFO] [Bee] --> index:2 ,  [values]: 1279955962954047(Long),client(String),Bee(String),95.99(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO]  | <-- index[0~2] Affected rows: 3
+[INFO]  | <--  Affected rows: 3
+[INFO] 3
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 1279955962954048(Long),client(String),client(String),93.99(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:1 ,  [values]: 1279955962954049(Long),client(String),client(String),94.99(java.math.BigDecimal),null(Long),null(String),testOneTime(String),(String),null(String),null(String)
+[INFO]  | <-- index[0~1] Affected rows: 2
+[INFO] [Bee] --> index:2 ,  [values]: 1279955962954050(Long),client(String),Bee(String),95.99(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO]  | <-- index[2~2] Affected rows: 1
+[INFO]  | <--  Affected rows: 3
+[INFO] 3
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? and name=? and total=? and remark=?   [values]: client(String),client(String),94.99(java.math.BigDecimal),testOneTime(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 1279955962954051(Long),client(String),client(String),93.99(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO]  | <-- index[0~0] Affected rows: 1
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 1279955962954052(Long),client(String),client(String),93.99(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO]  | <-- index[0~0] Affected rows: 1
+[INFO] [Bee] --> index:1 ,  [values]: 1279955962954053(Long),client(String),client(String),94.99(java.math.BigDecimal),null(Long),null(String),testOneTime(String),(String),null(String),null(String)
+[INFO]  | <-- index[1~1] Affected rows: 1
+[INFO] [Bee] --> index:2 ,  [values]: 1279955962954054(Long),client(String),Bee(String),95.99(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO]  | <-- index[2~2] Affected rows: 1
+[INFO]  | <--  Affected rows: 3
+[INFO] insertArray3's size : 3
+[INFO] -------------------------------
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 1279955962954055(Long),client(String),client(String),93.99(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:1 ,  [values]: 1279955962954056(Long),client(String),client(String),94.99(java.math.BigDecimal),null(Long),null(String),testOneTime(String),(String),null(String),null(String)
+[INFO]  | <-- index[0~1] Affected rows: 2
+[INFO] [Bee] --> index:2 ,  [values]: 1279955962954057(Long),client(String),Bee(String),95.99(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:3 ,  [values]: 1279955962954058(Long),orders3(String),null(String),null(java.math.BigDecimal),null(Long),null(String),null(String),null(String),null(String),null(String)
+[INFO]  | <-- index[2~3] Affected rows: 2
+[INFO] [Bee] --> index:4 ,  [values]: 1279955962954059(Long),orders4(String),null(String),null(java.math.BigDecimal),null(Long),null(String),null(String),null(String),null(String),null(String)
+[INFO]  | <-- index[4~4] Affected rows: 1
+[INFO]  | <--  Affected rows: 5
+[INFO] insertArray5's size : 5
+[INFO] [bee-exam] ====================InsertTest.test======end.
+
+[INFO] [bee-exam] ====================DynamicTableExam.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] select SQL: select id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime from Orders_202007
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] select SQL: select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc2
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] select SQL(entity, size): select * from ( select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc2 ) where rownum <= ?   [values]: 5(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] select SQL(entity, size): select * from ( select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc2 ) where rownum <= ?   [values]: 5(Integer)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 3
+[WARN] Auto table: parameter  ${version} in LeafAlloc${version} still has not value, will be ignore it!
+[INFO] [Bee] select SQL(entity, size): select * from ( select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc ) where rownum <= ?   [values]: 5(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] select SQL: select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc2
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 3
+[WARN] Auto table: parameter  ${version} in LeafAlloc${version} still has not value, will be ignore it!
+[INFO] [Bee] select SQL(entity, size): select * from ( select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc ) where rownum <= ?   [values]: 5(Integer)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 3
+[INFO] 3
+[INFO] [bee-exam] ====================DynamicTableExam.test======end.
+
+[INFO] [bee-exam] ====================MoreSQLFunction.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] selectJson SQL: select term, examno, subject, term,examno,subjectno, max(score) max_score, avg(score) avg_score, min(score) min_score from scores where status!=? group by term,examno,subjectno,subject order by term,examno,subjectno   [values]: FIN(String)
+[INFO] [bee-exam] ====================SelectFun.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] select fun SQL : select count(*) from scores where teacherno=?   [values]: 60001(String)
+[INFO] 0
+[INFO] [Bee] select SQL: select * from ( select id,classno,term,examno,subjectno,subject,stuno,name,teacherno,teachername,score,creater,createtime,updater,updatetime,remark,ext1,status,schoolno from scores where teacherno=? and status!=? and (classno=? or classno=?) ) where rownum <= ?   [values]: 60001(String),FIN(String),201(String),191(高中)(String),10(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] [bee-exam] ====================SelectFun.test======end.
+
+[INFO] [bee-exam] ====================MapSuidExam.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] In MapSuid, selectJson SQL: select name,password from test_user where name=? and last_name is null order by name   [values]: Bee(String)
+[INFO]  | <--  select rows: 1
+[INFO] [{"name":"Bee","password":"bee"}]
+[INFO] [Bee] In MapSuid, select List<Map> SQL: select name,password from test_user where name=? and last_name is null order by name   [values]: Bee(String)
+[INFO]  | <--  select rows: 1
+[INFO] [Bee] In MapSuid, select List<Map> SQL: select name,password from test_user where name=? and last_name is null order by name   [values]: Bee(String)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 1
+[INFO] [Bee] In MapSuid, select List<Map> SQL: select * from ( select name,password from test_user where name=? and last_name is null order by name ) where rownum <= 5   [values]: Bee(String)
+[INFO]  | <--  select rows: 1
+[INFO] [Bee] In MapSuid, select List<Map> SQL: select * from ( select table_.*, rownum rn_ from ( select name,password from test_user where name=? and last_name is null order by name ) table_ where rownum < 7) where rn_ >= 2   [values]: Bee(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] In MapSuid, selectOne Map SQL: select * from ( select table_.*, rownum rn_ from ( select name,password from test_user where name=? and last_name is null order by name ) table_ where rownum < 7) where rn_ >= 2   [values]: Bee(String)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] In MapSuid, selectOne Map SQL: select * from ( select table_.*, rownum rn_ from ( select name,password from test_user where name=? and last_name is null order by name ) table_ where rownum < 7) where rn_ >= 2   [values]: Bee(String)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] In MapSuid, insert SQL: insert into test_user (email,password,last_name,id) values (?,?,?,?)   [values]: test@gmail.com(String),password@gmail.com(String),MapSuid(String),1279956290109453(Long)
+[ERROR] In MapSuidExam (BeeException):ORA-01438: 值大于为此列指定的允许精度
+
+[INFO] [bee-exam] ====================MapSuidExam.test======end.
+
+[INFO] [bee-exam] ====================MapSuidExam24.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] In MapSuid, selectJson SQL: select name,password from test_user where name=? and last_name is null and id>=? order by name   [values]: Bee(String),10001(Integer)
+[INFO]  | <--  select rows: 1
+[INFO] [{"name":"Bee","password":"bee"}]
+[INFO] [Bee] In MapSuid, select List<Map> SQL: select name,password from test_user where name=? and last_name is null and id>=? order by name   [values]: Bee(String),10001(Integer)
+[INFO]  | <--  select rows: 1
+[INFO] [Bee] In MapSuid, select List<Map> SQL: select name,password from test_user where name=? and last_name is null and id>=? order by name   [values]: Bee(String),10001(Integer)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 1
+[INFO] [Bee] In MapSuid, select List<Map> SQL: select * from ( select name,password from test_user where name=? and last_name is null and id>=? order by name ) where rownum <= 5   [values]: Bee(String),10001(Integer)
+[INFO]  | <--  select rows: 1
+[INFO] [Bee] In MapSuid, select List<Map> SQL: select * from ( select table_.*, rownum rn_ from ( select name,password from test_user where name=? and last_name is null and id>=? order by name ) table_ where rownum < 7) where rn_ >= 2   [values]: Bee(String),10001(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] In MapSuid, selectOne Map SQL: select * from ( select table_.*, rownum rn_ from ( select name,password from test_user where name=? and last_name is null and id>=? order by name ) table_ where rownum < 7) where rn_ >= 2   [values]: Bee(String),10001(Integer)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] In MapSuid, selectOne Map SQL: select * from ( select table_.*, rownum rn_ from ( select name,password from test_user where name=? and last_name is null and id>=? order by name ) table_ where rownum < 7) where rn_ >= 2   [values]: Bee(String),10001(Integer)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] In MapSuid, insert SQL: insert into test_user (email,password,last_name,id) values (?,?,?,?)   [values]: test@gmail.com(String),password@gmail.com(String),MapSuid(String),1279956290109454(Long)
+[ERROR] In MapSuidExam (BeeException):ORA-01438: 值大于为此列指定的允许精度
+
+[INFO] [bee-exam] ====================MapSuidExam24.test======end.
+
+[INFO] [bee-exam] ====================LockWaitTimeout.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 1004(Long),client01(String),null(String),91(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:1 ,  [values]: 1005(Long),client02(String),null(String),20(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[WARN] ORA-00001: 违反唯一约束条件 (SCOTT.SYS_C0017977)
+
+[INFO]  | <-- index[0~1] Affected rows: 0  , this batch have exception !
+[INFO] [Bee] --> index:2 ,  [values]: 1006(Long),client03(String),null(String),23(java.math.BigDecimal),null(Long),null(String),testOneTime(String),null(String),null(String),null(String)
+[WARN] ORA-00001: 违反唯一约束条件 (SCOTT.SYS_C0017977)
+
+[INFO]  | <-- index[2~2] Affected rows: 0  , the last batch have exception !
+[INFO]  | <--  Affected rows: 0
+[INFO] 0
+[INFO] test paging
+[INFO] [Bee] select SQL(entity, size): select * from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where remark=? ) where rownum <= ?   [values]: testOneTime(String),3(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] select SQL(entity, start, size): select * from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where remark=? ) where rownum <= ?   [values]: testOneTime(String),3(Integer)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 3
+[INFO] Orders[id=1279955962954048,userid=client,orderid=null,name=client,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954043,userid=client,orderid=null,name=client,total=94,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954049,userid=client,orderid=null,name=client,total=95,createtime=null,remark=testOneTime,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] delete SQL: delete from orders where remark=?   [values]: testOneTime(String)
+[INFO]  | <--  Affected rows: 22
+[INFO] deleteNum2: 22
+[INFO] [bee-exam] ====================LockWaitTimeout.test======end.
+
+[INFO] [bee-exam] ====================SuidExamEN_SQLite.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders where id=? and name=?   [values]: 100001(Long),Bee(ORM Framework)(String)
+[INFO]  | <--  select rows: 1
+[INFO] Orders[id=100001,userid=Bee,name=Bee(ORM Framework),total=95,createtime=2020-03-02 11:29:28,remark=null,sequence=12345601,abc=test1,updatetime=null]
+[INFO] [Bee] update SQL: update orders set name=? , updatetime=? where id=?   [values]: Bee(ORM Framework)(String),2026-09-03 00:13:24(String),100001(Long)
+[INFO]  | <--  Affected rows: 1
+[INFO] update record:1
+[INFO] [Bee] insert SQL: insert into orders(id,userid,name,total,createtime) values (?,?,?,?,?)   [values]: 1279955962954063(Long),bee(String),Bee(ORM Framework)(String),91.99(java.math.BigDecimal),2026-09-03 00:13:24(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] insert record:1
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders
+[INFO]  | <--  select rows: 25
+[INFO] Orders[id=121,userid=1001,name=bee,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=122,userid=1001,name=bee,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=123,userid=1001,name=bee,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954058,userid=orders3,name=null,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954059,userid=orders4,name=null,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954063,userid=bee,name=Bee(ORM Framework),total=92,createtime=2026-09-03 00:13:24,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954015,userid=bee,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954017,userid=client,name=client,total=94,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954019,userid=client,name=client,total=94,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1007,userid=client01,name=null,total=91,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100018,userid=client18,name=null,total=18,createtime=null,remark=test insert and delete,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100019,userid=client19,name=null,total=19,createtime=null,remark=test insert and delete,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100020,userid=client20,name=null,total=20,createtime=null,remark=test insert and delete,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954039,userid=bee,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100002,userid=bee,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954012,userid=bee,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954013,userid=bee,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954014,userid=bee,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954018,userid=client,name=client,total=94,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1004,userid=client01,name=null,total=91,createtime=null,remark=change Remark,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=10010,userid=client01,name=null,total=91,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100003,userid=bee,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100001,userid=Bee,name=Bee(ORM Framework),total=95,createtime=2020-03-02 11:29:28,remark=null,sequence=12345601,abc=test1,updatetime=2026-09-03 00:13:24]
+[INFO] Orders[id=1279955962954016,userid=client,name=client,total=94,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100,userid=client00,name=client01,total=94,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] [bee-exam] ====================SuidExamEN_SQLite.test======end.
+
+[INFO] [bee-exam] ====================UpdateSetExam_SQLite.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] update SQL(updateBy): update leaf_alloc3 set max_id=max_id + step where biz_tag=?   [values]: bee(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] test setAdd , update num: 1
+[INFO] [Bee] select SQL(entity, size): select * from ( select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc3 where biz_tag=? ) where rownum <= ?   [values]: test(String),2(Integer)
+[INFO]  | <--  select rows: 1
+[INFO] [Bee] update SQL :update leaf_alloc3 set max_id=max_id + step,version=version + ? where id=? and biz_tag=? and max_id=? and version=?   [values]: 1(Integer),456537470402562(Long),test(String),100(Long),1(Integer)
+[INFO]  | <--  Affected rows: 1
+[INFO] test setMultiply , update num: 1
+[INFO] [Bee] select SQL(entity, size): select * from ( select id,biz_tag,max_id,step,description,update_time,version from leaf_alloc3 where biz_tag=? ) where rownum <= ?   [values]: test(String),2(Integer)
+[INFO]  | <--  select rows: 1
+[INFO] [Bee] update SQL :update leaf_alloc3 set max_id=?,version=version + ? where id=? and biz_tag=? and max_id=? and version=?   [values]: 10003(Integer),1(Integer),456537470402562(Long),test(String),200(Long),2(Integer)
+[INFO]  | <--  Affected rows: 1
+[INFO] test setMultiply , update num: 1
+[INFO] [bee-exam] ====================UpdateSetExam_SQLite.test======end.
+
+[INFO] [bee-exam] ====================SelectById.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] selectByIds SQL: select id,email,last_name,name,password,username,createtime from test_user where id=? or id=?   [values]: 800001(Long),800002(Long)
+[INFO]  | <--  select rows: 2
+[INFO] TestUser[id=800001,email=beeUser@163.com,lastName=null,name=Bee,password=bee,username=bee,createtime=null]
+[INFO] =============================================
+[INFO] TestUser[id=800002,email=honey@163.com,lastName=cn,name=Honey,password=honey,username=honey,createtime=null]
+[INFO] =============================================
+[INFO] [Bee] selectById SQL: select id,email,last_name,name,password,username,createtime from test_user where id=?   [values]: 800001(Integer)
+[INFO]  | <--  select rows: 1
+[INFO] TestUser[id=800001,email=beeUser@163.com,lastName=null,name=Bee,password=bee,username=bee,createtime=null]
+[INFO] [Bee] selectById SQL: select id,email,last_name,name,password,username,createtime from test_user where id=?   [values]: 800001(Long)
+[INFO]  | <--  select rows: 1
+[INFO] [Bee] selectById SQL: select id,email,last_name,name,password,username,createtime from test_user where id=?   [values]: 800001(Long)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 1
+[INFO] TestUser[id=800001,email=beeUser@163.com,lastName=null,name=Bee,password=bee,username=bee,createtime=null]
+[INFO] [Bee] deleteById SQL: delete from test_user where id=?   [values]: 800001(Integer)
+[INFO]  | <--  Affected rows: 1
+[INFO] deleteNum3: 1
+[INFO] [Bee] insert SQL: insert into test_user(id,email,name,password,username) values (?,?,?,?,?)   [values]: 800001(Long),beeUser@163.com(String),Bee(String),bee(String),bee(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] selectJson SQL: select id,email,last_name,name,password,username,createtime from test_user
+[INFO] ==========get from Cache.
+[INFO] selectJson(new User()):
+[INFO] [{"id":800001,"email":"beeUser@163.com","lastName":null,"name":"Bee","password":"bee","username":"bee","createtime":null},{"id":800002,"email":"honey@163.com","lastName":"cn","name":"Honey","password":"honey","username":"honey","createtime":null}]
+[INFO] [Bee] selectById SQL: select id,email,last_name,name,password,username,createtime from test_user where id=?   [values]: 800001(Long)
+[INFO]  | <--  select rows: 1
+[INFO] [Bee] select SQL(entity, selectFields): select password, name from test_user where username=?   [values]: bee(String)
+[INFO]  | <--  select rows: 1
+[INFO] [Bee] select SQL(entity, size): select * from ( select id,email,last_name,name,password,username,createtime from test_user where username=? ) where rownum <= ?   [values]: bee(String),2(Integer)
+[INFO]  | <--  select rows: 1
+[INFO] [bee-exam] ====================SelectById.test======end.
+
+[INFO] [bee-exam] ====================NamingTest.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders
+[INFO]  | <--  select rows: 25
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders
+[INFO]  | <--  select rows: 25
+[INFO] [Bee] select SQL: select ID,USERID,NAME,TOTAL,ORDERID,CREATETIME,REMARK,SEQUENCE,ABC,UPDATETIME from ORDERS
+[INFO]  | <--  select rows: 25
+[INFO] [bee-exam] ====================NamingTest.test======end.
+
+[INFO] [bee-exam] ====================IdTest.test======start:
+[INFO] 0: 110010000100100011000001110101001001010000000000000000000001
+[INFO] 1: 110010000100100011000001110101001001010000000000000000000010
+[INFO] 2: 110010000100100011000001110101001001010000000000000000000011
+[INFO] 使用时间: 0
+[INFO] 0: 1001000110000011101010010010100000000000011001000000000000000
+[INFO] 1: 1001000110000011101010010010100000000000011001000000000000001
+[INFO] 2: 1001000110000011101010010010100000000000011001000000000000010
+[INFO] 3: 1001000110000011101010010010100000000000011001000000000000011
+[INFO] 4: 1001000110000011101010010010100000000000011001000000000000100
+[INFO] 使用时间: 0
+[INFO] [bee-exam] ====================IdTest.test======end.
+
+[INFO] [bee-exam] ====================ChainUpdateExam.test======start:
+[INFO] update orders set name=? , userid=? , total=? where (id>=? or id in (?)) and name is not null  and createtime is null  and id not in (?) and id in (?,?) and id between ? and ? and id not between ? and ? and name not in (?)
+[INFO] Getting this sql twice is same!
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] PreparedSql modify SQL: update orders set name=? , userid=? , total=? where (id>=? or id in (?)) and name is not null  and createtime is null  and id not in (?) and id in (?,?) and id between ? and ? and id not between ? and ? and name not in (?)   [values]: Bee(String),Bee(String),98.8(Double),100005(Integer),100004(Integer),100001(Integer),100002(Integer),100003(Integer),100002(Integer),100004(Integer),100005(Integer),100006(Integer),Bee(String)
+[INFO]  | <--  Affected rows: 0
+[INFO] updateNum: 0
+[INFO] update team_id set total=? , remark=? , remark2=? , remark3=? where 1=1 and price=? and price>=? and name like ? and remark=? and orderid in (?,?)
+[INFO] update team_id set total=? , remark=? , remark2=? , remark3=? where 1=1 and price=? and price>=? and name like ? and remark=? and orderid in (?,?)
+[INFO] [bee-exam] ====================ChainUpdateExam.test======end.
+
+[INFO] [bee-exam] ====================ChainSelectExam.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] PreparedSql select SQL: select name,max(total) from orders where name not like ? and total between ? and ? and createtime is not null  group by name order by name asc   [values]: Bee%(String),10(Integer),100(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] PreparedSql select SQL: select name,max(total) from orders where name not like ? and total between ? and ? and createtime is not null  group by name order by name asc   [values]: Bee%(String),10(Integer),100(Integer)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] PreparedSql select SQL: select name,max(total) from orders where name=? or name=? group by name having avg(total)>80   [values]: client(String),bee(String)
+[INFO]  | <--  select rows: 1
+[INFO] client   94   
+[INFO] [Bee] PreparedSql select SQL: select orders.id,total,orders.name,test_user.name from orders,test_user where orders.name=test_user.name and (total between ? and ?) and orders.name=?   [values]: 0(Integer),100(Integer),Bee(String)
+[INFO]  | <--  select rows: 0
+[INFO] select distinct(team_id) from teams where price=? group by team_id,name having count(*)=sum(case when status='aaa' then 1 else 0 end)
+[INFO] [Bee] PreparedSql select SQL: select * from orders o join test_user t on o.name=t.name
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] PreparedSql select SQL: select * from ( select id,examno,classno,name,teacherno,createtime,updatetime from scores where classno in (?) ) where rownum <= 10   [values]: 201(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] PreparedSql select SQL: select count(*) from scores where classno in (?)   [values]: 201(String)
+[INFO]  | <--  select rows: 1
+[INFO] 0   
+[INFO] [Bee] PreparedSql select SQL: select * from orders where (id>=? or id in (?)) and name is not null  and createtime is null  and id not in (?) and id in (?,?) and id between ? and ? and id not between ? and ? and name not in (?) and name=? order by id   [values]: 100005(Integer),100004(Integer),100001(Integer),100002(Integer),100003(Integer),100002(Integer),100004(Integer),100005(Integer),100006(Integer),testBee(String),Bee(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] PreparedSql select SQL: select * from orders o left join test_user t on o.name=t.name
+[INFO]  | <--  select rows: 25
+[INFO] 121   1001   null   bee   null   null   null   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 122   1001   null   bee   null   null   null   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 123   1001   null   bee   null   null   null   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 1279955962954058   orders3   null   null   null   null   null   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 1279955962954059   orders4   null   null   null   null   null   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 1279955962954063   bee   null   Bee(ORM Framework)   92   2026-09-03 00:13:24   null   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 1279955962954015   bee   null   null   100   null   new2   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 1279955962954017   client   null   client   94   null   null   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 1279955962954019   client   null   client   94   null   null   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 1007   client01   null   null   91   null   null   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 100018   client18   null   null   18   null   test insert and delete   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 100019   client19   null   null   19   null   test insert and delete   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 100020   client20   null   null   20   null   test insert and delete   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 1279955962954039   bee   null   null   100   null   new2   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 100002   bee   null   null   100   null   new2   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 1279955962954012   bee   null   null   100   null   new2   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 1279955962954013   bee   null   null   100   null   new2   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 1279955962954014   bee   null   null   100   null   new2   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 1279955962954018   client   null   client   94   null   null   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 1004   client01   null   null   91   null   change Remark   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 10010   client01   null   null   91   null   null   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 100003   bee   null   null   100   null   new2   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 100001   Bee   1   Bee(ORM Framework)   95   2020-03-02 11:29:28   null   12345601   test1   2026-09-03 00:13:24   null   null   null   null   null   null   null   null   
+[INFO] 1279955962954016   client   null   client   94   null   null   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] 100   client00   null   client01   94   null   null   null   null   null   null   null   null   null   null   null   null   null   
+[INFO] [Bee] PreparedSql select SQL: select * from orders o right join test_user t on o.name=t.name
+[INFO]  | <--  select rows: 2
+[INFO] null   null   null   null   null   null   null   null   null   null   800001   null   beeUser@163.com   null   Bee   bee   bee   null   
+[INFO] null   null   null   null   null   null   null   null   null   null   800002   800002   honey@163.com   cn   Honey   honey   honey   null   
+[INFO] [Bee] PreparedSql select SQL: select * from orders o inner join test_user t on o.name=t.name
+[INFO]  | <--  select rows: 0
+[INFO] (total between ? and ?) and orders.name=?
+[INFO] [Bee] PreparedSql select SQL: select * from orders where exists (select id from orders)
+[INFO]  | <--  select rows: 25
+[INFO] 121   1001   null   bee   null   null   null   null   null   null   
+[INFO] 122   1001   null   bee   null   null   null   null   null   null   
+[INFO] 123   1001   null   bee   null   null   null   null   null   null   
+[INFO] 1279955962954058   orders3   null   null   null   null   null   null   null   null   
+[INFO] 1279955962954059   orders4   null   null   null   null   null   null   null   null   
+[INFO] 1279955962954063   bee   null   Bee(ORM Framework)   92   2026-09-03 00:13:24   null   null   null   null   
+[INFO] 1279955962954015   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954017   client   null   client   94   null   null   null   null   null   
+[INFO] 1279955962954019   client   null   client   94   null   null   null   null   null   
+[INFO] 1007   client01   null   null   91   null   null   null   null   null   
+[INFO] 100018   client18   null   null   18   null   test insert and delete   null   null   null   
+[INFO] 100019   client19   null   null   19   null   test insert and delete   null   null   null   
+[INFO] 100020   client20   null   null   20   null   test insert and delete   null   null   null   
+[INFO] 1279955962954039   bee   null   null   100   null   new2   null   null   null   
+[INFO] 100002   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954012   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954013   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954014   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954018   client   null   client   94   null   null   null   null   null   
+[INFO] 1004   client01   null   null   91   null   change Remark   null   null   null   
+[INFO] 10010   client01   null   null   91   null   null   null   null   null   
+[INFO] 100003   bee   null   null   100   null   new2   null   null   null   
+[INFO] 100001   Bee   1   Bee(ORM Framework)   95   2020-03-02 11:29:28   null   12345601   test1   2026-09-03 00:13:24   
+[INFO] 1279955962954016   client   null   client   94   null   null   null   null   null   
+[INFO] 100   client00   null   client01   94   null   null   null   null   null   
+[INFO] [Bee] PreparedSql select SQL: select * from orders where not exists (select id from orders)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] PreparedSql select SQL: select * from orders where id in (select id from orders)
+[INFO]  | <--  select rows: 25
+[INFO] 121   1001   null   bee   null   null   null   null   null   null   
+[INFO] 122   1001   null   bee   null   null   null   null   null   null   
+[INFO] 123   1001   null   bee   null   null   null   null   null   null   
+[INFO] 1279955962954058   orders3   null   null   null   null   null   null   null   null   
+[INFO] 1279955962954059   orders4   null   null   null   null   null   null   null   null   
+[INFO] 1279955962954063   bee   null   Bee(ORM Framework)   92   2026-09-03 00:13:24   null   null   null   null   
+[INFO] 1279955962954015   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954017   client   null   client   94   null   null   null   null   null   
+[INFO] 1279955962954019   client   null   client   94   null   null   null   null   null   
+[INFO] 1007   client01   null   null   91   null   null   null   null   null   
+[INFO] 100018   client18   null   null   18   null   test insert and delete   null   null   null   
+[INFO] 100019   client19   null   null   19   null   test insert and delete   null   null   null   
+[INFO] 100020   client20   null   null   20   null   test insert and delete   null   null   null   
+[INFO] 1279955962954039   bee   null   null   100   null   new2   null   null   null   
+[INFO] 100002   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954012   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954013   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954014   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954018   client   null   client   94   null   null   null   null   null   
+[INFO] 1004   client01   null   null   91   null   change Remark   null   null   null   
+[INFO] 10010   client01   null   null   91   null   null   null   null   null   
+[INFO] 100003   bee   null   null   100   null   new2   null   null   null   
+[INFO] 100001   Bee   1   Bee(ORM Framework)   95   2020-03-02 11:29:28   null   12345601   test1   2026-09-03 00:13:24   
+[INFO] 1279955962954016   client   null   client   94   null   null   null   null   null   
+[INFO] 100   client00   null   client01   94   null   null   null   null   null   
+[INFO] [Bee] PreparedSql select SQL: select * from orders where id not in (select id from orders)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] PreparedSql select SQL: select count(total),max(total),min(total),avg(total),sum(total) from orders
+[INFO]  | <--  select rows: 1
+[INFO] 20   100   18   84.35   1687   
+[INFO] ChainSelectExam finished....
+[INFO] [bee-exam] ====================ChainSelectExam.test======end.
+
+[INFO] [bee-exam] ====================UnionSelectExam.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] select * from ( select * from orders,test_user where orders.name=test_user.name ) where rownum <= 10
+[INFO] Getting this sql twice is same!
+[INFO] [Bee] PreparedSql select SQL: select * from ( select * from orders,test_user where orders.name=test_user.name ) where rownum <= 10
+[ERROR] ORA-00918: 未明确定义列
+
+[INFO] [Bee] PreparedSql select SQL: (select * from orders where userid=?) union (select * from orders where userid=?)   [values]: client01(String),bee(String)
+[INFO]  | <--  select rows: 11
+[INFO] 1004   client01   null   null   91   null   change Remark   null   null   null   
+[INFO] 1007   client01   null   null   91   null   null   null   null   null   
+[INFO] 10010   client01   null   null   91   null   null   null   null   null   
+[INFO] 100002   bee   null   null   100   null   new2   null   null   null   
+[INFO] 100003   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954012   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954013   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954014   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954015   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954039   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954063   bee   null   Bee(ORM Framework)   92   2026-09-03 00:13:24   null   null   null   null   
+[INFO] [Bee] PreparedSql select SQL: (select * from orders where userid=?) union all (select * from orders where userid=?)   [values]: client01(String),bee(String)
+[INFO]  | <--  select rows: 11
+[INFO] 1007   client01   null   null   91   null   null   null   null   null   
+[INFO] 1004   client01   null   null   91   null   change Remark   null   null   null   
+[INFO] 10010   client01   null   null   91   null   null   null   null   null   
+[INFO] 1279955962954063   bee   null   Bee(ORM Framework)   92   2026-09-03 00:13:24   null   null   null   null   
+[INFO] 1279955962954015   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954039   bee   null   null   100   null   new2   null   null   null   
+[INFO] 100002   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954012   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954013   bee   null   null   100   null   new2   null   null   null   
+[INFO] 1279955962954014   bee   null   null   100   null   new2   null   null   null   
+[INFO] 100003   bee   null   null   100   null   new2   null   null   null   
+[INFO] [Bee] PreparedSql select SQL: (select * from orders1) union all (select * from orders2) union all (select * from orders3)
+[ERROR] ORA-01790: 表达式必须具有与对应表达式相同的数据类型
+
+[INFO] [bee-exam] ====================UnionSelectExam.test======end.
+
+[INFO] [bee-exam] ====================ChainSelectExam2.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] PreparedSql select SQL: select name,max(total) from orders where name not like ? and total between ? and ? and createtime is not null  group by name order by name asc   [values]: Bee%(String),10(Integer),100(Integer)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] PreparedSql select SQL: select name,max(total) from orders where name not like ? and total between ? and ? and createtime is not null  group by name order by name asc   [values]: Bee%(String),10(Integer),100(Integer)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] ChainSelectExam finished....
+[INFO] [bee-exam] ====================ChainSelectExam2.test======end.
+
+[INFO] [bee-exam] ====================Insert24.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] PreparedSql modify SQL: insert into orders(id,name,total) values (?,?,?)   [values]: 111(Long),myname(String),1111111(Integer)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] PreparedSql modify SQL: insert into orders(id,name,total) values (?,?,?)   [values]: 111(Long),myname(String),1111111(Integer)
+[WARN] ORA-00001: 违反唯一约束条件 (SCOTT.SYS_C0017977)
+
+[INFO] [bee-exam] ====================Insert24.test======end.
+
+[INFO] [bee-exam] ====================QueryCompare.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] PreparedSql select SQL: select * from orders where name=? and createtime is not null   [values]: Bee(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] PreparedSql select SQL: select * from orders where name=? and createtime is not null   [values]: Bee(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] PreparedSql select SQL: select * from orders where name='Bee' and createtime is not null ;
+[INFO]  | <--  select rows: 0
+[INFO] [bee-exam] ====================QueryCompare.test======end.
+
+[INFO] [bee-exam] ====================QueryCompare2.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] PreparedSql select SQL: select * from orders where name=? and createtime is not null  order by name asc   [values]: bee(String)
+[INFO]  | <--  select rows: 0
+[INFO] [bee-exam] ====================QueryCompare2.test======end.
+
+[INFO] [bee-exam] ====================Select24.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] PreparedSql select SQL: select * from orders where userid=?   [values]: 1001(String)
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] PreparedSql select SQL: select * from orders where userid=?   [values]: 1001(String)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] PreparedSql select SQL: select * from orders where userid=?   [values]: 1001(String)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 3
+[INFO] [bee-exam] ====================Select24.test======end.
+
+[INFO] [bee-exam] ====================Chain.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] select SQL: select id,username,password from test_user where username=? and password=?   [values]: 张三(String),abc(String)
+[INFO]  | <--  select rows: 0
+[INFO] [bee-exam] ====================Chain.test======end.
+
+[INFO] [bee-exam] ====================TestBFX.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] select fun SQL : select count(*) from orders where abc=?   [values]: value11(String)
+[INFO] [Bee] select SQL: select abc, remark from orders where abc=?   [values]: value11(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL(entity, selectFields): select abc, remark from orders
+[INFO]  | <--  select rows: 26
+[INFO] [bee-exam] ====================TestBFX.test======end.
+
+[INFO] [bee-exam] ====================CreateTable.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] Drop SQL: DROP TABLE book
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE book (
+id number(19) PRIMARY KEY,  
+name varchar2(255),  
+isbn varchar2(255),  
+remark varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE book_detail
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE book_detail (
+id number(19) PRIMARY KEY,  
+book_id number(19),  
+code_id varchar2(255),  
+remark varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE book_real
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE book_real (
+id number(19) PRIMARY KEY,  
+book_detail_id number(19),  
+remark varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [bee-exam] ====================CreateTable.test======end.
+
+[INFO] [bee-exam] ====================MoreInsert40.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[DEBUG] In MoreTable, can not copy entity with JdkSerializer. Maybe, some fields define in annotion subField of entity will be auto set!
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.bee.osql.moretable.modify.Book2, alias is: book
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.bee.osql.moretable.modify.BookDetail, alias is: book_detail
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.bee.osql.moretable.modify.BookReal, alias is: book_real
+[INFO] [Bee] insert SQL: insert into book(id,name,isbn) values (?,?,?)   [values]: 1279956306886669(Long),Java开发(String),isbn123456(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] bookId is null, will set with the value of id
+[INFO] [Bee] insert SQL: insert into book_detail(id,book_id,code_id,remark) values (?,?,?,?)   [values]: 1279956306886672(Long),1279956306886669(Long),2001(String),第一本(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] insert sub entity:org.teasoft.exam.bee.osql.moretable.modify.BookDetail, Affected rows: 1
+[INFO] MoreTable insert(one to one), num(main table):1
+[INFO] [bee-exam] ====================MoreInsert40.test======end.
+
+[INFO] [bee-exam] ====================MoreInsert40_2.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[DEBUG] In MoreTable, can not copy entity with JdkSerializer. Maybe, some fields define in annotion subField of entity will be auto set!
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.bee.osql.moretable.modify.Book2, alias is: book
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.bee.osql.moretable.modify.BookDetail, alias is: book_detail
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.bee.osql.moretable.modify.BookReal, alias is: book_real
+[INFO] [Bee] insert SQL: insert into book(id,name,isbn) values (?,?,?)   [values]: 1279956306886670(Long),Java开发(String),isbn123456(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] bookId is null, will set with the value of id
+[INFO] [Bee] insert SQL: insert into book_detail(id,book_id,code_id,remark) values (?,?,?,?)   [values]: 1279956306886673(Long),1279956306886670(Long),2001(String),第一本(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] insert sub entity:org.teasoft.exam.bee.osql.moretable.modify.BookDetail, Affected rows: 1
+[INFO] bookDetailId is null, will set with the value of id
+[INFO] [Bee] insert SQL: insert into book_real(id,book_detail_id,remark) values (?,?,?)   [values]: 1279956306886663(Long),1279956306886673(Long),测试OneHasOne(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] insert sub entity:org.teasoft.exam.bee.osql.moretable.modify.BookReal, Affected rows: 1
+[INFO] MoreTable insert(1:1:1 子表里又有子表), num(main table):1
+[INFO] [bee-exam] ====================MoreInsert40_2.test======end.
+
+[INFO] [bee-exam] ====================MoreInsert50.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[DEBUG] In MoreTable, can not copy entity with JdkSerializer. Maybe, some fields define in annotion subField of entity will be auto set!
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.bee.osql.moretable.modify.Book, alias is: book
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.bee.osql.moretable.modify.BookDetail, alias is: book_detail
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.bee.osql.moretable.modify.BookReal, alias is: book_real
+[INFO] [Bee] insert SQL: insert into book(id,name,isbn) values (?,?,?)   [values]: 1279956306886671(Long),Java开发(String),isbn123456(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] bookId is null, will set with the value of id2
+[INFO] bookId is null, will set with the value of id2
+[INFO] [Bee] insert SQL: insert into book_detail(id,book_id,code_id,remark) values (?,?,?,?)   [values]: 1279956306886674(Long),1279956306886671(Long),2001(String),第一本(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] insert sub entity:org.teasoft.exam.bee.osql.moretable.modify.BookDetail, Affected rows: 1
+[INFO] [Bee] insert SQL: insert into book_detail(id,book_id,code_id,remark) values (?,?,?,?)   [values]: 1279956306886675(Long),1279956306886671(Long),2002(String),第2本(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] insert sub entity:org.teasoft.exam.bee.osql.moretable.modify.BookDetail, Affected rows: 1
+[INFO] MoreTable insert(one to may 一对多, 子表使用List), num(main table):1
+[INFO] [bee-exam] ====================MoreInsert50.test======end.
+
+[INFO] [bee-exam] ====================MoreInsert60.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[DEBUG] In MoreTable, can not copy entity with JdkSerializer. Maybe, some fields define in annotion subField of entity will be auto set!
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.bee.osql.moretable.modify.Book3, alias is: book
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.bee.osql.moretable.modify.BookDetail, alias is: book_detail
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.bee.osql.moretable.modify.BookReal, alias is: book_real
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.bee.osql.moretable.modify.Book3, alias is: book
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.bee.osql.moretable.modify.BookReal, alias is: book_real
+[INFO] [Bee] insert SQL: insert into book(id,name,isbn) values (?,?,?)   [values]: 1279956306886672(Long),Java开发(String),isbn12345622222(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] bookId is null, will set with the value of id
+[INFO] [Bee] insert SQL: insert into book_detail(id,book_id,code_id,remark) values (?,?,?,?)   [values]: 1279956306886676(Long),1279956306886672(Long),2001(String),第一本(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] insert sub entity:org.teasoft.exam.bee.osql.moretable.modify.BookDetail, Affected rows: 1
+[INFO] bookDetailId is null, will set with the value of id
+[INFO] The value of remark value is not equal name. Will override remark with name
+[INFO] [Bee] insert SQL: insert into book_real(id,book_detail_id,remark) values (?,?,?)   [values]: 1279956306886664(Long),1279956306886672(Long),Java开发(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] insert sub entity:org.teasoft.exam.bee.osql.moretable.modify.BookReal, Affected rows: 1
+[INFO] MoreTable insert(主表有两个从表), num(main table):1
+[INFO] [bee-exam] ====================MoreInsert60.test======end.
+
+[INFO] [bee-exam] ====================MoreModify.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[DEBUG] In MoreTable, can not copy entity with JdkSerializer. Maybe, some fields define in annotion subField of entity will be auto set!
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.bee.osql.moretable.modify.Book2, alias is: book
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.bee.osql.moretable.modify.BookDetail, alias is: book_detail
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.bee.osql.moretable.modify.BookReal, alias is: book_real
+[INFO] [Bee] delete SQL: delete from book where name=? and isbn=?   [values]: Java开发(String),isbn123456(String)
+[INFO]  | <--  Affected rows: 3
+[INFO] [bee-exam] ====================MoreModify.test======end.
+
+[INFO] [bee-exam] ====================MoreUpdate.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[DEBUG] In MoreTable, can not copy entity with JdkSerializer. Maybe, some fields define in annotion subField of entity will be auto set!
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.bee.osql.moretable.modify.Book2, alias is: book
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.bee.osql.moretable.modify.BookDetail, alias is: book_detail
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.bee.osql.moretable.modify.BookReal, alias is: book_real
+[INFO] [Bee] update SQL: update book set name=? , isbn=? where id=?   [values]: Java开发(String),isbn123456(String),868503003332609(Long)
+[INFO]  | <--  Affected rows: 0
+[INFO] The value of bookId value is not equal id. Will override bookId with id
+[INFO] [Bee] update SQL: update book_detail set book_id=? , code_id=? , remark=? where id=?   [values]: 868503003332609(Long),2001(String),第一本(String),880477460234241(Long)
+[INFO]  | <--  Affected rows: 0
+[INFO] update sub entity:org.teasoft.exam.bee.osql.moretable.modify.BookDetail, Affected rows: 0
+[INFO] [bee-exam] ====================MoreUpdate.test======end.
+
+[INFO] [bee-exam] ====================MoreUpdate2.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.bee.osql.moretable.modify.Book2, alias is: book
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.bee.osql.moretable.modify.BookDetail, alias is: book_detail
+[INFO] [Bee] select MoreTable SQL: select book.id,book.name,book.isbn,book.remark,book_detail.id book_detail_id_$,book_detail.book_id,book_detail.code_id,book_detail.remark book_detail_remark_$ from book book join book_detail book_detail on book.id = book_detail.book_id where book.id = ? and book.name = ? and book.isbn = ? and book_detail.code_id = ? and book_detail.remark = ?   [values]: 1(Long),Java开发(String),isbn123456(String),2001(String),第一本(String)
+[INFO]  | <--  select rows: 0
+[DEBUG] In MoreTable, can not copy entity with JdkSerializer. Maybe, some fields define in annotion subField of entity will be auto set!
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.bee.osql.moretable.modify.Book2, alias is: book
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.bee.osql.moretable.modify.BookDetail, alias is: book_detail
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.bee.osql.moretable.modify.BookReal, alias is: book_real
+[INFO] [Bee] update SQL: update book set name=? , isbn=? where id=?   [values]: Java开发(String),isbn123456(String),1(Long)
+[INFO]  | <--  Affected rows: 0
+[INFO] bookId is null, will set with the value of id
+[INFO] [Bee] update SQL(updateBy): update book_detail set code_id=? , remark=? where book_id=?   [values]: 2001(String),第一本(String),1(Long)
+[INFO]  | <--  Affected rows: 0
+[INFO] update sub entity:org.teasoft.exam.bee.osql.moretable.modify.BookDetail, Affected rows: 0
+[INFO] MoreTable update,updateNum:0
+[DEBUG] In MoreTable, can not copy entity with JdkSerializer. Maybe, some fields define in annotion subField of entity will be auto set!
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.bee.osql.moretable.modify.Book2, alias is: book
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.bee.osql.moretable.modify.BookDetail, alias is: book_detail
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.bee.osql.moretable.modify.BookReal, alias is: book_real
+[INFO] [Bee] delete SQL: delete from book where id=? and name=? and isbn=?   [values]: 1(Long),Java开发(String),isbn123456(String)
+[INFO]  | <--  Affected rows: 0
+[WARN] delete main entity org.teasoft.exam.bee.osql.moretable.modify.Book2, affected rows is 0, will ignore delete sub entity!
+[INFO] MoreTable delete,delNum:0
+[INFO] [bee-exam] ====================MoreUpdate2.test======end.
+
+[INFO] [bee-exam] ====================MoreUpdate3.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[DEBUG] In MoreTable, can not copy entity with JdkSerializer. Maybe, some fields define in annotion subField of entity will be auto set!
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.bee.osql.moretable.modify.Book2, alias is: book
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.bee.osql.moretable.modify.BookDetail, alias is: book_detail
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.bee.osql.moretable.modify.BookReal, alias is: book_real
+[INFO] [Bee] update SQL: update book set name=? , isbn=? where id=?   [values]: Java开发(String),isbn123456(String),1(Long)
+[INFO]  | <--  Affected rows: 0
+[INFO] bookId is null, will set with the value of id
+[INFO] [Bee] update SQL(updateBy): update book_detail set code_id=? , remark=? where book_id=?   [values]: 2001(String),第一本(String),1(Long)
+[INFO]  | <--  Affected rows: 0
+[INFO] update sub entity:org.teasoft.exam.bee.osql.moretable.modify.BookDetail, Affected rows: 0
+[INFO] MoreTable update,updateNum:0
+[INFO] [bee-exam] ====================MoreUpdate3.test======end.
+
+[INFO] [bee-exam] ====================MoreUpdate2.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[DEBUG] In MoreTable, can not copy entity with JdkSerializer. Maybe, some fields define in annotion subField of entity will be auto set!
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.bee.osql.moretable.update.Book2, alias is: book
+[DEBUG] The layer is: 2, class is List, element type is: org.teasoft.exam.bee.osql.moretable.update.BookDetail, alias is: book_detail
+[DEBUG] The layer is: 3, class is: org.teasoft.exam.bee.osql.moretable.update.BookReal, alias is: book_real
+[INFO] [Bee] update SQL: update book set name=? , isbn=? where id=?   [values]: Java开发(String),isbn123456(String),880477456039937(Long)
+[INFO]  | <--  Affected rows: 0
+[INFO] bookId is null, will set with the value of id
+[INFO] [Bee] update SQL: update book_detail set book_id=? , code_id=? , remark=? where id=?   [values]: 880477456039937(Long),2001(String),第一本(String),880477460234241(Long)
+[INFO]  | <--  Affected rows: 0
+[INFO] update sub entity:org.teasoft.exam.bee.osql.moretable.update.BookDetail, Affected rows: 0
+[INFO] [Bee] update SQL: update book_detail set book_id=? , code_id=? , remark=? where id=?   [values]: 880477456039937(Long),2002(String),第2本(String),868467049758722(Long)
+[INFO]  | <--  Affected rows: 0
+[INFO] update sub entity:org.teasoft.exam.bee.osql.moretable.update.BookDetail, Affected rows: 0
+[INFO] [bee-exam] ====================MoreUpdate2.test======end.
+
+[INFO] [bee-exam] ====================OrdinaryTest.test======start:
+[INFO] null is blank? true
+[INFO] [bee-exam] ====================OrdinaryTest.test======end.
+
+[INFO] [bee-exam] ====================PagingExam.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] select SQL(entity, start, size, selectFields): select * from ( select table_.*, rownum rn_ from ( select name, total from orders where userid=? ) table_ where rownum < ?) where rn_ >= ?   [values]: bee(String),7(Integer),2(Integer)
+[INFO]  | <--  select rows: 5
+[INFO] Orders[id=null,userid=null,orderid=null,name=null,total=100,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=null,orderid=null,name=null,total=100,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=null,orderid=null,name=null,total=100,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=null,orderid=null,name=null,total=100,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=null,orderid=null,name=null,total=100,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] select SQL: select * from ( select distinct(name) from orders where userid=? ) where rownum <= ?   [values]: bee(String),5(Integer)
+[INFO]  | <--  select rows: 2
+[INFO] Orders[id=null,userid=null,orderid=null,name=Bee(ORM Framework),total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=null,orderid=null,name=null,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] select SQL: select * from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? ) where rownum <= ?   [values]: bee(String),5(Integer)
+[INFO]  | <--  select rows: 5
+[INFO] Orders[id=1279955962954063,userid=bee,orderid=null,name=Bee(ORM Framework),total=92,createtime=2026-09-03 00:13:24,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954015,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954039,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100002,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954012,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] select SQL: select * from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? order by id desc ) where rownum <= ?   [values]: bee(String),5(Integer)
+[INFO]  | <--  select rows: 5
+[INFO] Orders[id=1279955962954063,userid=bee,orderid=null,name=Bee(ORM Framework),total=92,createtime=2026-09-03 00:13:24,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954039,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954015,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954014,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954013,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] select SQL: select * from ( select table_.*, rownum rn_ from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? order by id ) table_ where rownum < ?) where rn_ >= ?   [values]: bee(String),7(Integer),2(Integer)
+[INFO]  | <--  select rows: 5
+[INFO] Orders[id=100003,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954012,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954013,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954014,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954015,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] select SQL: select * from ( select table_.*, rownum rn_ from ( select uu_id,name,num,remark from noid2 order by uu_id ) table_ where rownum < ?) where rn_ >= ?   [values]: 7(Integer),2(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select * from ( select table_.*, rownum rn_ from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? order by id desc ) table_ where rownum < ?) where rn_ >= ?   [values]: bee(String),7(Integer),2(Integer)
+[INFO]  | <--  select rows: 5
+[INFO] Orders[id=1279955962954039,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954015,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954014,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954013,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954012,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] select SQL(entity, start, size): select * from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? ) where rownum <= ?   [values]: bee(String),3(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] Orders[id=1279955962954063,userid=bee,orderid=null,name=Bee(ORM Framework),total=92,createtime=2026-09-03 00:13:24,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954015,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954039,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] select SQL(entity, start, size): select * from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? ) where rownum <= ?   [values]: bee(String),3(Integer)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 3
+[INFO] Orders[id=1279955962954063,userid=bee,orderid=null,name=Bee(ORM Framework),total=92,createtime=2026-09-03 00:13:24,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954015,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954039,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] select SQL(entity, start, size): select * from ( select table_.*, rownum rn_ from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? ) table_ where rownum < ?) where rn_ >= ?   [values]: bee(String),7(Integer),4(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] Orders[id=100002,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954012,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954013,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] select SQL(entity, start, size): select * from ( select table_.*, rownum rn_ from ( select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid=? ) table_ where rownum < ?) where rn_ >= ?   [values]: bee(String),10(Integer),7(Integer)
+[INFO]  | <--  select rows: 2
+[INFO] Orders[id=1279955962954014,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=100003,userid=bee,orderid=null,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] select SQL(entity, size): select * from ( select uuid,name,num,remark from noid ) where rownum <= ?   [values]: 3(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL(entity, start, size): select * from ( select table_.*, rownum rn_ from ( select uuid,name,num,remark from noid ) table_ where rownum < ?) where rn_ >= ?   [values]: 5(Integer),2(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL(entity, start, size, selectFields): select * from ( select uuid from noid ) where rownum <= ?   [values]: 3(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL(entity, start, size, selectFields): select * from ( select uuid from noid ) where rownum <= ?   [values]: 3(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] []
+[INFO] [Bee] select SQL: select * from ( select uuid,name,num,remark from noid ) where rownum <= ?   [values]: 5(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL(entity, start, size): select * from ( select table_.*, rownum rn_ from ( select uu_id,name,num,remark from noid2 ) table_ where rownum < ?) where rn_ >= ?   [values]: 5(Integer),2(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL(entity, start, size, selectFields): select * from ( select uu_id from noid2 ) where rownum <= ?   [values]: 3(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select * from ( select uu_id,name,num,remark from noid2 ) where rownum <= ?   [values]: 5(Integer)
+[INFO]  | <--  select rows: 0
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.bee.osql.moretable.entity.Orders, alias is: orders
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.bee.osql.moretable.entity.TestUser, alias is: test_user
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[INFO] [Bee] select MoreTable SQL: select * from ( select orders.id,orders.userid,orders.name,orders.total,orders.createtime,orders.remark,orders.sequence,orders.abc,orders.updatetime,test_user.id test_user_id_$,test_user.email,test_user.last_name,test_user.name test_user_name_$,test_user.password,test_user.username,test_user.createtime test_user_createtime_$ from orders orders left join test_user test_user on orders.userid = test_user.username where orders.userid = ? and orders.name = ? and test_user.name = ? ) where rownum <= ?   [values]: bee(String),Bee(String),Bee(String),5(Integer)
+[WARN] Auto table: parameter  ${month} in orders${month} still has not value, will be ignore it!
+[INFO]  | <--  select rows: 0
+[INFO] [bee-exam] ====================PagingExam.test======end.
+
+[INFO] [bee-exam] ====================MoreTableExam24Suid.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.bee.osql.annotation.moretable.Clazz1, alias is: clazz
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.bee.osql.annotation.moretable.Student1, alias is: student
+[DEBUG] The layer is: 3, class is List, element type is: org.teasoft.exam.bee.osql.annotation.moretable.StudentHobby, alias is: student_hobby
+[INFO] [Bee] insert SQL: insert into clazz(id,classname,place,remark) values (?,?,?,?)   [values]: 1257804292(Integer),class one(String),BeiJing(String),2026-09-03 00:13:32(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] classno is null, will set with the value of id
+[INFO] [Bee] insert SQL: insert into student(id,name,age,classno) values (?,?,?,?)   [values]: 1257804292(Integer),Zhang san(String),20(Integer),1257804292(Integer)
+[INFO]  | <--  Affected rows: 1
+[INFO] insert sub entity:org.teasoft.exam.bee.osql.annotation.moretable.Student1, Affected rows: 1
+[INFO] stuId is null, will set with the value of id
+[INFO] stuId is null, will set with the value of id
+[INFO] [Bee] insert SQL: insert into student_hobby(id,stu_id,hobby,remark) values (?,?,?,?)   [values]: 1257804295(Integer),1257804292(Integer),ball(String),2026-09-03 00:13:32(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] insert sub entity:org.teasoft.exam.bee.osql.annotation.moretable.StudentHobby, Affected rows: 1
+[INFO] [Bee] insert SQL: insert into student_hobby(id,stu_id,hobby,remark) values (?,?,?,?)   [values]: 1257804296(Integer),1257804292(Integer),computer(String),2026-09-03 00:13:32(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] insert sub entity:org.teasoft.exam.bee.osql.annotation.moretable.StudentHobby, Affected rows: 1
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.bee.osql.annotation.moretable.Clazz1, alias is: clazz
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.bee.osql.annotation.moretable.Student1, alias is: student
+[DEBUG] The layer is: 3, class is List, element type is: org.teasoft.exam.bee.osql.annotation.moretable.StudentHobby, alias is: student_hobby
+[INFO] [Bee] select MoreTable SQL: select clazz.id,clazz.classname,clazz.place,clazz.teachername,clazz.remark,student.id student_id_$,student.sid,student.name,student.age,student.sex,student.majorid,student.flag,student.classno,student_hobby.id student_hobby_id_$,student_hobby.stu_id,student_hobby.hobby,student_hobby.remark student_hobby_remark_$ from clazz clazz join student student on clazz.id = student.classno join student_hobby student_hobby on student.id = student_hobby.stu_id
+[INFO]  | <--  ( select raw record rows: 2 )
+[INFO]  | <--  select rows: 1
+[INFO] Clazz[id=1257804292,classname=class one,place=BeiJing,teachername=null,remark=2026-09-03 00:13:32,Student[id=1257804292,sid=null,name=Zhang san,age=20,sex=null,majorid=null,flag=null,classno=1257804292,[StudentHobby[id=1257804295,stuId=1257804292,hobby=ball,remark=2026-09-03 00:13:32], StudentHobby[id=1257804296,stuId=1257804292,hobby=computer,remark=2026-09-03 00:13:32]]]]
+[DEBUG] The layer is: 1, class is: class org.teasoft.exam.bee.osql.annotation.moretable.Clazz1, alias is: clazz
+[DEBUG] The layer is: 2, class is: org.teasoft.exam.bee.osql.annotation.moretable.Student1, alias is: student
+[DEBUG] The layer is: 3, class is List, element type is: org.teasoft.exam.bee.osql.annotation.moretable.StudentHobby, alias is: student_hobby
+[INFO] [Bee] select MoreTable SQL: select clazz.id,clazz.classname,clazz.place,clazz.teachername,clazz.remark,student.id student_id_$,student.sid,student.name,student.age,student.sex,student.majorid,student.flag,student.classno,student_hobby.id student_hobby_id_$,student_hobby.stu_id,student_hobby.hobby,student_hobby.remark student_hobby_remark_$ from clazz clazz join student student on clazz.id = student.classno join student_hobby student_hobby on student.id = student_hobby.stu_id where student.age = ?   [values]: 20(Integer)
+[INFO]  | <--  ( select raw record rows: 2 )
+[INFO]  | <--  select rows: 1
+[INFO] Clazz[id=1257804292,classname=class one,place=BeiJing,teachername=null,remark=2026-09-03 00:13:32,Student[id=1257804292,sid=null,name=Zhang san,age=20,sex=null,majorid=null,flag=null,classno=1257804292,[StudentHobby[id=1257804295,stuId=1257804292,hobby=ball,remark=2026-09-03 00:13:32], StudentHobby[id=1257804296,stuId=1257804292,hobby=computer,remark=2026-09-03 00:13:32]]]]
+[INFO] [bee-exam] ====================MoreTableExam24Suid.test======end.
+
+[INFO] [bee-exam] ====================DeleteBy.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] deleteById SQL: delete from orders where id=?   [values]: 100022(Long)
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] deleteById SQL: delete from orders where id=?   [values]: 100023(Long)
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] select SQL(entity, selectFields): select name, total from orders where userid=?   [values]: bee(String)
+[INFO]  | <--  select rows: 8
+[WARN] in method selectById, id is null! 
+[INFO] [bee-exam] ====================DeleteBy.test======end.
+
+[INFO] [bee-exam] ====================SearchExam.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] select SQL: select id,email,last_name,name,password,username,createtime from test_user where id between ? and ? or id between ? and ? or name=? and (id between ? and ?) and id not between ? and ? and name like ?   [values]: 100023(Long),100025(Long),100030(Long),100035(Long),Bee(String),100040(Long),100049(Long),100040(Long),100049(Long),Bee(String)
+[INFO]  | <--  select rows: 0
+[INFO] [bee-exam] ====================SearchExam.test======end.
+
+[INFO] [bee-exam] ====================DdlTest.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] Drop SQL: DROP TABLE noid1
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE noid1 (
+uuid varchar2(255) PRIMARY KEY,  
+name varchar2(255),  
+num number(10),  
+remark varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] Drop SQL: DROP TABLE noid1
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE noid1 (
+uuid varchar2(255) PRIMARY KEY,  
+name varchar2(255),  
+num number(10),  
+remark varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [bee-exam] ====================DdlTest.test======end.
+
+[INFO] [bee-exam] ====================IntSerialIdTest.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] insert SQL: insert into orders(id,name) values (?,?)   [values]: 1257804301(Integer),Bee(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] insert SQL: insert into orders(id,name) values (?,?)   [values]: 1257804302(Integer),Bee(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee]  insert[] SQL : insert into orders(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 1257804303(Integer),null(String),Bee(String),null(java.math.BigDecimal),null(String),null(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:1 ,  [values]: 1257804304(Integer),null(String),Bee(String),null(java.math.BigDecimal),null(String),2222(String),null(String),null(String),null(String)
+[INFO]  | <-- index[0~1] Affected rows: 2
+[INFO]  | <--  Affected rows: 2
+[INFO] [Bee] In MapSuid, insert SQL: insert into test_user (email,password,last_name,id) values (?,?,?,?)   [values]: test@gmail.com(String),password@gmail.com(String),MapSuid(String),1257804298(Integer)
+[INFO]  | <--  Affected rows: 1
+[INFO] 1
+[INFO] [bee-exam] ====================IntSerialIdTest.test======end.
+
+[INFO] [bee-exam] ====================StringIdTest.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] insert SQL: insert into orders_id_string(id,name) values (?,?)   [values]: 1279956315275274(String),Bee(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee]  insert[] SQL : insert into orders_id_string(id,userid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 1279956315275275(String),null(String),Bee(String),null(java.math.BigDecimal),null(String),null(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:1 ,  [values]: 1279956315275276(String),null(String),Bee(String),null(java.math.BigDecimal),null(String),2222(String),null(String),null(String),null(String)
+[INFO]  | <-- index[0~1] Affected rows: 2
+[INFO]  | <--  Affected rows: 2
+[INFO] [Bee] In MapSuid, insert SQL: insert into test_user (email,password,last_name,id) values (?,?,?,?)   [values]: test@gmail.com(String),password@gmail.com(String),MapSuid(String),1257804299(Integer)
+[INFO]  | <--  Affected rows: 1
+[INFO] 1
+[INFO] [bee-exam] ====================StringIdTest.test======end.
+
+[INFO] [bee-exam] ====================StringIdUUIDTest.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] Drop SQL: DROP TABLE orders3
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] DDL SQL: CREATE TABLE orders3 (
+id varchar2(255) PRIMARY KEY,  
+userid varchar2(255),  
+orderid number(19),  
+name varchar2(255),  
+total number(19),  
+createtime varchar2(255),  
+remark varchar2(255),  
+sequence varchar2(255),  
+abc varchar2(255),  
+updatetime varchar2(255)
+ )
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] insert SQL: insert into orders3(id,name) values (?,?)   [values]: 79a004de89ea4072abccc62b25e2aec6(String),Bee(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee]  insert[] SQL : insert into orders3(id,userid,orderid,name,total,createtime,remark,sequence,abc,updatetime) values (?,?,?,?,?,?,?,?,?,?)
+[INFO] [Bee] --> index:0 ,  [values]: 4851887f65f84e61a6f6007ef338e856(String),null(String),null(Long),Bee(String),null(java.math.BigDecimal),null(String),null(String),null(String),null(String),null(String)
+[INFO] [Bee] --> index:1 ,  [values]: b0419f3fc5714290936da10abcb56408(String),null(String),null(Long),Bee(String),null(java.math.BigDecimal),null(String),2222(String),null(String),null(String),null(String)
+[INFO]  | <-- index[0~1] Affected rows: 2
+[INFO]  | <--  Affected rows: 2
+[INFO] [Bee] In MapSuid, insert SQL: insert into test_user (email,password,last_name,id) values (?,?,?,?)   [values]: test@gmail.com(String),password@gmail.com(String),MapSuid(String),1257804300(Integer)
+[INFO]  | <--  Affected rows: 1
+[INFO] 1
+[INFO] [bee-exam] ====================StringIdUUIDTest.test======end.
+
+[INFO] [bee-exam] ====================NotLongId.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] insert SQL: insert into noid(uuid,name,num) values (?,?,?)   [values]: 9f4404b9d78f43aabb6f8e0c866804cd(String),Bee(String),100(Integer)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] insert SQL: insert into Noid(uuid,name,num) values (?,?,?)   [values]: 1279956319469575(String),Bee(String),200(Integer)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] insert SQL: insert into Noid(uuid,name,num) values (?,?,?)   [values]: 1279956319469576(String),Bee(String),200(Integer)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] update SQL: update Noid set name=? , num=? where uuid=?   [values]: Bee(String),300(Integer),1279956319469576(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] insert SQL: insert into noid(uuid,name,num) values (?,?,?)   [values]: 29b2fe540d43420ebd67e766186b051d(String),Bee(String),200(Integer)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] update SQL: update noid set name=? , num=? where uuid=?   [values]: Bee(String),400(Integer),29b2fe540d43420ebd67e766186b051d(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] update SQL(updateBy): update noid set num=? where uuid=? and name=?   [values]: 400(Integer),29b2fe540d43420ebd67e766186b051d(String),Bee(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] update SQL: update noid set num=? where uuid=? and name=?   [values]: 400(Integer),29b2fe540d43420ebd67e766186b051d(String),Bee(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL(entity, size): select * from ( select uuid,name,num,remark from noid ) where rownum <= ?   [values]: 3(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] Noid[uuid=1279956319469575,name=Bee,num=200,remark=null]
+[INFO] Noid[uuid=9f4404b9d78f43aabb6f8e0c866804cd,name=Bee,num=100,remark=null]
+[INFO] Noid[uuid=29b2fe540d43420ebd67e766186b051d,name=Bee,num=400,remark=null]
+[INFO] [Bee] select SQL(entity, start, size): select * from ( select table_.*, rownum rn_ from ( select uuid,name,num,remark from noid ) table_ where rownum < ?) where rn_ >= ?   [values]: 5(Integer),2(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] select SQL(entity, start, size, selectFields): select * from ( select uuid from noid ) where rownum <= ?   [values]: 3(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] [Bee] select SQL(entity, start, size, selectFields): select * from ( select uuid from noid ) where rownum <= ?   [values]: 3(Integer)
+[INFO]  | <--  select rows: 3
+[INFO] [{"uuid":"1279956319469575"},{"uuid":"9f4404b9d78f43aabb6f8e0c866804cd"},{"uuid":"29b2fe540d43420ebd67e766186b051d"}]
+[INFO] [Bee] select SQL: select * from ( select uuid,name,num,remark from noid ) where rownum <= ?   [values]: 5(Integer)
+[INFO]  | <--  select rows: 4
+[INFO] Noid[uuid=1279956319469575,name=Bee,num=200,remark=null]
+[INFO] Noid[uuid=9f4404b9d78f43aabb6f8e0c866804cd,name=Bee,num=100,remark=null]
+[INFO] Noid[uuid=29b2fe540d43420ebd67e766186b051d,name=Bee,num=400,remark=null]
+[INFO] Noid[uuid=1279956319469576,name=Bee,num=300,remark=null]
+[INFO] [Bee] select SQL(entity, start, size): select * from ( select table_.*, rownum rn_ from ( select uu_id,name,num,remark from noid2 ) table_ where rownum < ?) where rn_ >= ?   [values]: 5(Integer),2(Integer)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL(entity, start, size, selectFields): select * from ( select uu_id from noid2 ) where rownum <= ?   [values]: 3(Integer)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select * from ( select uuid,name,num,remark from Noid ) where rownum <= ?   [values]: 5(Integer)
+[INFO]  | <--  select rows: 4
+[INFO] [bee-exam] ====================NotLongId.test======end.
+
+[INFO] [bee-exam] ====================ColumnAnnoTest.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] select SQL: select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders
+[INFO]  | <--  select rows: 30
+[INFO] [Bee] update SQL: update orders set name=? where id=?   [values]: Bee--ORM Framework(String),1000(Long)
+[INFO]  | <--  Affected rows: 0
+[INFO] [Bee] insert SQL: insert into orders(id,userid) values (?,?)   [values]: 1279955962954064(Long),bee(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] [bee-exam] ====================ColumnAnnoTest.test======end.
+
+[INFO] [bee-exam] ====================LikeTest.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders
+[INFO]  | <--  select rows: 31
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid like ?   [values]: test\%(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid like ?   [values]: test%(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid like ?   [values]: test_(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid like ?   [values]: test\_(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid like ?   [values]: %test(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid like ?   [values]: test%(String)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid like ?   [values]: %test%(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid like ?   [values]: %test\%(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid like ?   [values]: %test\%(String)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid like ?   [values]: %test\_(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid like ?   [values]: %test\%(String)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid like ?   [values]: %test\u0025(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid like ?   [values]: %test\\u0025(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid like ?   [values]: \%\%(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid like ?   [values]: %\%(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where userid like ?   [values]: \\u0025(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name like ?   [values]: 12%(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,userid,name,total,orderid,createtime,remark,sequence,abc,updatetime from orders where name like ?   [values]: %12%(String)
+[INFO]  | <--  select rows: 0
+[INFO] [bee-exam] ====================LikeTest.test======end.
+
+[INFO] [bee-exam] ====================DiffNamingTest.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] select SQL(entity, size): select * from ( select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders ) where rownum <= ?   [values]: 10(Integer)
+[INFO]  | <--  select rows: 10
+[INFO] Orders[id=121,userid=1001,name=bee,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=122,userid=1001,name=bee,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=123,userid=1001,name=bee,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954058,userid=orders3,name=null,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954059,userid=orders4,name=null,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954063,userid=bee,name=Bee(ORM Framework),total=92,createtime=2026-09-03 00:13:24,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1257804303,userid=null,name=Bee,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1257804304,userid=null,name=Bee,total=null,createtime=null,remark=2222,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954015,userid=bee,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954017,userid=client,name=client,total=94,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] select SQL(entity, size): select * from ( select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders ) where rownum <= ?   [values]: 10(Integer)
+[INFO]  | <--  select rows: 10
+[INFO] Orders[id=null,userid=null,name=null,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=null,name=null,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=null,name=null,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=null,name=null,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=null,name=null,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=null,name=null,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=null,name=null,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=null,name=null,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=null,name=null,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=null,userid=null,name=null,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] select SQL(entity, size): select * from ( select ID,USERID,NAME,TOTAL,CREATETIME,REMARK,SEQUENCE,ABC,UPDATETIME from ORDERS ) where rownum <= ?   [values]: 10(Integer)
+[INFO]  | <--  select rows: 10
+[INFO] Orders[id=121,userid=1001,name=bee,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=122,userid=1001,name=bee,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=123,userid=1001,name=bee,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954058,userid=orders3,name=null,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954059,userid=orders4,name=null,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954063,userid=bee,name=Bee(ORM Framework),total=92,createtime=2026-09-03 00:13:24,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1257804303,userid=null,name=Bee,total=null,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1257804304,userid=null,name=Bee,total=null,createtime=null,remark=2222,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954015,userid=bee,name=null,total=100,createtime=null,remark=new2,sequence=null,abc=null,updatetime=null]
+[INFO] Orders[id=1279955962954017,userid=client,name=client,total=94,createtime=null,remark=null,sequence=null,abc=null,updatetime=null]
+[INFO] [Bee] select SQL(entity, size): select * from ( select id,userid,name,total,createtime,remark,sequence,abc,updatetime from orders ) where rownum <= ?   [values]: 10(Integer)
+[INFO] ==========get from Cache.
+[INFO]  | <--  select rows: 10
+[INFO] [bee-exam] ====================DiffNamingTest.test======end.
+
+[INFO] [bee-exam] ====================DateTypeTest.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] insert SQL: insert into date_type(id,date1,date3,date2,remark) values (?,?,?,?,?)   [values]: 1279956327858180(Long),Thu Sep 03 00:13:40 CST 2026(java.util.Date),Thu Sep 03 00:13:40 CST 2026(java.util.Date),2026-09-03(java.sql.Date),test dateType2(String)
+[INFO]  | <--  Affected rows: 1
+[INFO] [Bee] select SQL: select id,date1,date3,date2,remark from date_type
+[INFO]  | <--  select rows: 1
+[INFO] DateType[id=1279956327858180,date1=2026-09-03 00:13:40.0,date2=2026-09-03,date3=2026-09-03 00:13:40.0,remark=test dateType2]
+[INFO] [bee-exam] ====================DateTypeTest.test======end.
+
+[INFO] [bee-exam] ====================LocalDateTimeExam.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] insert SQL: insert into localdatetime_table(id,localdatetime) values (?,?)   [values]: 13(Integer),2026-09-03T00:13:41.333(java.time.LocalDateTime)
+[WARN] ORA-00001: 违反唯一约束条件 (SCOTT.PK)
+
+[INFO] insert num:0
+[INFO] [bee-exam] ====================LocalDateTimeExam.test======end.
+
+[INFO] [bee-exam] ====================LocalDateTimeExam2.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] insert SQL: insert into localdatetime_table(id,timestamp) values (?,?)   [values]: 10(Integer),2026-09-03 00:13:41.414(java.sql.Timestamp)
+[WARN] ORA-00001: 违反唯一约束条件 (SCOTT.PK)
+
+[INFO] insert num:0
+[INFO] [Bee] select SQL: select id,name,datetime,timestamp,localdatetime,ext,json from localdatetime_table where id=?   [values]: 4(Integer)
+[INFO]  | <--  select rows: 0
+[INFO] [bee-exam] ====================LocalDateTimeExam2.test======end.
+
+[INFO] [bee-exam] ====================LocalDateTimeExam3.test======start:
+[INFO] [Bee] ========= get the dbName via url is: Oracle
+[INFO] [Bee] select SQL: select id,name,datetime,timestamp,localdatetime,ext,json from localdatetime_table where localdatetime>=to_date(?, 'YYYY-MM-DD')   [values]: 2024-07-08(String)
+[INFO]  | <--  select rows: 2
+[INFO] LocaldatetimeTable[id=12,name=null,datetime=null,timestamp=null,localdatetime=2024-07-08T23:55:35.534,ext=null,json=null]
+[INFO] LocaldatetimeTable[id=13,name=null,datetime=null,timestamp=null,localdatetime=2024-07-08T23:56:01.521,ext=null,json=null]
+[INFO] [Bee] select SQL: select id,name,datetime,timestamp,localdatetime,ext,json from localdatetime_table where id=? and localdatetime>=to_date(?, 'YYYY-MM-DD')   [values]: 1(Integer),2024-07-08(String)
+[INFO]  | <--  select rows: 0
+[INFO] [Bee] select SQL: select id,name,datetime,timestamp,localdatetime,ext,json from localdatetime_table where id=? and localdatetime>=? and localdatetime<=?   [values]: 1(Integer),2024-07-08 23:55:35.534(java.sql.Timestamp),2024-07-08 23:55:35.534(java.sql.Timestamp)
+[INFO]  | <--  select rows: 0
+[INFO] [bee-exam] ====================LocalDateTimeExam3.test======end.
+
+[INFO] [Bee] ========= get the dbName via url is: H2

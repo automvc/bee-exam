@@ -57,8 +57,11 @@ import org.teasoft.exam.bee.osql.sharding.Test4_selectBroadcastTable;
 import org.teasoft.exam.bee.osql.sharding.Test4_updateBroadcastTable;
 import org.teasoft.exam.bee.osql.sharding.entity.Orders;
 import org.teasoft.exam.bee.test.TestMoreTable;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.autogen.Ddl;
 import org.teasoft.honey.osql.core.HoneyConfig;
+
+import org.teasoft.exam.bee.osql.sharding.*;
 
 /**
  * @author Kingstar
@@ -123,6 +126,152 @@ public class ShardingTest extends BaseShardingTest2{
 		Test4_insertBroadcastTable.test();
 		Test4_selectBroadcastTable.test();
 		Test4_updateBroadcastTable.test();
+		
+		ShardingFunAvgExam2.test();
+		ShardingFunAvgExam3.test();
+		ShardingFunAvgExam4.test();
+		ShardingFunAvgExam5.test();
+		ShardingFunAvgExam6.test();
+		ShardingGroup1_10.test();
+		ShardingGroup1_11.test();
+		ShardingGroup1_12.test();
+		ShardingGroup1_12_2.test();
+		ShardingGroup1_12_3.test();
+		ShardingGroup1_12_4.test();
+		ShardingGroup1_12_5.test();
+		ShardingGroup1_7.test();
+		ShardingGroup1_8.test();
+		ShardingGroup1_9.test();
+		ShardingGroup1_9_2.test();
+		ShardingGroup1_4.test();
+		ShardingGroup1_6.test();
+		ShardingGroup4.test();
+		
+		SelectRsTest.test();
+		ShardingPagingSort.test();
+		ShardingPaging2.test();
+		Test4_insertBroadcastTable.test();
+		ShardingGroup1_9_3_justOrderBy2.test();
+		ShardingFunAvgExam.test();
+		ShardingGroup1_9_3_justOrderBy.test();
+		ShardingGroup2.test();
+		ShardingGroup1_6.test();
+		ShardingGroup1_8_2.test();
+		ShardingGroup1_12_3.test();
+		ShardingGroup1_12_5.test();
+		ShardingGroup1_12_4.test();
+		ShardingGroup1_12_2.test();
+		ShardingGroup1_9_2.test();
+		ShardingGroup1_11.test();
+		ShardingGroup1_12.test();
+		ShardingGroup1_10.test();
+		ShardingFunAvgExam6.test();
+		ShardingFunAvgExam5.test();
+		ShardingFunAvgExam4.test();
+		ShardingFunAvgExam3.test();
+		ShardingFunAvgExam2.test();
+		ShardingGroup1_9.test();
+		ShardingGroup1_8.test();
+		ShardingGroup1_7.test();
+		ShardingGroup7.test();
+		
+		
+		ShardingGroup6.test();
+		ShardingGroup5.test();
+		ShardingGroup4.test();
+		ShardingGroup4_3.test();
+		ShardingGroup4_2.test();
+		ShardingGroup1_4.test();
+		ShardingGroup1_2.test();
+		ShardingGroup.test();
+		ShardingOrderBy.test();
+//		InitSameDsUtil.test();
+		Test4_updateBroadcastTable.test();
+		Test4_selectBroadcastTable.test();
+		DdlForShardingTest2.test();
+		ShardingPaging01.test();
+		ShardingInExam11.test();
+		ShardingPaging_Just_ShardingTable.test();
+		ShardingGroup1_5.test();
+//		InitSameDsUtil3.test();
+//		InitSameDsUtil2.test();
+//		InitSameDsUtil_pgsql.test();
+		ShardingDeleteExam.test();
+		
+		ShardingUpdateExam.test();
+		ShardingPaging.test();
+		ShardingUpdateExam2.test();
+		SuidRichExamReturnListStringArray.test();
+		ShardingBatchInsert3.test();
+		ShardingBatchInsert2.test();
+		MoreSQLFunction.test();
+		Test4_insertList4.test();
+		Test4_deleteList7.test();
+		Test4_deleteList6.test();
+		ShardingSimpleExam2_11.test();
+		ShardingSimpleExam2_10.test();
+		ShardingSimpleExam2_9.test();
+		ShardingSimpleExam2_8.test();
+		ShardingSimpleExam2_7.test();
+		ShardingSimpleExam2_6.test();
+		ShardingSimpleExam2_5.test();
+		ShardingSimpleExam2_4.test();
+		ShardingSimpleExam2.test();
+		ShardingSimpleExam2_2.test();
+		ShardingSimpleExam2_3.test();
+		ShardingPagingSort7.test();
+//		ShardingInitData.test();
+		ShardingSimpleExam9_5.test();
+		ShardingPagingSort5.test();
+		ShardingSimpleExam9_1.test();
+//		JustFetchTest.test();
+		ShardingGroup3.test();
+		ShardingGroup1_3.test();
+		ShardingPagingSort2_2.test();
+//		ShardingInitData2.test();
+		ShardingSimpleExam3.test();
+		ShardingSimpleExam4.test();
+		ShardingSimpleExam4_2.test();
+		ShardingSimpleExam5.test();
+		ShardingSimpleExam6.test();
+		ShardingSimpleExam9.test();
+		ShardingPagingSort6.test();
+		ShardingPagingSortStringArray.test();
+		ShardingSimpleExam9_3.test();
+		ShardingSimpleExam9_4.test();
+		ShardingPagingSort4.test();
+		ShardingSimpleExam9_6.test();
+		ShardingPagingSort3.test();
+		ShardingSimpleExam.test();
+		ShardingPagingSort2StringArray.test();
+		ShardingPagingSort2.test();
+		ShardingSimpleExam9_2.test();
+		ShardingSimpleExam1.test();
+		ShardingSimpleExam1_2.test();
+		ShardingPaging5.test();
+		ShardingPaging4.test();
+		ShardingPaging3.test();
+		
+		try {
+			ShardingPagingSort3_2.test();
+		} catch (Exception e) {
+			e.printStackTrace();
+		   Logger.error(e.getMessage());
+		}
+		
+		try {
+			ShardingPaging_Just_ShardingDs.test();
+			ShardingUpdateBroadcastExam.test();
+			ShardingBatchInsertExam.test();
+			ShardingFunExam.test();
+			
+			ShardingInsertExam10.test();
+			ShardingInsertExam11.test();
+			ShardingJsonExam.test();
+		} catch (Exception e) {
+			e.printStackTrace();
+		   Logger.error(e.getMessage());
+		}
 		
 		try {
 		//bug??  it is ok when run single

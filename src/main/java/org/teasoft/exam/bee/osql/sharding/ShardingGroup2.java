@@ -11,6 +11,7 @@ import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.exam.bee.osql.sharding.entity.OrdersGroupResponse0;
 import org.teasoft.exam.bee.osql.sharding.entity.Orders_F;
 import org.teasoft.exam.comm.Printer;
+import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 import org.teasoft.honey.sharding.ShardingUtil;
 
@@ -74,8 +75,10 @@ public class ShardingGroup2 {
 		.size(5);
 		
 		
+		
 		//条件全在condition  case 5
 	 	List<OrdersGroupResponse0> list=suid.select(orders1,condition);
+	 	Logger.info("只查1至5行");
 	 	Printer.printList(list);
 //	 	System.out.println("--------------------:");
 //	 	list=suid.select(orders1,condition);

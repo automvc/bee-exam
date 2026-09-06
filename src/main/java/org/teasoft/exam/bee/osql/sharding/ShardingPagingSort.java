@@ -50,7 +50,7 @@ public class ShardingPagingSort {
 		.op(Orders_F.userid, Op.eq, 3)
 		.rParentheses()
 		.or()
-		.op(Orders_F.orderid, Op.eq, 3)
+		.op(Orders_F.orderid, Op.eq, 4)
 		;
 		
 		condition

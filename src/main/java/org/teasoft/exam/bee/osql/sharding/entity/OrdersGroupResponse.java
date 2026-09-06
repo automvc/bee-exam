@@ -38,7 +38,13 @@ public class OrdersGroupResponse implements Serializable {
 	private String maxTotal;
 	
 	@JustFetch("")
-	private Double minTotal;
+	private String minTotal;
+	
+	@JustFetch("")
+	private String countTotal;
+	
+	@JustFetch("")
+	private Double sumTotal;
 	
 	@JustFetch("")
 	private Double avgTotal;
@@ -166,6 +172,8 @@ public class OrdersGroupResponse implements Serializable {
 		 str.append(",updatetime=").append(updatetime);		 
 		 str.append(",maxTotal=").append(maxTotal);		 
 		 str.append(",minTotal=").append(minTotal);		 
+		 str.append(",sumTotal=").append(sumTotal);		 
+		 str.append(",countTotal=").append(countTotal);		 
 		 str.append(",avgTotal=").append(avgTotal);		 
 		 str.append("]");			 
 		 return str.toString();			 

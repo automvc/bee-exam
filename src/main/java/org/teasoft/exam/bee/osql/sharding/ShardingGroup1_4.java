@@ -16,6 +16,8 @@ import org.teasoft.honey.sharding.ShardingUtil;
 
 /**
  * 
+ * groupBy有但select没有，测试，会帮补select的列了。
+ * 
  * @author Kingstar
  * @since  2.0
  */

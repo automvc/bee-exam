@@ -15,6 +15,7 @@ import org.teasoft.honey.sharding.ShardingUtil;
 
 /**
  * 同库多个表 +分页 +  排序
+ *  {ds_1=MySQL, ds_0=MySQL}
  * @author Kingstar
  * @since  2.0
  */

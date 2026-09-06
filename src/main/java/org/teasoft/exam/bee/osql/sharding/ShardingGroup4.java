@@ -4,7 +4,6 @@ package org.teasoft.exam.bee.osql.sharding;
 import java.util.List;
 
 import org.teasoft.bee.osql.FunctionType;
-import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.api.Condition;
 import org.teasoft.bee.osql.api.Suid;
@@ -63,7 +62,8 @@ public class ShardingGroup4 {
 		condition.groupBy(Orders_F.userid);
 		condition.groupBy(Orders_F.orderid);
 		
-		condition.orderBy("userid",OrderType.DESC);// bug0
+		condition.orderBy("userid",OrderType.DESC);
+		condition.orderBy("orderid",OrderType.DESC);
 //		condition.orderBy("userid",OrderType.ASC);
 //		condition.orderBy("total",OrderType.DESC);
 		

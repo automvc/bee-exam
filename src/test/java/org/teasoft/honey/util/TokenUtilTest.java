@@ -18,9 +18,9 @@ public class TokenUtilTest {
 	//		String text="<bee.version>${{BeeVersion##</bee.version><beeaa.sversion>${{projectName}}</bee.version>"; //wrong one : BeeVersion##</bee.version><beeaa.sversion>${{projectName
 		String text="<bee.version>\\${{BeeVersion}}</bee.version><beeaa.sversion>${{projectName##</bee.version>";  //escape
 		//测试SqlValueWrap process是否会   找不到结束标记,死循环.
-		SqlValueWrap warp =TokenUtil.process(text, "${{", "}}", "?");
-		Logger.info(warp.getSql());
-	//		Logger.info(warp.getTableNames());
-		Logger.info(warp.getValueBuffer());
+		SqlValueWrap wrap =TokenUtil.process(text, "${{", "}}", "?");
+		Logger.info(wrap.getSql());
+	//		Logger.info(wrap.getTableNames());
+		Logger.info(wrap.getValueBuffer());
 	}*/
 }

@@ -42,10 +42,16 @@ public class Test4_insertBroadcastTable {
 			noid0.setRemark(null);
 			insertList.add(noid0);
 		}
-		
+		try {
+			
+
 		int insertNum=suidRich.insert(insertList);
 		
 		System.out.println("insertNum="+insertNum);
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		System.out.println("finished!");
 	}

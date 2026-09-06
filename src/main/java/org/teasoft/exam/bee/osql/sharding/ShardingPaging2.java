@@ -57,7 +57,11 @@ public class ShardingPaging2 {
 //		.start(2)   //不是首页开始.
 //		.start(0)  //从首页开始
 		.start(startIndex)
-		.size(3);
+//		.size(3);
+		.size(20);
+		
+		condition
+		.orderBy("id");
 		
 		
 		//条件全在condition  case 5

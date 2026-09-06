@@ -37,7 +37,7 @@ public class MoreTableExam {
 			MoreTable moreTable = BeeFactory.getHoneyFactory().getMoreTable();
 			
 			Myorders orders1 = new Myorders();
-			orders1.setUserid(1L);
+			orders1.setUserid(2L);
 			
 //			//一库一表
 			List<Myorders> list1 = moreTable.select(orders1, 0, 10); //select 查询前10条记录

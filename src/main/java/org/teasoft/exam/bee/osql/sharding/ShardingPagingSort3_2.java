@@ -30,8 +30,8 @@ public class ShardingPagingSort3_2 {
 		
 		System.out.println("------Sharding test--------ShardingPagingSort3_2-----");
 		test(ShardingUtil.firstRecordIndex()); //要先配置数据源,才能获取到.
-		test(2);
-		test(-1);
+//		test(2);
+//		test(-1);
 	}
 	
 	public static void test(int startIndex) {

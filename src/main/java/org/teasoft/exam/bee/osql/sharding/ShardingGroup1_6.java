@@ -15,7 +15,7 @@ import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.shortcut.BF;
 
 /**
- * 
+ * SuidRich 可以使用多个selectFun
  * @author Kingstar
  * @since  2.0
  */

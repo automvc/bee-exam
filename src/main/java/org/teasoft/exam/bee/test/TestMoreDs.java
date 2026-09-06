@@ -16,6 +16,7 @@ import org.teasoft.exam.bee.osql.ds.DiffDdExam00;
 import org.teasoft.exam.bee.osql.ds.DiffDdExam000;
 import org.teasoft.exam.bee.osql.ds.DiffDdExam00bug;
 import org.teasoft.exam.bee.osql.ds.DiffDdExamCustomerSql;
+import org.teasoft.exam.bee.osql.ds.DiffDdExam_test_bug;
 import org.teasoft.exam.bee.osql.ds.RwDsExam;
 import org.teasoft.exam.bee.osql.ds.SuidWhichOne;
 import org.teasoft.exam.comm.TestHelper;
@@ -53,6 +54,7 @@ public class TestMoreDs {
 		runTest(RwDsExam.class);
 //		runTest(SuidExam.class);
 		runTest(DiffDdExam.class);
+		runTest(DiffDdExam_test_bug.class);
 		
 		runTest(DiffDdExam0.class);
 		runTest(DiffDdExam00.class);

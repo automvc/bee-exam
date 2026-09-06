@@ -45,16 +45,18 @@ public class SuidWhichOne {
 		suid1.setDataSourceName("ds1");
 		
 		suid1.select(new Orders());
-		
+		if(suid1!=null) {
 		System.err.println(suid1.toString());
 		System.err.println(suid1.hashCode());
 		System.err.println(suid1.getDataSourceName());
-		
+		}
 		Suid suid2=BF.getSuid();
 		suid2.setDataSourceName("Ds2");
+		if(suid2!=null) {
 		System.err.println(suid2.toString());
 		System.err.println(suid2.hashCode());
 		System.err.println(suid2.getDataSourceName());
+		}
 		
 		//suid2之后,接口又执行suid1的
 		suid1.select(new Orders());//suid1在suid2后又执行,若直接使用线程设置,suid2定义时,却把定义的DS冲了.

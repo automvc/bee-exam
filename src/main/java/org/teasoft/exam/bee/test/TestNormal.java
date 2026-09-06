@@ -73,6 +73,7 @@ import org.teasoft.exam.bee.osql.special.type.DateTypeTest;
 import org.teasoft.exam.comm.OrdinaryTest;
 import org.teasoft.exam.comm.TestHelper;
 import org.teasoft.exam.comm.TestPrepare;
+import org.teasoft.exam.moretable3.moretable3select5._11111.MoreTableSelect_list_filter5_11111;
 import org.teasoft.honey.logging.Logger;
 import org.teasoft.honey.osql.core.HoneyConfig;
 import org.teasoft.honey.osql.core.HoneyContext;
@@ -183,15 +184,15 @@ public class TestNormal {
 		runTest(ChainSelectExam.class); 
 		
 		try {
-				if (!DatabaseConst.SQLite.equalsIgnoreCase(DbName))
-					runTest(UnionSelectExam.class);
+			if (!DatabaseConst.SQLite.equalsIgnoreCase(DbName)) 
+				runTest(UnionSelectExam.class);
 		} catch (Exception e) {
-			Logger.warn("Exception in UnionSelectExam(confirm the DB whether support the union): "+e.getMessage());
+			Logger.warn("Exception in UnionSelectExam(confirm the DB whether support the union): " + e.getMessage());
 		}
 		
 		
 		runTest(ChainSelectExam2.class);
-		runTest(Insert24.class);
+		runTest(Insert24.class);//bug
 //		runTest(NotExam.class); //some databse donot support : !(name='client' and abc='client')
 		runTest(QueryCompare.class);
 		runTest(QueryCompare2.class);
@@ -229,6 +230,7 @@ public class TestNormal {
 		
 		if (DatabaseConst.SQLSERVER.equalsIgnoreCase(DbName)) {
 		    runTest(MyFeatureTest.class);
+		    MoreTableSelect_list_filter5_11111.test();
 		}
 		
 //		runTest(ExceptionTest.class);
@@ -254,11 +256,22 @@ public class TestNormal {
 //		runTest(HoneyConfigReset.class);
 		
 		if (DatabaseConst.ORACLE.equalsIgnoreCase(DbName)) {
-		    runTest(LocalDateTimeExam.class);
-		    runTest(LocalDateTimeExam2.class);
-		    runTest(LocalDateTimeExam3.class);
+			runTest(LocalDateTimeExam.class);
+			runTest(LocalDateTimeExam2.class);
+			runTest(LocalDateTimeExam3.class);
 		}
 		
+//		if (DatabaseConst.PostgreSQL.equalsIgnoreCase(DbName)) {
+////		ShardingTestPg
+//		try { // 要设置sharding才有用.  运行完要还原配置
+//			ShardingPaging02Pg.test();
+//			ShardingPagingSort2Pg.test();
+//			ShardingBatchInsert2Pg.test();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			Logger.warn("---ShardingTestPg: " + e.getMessage());
+//		}
+//		}
 		
 		//test lower/upper key work  
 //		String oldCase=HoneyConfig.getHoneyConfig().sqlKeyWordCase;

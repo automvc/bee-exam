@@ -8,7 +8,8 @@ import org.teasoft.bee.osql.annotation.Entity;
 *@author Honey
 *Create on 2020-10-01 12:41:06
 */
-@Entity("TestUsers")
+//@Entity("TestUsers")
+@Entity("TestUser")
 public class TestUser implements Serializable {
 
 	private static final long serialVersionUID = 1592134386464L;

@@ -30,7 +30,7 @@ public class MoreTableShardingInsert2 {
 	public static void main(String[] args) {
 //		ShardingInitData.init();
 		ShardingConfig.addShardingBean(Book.class, new ShardingBean("ds[0..1].book[0..5]", "id"));
-//		ShardingConfig.addShardingBean(BookDetail.class, new ShardingBean("ds[0..1].book_detail[0..5]", "bookId"));
+		ShardingConfig.addShardingBean(BookDetail.class, new ShardingBean("ds[0..1].book_detail[0..5]", "bookId"));
 		ShardingConfig.addShardingBean(BookReal.class, new ShardingBean("ds[0..1].book_real[0..5]", "bookDetailId"));
 		InitSameDsUtil.initDS();
 		test();
@@ -50,7 +50,7 @@ public class MoreTableShardingInsert2 {
 			MoreTable moreTable = BF.getMoreTable();
 
 			Book entity = new Book();
-			entity.setId2(10L); // 使用用户填写的值,并会设置到外键中.
+			entity.setId2(16L); // 使用用户填写的值,并会设置到外键中.
 			entity.setIsbn("isbn123456");
 			entity.setName("Java开发");
 

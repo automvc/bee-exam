@@ -39,9 +39,9 @@ public class MoreTableShardingSelect_Fun {
 			
 			Condition condition=BF.getCondition();
 //			condition.selectFun(FunctionType.MAX, "orderid", "max_orderid");
-			condition.selectFun(FunctionType.MIN, "orderid", "min_orderid");
+//			condition.selectFun(FunctionType.MIN, "orderid", "min_orderid");
 //			condition.selectFun(FunctionType.COUNT, "orderid", "count_orderid");
-//			condition.selectFun(FunctionType.AVG, "orderid", "avg_orderid");
+			condition.selectFun(FunctionType.AVG, "orderid", "avg_orderid");
 //			condition.selectFun(FunctionType.SUM, "orderid", "sum_orderid");
 			
 			String funOrderid=moreTable.selectWithFun(orders, condition);

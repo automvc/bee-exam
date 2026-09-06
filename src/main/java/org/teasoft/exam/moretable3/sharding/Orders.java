@@ -6,6 +6,7 @@ import java.sql.Timestamp;
 
 import org.teasoft.bee.osql.annotation.JoinTable;
 import org.teasoft.bee.osql.annotation.JoinType;
+import org.teasoft.bee.osql.annotation.JustFetch;
 import org.teasoft.bee.osql.annotation.Table;
 
 /**
@@ -39,6 +40,20 @@ public class Orders implements Serializable {
 	private String sequence;
 	private String abc;
 	private String updatetime;
+	
+	@JustFetch //只用于接收数据
+	private String sumOrderid;
+	
+	@JustFetch
+	private String avgOrderid;
+	
+	public String getSumOrderid() {
+		return sumOrderid;
+	}
+
+	public void setSumOrderid(String sumOrderid) {
+		this.sumOrderid = sumOrderid;
+	}
 
 	public Long getId() {
 		return id;
@@ -133,6 +148,8 @@ public class Orders implements Serializable {
 		str.append(",sequence=").append(sequence);
 		str.append(",abc=").append(abc);
 		str.append(",updatetime=").append(updatetime);
+		str.append(",sumOrderid=").append(sumOrderid);
+		str.append(",avgOrderid=").append(avgOrderid);
 		
 		if (getTestUser() != null) {
 			str.append(",testUser=").append(getTestUser().toString());
